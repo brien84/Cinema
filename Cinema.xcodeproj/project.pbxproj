@@ -19,6 +19,7 @@
 		2904C79C2336A60C00407B64 /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C79B2336A60C00407B64 /* MovieManager.swift */; };
 		2904C79E2336A69100407B64 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C79D2336A69100407B64 /* Movie.swift */; };
 		2904C7A02336A69B00407B64 /* Showing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C79F2336A69B00407B64 /* Showing.swift */; };
+		2904C7A32336B09100407B64 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7A22336B09100407B64 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		2904C79B2336A60C00407B64 /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
 		2904C79D2336A69100407B64 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2904C79F2336A69B00407B64 /* Showing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Showing.swift; sourceTree = "<group>"; };
+		2904C7A22336B09100407B64 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				2904C7942336A0EB00407B64 /* Controllers */,
 				2904C7952336A10700407B64 /* Models */,
 				2904C7962336A10E00407B64 /* Views */,
+				2904C7A12336B07700407B64 /* Supporting Files */,
 				2904C7632336982B00407B64 /* AppDelegate.swift */,
 				2904C76D2336982D00407B64 /* Assets.xcassets */,
 				2904C7722336982D00407B64 /* Info.plist */,
@@ -162,6 +165,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2904C7A12336B07700407B64 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2904C7A22336B09100407B64 /* Extensions.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 				2904C79A2336A50F00407B64 /* MovieViewController.swift in Sources */,
 				2904C7642336982B00407B64 /* AppDelegate.swift in Sources */,
 				2904C79E2336A69100407B64 /* Movie.swift in Sources */,
+				2904C7A32336B09100407B64 /* Extensions.swift in Sources */,
 				2904C79C2336A60C00407B64 /* MovieManager.swift in Sources */,
 				2904C7A02336A69B00407B64 /* Showing.swift in Sources */,
 				2904C7982336A4FD00407B64 /* DailyViewController.swift in Sources */,

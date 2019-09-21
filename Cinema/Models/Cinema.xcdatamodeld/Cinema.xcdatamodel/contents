@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Movie" representedClassName=".Movie" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="originalTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poster" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rated" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="released" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="runtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="showings" toMany="YES" deletionRule="Nullify" destinationEntity="Showing" inverseName="newRelationship" inverseEntity="Showing" syncable="YES"/>
+    </entity>
+    <entity name="Showing" representedClassName=".Showing" syncable="YES">
+        <attribute name="city" attributeType="String" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="venue" attributeType="String" syncable="YES"/>
+        <relationship name="newRelationship" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="showings" inverseEntity="Movie" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Movie" positionX="609.12890625" positionY="-3675.52734375" width="128" height="193"/>
+        <element name="Showing" positionX="946.54296875" positionY="-3719.2734375" width="128" height="103"/>
+    </elements>
 </model>
