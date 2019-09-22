@@ -33,7 +33,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0Cd-cY-f2T">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="jck-NG-Jm1" customClass="NavigationButton" customModule="Cinema" customModuleProvider="target"/>
+                        <barButtonItem key="leftBarButtonItem" title="-" id="jck-NG-Jm1" customClass="NavigationButton" customModule="Cinema" customModuleProvider="target"/>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="YGb-UM-odS" customClass="NavigationButton" customModule="Cinema" customModuleProvider="target"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dr5-Ok-Fg7" userLabel="First Responder" sceneMemberID="firstResponder"/>

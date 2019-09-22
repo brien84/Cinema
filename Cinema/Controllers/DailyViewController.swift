@@ -10,19 +10,31 @@ import UIKit
 
 extension DailyViewController: NavigationButtonDelegate {
     func tapped(_ sender: NavigationButton, _ gestureRecognizer: UITapGestureRecognizer) {
-        print(navigationItem.leftBarButtonItems?.contains(sender))
-        print(navigationItem.rightBarButtonItems?.contains(sender))
+        
+        if navigationItem.leftBarButtonItems?.contains(sender) ?? false {
+            manager.decreaseDate()
+        }
+        
+        if navigationItem.rightBarButtonItems?.contains(sender) ?? false {
+            manager.increaseDate()
+        }
+        
+        navigationItem.title = manager.selectedDate.asString()
     }
 }
 
 class DailyViewController: UITableViewController {
-
+    
+    let manager = DateManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let manager = MovieManager()
-        
         if let button = navigationItem.leftBarButtonItem as? NavigationButton {
+            button.delegate = self
+        }
+        
+        if let button = navigationItem.rightBarButtonItem as? NavigationButton {
             button.delegate = self
         }
     }

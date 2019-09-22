@@ -13,13 +13,6 @@ class MovieManager {
     private var movies = [Movie]()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    
-    
-    
-    
-    
-    
-    
     init() {
         getData { data in
             self.movies = self.decode(data: data)
