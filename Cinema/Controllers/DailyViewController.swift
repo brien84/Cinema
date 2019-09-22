@@ -8,12 +8,23 @@
 
 import UIKit
 
+extension DailyViewController: NavigationButtonDelegate {
+    func tapped(_ sender: NavigationButton, _ gestureRecognizer: UITapGestureRecognizer) {
+        print(navigationItem.leftBarButtonItems?.contains(sender))
+        print(navigationItem.rightBarButtonItems?.contains(sender))
+    }
+}
+
 class DailyViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let manager = MovieManager()
+        
+        if let button = navigationItem.leftBarButtonItem as? NavigationButton {
+            button.delegate = self
+        }
     }
 
     // MARK: - Table view data source

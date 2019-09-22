@@ -32,7 +32,9 @@
                             <outlet property="delegate" destination="ovk-5G-Aqx" id="3eU-Il-oDR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0Cd-cY-f2T"/>
+                    <navigationItem key="navigationItem" id="0Cd-cY-f2T">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="jck-NG-Jm1" customClass="NavigationButton" customModule="Cinema" customModuleProvider="target"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dr5-Ok-Fg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
