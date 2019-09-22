@@ -6,6 +6,31 @@
 //  Copyright © 2019 Marius. All rights reserved.
 //
 
+import Foundation
+
 extension CodingUserInfoKey {
     static let context = CodingUserInfoKey(rawValue: "context")
+}
+
+extension Date {
+    func asString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: self)
+        
+    }
+    
+    func datesInFuture(after amount: Int, of component: Calendar.Component) -> [Date] {
+        var date = self
+        guard let endDate = Calendar.current.date(byAdding: component, value: amount, to: date) else { return [] }
+        var dates = [Date]()
+        
+        while date <= endDate {
+            dates.append(date)
+            guard let newDate = Calendar.current.date(byAdding: component, value: 1, to: date) else { return [] }
+            date = newDate
+        }
+        
+        return dates
+    }
 }
