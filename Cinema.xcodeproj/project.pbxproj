@@ -24,6 +24,7 @@
 		2904C7A7233825D800407B64 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7A6233825D800407B64 /* DateManager.swift */; };
 		2904C7A92339205D00407B64 /* ShowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2904C7A82339205D00407B64 /* ShowingCell.xib */; };
 		2904C7AB233920D500407B64 /* ShowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7AA233920D500407B64 /* ShowingCell.swift */; };
+		2904C7AF23393A4E00407B64 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7AE23393A4E00407B64 /* SegmentedControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		2904C7A6233825D800407B64 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		2904C7A82339205D00407B64 /* ShowingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowingCell.xib; sourceTree = "<group>"; };
 		2904C7AA233920D500407B64 /* ShowingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingCell.swift; sourceTree = "<group>"; };
+		2904C7AE23393A4E00407B64 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				2904C7A42337D23F00407B64 /* NavigationButton.swift */,
 				2904C7A82339205D00407B64 /* ShowingCell.xib */,
 				2904C7AA233920D500407B64 /* ShowingCell.swift */,
+				2904C7AE23393A4E00407B64 /* SegmentedControl.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				2904C79C2336A60C00407B64 /* MovieManager.swift in Sources */,
 				2904C7A02336A69B00407B64 /* Showing.swift in Sources */,
 				2904C7982336A4FD00407B64 /* DailyViewController.swift in Sources */,
+				2904C7AF23393A4E00407B64 /* SegmentedControl.swift in Sources */,
 				2904C76C2336982B00407B64 /* Cinema.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
