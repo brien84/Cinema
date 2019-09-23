@@ -27,7 +27,8 @@ extension DailyViewController: NavigationButtonDelegate {
 
 class DailyViewController: UITableViewController {
     
-    private var datasource = [Movie]()
+    private var movieDatasource = [Movie]()
+    private var showingDatasource = [Showing]()
     
     private let dateManager = DateManager()
     private let movieManager = MovieManager()
@@ -47,20 +48,20 @@ class DailyViewController: UITableViewController {
     }
     
     private func refresh() {
-        datasource = movieManager.getMovies(shownAt: dateManager.selectedDate)
+        showingDatasource = movieManager.getShowings(shownAt: dateManager.selectedDate)
         tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datasource.count
+        return showingDatasource.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showingCell", for: indexPath) as! ShowingCell
 
-        cell.title.text = datasource[indexPath.row].title
+        cell.title.text = showingDatasource[indexPath.row].date.asString()
 
         return cell
     }
@@ -74,5 +75,4 @@ class DailyViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

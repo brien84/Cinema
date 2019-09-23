@@ -31,6 +31,16 @@ class MovieManager {
         }
     }
     
+    func getShowings(shownAt date: Date) -> [Showing] {
+        let calendar = Calendar.current
+        
+        return getMovies(shownAt: date).flatMap { movie in
+            movie.showings.filter { showing in
+                calendar.isDate(showing.date, inSameDayAs: date)
+            }
+        }
+    }
+    
     private func decode(data: Data) -> [Movie] {
         guard let userInfoContext = CodingUserInfoKey.context else { return [] }
         
