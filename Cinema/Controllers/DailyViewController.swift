@@ -12,23 +12,30 @@ extension DailyViewController: NavigationButtonDelegate {
     func tapped(_ sender: NavigationButton, _ gestureRecognizer: UITapGestureRecognizer) {
         
         if navigationItem.leftBarButtonItems?.contains(sender) ?? false {
-            manager.decreaseDate()
+            dateManager.decreaseDate()
         }
         
         if navigationItem.rightBarButtonItems?.contains(sender) ?? false {
-            manager.increaseDate()
+            dateManager.increaseDate()
         }
         
-        navigationItem.title = manager.selectedDate.asString()
+        navigationItem.title = dateManager.selectedDate.asString()
+        
+        refresh()
     }
 }
 
 class DailyViewController: UITableViewController {
     
-    let manager = DateManager()
+    private var datasource = [Movie]()
+    
+    private let dateManager = DateManager()
+    private let movieManager = MovieManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "ShowingCell", bundle: nil), forCellReuseIdentifier: "showingCell")
 
         if let button = navigationItem.leftBarButtonItem as? NavigationButton {
             button.delegate = self
@@ -38,22 +45,25 @@ class DailyViewController: UITableViewController {
             button.delegate = self
         }
     }
+    
+    private func refresh() {
+        datasource = movieManager.getMovies(shownAt: dateManager.selectedDate)
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return datasource.count
     }
     
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "showingCell", for: indexPath) as! ShowingCell
 
-        // Configure the cell...
+        cell.title.text = datasource[indexPath.row].title
 
         return cell
     }
-    */
 
     /*
     // MARK: - Navigation

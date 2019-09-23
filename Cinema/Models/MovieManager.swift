@@ -20,6 +20,17 @@ class MovieManager {
         }
     }
     
+    func getMovies(shownAt date: Date) -> [Movie] {
+        
+        let calendar = Calendar.current
+        
+        return movies.filter { movie in
+            movie.showings.contains { showing in
+                calendar.isDate(showing.date, inSameDayAs: date)
+            }
+        }
+    }
+    
     private func decode(data: Data) -> [Movie] {
         guard let userInfoContext = CodingUserInfoKey.context else { return [] }
         
