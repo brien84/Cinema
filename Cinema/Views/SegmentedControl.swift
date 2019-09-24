@@ -22,4 +22,13 @@ class SegmentedControl: UISegmentedControl {
             self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
         }
     }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.removeAllSegments()
+        DailyViewControllerSegments.allCases.forEach { segment in
+            self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
+        }
+    }
 }
