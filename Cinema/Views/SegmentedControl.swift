@@ -19,7 +19,7 @@ class SegmentedControl: UISegmentedControl {
         super.init(coder: aDecoder)
         
         self.removeAllSegments()
-        DailyViewControllerSegments.allCases.forEach { segment in
+        DailyVCSegments.allCases.forEach { segment in
             self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
         }
     }
@@ -29,7 +29,7 @@ class SegmentedControl: UISegmentedControl {
         super.init(frame: frame)
         
         self.removeAllSegments()
-        DailyViewControllerSegments.allCases.forEach { segment in
+        DailyVCSegments.allCases.forEach { segment in
             self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
         }
         

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DailyViewControllerSegments: Int, CaseIterable {
+enum DailyVCSegments: Int, CaseIterable {
     case Filmai
     case Seansai
 }
