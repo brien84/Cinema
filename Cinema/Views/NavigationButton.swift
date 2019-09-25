@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NavigationButtonDelegate: AnyObject {
-    func tapped(_ sender: NavigationButton, _ gestureRecognizer: UITapGestureRecognizer)
+    func buttonTap()
 }
 
 class NavigationButton: UIBarButtonItem {
@@ -22,7 +22,17 @@ class NavigationButton: UIBarButtonItem {
         self.action = #selector(tap)
     }
     
-    @objc private func tap(_ gestureRecognizer: UITapGestureRecognizer) {
-        delegate?.tapped(self, gestureRecognizer)
+    init(_ title: String) {
+        super.init()
+        
+        self.title = title
+        
+        self.target = self
+        self.action = #selector(tap)
+    }
+    
+    
+    @objc private func tap() {
+        delegate?.buttonTap()
     }
 }

@@ -19,6 +19,12 @@ extension DailyVC: SegmentedControlDelegate {
     }
 }
 
+extension DailyVC: NavigationButtonDelegate {
+    func buttonTap() {
+
+    }
+}
+
 class DailyVC: UIViewController {
     weak var container: UIView!
     weak var control: SegmentedControl!
@@ -68,7 +74,13 @@ class DailyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let rightButton = NavigationButton("+")
+        rightButton.delegate = self
+        self.navigationItem.rightBarButtonItem = rightButton
+        
+        let leftButton = NavigationButton("-")
+        leftButton.delegate = self
+        self.navigationItem.leftBarButtonItem = leftButton
         
         control.selectedSegmentIndex = DailyVCSegments.Seansai.rawValue
         segmentedControl(newIndex: control.selectedSegmentIndex)
@@ -77,7 +89,7 @@ class DailyVC: UIViewController {
     // MARK: - View Container methods
     
     private func updateContainer(with viewController: UITableViewController) {
-        removeCurrentVC()
+        removeCurrentViewController()
         show(viewController)
     }
 
@@ -88,7 +100,7 @@ class DailyVC: UIViewController {
         viewController.didMove(toParent: self)
     }
     
-    private func removeCurrentVC() {
+    private func removeCurrentViewController() {
         if let viewController = self.children.first {
             viewController.willMove(toParent: nil)
             viewController.view.removeFromSuperview()
