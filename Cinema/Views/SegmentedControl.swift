@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SegmentedControlDelegate: AnyObject {
-    func valueChange()
+    func segmentedControl(newIndex: Int)
 }
 
 class SegmentedControl: UISegmentedControl {
@@ -37,6 +37,6 @@ class SegmentedControl: UISegmentedControl {
     }
     
     @objc private func valueChange() {
-        delegate?.valueChange()
+        delegate?.segmentedControl(newIndex: self.selectedSegmentIndex)
     }
 }
