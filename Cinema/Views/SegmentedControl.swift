@@ -8,12 +8,13 @@
 
 import UIKit
 
-enum DailyViewControllerSegments: Int, CaseIterable {
-    case Filmai
-    case Seansai
+protocol SegmentedControlDelegate: AnyObject {
+    func valueChange()
 }
 
 class SegmentedControl: UISegmentedControl {
+    weak var delegate: SegmentedControlDelegate?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -23,6 +24,7 @@ class SegmentedControl: UISegmentedControl {
         }
     }
     
+    // TODO: init with generics
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -30,5 +32,11 @@ class SegmentedControl: UISegmentedControl {
         DailyViewControllerSegments.allCases.forEach { segment in
             self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
         }
+        
+        self.addTarget(self, action: #selector(valueChange), for: .valueChanged)
+    }
+    
+    @objc private func valueChange() {
+        delegate?.valueChange()
     }
 }
