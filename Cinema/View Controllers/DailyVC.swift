@@ -22,18 +22,22 @@ extension DailyVC: SegmentedControlDelegate {
 extension DailyVC: NavigationButtonDelegate {
     func buttonTap(_ sender: NavigationButton) {
         if navigationItem.leftBarButtonItems?.contains(sender) ?? false {
-            
+            dateManager.decreaseDate()
         }
         
         if navigationItem.rightBarButtonItems?.contains(sender) ?? false {
-            
+            dateManager.increaseDate()
         }
+        
+        updateNavigationTitle(with: dateManager.selectedDate.asString())
     }
 }
 
 class DailyVC: UIViewController {
-    weak var container: UIView!
-    weak var control: SegmentedControl!
+    private let dateManager = DateManager()
+    
+    private weak var container: UIView!
+    private weak var control: SegmentedControl!
     
     private lazy var movieVC: MovieTableVC = {
         let movieVC = MovieTableVC(style: .plain)
@@ -88,8 +92,14 @@ class DailyVC: UIViewController {
         leftButton.delegate = self
         self.navigationItem.leftBarButtonItem = leftButton
         
+        updateNavigationTitle(with: dateManager.selectedDate.asString())
+        
         control.selectedSegmentIndex = DailyVCSegments.Seansai.rawValue
         segmentedControl(newIndex: control.selectedSegmentIndex)
+    }
+    
+    private func updateNavigationTitle(with title: String) {
+        self.navigationItem.title = title
     }
     
     // MARK: - View Container methods

@@ -19,6 +19,7 @@ class DateManager {
     
     init() {
         self.dates = Date().datesInFuture(after: 14, of: .day)
+        //print(dates)
     }
     
     func decreaseDate() {
@@ -28,7 +29,9 @@ class DateManager {
     }
     
     func increaseDate() {
-        if currentIndex < (dates.count - 1) {
+        guard let lastIndex = dates.indices.last else { fatalError("Date array is empty!") }
+        
+        if currentIndex != lastIndex {
             currentIndex += 1
         }
     }
