@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NavigationButtonDelegate: AnyObject {
-    func buttonTap()
+    func buttonTap(_ sender: NavigationButton)
 }
 
 class NavigationButton: UIBarButtonItem {
@@ -33,6 +33,6 @@ class NavigationButton: UIBarButtonItem {
     
     
     @objc private func tap() {
-        delegate?.buttonTap()
+        delegate?.buttonTap(self)
     }
 }

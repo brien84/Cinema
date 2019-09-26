@@ -20,8 +20,14 @@ extension DailyVC: SegmentedControlDelegate {
 }
 
 extension DailyVC: NavigationButtonDelegate {
-    func buttonTap() {
-
+    func buttonTap(_ sender: NavigationButton) {
+        if navigationItem.leftBarButtonItems?.contains(sender) ?? false {
+            
+        }
+        
+        if navigationItem.rightBarButtonItems?.contains(sender) ?? false {
+            
+        }
     }
 }
 
