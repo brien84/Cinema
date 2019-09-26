@@ -11,6 +11,9 @@ import UIKit
 class ShowingCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var originalTitle: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var venue: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

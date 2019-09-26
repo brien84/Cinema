@@ -12,28 +12,53 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WZm-t9-D9Y" customClass="ShowingCell" customModule="Cinema" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WZm-t9-D9Y" id="B5e-oA-Lua">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="85.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGv-xu-Ahu">
-                        <rect key="frame" x="4" y="4" width="406" height="35.5"/>
+                        <rect key="frame" x="4" y="4" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRL-hu-2kZ">
+                        <rect key="frame" x="368" y="4" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgR-5e-xJ2">
+                        <rect key="frame" x="4" y="60.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXd-ep-4zf">
+                        <rect key="frame" x="368" y="60.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="DGv-xu-Ahu" secondAttribute="bottom" constant="4" id="LTr-1f-fD7"/>
-                    <constraint firstAttribute="trailing" secondItem="DGv-xu-Ahu" secondAttribute="trailing" constant="4" id="iQ3-Zb-KeI"/>
-                    <constraint firstItem="DGv-xu-Ahu" firstAttribute="top" secondItem="B5e-oA-Lua" secondAttribute="top" constant="4" id="lIJ-gS-Enr"/>
-                    <constraint firstItem="DGv-xu-Ahu" firstAttribute="leading" secondItem="B5e-oA-Lua" secondAttribute="leading" constant="4" id="vHo-Wn-3I8"/>
+                    <constraint firstItem="DGv-xu-Ahu" firstAttribute="top" secondItem="B5e-oA-Lua" secondAttribute="top" constant="4" id="CXY-51-5ZS"/>
+                    <constraint firstItem="DGv-xu-Ahu" firstAttribute="leading" secondItem="B5e-oA-Lua" secondAttribute="leading" constant="4" id="TBi-uX-6LR"/>
+                    <constraint firstAttribute="trailing" secondItem="lRL-hu-2kZ" secondAttribute="trailing" constant="4" id="Wzk-FQ-l5B"/>
+                    <constraint firstItem="lRL-hu-2kZ" firstAttribute="top" secondItem="B5e-oA-Lua" secondAttribute="top" constant="4" id="cr1-r3-XMT"/>
+                    <constraint firstAttribute="trailing" secondItem="cXd-ep-4zf" secondAttribute="trailing" constant="4" id="lH8-cD-hpQ"/>
+                    <constraint firstAttribute="bottom" secondItem="cXd-ep-4zf" secondAttribute="bottom" constant="4" id="tXH-wR-Rnv"/>
+                    <constraint firstAttribute="bottom" secondItem="IgR-5e-xJ2" secondAttribute="bottom" constant="4" id="vn7-zx-h31"/>
+                    <constraint firstItem="IgR-5e-xJ2" firstAttribute="leading" secondItem="B5e-oA-Lua" secondAttribute="leading" constant="4" id="w23-LG-Uv1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="originalTitle" destination="lRL-hu-2kZ" id="G11-Yr-DdX"/>
+                <outlet property="time" destination="IgR-5e-xJ2" id="uQg-h0-HOL"/>
                 <outlet property="title" destination="DGv-xu-Ahu" id="41D-8n-miN"/>
+                <outlet property="venue" destination="cXd-ep-4zf" id="9G7-Ge-O58"/>
             </connections>
             <point key="canvasLocation" x="-20" y="77"/>
         </tableViewCell>
