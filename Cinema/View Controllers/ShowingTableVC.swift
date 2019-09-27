@@ -19,6 +19,7 @@ class ShowingTableVC: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "ShowingCell", bundle: nil), forCellReuseIdentifier: "showingCell")
+        tableView.rowHeight = 110
     }
     
     override func viewWillAppear(_ animated: Bool) {

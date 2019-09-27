@@ -19,6 +19,7 @@ class MovieTableVC: UITableViewController {
         super.viewDidLoad()
 
         tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "movieCell")
+        tableView.rowHeight = 110
     }
     
     override func viewWillAppear(_ animated: Bool) {
