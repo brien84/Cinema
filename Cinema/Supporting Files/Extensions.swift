@@ -13,11 +13,15 @@ extension CodingUserInfoKey {
 }
 
 extension Date {
-    func asString() -> String {
+    func asString(excludeTime: Bool = false) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.string(from: self)
+        if excludeTime {
+            formatter.dateFormat = "yyyy-MM-dd"
+        } else {
+            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        }
         
+        return formatter.string(from: self)
     }
     
     func datesInFuture(after amount: Int, of component: Calendar.Component) -> [Date] {

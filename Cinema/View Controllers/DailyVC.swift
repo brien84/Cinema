@@ -34,7 +34,7 @@ extension DailyVC: NavigationButtonDelegate {
             updateDatasource()
         }
         
-        updateNavigationTitle(with: dateManager.selectedDate.asString())
+        updateNavigationTitle(with: dateManager.selectedDate.asString(excludeTime: true))
     }
 }
 
@@ -98,7 +98,7 @@ class DailyVC: UIViewController {
         leftButton.delegate = self
         self.navigationItem.leftBarButtonItem = leftButton
         
-        updateNavigationTitle(with: dateManager.selectedDate.asString())
+        updateNavigationTitle(with: dateManager.selectedDate.asString(excludeTime: true))
         
         control.selectedSegmentIndex = DailyVCSegments.Seansai.rawValue
         segmentedControl(newIndex: control.selectedSegmentIndex)
