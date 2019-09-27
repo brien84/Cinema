@@ -10,16 +10,16 @@
         <attribute name="released" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="runtime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="showings" toMany="YES" deletionRule="Nullify" destinationEntity="Showing" inverseName="newRelationship" inverseEntity="Showing" syncable="YES"/>
+        <relationship name="showings" toMany="YES" deletionRule="Nullify" destinationEntity="Showing" inverseName="parentMovie" inverseEntity="Showing" syncable="YES"/>
     </entity>
     <entity name="Showing" representedClassName=".Showing" syncable="YES">
         <attribute name="city" attributeType="String" syncable="YES"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="venue" attributeType="String" syncable="YES"/>
-        <relationship name="newRelationship" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="showings" inverseEntity="Movie" syncable="YES"/>
+        <relationship name="parentMovie" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="showings" inverseEntity="Movie" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Movie" positionX="609.12890625" positionY="-3675.52734375" width="128" height="193"/>
+        <element name="Movie" positionX="660.88671875" positionY="-3808.93359375" width="128" height="193"/>
         <element name="Showing" positionX="946.54296875" positionY="-3719.2734375" width="128" height="103"/>
     </elements>
 </model>

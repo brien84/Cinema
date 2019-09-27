@@ -9,8 +9,11 @@
 import UIKit
 
 class ShowingTableVC: UITableViewController {
-    
-    var datasource = [Showing]()
+    var datasource = [Showing]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,7 @@ class ShowingTableVC: UITableViewController {
         super.viewWillDisappear(animated)
         print("Showing VC DIS")
     }
-
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +40,12 @@ class ShowingTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showingCell", for: indexPath) as! ShowingCell
         
-        cell.title.text = "Showing"
+        let showing = datasource[indexPath.row]
+        
+        cell.title.text = showing.parentMovie.title
+        cell.originalTitle.text = showing.parentMovie.originalTitle
+        cell.venue.text = showing.venue
+        cell.time.text = showing.date.asString()
         
         return cell
     }

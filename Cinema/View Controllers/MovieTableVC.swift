@@ -9,8 +9,11 @@
 import UIKit
 
 class MovieTableVC: UITableViewController {
-    
-    var datasource = [Movie]()
+    var datasource = [Movie]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +40,13 @@ class MovieTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell
         
-        cell.title.text = "Movie"
-
+        let movie = datasource[indexPath.row]
+        
+        cell.title.text = movie.title
+        cell.originalTitle.text = movie.originalTitle
+        cell.runtime.text = movie.runtime
+        cell.rating.text = movie.rated
+        
         return cell
     }
 }

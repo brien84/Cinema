@@ -12,21 +12,26 @@ extension DailyVC: SegmentedControlDelegate {
     func segmentedControl(newIndex: Int) {
         if newIndex == DailyVCSegments.Filmai.rawValue {
             updateContainer(with: movieVC)
+            updateDatasource()
         }
         if newIndex == DailyVCSegments.Seansai.rawValue {
             updateContainer(with: showingVC)
+            updateDatasource()
         }
     }
 }
 
 extension DailyVC: NavigationButtonDelegate {
     func buttonTap(_ sender: NavigationButton) {
+        
         if navigationItem.leftBarButtonItems?.contains(sender) ?? false {
             dateManager.decreaseDate()
+            updateDatasource()
         }
         
         if navigationItem.rightBarButtonItems?.contains(sender) ?? false {
             dateManager.increaseDate()
+            updateDatasource()
         }
         
         updateNavigationTitle(with: dateManager.selectedDate.asString())
@@ -35,6 +40,7 @@ extension DailyVC: NavigationButtonDelegate {
 
 class DailyVC: UIViewController {
     private let dateManager = DateManager()
+    private let movieManager = MovieManager()
     
     private weak var container: UIView!
     private weak var control: SegmentedControl!
@@ -100,6 +106,20 @@ class DailyVC: UIViewController {
     
     private func updateNavigationTitle(with title: String) {
         self.navigationItem.title = title
+    }
+    
+    private func updateDatasource() {
+        if control.selectedSegmentIndex == DailyVCSegments.Filmai.rawValue {
+            if let vc = self.children.first as? MovieTableVC {
+                vc.datasource = movieManager.getMovies(shownAt: dateManager.selectedDate)
+
+            }
+        }
+        if control.selectedSegmentIndex == DailyVCSegments.Seansai.rawValue {
+            if let vc = self.children.first as? ShowingTableVC {
+                vc.datasource = movieManager.getShowings(shownAt: dateManager.selectedDate)
+            }
+        }
     }
     
     // MARK: - View Container methods
