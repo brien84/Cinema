@@ -30,6 +30,8 @@
 		2904C7BB233BE7F600407B64 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7B9233BE7F600407B64 /* MovieCell.swift */; };
 		2904C7BC233BE7F600407B64 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2904C7BA233BE7F600407B64 /* MovieCell.xib */; };
 		2904C9E6233EB5F100407B64 /* MovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9E5233EB5F100407B64 /* MovieVC.swift */; };
+		2904C9E9233FB4D600407B64 /* MovieView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2904C9E8233FB4D600407B64 /* MovieView.xib */; };
+		2904C9ED233FB76E00407B64 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9EC233FB76E00407B64 /* MovieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		2904C7B9233BE7F600407B64 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		2904C7BA233BE7F600407B64 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		2904C9E5233EB5F100407B64 /* MovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVC.swift; sourceTree = "<group>"; };
+		2904C9E8233FB4D600407B64 /* MovieView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieView.xib; sourceTree = "<group>"; };
+		2904C9EC233FB76E00407B64 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,8 @@
 			children = (
 				2904C7A42337D23F00407B64 /* NavigationButton.swift */,
 				2904C7AE23393A4E00407B64 /* SegmentedControl.swift */,
+				2904C9E8233FB4D600407B64 /* MovieView.xib */,
+				2904C9EC233FB76E00407B64 /* MovieView.swift */,
 				2904C7BD233BE80300407B64 /* Cells */,
 			);
 			path = Views;
@@ -328,6 +334,7 @@
 				2904C7712336982D00407B64 /* LaunchScreen.storyboard in Resources */,
 				2904C76E2336982D00407B64 /* Assets.xcassets in Resources */,
 				2904C7692336982B00407B64 /* Main.storyboard in Resources */,
+				2904C9E9233FB4D600407B64 /* MovieView.xib in Resources */,
 				2904C7A92339205D00407B64 /* ShowingCell.xib in Resources */,
 				2904C7BC233BE7F600407B64 /* MovieCell.xib in Resources */,
 			);
@@ -370,6 +377,7 @@
 				2904C7B6233BC6F700407B64 /* Constants.swift in Sources */,
 				2904C7AF23393A4E00407B64 /* SegmentedControl.swift in Sources */,
 				2904C76C2336982B00407B64 /* Cinema.xcdatamodeld in Sources */,
+				2904C9ED233FB76E00407B64 /* MovieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
