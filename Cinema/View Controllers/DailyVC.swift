@@ -90,6 +90,8 @@ class DailyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .white
+        
         let rightButton = NavigationButton("+")
         rightButton.delegate = self
         self.navigationItem.rightBarButtonItem = rightButton

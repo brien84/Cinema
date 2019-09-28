@@ -29,6 +29,7 @@
 		2904C7B8233BDE3000407B64 /* ShowingTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7B7233BDE3000407B64 /* ShowingTableVC.swift */; };
 		2904C7BB233BE7F600407B64 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7B9233BE7F600407B64 /* MovieCell.swift */; };
 		2904C7BC233BE7F600407B64 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2904C7BA233BE7F600407B64 /* MovieCell.xib */; };
+		2904C9E6233EB5F100407B64 /* MovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9E5233EB5F100407B64 /* MovieVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		2904C7B7233BDE3000407B64 /* ShowingTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingTableVC.swift; sourceTree = "<group>"; };
 		2904C7B9233BE7F600407B64 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		2904C7BA233BE7F600407B64 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		2904C9E5233EB5F100407B64 /* MovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				2904C7B3233A7EB900407B64 /* DailyVC.swift */,
-				2904C7992336A50F00407B64 /* MovieTableVC.swift */,
-				2904C7B7233BDE3000407B64 /* ShowingTableVC.swift */,
+				2904C9E5233EB5F100407B64 /* MovieVC.swift */,
+				2904C9E7233EB5FB00407B64 /* Table View Controllers */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -208,6 +210,15 @@
 				2904C7A82339205D00407B64 /* ShowingCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2904C9E7233EB5FB00407B64 /* Table View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2904C7992336A50F00407B64 /* MovieTableVC.swift */,
+				2904C7B7233BDE3000407B64 /* ShowingTableVC.swift */,
+			);
+			path = "Table View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2904C79A2336A50F00407B64 /* MovieTableVC.swift in Sources */,
+				2904C9E6233EB5F100407B64 /* MovieVC.swift in Sources */,
 				2904C7B8233BDE3000407B64 /* ShowingTableVC.swift in Sources */,
 				2904C7A7233825D800407B64 /* DateManager.swift in Sources */,
 				2904C7AB233920D500407B64 /* ShowingCell.swift in Sources */,
