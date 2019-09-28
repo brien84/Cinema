@@ -17,19 +17,13 @@ class SegmentedControl: UISegmentedControl {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        self.removeAllSegments()
-        DailyVCSegments.allCases.forEach { segment in
-            self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
-        }
     }
     
-    // TODO: init with generics
-    override init(frame: CGRect) {
+    init<T: RawRepresentable & CaseIterable>(frame: CGRect, segments: T.Type) where T.RawValue == Int {
         super.init(frame: frame)
         
         self.removeAllSegments()
-        DailyVCSegments.allCases.forEach { segment in
+        T.allCases.forEach { segment in
             self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
         }
         

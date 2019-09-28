@@ -23,7 +23,7 @@ class MovieVC: UIViewController {
         super.loadView()
         
         // SegmentedControl setup
-        let segmentedControl = SegmentedControl(frame: .zero)
+        let segmentedControl = SegmentedControl(frame: .zero, segments: MovieVCSegments.self)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(segmentedControl)
         

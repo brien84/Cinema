@@ -59,7 +59,7 @@ class DailyVC: UIViewController {
         super.loadView()
         
         // SegmentedControl setup
-        let segmentedControl = SegmentedControl(frame: .zero)
+        let segmentedControl = SegmentedControl(frame: .zero, segments: DailyVCSegments.self)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(segmentedControl)
         
