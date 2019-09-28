@@ -12,3 +12,8 @@ enum DailyVCSegments: Int, CaseIterable {
     case Filmai
     case Seansai
 }
+
+enum MovieVCSegments: Int, CaseIterable {
+    case Apie
+    case Seansai
+}
