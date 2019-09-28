@@ -10,14 +10,17 @@ import UIKit
 
 extension DailyVC: SegmentedControlDelegate {
     func segmentedControl(newIndex: Int) {
-        if newIndex == DailyVCSegments.Filmai.rawValue {
+        
+        switch newIndex {
+        case DailyVCSegments.Filmai.rawValue:
             updateContainer(with: movieVC)
-            updateDatasource()
-        }
-        if newIndex == DailyVCSegments.Seansai.rawValue {
+        case DailyVCSegments.Seansai.rawValue:
             updateContainer(with: showingVC)
-            updateDatasource()
+        default:
+            return
         }
+        
+        updateDatasource()
     }
 }
 

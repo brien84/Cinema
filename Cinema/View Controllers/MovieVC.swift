@@ -10,7 +10,15 @@ import UIKit
 
 extension MovieVC: SegmentedControlDelegate {
     func segmentedControl(newIndex: Int) {
-
+        
+        switch newIndex {
+        case MovieVCSegments.Apie.rawValue:
+            print("Apie")
+        case MovieVCSegments.Seansai.rawValue:
+            print("Seansai")
+        default:
+            return
+        }
     }
 }
 
