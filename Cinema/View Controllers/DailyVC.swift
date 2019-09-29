@@ -48,6 +48,7 @@ class DailyVC: UIViewController {
     private weak var container: UIView!
     private weak var control: SegmentedControl!
     
+    // TODO: revert lazy
     private lazy var movieVC: MovieTableVC = {
         let movieVC = MovieTableVC(style: .plain)
         return movieVC
@@ -117,7 +118,6 @@ class DailyVC: UIViewController {
         if control.selectedSegmentIndex == DailyVCSegments.Filmai.rawValue {
             if let vc = self.children.first as? MovieTableVC {
                 vc.datasource = movieManager.getMovies(shownAt: dateManager.selectedDate)
-
             }
         }
         if control.selectedSegmentIndex == DailyVCSegments.Seansai.rawValue {

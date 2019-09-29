@@ -51,8 +51,9 @@ class MovieTableVC: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = MovieVC()
-//        self.parent?.navigationController?.pushViewController(vc, animated: true)
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = MovieVC()
+        vc.movie = datasource[indexPath.row]
+        self.parent?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

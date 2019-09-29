@@ -16,7 +16,7 @@ class SegmentedControl: UISegmentedControl {
     weak var delegate: SegmentedControlDelegate?
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     init<T: RawRepresentable & CaseIterable>(frame: CGRect, segments: T.Type) where T.RawValue == Int {

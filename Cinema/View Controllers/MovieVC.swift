@@ -13,9 +13,9 @@ extension MovieVC: SegmentedControlDelegate {
         
         switch newIndex {
         case MovieVCSegments.Apie.rawValue:
-            print("Apie")
+            updateContainer(with: movieVC)
         case MovieVCSegments.Seansai.rawValue:
-            print("Seansai")
+            updateContainer(with: movieVC) //!!! TEMP
         default:
             return
         }
@@ -26,6 +26,9 @@ class MovieVC: UIViewController {
     
     private weak var container: UIView!
     private weak var control: SegmentedControl!
+    
+    var movie: Movie!
+    let movieVC = MovieViewVC()
     
     override func loadView() {
         super.loadView()
@@ -63,6 +66,28 @@ class MovieVC: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
-        container.backgroundColor = .red
+        movieVC.movie = movie
+    }
+    
+    // MARK: - View Container methods
+    
+    private func updateContainer(with viewController: UIViewController) {
+        removeCurrentViewController()
+        show(viewController)
+    }
+    
+    private func show(_ viewController: UIViewController) {
+        self.addChild(viewController)
+        viewController.view.frame = self.container.bounds
+        self.container.addSubview(viewController.view)
+        viewController.didMove(toParent: self)
+    }
+    
+    private func removeCurrentViewController() {
+        if let viewController = self.children.first {
+            viewController.willMove(toParent: nil)
+            viewController.view.removeFromSuperview()
+            viewController.removeFromParent()
+        }
     }
 }
