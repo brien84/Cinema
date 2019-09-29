@@ -15,7 +15,7 @@ extension MovieVC: SegmentedControlDelegate {
         case MovieVCSegments.Apie.rawValue:
             updateContainer(with: movieVC)
         case MovieVCSegments.Seansai.rawValue:
-            updateContainer(with: movieVC) //!!! TEMP
+            updateContainer(with: showingVC) //!!! TEMP
         default:
             return
         }
@@ -28,7 +28,8 @@ class MovieVC: UIViewController {
     private weak var control: SegmentedControl!
     
     var movie: Movie!
-    let movieVC = MovieViewVC()
+    private let movieVC = MovieViewVC()
+    private let showingVC = MovieViewShowingTableVC()
     
     override func loadView() {
         super.loadView()
@@ -67,6 +68,7 @@ class MovieVC: UIViewController {
         
         self.view.backgroundColor = .white
         movieVC.movie = movie
+        showingVC.datasource = movie.showings.map { $0 }
     }
     
     // MARK: - View Container methods

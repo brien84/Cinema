@@ -24,12 +24,12 @@ class MovieTableVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Movie VC APP")
+        print("MovieTableVC Appeared")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("Movie VC DIS")
+        print("MovieTableVC Disappeared")
     }
 
     // MARK: - Table view data source

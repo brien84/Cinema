@@ -33,6 +33,7 @@
 		2904C9E9233FB4D600407B64 /* MovieView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2904C9E8233FB4D600407B64 /* MovieView.xib */; };
 		2904C9ED233FB76E00407B64 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9EC233FB76E00407B64 /* MovieView.swift */; };
 		2904C9EF233FF53100407B64 /* MovieViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9EE233FF53100407B64 /* MovieViewVC.swift */; };
+		2904C9F12341208400407B64 /* MovieViewShowingTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9F02341208400407B64 /* MovieViewShowingTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		2904C9E8233FB4D600407B64 /* MovieView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieView.xib; sourceTree = "<group>"; };
 		2904C9EC233FB76E00407B64 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		2904C9EE233FF53100407B64 /* MovieViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewVC.swift; sourceTree = "<group>"; };
+		2904C9F02341208400407B64 /* MovieViewShowingTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewShowingTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				2904C7992336A50F00407B64 /* MovieTableVC.swift */,
 				2904C9EE233FF53100407B64 /* MovieViewVC.swift */,
 				2904C7B7233BDE3000407B64 /* ShowingTableVC.swift */,
+				2904C9F02341208400407B64 /* MovieViewShowingTableVC.swift */,
 			);
 			path = "Container Controllers";
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				2904C79A2336A50F00407B64 /* MovieTableVC.swift in Sources */,
 				2904C9E6233EB5F100407B64 /* MovieVC.swift in Sources */,
 				2904C7B8233BDE3000407B64 /* ShowingTableVC.swift in Sources */,
+				2904C9F12341208400407B64 /* MovieViewShowingTableVC.swift in Sources */,
 				2904C7A7233825D800407B64 /* DateManager.swift in Sources */,
 				2904C7AB233920D500407B64 /* ShowingCell.swift in Sources */,
 				2904C7642336982B00407B64 /* AppDelegate.swift in Sources */,
