@@ -8,10 +8,6 @@
 
 import Foundation
 
-extension CodingUserInfoKey {
-    static let context = CodingUserInfoKey(rawValue: "context")
-}
-
 extension Date {
     func asString(excludeTime: Bool = false) -> String {
         let formatter = DateFormatter()
@@ -37,4 +33,8 @@ extension Date {
         
         return dates
     }
+}
+
+extension Notification.Name {
+    static let didFinishFetching = Notification.Name("didFinishFetching")
 }

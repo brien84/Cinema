@@ -43,8 +43,9 @@ extension DailyVC: NavigationButtonDelegate {
 
 class DailyVC: UIViewController {
     private let dateManager = DateManager()
-    private let movieManager = MovieManager()
     
+    private var movieManager = MovieManager()
+
     private weak var container: UIView!
     private weak var control: SegmentedControl!
     
@@ -108,6 +109,15 @@ class DailyVC: UIViewController {
         
         control.selectedSegmentIndex = DailyVCSegments.Seansai.rawValue
         segmentedControl(newIndex: control.selectedSegmentIndex)
+        
+        NotificationCenter.default.addObserver(forName: .didFinishFetching, object: nil, queue: .main) { notification in
+            self.movieManagerDidFinishFetching()
+        }
+    }
+    
+    private func movieManagerDidFinishFetching() {
+        updateDatasource()
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func updateNavigationTitle(with title: String) {

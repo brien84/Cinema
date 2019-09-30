@@ -9,14 +9,25 @@
 import Foundation
 import UIKit
 
+private enum FetchError: Error {
+    case networkError
+    case noData
+    case decoding
+}
+
 class MovieManager {
     private var movies = [Movie]()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     init() {
-        getData { data in
-            self.movies = self.decode(data: data)
-            print(self.movies.count)
+        fetchMovies { result in
+            switch result {
+            case .success(let movies):
+                self.movies = movies
+                NotificationCenter.default.post(name: .didFinishFetching, object: nil)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     
@@ -40,29 +51,38 @@ class MovieManager {
         }
     }
     
-    private func decode(data: Data) -> [Movie] {
-        guard let userInfoContext = CodingUserInfoKey.context else { return [] }
+    private func decode(_ data: Data) -> Result<[Movie], Error> {
+        guard let userInfoContext = CodingUserInfoKey.context else { fatalError("MovieManager.decode(...): Could not get CodingUserInfoKey") }
         
         let decoder = JSONDecoder()
         decoder.userInfo[userInfoContext] = context
         decoder.dateDecodingStrategy = .iso8601
         
         do {
-            return try decoder.decode([Movie].self, from: data)
+            let movies = try decoder.decode([Movie].self, from: data)
+            return .success(movies)
         } catch {
-            print("Error decoding [Movie]! \(error)")
+            print("MovieManager.decode(...): \(error.localizedDescription)")
+            return .failure(FetchError.decoding)
         }
-        
-        return []
     }
     
-    private func getData(completionHandler: @escaping (Data) -> ()) {
-        guard let url = URL(string: "http://localhost:8080/hello") else { return }
+    private func fetchMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
+        guard let url = URL(string: "http://localhost:8080/hello") else { fatalError("MovieManager.fetchData(...): Invalid URL provided") }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else { return }
+            if let error = error {
+                print("MovieManager.fetchData(...): \(error.localizedDescription)")
+                completion(.failure(FetchError.networkError))
+            }
             
-            completionHandler(data)
+            guard let data = data else { return completion(.failure(FetchError.noData)) }
+            
+            completion(self.decode(data))
         }.resume()
     }
+}
+
+extension CodingUserInfoKey {
+    static let context = CodingUserInfoKey(rawValue: "context")
 }
