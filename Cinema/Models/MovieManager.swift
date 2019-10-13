@@ -68,7 +68,7 @@ class MovieManager {
     }
     
     private func fetchMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
-        guard let url = URL(string: "http://localhost:8080/hello") else { fatalError("MovieManager.fetchData(...): Invalid URL provided") }
+        guard let url = URL(string: "http://localhost:8080/movies") else { fatalError("MovieManager.fetchData(...): Invalid URL provided") }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {

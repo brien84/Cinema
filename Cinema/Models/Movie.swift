@@ -12,11 +12,11 @@ import CoreData
 class Movie: NSManagedObject, Decodable {
     @NSManaged var title: String?
     @NSManaged var originalTitle: String?
-    @NSManaged var runtime: String?
-    @NSManaged var rated: String?
+    @NSManaged var duration: String?
+    @NSManaged var ageRating: String?
     @NSManaged var genre: String?
     @NSManaged var country: String?
-    @NSManaged var released: String?
+    @NSManaged var releaseDate: String?
     @NSManaged var poster: String?
     @NSManaged var plot: String?
     @NSManaged var showings: Set<Showing>
@@ -24,11 +24,11 @@ class Movie: NSManagedObject, Decodable {
     private enum CodingKeys: String, CodingKey {
         case title
         case originalTitle
-        case runtime
-        case rated
+        case duration
+        case ageRating
         case genre
         case country
-        case released
+        case releaseDate
         case poster
         case plot
         case showings
@@ -49,11 +49,11 @@ class Movie: NSManagedObject, Decodable {
         
         title = try? values.decode(String.self, forKey: .title)
         originalTitle = try? values.decode(String.self, forKey: .originalTitle)
-        runtime = try? values.decode(String.self, forKey: .runtime)
-        rated = try? values.decode(String.self, forKey: .rated)
+        duration = try? values.decode(String.self, forKey: .duration)
+        ageRating = try? values.decode(String.self, forKey: .ageRating)
         genre = try? values.decode(String.self, forKey: .genre)
         country = try? values.decode(String.self, forKey: .country)
-        released = try? values.decode(String.self, forKey: .released)
+        releaseDate = try? values.decode(String.self, forKey: .releaseDate)
         poster = try? values.decode(String.self, forKey: .poster)
         plot = try? values.decode(String.self, forKey: .plot)
         

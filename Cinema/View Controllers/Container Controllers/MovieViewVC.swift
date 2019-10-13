@@ -41,9 +41,9 @@ class MovieViewVC: UIViewController {
             movieView.plot.text = movie.plot
             movieView.country.text = movie.country
             movieView.genre.text = movie.genre
-            movieView.rated.text = movie.rated
-            movieView.released.text = movie.released
-            movieView.runtime.text = movie.runtime
+            movieView.rated.text = movie.ageRating
+            movieView.released.text = movie.releaseDate
+            movieView.runtime.text = movie.duration
         }
     }
     

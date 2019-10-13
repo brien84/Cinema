@@ -45,8 +45,8 @@ class MovieTableVC: UITableViewController {
         
         cell.title.text = movie.title
         cell.originalTitle.text = movie.originalTitle
-        cell.runtime.text = movie.runtime
-        cell.rating.text = movie.rated
+        cell.runtime.text = movie.duration
+        cell.rating.text = movie.ageRating
         
         return cell
     }

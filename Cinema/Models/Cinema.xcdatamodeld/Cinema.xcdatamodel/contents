@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Movie" representedClassName=".Movie" syncable="YES">
+        <attribute name="ageRating" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="originalTitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plot" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="poster" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="rated" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="released" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="runtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="releaseDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="showings" toMany="YES" deletionRule="Nullify" destinationEntity="Showing" inverseName="parentMovie" inverseEntity="Showing" syncable="YES"/>
     </entity>
