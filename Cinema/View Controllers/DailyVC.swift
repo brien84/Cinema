@@ -28,8 +28,13 @@ extension DailyVC: NavigationButtonDelegate {
     func buttonTap(_ sender: NavigationButton) {
         
         if navigationItem.leftBarButtonItems?.contains(sender) ?? false {
-            dateManager.decreaseDate()
-            updateDatasource()
+            if sender.title == "O" {
+                print("Open menu!")
+                return
+            } else {
+                dateManager.decreaseDate()
+                updateDatasource()
+            }
         }
         
         if navigationItem.rightBarButtonItems?.contains(sender) ?? false {
@@ -101,7 +106,7 @@ class DailyVC: UIViewController {
         rightButton.delegate = self
         self.navigationItem.rightBarButtonItem = rightButton
         
-        let leftButton = NavigationButton("-")
+        let leftButton = NavigationButton("O")
         leftButton.delegate = self
         self.navigationItem.leftBarButtonItem = leftButton
         
@@ -113,6 +118,22 @@ class DailyVC: UIViewController {
         NotificationCenter.default.addObserver(forName: .didFinishFetching, object: nil, queue: .main) { notification in
             self.movieManagerDidFinishFetching()
         }
+        
+        NotificationCenter.default.addObserver(forName: .dateIndexDidChange, object: nil, queue: .main) { notification in
+            self.updateNavButtonAppearance(notification)
+        }
+    }
+    
+    private func updateNavButtonAppearance(_ notification: Notification) {
+        
+        guard let info = notification.userInfo as? [String: Bool] else { return }
+        
+        // TODO: Fix hardcode
+        guard let isIndexZero = info["isIndexZero"]  else { return }
+            
+        guard let navButton = navigationItem.leftBarButtonItems?.first else { return }
+       
+        navButton.title = isIndexZero ? "O" : "-"
     }
     
     private func movieManagerDidFinishFetching() {
