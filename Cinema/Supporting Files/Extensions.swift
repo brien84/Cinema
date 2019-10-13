@@ -37,4 +37,5 @@ extension Date {
 
 extension Notification.Name {
     static let didFinishFetching = Notification.Name("didFinishFetching")
+    static let dateIndexDidChange = Notification.Name("dateIndexDidChange")
 }

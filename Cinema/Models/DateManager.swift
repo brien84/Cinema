@@ -11,7 +11,12 @@ import Foundation
 class DateManager {
     private let dates: [Date]
     
-    private var currentIndex = 0
+    private var currentIndex = 0 {
+        didSet {
+            let info = self.currentIndex == 0 ? ["isIndexZero": true] : ["isIndexZero": false]
+            NotificationCenter.default.post(name: .dateIndexDidChange, object: nil, userInfo: info)
+        }
+    }
     
     var selectedDate: Date {
         return dates[currentIndex]
@@ -19,7 +24,6 @@ class DateManager {
     
     init() {
         self.dates = Date().datesInFuture(after: 14, of: .day)
-        //print(dates)
     }
     
     func decreaseDate() {
