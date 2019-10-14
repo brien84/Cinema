@@ -8,15 +8,14 @@
 
 import Foundation
 
-// TODO: CASES TO LOWERCASE
 enum DailyVCSegments: Int, CaseIterable {
-    case Filmai
-    case Seansai
+    case filmai
+    case seansai
 }
 
 enum MovieVCSegments: Int, CaseIterable {
-    case Apie
-    case Seansai
+    case apie
+    case seansai
 }
 
 enum City: String, CaseIterable {
