@@ -8,6 +8,7 @@
 
 import Foundation
 
+// TODO: CASES TO LOWERCASE
 enum DailyVCSegments: Int, CaseIterable {
     case Filmai
     case Seansai
@@ -16,4 +17,11 @@ enum DailyVCSegments: Int, CaseIterable {
 enum MovieVCSegments: Int, CaseIterable {
     case Apie
     case Seansai
+}
+
+enum City: String, CaseIterable {
+    case vilnius = "Vilnius"
+    case kaunas = "Kaunas"
+    case klaipeda = "Klaipėda"
+    case siauliai = "Šiauliai"
 }

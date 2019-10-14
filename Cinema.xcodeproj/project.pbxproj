@@ -34,6 +34,9 @@
 		2904C9ED233FB76E00407B64 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9EC233FB76E00407B64 /* MovieView.swift */; };
 		2904C9EF233FF53100407B64 /* MovieViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9EE233FF53100407B64 /* MovieViewVC.swift */; };
 		2904C9F12341208400407B64 /* MovieViewShowingTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9F02341208400407B64 /* MovieViewShowingTableVC.swift */; };
+		2904D0712353C79B00407B64 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0702353C79B00407B64 /* OptionsVC.swift */; };
+		2904D0742353C7CC00407B64 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0722353C7CC00407B64 /* OptionsCell.swift */; };
+		2904D0752353C7CC00407B64 /* OptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2904D0732353C7CC00407B64 /* OptionsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		2904C9EC233FB76E00407B64 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		2904C9EE233FF53100407B64 /* MovieViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewVC.swift; sourceTree = "<group>"; };
 		2904C9F02341208400407B64 /* MovieViewShowingTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewShowingTableVC.swift; sourceTree = "<group>"; };
+		2904D0702353C79B00407B64 /* OptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
+		2904D0722353C7CC00407B64 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
+		2904D0732353C7CC00407B64 /* OptionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,7 @@
 			children = (
 				2904C7B3233A7EB900407B64 /* DailyVC.swift */,
 				2904C9E5233EB5F100407B64 /* MovieVC.swift */,
+				2904D0702353C79B00407B64 /* OptionsVC.swift */,
 				2904C9E7233EB5FB00407B64 /* Container Controllers */,
 			);
 			path = "View Controllers";
@@ -218,6 +225,8 @@
 				2904C7BA233BE7F600407B64 /* MovieCell.xib */,
 				2904C7AA233920D500407B64 /* ShowingCell.swift */,
 				2904C7A82339205D00407B64 /* ShowingCell.xib */,
+				2904D0722353C7CC00407B64 /* OptionsCell.swift */,
+				2904D0732353C7CC00407B64 /* OptionsCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -340,6 +349,7 @@
 				2904C7712336982D00407B64 /* LaunchScreen.storyboard in Resources */,
 				2904C76E2336982D00407B64 /* Assets.xcassets in Resources */,
 				2904C7692336982B00407B64 /* Main.storyboard in Resources */,
+				2904D0752353C7CC00407B64 /* OptionsCell.xib in Resources */,
 				2904C9E9233FB4D600407B64 /* MovieView.xib in Resources */,
 				2904C7A92339205D00407B64 /* ShowingCell.xib in Resources */,
 				2904C7BC233BE7F600407B64 /* MovieCell.xib in Resources */,
@@ -378,10 +388,12 @@
 				2904C7B4233A7EB900407B64 /* DailyVC.swift in Sources */,
 				2904C7A52337D23F00407B64 /* NavigationButton.swift in Sources */,
 				2904C79E2336A69100407B64 /* Movie.swift in Sources */,
+				2904D0742353C7CC00407B64 /* OptionsCell.swift in Sources */,
 				2904C7A32336B09100407B64 /* Extensions.swift in Sources */,
 				2904C79C2336A60C00407B64 /* MovieManager.swift in Sources */,
 				2904C7BB233BE7F600407B64 /* MovieCell.swift in Sources */,
 				2904C7A02336A69B00407B64 /* Showing.swift in Sources */,
+				2904D0712353C79B00407B64 /* OptionsVC.swift in Sources */,
 				2904C7B6233BC6F700407B64 /* Constants.swift in Sources */,
 				2904C7AF23393A4E00407B64 /* SegmentedControl.swift in Sources */,
 				2904C76C2336982B00407B64 /* Cinema.xcdatamodeld in Sources */,
