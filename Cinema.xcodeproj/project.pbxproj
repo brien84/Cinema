@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2904C7642336982B00407B64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7632336982B00407B64 /* AppDelegate.swift */; };
-		2904C7692336982B00407B64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2904C7672336982B00407B64 /* Main.storyboard */; };
 		2904C76C2336982B00407B64 /* Cinema.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2904C76A2336982B00407B64 /* Cinema.xcdatamodeld */; };
 		2904C76E2336982D00407B64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2904C76D2336982D00407B64 /* Assets.xcassets */; };
 		2904C7712336982D00407B64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2904C76F2336982D00407B64 /* LaunchScreen.storyboard */; };
@@ -24,7 +23,6 @@
 		2904C7A92339205D00407B64 /* ShowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2904C7A82339205D00407B64 /* ShowingCell.xib */; };
 		2904C7AB233920D500407B64 /* ShowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7AA233920D500407B64 /* ShowingCell.swift */; };
 		2904C7AF23393A4E00407B64 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7AE23393A4E00407B64 /* SegmentedControl.swift */; };
-		2904C7B4233A7EB900407B64 /* DailyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7B3233A7EB900407B64 /* DailyVC.swift */; };
 		2904C7B6233BC6F700407B64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7B5233BC6F700407B64 /* Constants.swift */; };
 		2904C7B8233BDE3000407B64 /* ShowingTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7B7233BDE3000407B64 /* ShowingTableVC.swift */; };
 		2904C7BB233BE7F600407B64 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7B9233BE7F600407B64 /* MovieCell.swift */; };
@@ -37,6 +35,10 @@
 		2904D0712353C79B00407B64 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0702353C79B00407B64 /* OptionsVC.swift */; };
 		2904D0742353C7CC00407B64 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0722353C7CC00407B64 /* OptionsCell.swift */; };
 		2904D0752353C7CC00407B64 /* OptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2904D0732353C7CC00407B64 /* OptionsCell.xib */; };
+		2904D0772354D48E00407B64 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0762354D48E00407B64 /* ContainerVC.swift */; };
+		2904D07B2355111900407B64 /* DateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D07A2355111900407B64 /* DateVC.swift */; };
+		2904D07D23561D2100407B64 /* DateMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D07C23561D2100407B64 /* DateMovieVC.swift */; };
+		2904D07F23561D4300407B64 /* DateShowingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D07E23561D4300407B64 /* DateShowingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +61,6 @@
 /* Begin PBXFileReference section */
 		2904C7602336982B00407B64 /* Cinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2904C7632336982B00407B64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2904C7682336982B00407B64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2904C76B2336982B00407B64 /* Cinema.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cinema.xcdatamodel; sourceTree = "<group>"; };
 		2904C76D2336982D00407B64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2904C7702336982D00407B64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		2904C7A82339205D00407B64 /* ShowingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowingCell.xib; sourceTree = "<group>"; };
 		2904C7AA233920D500407B64 /* ShowingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingCell.swift; sourceTree = "<group>"; };
 		2904C7AE23393A4E00407B64 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
-		2904C7B3233A7EB900407B64 /* DailyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyVC.swift; sourceTree = "<group>"; };
 		2904C7B5233BC6F700407B64 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2904C7B7233BDE3000407B64 /* ShowingTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingTableVC.swift; sourceTree = "<group>"; };
 		2904C7B9233BE7F600407B64 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
@@ -93,6 +93,10 @@
 		2904D0702353C79B00407B64 /* OptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		2904D0722353C7CC00407B64 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
 		2904D0732353C7CC00407B64 /* OptionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsCell.xib; sourceTree = "<group>"; };
+		2904D0762354D48E00407B64 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		2904D07A2355111900407B64 /* DateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateVC.swift; sourceTree = "<group>"; };
+		2904D07C23561D2100407B64 /* DateMovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateMovieVC.swift; sourceTree = "<group>"; };
+		2904D07E23561D4300407B64 /* DateShowingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateShowingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +155,6 @@
 				2904C76D2336982D00407B64 /* Assets.xcassets */,
 				2904C7722336982D00407B64 /* Info.plist */,
 				2904C76F2336982D00407B64 /* LaunchScreen.storyboard */,
-				2904C7672336982B00407B64 /* Main.storyboard */,
 			);
 			path = Cinema;
 			sourceTree = "<group>";
@@ -177,7 +180,8 @@
 		2904C7942336A0EB00407B64 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2904C7B3233A7EB900407B64 /* DailyVC.swift */,
+				2904D0762354D48E00407B64 /* ContainerVC.swift */,
+				2904D07A2355111900407B64 /* DateVC.swift */,
 				2904C9E5233EB5F100407B64 /* MovieVC.swift */,
 				2904D0702353C79B00407B64 /* OptionsVC.swift */,
 				2904C9E7233EB5FB00407B64 /* Container Controllers */,
@@ -234,6 +238,8 @@
 		2904C9E7233EB5FB00407B64 /* Container Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2904D07C23561D2100407B64 /* DateMovieVC.swift */,
+				2904D07E23561D4300407B64 /* DateShowingVC.swift */,
 				2904C7992336A50F00407B64 /* MovieTableVC.swift */,
 				2904C9EE233FF53100407B64 /* MovieViewVC.swift */,
 				2904C7B7233BDE3000407B64 /* ShowingTableVC.swift */,
@@ -348,7 +354,6 @@
 			files = (
 				2904C7712336982D00407B64 /* LaunchScreen.storyboard in Resources */,
 				2904C76E2336982D00407B64 /* Assets.xcassets in Resources */,
-				2904C7692336982B00407B64 /* Main.storyboard in Resources */,
 				2904D0752353C7CC00407B64 /* OptionsCell.xib in Resources */,
 				2904C9E9233FB4D600407B64 /* MovieView.xib in Resources */,
 				2904C7A92339205D00407B64 /* ShowingCell.xib in Resources */,
@@ -377,16 +382,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2904D07B2355111900407B64 /* DateVC.swift in Sources */,
 				2904C9EF233FF53100407B64 /* MovieViewVC.swift in Sources */,
 				2904C79A2336A50F00407B64 /* MovieTableVC.swift in Sources */,
+				2904D07D23561D2100407B64 /* DateMovieVC.swift in Sources */,
 				2904C9E6233EB5F100407B64 /* MovieVC.swift in Sources */,
 				2904C7B8233BDE3000407B64 /* ShowingTableVC.swift in Sources */,
 				2904C9F12341208400407B64 /* MovieViewShowingTableVC.swift in Sources */,
+				2904D07F23561D4300407B64 /* DateShowingVC.swift in Sources */,
 				2904C7A7233825D800407B64 /* DateManager.swift in Sources */,
 				2904C7AB233920D500407B64 /* ShowingCell.swift in Sources */,
 				2904C7642336982B00407B64 /* AppDelegate.swift in Sources */,
-				2904C7B4233A7EB900407B64 /* DailyVC.swift in Sources */,
 				2904C7A52337D23F00407B64 /* NavigationButton.swift in Sources */,
+				2904D0772354D48E00407B64 /* ContainerVC.swift in Sources */,
 				2904C79E2336A69100407B64 /* Movie.swift in Sources */,
 				2904D0742353C7CC00407B64 /* OptionsCell.swift in Sources */,
 				2904C7A32336B09100407B64 /* Extensions.swift in Sources */,
@@ -433,14 +441,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2904C7672336982B00407B64 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2904C7682336982B00407B64 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2904C76F2336982D00407B64 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -503,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -558,7 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
