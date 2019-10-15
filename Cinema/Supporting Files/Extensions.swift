@@ -39,3 +39,14 @@ extension Notification.Name {
     static let didFinishFetching = Notification.Name("didFinishFetching")
     static let dateIndexDidChange = Notification.Name("dateIndexDidChange")
 }
+
+extension UserDefaults {
+    func save(city: City) {
+        UserDefaults.standard.set(city.rawValue, forKey: "city")
+    }
+    
+    func readCity() -> City? {
+        guard let city = UserDefaults.standard.string(forKey: "city") else { return nil }
+        return City(rawValue: city)
+    }
+}
