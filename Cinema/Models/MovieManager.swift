@@ -19,6 +19,9 @@ class MovieManager {
     private var movies = [Movie]()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    // TODO: MAKE NON FORCE-UNWRAPPED
+    var city: City!
+    
     init() {
         fetchMovies { result in
             switch result {
@@ -34,9 +37,15 @@ class MovieManager {
     func getMovies(shownAt date: Date) -> [Movie] {
         let calendar = Calendar.current
         
-        return movies.filter { movie in
+        let filtered = movies.filter { movie in
             movie.showings.contains { showing in
                 calendar.isDate(showing.date, inSameDayAs: date)
+            }
+        }
+        
+        return filtered.filter { movie in
+            movie.showings.contains { showing in
+                showing.city == city.rawValue
             }
         }
     }
@@ -44,11 +53,13 @@ class MovieManager {
     func getShowings(shownAt date: Date) -> [Showing] {
         let calendar = Calendar.current
         
-        return getMovies(shownAt: date).flatMap { movie in
+        let filtered =  getMovies(shownAt: date).flatMap { movie in
             movie.showings.filter { showing in
                 calendar.isDate(showing.date, inSameDayAs: date)
             }
         }
+        
+        return filtered.filter { $0.city == city.rawValue }
     }
     
     private func decode(_ data: Data) -> Result<[Movie], Error> {

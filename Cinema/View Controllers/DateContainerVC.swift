@@ -47,6 +47,9 @@ class DateContainerVC: ContainerVC {
         NotificationCenter.default.addObserver(forName: .dateIndexDidChange, object: nil, queue: .main) { notification in
             self.updateNavButtonAppearance(notification)
         }
+        
+        //
+        movies.city = City.vilnius
     }
     
     private func updateNavButtonAppearance(_ notification: Notification) {
