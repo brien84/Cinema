@@ -16,21 +16,16 @@ class NavigationButton: UIBarButtonItem {
     weak var delegate: NavigationButtonDelegate?
 
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.target = self
-        self.action = #selector(tap)
+        fatalError("init(coder:) has not been implemented")
     }
     
-    init(_ title: String) {
+    init(_ image: UIImage) {
         super.init()
         
-        self.title = title
-        
+        self.image = image
         self.target = self
         self.action = #selector(tap)
     }
-    
     
     @objc private func tap() {
         delegate?.buttonTap(self)
