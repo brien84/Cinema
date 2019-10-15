@@ -9,10 +9,11 @@
 import UIKit
 
 protocol SegmentedControlDelegate: AnyObject {
-    func segmentedControl(newIndex: Int)
+    func indexChanged(to newIndex: Int)
 }
 
 class SegmentedControl: UISegmentedControl {
+    
     weak var delegate: SegmentedControlDelegate?
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +32,6 @@ class SegmentedControl: UISegmentedControl {
     }
     
     @objc private func valueChange() {
-        delegate?.segmentedControl(newIndex: self.selectedSegmentIndex)
+        delegate?.indexChanged(to: self.selectedSegmentIndex)
     }
 }
