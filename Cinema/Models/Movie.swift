@@ -7,19 +7,18 @@
 //
 
 import Foundation
-import CoreData
 
-class Movie: NSManagedObject, Decodable {
-    @NSManaged var title: String?
-    @NSManaged var originalTitle: String?
-    @NSManaged var duration: String?
-    @NSManaged var ageRating: String?
-    @NSManaged var genre: String?
-    @NSManaged var country: String?
-    @NSManaged var releaseDate: String?
-    @NSManaged var poster: String?
-    @NSManaged var plot: String?
-    @NSManaged var showings: Set<Showing>
+class Movie: Decodable {
+    let title: String
+    let originalTitle: String?
+    let duration: String?
+    let ageRating: String?
+    let genre: String?
+    let country: String?
+    let releaseDate: String?
+    let poster: String?
+    let plot: String?
+    let showings: [Showing]
     
     private enum CodingKeys: String, CodingKey {
         case title
@@ -34,20 +33,10 @@ class Movie: NSManagedObject, Decodable {
         case showings
     }
     
-    required convenience init(from decoder: Decoder) throws {
-        guard
-            let userInfoContext = CodingUserInfoKey.context,
-            let managedObjectContext = decoder.userInfo[userInfoContext] as? NSManagedObjectContext,
-            let entity = NSEntityDescription.entity(forEntityName: "Movie", in: managedObjectContext)
-        else {
-            fatalError("Failed to decode Movie!")
-        }
-        
-        self.init(entity: entity, insertInto: managedObjectContext)
-        
+    required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        title = try? values.decode(String.self, forKey: .title)
+        title = try values.decode(String.self, forKey: .title)
         originalTitle = try? values.decode(String.self, forKey: .originalTitle)
         duration = try? values.decode(String.self, forKey: .duration)
         ageRating = try? values.decode(String.self, forKey: .ageRating)
@@ -57,6 +46,10 @@ class Movie: NSManagedObject, Decodable {
         poster = try? values.decode(String.self, forKey: .poster)
         plot = try? values.decode(String.self, forKey: .plot)
         
-        showings = try values.decode(Set<Showing>.self, forKey: .showings)
+        showings = try values.decode([Showing].self, forKey: .showings)
+        
+        showings.forEach { showing in
+            showing.parentMovie = self
+        }
     }
 }

@@ -17,8 +17,7 @@ private enum FetchError: Error {
 
 class MovieManager {
     private var movies = [Movie]()
-    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+
     // TODO: MAKE NON FORCE-UNWRAPPED
     var city: City!
     
@@ -63,10 +62,8 @@ class MovieManager {
     }
     
     private func decode(_ data: Data) -> Result<[Movie], Error> {
-        guard let userInfoContext = CodingUserInfoKey.context else { fatalError("MovieManager.decode(...): Could not get CodingUserInfoKey") }
-        
+
         let decoder = JSONDecoder()
-        decoder.userInfo[userInfoContext] = context
         decoder.dateDecodingStrategy = .iso8601
         
         do {
@@ -93,8 +90,4 @@ class MovieManager {
             completion(self.decode(data))
         }.resume()
     }
-}
-
-extension CodingUserInfoKey {
-    static let context = CodingUserInfoKey(rawValue: "context")
 }

@@ -43,8 +43,8 @@ class DateShowingVC: UITableViewController {
         
         let showing = datasource[indexPath.row]
         
-        cell.title.text = showing.parentMovie.title
-        cell.originalTitle.text = showing.parentMovie.originalTitle
+        cell.title.text = showing.parentMovie?.title
+        cell.originalTitle.text = showing.parentMovie?.originalTitle
         cell.venue.text = showing.venue
         cell.time.text = showing.date.asString()
         

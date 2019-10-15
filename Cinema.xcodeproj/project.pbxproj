@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2904C7642336982B00407B64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7632336982B00407B64 /* AppDelegate.swift */; };
-		2904C76C2336982B00407B64 /* Cinema.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2904C76A2336982B00407B64 /* Cinema.xcdatamodeld */; };
 		2904C76E2336982D00407B64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2904C76D2336982D00407B64 /* Assets.xcassets */; };
 		2904C7712336982D00407B64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2904C76F2336982D00407B64 /* LaunchScreen.storyboard */; };
 		2904C77C2336982D00407B64 /* CinemaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C77B2336982D00407B64 /* CinemaTests.swift */; };
@@ -59,7 +58,6 @@
 /* Begin PBXFileReference section */
 		2904C7602336982B00407B64 /* Cinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2904C7632336982B00407B64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2904C76B2336982B00407B64 /* Cinema.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cinema.xcdatamodel; sourceTree = "<group>"; };
 		2904C76D2336982D00407B64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2904C7702336982D00407B64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2904C7722336982D00407B64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -188,11 +186,10 @@
 		2904C7952336A10700407B64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2904C76A2336982B00407B64 /* Cinema.xcdatamodeld */,
 				2904C7A6233825D800407B64 /* DateManager.swift */,
 				2904C79D2336A69100407B64 /* Movie.swift */,
-				2904C79B2336A60C00407B64 /* MovieManager.swift */,
 				2904C79F2336A69B00407B64 /* Showing.swift */,
+				2904C79B2336A60C00407B64 /* MovieManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -396,7 +393,6 @@
 				2904D0712353C79B00407B64 /* OptionsVC.swift in Sources */,
 				2904C7B6233BC6F700407B64 /* Constants.swift in Sources */,
 				2904C7AF23393A4E00407B64 /* SegmentedControl.swift in Sources */,
-				2904C76C2336982B00407B64 /* Cinema.xcdatamodeld in Sources */,
 				2904C9ED233FB76E00407B64 /* MovieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -718,19 +714,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2904C76A2336982B00407B64 /* Cinema.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2904C76B2336982B00407B64 /* Cinema.xcdatamodel */,
-			);
-			currentVersion = 2904C76B2336982B00407B64 /* Cinema.xcdatamodel */;
-			path = Cinema.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2904C7582336982B00407B64 /* Project object */;
 }
