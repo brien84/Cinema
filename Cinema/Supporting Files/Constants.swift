@@ -6,16 +6,42 @@
 //  Copyright © 2019 Marius. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-enum DailyVCSegments: Int, CaseIterable {
-    case filmai
-    case seansai
+struct Constants {
+    struct Images {
+        static let options = UIImage(named: "options")!
+        static let left = UIImage(named: "arrowLeft")!
+        static let right = UIImage(named: "arrowRight")!
+    }
 }
 
-enum MovieVCSegments: Int, CaseIterable {
-    case apie
-    case seansai
+enum DateVCSegments: Int, CaseIterable, CustomStringConvertible {
+    case movies
+    case showings
+    
+    public var description: String {
+        switch self {
+        case .movies:
+            return "Filmai"
+        case .showings:
+            return "Seansai"
+        }
+    }
+}
+
+enum MovieVCSegments: Int, CaseIterable, CustomStringConvertible {
+    case about
+    case showings
+    
+    public var description: String {
+        switch self {
+        case .about:
+            return "Apie"
+        case .showings:
+            return "Seansai"
+        }
+    }
 }
 
 enum City: String, CaseIterable {
