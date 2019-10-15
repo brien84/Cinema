@@ -18,19 +18,12 @@ class OptionsVC: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "OptionsCell", bundle: nil), forCellReuseIdentifier: "optionsCell")
-        tableView.rowHeight = 110
-    }
-    
-    private func readUserDefaults() -> City? {
-        if let city = UserDefaults.standard.string(forKey: "city") {
-            return City(rawValue: city)
-        } else {
-            return nil
+        tableView.rowHeight = 60
+        
+        // Sets default value, if the app is launched for the first time.
+        if UserDefaults.standard.readCity() == nil {
+            UserDefaults.standard.save(city: .vilnius)
         }
-    }
-    
-    private func saveUserDefaults(city: City) {
-        UserDefaults.standard.set(city.rawValue, forKey: "city")
     }
 
     // MARK: - Table view data source
@@ -42,21 +35,17 @@ class OptionsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "optionsCell", for: indexPath) as! OptionsCell
 
-        let selectedCity = readUserDefaults()
-        
         cell.title.text = datasource[indexPath.row].rawValue
         
+        let selectedCity = UserDefaults.standard.readCity()
         cell.accessoryType = selectedCity == datasource[indexPath.row] ? .checkmark : .none
         
-        //cell.accessoryType = .none
-
         return cell
     }
     
+    // TODO: Send Notification
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        saveUserDefaults(city: datasource[indexPath.row])
+        UserDefaults.standard.save(city: datasource[indexPath.row])
         tableView.reloadData()
-        
     }
 }

@@ -31,8 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func isFirstStart() -> Bool {
-        // TODO: Make Constant
-        return UserDefaults.standard.string(forKey: "city") == nil
+        return UserDefaults.standard.readCity() == nil
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
