@@ -1,5 +1,5 @@
 //
-//  MovieTableVC.swift
+//  DateMovieVC.swift
 //  Cinema
 //
 //  Created by Marius on 21/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieTableVC: UITableViewController {
+class DateMovieVC: UITableViewController {
     var datasource = [Movie]() {
         didSet {
             tableView.reloadData()
@@ -24,12 +24,12 @@ class MovieTableVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("MovieTableVC Appeared")
+        print("DateMovieVC Appeared")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("MovieTableVC Disappeared")
+        print("DateMovieVC Disappeared")
     }
 
     // MARK: - Table view data source
@@ -52,7 +52,7 @@ class MovieTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = MovieVC()
+        let vc = MovieContainerVC()
         vc.movie = datasource[indexPath.row]
         self.parent?.navigationController?.pushViewController(vc, animated: true)
     }

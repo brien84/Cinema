@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let navController = UINavigationController(rootViewController: DailyVC())
+        let navController = UINavigationController(rootViewController: DateContainerVC())
+        
         if isFirstStart() {
             navController.pushViewController(OptionsVC(), animated: false)
         }
