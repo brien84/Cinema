@@ -13,10 +13,8 @@ class DateContainerVC: ContainerVC {
     private let dates = DateManager()
     private let movies = MovieManager()
     
-    //
     private let movieVC = DateMovieVC()
     private let showingsVC = DateShowingVC()
-    //
     
     init() {
         super.init(leftVC: movieVC, rightVC: showingsVC, segments: DateVCSegments.self)
@@ -40,8 +38,7 @@ class DateContainerVC: ContainerVC {
         
         updateNavigationTitle(with: dates.selectedDate.asString(excludeTime: true))
         
-        control.selectedSegmentIndex = 1
-        indexChanged(to: control.selectedSegmentIndex)
+        controlSelectedIndex = DateVCSegments.showings.rawValue
         
         NotificationCenter.default.addObserver(forName: .didFinishFetching, object: nil, queue: .main) { notification in
             self.movieManagerDidFinishFetching()
@@ -74,18 +71,24 @@ class DateContainerVC: ContainerVC {
     }
     
     private func updateDatasource() {
-        if control.selectedSegmentIndex == 0 {
+        if controlSelectedIndex == DateVCSegments.movies.rawValue {
             if let vc = self.children.first as? DateMovieVC {
                 vc.datasource = movies.getMovies(shownAt: dates.selectedDate)
             }
         }
-        if control.selectedSegmentIndex == 1 {
+        if controlSelectedIndex == DateVCSegments.showings.rawValue {
             if let vc = self.children.first as? DateShowingVC {
                 vc.datasource = movies.getShowings(shownAt: dates.selectedDate)
             }
         }
     }
     
+    // MARK: - SegmentedControlDelegate
+    
+    override func indexChanged(to newIndex: Int){
+        super.indexChanged(to: newIndex)
+        updateDatasource()
+    }
 }
 
 extension DateContainerVC: NavigationButtonDelegate {

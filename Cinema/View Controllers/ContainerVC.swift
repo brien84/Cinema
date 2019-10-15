@@ -8,10 +8,18 @@
 
 import UIKit
 
-class ContainerVC: UIViewController {
+class ContainerVC: UIViewController, SegmentedControlDelegate {
     
     private var container: UIView!
-    var control: SegmentedControl!
+    private var control: SegmentedControl!
+    
+    var controlSelectedIndex: Int {
+        get { return control.selectedSegmentIndex }
+        set {
+            control.selectedSegmentIndex = newValue
+            indexChanged(to: newValue)
+        }
+    }
     
     private let leftVC: UIViewController
     private let rightVC: UIViewController
@@ -33,9 +41,10 @@ class ContainerVC: UIViewController {
         super.loadView()
         
         // SegmentedControl setup
+       
+        // TODO: FIX THIS
         var segmentedControl: SegmentedControl
         
-        // TODO: FIX THIS
         if let segments = segments as? DateVCSegments.Type {
             segmentedControl = SegmentedControl(frame: .zero, segments: segments)
         } else if let segments = segments as? MovieVCSegments.Type {
@@ -43,6 +52,7 @@ class ContainerVC: UIViewController {
         } else {
             segmentedControl = SegmentedControl(frame: .zero, segments: DateVCSegments.self)
         }
+        //
         
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(segmentedControl)
@@ -98,9 +108,9 @@ class ContainerVC: UIViewController {
             viewController.removeFromParent()
         }
     }
-}
-
-extension ContainerVC: SegmentedControlDelegate {
+    
+    // MARK: - SegmentedControlDelegate
+    
     func indexChanged(to newIndex: Int) {
         switch newIndex {
         case 0:
