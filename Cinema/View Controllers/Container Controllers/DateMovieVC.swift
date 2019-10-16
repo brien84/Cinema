@@ -9,6 +9,7 @@
 import UIKit
 
 class DateMovieVC: UITableViewController {
+    
     var datasource = [Movie]() {
         didSet {
             tableView.reloadData()
@@ -22,16 +23,6 @@ class DateMovieVC: UITableViewController {
         tableView.rowHeight = 110
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("DateMovieVC Appeared")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("DateMovieVC Disappeared")
-    }
-
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

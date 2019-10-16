@@ -9,6 +9,7 @@
 import UIKit
 
 class DateShowingVC: UITableViewController {
+    
     var datasource = [Showing]() {
         didSet {
             tableView.reloadData()
@@ -20,16 +21,6 @@ class DateShowingVC: UITableViewController {
         
         tableView.register(UINib(nibName: "ShowingCell", bundle: nil), forCellReuseIdentifier: "showingCell")
         tableView.rowHeight = 110
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("DateShowingVC Appeared")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("DateShowingVC Disappeared")
     }
     
     // MARK: - Table view data source
@@ -49,5 +40,12 @@ class DateShowingVC: UITableViewController {
         cell.time.text = showing.date.asString()
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = MovieContainerVC()
+        guard let movie = datasource[indexPath.row].parentMovie else { return }
+        vc.movie = movie
+        self.parent?.navigationController?.pushViewController(vc, animated: true)
     }
 }

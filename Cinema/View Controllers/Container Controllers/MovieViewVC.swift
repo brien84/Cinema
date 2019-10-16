@@ -46,14 +46,4 @@ class MovieViewVC: UIViewController {
             movieView.runtime.text = movie.duration
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("MovieViewVC Appeared")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("MovieViewVC Disappeared")
-    }
 }

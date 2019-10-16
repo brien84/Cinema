@@ -9,6 +9,7 @@
 import UIKit
 
 class MovieShowingVC: UITableViewController {
+    
     var datasource = [Showing]() {
         didSet {
             tableView.reloadData()
@@ -20,16 +21,6 @@ class MovieShowingVC: UITableViewController {
         
         tableView.register(UINib(nibName: "ShowingCell", bundle: nil), forCellReuseIdentifier: "showingCell")
         tableView.rowHeight = 110
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("MovieShowingVC Appeared")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("MovieShowingVC Disappeared")
     }
     
     // MARK: - Table view data source
