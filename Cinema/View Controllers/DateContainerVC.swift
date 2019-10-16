@@ -59,29 +59,6 @@ class DateContainerVC: ContainerVC {
         controlSelectedIndex = DateVCSegments.showings.rawValue
     }
     
-    private func updateCity() {
-        guard let city = UserDefaults.standard.readCity() else { fatalError("DateContainerVC.updateCity: City is nil!") }
-        self.city = city
-        updateDatasource()
-    }
-    
-    private func updateNavButtonAppearance(_ notification: Notification) {
-        
-        guard let info = notification.userInfo as? [String: Bool] else { return }
-        
-        // TODO: Fix hardcode
-        guard let isIndexZero = info["isIndexZero"]  else { return }
-        
-        guard let navButton = navigationItem.leftBarButtonItems?.first else { return }
-        
-        navButton.title = isIndexZero ? "O" : "-"
-    }
-    
-    private func movieManagerDidFinishFetching() {
-        updateDatasource()
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     private func updateNavigationTitle(with title: String) {
         self.navigationItem.title = title
     }
@@ -99,6 +76,26 @@ class DateContainerVC: ContainerVC {
         }
     }
     
+    // MARK: - NotificationCenter Observer methods
+    
+    private func movieManagerDidFinishFetching() {
+        updateDatasource()
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func updateNavButtonAppearance(_ notification: Notification) {
+        guard let info = notification.userInfo as? [String: Bool] else { return }
+        guard let isIndexZero = info[Constants.UserInfo.isIndexZero] else { return }
+        guard let navButton = navigationItem.leftBarButtonItems?.first else { return }
+        navButton.image = isIndexZero ? Constants.Images.options : Constants.Images.left
+    }
+    
+    private func updateCity() {
+        guard let city = UserDefaults.standard.readCity() else { fatalError("DateContainerVC.updateCity: City is nil!") }
+        self.city = city
+        updateDatasource()
+    }
+    
     // MARK: - SegmentedControlDelegate
     
     override func indexChanged(to newIndex: Int){
@@ -107,8 +104,8 @@ class DateContainerVC: ContainerVC {
     }
 }
 
+// TODO: FIX THIS
 extension DateContainerVC: NavigationButtonDelegate {
-    
     func buttonTap(_ sender: NavigationButton) {
         if navigationItem.leftBarButtonItems?.contains(sender) ?? false {
             
