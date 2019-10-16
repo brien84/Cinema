@@ -9,12 +9,22 @@
 import Foundation
 
 extension Date {
-    func asString(excludeTime: Bool = false) -> String {
+    enum asStringFormat {
+        case fullDate
+        case excludeTime
+        case onlyTime
+    }
+    
+    func asString(format: asStringFormat = .fullDate) -> String {
         let formatter = DateFormatter()
-        if excludeTime {
-            formatter.dateFormat = "yyyy-MM-dd"
-        } else {
+        
+        switch format {
+        case .fullDate:
             formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        case .excludeTime:
+            formatter.dateFormat = "yyyy-MM-dd"
+        case .onlyTime:
+            formatter.dateFormat = "HH:mm"
         }
         
         return formatter.string(from: self)

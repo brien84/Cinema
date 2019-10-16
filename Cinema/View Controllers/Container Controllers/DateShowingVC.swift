@@ -37,7 +37,7 @@ class DateShowingVC: UITableViewController {
         cell.title.text = showing.parentMovie?.title
         cell.originalTitle.text = showing.parentMovie?.originalTitle
         cell.venue.text = showing.venue
-        cell.time.text = showing.date.asString()
+        cell.time.text = showing.date.asString(format: .onlyTime)
         
         return cell
     }
