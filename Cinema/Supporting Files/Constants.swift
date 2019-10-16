@@ -21,7 +21,7 @@ struct Constants {
 }
 
 // TODO: Rename Segments
-enum DateVCSegments: Int, CaseIterable, CustomStringConvertible {
+enum DateContainerSegments: Int, CaseIterable, CustomStringConvertible {
     case movies
     case showings
     
@@ -35,7 +35,7 @@ enum DateVCSegments: Int, CaseIterable, CustomStringConvertible {
     }
 }
 
-enum MovieVCSegments: Int, CaseIterable, CustomStringConvertible {
+enum MovieContainerSegments: Int, CaseIterable, CustomStringConvertible {
     case about
     case showings
     

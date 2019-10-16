@@ -45,12 +45,12 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         // TODO: FIX THIS
         var segmentedControl: SegmentedControl
         
-        if let segments = segments as? DateVCSegments.Type {
+        if let segments = segments as? DateContainerSegments.Type {
             segmentedControl = SegmentedControl(frame: .zero, segments: segments)
-        } else if let segments = segments as? MovieVCSegments.Type {
+        } else if let segments = segments as? MovieContainerSegments.Type {
             segmentedControl = SegmentedControl(frame: .zero, segments: segments)
         } else {
-            segmentedControl = SegmentedControl(frame: .zero, segments: DateVCSegments.self)
+            segmentedControl = SegmentedControl(frame: .zero, segments: DateContainerSegments.self)
         }
         //
         
@@ -109,7 +109,7 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         }
     }
     
-    // MARK: - SegmentedControlDelegate
+    // MARK: - SegmentedControlDelegate methods
     
     func indexChanged(to newIndex: Int) {
         switch newIndex {

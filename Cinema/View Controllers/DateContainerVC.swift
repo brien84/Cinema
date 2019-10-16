@@ -21,7 +21,7 @@ class DateContainerVC: ContainerVC {
     }()
     
     init() {
-        super.init(leftVC: movieVC, rightVC: showingsVC, segments: DateVCSegments.self)
+        super.init(leftVC: movieVC, rightVC: showingsVC, segments: DateContainerSegments.self)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,7 +56,7 @@ class DateContainerVC: ContainerVC {
         // Methods called manually on first load
         updateNavigationTitle(with: dates.selectedDate.asString(excludeTime: true))
         updateCity()
-        controlSelectedIndex = DateVCSegments.showings.rawValue
+        controlSelectedIndex = DateContainerSegments.showings.rawValue
     }
     
     private func updateNavigationTitle(with title: String) {
@@ -64,12 +64,12 @@ class DateContainerVC: ContainerVC {
     }
     
     private func updateDatasource() {
-        if controlSelectedIndex == DateVCSegments.movies.rawValue {
+        if controlSelectedIndex == DateContainerSegments.movies.rawValue {
             if let vc = self.children.first as? DateMovieVC {
                 vc.datasource = movies.getMovies(in: city, at: dates.selectedDate)
             }
         }
-        if controlSelectedIndex == DateVCSegments.showings.rawValue {
+        if controlSelectedIndex == DateContainerSegments.showings.rawValue {
             if let vc = self.children.first as? DateShowingVC {
                 vc.datasource = movies.getShowings(in: city, at: dates.selectedDate)
             }
