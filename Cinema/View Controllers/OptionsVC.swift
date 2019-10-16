@@ -43,9 +43,9 @@ class OptionsVC: UITableViewController {
         return cell
     }
     
-    // TODO: Send Notification
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UserDefaults.standard.save(city: datasource[indexPath.row])
+        NotificationCenter.default.post(name: .cityDidChange, object: nil)
         tableView.reloadData()
     }
 }

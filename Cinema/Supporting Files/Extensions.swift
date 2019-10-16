@@ -36,8 +36,10 @@ extension Date {
 }
 
 extension Notification.Name {
+    // TODO: Rename to be more clear
     static let didFinishFetching = Notification.Name("didFinishFetching")
     static let dateIndexDidChange = Notification.Name("dateIndexDidChange")
+    static let cityDidChange = Notification.Name("cityDidChange")
 }
 
 extension UserDefaults {
