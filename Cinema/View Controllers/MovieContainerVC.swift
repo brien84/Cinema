@@ -11,8 +11,13 @@ import UIKit
 class MovieContainerVC: ContainerVC {
     
     var movie: Movie!
+    
     private let movieVC = MovieViewVC()
     private let showingVC = MovieShowingVC()
+    
+    private var city: City = {
+        return UserDefaults.standard.readCity() ?? City.vilnius
+    }()
     
     init() {
         super.init(leftVC: movieVC, rightVC: showingVC, segments: DateContainerSegments.self)
@@ -26,7 +31,9 @@ class MovieContainerVC: ContainerVC {
         super.viewDidLoad()
 
         self.view.backgroundColor = .white
+        
         movieVC.movie = movie
-        showingVC.datasource = movie.showings.map { $0 }
+        showingVC.datasource = movie.getShowings(in: city)
+        controlSelectedIndex = MovieContainerSegments.about.rawValue
     }  
 }
