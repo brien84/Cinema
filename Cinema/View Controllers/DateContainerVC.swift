@@ -104,26 +104,23 @@ class DateContainerVC: ContainerVC {
     }
 }
 
-// TODO: FIX THIS
 extension DateContainerVC: NavigationButtonDelegate {
     func buttonTap(_ sender: NavigationButton) {
+        
         if navigationItem.leftBarButtonItems?.contains(sender) ?? false {
-            
             if sender.image == Constants.Images.options {
-                let optionsVC = OptionsVC()
-                navigationController?.pushViewController(optionsVC, animated: true)
+                navigationController?.pushViewController(OptionsVC(), animated: true)
                 return
             } else {
                 dates.decreaseDate()
-                updateDatasource()
             }
         }
         
         if navigationItem.rightBarButtonItems?.contains(sender) ?? false {
             dates.increaseDate()
-            updateDatasource()
         }
         
+        updateDatasource()
         updateNavigationTitle(with: dates.selectedDate.asString(excludeTime: true))
     }
 }
