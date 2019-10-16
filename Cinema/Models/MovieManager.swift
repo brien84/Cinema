@@ -18,9 +18,6 @@ private enum FetchError: Error {
 class MovieManager {
     private var movies = [Movie]()
 
-    // TODO: MAKE NON FORCE-UNWRAPPED
-    var city: City!
-    
     init() {
         fetchMovies { result in
             switch result {
@@ -33,34 +30,6 @@ class MovieManager {
         }
     }
     
-    func getMovies(shownAt date: Date) -> [Movie] {
-        let calendar = Calendar.current
-        
-        let filtered = movies.filter { movie in
-            movie.showings.contains { showing in
-                calendar.isDate(showing.date, inSameDayAs: date)
-            }
-        }
-        
-        return filtered.filter { movie in
-            movie.showings.contains { showing in
-                showing.city == city.rawValue
-            }
-        }
-    }
-    
-    func getShowings(shownAt date: Date) -> [Showing] {
-        let calendar = Calendar.current
-        
-        let filtered =  getMovies(shownAt: date).flatMap { movie in
-            movie.showings.filter { showing in
-                calendar.isDate(showing.date, inSameDayAs: date)
-            }
-        }
-        
-        return filtered.filter { $0.city == city.rawValue }
-    }
-    
     private func decode(_ data: Data) -> Result<[Movie], Error> {
 
         let decoder = JSONDecoder()
@@ -70,18 +39,18 @@ class MovieManager {
             let movies = try decoder.decode([Movie].self, from: data)
             return .success(movies)
         } catch {
-            print("MovieManager.decode(...): \(error.localizedDescription)")
+            print("MovieManager.decode: \(error.localizedDescription)")
             return .failure(FetchError.decoding)
         }
     }
     
     private func fetchMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
         // TODO: move URL to constants
-        guard let url = URL(string: "http://localhost:8080/movies") else { fatalError("MovieManager.fetchData(...): Invalid URL provided") }
+        guard let url = URL(string: "http://localhost:8080/movies") else { fatalError("MovieManager.fetchData: Invalid URL provided") }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                print("MovieManager.fetchData(...): \(error.localizedDescription)")
+                print("MovieManager.fetchData: \(error.localizedDescription)")
                 completion(.failure(FetchError.networkError))
             }
             
@@ -89,5 +58,46 @@ class MovieManager {
             
             completion(self.decode(data))
         }.resume()
+    }
+    
+    
+    func getMovies(in city: City, at date: Date) -> [Movie] {
+        return movies.filter { $0.isShown(in: city) && $0.isShown(at: date) }
+    }
+    
+    func getShowings(in city: City, at date: Date) -> [Showing] {
+        return movies.flatMap { $0.getShowings(in: city, at: date) }
+    }
+}
+
+// TODO: Access Control
+extension Movie {
+    func isShown(in city: City) -> Bool {
+        return self.showings.contains { $0.city == city.rawValue }
+    }
+    
+    func isShown(at date: Date) -> Bool {
+        let calendar = Calendar.current
+        
+        return self.showings.contains { calendar.isDate($0.date, inSameDayAs: date) }
+    }
+    
+    func getShowings(in city: City) -> [Showing] {
+        return self.showings.filter { $0.isShown(in: city) }
+    }
+    
+    func getShowings(in city: City, at date: Date) -> [Showing] {
+        return self.showings.filter { $0.isShown(in: city) && $0.isShown(at: date) }
+    }
+}
+
+extension Showing {
+    func isShown(in city: City) -> Bool {
+        return self.city == city.rawValue
+    }
+    
+    func isShown(at date: Date) -> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(self.date, inSameDayAs: date)
     }
 }

@@ -16,6 +16,10 @@ class DateContainerVC: ContainerVC {
     private let movieVC = DateMovieVC()
     private let showingsVC = DateShowingVC()
     
+    private var city: City = {
+        return UserDefaults.standard.readCity() ?? City.vilnius
+    }()
+    
     init() {
         super.init(leftVC: movieVC, rightVC: showingsVC, segments: DateVCSegments.self)
     }
@@ -27,7 +31,7 @@ class DateContainerVC: ContainerVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TODO: NAMES IN CONSTANTS
+        // Setup NavigationButtons
         let rightButton = NavigationButton(Constants.Images.right)
         rightButton.delegate = self
         self.navigationItem.rightBarButtonItem = rightButton
@@ -36,10 +40,7 @@ class DateContainerVC: ContainerVC {
         leftButton.delegate = self
         self.navigationItem.leftBarButtonItem = leftButton
         
-        updateNavigationTitle(with: dates.selectedDate.asString(excludeTime: true))
-        
-        controlSelectedIndex = DateVCSegments.showings.rawValue
-        
+        // Setup NotificationCenter Observers
         NotificationCenter.default.addObserver(forName: .didFinishFetching, object: nil, queue: .main) { notification in
             self.movieManagerDidFinishFetching()
         }
@@ -48,8 +49,20 @@ class DateContainerVC: ContainerVC {
             self.updateNavButtonAppearance(notification)
         }
         
-        //
-        movies.city = City.vilnius
+        NotificationCenter.default.addObserver(forName: .cityDidChange, object: nil, queue: .main) { notification in
+            self.updateCity()
+        }
+        
+        // Methods called manually on first load
+        updateNavigationTitle(with: dates.selectedDate.asString(excludeTime: true))
+        updateCity()
+        controlSelectedIndex = DateVCSegments.showings.rawValue
+    }
+    
+    private func updateCity() {
+        guard let city = UserDefaults.standard.readCity() else { fatalError("DateContainerVC.updateCity: City is nil!") }
+        self.city = city
+        updateDatasource()
     }
     
     private func updateNavButtonAppearance(_ notification: Notification) {
@@ -76,12 +89,12 @@ class DateContainerVC: ContainerVC {
     private func updateDatasource() {
         if controlSelectedIndex == DateVCSegments.movies.rawValue {
             if let vc = self.children.first as? DateMovieVC {
-                vc.datasource = movies.getMovies(shownAt: dates.selectedDate)
+                vc.datasource = movies.getMovies(in: city, at: dates.selectedDate)
             }
         }
         if controlSelectedIndex == DateVCSegments.showings.rawValue {
             if let vc = self.children.first as? DateShowingVC {
-                vc.datasource = movies.getShowings(shownAt: dates.selectedDate)
+                vc.datasource = movies.getShowings(in: city, at: dates.selectedDate)
             }
         }
     }
