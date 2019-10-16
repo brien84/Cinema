@@ -13,7 +13,7 @@ class DateManager {
     
     private var currentIndex = 0 {
         didSet {
-            let info = self.currentIndex == 0 ? ["isIndexZero": true] : ["isIndexZero": false]
+            let info = self.currentIndex == 0 ? [Constants.UserInfo.isIndexZero: true] : [Constants.UserInfo.isIndexZero: false]
             NotificationCenter.default.post(name: .dateIndexDidChange, object: nil, userInfo: info)
         }
     }

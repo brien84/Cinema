@@ -14,8 +14,13 @@ struct Constants {
         static let left = UIImage(named: "arrowLeft")!
         static let right = UIImage(named: "arrowRight")!
     }
+    
+    struct UserInfo {
+        static let isIndexZero = "isIndexZero"
+    }
 }
 
+// TODO: Rename Segments
 enum DateVCSegments: Int, CaseIterable, CustomStringConvertible {
     case movies
     case showings
