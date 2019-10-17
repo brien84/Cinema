@@ -22,11 +22,14 @@ class MovieViewVC: UIViewController {
         movieView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(movieView)
         
+        let bottomConstraint = movieView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+        bottomConstraint.priority = UILayoutPriority(rawValue: 999)
+        
         NSLayoutConstraint.activate([
             movieView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             movieView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             movieView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            movieView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+            bottomConstraint
         ])
         
         self.movieView = movieView
@@ -36,8 +39,8 @@ class MovieViewVC: UIViewController {
         super.viewDidLoad()
 
         if let movie = movie {
-            movieView.title.text = movie.title
-            movieView.originalTitle.text = movie.originalTitle
+            //movieView.title.text = movie.title
+           // movieView.originalTitle.text = movie.originalTitle
             movieView.plot.text = movie.plot
             movieView.country.text = movie.country
             movieView.genre.text = movie.genre

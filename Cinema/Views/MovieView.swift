@@ -9,8 +9,6 @@
 import UIKit
 
 class MovieView: UIView {
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var originalTitle: UILabel!
     @IBOutlet weak var runtime: UILabel!
     @IBOutlet weak var rated: UILabel!
     @IBOutlet weak var genre: UILabel!

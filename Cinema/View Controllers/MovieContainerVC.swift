@@ -20,7 +20,7 @@ class MovieContainerVC: ContainerVC {
     }()
     
     init() {
-        super.init(leftVC: movieVC, rightVC: showingVC, segments: DateContainerSegments.self)
+        super.init(leftVC: movieVC, rightVC: showingVC, segments: MovieContainerSegments.self)
     }
     
     required init?(coder aDecoder: NSCoder) {
