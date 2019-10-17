@@ -23,12 +23,11 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYM-w2-6Ap" userLabel="Container">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowLeft" translatesAutoresizingMaskIntoConstraints="NO" id="bKQ-YJ-r36" userLabel="Image">
-                                    <rect key="frame" x="8" y="8" width="398" height="388.5"/>
-                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bKQ-YJ-r36" userLabel="Image" customClass="NetworkImageView" customModule="Cinema" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="8" width="398" height="259"/>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MxN-yd-ko2">
-                                    <rect key="frame" x="8" y="404.5" width="398" height="129.5"/>
+                                    <rect key="frame" x="8" y="275" width="398" height="129.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mmh-pP-3F4">
                                             <rect key="frame" x="0.0" y="0.0" width="81.5" height="129.5"/>
@@ -104,7 +103,7 @@
                                     <viewLayoutGuide key="safeArea" id="H5B-3E-tC7"/>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IvI-V3-wQa" userLabel="Plot Container">
-                                    <rect key="frame" x="8" y="542" width="398" height="20.5"/>
+                                    <rect key="frame" x="8" y="412.5" width="398" height="20.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1f-cy-Amz">
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
@@ -124,7 +123,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="MxN-yd-ko2" firstAttribute="height" secondItem="bKQ-YJ-r36" secondAttribute="height" multiplier="1:3" id="Kkf-rG-Q87"/>
+                                <constraint firstItem="MxN-yd-ko2" firstAttribute="height" secondItem="bKQ-YJ-r36" secondAttribute="height" multiplier="1:2" id="Kkf-rG-Q87"/>
                                 <constraint firstItem="IvI-V3-wQa" firstAttribute="top" secondItem="MxN-yd-ko2" secondAttribute="bottom" constant="8" id="UDq-q9-ebc"/>
                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IvI-V3-wQa" secondAttribute="bottom" constant="8" id="bdA-5g-i6M"/>
                                 <constraint firstItem="bKQ-YJ-r36" firstAttribute="leading" secondItem="gYM-w2-6Ap" secondAttribute="leading" constant="8" id="cOL-nx-gw8"/>
@@ -160,6 +159,7 @@
                 <outlet property="country" destination="ssZ-FL-BrN" id="uvh-yJ-BtC"/>
                 <outlet property="genre" destination="SRU-3S-YCY" id="USj-72-Y5U"/>
                 <outlet property="plot" destination="z1f-cy-Amz" id="iUE-bg-Zs7"/>
+                <outlet property="poster" destination="bKQ-YJ-r36" id="OFx-qi-ngw"/>
                 <outlet property="rated" destination="BGx-Bc-88j" id="cTO-TN-zOK"/>
                 <outlet property="released" destination="x0R-Om-AM8" id="wvX-uT-V0f"/>
                 <outlet property="runtime" destination="8JV-KT-EXE" id="PHm-qt-58p"/>
@@ -167,7 +167,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
-    <resources>
-        <image name="arrowLeft" width="25" height="25"/>
-    </resources>
 </document>

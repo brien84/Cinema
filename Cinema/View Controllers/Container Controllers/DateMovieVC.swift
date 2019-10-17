@@ -39,6 +39,8 @@ class DateMovieVC: UITableViewController {
         cell.runtime.text = movie.duration
         cell.rating.text = movie.ageRating
         
+        cell.poster.url = URL(string: movie.poster!)
+        
         return cell
     }
     

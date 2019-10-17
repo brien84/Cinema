@@ -15,4 +15,5 @@ class MovieView: UIView {
     @IBOutlet weak var country: UILabel!
     @IBOutlet weak var released: UILabel!
     @IBOutlet weak var plot: UILabel!
+    @IBOutlet weak var poster: NetworkImageView!
 }

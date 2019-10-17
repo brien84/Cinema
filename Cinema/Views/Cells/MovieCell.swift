@@ -14,6 +14,7 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var originalTitle: UILabel!
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var runtime: UILabel!
+    @IBOutlet weak var poster: NetworkImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

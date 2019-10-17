@@ -41,6 +41,9 @@ class MovieViewVC: UIViewController {
         if let movie = movie {
             //movieView.title.text = movie.title
            // movieView.originalTitle.text = movie.originalTitle
+            
+            
+            movieView.poster.url = URL(string: movie.poster!)
             movieView.plot.text = movie.plot
             movieView.country.text = movie.country
             movieView.genre.text = movie.genre

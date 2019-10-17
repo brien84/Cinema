@@ -36,6 +36,7 @@
 		2904D0752353C7CC00407B64 /* OptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2904D0732353C7CC00407B64 /* OptionsCell.xib */; };
 		2904D0772354D48E00407B64 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0762354D48E00407B64 /* ContainerVC.swift */; };
 		2904D07B2355111900407B64 /* DateContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D07A2355111900407B64 /* DateContainerVC.swift */; };
+		2904D09F2358CFB000407B64 /* NetworkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D09E2358CFB000407B64 /* NetworkImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		2904D0732353C7CC00407B64 /* OptionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsCell.xib; sourceTree = "<group>"; };
 		2904D0762354D48E00407B64 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		2904D07A2355111900407B64 /* DateContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainerVC.swift; sourceTree = "<group>"; };
+		2904D09E2358CFB000407B64 /* NetworkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				2904C7A42337D23F00407B64 /* NavigationButton.swift */,
+				2904D09E2358CFB000407B64 /* NetworkImageView.swift */,
 				2904C7AE23393A4E00407B64 /* SegmentedControl.swift */,
 				2904C9E8233FB4D600407B64 /* MovieView.xib */,
 				2904C9EC233FB76E00407B64 /* MovieView.swift */,
@@ -384,6 +387,7 @@
 				2904C7642336982B00407B64 /* AppDelegate.swift in Sources */,
 				2904C7A52337D23F00407B64 /* NavigationButton.swift in Sources */,
 				2904D0772354D48E00407B64 /* ContainerVC.swift in Sources */,
+				2904D09F2358CFB000407B64 /* NetworkImageView.swift in Sources */,
 				2904C79E2336A69100407B64 /* Movie.swift in Sources */,
 				2904D0742353C7CC00407B64 /* OptionsCell.swift in Sources */,
 				2904C7A32336B09100407B64 /* Extensions.swift in Sources */,
