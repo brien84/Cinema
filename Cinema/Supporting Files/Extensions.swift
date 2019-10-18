@@ -45,6 +45,12 @@ extension Date {
     }
 }
 
+extension String {
+    func toURL() -> URL? {
+        return URL(string: self)
+    }
+}
+
 extension Notification.Name {
     // TODO: Rename to be more clear
     static let didFinishFetching = Notification.Name("didFinishFetching")
