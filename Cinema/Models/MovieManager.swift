@@ -45,10 +45,8 @@ class MovieManager {
     }
     
     private func fetchMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
-        // TODO: move URL to constants
-        guard let url = URL(string: "http://localhost:8080/movies") else { fatalError("MovieManager.fetchData: Invalid URL provided") }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: Constants.URLs.api) { data, response, error in
             if let error = error {
                 print("MovieManager.fetchData: \(error.localizedDescription)")
                 completion(.failure(FetchError.networkError))

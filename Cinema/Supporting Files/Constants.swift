@@ -9,6 +9,10 @@
 import UIKit
 
 struct Constants {
+    struct URLs {
+        static let api = URL(string: "http://localhost:8080/movies")!
+    }
+    
     struct Images {
         static let options = UIImage(named: "options")!
         static let left = UIImage(named: "arrowLeft")!
@@ -20,7 +24,6 @@ struct Constants {
     }
 }
 
-// TODO: Rename Segments
 enum DateContainerSegments: Int, CaseIterable, CustomStringConvertible {
     case movies
     case showings
