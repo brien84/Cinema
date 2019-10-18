@@ -30,7 +30,7 @@ class DateContainerVC: ContainerVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Setup NavigationButtons
         let rightButton = NavigationButton(Constants.Images.right)
         rightButton.delegate = self

@@ -19,8 +19,12 @@ class DateMovieVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "movieCell")
-        tableView.rowHeight = 110
+        tableView.register(UINib(nibName: "DateMovieCell", bundle: nil), forCellReuseIdentifier: "dateMovieCell")
+        
+        self.tableView.tableFooterView = UIView()
+        tableView.rowHeight = 150
+        tableView.backgroundColor = Constants.Colors.light
+        tableView.separatorColor = Constants.Colors.blue
     }
     
     // MARK: - Table view data source
@@ -30,16 +34,15 @@ class DateMovieVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dateMovieCell", for: indexPath) as! DateMovieCell
         
         let movie = datasource[indexPath.row]
         
+        cell.poster.url = movie.poster?.toURL()
         cell.title.text = movie.title
         cell.originalTitle.text = movie.originalTitle
-        cell.runtime.text = movie.duration
-        cell.rating.text = movie.ageRating
-        
-        cell.poster.url = URL(string: movie.poster!)
+        cell.duration.text = movie.duration
+        cell.ageRating.text = movie.ageRating
         
         return cell
     }

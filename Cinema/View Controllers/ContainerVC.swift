@@ -59,8 +59,8 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
     
         NSLayoutConstraint.activate([
             segmentedControl.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            segmentedControl.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
-            segmentedControl.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
+            segmentedControl.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 32),
+            segmentedControl.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -32),
         ])
     
         segmentedControl.delegate = self
@@ -84,7 +84,8 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = Constants.Colors.light
+        control.tintColor = Constants.Colors.lightBlue
     }
     
     // MARK: - Container View methods
