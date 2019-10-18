@@ -68,13 +68,12 @@ class MovieManager {
     }
 }
 
-// TODO: Access Control
 extension Movie {
-    func isShown(in city: City) -> Bool {
+    fileprivate func isShown(in city: City) -> Bool {
         return self.showings.contains { $0.city == city.rawValue }
     }
     
-    func isShown(at date: Date) -> Bool {
+    fileprivate func isShown(at date: Date) -> Bool {
         let calendar = Calendar.current
         
         return self.showings.contains { calendar.isDate($0.date, inSameDayAs: date) }
@@ -90,11 +89,11 @@ extension Movie {
 }
 
 extension Showing {
-    func isShown(in city: City) -> Bool {
+    fileprivate func isShown(in city: City) -> Bool {
         return self.city == city.rawValue
     }
     
-    func isShown(at date: Date) -> Bool {
+    fileprivate func isShown(at date: Date) -> Bool {
         let calendar = Calendar.current
         return calendar.isDate(self.date, inSameDayAs: date)
     }
