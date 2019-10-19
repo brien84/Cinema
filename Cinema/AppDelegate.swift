@@ -19,11 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let navController = UINavigationController(rootViewController: DateContainerVC())
-        
+        navController.navigationBar.tintColor = Constants.Colors.light
+        navController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Constants.Colors.dark]
+
         if isFirstStart() {
             navController.pushViewController(OptionsVC(), animated: false)
         }
-        
+
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
