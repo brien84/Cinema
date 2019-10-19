@@ -19,7 +19,7 @@ class DateMovieVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UINib(nibName: "DateMovieCell", bundle: nil), forCellReuseIdentifier: "dateMovieCell")
+        tableView.register(UINib(nibName: "DateContainerCell", bundle: nil), forCellReuseIdentifier: "dateContainerCell")
         
         self.tableView.tableFooterView = UIView()
         tableView.rowHeight = 150
@@ -34,15 +34,15 @@ class DateMovieVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dateMovieCell", for: indexPath) as! DateMovieCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dateContainerCell", for: indexPath) as! DateContainerCell
         
         let movie = datasource[indexPath.row]
         
         cell.poster.url = movie.poster?.toURL()
         cell.title.text = movie.title
         cell.originalTitle.text = movie.originalTitle
-        cell.duration.text = movie.duration
-        cell.ageRating.text = movie.ageRating
+        cell.leftLabel.text = movie.duration
+        cell.rightLabel.text = movie.ageRating
         
         return cell
     }

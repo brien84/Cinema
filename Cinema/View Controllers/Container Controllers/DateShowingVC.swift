@@ -19,8 +19,12 @@ class DateShowingVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: "ShowingCell", bundle: nil), forCellReuseIdentifier: "showingCell")
-        tableView.rowHeight = 110
+        tableView.register(UINib(nibName: "DateContainerCell", bundle: nil), forCellReuseIdentifier: "dateContainerCell")
+        
+        self.tableView.tableFooterView = UIView()
+        tableView.rowHeight = 150
+        tableView.backgroundColor = Constants.Colors.light
+        tableView.separatorColor = Constants.Colors.blue
     }
     
     // MARK: - Table view data source
@@ -30,14 +34,15 @@ class DateShowingVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "showingCell", for: indexPath) as! ShowingCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dateContainerCell", for: indexPath) as! DateContainerCell
         
         let showing = datasource[indexPath.row]
         
+        cell.poster.url = showing.parentMovie?.poster?.toURL()
         cell.title.text = showing.parentMovie?.title
         cell.originalTitle.text = showing.parentMovie?.originalTitle
-        cell.venue.text = showing.venue
-        cell.time.text = showing.date.asString(format: .onlyTime)
+        cell.leftLabel.text = showing.venue
+        cell.rightLabel.text = showing.date.asString(format: .onlyTime)
         
         return cell
     }
