@@ -52,7 +52,6 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         } else {
             segmentedControl = SegmentedControl(frame: .zero, segments: DateContainerSegments.self)
         }
-        //
         
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(segmentedControl)
@@ -65,6 +64,20 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
     
         segmentedControl.delegate = self
         self.control = segmentedControl
+        
+        // Separator View setup
+        let separator = UIView(frame: .zero)
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(separator)
+        
+        NSLayoutConstraint.activate([
+            separator.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 16),
+            separator.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            separator.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            separator.heightAnchor.constraint(equalToConstant: 1.0)
+        ])
+        
+        separator.backgroundColor = Constants.Colors.blue
     
         // Container View setup
         let container = UIView(frame: .zero)
@@ -72,7 +85,7 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         self.view.addSubview(container)
     
         NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 16),
+            container.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 0),
             container.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             container.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             container.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
@@ -85,7 +98,7 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         super.viewDidLoad()
 
         self.view.backgroundColor = Constants.Colors.light
-        control.tintColor = Constants.Colors.lightBlue
+        control.tintColor = Constants.Colors.blue
     }
     
     // MARK: - Container View methods
