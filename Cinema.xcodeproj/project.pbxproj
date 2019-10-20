@@ -223,10 +223,10 @@
 			children = (
 				2904C7B9233BE7F600407B64 /* DateContainerCell.swift */,
 				2904C7BA233BE7F600407B64 /* DateContainerCell.xib */,
-				2904D0722353C7CC00407B64 /* OptionsCell.swift */,
-				2904D0732353C7CC00407B64 /* OptionsCell.xib */,
 				2904D0A0235A4CB300407B64 /* MovieShowingCell.swift */,
 				2904D0A1235A4CB300407B64 /* MovieShowingCell.xib */,
+				2904D0722353C7CC00407B64 /* OptionsCell.swift */,
+				2904D0732353C7CC00407B64 /* OptionsCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -236,8 +236,8 @@
 			children = (
 				2904C7992336A50F00407B64 /* DateMovieVC.swift */,
 				2904C7B7233BDE3000407B64 /* DateShowingVC.swift */,
-				2904C9EE233FF53100407B64 /* MovieViewVC.swift */,
 				2904C9F02341208400407B64 /* MovieShowingVC.swift */,
+				2904C9EE233FF53100407B64 /* MovieViewVC.swift */,
 			);
 			path = "Container Controllers";
 			sourceTree = "<group>";

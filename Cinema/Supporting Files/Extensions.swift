@@ -13,10 +13,13 @@ extension Date {
         case fullDate
         case excludeTime
         case onlyTime
+        case monthNameAndDay
     }
     
     func asString(format: asStringFormat = .fullDate) -> String {
         let formatter = DateFormatter()
+        
+        formatter.locale = Locale(identifier: "lt")
         
         switch format {
         case .fullDate:
@@ -25,6 +28,8 @@ extension Date {
             formatter.dateFormat = "yyyy-MM-dd"
         case .onlyTime:
             formatter.dateFormat = "HH:mm"
+        case .monthNameAndDay:
+            formatter.dateFormat = "MMMM d"
         }
         
         return formatter.string(from: self)
