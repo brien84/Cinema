@@ -16,5 +16,10 @@ class OptionsCell: UITableViewCell {
         super.awakeFromNib()
         
         self.selectionStyle = .none
+        self.backgroundColor = Constants.Colors.light
+        self.accessoryView?.tintColor = Constants.Colors.blue
+        
+        title.textColor = Constants.Colors.dark
+        title.font = UIFont(name: "HelveticaNeue-Light", size: 20.0)!
     }
 }

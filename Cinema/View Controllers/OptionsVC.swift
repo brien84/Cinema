@@ -18,7 +18,13 @@ class OptionsVC: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "OptionsCell", bundle: nil), forCellReuseIdentifier: "optionsCell")
-        tableView.rowHeight = 60
+        
+        tableView.rowHeight = 50
+        tableView.backgroundColor = Constants.Colors.light
+        tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
+        
+        self.navigationItem.title = "Pasirinkite miestą"
         
         // Sets default value, if the app is launched for the first time.
         if UserDefaults.standard.readCity() == nil {

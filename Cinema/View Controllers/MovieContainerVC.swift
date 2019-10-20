@@ -15,10 +15,6 @@ class MovieContainerVC: ContainerVC {
     private let movieVC = MovieViewVC()
     private let showingVC = MovieShowingVC()
     
-    private var city: City = {
-        return UserDefaults.standard.readCity() ?? City.vilnius
-    }()
-    
     init() {
         super.init(leftVC: movieVC, rightVC: showingVC, segments: MovieContainerSegments.self)
     }
@@ -29,11 +25,16 @@ class MovieContainerVC: ContainerVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = .white
+        
+        self.navigationItem.title = movie.title
+        
+        self.view.backgroundColor = Constants.Colors.light
         
         movieVC.movie = movie
+        
+        let city = UserDefaults.standard.readCity() ?? City.vilnius
         showingVC.datasource = movie.getShowings(in: city)
+        
         controlSelectedIndex = MovieContainerSegments.about.rawValue
     }  
 }

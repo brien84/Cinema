@@ -20,17 +20,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8S-iE-aDt">
-                        <rect key="frame" x="4" y="4" width="312" height="35.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="16" y="8" width="288" height="27.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="t8S-iE-aDt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="LXs-89-LZb"/>
-                    <constraint firstAttribute="bottom" secondItem="t8S-iE-aDt" secondAttribute="bottom" constant="4" id="SM3-75-tfm"/>
-                    <constraint firstAttribute="trailing" secondItem="t8S-iE-aDt" secondAttribute="trailing" constant="4" id="pGw-OD-GVy"/>
-                    <constraint firstItem="t8S-iE-aDt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="wkI-hO-30g"/>
+                    <constraint firstItem="t8S-iE-aDt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="LXs-89-LZb"/>
+                    <constraint firstAttribute="bottom" secondItem="t8S-iE-aDt" secondAttribute="bottom" constant="8" id="SM3-75-tfm"/>
+                    <constraint firstAttribute="trailing" secondItem="t8S-iE-aDt" secondAttribute="trailing" constant="16" id="pGw-OD-GVy"/>
+                    <constraint firstItem="t8S-iE-aDt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="wkI-hO-30g"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

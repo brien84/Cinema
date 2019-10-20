@@ -21,10 +21,12 @@ class NavigationButton: UIBarButtonItem {
     
     init(_ image: UIImage) {
         super.init()
-        
+    
         self.image = image
         self.target = self
         self.action = #selector(tap)
+        
+        self.tintColor = Constants.Colors.blue
     }
     
     @objc private func tap() {

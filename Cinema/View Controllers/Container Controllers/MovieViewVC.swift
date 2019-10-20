@@ -16,9 +16,7 @@ class MovieViewVC: UIViewController {
     override func loadView() {
         super.loadView()
         
-        let allViewsInXibArray = Bundle.main.loadNibNamed("MovieView", owner: self, options: nil)
-        guard let movieView = allViewsInXibArray?.first as? MovieView else { fatalError("Failed to init MovieView") }
-        movieView.frame = .zero
+        let movieView = MovieView(frame: .zero)
         movieView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(movieView)
         
@@ -39,17 +37,13 @@ class MovieViewVC: UIViewController {
         super.viewDidLoad()
 
         if let movie = movie {
-            //movieView.title.text = movie.title
-           // movieView.originalTitle.text = movie.originalTitle
-            
-            
-            movieView.poster.url = URL(string: movie.poster!)
-            movieView.plot.text = movie.plot
-            movieView.country.text = movie.country
+            movieView.poster.url = movie.poster?.toURL()
+            movieView.duration.text = movie.duration
+            movieView.ageRating.text = movie.ageRating
             movieView.genre.text = movie.genre
-            movieView.rated.text = movie.ageRating
-            movieView.released.text = movie.releaseDate
-            movieView.runtime.text = movie.duration
+            movieView.country.text = movie.country
+            movieView.releaseDate.text = movie.releaseDate
+            movieView.plot.text = movie.plot
         }
     }
 }

@@ -54,7 +54,7 @@ class DateContainerVC: ContainerVC {
         }
         
         // Methods called manually on first load
-        updateNavigationTitle(with: dates.selectedDate.asString(format: .excludeTime))
+        updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
         updateCity()
         controlSelectedIndex = DateContainerSegments.showings.rawValue
     }
@@ -121,6 +121,6 @@ extension DateContainerVC: NavigationButtonDelegate {
         }
         
         updateDatasource()
-        updateNavigationTitle(with: dates.selectedDate.asString(format: .excludeTime))
+        updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
     }
 }

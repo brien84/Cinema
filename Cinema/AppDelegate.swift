@@ -21,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController = UINavigationController(rootViewController: DateContainerVC())
         navController.navigationBar.tintColor = Constants.Colors.light
         navController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Constants.Colors.dark]
+        
+        let backButton = UIBarButtonItem()
+        backButton.tintColor = Constants.Colors.blue
+        backButton.title = ""
+        navController.navigationBar.topItem?.backBarButtonItem = backButton
 
         if isFirstStart() {
             navController.pushViewController(OptionsVC(), animated: false)
