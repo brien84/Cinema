@@ -35,6 +35,10 @@ extension Date {
         return formatter.string(from: self)
     }
     
+    func isInThePast() -> Bool {
+        return self < Date()
+    }
+    
     func datesInFuture(after amount: Int, of component: Calendar.Component) -> [Date] {
         var date = self
         guard let endDate = Calendar.current.date(byAdding: component, value: amount, to: date) else { return [] }

@@ -58,7 +58,6 @@ class MovieManager {
         }.resume()
     }
     
-    
     func getMovies(in city: City, at date: Date) -> [Movie] {
         return movies.filter { $0.isShown(in: city) && $0.isShown(at: date) }
     }
@@ -70,13 +69,11 @@ class MovieManager {
 
 extension Movie {
     fileprivate func isShown(in city: City) -> Bool {
-        return self.showings.contains { $0.city == city.rawValue }
+        return self.showings.contains { $0.isShown(in: city) }
     }
     
     fileprivate func isShown(at date: Date) -> Bool {
-        let calendar = Calendar.current
-        
-        return self.showings.contains { calendar.isDate($0.date, inSameDayAs: date) }
+        return self.showings.contains { $0.isShown(at: date) }
     }
     
     func getShowings(in city: City) -> [Showing] {
@@ -90,10 +87,14 @@ extension Movie {
 
 extension Showing {
     fileprivate func isShown(in city: City) -> Bool {
+        if self.date.isInThePast() { return false }
+        
         return self.city == city.rawValue
     }
     
     fileprivate func isShown(at date: Date) -> Bool {
+        if self.date.isInThePast() { return false }
+        
         let calendar = Calendar.current
         return calendar.isDate(self.date, inSameDayAs: date)
     }
