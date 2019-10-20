@@ -12,6 +12,7 @@ class DateMovieVC: UITableViewController {
     
     var datasource = [Movie]() {
         didSet {
+            self.datasource.sort { $0.title < $1.title }
             tableView.reloadData()
         }
     }

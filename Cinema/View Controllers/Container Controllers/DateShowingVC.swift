@@ -12,6 +12,7 @@ class DateShowingVC: UITableViewController {
     
     var datasource = [Showing]() {
         didSet {
+            self.datasource.sort { $0.date < $1.date }
             tableView.reloadData()
         }
     }
