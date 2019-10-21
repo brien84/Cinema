@@ -61,8 +61,8 @@ extension String {
 }
 
 extension Notification.Name {
-    // TODO: Rename to be more clear
-    static let didFinishFetching = Notification.Name("didFinishFetching")
+    static let moviesDidFetchSuccessfully = Notification.Name("moviesDidFetchSuccessfully")
+    static let moviesDidFetchWithError = Notification.Name("moviesDidFetchWithError")
     static let dateIndexDidChange = Notification.Name("dateIndexDidChange")
     static let cityDidChange = Notification.Name("cityDidChange")
 }

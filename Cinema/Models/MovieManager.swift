@@ -9,29 +9,27 @@
 import Foundation
 import UIKit
 
-private enum FetchError: Error {
-    case networkError
-    case noData
-    case decoding
-}
-
 class MovieManager {
     private var movies = [Movie]()
 
     init() {
+        loadMovies()
+    }
+    
+    func loadMovies() {
         fetchMovies { result in
             switch result {
             case .success(let movies):
                 self.movies = movies
-                NotificationCenter.default.post(name: .didFinishFetching, object: nil)
+                NotificationCenter.default.post(name: .moviesDidFetchSuccessfully, object: nil)
             case .failure(let error):
-                print(error)
+                print("MovieManager.loadMovies: \(error.localizedDescription)")
+                NotificationCenter.default.post(name: .moviesDidFetchWithError, object: nil)
             }
         }
     }
     
     private func decode(_ data: Data) -> Result<[Movie], Error> {
-
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         
@@ -39,20 +37,18 @@ class MovieManager {
             let movies = try decoder.decode([Movie].self, from: data)
             return .success(movies)
         } catch {
-            print("MovieManager.decode: \(error.localizedDescription)")
-            return .failure(FetchError.decoding)
+            return .failure(error)
         }
     }
     
     private func fetchMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
-        
         URLSession.shared.dataTask(with: Constants.URLs.api) { data, response, error in
+            
             if let error = error {
-                print("MovieManager.fetchData: \(error.localizedDescription)")
-                completion(.failure(FetchError.networkError))
+                completion(.failure(error))
             }
             
-            guard let data = data else { return completion(.failure(FetchError.noData)) }
+            guard let data = data else { return completion(.failure(URLError(.badServerResponse))) }
             
             completion(self.decode(data))
         }.resume()
