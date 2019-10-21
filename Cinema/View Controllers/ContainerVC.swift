@@ -101,7 +101,22 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         control.tintColor = Constants.Colors.blue
     }
     
+    func toggleSegmentedControl(enabled: Bool) {
+        control.isEnabled = enabled
+    }
+    
     // MARK: - Container View methods
+    
+    func containerDisplayErrorLabel(_ error: DataError?) {
+        if let label = container.subviews.first(where: { type(of: $0) == ErrorLabel.self }) {
+            label.removeFromSuperview()
+        }
+        
+        if let error = error {
+            let label = ErrorLabel(frame: container.bounds, error: error)
+            container.addSubview(label)
+        }
+    }
     
     private func updateContainer(with viewController: UIViewController) {
         removeCurrentViewController()
@@ -110,8 +125,8 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
 
     private func show(_ viewController: UIViewController) {
         self.addChild(viewController)
-        viewController.view.frame = self.container.bounds
-        self.container.addSubview(viewController.view)
+        viewController.view.frame = container.bounds
+        container.addSubview(viewController.view)
         viewController.didMove(toParent: self)
     }
 

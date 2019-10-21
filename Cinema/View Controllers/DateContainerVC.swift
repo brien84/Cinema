@@ -32,17 +32,23 @@ class DateContainerVC: ContainerVC {
         super.viewDidLoad()
         
         // Setup NavigationButtons
-        let rightButton = NavigationButton(Constants.Images.right)
-        rightButton.delegate = self
-        self.navigationItem.rightBarButtonItem = rightButton
-        
         let leftButton = NavigationButton(Constants.Images.options)
+        leftButton.isEnabled = false
         leftButton.delegate = self
         self.navigationItem.leftBarButtonItem = leftButton
         
+        let rightButton = NavigationButton(Constants.Images.right)
+        rightButton.isEnabled = false
+        rightButton.delegate = self
+        self.navigationItem.rightBarButtonItem = rightButton
+        
         // Setup NotificationCenter Observers
-        NotificationCenter.default.addObserver(forName: .didFinishFetching, object: nil, queue: .main) { notification in
-            self.movieManagerDidFinishFetching()
+        NotificationCenter.default.addObserver(forName: .moviesDidFetchSuccessfully, object: nil, queue: .main) { notification in
+            self.movieManagerDidFetchSuccessfully()
+        }
+        
+        NotificationCenter.default.addObserver(forName: .moviesDidFetchWithError, object: nil, queue: .main) { notification in
+            self.movieManagerDidFetchWithError()
         }
         
         NotificationCenter.default.addObserver(forName: .dateIndexDidChange, object: nil, queue: .main) { notification in
@@ -54,6 +60,7 @@ class DateContainerVC: ContainerVC {
         }
         
         // Methods called manually on first load
+        movies.loadMovies()
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
         updateCity()
         controlSelectedIndex = DateContainerSegments.showings.rawValue
@@ -69,6 +76,7 @@ class DateContainerVC: ContainerVC {
                 vc.datasource = movies.getMovies(in: city, at: dates.selectedDate)
             }
         }
+        
         if controlSelectedIndex == DateContainerSegments.showings.rawValue {
             if let vc = self.children.first as? DateShowingVC {
                 vc.datasource = movies.getShowings(in: city, at: dates.selectedDate)
@@ -78,9 +86,22 @@ class DateContainerVC: ContainerVC {
     
     // MARK: - NotificationCenter Observer methods
     
-    private func movieManagerDidFinishFetching() {
+    private func movieManagerDidFetchSuccessfully() {
+        navigationItem.leftBarButtonItem?.isEnabled = true
+        navigationItem.rightBarButtonItem?.isEnabled = true
+        
+        self.toggleSegmentedControl(enabled: true)
+        self.containerDisplayErrorLabel(nil)
         updateDatasource()
-        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func movieManagerDidFetchWithError() {
+        self.toggleSegmentedControl(enabled: false)
+        self.containerDisplayErrorLabel(.network)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.movies.loadMovies()
+        }
     }
     
     private func updateNavButtonAppearance(_ notification: Notification) {

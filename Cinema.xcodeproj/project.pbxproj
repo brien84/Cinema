@@ -37,6 +37,7 @@
 		2904D09F2358CFB000407B64 /* NetworkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D09E2358CFB000407B64 /* NetworkImageView.swift */; };
 		2904D0A2235A4CB300407B64 /* MovieShowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0A0235A4CB300407B64 /* MovieShowingCell.swift */; };
 		2904D0A3235A4CB300407B64 /* MovieShowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2904D0A1235A4CB300407B64 /* MovieShowingCell.xib */; };
+		29230DEB235CFBD2007C9EB4 /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29230DEA235CFBD2007C9EB4 /* ErrorLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		2904D09E2358CFB000407B64 /* NetworkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageView.swift; sourceTree = "<group>"; };
 		2904D0A0235A4CB300407B64 /* MovieShowingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowingCell.swift; sourceTree = "<group>"; };
 		2904D0A1235A4CB300407B64 /* MovieShowingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieShowingCell.xib; sourceTree = "<group>"; };
+		29230DEA235CFBD2007C9EB4 /* ErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		2904C7962336A10E00407B64 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29230DEA235CFBD2007C9EB4 /* ErrorLabel.swift */,
 				2904C7A42337D23F00407B64 /* NavigationButton.swift */,
 				2904D09E2358CFB000407B64 /* NetworkImageView.swift */,
 				2904C7AE23393A4E00407B64 /* SegmentedControl.swift */,
@@ -383,6 +386,7 @@
 				2904C7B8233BDE3000407B64 /* DateShowingVC.swift in Sources */,
 				2904C9F12341208400407B64 /* MovieShowingVC.swift in Sources */,
 				2904C7A7233825D800407B64 /* DateManager.swift in Sources */,
+				29230DEB235CFBD2007C9EB4 /* ErrorLabel.swift in Sources */,
 				2904C7642336982B00407B64 /* AppDelegate.swift in Sources */,
 				2904C7A52337D23F00407B64 /* NavigationButton.swift in Sources */,
 				2904D0772354D48E00407B64 /* ContainerVC.swift in Sources */,
