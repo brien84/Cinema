@@ -50,7 +50,7 @@ class MovieManager {
     }
 
     func getMovies(in city: City, at date: Date) -> [Movie] {
-        return movies.filter { $0.isShown(in: city) && $0.isShown(at: date) }
+        return movies.flatMap { $0.getShowings(in: city, at: date).compactMap { $0.parentMovie } }.uniqued()
     }
     
     func getShowings(in city: City, at date: Date) -> [Showing] {
@@ -59,14 +59,6 @@ class MovieManager {
 }
 
 extension Movie {
-    fileprivate func isShown(in city: City) -> Bool {
-        return self.showings.contains { $0.isShown(in: city) }
-    }
-    
-    fileprivate func isShown(at date: Date) -> Bool {
-        return self.showings.contains { $0.isShown(at: date) }
-    }
-    
     func getShowings(in city: City) -> [Showing] {
         return self.showings.filter { $0.isShown(in: city) }
     }
@@ -79,7 +71,7 @@ extension Movie {
 extension Showing {
     fileprivate func isShown(in city: City) -> Bool {
         if self.date.isInThePast() { return false }
-        
+
         return self.city == city.rawValue
     }
     
