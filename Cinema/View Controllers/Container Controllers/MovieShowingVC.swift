@@ -20,7 +20,7 @@ class MovieShowingVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: "MovieShowingCell", bundle: nil), forCellReuseIdentifier: "movieShowingCell")
+        tableView.register(MovieShowingCell.self, forCellReuseIdentifier: "movieShowingCell")
         
         self.tableView.tableFooterView = UIView()
         tableView.rowHeight = 80
@@ -39,9 +39,9 @@ class MovieShowingVC: UITableViewController {
         
         let showing = datasource[indexPath.row]
         
-        cell.venue.text = showing.venue
-        cell.date.text = showing.date.asString(format: .monthNameAndDay)
         cell.time.text = showing.date.asString(format: .onlyTime)
+        cell.date.text = showing.date.asString(format: .monthNameAndDay)
+        cell.venue.text = showing.venue
         
         return cell
     }

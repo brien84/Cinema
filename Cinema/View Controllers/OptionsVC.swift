@@ -17,11 +17,12 @@ class OptionsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: "OptionsCell", bundle: nil), forCellReuseIdentifier: "optionsCell")
+        tableView.register(OptionsCell.self, forCellReuseIdentifier: "optionsCell")
         
+        self.tableView.tableFooterView = UIView()
         tableView.rowHeight = 50
         tableView.backgroundColor = Constants.Colors.light
-        tableView.separatorStyle = .none
+        tableView.separatorColor = Constants.Colors.blue
         tableView.isScrollEnabled = false
         
         self.navigationItem.title = "Pasirinkite miestą"

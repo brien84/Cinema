@@ -10,33 +10,96 @@ import UIKit
 
 class DateContainerCell: UITableViewCell {
 
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var originalTitle: UILabel!
-    @IBOutlet weak var leftLabel: UILabel!
-    @IBOutlet weak var rightLabel: UILabel!
-    @IBOutlet weak var poster: NetworkImageView!
+    let poster: NetworkImageView = {
+        let view = NetworkImageView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    let title: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = Constants.Colors.dark
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 22.0)!
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    let originalTitle: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = Constants.Colors.gray
+        label.font = UIFont(name: "HelveticaNeue-ThinItalic", size: 16.0)!
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    let leftLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = Constants.Colors.dark
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        return label
+    }()
+    
+    let rightLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = Constants.Colors.dark
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        return label
+    }()
+    
+    private let bgView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Constants.Colors.lightBlue
+        return view
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        let bgColorView = UIView()
-        bgColorView.backgroundColor = Constants.Colors.lightBlue
-        self.selectedBackgroundView = bgColorView
-
+        self.selectedBackgroundView = bgView
         self.backgroundColor = Constants.Colors.light
         
-        title.textColor = Constants.Colors.dark
-        title.font = UIFont(name: "HelveticaNeue-Medium", size: 22.0)!
-        title.numberOfLines = 0
+        self.contentView.addSubview(poster)
+        self.contentView.addSubview(title)
+        self.contentView.addSubview(originalTitle)
+        self.contentView.addSubview(leftLabel)
+        self.contentView.addSubview(rightLabel)
         
-        originalTitle.textColor = Constants.Colors.gray
-        originalTitle.font = UIFont(name: "HelveticaNeue-ThinItalic", size: 16.0)!
-        originalTitle.numberOfLines = 0
+        NSLayoutConstraint.activate([
+            poster.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 4),
+            poster.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 4),
+            poster.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4),
+            poster.widthAnchor.constraint(equalTo: poster.heightAnchor, multiplier: 2/3),
+        ])
         
-        leftLabel.textColor = Constants.Colors.dark
-        leftLabel.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        NSLayoutConstraint.activate([
+            title.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 4),
+            title.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
+            title.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
+        ])
         
-        rightLabel.textColor = Constants.Colors.dark
-        rightLabel.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        NSLayoutConstraint.activate([
+            originalTitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 4),
+            originalTitle.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
+            originalTitle.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
+        ])
+        
+        NSLayoutConstraint.activate([
+            leftLabel.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
+            leftLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4)
+        ])
+        
+        NSLayoutConstraint.activate([
+            rightLabel.leadingAnchor.constraint(equalTo: leftLabel.trailingAnchor, constant: 8),
+            rightLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -12),
+            rightLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4)
+        ])
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -21,7 +21,7 @@ class DateShowingVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: "DateContainerCell", bundle: nil), forCellReuseIdentifier: "dateContainerCell")
+        tableView.register(DateContainerCell.self, forCellReuseIdentifier: "dateContainerCell")
         
         self.tableView.tableFooterView = UIView()
         tableView.rowHeight = 150
