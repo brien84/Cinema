@@ -53,3 +53,13 @@ class Movie: Decodable {
         }
     }
 }
+
+extension Movie: Hashable {
+    static func == (lhs: Movie, rhs: Movie) -> Bool {
+        return lhs.title == rhs.title
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+    }
+}
