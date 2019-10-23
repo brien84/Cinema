@@ -36,7 +36,7 @@ class ErrorLabel: UILabel {
         }
         
         self.textColor = Constants.Colors.dark
-        self.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        self.font = Constants.Fonts.errorLabel
         self.textAlignment = .center
         self.numberOfLines = 0
     }

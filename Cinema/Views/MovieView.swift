@@ -53,44 +53,44 @@ class MovieView: UIView {
     private func setupStaticOutlets() {
         durationLabel.text = "Trukmė"
         durationLabel.textColor = Constants.Colors.gray
-        durationLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 16.0)!
+        durationLabel.font = Constants.Fonts.MovieView.staticLabel
         
         ageRatingLabel.text = "Cenzas"
         ageRatingLabel.textColor = Constants.Colors.gray
-        ageRatingLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 16.0)!
+        ageRatingLabel.font = Constants.Fonts.MovieView.staticLabel
         
         genreLabel.text = "Žanras"
         genreLabel.textColor = Constants.Colors.gray
-        genreLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 16.0)!
+        genreLabel.font = Constants.Fonts.MovieView.staticLabel
         
         countryLabel.text = "Sukurta"
         countryLabel.textColor = Constants.Colors.gray
-        countryLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 16.0)!
+        countryLabel.font = Constants.Fonts.MovieView.staticLabel
         
         releaseDateLabel.text = "Išleista"
         releaseDateLabel.textColor = Constants.Colors.gray
-        releaseDateLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 16.0)!
+        releaseDateLabel.font = Constants.Fonts.MovieView.staticLabel
     }
     
     private func setupDynamicOutlets() {
         duration.textColor = Constants.Colors.dark
-        duration.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        duration.font = Constants.Fonts.MovieView.dynamicLabel
         
         ageRating.textColor = Constants.Colors.dark
-        ageRating.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        ageRating.font = Constants.Fonts.MovieView.dynamicLabel
         
         genre.textColor = Constants.Colors.dark
-        genre.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        genre.font = Constants.Fonts.MovieView.dynamicLabel
         genre.numberOfLines = 0
         
         country.textColor = Constants.Colors.dark
-        country.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        country.font = Constants.Fonts.MovieView.dynamicLabel
         
         releaseDate.textColor = Constants.Colors.dark
-        releaseDate.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        releaseDate.font = Constants.Fonts.MovieView.dynamicLabel
         
         plot.textColor = Constants.Colors.dark
-        plot.font = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
+        plot.font = Constants.Fonts.MovieView.plot
         genre.numberOfLines = 0
     }
 }

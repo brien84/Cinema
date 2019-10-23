@@ -20,7 +20,7 @@ class DateContainerCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.dark
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 22.0)!
+        label.font = Constants.Fonts.DateContainerCell.title
         label.numberOfLines = 0
         return label
     }()
@@ -29,7 +29,7 @@ class DateContainerCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.gray
-        label.font = UIFont(name: "HelveticaNeue-ThinItalic", size: 16.0)!
+        label.font = Constants.Fonts.DateContainerCell.originalTitle
         label.numberOfLines = 0
         return label
     }()
@@ -38,7 +38,7 @@ class DateContainerCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.dark
-        label.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        label.font = Constants.Fonts.DateContainerCell.label
         return label
     }()
     
@@ -46,7 +46,7 @@ class DateContainerCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.dark
-        label.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        label.font = Constants.Fonts.DateContainerCell.label
         return label
     }()
     

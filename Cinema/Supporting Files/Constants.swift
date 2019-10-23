@@ -17,6 +17,29 @@ struct Constants {
         static let dark = UIColor(red: 47/255, green: 53/255, blue: 66/255, alpha: 1.0)             //#2f3542
     }
     
+    struct Fonts {
+        struct DateContainerCell {
+            static let title = UIFont(name: "HelveticaNeue-Medium", size: 22.0)!
+            static let originalTitle = UIFont(name: "HelveticaNeue-ThinItalic", size: 16.0)!
+            static let label = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        }
+        
+        struct MovieShowingCell {
+            static let time = UIFont(name: "HelveticaNeue-Medium", size: 36.0)!
+            static let date = UIFont(name: "HelveticaNeue-Light", size: 20.0)!
+            static let venue = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        }
+        
+        struct MovieView {
+            static let staticLabel = UIFont(name: "HelveticaNeue-Thin", size: 16.0)!
+            static let dynamicLabel = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+            static let plot = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
+        }
+        
+        static let errorLabel = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        static let optionsCell = UIFont(name: "HelveticaNeue-Light", size: 20.0)!
+    }
+    
     struct Images {
         static let options = UIImage(named: "options")!
         static let left = UIImage(named: "arrowLeft")!

@@ -14,7 +14,7 @@ class MovieShowingCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.dark
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 36.0)!
+        label.font = Constants.Fonts.MovieShowingCell.time
         return label
     }()
 
@@ -22,7 +22,7 @@ class MovieShowingCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.dark
-        label.font = UIFont(name: "HelveticaNeue-Light", size: 20.0)!
+        label.font = Constants.Fonts.MovieShowingCell.date
         return label
     }()
 
@@ -30,7 +30,7 @@ class MovieShowingCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.dark
-        label.font = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+        label.font = Constants.Fonts.MovieShowingCell.venue
         return label
     }()
     
