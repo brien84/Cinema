@@ -39,6 +39,7 @@ class DateContainerCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.dark
         label.font = Constants.Fonts.DateContainerCell.label
+        label.numberOfLines = 0
         return label
     }()
     
@@ -74,18 +75,21 @@ class DateContainerCell: UITableViewCell {
             poster.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4),
             poster.widthAnchor.constraint(equalTo: poster.heightAnchor, multiplier: 2/3),
         ])
-        
+
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 4),
             title.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
             title.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
         ])
-        
+
         NSLayoutConstraint.activate([
             originalTitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 4),
             originalTitle.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
             originalTitle.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
         ])
+
+        leftLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 749), for: .horizontal)
+        rightLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 251), for: .horizontal)
         
         NSLayoutConstraint.activate([
             leftLabel.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
@@ -93,7 +97,7 @@ class DateContainerCell: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            rightLabel.leadingAnchor.constraint(equalTo: leftLabel.trailingAnchor, constant: 8),
+            rightLabel.leadingAnchor.constraint(equalTo: leftLabel.trailingAnchor, constant: 4),
             rightLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -12),
             rightLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4)
         ])
