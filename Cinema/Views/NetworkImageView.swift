@@ -8,8 +8,8 @@
 
 import UIKit
 
-/// Class for downloading and displaying images.
-/// When url property is set, first checks if image is cached, then either
+/// View for downloading and displaying images.
+/// When url property is set, it first checks if image is cached, then either
 /// displays image from cache or downloads image.
 ///
 /// - Note: Images are cached as Data to significantly lower memory usage.
@@ -17,35 +17,22 @@ class NetworkImageView: UIImageView {
     
     private let cache = NSCache<NSString, NSData>()
     
-    private let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
-    
     var url: URL? {
         didSet {
             self.loadImage()
         }
     }
     
-    /// If image is nil, displays spinning activityIndicator.
-    override var image: UIImage? {
-        didSet {
-            if image != nil {
-                activityIndicator.stopAnimating()
-            } else {
-                activityIndicator.startAnimating()
-            }
-        }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        image = UIImage(named: "placeholder")
     }
     
-    override func awakeFromNib() {
-        /// Setup activityIndicator.
-        //activityIndicator.color = Constants.Colors.red
-        activityIndicator.startAnimating()
-        addSubview(activityIndicator)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        activityIndicator.center = self.center
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        image = UIImage(named: "placeholder")
     }
     
     private func loadImage() {
@@ -54,7 +41,7 @@ class NetworkImageView: UIImageView {
             return
         }
         
-        /// If image data is found in cache.
+        // If image data is found in cache.
         if let cachedData = cache.object(forKey: url.absoluteString as NSString) {
             guard let image = UIImage(data: cachedData as Data) else { return }
             self.image = image
