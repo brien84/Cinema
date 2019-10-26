@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         backButton.title = ""
         navController.navigationBar.topItem?.backBarButtonItem = backButton
 
+        /// Opens city menu on first start.
         if isFirstStart() {
             navController.pushViewController(OptionsVC(), animated: false)
         }

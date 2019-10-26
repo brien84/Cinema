@@ -20,6 +20,7 @@ class SegmentedControl: UISegmentedControl {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /// Inits SegmentedControl from enum.
     init<T: RawRepresentable & CaseIterable>(frame: CGRect, segments: T.Type) where T.RawValue == Int {
         super.init(frame: frame)
         

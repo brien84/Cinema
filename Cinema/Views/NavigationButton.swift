@@ -13,6 +13,7 @@ protocol NavigationButtonDelegate: AnyObject {
 }
 
 class NavigationButton: UIBarButtonItem {
+    
     weak var delegate: NavigationButtonDelegate?
 
     required init?(coder aDecoder: NSCoder) {

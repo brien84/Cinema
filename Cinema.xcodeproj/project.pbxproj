@@ -139,11 +139,11 @@
 		2904C7622336982B00407B64 /* Cinema */ = {
 			isa = PBXGroup;
 			children = (
+				2904C7632336982B00407B64 /* AppDelegate.swift */,
 				2904C7952336A10700407B64 /* Models */,
 				2904C7942336A0EB00407B64 /* View Controllers */,
 				2904C7962336A10E00407B64 /* Views */,
 				2904C7A12336B07700407B64 /* Supporting Files */,
-				2904C7632336982B00407B64 /* AppDelegate.swift */,
 				2904C76D2336982D00407B64 /* Assets.xcassets */,
 				2904C7722336982D00407B64 /* Info.plist */,
 				2904C76F2336982D00407B64 /* LaunchScreen.storyboard */,

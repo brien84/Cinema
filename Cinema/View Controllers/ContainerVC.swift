@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// ViewController with SegmentedControl toggle and Container UIView.
+/// Switches between leftVC and rightVC depending on SegmentedControl selection.
 class ContainerVC: UIViewController, SegmentedControlDelegate {
     
     private var container: UIView!
@@ -40,9 +42,9 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
     override func loadView() {
         super.loadView()
         
-        // SegmentedControl setup
+        /// SegmentedControl setup
        
-        // TODO: FIX THIS
+        // TODO: Find a better solution to load segments.
         var segmentedControl: SegmentedControl
         
         if let segments = segments as? DateContainerSegments.Type {
@@ -65,7 +67,7 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         segmentedControl.delegate = self
         self.control = segmentedControl
         
-        // Separator View setup
+        /// Separator View setup
         let separator = UIView(frame: .zero)
         separator.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(separator)
@@ -79,7 +81,7 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         
         separator.backgroundColor = Constants.Colors.blue
     
-        // Container View setup
+        /// Container View setup
         let container = UIView(frame: .zero)
         container.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(container)

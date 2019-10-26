@@ -8,6 +8,9 @@
 
 import UIKit
 
+/// Container ViewController displaying MovieViewVC and MovieShowingVC.
+///
+/// Is shown when a cell is selected in either DateMovieVC or DateShowingVC.
 class MovieContainerVC: ContainerVC {
     
     var movie: Movie!

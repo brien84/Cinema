@@ -9,6 +9,7 @@
 import Foundation
 
 class DateManager {
+    
     private let dates: [Date]
     
     private var currentIndex = 0 {

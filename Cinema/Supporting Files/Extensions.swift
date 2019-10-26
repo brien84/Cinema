@@ -9,6 +9,7 @@
 import Foundation
 
 extension Array where Element: Hashable {
+    /// Returns an array without duplicates.
     func uniqued() -> [Element] {
         var seen = Set<Element>()
         return filter{ seen.insert($0).inserted }
@@ -16,6 +17,7 @@ extension Array where Element: Hashable {
 }
 
 extension Date {
+    
     enum asStringFormat {
         case fullDate
         case excludeTime
@@ -23,6 +25,7 @@ extension Date {
         case monthNameAndDay
     }
     
+    /// Converts Date to String.
     func asString(format: asStringFormat = .fullDate) -> String {
         let formatter = DateFormatter()
         
@@ -46,6 +49,14 @@ extension Date {
         return self < Date()
     }
     
+    /** Generates array of Dates after some amount of Calendar components.
+     Example:
+     
+     let now = Date() // Oct 26, 2019
+     let result = now.datesInFuture(after: 2, of: .month)
+     print(result)
+     // prints ["Oct 26, 2019", "Nov 26, 2019", "Dec 26, 2019"]
+     */
     func datesInFuture(after amount: Int, of component: Calendar.Component) -> [Date] {
         var date = self
         guard let endDate = Calendar.current.date(byAdding: component, value: amount, to: date) else { return [] }

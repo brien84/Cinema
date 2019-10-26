@@ -8,6 +8,11 @@
 
 import UIKit
 
+/// Container ViewController displaying DateMovieVC and ShowingVC
+/// with Date selection in NavigationController.
+///
+/// According to selected date, DateContainerVC gets Movies from
+/// MovieManager and sets datasource to child ViewControllers.
 class DateContainerVC: ContainerVC {
     
     private let dates = DateManager()
@@ -31,7 +36,7 @@ class DateContainerVC: ContainerVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup NavigationButtons
+        /// Setup NavigationButtons
         let leftButton = NavigationButton(Constants.Images.options)
         leftButton.isEnabled = false
         leftButton.delegate = self
@@ -42,7 +47,7 @@ class DateContainerVC: ContainerVC {
         rightButton.delegate = self
         self.navigationItem.rightBarButtonItem = rightButton
         
-        // Setup NotificationCenter Observers
+        /// Setup NotificationCenter Observers
         NotificationCenter.default.addObserver(forName: .moviesDidFetchSuccessfully, object: nil, queue: .main) { notification in
             self.movieManagerDidFetchSuccessfully()
         }
@@ -59,7 +64,7 @@ class DateContainerVC: ContainerVC {
             self.updateCity()
         }
         
-        // Methods called manually on first load
+        /// Methods called manually on first load
         movies.loadMovies()
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
         updateCity()

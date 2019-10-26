@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class MovieManager {
+    
     private var movies = [Movie]()
 
     func loadMovies() {

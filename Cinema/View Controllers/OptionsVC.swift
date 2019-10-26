@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Options menu, where user selects City.
 class OptionsVC: UITableViewController {
     
     private let datasource: [City] = {
@@ -27,7 +28,7 @@ class OptionsVC: UITableViewController {
         
         self.navigationItem.title = "Pasirinkite miestą"
         
-        // Sets default value, if the app is launched for the first time.
+        /// Sets default value, if the app is launched for the first time.
         if UserDefaults.standard.readCity() == nil {
             UserDefaults.standard.save(city: .vilnius)
         }
