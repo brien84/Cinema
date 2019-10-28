@@ -47,8 +47,8 @@ struct Constants {
     }
     
     struct URLs {
-        //static let api = URL(string: "https://ioys.lt/movies")!
-        static let api = URL(string: "http://localhost:8080/movies")!
+        static let api = URL(string: "https://movies.ioys.lt/all")!
+        //static let api = URL(string: "http://localhost:8080/all")!
     }
 
     struct UserInfo {
