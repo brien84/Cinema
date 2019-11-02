@@ -41,10 +41,6 @@
 		2904C76D2336982D00407B64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2904C7702336982D00407B64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2904C7722336982D00407B64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2904C77B2336982D00407B64 /* CinemaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaTests.swift; sourceTree = "<group>"; };
-		2904C77D2336982D00407B64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2904C7862336982D00407B64 /* CinemaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaUITests.swift; sourceTree = "<group>"; };
-		2904C7882336982D00407B64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2904C7992336A50F00407B64 /* DateMovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateMovieVC.swift; sourceTree = "<group>"; };
 		2904C79B2336A60C00407B64 /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
 		2904C79D2336A69100407B64 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -85,8 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				2904C7622336982B00407B64 /* Cinema */,
-				2904C77A2336982D00407B64 /* CinemaTests */,
-				2904C7852336982D00407B64 /* CinemaUITests */,
 				2904C7612336982B00407B64 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,24 +106,6 @@
 				2904C76F2336982D00407B64 /* LaunchScreen.storyboard */,
 			);
 			path = Cinema;
-			sourceTree = "<group>";
-		};
-		2904C77A2336982D00407B64 /* CinemaTests */ = {
-			isa = PBXGroup;
-			children = (
-				2904C77B2336982D00407B64 /* CinemaTests.swift */,
-				2904C77D2336982D00407B64 /* Info.plist */,
-			);
-			path = CinemaTests;
-			sourceTree = "<group>";
-		};
-		2904C7852336982D00407B64 /* CinemaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2904C7862336982D00407B64 /* CinemaUITests.swift */,
-				2904C7882336982D00407B64 /* Info.plist */,
-			);
-			path = CinemaUITests;
 			sourceTree = "<group>";
 		};
 		2904C7942336A0EB00407B64 /* View Controllers */ = {
