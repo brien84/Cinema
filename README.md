@@ -7,5 +7,5 @@ Driven by [CinemaServer](https://github.com/brien84/CinemaServer)
 ![](screenshot.png)
 
 ## Features
-- See all movies or showings for a selected date
-- See all showings for a selected movie
+- View all movies or showings for a selected date
+- View all showings for a selected movie
