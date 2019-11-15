@@ -48,28 +48,6 @@ extension Date {
     func isInThePast() -> Bool {
         return self < Date()
     }
-    
-    /** Generates array of Dates after some amount of Calendar components.
-     Example:
-     
-     let now = Date() // Oct 26, 2019
-     let result = now.datesInFuture(after: 2, of: .month)
-     print(result)
-     // prints ["Oct 26, 2019", "Nov 26, 2019", "Dec 26, 2019"]
-     */
-    func datesInFuture(after amount: Int, of component: Calendar.Component) -> [Date] {
-        var date = self
-        guard let endDate = Calendar.current.date(byAdding: component, value: amount, to: date) else { return [] }
-        var dates = [Date]()
-        
-        while date <= endDate {
-            dates.append(date)
-            guard let newDate = Calendar.current.date(byAdding: component, value: 1, to: date) else { return [] }
-            date = newDate
-        }
-        
-        return dates
-    }
 }
 
 extension String {

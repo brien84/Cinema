@@ -24,7 +24,7 @@ class DateManager {
     }
     
     init() {
-        self.dates = Date().datesInFuture(after: 14, of: .day)
+        self.dates = Date().datesInFuture(after: 14)
     }
     
     func decreaseDate() {
@@ -39,5 +39,21 @@ class DateManager {
         if currentIndex != lastIndex {
             currentIndex += 1
         }
+    }
+}
+
+extension Date {
+    fileprivate func datesInFuture(after days: Int) -> [Date] {
+        var date = self
+        guard let endDate = Calendar.current.date(byAdding: .day, value: days, to: date) else { return [] }
+        var dates = [Date]()
+        
+        while date <= endDate {
+            dates.append(date)
+            guard let newDate = Calendar.current.date(byAdding: .day, value: 1, to: date) else { return [] }
+            date = newDate
+        }
+        
+        return dates
     }
 }
