@@ -15,7 +15,7 @@ import UIKit
 /// MovieManager and sets datasource to child ViewControllers.
 class DateContainerVC: ContainerVC {
     
-    private let dates = DateManager()
+    private var dates = DateManager()
     private let movies = MovieManager()
     
     private let movieVC = DateMovieVC()

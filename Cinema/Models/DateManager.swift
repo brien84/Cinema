@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DateManager {
+struct DateManager {
     
     private let dates: [Date]
     
@@ -27,13 +27,13 @@ class DateManager {
         self.dates = Date().datesInFuture(after: 14)
     }
     
-    func decreaseDate() {
+    mutating func decreaseDate() {
         if currentIndex != 0 {
             currentIndex -= 1
         }
     }
     
-    func increaseDate() {
+    mutating func increaseDate() {
         guard let lastIndex = dates.indices.last else { fatalError("Date array is empty!") }
         
         if currentIndex != lastIndex {

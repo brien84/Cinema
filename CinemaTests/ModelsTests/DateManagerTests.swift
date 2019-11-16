@@ -10,17 +10,103 @@ import XCTest
 @testable import Cinema
 
 class DateManagerTests: XCTestCase {
+    
+    var sut: DateManager!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = DateManager()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testIncreaseDate() {
+        /// given
+        let currentDate = sut.selectedDate
+        
+        /// when
+        sut.increaseDate()
+        
+        /// then
+        XCTAssertLessThan(currentDate, sut.selectedDate)
     }
+    
+    func testIncreaseDateDoesNotExceedMaxIndex() {
+        var i = 0
+        while i < 100 {
+            sut.increaseDate()
+            i += 1
+        }
+    }
+    
+    func testDecreaseDate() {
+        /// given
+        sut.increaseDate()
+        let currentDate = sut.selectedDate
+        
+        /// when
+        sut.decreaseDate()
+        
+        /// then
+        XCTAssertGreaterThan(currentDate, sut.selectedDate)
+    }
+    
+    func testDataManagerSendsNotificationWhenIndexChanges() {
+        /// given
+        let notificationExpectation = expectation(forNotification: .dateIndexDidChange, object: nil, handler: nil)
+        
+        /// when
+        sut.increaseDate()
+        
+        /// then
+        wait(for: [notificationExpectation], timeout: 3)
+    }
+    
+    func testDataManagerNotifcationIsIndexZeroIsFalse() {
+        /// given
+        let handler = { (notification: Notification) -> Bool in
+            guard let isIndexZero = notification.userInfo?[Constants.UserInfo.isIndexZero] as? Bool
+                else { return false }
+        
+            if isIndexZero {
+                return false
+            } else {
+                return true
+            }
+        }
+        
+        let notificationExpectation = expectation(forNotification: .dateIndexDidChange, object: nil, handler: handler)
+        
+        /// when
+        sut.increaseDate()
+        
+        /// then
+        wait(for: [notificationExpectation], timeout: 3)
+    }
+    
+    func testDataManagerNotifcationIsIndexZeroIsTrue() {
+        /// given
+        sut.increaseDate()
+        
+        let handler = { (notification: Notification) -> Bool in
+            guard let isIndexZero = notification.userInfo?[Constants.UserInfo.isIndexZero] as? Bool
+                else { return false }
+        
+            if isIndexZero {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        let notificationExpectation = expectation(forNotification: .dateIndexDidChange, object: nil, handler: handler)
+        
+        /// when
+        sut.decreaseDate()
+        
+        /// then
+        wait(for: [notificationExpectation], timeout: 3)
+    }
+    
 }
