@@ -57,3 +57,7 @@ extension Date {
         return dates
     }
 }
+
+extension Notification.Name {
+    static let dateIndexDidChange = Notification.Name("dateIndexDidChange")
+}

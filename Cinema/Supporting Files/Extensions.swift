@@ -59,7 +59,6 @@ extension String {
 extension Notification.Name {
     static let moviesDidFetchSuccessfully = Notification.Name("moviesDidFetchSuccessfully")
     static let moviesDidFetchWithError = Notification.Name("moviesDidFetchWithError")
-    static let dateIndexDidChange = Notification.Name("dateIndexDidChange")
     static let cityDidChange = Notification.Name("cityDidChange")
 }
 
