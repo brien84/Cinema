@@ -48,7 +48,7 @@ class MovieContainerVCTests: XCTestCase {
                      genre: "someGenre",
                      country: "someCountry",
                      releaseDate: "someReleaseDate",
-                     poster: "somePoster",
+                     poster: "somePoster.url",
                      plot: "somePlot",
                      showings: [])
     }
