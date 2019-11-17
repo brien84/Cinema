@@ -20,6 +20,19 @@ class Movie: Decodable {
     let plot: String?
     let showings: [Showing]
     
+    init(title: String, originalTitle: String?, duration: String?, ageRating: String?, genre: String?, country: String?, releaseDate: String?, poster: String?, plot: String?, showings: [Showing]) {
+        self.title = title
+        self.originalTitle = originalTitle
+        self.duration = duration
+        self.ageRating = ageRating
+        self.genre = genre
+        self.country = country
+        self.releaseDate = releaseDate
+        self.poster = poster
+        self.plot = plot
+        self.showings = showings
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case title
         case originalTitle
