@@ -23,7 +23,7 @@ class DateMovieVC: UITableViewController {
 
         tableView.register(DateContainerCell.self, forCellReuseIdentifier: "dateContainerCell")
         
-        self.tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         tableView.rowHeight = 150
         tableView.backgroundColor = Constants.Colors.light
         tableView.separatorColor = Constants.Colors.blue
