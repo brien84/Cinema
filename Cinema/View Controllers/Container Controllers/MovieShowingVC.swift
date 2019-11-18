@@ -22,7 +22,7 @@ class MovieShowingVC: UITableViewController {
         
         tableView.register(MovieShowingCell.self, forCellReuseIdentifier: "movieShowingCell")
         
-        self.tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         tableView.rowHeight = 80
         tableView.backgroundColor = Constants.Colors.light
         tableView.separatorColor = Constants.Colors.blue
