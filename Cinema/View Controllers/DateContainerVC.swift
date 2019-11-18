@@ -15,8 +15,8 @@ import UIKit
 /// MovieManager and sets datasource to child ViewControllers.
 class DateContainerVC: ContainerVC {
     
-    private var dates = DateManager()
-    private let movies = MovieManager()
+    private var dates: DateManagerProtocol!
+    private var movies: MovieManagerProtocol!
     
     private let movieVC = DateMovieVC()
     private let showingsVC = DateShowingVC()
@@ -25,8 +25,11 @@ class DateContainerVC: ContainerVC {
         return UserDefaults.standard.readCity() ?? City.vilnius
     }()
     
-    init() {
+    init(dateManager: DateManagerProtocol = DateManager(), movieManager: MovieManagerProtocol = MovieManager()) {
         super.init(leftVC: movieVC, rightVC: showingsVC, segments: DateContainerSegments.self)
+        
+        self.dates = dateManager
+        self.movies = movieManager
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,7 +39,19 @@ class DateContainerVC: ContainerVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /// Setup NavigationButtons
+        setupNavigationButtons()
+        setupNotificationObservers()
+
+        updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
+        updateCity()
+        controlSelectedIndex = DateContainerSegments.showings.rawValue
+        
+        fetchMovies()
+    }
+    
+    // MARK: - Setup Methods
+    
+    private func setupNavigationButtons() {
         let leftButton = NavigationButton(Constants.Images.options)
         leftButton.isEnabled = false
         leftButton.delegate = self
@@ -46,16 +61,9 @@ class DateContainerVC: ContainerVC {
         rightButton.isEnabled = false
         rightButton.delegate = self
         self.navigationItem.rightBarButtonItem = rightButton
-        
-        /// Setup NotificationCenter Observers
-        NotificationCenter.default.addObserver(forName: .moviesDidFetchSuccessfully, object: nil, queue: .main) { notification in
-            self.movieManagerDidFetchSuccessfully()
-        }
-        
-        NotificationCenter.default.addObserver(forName: .moviesDidFetchWithError, object: nil, queue: .main) { notification in
-            self.movieManagerDidFetchWithError()
-        }
-        
+    }
+    
+    private func setupNotificationObservers() {
         NotificationCenter.default.addObserver(forName: .dateIndexDidChange, object: nil, queue: .main) { notification in
             self.updateNavButtonAppearance(notification)
         }
@@ -63,12 +71,38 @@ class DateContainerVC: ContainerVC {
         NotificationCenter.default.addObserver(forName: .cityDidChange, object: nil, queue: .main) { notification in
             self.updateCity()
         }
+    }
+    
+    private func fetchMovies() {
+        movies.fetch(using: .shared) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.movieManagerDidFetchSuccessfully()
+                case .failure(let error):
+                    print("DateContainerVC.fetchMovies: \(error)")
+                    self.movieManagerDidFetchWithError()
+                }
+            }
+        }
+    }
+
+    private func movieManagerDidFetchSuccessfully() {
+        navigationItem.leftBarButtonItem?.isEnabled = true
+        navigationItem.rightBarButtonItem?.isEnabled = true
         
-        /// Methods called manually on first load
-        movies.loadMovies()
-        updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
-        updateCity()
-        controlSelectedIndex = DateContainerSegments.showings.rawValue
+        self.toggleSegmentedControl(enabled: true)
+        self.containerDisplayErrorLabel(nil)
+        updateDatasource()
+    }
+    
+    private func movieManagerDidFetchWithError() {
+        self.toggleSegmentedControl(enabled: false)
+        self.containerDisplayErrorLabel(.network)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.fetchMovies()
+        }
     }
     
     private func updateNavigationTitle(with title: String) {
@@ -86,26 +120,6 @@ class DateContainerVC: ContainerVC {
             if let vc = self.children.first as? DateShowingVC {
                 vc.datasource = movies.getShowings(in: city, at: dates.selectedDate)
             }
-        }
-    }
-    
-    // MARK: - NotificationCenter Observer methods
-    
-    private func movieManagerDidFetchSuccessfully() {
-        navigationItem.leftBarButtonItem?.isEnabled = true
-        navigationItem.rightBarButtonItem?.isEnabled = true
-        
-        self.toggleSegmentedControl(enabled: true)
-        self.containerDisplayErrorLabel(nil)
-        updateDatasource()
-    }
-    
-    private func movieManagerDidFetchWithError() {
-        self.toggleSegmentedControl(enabled: false)
-        self.containerDisplayErrorLabel(.network)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.movies.loadMovies()
         }
     }
     
