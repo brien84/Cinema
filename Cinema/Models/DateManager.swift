@@ -8,11 +8,20 @@
 
 import Foundation
 
-struct DateManager {
+protocol DateManagerProtocol {
+    var dates: [Date] { get set }
+    var currentIndex: Int { get set }
+    var selectedDate: Date { get }
+
+    mutating func decreaseDate()
+    mutating func increaseDate()
+}
+
+struct DateManager: DateManagerProtocol {
     
-    private let dates: [Date]
+    var dates: [Date]
     
-    private var currentIndex = 0 {
+    var currentIndex = 0 {
         didSet {
             let info = self.currentIndex == 0 ? [Constants.UserInfo.isIndexZero: true] : [Constants.UserInfo.isIndexZero: false]
             NotificationCenter.default.post(name: .dateIndexDidChange, object: nil, userInfo: info)
