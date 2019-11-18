@@ -12,7 +12,7 @@ class Showing: Decodable {
     let city: String
     let date: Date
     let venue: String
-    var parentMovie: Movie
+    var parentMovie: Movie?
     
     init(city: String, date: Date, venue: String, parentMovie: Movie) {
         self.city = city
