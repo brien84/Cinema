@@ -20,7 +20,7 @@ class OptionsVC: UITableViewController {
         
         tableView.register(OptionsCell.self, forCellReuseIdentifier: "optionsCell")
         
-        self.tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         tableView.rowHeight = 50
         tableView.backgroundColor = Constants.Colors.light
         tableView.separatorColor = Constants.Colors.blue
