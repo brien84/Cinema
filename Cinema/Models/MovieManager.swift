@@ -9,25 +9,20 @@
 import Foundation
 import UIKit
 
-class MovieManager {
+protocol MovieManagerProtocol {
+    var movies: [Movie] { get set }
     
-    private var movies = [Movie]()
+    func fetch(using session: URLSession, completion: @escaping (Result<Void, Error>) -> ())
+    func getMovies(in city: City, at date: Date) -> [Movie]
+    func getShowings(in city: City, at date: Date) -> [Showing]
+}
 
-    func loadMovies() {
-        fetchMovies { result in
-            switch result {
-            case .success(let movies):
-                self.movies = movies
-                NotificationCenter.default.post(name: .moviesDidFetchSuccessfully, object: nil)
-            case .failure(let error):
-                print("MovieManager.loadMovies: \(error.localizedDescription)")
-                NotificationCenter.default.post(name: .moviesDidFetchWithError, object: nil)
-            }
-        }
-    }
+class MovieManager: MovieManagerProtocol {
     
-    private func fetchMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
-        URLSession.shared.dataTask(with: Constants.URLs.api) { data, response, error in
+    var movies = [Movie]()
+
+    func fetch(using session: URLSession = .shared, completion: @escaping (Result<Void, Error>) -> ()) {
+        let task = session.dataTask(with: Constants.URLs.api) { data, response, error in
             if let error = error {
                 completion(.failure(error))
             }
@@ -35,16 +30,18 @@ class MovieManager {
             if let data = data {
                 completion(self.decode(data))
             }
-        }.resume()
+        }
+        
+        task.resume()
     }
     
-    private func decode(_ data: Data) -> Result<[Movie], Error> {
+    private func decode(_ data: Data) -> Result<Void, Error> {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
 
         do {
-            let movies = try decoder.decode([Movie].self, from: data)
-            return .success(movies)
+            movies = try decoder.decode([Movie].self, from: data)
+            return .success(())
         } catch {
             return .failure(error)
         }
