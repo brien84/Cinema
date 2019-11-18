@@ -100,7 +100,11 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         super.viewDidLoad()
 
         self.view.backgroundColor = Constants.Colors.light
-        control.tintColor = Constants.Colors.blue
+        if #available(iOS 13.0, *) {
+            control.selectedSegmentTintColor = Constants.Colors.lightBlue
+        } else {
+            control.tintColor = Constants.Colors.blue
+        }
     }
     
     func toggleSegmentedControl(enabled: Bool) {
