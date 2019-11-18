@@ -31,8 +31,8 @@ struct Constants {
         }
         
         struct MovieView {
-            static let staticLabel = UIFont(name: "HelveticaNeue-Thin", size: 16.0)!
-            static let dynamicLabel = UIFont(name: "HelveticaNeue-Light", size: 18.0)!
+            static let staticLabel = UIFont(name: "HelveticaNeue-Thin", size: 14.0)!
+            static let dynamicLabel = UIFont(name: "HelveticaNeue-Light", size: 17.0)!
             static let plot = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
         }
         
