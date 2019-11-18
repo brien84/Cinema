@@ -18,7 +18,7 @@ class Movie: Decodable {
     let releaseDate: String?
     let poster: String?
     let plot: String?
-    let showings: [Showing]
+    var showings: [Showing]
     
     init(title: String, originalTitle: String?, duration: String?, ageRating: String?, genre: String?, country: String?, releaseDate: String?, poster: String?, plot: String?, showings: [Showing]) {
         self.title = title
