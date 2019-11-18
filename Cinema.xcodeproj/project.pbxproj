@@ -42,7 +42,6 @@
 		29B9C97E237F4F850035EF0B /* OptionsVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97D237F4F850035EF0B /* OptionsVCTests.swift */; };
 		29B9C980237F4F980035EF0B /* DateShowingVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97F237F4F980035EF0B /* DateShowingVCTests.swift */; };
 		29B9C982237F4FB70035EF0B /* MovieShowingVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C981237F4FB70035EF0B /* MovieShowingVCTests.swift */; };
-		29B9C984237F4FC50035EF0B /* MovieViewVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C983237F4FC50035EF0B /* MovieViewVCTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +94,6 @@
 		29B9C97D237F4F850035EF0B /* OptionsVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsVCTests.swift; sourceTree = "<group>"; };
 		29B9C97F237F4F980035EF0B /* DateShowingVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateShowingVCTests.swift; sourceTree = "<group>"; };
 		29B9C981237F4FB70035EF0B /* MovieShowingVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowingVCTests.swift; sourceTree = "<group>"; };
-		29B9C983237F4FC50035EF0B /* MovieViewVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewVCTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,7 +251,6 @@
 				29B9C977237F4F3F0035EF0B /* DateMovieVCTests.swift */,
 				29B9C97F237F4F980035EF0B /* DateShowingVCTests.swift */,
 				29B9C981237F4FB70035EF0B /* MovieShowingVCTests.swift */,
-				29B9C983237F4FC50035EF0B /* MovieViewVCTests.swift */,
 			);
 			path = ContainerTests;
 			sourceTree = "<group>";
@@ -396,7 +393,6 @@
 				29B9C97E237F4F850035EF0B /* OptionsVCTests.swift in Sources */,
 				29B9C982237F4FB70035EF0B /* MovieShowingVCTests.swift in Sources */,
 				29B9C980237F4F980035EF0B /* DateShowingVCTests.swift in Sources */,
-				29B9C984237F4FC50035EF0B /* MovieViewVCTests.swift in Sources */,
 				29B9C978237F4F3F0035EF0B /* DateMovieVCTests.swift in Sources */,
 				29B9C97A237F4F650035EF0B /* DateContainerVCTests.swift in Sources */,
 				29B9C96F237F4D6D0035EF0B /* ContainerVCTests.swift in Sources */,
