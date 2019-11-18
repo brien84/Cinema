@@ -56,10 +56,6 @@ extension String {
     }
 }
 
-extension Notification.Name {
-    static let cityDidChange = Notification.Name("cityDidChange")
-}
-
 extension UserDefaults {
     func save(city: City) {
         UserDefaults.standard.set(city.rawValue, forKey: "city")

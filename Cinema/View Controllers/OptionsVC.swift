@@ -57,3 +57,7 @@ class OptionsVC: UITableViewController {
         tableView.reloadData()
     }
 }
+
+extension Notification.Name {
+    static let cityDidChange = Notification.Name("cityDidChange")
+}
