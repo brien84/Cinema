@@ -81,15 +81,17 @@ class MovieView: UIView {
         
         genre.textColor = Constants.Colors.dark
         genre.font = Constants.Fonts.MovieView.dynamicLabel
+        genre.numberOfLines = 0
         
         country.textColor = Constants.Colors.dark
         country.font = Constants.Fonts.MovieView.dynamicLabel
+        country.numberOfLines = 0
         
         releaseDate.textColor = Constants.Colors.dark
         releaseDate.font = Constants.Fonts.MovieView.dynamicLabel
         
         plot.textColor = Constants.Colors.dark
         plot.font = Constants.Fonts.MovieView.plot
-        genre.numberOfLines = 0
+        
     }
 }
