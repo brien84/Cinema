@@ -42,58 +42,7 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
     override func loadView() {
         super.loadView()
         
-        /// SegmentedControl setup
-       
-        // TODO: Find a better solution to load segments.
-        var segmentedControl: SegmentedControl
-        
-        if let segments = segments as? DateContainerSegments.Type {
-            segmentedControl = SegmentedControl(frame: .zero, segments: segments)
-        } else if let segments = segments as? MovieContainerSegments.Type {
-            segmentedControl = SegmentedControl(frame: .zero, segments: segments)
-        } else {
-            segmentedControl = SegmentedControl(frame: .zero, segments: DateContainerSegments.self)
-        }
-        
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(segmentedControl)
-    
-        NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            segmentedControl.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 32),
-            segmentedControl.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -32),
-        ])
-    
-        segmentedControl.delegate = self
-        self.control = segmentedControl
-        
-        /// Separator View setup
-        let separator = UIView(frame: .zero)
-        separator.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(separator)
-        
-        NSLayoutConstraint.activate([
-            separator.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 16),
-            separator.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            separator.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            separator.heightAnchor.constraint(equalToConstant: 1.0)
-        ])
-        
-        separator.backgroundColor = Constants.Colors.blue
-    
-        /// Container View setup
-        let container = UIView(frame: .zero)
-        container.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(container)
-    
-        NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 0),
-            container.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            container.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            container.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
-        ])
-    
-        self.container = container
+        setupView()
     }
 
     override func viewDidLoad() {
@@ -144,7 +93,7 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         }
     }
     
-    // MARK: - SegmentedControlDelegate methods
+    // MARK: - SegmentedControlDelegate Methods
     
     func indexChanged(to newIndex: Int) {
         switch newIndex {
@@ -155,5 +104,61 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         default:
             return
         }
+    }
+    
+    // MARK: - Setup Methods
+    
+    private func setupView() {
+        /// SegmentedControl setup
+        // TODO: Find a better solution to load segments.
+        var segmentedControl: SegmentedControl
+        
+        if let segments = segments as? DateContainerSegments.Type {
+            segmentedControl = SegmentedControl(frame: .zero, segments: segments)
+        } else if let segments = segments as? MovieContainerSegments.Type {
+            segmentedControl = SegmentedControl(frame: .zero, segments: segments)
+        } else {
+            segmentedControl = SegmentedControl(frame: .zero, segments: DateContainerSegments.self)
+        }
+        
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(segmentedControl)
+    
+        NSLayoutConstraint.activate([
+            segmentedControl.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            segmentedControl.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 32),
+            segmentedControl.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -32),
+        ])
+    
+        segmentedControl.delegate = self
+        self.control = segmentedControl
+        
+        /// Separator View setup
+        let separator = UIView(frame: .zero)
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(separator)
+        
+        NSLayoutConstraint.activate([
+            separator.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 16),
+            separator.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            separator.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            separator.heightAnchor.constraint(equalToConstant: 1.0)
+        ])
+        
+        separator.backgroundColor = Constants.Colors.blue
+    
+        /// Container View setup
+        let container = UIView(frame: .zero)
+        container.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(container)
+    
+        NSLayoutConstraint.activate([
+            container.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 0),
+            container.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            container.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            container.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    
+        self.container = container
     }
 }
