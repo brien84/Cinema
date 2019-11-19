@@ -73,6 +73,8 @@ class DateContainerVC: ContainerVC {
         }
     }
     
+    // MARK: - Fetching Methods
+    
     private func fetchMovies() {
         movies.fetch(using: .shared) { result in
             DispatchQueue.main.async {
@@ -105,9 +107,20 @@ class DateContainerVC: ContainerVC {
         }
     }
     
+    // MARK: - View Methods
+    
     private func updateNavigationTitle(with title: String) {
         self.navigationItem.title = title
     }
+    
+    private func updateNavButtonAppearance(_ notification: Notification) {
+        guard let info = notification.userInfo as? [String: Bool] else { return }
+        guard let isIndexZero = info[Constants.UserInfo.isIndexZero] else { return }
+        guard let navButton = navigationItem.leftBarButtonItems?.first else { return }
+        navButton.image = isIndexZero ? Constants.Images.options : Constants.Images.left
+    }
+    
+    // MARK: - Model Methods
     
     private func updateDatasource() {
         if controlSelectedIndex == DateContainerSegments.movies.rawValue {
@@ -121,13 +134,6 @@ class DateContainerVC: ContainerVC {
                 vc.datasource = movies.getShowings(in: city, at: dates.selectedDate)
             }
         }
-    }
-    
-    private func updateNavButtonAppearance(_ notification: Notification) {
-        guard let info = notification.userInfo as? [String: Bool] else { return }
-        guard let isIndexZero = info[Constants.UserInfo.isIndexZero] else { return }
-        guard let navButton = navigationItem.leftBarButtonItems?.first else { return }
-        navButton.image = isIndexZero ? Constants.Images.options : Constants.Images.left
     }
     
     private func updateCity() {
