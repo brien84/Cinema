@@ -17,8 +17,7 @@ extension Array where Element: Hashable {
 }
 
 extension Date {
-    
-    enum asStringFormat {
+    enum StringFormat {
         case fullDate
         case excludeTime
         case onlyTime
@@ -26,7 +25,7 @@ extension Date {
     }
     
     /// Converts Date to String.
-    func asString(format: asStringFormat = .fullDate) -> String {
+    func asString(format: StringFormat = .fullDate) -> String {
         let formatter = DateFormatter()
         
         formatter.locale = Locale(identifier: "lt")
