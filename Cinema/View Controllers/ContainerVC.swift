@@ -8,12 +8,15 @@
 
 import UIKit
 
+protocol Segmentable: RawRepresentable, CaseIterable where Self.RawValue == Int {
+    var rawValue: Int { get }
+}
+
 /// ViewController with SegmentedControl toggle and Container UIView.
 /// Switches between leftVC and rightVC depending on SegmentedControl selection.
 class ContainerVC: UIViewController, SegmentedControlDelegate {
-    
+
     private var container: UIView!
-    private var control: SegmentedControl!
     
     var controlSelectedIndex: Int {
         get { return control.selectedSegmentIndex }
@@ -25,12 +28,12 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
     
     private let leftVC: UIViewController
     private let rightVC: UIViewController
-    private let segments: Any.Type
+    private var control: SegmentedControl
     
-    init<T: RawRepresentable & CaseIterable>(leftVC: UIViewController, rightVC: UIViewController, segments: T.Type) where T.RawValue == Int {
+    init<T: Segmentable>(leftVC: UIViewController, rightVC: UIViewController, segments: T.Type)  {
         self.leftVC = leftVC
         self.rightVC = rightVC
-        self.segments = segments
+        self.control = SegmentedControl(frame: .zero, segments: T.self)
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -110,28 +113,15 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
     
     private func setupView() {
         /// SegmentedControl setup
-        // TODO: Find a better solution to load segments.
-        var segmentedControl: SegmentedControl
+        control.delegate = self
+        control.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(control)
         
-        if let segments = segments as? DateContainerSegments.Type {
-            segmentedControl = SegmentedControl(frame: .zero, segments: segments)
-        } else if let segments = segments as? MovieContainerSegments.Type {
-            segmentedControl = SegmentedControl(frame: .zero, segments: segments)
-        } else {
-            segmentedControl = SegmentedControl(frame: .zero, segments: DateContainerSegments.self)
-        }
-        
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(segmentedControl)
-    
         NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            segmentedControl.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 32),
-            segmentedControl.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -32),
+            control.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            control.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 32),
+            control.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -32),
         ])
-    
-        segmentedControl.delegate = self
-        self.control = segmentedControl
         
         /// Separator View setup
         let separator = UIView(frame: .zero)
@@ -139,7 +129,7 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         self.view.addSubview(separator)
         
         NSLayoutConstraint.activate([
-            separator.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 16),
+            separator.topAnchor.constraint(equalTo: control.bottomAnchor, constant: 16),
             separator.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             separator.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             separator.heightAnchor.constraint(equalToConstant: 1.0)

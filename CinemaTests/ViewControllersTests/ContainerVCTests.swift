@@ -73,7 +73,7 @@ class ContainerVCTests: XCTestCase {
         }
     }
     
-    private enum MockSegments: Int, CaseIterable {
+    private enum MockSegments: Int, Segmentable {
         case one
         case two
     }
