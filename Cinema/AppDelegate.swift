@@ -10,29 +10,36 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
+    
+    private lazy var navigationController: UINavigationController = {
+        let controller = UINavigationController(rootViewController: DateContainerVC())
+        controller.navigationBar.tintColor = Constants.Colors.light
+        controller.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Constants.Colors.dark]
+        controller.navigationBar.topItem?.backBarButtonItem = backButton
+        
+        return controller
+    }()
+    
+    private lazy var backButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.tintColor = Constants.Colors.blue
+        button.title = ""
+        
+        return button
+    }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        // TODO: move to closure porperties?
-        let navController = UINavigationController(rootViewController: DateContainerVC())
-        navController.navigationBar.tintColor = Constants.Colors.light
-        navController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Constants.Colors.dark]
-        
-        let backButton = UIBarButtonItem()
-        backButton.tintColor = Constants.Colors.blue
-        backButton.title = ""
-        navController.navigationBar.topItem?.backBarButtonItem = backButton
-
-        /// Opens city menu on first start.
+        /// Opens options menu on first start.
         if isFirstStart() {
-            navController.pushViewController(OptionsVC(), animated: false)
+            navigationController.pushViewController(OptionsVC(), animated: false)
         }
 
-        window?.rootViewController = navController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         return true
