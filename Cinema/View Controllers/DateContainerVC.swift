@@ -21,9 +21,9 @@ class DateContainerVC: ContainerVC {
     private let movieVC = DateMovieVC()
     private let showingsVC = DateShowingVC()
     
-    private var city: City = {
-        return UserDefaults.standard.readCity() ?? City.vilnius
-    }()
+    private var city: City {
+        return UserDefaults.standard.readCity()
+    }
     
     init(dateManager: DateManagerProtocol = DateManager(), movieManager: MovieManagerProtocol = MovieManager()) {
         super.init(leftVC: movieVC, rightVC: showingsVC, segments: DateContainerSegments.self)
@@ -43,7 +43,6 @@ class DateContainerVC: ContainerVC {
         setupNotificationObservers()
 
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
-        updateCity()
         controlSelectedIndex = DateContainerSegments.showings.rawValue
         
         fetchMovies()
@@ -69,7 +68,7 @@ class DateContainerVC: ContainerVC {
         }
         
         NotificationCenter.default.addObserver(forName: .cityDidChange, object: nil, queue: .main) { notification in
-            self.updateCity()
+            self.updateDatasource()
         }
     }
     
@@ -134,12 +133,6 @@ class DateContainerVC: ContainerVC {
                 vc.datasource = movies.getShowings(in: city, at: dates.selectedDate)
             }
         }
-    }
-    
-    private func updateCity() {
-        guard let city = UserDefaults.standard.readCity() else { fatalError("DateContainerVC.updateCity: City is nil!") }
-        self.city = city
-        updateDatasource()
     }
     
     // MARK: - SegmentedControlDelegate

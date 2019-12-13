@@ -35,7 +35,7 @@ class MovieContainerVC: ContainerVC {
         
         movieVC.movie = movie
         
-        let city = UserDefaults.standard.readCity() ?? City.vilnius
+        let city = UserDefaults.standard.readCity()
         showingVC.datasource = movie.getShowings(in: city)
         
         controlSelectedIndex = MovieContainerSegments.about.rawValue

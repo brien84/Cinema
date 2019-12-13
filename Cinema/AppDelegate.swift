@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         /// Opens options menu on first start.
-        if isFirstStart() {
+        if !UserDefaults.standard.isCitySet() {
             navigationController.pushViewController(OptionsVC(), animated: false)
         }
 
@@ -43,10 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         return true
-    }
-    
-    private func isFirstStart() -> Bool {
-        return UserDefaults.standard.readCity() == nil
     }
 }
 

@@ -56,12 +56,27 @@ extension String {
 }
 
 extension UserDefaults {
+    /// Returns a Boolean value indicating whether value for key "city" exists.
+    /// If the value does not exist, function saves a default value before returning false.
+    /// Only used to check if the app is started for the first time.
+    func isCitySet() -> Bool {
+        if let _ = UserDefaults.standard.string(forKey: "city") {
+            return true
+        } else {
+            save(city: City.vilnius)
+            return false
+        }
+    }
+    
     func save(city: City) {
         UserDefaults.standard.set(city.rawValue, forKey: "city")
     }
     
-    func readCity() -> City? {
-        guard let city = UserDefaults.standard.string(forKey: "city") else { return nil }
-        return City(rawValue: city)
+    func readCity() -> City {
+        if let value = UserDefaults.standard.string(forKey: "city"), let city = City(rawValue: value) {
+            return city
+        } else {
+            return City.vilnius
+        }
     }
 }

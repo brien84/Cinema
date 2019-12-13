@@ -27,11 +27,6 @@ class OptionsVC: UITableViewController {
         tableView.isScrollEnabled = false
         
         self.navigationItem.title = "Pasirinkite miestą"
-        
-        /// Sets default value, if the app is launched for the first time.
-        if UserDefaults.standard.readCity() == nil {
-            UserDefaults.standard.save(city: .vilnius)
-        }
     }
 
     // MARK: - Table view data source
