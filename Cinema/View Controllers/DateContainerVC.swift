@@ -19,14 +19,14 @@ class DateContainerVC: ContainerVC {
     private var movies: MovieManagerProtocol!
     
     private let movieVC = DateMovieVC()
-    private let showingsVC = DateShowingVC()
+    private let showingVC = DateShowingVC()
     
     private var city: City {
         return UserDefaults.standard.readCity()
     }
     
     init(dateManager: DateManagerProtocol = DateManager(), movieManager: MovieManagerProtocol = MovieManager()) {
-        super.init(leftVC: movieVC, rightVC: showingsVC, segments: DateContainerSegments.self)
+        super.init(leftVC: movieVC, rightVC: showingVC, segments: DateContainerSegments.self)
         
         self.dates = dateManager
         self.movies = movieManager
@@ -122,16 +122,16 @@ class DateContainerVC: ContainerVC {
     // MARK: - Model Methods
     
     private func updateDatasource() {
-        if controlSelectedIndex == DateContainerSegments.movies.rawValue {
-            if let vc = self.children.first as? DateMovieVC {
-                vc.datasource = movies.getMovies(in: city, at: dates.selectedDate)
-            }
-        }
-        
-        if controlSelectedIndex == DateContainerSegments.showings.rawValue {
-            if let vc = self.children.first as? DateShowingVC {
-                vc.datasource = movies.getShowings(in: city, at: dates.selectedDate)
-            }
+        switch controlSelectedIndex {
+            
+        case DateContainerSegments.movies.rawValue:
+            movieVC.datasource = movies.getMovies(in: city, at: dates.selectedDate)
+            
+        case DateContainerSegments.showings.rawValue:
+            showingVC.datasource = movies.getShowings(in: city, at: dates.selectedDate)
+            
+        default:
+            break
         }
     }
     
