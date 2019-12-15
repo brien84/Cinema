@@ -25,6 +25,30 @@ class DateContainerVC: ContainerVC {
         return UserDefaults.standard.readCity()
     }
     
+    private lazy var leftDateNavigationButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.image = Constants.Images.options
+        button.target = self
+        button.action = #selector(handleDateNavigationButtonTap)
+        button.tintColor = Constants.Colors.blue
+        
+        button.isEnabled = false
+        
+        return button
+    }()
+    
+    private lazy var rightDateNavigationButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.image = Constants.Images.right
+        button.target = self
+        button.action = #selector(handleDateNavigationButtonTap)
+        button.tintColor = Constants.Colors.blue
+        
+        button.isEnabled = false
+        
+        return button
+    }()
+    
     init(dateManager: DateManagerProtocol = DateManager(), movieManager: MovieManagerProtocol = MovieManager()) {
         super.init(leftVC: movieVC, rightVC: showingVC, segments: DateContainerSegments.self)
         
@@ -39,7 +63,9 @@ class DateContainerVC: ContainerVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationButtons()
+        self.navigationItem.leftBarButtonItem = leftDateNavigationButton
+        self.navigationItem.rightBarButtonItem = rightDateNavigationButton
+
         setupNotificationObservers()
 
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
@@ -49,22 +75,10 @@ class DateContainerVC: ContainerVC {
     }
     
     // MARK: - Setup Methods
-    
-    private func setupNavigationButtons() {
-        let leftButton = NavigationButton(Constants.Images.options)
-        leftButton.isEnabled = false
-        leftButton.delegate = self
-        self.navigationItem.leftBarButtonItem = leftButton
         
-        let rightButton = NavigationButton(Constants.Images.right)
-        rightButton.isEnabled = false
-        rightButton.delegate = self
-        self.navigationItem.rightBarButtonItem = rightButton
-    }
-    
     private func setupNotificationObservers() {
         NotificationCenter.default.addObserver(forName: .dateIndexDidChange, object: nil, queue: .main) { notification in
-            self.updateNavButtonAppearance(notification)
+            self.updateLeftDateNavigationButtonAppearance(notification)
         }
         
         NotificationCenter.default.addObserver(forName: .cityDidChange, object: nil, queue: .main) { notification in
@@ -89,8 +103,8 @@ class DateContainerVC: ContainerVC {
     }
 
     private func movieManagerDidFetchSuccessfully() {
-        navigationItem.leftBarButtonItem?.isEnabled = true
-        navigationItem.rightBarButtonItem?.isEnabled = true
+        leftDateNavigationButton.isEnabled = true
+        rightDateNavigationButton.isEnabled = true
         
         self.toggleSegmentedControl(enabled: true)
         self.containerDisplayErrorLabel(nil)
@@ -112,11 +126,10 @@ class DateContainerVC: ContainerVC {
         self.navigationItem.title = title
     }
     
-    private func updateNavButtonAppearance(_ notification: Notification) {
+    private func updateLeftDateNavigationButtonAppearance(_ notification: Notification) {
         guard let info = notification.userInfo as? [String: Bool] else { return }
         guard let isIndexZero = info[Constants.UserInfo.isIndexZero] else { return }
-        guard let navButton = navigationItem.leftBarButtonItems?.first else { return }
-        navButton.image = isIndexZero ? Constants.Images.options : Constants.Images.left
+        leftDateNavigationButton.image = isIndexZero ? Constants.Images.options : Constants.Images.left
     }
     
     // MARK: - Model Methods
@@ -135,31 +148,29 @@ class DateContainerVC: ContainerVC {
         }
     }
     
-    // MARK: - SegmentedControlDelegate
-    
-    override func indexChanged(to newIndex: Int){
-        super.indexChanged(to: newIndex)
-        updateDatasource()
-    }
-}
-
-extension DateContainerVC: NavigationButtonDelegate {
-    func buttonTap(_ sender: NavigationButton) {
-        
-        if navigationItem.leftBarButtonItems?.contains(sender) ?? false {
-            if sender.image == Constants.Images.options {
+    @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
+        switch true {
+        case sender == leftDateNavigationButton:
+            if leftDateNavigationButton.image == Constants.Images.options {
                 navigationController?.pushViewController(OptionsVC(), animated: true)
                 return
             } else {
                 dates.decreaseDate()
             }
-        }
-        
-        if navigationItem.rightBarButtonItems?.contains(sender) ?? false {
-            dates.increaseDate()
+        case sender == rightDateNavigationButton:
+            dates.decreaseDate()
+        default:
+            return
         }
         
         updateDatasource()
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
+    }
+    
+    // MARK: - SegmentedControlDelegate
+    
+    override func indexChanged(to newIndex: Int){
+        super.indexChanged(to: newIndex)
+        updateDatasource()
     }
 }

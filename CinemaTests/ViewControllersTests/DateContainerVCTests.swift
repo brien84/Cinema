@@ -17,7 +17,7 @@ class DateContainerVCTests: XCTestCase {
         sut = nil
     }
 
-    func testLeftBarButtonItemIsNavigationButton() {
+    func testLeftBarButtonItemIsNotNil() {
         /// given
         sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
         
@@ -25,8 +25,19 @@ class DateContainerVCTests: XCTestCase {
         sut.loadViewIfNeeded()
         
         /// then
-        XCTAssertTrue(sut.navigationItem.leftBarButtonItem is NavigationButton)
+        XCTAssertNotNil(sut.navigationItem.leftBarButtonItem)
     }
+    
+    func testRightBarButtonItemIsNotNil() {
+         /// given
+         sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
+         
+         /// when
+         sut.loadViewIfNeeded()
+         
+         /// then
+         XCTAssertNotNil(sut.navigationItem.rightBarButtonItem)
+     }
     
     func testLeftBarButtonItemIsDisabled() {
         /// given
@@ -34,50 +45,10 @@ class DateContainerVCTests: XCTestCase {
         
         /// when
         sut.loadViewIfNeeded()
+        guard let button = sut.navigationItem.leftBarButtonItem else { return XCTFail() }
         
         /// then
-        let button = sut.navigationItem.leftBarButtonItem as! NavigationButton
         XCTAssertFalse(button.isEnabled)
-    }
-    
-    func testLeftBarButtonDelegateIsSet() {
-        /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
-        
-        /// when
-        sut.loadViewIfNeeded()
-        
-        /// then
-        let button = sut.navigationItem.leftBarButtonItem as! NavigationButton
-        XCTAssertNotNil(button.delegate)
-    }
-    
-    func testLeftBarButtonItemIsEnabledAfterSuccessfulFetch() {
-        /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
-        let expectation = XCTestExpectation(description: "Wait for UI to update.")
-        
-        /// when
-        sut.loadViewIfNeeded()
-        DispatchQueue.main.async {
-            let button = self.sut.navigationItem.leftBarButtonItem as! NavigationButton
-            XCTAssertTrue(button.isEnabled)
-            expectation.fulfill()
-        }
-        
-        /// then
-        wait(for: [expectation], timeout: 3)
-    }
-    
-    func testRightBarButtonItemIsNavigationButton() {
-        /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
-        
-        /// when
-        sut.loadViewIfNeeded()
-        
-        /// then
-        XCTAssertTrue(sut.navigationItem.rightBarButtonItem is NavigationButton)
     }
     
     func testRightBarButtonItemIsDisabled() {
@@ -86,10 +57,28 @@ class DateContainerVCTests: XCTestCase {
         
         /// when
         sut.loadViewIfNeeded()
+        guard let button = sut.navigationItem.rightBarButtonItem else { return XCTFail() }
         
         /// then
-        let button = sut.navigationItem.rightBarButtonItem as! NavigationButton
         XCTAssertFalse(button.isEnabled)
+    }
+
+    func testLeftBarButtonItemIsEnabledAfterSuccessfulFetch() {
+        /// given
+        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
+        let expectation = XCTestExpectation(description: "Wait for UI to update.")
+        
+        /// when
+        sut.loadViewIfNeeded()
+        guard let button = sut.navigationItem.leftBarButtonItem else { return XCTFail() }
+        
+        DispatchQueue.main.async {
+            XCTAssertTrue(button.isEnabled)
+            expectation.fulfill()
+        }
+        
+        /// then
+        wait(for: [expectation], timeout: 3)
     }
     
     func testRightBarButtonItemIsEnabledAfterSuccessfulFetch() {
@@ -99,8 +88,9 @@ class DateContainerVCTests: XCTestCase {
         
         /// when
         sut.loadViewIfNeeded()
+        guard let button = sut.navigationItem.rightBarButtonItem else { return XCTFail() }
+        
         DispatchQueue.main.async {
-            let button = self.sut.navigationItem.rightBarButtonItem as! NavigationButton
             XCTAssertTrue(button.isEnabled)
             expectation.fulfill()
         }
@@ -108,19 +98,7 @@ class DateContainerVCTests: XCTestCase {
         /// then
         wait(for: [expectation], timeout: 3)
     }
-    
-    func testRightBarButtonDelegateIsSet() {
-        /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
-        
-        /// when
-        sut.loadViewIfNeeded()
-        
-        /// then
-        let button = sut.navigationItem.rightBarButtonItem as! NavigationButton
-        XCTAssertNotNil(button.delegate)
-    }
-    
+
     func testLeftBarButtonImageIsOptions() {
         /// given
         sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
@@ -130,8 +108,8 @@ class DateContainerVCTests: XCTestCase {
         NotificationCenter.default.post(name: .dateIndexDidChange, object: nil, userInfo: [Constants.UserInfo.isIndexZero: true])
         
         /// then
-        let button = sut.navigationItem.leftBarButtonItem as! NavigationButton
-        XCTAssertEqual(button.image, Constants.Images.options)
+        let button = sut.navigationItem.leftBarButtonItem
+        XCTAssertEqual(button?.image, Constants.Images.options)
     }
     
     func testLeftBarButtonImageIsLeftArrow() {
@@ -143,8 +121,8 @@ class DateContainerVCTests: XCTestCase {
         NotificationCenter.default.post(name: .dateIndexDidChange, object: nil, userInfo: [Constants.UserInfo.isIndexZero: false])
         
         /// then
-        let button = sut.navigationItem.leftBarButtonItem as! NavigationButton
-        XCTAssertEqual(button.image, Constants.Images.left)
+        let button = sut.navigationItem.leftBarButtonItem
+        XCTAssertEqual(button?.image, Constants.Images.left)
     }
     
     func testNavigationTitleIsSet() {
@@ -157,66 +135,6 @@ class DateContainerVCTests: XCTestCase {
         
         /// then
         XCTAssertEqual(sut.navigationItem.title, date.asString(format: .monthNameAndDay))
-    }
-    
-    func testTappingRightNavigationButtonIncreasesDate() {
-        /// given
-        let firstDate = Date()
-        let secondDate = Date(timeIntervalSinceNow: 10000000)
-        sut = DateContainerVC(dateManager: DateManagerMock(dates: [firstDate, secondDate]), movieManager: MovieManagerMock())
-        
-        /// when
-        sut.loadViewIfNeeded()
-        
-        /// then
-        XCTAssertEqual(self.sut.navigationItem.title, firstDate.asString(format: .monthNameAndDay))
-        let button = self.sut.navigationItem.rightBarButtonItem as! NavigationButton
-        self.sut.buttonTap(button)
-        XCTAssertEqual(self.sut.navigationItem.title, secondDate.asString(format: .monthNameAndDay))
-    }
-    
-    func testTappingLeftNavigatonButtonOpensOptionsVC() {
-        /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
-        _ = UINavigationController(rootViewController: sut)
-        let expectation = XCTestExpectation(description: "Wait for UI to update.")
-        
-        /// when
-        sut.loadViewIfNeeded()
-        
-        let button = self.sut.navigationItem.leftBarButtonItem as! NavigationButton
-        self.sut.buttonTap(button)
-            
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            XCTAssertTrue(self.sut.navigationController?.topViewController is OptionsVC)
-            expectation.fulfill()
-        }
-        
-        /// then
-        wait(for: [expectation], timeout: 3)
-    }
-    
-    func testTappingLeftNavigationButtonDecreasesDate() {
-        /// given
-        let firstDate = Date()
-        let secondDate = Date(timeIntervalSinceNow: 10000000)
-        sut = DateContainerVC(dateManager: DateManagerMock(dates: [firstDate, secondDate]), movieManager: MovieManagerMock())
-
-        /// when
-        sut.loadViewIfNeeded()
-
-        /// then
-        XCTAssertEqual(self.sut.navigationItem.title, firstDate.asString(format: .monthNameAndDay))
-        
-        let rightButton = self.sut.navigationItem.rightBarButtonItem as! NavigationButton
-        self.sut.buttonTap(rightButton)
-        
-        XCTAssertEqual(self.sut.navigationItem.title, secondDate.asString(format: .monthNameAndDay))
-        
-        let leftButton = self.sut.navigationItem.leftBarButtonItem as! NavigationButton
-        self.sut.buttonTap(leftButton)
-        
-        XCTAssertEqual(self.sut.navigationItem.title, firstDate.asString(format: .monthNameAndDay))
     }
     
     // MARK: - Test Helpers
