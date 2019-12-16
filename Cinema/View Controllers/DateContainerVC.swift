@@ -158,7 +158,7 @@ class DateContainerVC: ContainerVC {
                 dates.decreaseDate()
             }
         case sender == rightDateNavigationButton:
-            dates.decreaseDate()
+            dates.increaseDate()
         default:
             return
         }
