@@ -96,7 +96,7 @@ class OptionsVCTests: XCTestCase {
     
     func testSelectingRowSendsNotification() {
         /// given
-        let notificationExpectation = expectation(forNotification: .cityDidChange, object: nil, handler: nil)
+        let notificationExpectation = expectation(forNotification: .OptionsVCCityDidChange, object: nil, handler: nil)
         
         /// when
         sut.loadViewIfNeeded()

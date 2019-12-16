@@ -105,7 +105,7 @@ class DateContainerVCTests: XCTestCase {
         
         /// when
         sut.loadViewIfNeeded()
-        NotificationCenter.default.post(name: .dateIndexDidChange, object: nil, userInfo: [Constants.UserInfo.isIndexZero: true])
+        NotificationCenter.default.post(name: .DateManagerIndexDidChange, object: nil, userInfo: [Constants.UserInfo.isIndexZero: true])
         
         /// then
         let button = sut.navigationItem.leftBarButtonItem
@@ -118,7 +118,7 @@ class DateContainerVCTests: XCTestCase {
         
         /// when
         sut.loadViewIfNeeded()
-        NotificationCenter.default.post(name: .dateIndexDidChange, object: nil, userInfo: [Constants.UserInfo.isIndexZero: false])
+        NotificationCenter.default.post(name: .DateManagerIndexDidChange, object: nil, userInfo: [Constants.UserInfo.isIndexZero: false])
         
         /// then
         let button = sut.navigationItem.leftBarButtonItem
@@ -145,7 +145,7 @@ class DateContainerVCTests: XCTestCase {
         var currentIndex: Int = 0 {
             didSet {
                 let info = self.currentIndex == 0 ? [Constants.UserInfo.isIndexZero: true] : [Constants.UserInfo.isIndexZero: false]
-                NotificationCenter.default.post(name: .dateIndexDidChange, object: nil, userInfo: info)
+                NotificationCenter.default.post(name: .DateManagerIndexDidChange, object: nil, userInfo: info)
             }
         }
         

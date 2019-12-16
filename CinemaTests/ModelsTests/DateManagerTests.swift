@@ -54,7 +54,7 @@ class DateManagerTests: XCTestCase {
     
     func testDataManagerSendsNotificationWhenIndexChanges() {
         /// given
-        let notificationExpectation = expectation(forNotification: .dateIndexDidChange, object: nil, handler: nil)
+        let notificationExpectation = expectation(forNotification: .DateManagerIndexDidChange, object: nil, handler: nil)
         
         /// when
         sut.increaseDate()
@@ -76,7 +76,7 @@ class DateManagerTests: XCTestCase {
             }
         }
         
-        let notificationExpectation = expectation(forNotification: .dateIndexDidChange, object: nil, handler: handler)
+        let notificationExpectation = expectation(forNotification: .DateManagerIndexDidChange, object: nil, handler: handler)
         
         /// when
         sut.increaseDate()
@@ -100,7 +100,7 @@ class DateManagerTests: XCTestCase {
             }
         }
         
-        let notificationExpectation = expectation(forNotification: .dateIndexDidChange, object: nil, handler: handler)
+        let notificationExpectation = expectation(forNotification: .DateManagerIndexDidChange, object: nil, handler: handler)
         
         /// when
         sut.decreaseDate()
