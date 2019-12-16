@@ -77,11 +77,11 @@ class DateContainerVC: ContainerVC {
     // MARK: - Setup Methods
         
     private func setupNotificationObservers() {
-        NotificationCenter.default.addObserver(forName: .dateIndexDidChange, object: nil, queue: .main) { notification in
+        NotificationCenter.default.addObserver(forName: .DateManagerIndexDidChange, object: nil, queue: .main) { notification in
             self.updateLeftDateNavigationButtonAppearance(notification)
         }
         
-        NotificationCenter.default.addObserver(forName: .cityDidChange, object: nil, queue: .main) { notification in
+        NotificationCenter.default.addObserver(forName: .OptionsVCCityDidChange, object: nil, queue: .main) { _ in
             self.updateDatasource()
         }
     }

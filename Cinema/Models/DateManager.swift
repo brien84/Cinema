@@ -23,8 +23,8 @@ struct DateManager: DateManagerProtocol {
     
     var currentIndex = 0 {
         didSet {
-            let info = self.currentIndex == 0 ? [Constants.UserInfo.isIndexZero: true] : [Constants.UserInfo.isIndexZero: false]
-            NotificationCenter.default.post(name: .dateIndexDidChange, object: nil, userInfo: info)
+            let info = self.currentIndex == 0 ? [Constants.UserInfo.isIndexZero : true] : [Constants.UserInfo.isIndexZero : false]
+            NotificationCenter.default.post(name: .DateManagerIndexDidChange, object: nil, userInfo: info)
         }
     }
     
@@ -68,5 +68,5 @@ extension Date {
 }
 
 extension Notification.Name {
-    static let dateIndexDidChange = Notification.Name("dateIndexDidChange")
+    static let DateManagerIndexDidChange = Notification.Name("DateManagerIndexDidChangeNotification")
 }
