@@ -13,7 +13,7 @@ import UIKit
 ///
 /// According to selected date, DateContainerVC gets Movies from
 /// MovieManager and sets datasource to child ViewControllers.
-class DateContainerVC: ContainerVC {
+final class DateContainerVC: ContainerVC {
     
     private var dates: DateManagerProtocol!
     private var movies: MovieManagerProtocol!

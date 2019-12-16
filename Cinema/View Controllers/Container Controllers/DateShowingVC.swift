@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DateShowingVC: UITableViewController {
+final class DateShowingVC: UITableViewController {
     
     var datasource = [Showing]() {
         didSet {

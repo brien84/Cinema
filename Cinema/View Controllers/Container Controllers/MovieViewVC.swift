@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieViewVC: UIViewController {
+final class MovieViewVC: UIViewController {
     
     var movie: Movie!
     private var movieView: MovieView!

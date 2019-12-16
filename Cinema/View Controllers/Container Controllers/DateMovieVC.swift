@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DateMovieVC: UITableViewController {
+final class DateMovieVC: UITableViewController {
     
     var datasource = [Movie]() {
         didSet {

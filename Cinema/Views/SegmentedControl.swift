@@ -13,7 +13,7 @@ protocol SegmentedControlDelegate: AnyObject {
 }
 
 // TODO: Documentation
-class SegmentedControl: UISegmentedControl {
+final class SegmentedControl: UISegmentedControl {
     
     weak var delegate: SegmentedControlDelegate?
     

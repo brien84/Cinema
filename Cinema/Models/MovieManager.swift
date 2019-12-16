@@ -17,7 +17,7 @@ protocol MovieManagerProtocol {
     func getShowings(in city: City, at date: Date) -> [Showing]
 }
 
-class MovieManager: MovieManagerProtocol {
+final class MovieManager: MovieManagerProtocol {
     
     var movies = [Movie]()
 

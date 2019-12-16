@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OptionsCell: UITableViewCell {
+final class OptionsCell: UITableViewCell {
     
     let title: UILabel = {
         let label = UILabel()

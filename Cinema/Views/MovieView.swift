@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieView: UIView {
+final class MovieView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var separator: UIView!

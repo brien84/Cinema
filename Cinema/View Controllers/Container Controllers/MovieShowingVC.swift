@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieShowingVC: UITableViewController {
+final class MovieShowingVC: UITableViewController {
     
     var datasource = [Showing]() {
         didSet {

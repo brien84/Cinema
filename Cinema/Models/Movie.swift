@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Movie: Decodable {
+final class Movie: Decodable {
     let title: String
     let originalTitle: String?
     let duration: String?

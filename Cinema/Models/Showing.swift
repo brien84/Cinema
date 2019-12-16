@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Showing: Decodable {
+final class Showing: Decodable {
     let city: String
     let date: Date
     let venue: String

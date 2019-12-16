@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DateContainerCell: UITableViewCell {
+final class DateContainerCell: UITableViewCell {
 
     let poster: NetworkImageView = {
         let view = NetworkImageView(frame: .zero)

@@ -13,7 +13,7 @@ import UIKit
 /// displays image from cache or downloads image.
 ///
 /// - Note: Images are cached as Data to significantly lower memory usage.
-class NetworkImageView: UIImageView {
+final class NetworkImageView: UIImageView {
     
     private let cache = NSCache<NSString, NSData>()
     

@@ -9,7 +9,7 @@
 import UIKit
 
 /// Options menu, where user selects City.
-class OptionsVC: UITableViewController {
+final class OptionsVC: UITableViewController {
     
     private let datasource: [City] = {
         return City.allCases.map { $0 }

@@ -14,7 +14,7 @@ enum DataError: Error {
     case noShowings
 }
 
-class ErrorLabel: UILabel {
+final class ErrorLabel: UILabel {
 
     init(frame: CGRect, error: DataError) {
         super.init(frame: frame)

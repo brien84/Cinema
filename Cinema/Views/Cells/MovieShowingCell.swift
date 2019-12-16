@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieShowingCell: UITableViewCell {
+final class MovieShowingCell: UITableViewCell {
 
     let time: UILabel = {
         let label = UILabel()
