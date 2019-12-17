@@ -169,8 +169,8 @@ final class DateContainerVC: ContainerVC {
     
     // MARK: - SegmentedControlDelegate
     
-    override func indexChanged(to newIndex: Int){
-        super.indexChanged(to: newIndex)
+    override func segmentedControl(_ segmentedControl: SegmentedControl, didChange index: Int) {
+        super.segmentedControl(segmentedControl, didChange: index)
         updateDatasource()
     }
 }

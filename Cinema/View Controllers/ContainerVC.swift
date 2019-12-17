@@ -22,7 +22,7 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
         get { return control.selectedSegmentIndex }
         set {
             control.selectedSegmentIndex = newValue
-            indexChanged(to: newValue)
+            segmentedControl(control, didChange: newValue)
         }
     }
     
@@ -33,7 +33,7 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
     init<T: Segmentable>(leftVC: UIViewController, rightVC: UIViewController, segments: T.Type)  {
         self.leftVC = leftVC
         self.rightVC = rightVC
-        self.control = SegmentedControl(frame: .zero, segments: T.self)
+        self.control = SegmentedControl(with: T.self)
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -98,8 +98,8 @@ class ContainerVC: UIViewController, SegmentedControlDelegate {
     
     // MARK: - SegmentedControlDelegate Methods
     
-    func indexChanged(to newIndex: Int) {
-        switch newIndex {
+    func segmentedControl(_ segmentedControl: SegmentedControl, didChange index: Int) {
+        switch index {
         case 0:
             updateContainer(with: leftVC)
         case 1:

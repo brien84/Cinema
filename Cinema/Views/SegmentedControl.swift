@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SegmentedControlDelegate: AnyObject {
-    func indexChanged(to newIndex: Int)
+    func segmentedControl(_ segmentedControl: SegmentedControl, didChange index: Int)
 }
 
 // TODO: Documentation
@@ -17,9 +17,8 @@ final class SegmentedControl: UISegmentedControl {
     
     weak var delegate: SegmentedControlDelegate?
     
-    // TODO: Set default frame size
-    init<T: Segmentable>(frame: CGRect, segments: T.Type) {
-        super.init(frame: frame)
+    init<T: Segmentable>(with segments: T.Type) {
+        super.init(frame: .zero)
         
         self.removeAllSegments()
         
@@ -27,14 +26,14 @@ final class SegmentedControl: UISegmentedControl {
             self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
         }
         
-        self.addTarget(self, action: #selector(valueChange), for: .valueChanged)
+        self.addTarget(self, action: #selector(valueDidChange), for: .valueChanged)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc private func valueChange() {
-        delegate?.indexChanged(to: self.selectedSegmentIndex)
+    @objc private func valueDidChange() {
+        delegate?.segmentedControl(self, didChange: self.selectedSegmentIndex)
     }
 }
