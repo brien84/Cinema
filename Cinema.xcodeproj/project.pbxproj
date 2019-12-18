@@ -27,7 +27,6 @@
 		2904C9F12341208400407B64 /* MovieShowingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9F02341208400407B64 /* MovieShowingVC.swift */; };
 		2904D0712353C79B00407B64 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0702353C79B00407B64 /* OptionsVC.swift */; };
 		2904D0742353C7CC00407B64 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0722353C7CC00407B64 /* OptionsCell.swift */; };
-		2904D0772354D48E00407B64 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0762354D48E00407B64 /* ContainerVC.swift */; };
 		2904D07B2355111900407B64 /* DateContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D07A2355111900407B64 /* DateContainerVC.swift */; };
 		2904D09F2358CFB000407B64 /* NetworkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D09E2358CFB000407B64 /* NetworkImageView.swift */; };
 		2904D0A2235A4CB300407B64 /* MovieShowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0A0235A4CB300407B64 /* MovieShowingCell.swift */; };
@@ -35,7 +34,6 @@
 		294E933223A959BD0062E808 /* SegmentableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E933123A959BD0062E808 /* SegmentableContainer.swift */; };
 		29B9C96B237F44770035EF0B /* DateManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C96A237F44770035EF0B /* DateManagerTests.swift */; };
 		29B9C96D237F465D0035EF0B /* MovieManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C96C237F465D0035EF0B /* MovieManagerTests.swift */; };
-		29B9C96F237F4D6D0035EF0B /* ContainerVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C96E237F4D6D0035EF0B /* ContainerVCTests.swift */; };
 		29B9C978237F4F3F0035EF0B /* DateMovieVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C977237F4F3F0035EF0B /* DateMovieVCTests.swift */; };
 		29B9C97A237F4F650035EF0B /* DateContainerVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C979237F4F650035EF0B /* DateContainerVCTests.swift */; };
 		29B9C97C237F4F740035EF0B /* MovieContainerVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97B237F4F740035EF0B /* MovieContainerVCTests.swift */; };
@@ -77,7 +75,6 @@
 		2904C9F02341208400407B64 /* MovieShowingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowingVC.swift; sourceTree = "<group>"; };
 		2904D0702353C79B00407B64 /* OptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		2904D0722353C7CC00407B64 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
-		2904D0762354D48E00407B64 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		2904D07A2355111900407B64 /* DateContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainerVC.swift; sourceTree = "<group>"; };
 		2904D09E2358CFB000407B64 /* NetworkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageView.swift; sourceTree = "<group>"; };
 		2904D0A0235A4CB300407B64 /* MovieShowingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowingCell.swift; sourceTree = "<group>"; };
@@ -87,7 +84,6 @@
 		29B9C961237F42A30035EF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29B9C96A237F44770035EF0B /* DateManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManagerTests.swift; sourceTree = "<group>"; };
 		29B9C96C237F465D0035EF0B /* MovieManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManagerTests.swift; sourceTree = "<group>"; };
-		29B9C96E237F4D6D0035EF0B /* ContainerVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVCTests.swift; sourceTree = "<group>"; };
 		29B9C977237F4F3F0035EF0B /* DateMovieVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateMovieVCTests.swift; sourceTree = "<group>"; };
 		29B9C979237F4F650035EF0B /* DateContainerVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainerVCTests.swift; sourceTree = "<group>"; };
 		29B9C97B237F4F740035EF0B /* MovieContainerVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieContainerVCTests.swift; sourceTree = "<group>"; };
@@ -151,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				294E933123A959BD0062E808 /* SegmentableContainer.swift */,
-				2904D0762354D48E00407B64 /* ContainerVC.swift */,
 				2904D07A2355111900407B64 /* DateContainerVC.swift */,
 				2904C9E5233EB5F100407B64 /* MovieContainerVC.swift */,
 				2904D0702353C79B00407B64 /* OptionsVC.swift */,
@@ -227,7 +222,6 @@
 		29B9C967237F42B00035EF0B /* ViewControllersTests */ = {
 			isa = PBXGroup;
 			children = (
-				29B9C96E237F4D6D0035EF0B /* ContainerVCTests.swift */,
 				29B9C979237F4F650035EF0B /* DateContainerVCTests.swift */,
 				29B9C97B237F4F740035EF0B /* MovieContainerVCTests.swift */,
 				29B9C97D237F4F850035EF0B /* OptionsVCTests.swift */,
@@ -367,7 +361,6 @@
 				29230DEB235CFBD2007C9EB4 /* ErrorLabel.swift in Sources */,
 				294E933223A959BD0062E808 /* SegmentableContainer.swift in Sources */,
 				2904C7642336982B00407B64 /* AppDelegate.swift in Sources */,
-				2904D0772354D48E00407B64 /* ContainerVC.swift in Sources */,
 				2904D09F2358CFB000407B64 /* NetworkImageView.swift in Sources */,
 				2904D0A2235A4CB300407B64 /* MovieShowingCell.swift in Sources */,
 				2904C79E2336A69100407B64 /* Movie.swift in Sources */,
@@ -395,7 +388,6 @@
 				29B9C980237F4F980035EF0B /* DateShowingVCTests.swift in Sources */,
 				29B9C978237F4F3F0035EF0B /* DateMovieVCTests.swift in Sources */,
 				29B9C97A237F4F650035EF0B /* DateContainerVCTests.swift in Sources */,
-				29B9C96F237F4D6D0035EF0B /* ContainerVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
