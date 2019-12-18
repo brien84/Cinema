@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum DailySegments: Int, Segments, CustomStringConvertible {
+enum DailyVCSegments: Int, Segments, CustomStringConvertible {
     case movies
     case showings
 
@@ -34,7 +34,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     let rightViewController = DateShowingVC()
     
     private(set) lazy var segmentedControl: SegmentedControl = {
-        let control = SegmentedControl(with: DailySegments.self)
+        let control = SegmentedControl(with: DailyVCSegments.self)
         control.delegate = self
         
         return control
@@ -89,7 +89,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         setupNotificationObservers()
 
         ///
-        segmentedControl.selectedSegmentIndex = DailySegments.showings.rawValue
+        segmentedControl.selectedSegmentIndex = DailyVCSegments.showings.rawValue
         segmentedControl.sendActions(for: UIControl.Event.valueChanged)
         
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
@@ -143,9 +143,9 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     
     private func updateDatasource() {
         switch segmentedControl.selectedSegmentIndex {
-        case DailySegments.movies.rawValue:
+        case DailyVCSegments.movies.rawValue:
             leftViewController.datasource = movies.getMovies(in: city, at: dates.selectedDate)
-        case DailySegments.showings.rawValue:
+        case DailyVCSegments.showings.rawValue:
             rightViewController.datasource = movies.getShowings(in: city, at: dates.selectedDate)
         default:
             return
