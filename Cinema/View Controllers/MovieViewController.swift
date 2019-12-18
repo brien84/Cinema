@@ -1,5 +1,5 @@
 //
-//  MovieContainerVC.swift
+//  MovieViewController.swift
 //  Cinema
 //
 //  Created by Marius on 28/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum MovieContainerSegments: Int, Segments, CustomStringConvertible {
+enum MovieVCSegments: Int, Segments, CustomStringConvertible {
     case about
     case showings
 
@@ -24,7 +24,7 @@ enum MovieContainerSegments: Int, Segments, CustomStringConvertible {
 }
 
 ///
-final class MovieContainerVC: UIViewController, SegmentableContainer {
+final class MovieViewController: UIViewController, SegmentableContainer {
     
     private let movie: Movie
 
@@ -46,7 +46,7 @@ final class MovieContainerVC: UIViewController, SegmentableContainer {
     }()
     
     private(set) lazy var segmentedControl: SegmentedControl = {
-        let control = SegmentedControl(with: MovieContainerSegments.self)
+        let control = SegmentedControl(with: MovieVCSegments.self)
         control.delegate = self
 
         return control
@@ -72,7 +72,7 @@ final class MovieContainerVC: UIViewController, SegmentableContainer {
         self.view.backgroundColor = Constants.Colors.light
         
         ///
-        segmentedControl.selectedSegmentIndex = MovieContainerSegments.about.rawValue
+        segmentedControl.selectedSegmentIndex = MovieVCSegments.about.rawValue
         segmentedControl.sendActions(for: UIControl.Event.valueChanged)
         
         self.navigationItem.title = movie.title

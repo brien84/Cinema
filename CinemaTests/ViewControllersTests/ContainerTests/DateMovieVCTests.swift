@@ -124,7 +124,7 @@ class DateMovieVCTests: XCTestCase {
         sut.tableView(sut.tableView, didSelectRowAt: testIndexPath)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            XCTAssertTrue(self.sut.parent?.navigationController?.topViewController is MovieContainerVC)
+            XCTAssertTrue(self.sut.parent?.navigationController?.topViewController is MovieViewController)
             expectation.fulfill()
         }
         

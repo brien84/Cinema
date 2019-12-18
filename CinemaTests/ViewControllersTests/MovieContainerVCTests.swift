@@ -9,12 +9,12 @@
 import XCTest
 @testable import Cinema
 
-class MovieContainerVCTests: XCTestCase {
+class MovieViewControllerTests: XCTestCase {
     
-    var sut: MovieContainerVC!
+    var sut: MovieViewController!
 
     override func setUp() {
-        sut = MovieContainerVC(with: movie)
+        sut = MovieViewController(with: movie)
     }
 
     override func tearDown() {
