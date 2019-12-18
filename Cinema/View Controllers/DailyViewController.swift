@@ -1,5 +1,5 @@
 //
-//  DateContainerVC.swift
+//  DailyViewController.swift
 //  Cinema
 //
 //  Created by Marius on 14/10/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum DateContainerSegments: Int, Segments, CustomStringConvertible {
+enum DailySegments: Int, Segments, CustomStringConvertible {
     case movies
     case showings
 
@@ -24,7 +24,7 @@ enum DateContainerSegments: Int, Segments, CustomStringConvertible {
 }
 
 ///
-final class DateContainerVC: UIViewController, SegmentableContainer {
+final class DailyViewController: UIViewController, SegmentableContainer {
     
     private let movies: MovieManagerProtocol
     private var dates: DateManagerProtocol
@@ -34,7 +34,7 @@ final class DateContainerVC: UIViewController, SegmentableContainer {
     let rightViewController = DateShowingVC()
     
     private(set) lazy var segmentedControl: SegmentedControl = {
-        let control = SegmentedControl(with: DateContainerSegments.self)
+        let control = SegmentedControl(with: DailySegments.self)
         control.delegate = self
         
         return control
@@ -89,7 +89,7 @@ final class DateContainerVC: UIViewController, SegmentableContainer {
         setupNotificationObservers()
 
         ///
-        segmentedControl.selectedSegmentIndex = DateContainerSegments.showings.rawValue
+        segmentedControl.selectedSegmentIndex = DailySegments.showings.rawValue
         segmentedControl.sendActions(for: UIControl.Event.valueChanged)
         
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
@@ -143,9 +143,9 @@ final class DateContainerVC: UIViewController, SegmentableContainer {
     
     private func updateDatasource() {
         switch segmentedControl.selectedSegmentIndex {
-        case DateContainerSegments.movies.rawValue:
+        case DailySegments.movies.rawValue:
             leftViewController.datasource = movies.getMovies(in: city, at: dates.selectedDate)
-        case DateContainerSegments.showings.rawValue:
+        case DailySegments.showings.rawValue:
             rightViewController.datasource = movies.getShowings(in: city, at: dates.selectedDate)
         default:
             return

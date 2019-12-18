@@ -1,5 +1,5 @@
 //
-//  DateContainerVCTests.swift
+//  DailyViewControllerTests.swift
 //  CinemaTests
 //
 //  Created by Marius on 15/11/2019.
@@ -9,9 +9,9 @@
 import XCTest
 @testable import Cinema
 
-class DateContainerVCTests: XCTestCase {
+class DailyViewControllerTests: XCTestCase {
     
-    var sut: DateContainerVC!
+    var sut: DailyViewController!
 
     override func tearDown() {
         sut = nil
@@ -19,7 +19,7 @@ class DateContainerVCTests: XCTestCase {
 
     func testLeftBarButtonItemIsNotNil() {
         /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
+        sut = DailyViewController(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
         
         /// when
         sut.loadViewIfNeeded()
@@ -30,7 +30,7 @@ class DateContainerVCTests: XCTestCase {
     
     func testRightBarButtonItemIsNotNil() {
          /// given
-         sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
+         sut = DailyViewController(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
          
          /// when
          sut.loadViewIfNeeded()
@@ -41,7 +41,7 @@ class DateContainerVCTests: XCTestCase {
     
     func testLeftBarButtonItemIsDisabled() {
         /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
+        sut = DailyViewController(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
         
         /// when
         sut.loadViewIfNeeded()
@@ -53,7 +53,7 @@ class DateContainerVCTests: XCTestCase {
     
     func testRightBarButtonItemIsDisabled() {
         /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
+        sut = DailyViewController(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
         
         /// when
         sut.loadViewIfNeeded()
@@ -65,7 +65,7 @@ class DateContainerVCTests: XCTestCase {
 
     func testLeftBarButtonItemIsEnabledAfterSuccessfulFetch() {
         /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
+        sut = DailyViewController(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
         let expectation = XCTestExpectation(description: "Wait for UI to update.")
         
         /// when
@@ -83,7 +83,7 @@ class DateContainerVCTests: XCTestCase {
     
     func testRightBarButtonItemIsEnabledAfterSuccessfulFetch() {
         /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
+        sut = DailyViewController(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
         let expectation = XCTestExpectation(description: "Wait for UI to update.")
         
         /// when
@@ -101,7 +101,7 @@ class DateContainerVCTests: XCTestCase {
 
     func testLeftBarButtonImageIsOptions() {
         /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
+        sut = DailyViewController(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
         
         /// when
         sut.loadViewIfNeeded()
@@ -114,7 +114,7 @@ class DateContainerVCTests: XCTestCase {
     
     func testLeftBarButtonImageIsLeftArrow() {
         /// given
-        sut = DateContainerVC(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
+        sut = DailyViewController(dateManager: DateManagerMock(), movieManager: MovieManagerMock())
         
         /// when
         sut.loadViewIfNeeded()
@@ -128,7 +128,7 @@ class DateContainerVCTests: XCTestCase {
     func testNavigationTitleIsSet() {
         /// given
         let date = Date()
-        sut = DateContainerVC(dateManager: DateManagerMock(dates: [date]), movieManager: MovieManagerMock())
+        sut = DailyViewController(dateManager: DateManagerMock(dates: [date]), movieManager: MovieManagerMock())
         
         /// when
         sut.loadViewIfNeeded()

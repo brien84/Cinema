@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     private lazy var navigationController: UINavigationController = {
-        let controller = UINavigationController(rootViewController: DateContainerVC())
+        let controller = UINavigationController(rootViewController: DailyViewController())
         controller.navigationBar.tintColor = Constants.Colors.light
         controller.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Constants.Colors.dark]
         controller.navigationBar.topItem?.backBarButtonItem = backButton
