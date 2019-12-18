@@ -8,36 +8,58 @@
 
 import UIKit
 
-/// Container ViewController displaying MovieViewVC and MovieShowingVC.
 ///
-/// Is shown when a cell is selected in either DateMovieVC or DateShowingVC.
-final class MovieContainerVC: ContainerVC {
+final class MovieContainerVC: UIViewController, SegmentableContainer {
     
-    var movie: Movie!
+    private let movie: Movie
+
+    let containerView = UIView()
+   
+    private(set) lazy var leftViewController: MovieViewVC = {
+        let controller = MovieViewVC()
+        controller.movie = movie
+
+        return controller
+    }()
     
-    private let movieVC = MovieViewVC()
-    private let showingVC = MovieShowingVC()
+    private(set) lazy var rightViewController: MovieShowingVC = {
+        let controller = MovieShowingVC()
+        let city = UserDefaults.standard.readCity()
+        controller.datasource = movie.getShowings(in: city)
+
+        return controller
+    }()
     
-    init() {
-        super.init(leftVC: movieVC, rightVC: showingVC, segments: MovieContainerSegments.self)
+    private(set) lazy var segmentedControl: SegmentedControl = {
+        let control = SegmentedControl(with: MovieContainerSegments.self)
+        control.delegate = self
+
+        return control
+    }()
+    
+    init(with movie: Movie) {
+        self.movie = movie
+        
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        self.view = createSegmentableContainerView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = movie.title
-        
         self.view.backgroundColor = Constants.Colors.light
         
-        movieVC.movie = movie
+        ///
+        segmentedControl.selectedSegmentIndex = MovieContainerSegments.about.rawValue
+        segmentedControl.sendActions(for: UIControl.Event.valueChanged)
         
-        let city = UserDefaults.standard.readCity()
-        showingVC.datasource = movie.getShowings(in: city)
-        
-        controlSelectedIndex = MovieContainerSegments.about.rawValue
-    }  
+        self.navigationItem.title = movie.title
+    }
 }

@@ -50,9 +50,8 @@ final class DateShowingVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = MovieContainerVC()
         guard let movie = datasource[indexPath.row].parentMovie else { return }
-        vc.movie = movie
+        let vc = MovieContainerVC(with: movie)
         self.parent?.navigationController?.pushViewController(vc, animated: true)
     }
 }

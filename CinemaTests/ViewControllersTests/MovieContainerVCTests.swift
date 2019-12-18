@@ -14,8 +14,7 @@ class MovieContainerVCTests: XCTestCase {
     var sut: MovieContainerVC!
 
     override func setUp() {
-        sut = MovieContainerVC()
-        sut.movie = movie
+        sut = MovieContainerVC(with: movie)
     }
 
     override func tearDown() {
@@ -27,7 +26,7 @@ class MovieContainerVCTests: XCTestCase {
         sut.loadViewIfNeeded()
         
         /// then
-        XCTAssertEqual(sut.navigationItem.title, sut.movie.title)
+        XCTAssertEqual(sut.navigationItem.title, movie.title)
     }
     
     func testMovieContainerBackgroundColorIsLight() {

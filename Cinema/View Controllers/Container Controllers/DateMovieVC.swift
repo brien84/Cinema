@@ -50,8 +50,8 @@ final class DateMovieVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = MovieContainerVC()
-        vc.movie = datasource[indexPath.row]
+        let movie = datasource[indexPath.row]
+        let vc = MovieContainerVC(with: movie)
         self.parent?.navigationController?.pushViewController(vc, animated: true)
     }
 }
