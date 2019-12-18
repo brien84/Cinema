@@ -8,22 +8,22 @@
 
 import UIKit
 
-/// Container ViewController displaying DateMovieVC and ShowingVC
-/// with Date selection in NavigationController.
 ///
-/// According to selected date, DateContainerVC gets Movies from
-/// MovieManager and sets datasource to child ViewControllers.
-final class DateContainerVC: ContainerVC {
+final class DateContainerVC: UIViewController, SegmentableContainer {
     
-    private var dates: DateManagerProtocol!
-    private var movies: MovieManagerProtocol!
+    private let movies: MovieManagerProtocol
+    private var dates: DateManagerProtocol
     
-    private let movieVC = DateMovieVC()
-    private let showingVC = DateShowingVC()
+    let containerView = UIView()
+    let leftViewController = DateMovieVC()
+    let rightViewController = DateShowingVC()
     
-    private var city: City {
-        return UserDefaults.standard.readCity()
-    }
+    private(set) lazy var segmentedControl: SegmentedControl = {
+        let control = SegmentedControl(with: DateContainerSegments.self)
+        control.delegate = self
+        
+        return control
+    }()
     
     private lazy var leftDateNavigationButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
@@ -31,8 +31,7 @@ final class DateContainerVC: ContainerVC {
         button.target = self
         button.action = #selector(handleDateNavigationButtonTap)
         button.tintColor = Constants.Colors.blue
-        
-        button.isEnabled = false
+        self.navigationItem.leftBarButtonItem = button
         
         return button
     }()
@@ -43,33 +42,43 @@ final class DateContainerVC: ContainerVC {
         button.target = self
         button.action = #selector(handleDateNavigationButtonTap)
         button.tintColor = Constants.Colors.blue
-        
-        button.isEnabled = false
+        self.navigationItem.rightBarButtonItem = button
         
         return button
     }()
     
-    init(dateManager: DateManagerProtocol = DateManager(), movieManager: MovieManagerProtocol = MovieManager()) {
-        super.init(leftVC: movieVC, rightVC: showingVC, segments: DateContainerSegments.self)
-        
-        self.dates = dateManager
-        self.movies = movieManager
+    private var city: City {
+        return UserDefaults.standard.readCity()
     }
     
+    init(dateManager: DateManagerProtocol = DateManager(), movieManager: MovieManagerProtocol = MovieManager()) {
+        self.dates = dateManager
+        self.movies = movieManager
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        self.view = createSegmentableContainerView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.leftBarButtonItem = leftDateNavigationButton
-        self.navigationItem.rightBarButtonItem = rightDateNavigationButton
-
+        self.view.backgroundColor = Constants.Colors.light
+        
         setupNotificationObservers()
 
+        ///
+        segmentedControl.selectedSegmentIndex = DateContainerSegments.showings.rawValue
+        segmentedControl.sendActions(for: UIControl.Event.valueChanged)
+        
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
-        controlSelectedIndex = DateContainerSegments.showings.rawValue
+        enableControlElements(false)
         
         fetchMovies()
     }
@@ -86,7 +95,7 @@ final class DateContainerVC: ContainerVC {
         }
     }
     
-    // MARK: - Fetching Methods
+    // MARK: - Model Methods
     
     private func fetchMovies() {
         movies.fetch(using: .shared) { result in
@@ -103,20 +112,28 @@ final class DateContainerVC: ContainerVC {
     }
 
     private func movieManagerDidFetchSuccessfully() {
-        leftDateNavigationButton.isEnabled = true
-        rightDateNavigationButton.isEnabled = true
+        enableControlElements(true)
         
-        self.toggleSegmentedControl(enabled: true)
-        self.containerDisplayErrorLabel(nil)
+        containerDisplayErrorLabel(nil)
         updateDatasource()
     }
     
     private func movieManagerDidFetchWithError() {
-        self.toggleSegmentedControl(enabled: false)
-        self.containerDisplayErrorLabel(.network)
+        containerDisplayErrorLabel(.network)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.fetchMovies()
+        }
+    }
+    
+    private func updateDatasource() {
+        switch segmentedControl.selectedSegmentIndex {
+        case DateContainerSegments.movies.rawValue:
+            leftViewController.datasource = movies.getMovies(in: city, at: dates.selectedDate)
+        case DateContainerSegments.showings.rawValue:
+            rightViewController.datasource = movies.getShowings(in: city, at: dates.selectedDate)
+        default:
+            return
         }
     }
     
@@ -132,20 +149,30 @@ final class DateContainerVC: ContainerVC {
         leftDateNavigationButton.image = isIndexZero ? Constants.Images.options : Constants.Images.left
     }
     
-    // MARK: - Model Methods
-    
-    private func updateDatasource() {
-        switch controlSelectedIndex {
-            
-        case DateContainerSegments.movies.rawValue:
-            movieVC.datasource = movies.getMovies(in: city, at: dates.selectedDate)
-            
-        case DateContainerSegments.showings.rawValue:
-            showingVC.datasource = movies.getShowings(in: city, at: dates.selectedDate)
-            
-        default:
-            break
+    private func enableControlElements(_ enabled: Bool) {
+        segmentedControl.isEnabled = enabled
+        leftDateNavigationButton.isEnabled = enabled
+        rightDateNavigationButton.isEnabled = enabled
+    }
+
+    // TODO: REFACTOR
+    private func containerDisplayErrorLabel(_ error: DataError?) {
+        if let label = containerView.subviews.first(where: { type(of: $0) == ErrorLabel.self }) {
+            label.removeFromSuperview()
         }
+        
+        if let error = error {
+            let label = ErrorLabel(frame: containerView.bounds, error: error)
+            containerView.addSubview(label)
+        }
+    }
+ 
+    // MARK: - Navigation Methods
+    
+    ///
+    func segmentedControl(_ segmentedControl: SegmentedControl, didChange index: Int) {
+        updateContainerViewBySegmentedControl(index)
+        updateDatasource()
     }
     
     @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
@@ -165,12 +192,5 @@ final class DateContainerVC: ContainerVC {
         
         updateDatasource()
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
-    }
-    
-    // MARK: - SegmentedControlDelegate
-    
-    override func segmentedControl(_ segmentedControl: SegmentedControl, didChange index: Int) {
-        super.segmentedControl(segmentedControl, didChange: index)
-        updateDatasource()
     }
 }

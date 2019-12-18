@@ -17,10 +17,14 @@ final class SegmentedControl: UISegmentedControl {
     
     weak var delegate: SegmentedControlDelegate?
     
-    init<T: Segmentable>(with segments: T.Type) {
+    init<T: Segments>(with segments: T.Type) {
         super.init(frame: .zero)
         
-        self.removeAllSegments()
+        if #available(iOS 13.0, *) {
+            self.selectedSegmentTintColor = Constants.Colors.lightBlue
+        } else {
+            self.tintColor = Constants.Colors.blue
+        }
         
         T.allCases.forEach { segment in
             self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)

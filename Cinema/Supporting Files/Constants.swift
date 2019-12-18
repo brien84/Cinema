@@ -63,7 +63,7 @@ enum City: String, CaseIterable {
     case siauliai = "Šiauliai"
 }
 
-enum DateContainerSegments: Int, Segmentable, CustomStringConvertible {
+enum DateContainerSegments: Int, Segments, CustomStringConvertible {
     case movies
     case showings
 
@@ -78,7 +78,7 @@ enum DateContainerSegments: Int, Segmentable, CustomStringConvertible {
     }
 }
 
-enum MovieContainerSegments: Int, Segmentable, CustomStringConvertible {
+enum MovieContainerSegments: Int, Segments, CustomStringConvertible {
     case about
     case showings
 
