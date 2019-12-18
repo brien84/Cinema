@@ -8,6 +8,21 @@
 
 import UIKit
 
+enum DateContainerSegments: Int, Segments, CustomStringConvertible {
+    case movies
+    case showings
+
+    // TODO: Localization?
+    public var description: String {
+        switch self {
+        case .movies:
+            return "Filmai"
+        case .showings:
+            return "Seansai"
+        }
+    }
+}
+
 ///
 final class DateContainerVC: UIViewController, SegmentableContainer {
     

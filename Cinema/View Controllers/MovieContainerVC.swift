@@ -8,6 +8,21 @@
 
 import UIKit
 
+enum MovieContainerSegments: Int, Segments, CustomStringConvertible {
+    case about
+    case showings
+
+    // TODO: Localization?
+    public var description: String {
+        switch self {
+        case .about:
+            return "Apie"
+        case .showings:
+            return "Seansai"
+        }
+    }
+}
+
 ///
 final class MovieContainerVC: UIViewController, SegmentableContainer {
     
