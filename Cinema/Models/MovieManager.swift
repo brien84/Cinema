@@ -9,18 +9,28 @@
 import Foundation
 import UIKit
 
-protocol MovieManagerProtocol {
+typealias MovieManageable = MovieFetchable & MovieFilterable
+
+protocol MovieFetchable: AnyObject {
     var movies: [Movie] { get set }
     
     func fetch(using session: URLSession, completion: @escaping (Result<Void, Error>) -> ())
-    func getMovies(in city: City, at date: Date) -> [Movie]
-    func getShowings(in city: City, at date: Date) -> [Showing]
 }
 
-final class MovieManager: MovieManagerProtocol {
+protocol MovieFilterable {
+    var movies: [Movie] { get }
+    
+    func filterMovies(in city: City, at date: Date) -> [Movie]
+    func filterShowings(in city: City, at date: Date) -> [Showing]
+}
+
+final class MovieManager: MovieManageable {
     
     var movies = [Movie]()
+    
+}
 
+extension MovieFetchable {
     func fetch(using session: URLSession = .shared, completion: @escaping (Result<Void, Error>) -> ()) {
         let task = session.dataTask(with: Constants.URLs.api) { data, response, error in
             if let error = error {
@@ -46,12 +56,14 @@ final class MovieManager: MovieManagerProtocol {
             return .failure(error)
         }
     }
+}
 
-    func getMovies(in city: City, at date: Date) -> [Movie] {
+extension MovieFilterable {
+    func filterMovies(in city: City, at date: Date) -> [Movie] {
         return movies.flatMap { $0.getShowings(in: city, at: date).compactMap { $0.parentMovie } }.uniqued()
     }
     
-    func getShowings(in city: City, at date: Date) -> [Showing] {
+    func filterShowings(in city: City, at date: Date) -> [Showing] {
         return movies.flatMap { $0.getShowings(in: city, at: date) }
     }
 }

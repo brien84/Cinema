@@ -82,7 +82,7 @@ class MovieManagerTests: XCTestCase {
         sut.movies.append(contentsOf: unwantedMovies)
         
         /// when
-        let moviesCount = sut.getMovies(in: wantedCity, at: wantedDate).count
+        let moviesCount = sut.filterMovies(in: wantedCity, at: wantedDate).count
         
         /// then
         XCTAssertEqual(moviesCount, 5)
@@ -100,7 +100,7 @@ class MovieManagerTests: XCTestCase {
         sut.movies.append(contentsOf: unwantedMovies)
         
         /// when
-        let moviesCount = sut.getMovies(in: wantedCity, at: wantedDate).count
+        let moviesCount = sut.filterMovies(in: wantedCity, at: wantedDate).count
         
         /// then
         XCTAssertEqual(moviesCount, 8)
@@ -118,7 +118,7 @@ class MovieManagerTests: XCTestCase {
         sut.movies.append(contentsOf: unwantedMovies)
         
         /// when
-        let moviesCount = sut.getMovies(in: wantedCity, at: wantedDate).count
+        let moviesCount = sut.filterMovies(in: wantedCity, at: wantedDate).count
         
         /// then
         XCTAssertEqual(moviesCount, 2)
@@ -135,7 +135,7 @@ class MovieManagerTests: XCTestCase {
         sut.movies.append(contentsOf: unwantedMovies)
         
         /// when
-        let moviesCount = sut.getMovies(in: wantedCity, at: wantedDate).count
+        let moviesCount = sut.filterMovies(in: wantedCity, at: wantedDate).count
         
         /// then
         XCTAssertEqual(moviesCount, 0)
@@ -154,7 +154,7 @@ class MovieManagerTests: XCTestCase {
         sut.movies.append(contentsOf: unwantedMovies)
         
         /// when
-        let showingsCount = sut.getShowings(in: wantedCity, at: wantedDate).count
+        let showingsCount = sut.filterShowings(in: wantedCity, at: wantedDate).count
         
         /// then
         XCTAssertEqual(showingsCount, 5)
@@ -172,7 +172,7 @@ class MovieManagerTests: XCTestCase {
         sut.movies.append(contentsOf: unwantedMovies)
         
         /// when
-        let showingsCount = sut.getShowings(in: wantedCity, at: wantedDate).count
+        let showingsCount = sut.filterShowings(in: wantedCity, at: wantedDate).count
         
         /// then
         XCTAssertEqual(showingsCount, 8)
@@ -190,7 +190,7 @@ class MovieManagerTests: XCTestCase {
         sut.movies.append(contentsOf: unwantedMovies)
         
         /// when
-        let showingsCount = sut.getShowings(in: wantedCity, at: wantedDate).count
+        let showingsCount = sut.filterShowings(in: wantedCity, at: wantedDate).count
         
         /// then
         XCTAssertEqual(showingsCount, 2)
@@ -207,7 +207,7 @@ class MovieManagerTests: XCTestCase {
         sut.movies.append(contentsOf: unwantedMovies)
         
         /// when
-        let showingsCount = sut.getShowings(in: wantedCity, at: wantedDate).count
+        let showingsCount = sut.filterShowings(in: wantedCity, at: wantedDate).count
         
         /// then
         XCTAssertEqual(showingsCount, 0)

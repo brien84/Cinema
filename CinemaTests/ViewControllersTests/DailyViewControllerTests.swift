@@ -172,7 +172,7 @@ class DailyViewControllerTests: XCTestCase {
         }
     }
     
-    private class MovieManagerMock: MovieManagerProtocol {
+    private class MovieManagerMock: MovieManageable {
         private var isFetchSuccessful: Bool
         
         var movies: [Movie] = []
@@ -183,14 +183,6 @@ class DailyViewControllerTests: XCTestCase {
         
         func fetch(using session: URLSession, completion: @escaping (Result<Void, Error>) -> ()) {
             completion(self.isFetchSuccessful ? .success(()) : .failure(TestError.someError))
-        }
-        
-        func getMovies(in city: City, at date: Date) -> [Movie] {
-            return []
-        }
-        
-        func getShowings(in city: City, at date: Date) -> [Showing] {
-            return []
         }
     }
     

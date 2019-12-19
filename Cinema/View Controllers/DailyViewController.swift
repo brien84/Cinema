@@ -26,7 +26,7 @@ enum DailyVCSegments: Int, Segments, CustomStringConvertible {
 ///
 final class DailyViewController: UIViewController, SegmentableContainer {
     
-    private let movies: MovieManagerProtocol
+    private let movies: MovieManageable
     private var dates: DateManagerProtocol
     
     let containerView = UIView()
@@ -66,7 +66,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         return UserDefaults.standard.readCity()
     }
     
-    init(dateManager: DateManagerProtocol = DateManager(), movieManager: MovieManagerProtocol = MovieManager()) {
+    init(dateManager: DateManagerProtocol = DateManager(), movieManager: MovieManageable = MovieManager()) {
         self.dates = dateManager
         self.movies = movieManager
         
@@ -144,9 +144,9 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     private func updateDatasource() {
         switch segmentedControl.selectedSegmentIndex {
         case DailyVCSegments.movies.rawValue:
-            leftViewController.datasource = movies.getMovies(in: city, at: dates.selectedDate)
+            leftViewController.datasource = movies.filterMovies(in: city, at: dates.selectedDate)
         case DailyVCSegments.showings.rawValue:
-            rightViewController.datasource = movies.getShowings(in: city, at: dates.selectedDate)
+            rightViewController.datasource = movies.filterShowings(in: city, at: dates.selectedDate)
         default:
             return
         }
