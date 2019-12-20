@@ -36,7 +36,7 @@
 		29B9C96D237F465D0035EF0B /* MovieManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C96C237F465D0035EF0B /* MovieManagerTests.swift */; };
 		29B9C978237F4F3F0035EF0B /* DateMovieVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C977237F4F3F0035EF0B /* DateMovieVCTests.swift */; };
 		29B9C97A237F4F650035EF0B /* DailyViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C979237F4F650035EF0B /* DailyViewControllerTests.swift */; };
-		29B9C97C237F4F740035EF0B /* MovieContainerVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97B237F4F740035EF0B /* MovieContainerVCTests.swift */; };
+		29B9C97C237F4F740035EF0B /* MovieViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97B237F4F740035EF0B /* MovieViewControllerTests.swift */; };
 		29B9C97E237F4F850035EF0B /* OptionsVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97D237F4F850035EF0B /* OptionsVCTests.swift */; };
 		29B9C980237F4F980035EF0B /* DateShowingVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97F237F4F980035EF0B /* DateShowingVCTests.swift */; };
 		29B9C982237F4FB70035EF0B /* MovieShowingVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C981237F4FB70035EF0B /* MovieShowingVCTests.swift */; };
@@ -86,7 +86,7 @@
 		29B9C96C237F465D0035EF0B /* MovieManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManagerTests.swift; sourceTree = "<group>"; };
 		29B9C977237F4F3F0035EF0B /* DateMovieVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateMovieVCTests.swift; sourceTree = "<group>"; };
 		29B9C979237F4F650035EF0B /* DailyViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewControllerTests.swift; sourceTree = "<group>"; };
-		29B9C97B237F4F740035EF0B /* MovieContainerVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieContainerVCTests.swift; sourceTree = "<group>"; };
+		29B9C97B237F4F740035EF0B /* MovieViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewControllerTests.swift; sourceTree = "<group>"; };
 		29B9C97D237F4F850035EF0B /* OptionsVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsVCTests.swift; sourceTree = "<group>"; };
 		29B9C97F237F4F980035EF0B /* DateShowingVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateShowingVCTests.swift; sourceTree = "<group>"; };
 		29B9C981237F4FB70035EF0B /* MovieShowingVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowingVCTests.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				29B9C979237F4F650035EF0B /* DailyViewControllerTests.swift */,
-				29B9C97B237F4F740035EF0B /* MovieContainerVCTests.swift */,
+				29B9C97B237F4F740035EF0B /* MovieViewControllerTests.swift */,
 				29B9C97D237F4F850035EF0B /* OptionsVCTests.swift */,
 				29B9C976237F4F170035EF0B /* ContainerTests */,
 			);
@@ -381,7 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29B9C96D237F465D0035EF0B /* MovieManagerTests.swift in Sources */,
-				29B9C97C237F4F740035EF0B /* MovieContainerVCTests.swift in Sources */,
+				29B9C97C237F4F740035EF0B /* MovieViewControllerTests.swift in Sources */,
 				29B9C96B237F44770035EF0B /* DateSelectorTests.swift in Sources */,
 				29B9C97E237F4F850035EF0B /* OptionsVCTests.swift in Sources */,
 				29B9C982237F4FB70035EF0B /* MovieShowingVCTests.swift in Sources */,
