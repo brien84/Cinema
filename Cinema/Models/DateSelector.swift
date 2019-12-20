@@ -1,5 +1,5 @@
 //
-//  DateManager.swift
+//  DateSelector.swift
 //  Cinema
 //
 //  Created by Marius on 23/09/2019.
@@ -8,41 +8,51 @@
 
 import Foundation
 
-protocol DateManagerProtocol {
-    var dates: [Date] { get set }
-    var currentIndex: Int { get set }
+protocol DateSelectable {
+    var dates: [Date] { get }
     var selectedDate: Date { get }
-
-    mutating func decreaseDate()
-    mutating func increaseDate()
+    var currentIndex: Int { get }
+    
+    mutating func previousDate()
+    mutating func nextDate()
 }
 
-struct DateManager: DateManagerProtocol {
+struct DateSelector: DateSelectable {
     
-    var dates: [Date]
+    static let isFirstDateSelectedKey = "DateSelectorIsFirstDateSelected"
     
-    var currentIndex = 0 {
-        didSet {
-            let info = self.currentIndex == 0 ? [Constants.UserInfo.isIndexZero : true] : [Constants.UserInfo.isIndexZero : false]
-            NotificationCenter.default.post(name: .DateManagerIndexDidChange, object: nil, userInfo: info)
-        }
-    }
+    let dates: [Date]
     
     var selectedDate: Date {
         return dates[currentIndex]
+    }
+    
+    private(set) var currentIndex = 0 {
+        didSet {
+            postNotification()
+        }
+    }
+    
+    private var isFirstDateSelected: Bool {
+        return currentIndex == 0 ? true : false
     }
     
     init() {
         self.dates = Date().datesInFuture(after: 14)
     }
     
-    mutating func decreaseDate() {
+    private func postNotification() {
+        let info = [DateSelector.isFirstDateSelectedKey : isFirstDateSelected]
+        NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil, userInfo: info)
+    }
+    
+    mutating func previousDate() {
         if currentIndex != 0 {
             currentIndex -= 1
         }
     }
     
-    mutating func increaseDate() {
+    mutating func nextDate() {
         guard let lastIndex = dates.indices.last else { fatalError("Date array is empty!") }
         
         if currentIndex != lastIndex {
@@ -52,6 +62,7 @@ struct DateManager: DateManagerProtocol {
 }
 
 extension Date {
+    ///
     fileprivate func datesInFuture(after days: Int) -> [Date] {
         var date = self
         guard let endDate = Calendar.current.date(byAdding: .day, value: days, to: date) else { return [] }
@@ -68,5 +79,5 @@ extension Date {
 }
 
 extension Notification.Name {
-    static let DateManagerIndexDidChange = Notification.Name("DateManagerIndexDidChangeNotification")
+    static let DateSelectorDateDidChange = Notification.Name("DateSelectorDateDidChangNotification")
 }

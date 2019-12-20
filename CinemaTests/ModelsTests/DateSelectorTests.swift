@@ -1,5 +1,5 @@
 //
-//  DateManagerTests.swift
+//  DateSelectorTests.swift
 //  CinemaTests
 //
 //  Created by Marius on 15/11/2019.
@@ -9,12 +9,12 @@
 import XCTest
 @testable import Cinema
 
-class DateManagerTests: XCTestCase {
+class DateSelectorTests: XCTestCase {
     
-    var sut: DateManager!
+    var sut: DateSelector!
 
     override func setUp() {
-        sut = DateManager()
+        sut = DateSelector()
     }
 
     override func tearDown() {
@@ -26,7 +26,7 @@ class DateManagerTests: XCTestCase {
         let currentDate = sut.selectedDate
         
         /// when
-        sut.increaseDate()
+        sut.nextDate()
         
         /// then
         XCTAssertLessThan(currentDate, sut.selectedDate)
@@ -35,18 +35,18 @@ class DateManagerTests: XCTestCase {
     func testIncreaseDateDoesNotExceedMaxIndex() {
         var i = 0
         while i < 100 {
-            sut.increaseDate()
+            sut.nextDate()
             i += 1
         }
     }
     
     func testDecreaseDate() {
         /// given
-        sut.increaseDate()
+        sut.nextDate()
         let currentDate = sut.selectedDate
         
         /// when
-        sut.decreaseDate()
+        sut.previousDate()
         
         /// then
         XCTAssertGreaterThan(currentDate, sut.selectedDate)
@@ -54,10 +54,10 @@ class DateManagerTests: XCTestCase {
     
     func testDataManagerSendsNotificationWhenIndexChanges() {
         /// given
-        let notificationExpectation = expectation(forNotification: .DateManagerIndexDidChange, object: nil, handler: nil)
+        let notificationExpectation = expectation(forNotification: .DateSelectorDateDidChange, object: nil, handler: nil)
         
         /// when
-        sut.increaseDate()
+        sut.nextDate()
         
         /// then
         wait(for: [notificationExpectation], timeout: 3)
@@ -66,7 +66,7 @@ class DateManagerTests: XCTestCase {
     func testDataManagerNotifcationIsIndexZeroIsFalse() {
         /// given
         let handler = { (notification: Notification) -> Bool in
-            guard let isIndexZero = notification.userInfo?[Constants.UserInfo.isIndexZero] as? Bool
+            guard let isIndexZero = notification.userInfo?[DateSelector.isFirstDateSelectedKey] as? Bool
                 else { return false }
         
             if isIndexZero {
@@ -76,10 +76,10 @@ class DateManagerTests: XCTestCase {
             }
         }
         
-        let notificationExpectation = expectation(forNotification: .DateManagerIndexDidChange, object: nil, handler: handler)
+        let notificationExpectation = expectation(forNotification: .DateSelectorDateDidChange, object: nil, handler: handler)
         
         /// when
-        sut.increaseDate()
+        sut.nextDate()
         
         /// then
         wait(for: [notificationExpectation], timeout: 3)
@@ -87,10 +87,10 @@ class DateManagerTests: XCTestCase {
     
     func testDataManagerNotifcationIsIndexZeroIsTrue() {
         /// given
-        sut.increaseDate()
+        sut.nextDate()
         
         let handler = { (notification: Notification) -> Bool in
-            guard let isIndexZero = notification.userInfo?[Constants.UserInfo.isIndexZero] as? Bool
+            guard let isIndexZero = notification.userInfo?[DateSelector.isFirstDateSelectedKey] as? Bool
                 else { return false }
         
             if isIndexZero {
@@ -100,10 +100,10 @@ class DateManagerTests: XCTestCase {
             }
         }
         
-        let notificationExpectation = expectation(forNotification: .DateManagerIndexDidChange, object: nil, handler: handler)
+        let notificationExpectation = expectation(forNotification: .DateSelectorDateDidChange, object: nil, handler: handler)
         
         /// when
-        sut.decreaseDate()
+        sut.previousDate()
         
         /// then
         wait(for: [notificationExpectation], timeout: 3)

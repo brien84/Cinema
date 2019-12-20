@@ -27,7 +27,7 @@ enum DailyVCSegments: Int, Segments, CustomStringConvertible {
 final class DailyViewController: UIViewController, SegmentableContainer {
     
     private let movies: MovieManageable
-    private var dates: DateManagerProtocol
+    private var dates: DateSelectable
     
     let containerView = UIView()
     let leftViewController = DateMovieVC()
@@ -66,7 +66,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         return UserDefaults.standard.readCity()
     }
     
-    init(dateManager: DateManagerProtocol = DateManager(), movieManager: MovieManageable = MovieManager()) {
+    init(dateManager: DateSelectable = DateSelector(), movieManager: MovieManageable = MovieManager()) {
         self.dates = dateManager
         self.movies = movieManager
         
@@ -101,7 +101,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     // MARK: - Setup Methods
         
     private func setupNotificationObservers() {
-        NotificationCenter.default.addObserver(forName: .DateManagerIndexDidChange, object: nil, queue: .main) { notification in
+        NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { notification in
             self.updateLeftDateNavigationButtonAppearance(notification)
         }
         
@@ -158,10 +158,11 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         self.navigationItem.title = title
     }
     
+    /// TODO: FIX!
     private func updateLeftDateNavigationButtonAppearance(_ notification: Notification) {
         guard let info = notification.userInfo as? [String: Bool] else { return }
-        guard let isIndexZero = info[Constants.UserInfo.isIndexZero] else { return }
-        leftDateNavigationButton.image = isIndexZero ? Constants.Images.options : Constants.Images.left
+        guard let isFirstDate = info[DateSelector.isFirstDateSelectedKey] else { return }
+        leftDateNavigationButton.image = isFirstDate ? Constants.Images.options : Constants.Images.left
     }
     
     private func enableControlElements(_ enabled: Bool) {
@@ -197,10 +198,10 @@ final class DailyViewController: UIViewController, SegmentableContainer {
                 navigationController?.pushViewController(OptionsVC(), animated: true)
                 return
             } else {
-                dates.decreaseDate()
+                dates.previousDate()
             }
         case sender == rightDateNavigationButton:
-            dates.increaseDate()
+            dates.nextDate()
         default:
             return
         }

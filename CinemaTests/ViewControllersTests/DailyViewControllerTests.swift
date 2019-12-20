@@ -105,7 +105,7 @@ class DailyViewControllerTests: XCTestCase {
         
         /// when
         sut.loadViewIfNeeded()
-        NotificationCenter.default.post(name: .DateManagerIndexDidChange, object: nil, userInfo: [Constants.UserInfo.isIndexZero: true])
+        NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil, userInfo: [DateManagerMock.isFirstDateSelectedKey : true])
         
         /// then
         let button = sut.navigationItem.leftBarButtonItem
@@ -118,7 +118,7 @@ class DailyViewControllerTests: XCTestCase {
         
         /// when
         sut.loadViewIfNeeded()
-        NotificationCenter.default.post(name: .DateManagerIndexDidChange, object: nil, userInfo: [Constants.UserInfo.isIndexZero: false])
+        NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil, userInfo: [DateManagerMock.isFirstDateSelectedKey : false])
         
         /// then
         let button = sut.navigationItem.leftBarButtonItem
@@ -139,13 +139,17 @@ class DailyViewControllerTests: XCTestCase {
     
     // MARK: - Test Helpers
     
-    private struct DateManagerMock: DateManagerProtocol {
+    // TODO: RENAME!
+    private struct DateManagerMock: DateSelectable {
+        
+        static let isFirstDateSelectedKey = "DateSelectorIsFirstDateSelected"
+        
         var dates: [Date]
         
         var currentIndex: Int = 0 {
             didSet {
-                let info = self.currentIndex == 0 ? [Constants.UserInfo.isIndexZero: true] : [Constants.UserInfo.isIndexZero: false]
-                NotificationCenter.default.post(name: .DateManagerIndexDidChange, object: nil, userInfo: info)
+                let info = self.currentIndex == 0 ? [DateManagerMock.isFirstDateSelectedKey : true] : [DateManagerMock.isFirstDateSelectedKey: false]
+                NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil, userInfo: info)
             }
         }
         
@@ -157,13 +161,13 @@ class DailyViewControllerTests: XCTestCase {
             self.dates = dates
         }
         
-        mutating func decreaseDate() {
+        mutating func previousDate() {
             if currentIndex != 0 {
                 currentIndex -= 1
             }
         }
         
-        mutating func increaseDate() {
+        mutating func nextDate() {
             guard let lastIndex = dates.indices.last else { fatalError("Date array is empty!") }
             
             if currentIndex != lastIndex {
