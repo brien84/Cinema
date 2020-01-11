@@ -10,40 +10,36 @@ import UIKit
 
 final class MovieViewVC: UIViewController {
     
-    var movie: Movie!
-    private var movieView: MovieView!
+    private let movie: Movie
+    private var movieView: MovieDetailView!
+    
+    init(movie: Movie) {
+        self.movie = movie
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         super.loadView()
         
-        let movieView = MovieView(frame: .zero)
-        movieView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(movieView)
-        
-        let bottomConstraint = movieView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
-        bottomConstraint.priority = UILayoutPriority(rawValue: 999)
-        
-        NSLayoutConstraint.activate([
-            movieView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            movieView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            movieView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            bottomConstraint
-        ])
+        let movieView = Bundle.main.loadNibNamed("MovieDetailView", owner: nil, options: nil)?[0] as! MovieDetailView
         
         self.movieView = movieView
+        self.view = movieView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let movie = movie {
-            movieView.poster.url = movie.poster?.toURL()
-            movieView.duration.text = movie.duration
-            movieView.ageRating.text = movie.ageRating
-            movieView.genre.text = movie.genre
-            movieView.country.text = movie.country
-            movieView.releaseDate.text = movie.releaseDate
-            movieView.plot.text = movie.plot
-        }
+        movieView.poster.url = movie.poster?.toURL()
+        movieView.duration.text = movie.duration
+        movieView.ageRating.text = movie.ageRating
+        movieView.genre.text = movie.genre
+        movieView.releaseDate.text = movie.releaseDate
+        movieView.plot.text = movie.plot
     }
 }
