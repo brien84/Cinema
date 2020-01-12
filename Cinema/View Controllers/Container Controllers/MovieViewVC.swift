@@ -39,7 +39,7 @@ final class MovieViewVC: UIViewController {
         movieView.duration.text = movie.duration
         movieView.ageRating.text = movie.ageRating
         movieView.genre.text = movie.genre
-        movieView.releaseDate.text = movie.releaseDate
+        movieView.releaseDate.text = movie.year
         movieView.plot.text = movie.plot
     }
 }

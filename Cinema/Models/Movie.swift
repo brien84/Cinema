@@ -10,39 +10,36 @@ import Foundation
 
 final class Movie: Decodable {
     let title: String
-    let originalTitle: String?
-    let duration: String?
+    let originalTitle: String
+    let year: String
     let ageRating: String?
+    let duration: String?
     let genre: String?
-    let country: String?
-    let releaseDate: String?
-    let poster: String?
     let plot: String?
+    let poster: String?
     var showings: [Showing]
     
-    init(title: String, originalTitle: String?, duration: String?, ageRating: String?, genre: String?, country: String?, releaseDate: String?, poster: String?, plot: String?, showings: [Showing]) {
+    init(title: String, originalTitle: String, year: String, ageRating: String?, duration: String?, genre: String?, plot: String?, poster: String?, showings: [Showing]) {
         self.title = title
         self.originalTitle = originalTitle
-        self.duration = duration
+        self.year = year
         self.ageRating = ageRating
+        self.duration = duration
         self.genre = genre
-        self.country = country
-        self.releaseDate = releaseDate
-        self.poster = poster
         self.plot = plot
+        self.poster = poster
         self.showings = showings
     }
     
     private enum CodingKeys: String, CodingKey {
         case title
         case originalTitle
-        case duration
+        case year
         case ageRating
+        case duration
         case genre
-        case country
-        case releaseDate
-        case poster
         case plot
+        case poster
         case showings
     }
     
@@ -50,15 +47,14 @@ final class Movie: Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         title = try values.decode(String.self, forKey: .title)
-        originalTitle = try? values.decode(String.self, forKey: .originalTitle)
-        duration = try? values.decode(String.self, forKey: .duration)
+        originalTitle = try values.decode(String.self, forKey: .originalTitle)
+        year = try values.decode(String.self, forKey: .year)
         ageRating = try? values.decode(String.self, forKey: .ageRating)
+        duration = try? values.decode(String.self, forKey: .duration)
         genre = try? values.decode(String.self, forKey: .genre)
-        country = try? values.decode(String.self, forKey: .country)
-        releaseDate = try? values.decode(String.self, forKey: .releaseDate)
-        poster = try? values.decode(String.self, forKey: .poster)
         plot = try? values.decode(String.self, forKey: .plot)
-        
+        poster = try? values.decode(String.self, forKey: .poster)
+
         showings = try values.decode([Showing].self, forKey: .showings)
         
         showings.forEach { showing in
