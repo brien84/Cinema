@@ -67,24 +67,27 @@ extension SegmentableContainer {
     func createSegmentableContainerView() -> UIView {
         let view = UIView()
         
+        let widthInset = UIScreen.main.bounds.width * 0.025
+        let heightInset = UIScreen.main.bounds.width * 0.025
+        
         /// segmentedControl layout
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
         
         NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
-            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
+            segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: heightInset),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: widthInset),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -widthInset),
         ])
         
-        /// separatorView setup
+        /// separatorView layout
         let separatorView = UIView()
         separatorView.backgroundColor = Constants.Colors.blue
         separatorView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(separatorView)
 
         NSLayoutConstraint.activate([
-            separatorView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 16),
+            separatorView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: heightInset),
             separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             separatorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             separatorView.heightAnchor.constraint(equalToConstant: 1.0)
