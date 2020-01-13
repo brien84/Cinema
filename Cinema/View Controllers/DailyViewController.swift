@@ -195,7 +195,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         switch true {
         case sender == leftDateNavigationButton:
             if leftDateNavigationButton.image == Constants.Images.options {
-                navigationController?.pushViewController(OptionsVC(), animated: true)
+                navigationController?.pushViewController(OptionsViewController(), animated: true)
                 return
             } else {
                 dates.previousDate()

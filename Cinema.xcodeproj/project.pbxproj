@@ -25,7 +25,7 @@
 		2904C9ED233FB76E00407B64 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9EC233FB76E00407B64 /* MovieView.swift */; };
 		2904C9EF233FF53100407B64 /* MovieViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9EE233FF53100407B64 /* MovieViewVC.swift */; };
 		2904C9F12341208400407B64 /* MovieShowingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9F02341208400407B64 /* MovieShowingVC.swift */; };
-		2904D0712353C79B00407B64 /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0702353C79B00407B64 /* OptionsVC.swift */; };
+		2904D0712353C79B00407B64 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0702353C79B00407B64 /* OptionsViewController.swift */; };
 		2904D0742353C7CC00407B64 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0722353C7CC00407B64 /* OptionsCell.swift */; };
 		2904D07B2355111900407B64 /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D07A2355111900407B64 /* DailyViewController.swift */; };
 		2904D09F2358CFB000407B64 /* NetworkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D09E2358CFB000407B64 /* NetworkImageView.swift */; };
@@ -78,7 +78,7 @@
 		2904C9EC233FB76E00407B64 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		2904C9EE233FF53100407B64 /* MovieViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewVC.swift; sourceTree = "<group>"; };
 		2904C9F02341208400407B64 /* MovieShowingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowingVC.swift; sourceTree = "<group>"; };
-		2904D0702353C79B00407B64 /* OptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
+		2904D0702353C79B00407B64 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		2904D0722353C7CC00407B64 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
 		2904D07A2355111900407B64 /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
 		2904D09E2358CFB000407B64 /* NetworkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageView.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				294E933123A959BD0062E808 /* SegmentableContainer.swift */,
 				2904D07A2355111900407B64 /* DailyViewController.swift */,
 				2904C9E5233EB5F100407B64 /* MovieViewController.swift */,
-				2904D0702353C79B00407B64 /* OptionsVC.swift */,
+				2904D0702353C79B00407B64 /* OptionsViewController.swift */,
 				2904C9E7233EB5FB00407B64 /* Container Controllers */,
 			);
 			path = "View Controllers";
@@ -388,7 +388,7 @@
 				2904C79C2336A60C00407B64 /* MovieManager.swift in Sources */,
 				2904C7BB233BE7F600407B64 /* DateContainerCell.swift in Sources */,
 				2904C7A02336A69B00407B64 /* Showing.swift in Sources */,
-				2904D0712353C79B00407B64 /* OptionsVC.swift in Sources */,
+				2904D0712353C79B00407B64 /* OptionsViewController.swift in Sources */,
 				2904C7B6233BC6F700407B64 /* Constants.swift in Sources */,
 				2904C7AF23393A4E00407B64 /* SegmentedControl.swift in Sources */,
 				2904C9ED233FB76E00407B64 /* MovieView.swift in Sources */,

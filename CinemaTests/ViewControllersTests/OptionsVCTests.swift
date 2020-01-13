@@ -11,10 +11,10 @@ import XCTest
 
 class OptionsVCTests: XCTestCase {
     
-    var sut: OptionsVC!
+    var sut: OptionsViewController!
 
     override func setUp() {
-        sut = OptionsVC()
+        sut = OptionsViewController()
     }
 
     override func tearDown() {

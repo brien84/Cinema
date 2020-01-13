@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// Opens options menu on first start.
         if !UserDefaults.standard.isCitySet() {
-            navigationController.pushViewController(OptionsVC(), animated: false)
+            navigationController.pushViewController(OptionsViewController(), animated: false)
         }
 
         window?.rootViewController = navigationController

@@ -1,5 +1,5 @@
 //
-//  OptionsVC.swift
+//  OptionsViewController.swift
 //  Cinema
 //
 //  Created by Marius on 13/10/2019.
@@ -16,7 +16,7 @@ enum City: String, CaseIterable {
 }
 
 ///
-final class OptionsVC: UITableViewController {
+final class OptionsViewController: UITableViewController {
     
     private let datasource: [City] = {
         return City.allCases.map { $0 }
@@ -33,7 +33,7 @@ final class OptionsVC: UITableViewController {
         tableView.separatorColor = Constants.Colors.blue
         tableView.isScrollEnabled = false
         
-        self.navigationItem.title = "Pasirinkite miestą"
+        navigationItem.title = "Pasirinkite miestą"
     }
 
     // MARK: - Table view data source
