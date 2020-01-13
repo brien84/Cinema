@@ -105,7 +105,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
             self.updateLeftDateNavigationButtonAppearance(notification)
         }
         
-        NotificationCenter.default.addObserver(forName: .OptionsVCCityDidChange, object: nil, queue: .main) { _ in
+        NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { _ in
             self.updateDatasource()
         }
     }

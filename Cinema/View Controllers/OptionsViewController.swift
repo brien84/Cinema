@@ -55,11 +55,11 @@ final class OptionsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UserDefaults.standard.save(city: datasource[indexPath.row])
-        NotificationCenter.default.post(name: .OptionsVCCityDidChange, object: nil)
+        NotificationCenter.default.post(name: .OptionsCityDidChange, object: nil)
         tableView.reloadData()
     }
 }
 
 extension Notification.Name {
-    static let OptionsVCCityDidChange = Notification.Name("OptionsVCCityDidChangeNotification")
+    static let OptionsCityDidChange = Notification.Name("OptionsCityDidChangeNotification")
 }
