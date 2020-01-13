@@ -51,10 +51,3 @@ struct Constants {
         //static let api = URL(string: "http://localhost:8080/all")!
     }
 }
-
-enum City: String, CaseIterable {
-    case vilnius = "Vilnius"
-    case kaunas = "Kaunas"
-    case klaipeda = "Klaipėda"
-    case siauliai = "Šiauliai"
-}

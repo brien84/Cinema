@@ -8,7 +8,14 @@
 
 import UIKit
 
-/// Options menu, where user selects City.
+enum City: String, CaseIterable {
+    case vilnius = "Vilnius"
+    case kaunas = "Kaunas"
+    case klaipeda = "Klaipėda"
+    case siauliai = "Šiauliai"
+}
+
+///
 final class OptionsVC: UITableViewController {
     
     private let datasource: [City] = {
