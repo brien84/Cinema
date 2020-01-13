@@ -13,7 +13,7 @@ final class DateMovieVC: UITableViewController {
     var datasource = [Movie]() {
         didSet {
             self.datasource.sort { $0.title < $1.title }
-            tableView.setBackground(self.datasource.isEmpty, error: .noMovies)
+            //tableView.setBackground(self.datasource.isEmpty, error: .noMovies)
             tableView.reloadData()
         }
     }

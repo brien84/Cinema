@@ -14,9 +14,8 @@ class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     
     var datasource = [Movie]() {
         didSet {
-            self.datasource.sort { $0.title < $1.title }
-            // TODO: Display datasource empty error!
-            self.collectionView.reloadData()
+            datasource.sort { $0.title < $1.title }
+            collectionView.reloadData()
         }
     }
 
@@ -25,14 +24,15 @@ class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateFlowLay
 
         collectionView.register(UINib(nibName: "DailyMoviesVCCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
-        self.collectionView.backgroundColor = Constants.Colors.light
+        collectionView.backgroundColor = Constants.Colors.light
         
-        self.flowLayout?.estimatedItemSize = CGSize(width: cellWidth, height: 1)
+        flowLayout?.estimatedItemSize = CGSize(width: cellWidth, height: 1)
     }
 
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        collectionView.backgroundView = datasource.count == 0 ? ErrorLabel(frame: collectionView.bounds, error: .noMovies) : nil
         return datasource.count
     }
 

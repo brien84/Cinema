@@ -13,7 +13,6 @@ final class DateShowingVC: UITableViewController {
     var datasource = [Showing]() {
         didSet {
             self.datasource.sort { $0.date < $1.date }
-            tableView.setBackground(self.datasource.isEmpty, error: .noShowings)
             tableView.reloadData()
         }
     }
@@ -32,6 +31,7 @@ final class DateShowingVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.backgroundView = datasource.count == 0 ? ErrorLabel(frame: tableView.bounds, error: .noMovies) : nil
         return datasource.count
     }
 
