@@ -20,6 +20,8 @@ final class DateShowingVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
+        
         tableView.register(DateContainerCell.self, forCellReuseIdentifier: "dateContainerCell")
         
         tableView.tableFooterView = UIView()

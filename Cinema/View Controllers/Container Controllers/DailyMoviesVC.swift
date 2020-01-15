@@ -21,12 +21,14 @@ class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateFlowLay
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        collectionView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
+        
         collectionView.register(UINib(nibName: "DailyMoviesVCCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
         collectionView.backgroundColor = Constants.Colors.light
         
-        flowLayout?.estimatedItemSize = CGSize(width: cellWidth, height: 1)
+        flowLayout?.estimatedItemSize = CGSize(width: cellWidth, height: 1.0)
     }
 
     // MARK: UICollectionViewDataSource
@@ -82,7 +84,7 @@ extension DailyMoviesVC {
     }
 
     private var itemsPerRow: CGFloat {
-        return 2.0
+        return 2
     }
     
     private var inset: CGFloat {
@@ -90,6 +92,6 @@ extension DailyMoviesVC {
     }
     
     private var cellWidth: CGFloat {
-        return (collectionViewWidth - 3 * inset) / itemsPerRow
+        return ((collectionViewWidth - 3 * inset) / itemsPerRow).rounded(.towardZero)
     }
 }

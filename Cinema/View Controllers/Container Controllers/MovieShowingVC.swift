@@ -20,6 +20,8 @@ final class MovieShowingVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
+        
         tableView.register(MovieShowingCell.self, forCellReuseIdentifier: "movieShowingCell")
         
         tableView.tableFooterView = UIView()
