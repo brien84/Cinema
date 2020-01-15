@@ -15,10 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private lazy var navigationController: UINavigationController = {
         let controller = UINavigationController(rootViewController: DailyViewController())
-        controller.navigationBar.tintColor = Constants.Colors.light
+        
+        let image = UIColor.white.image(size: controller.navigationBar.frame.size)
+        controller.navigationBar.setBackgroundImage(image, for: .default)
+        controller.navigationBar.shadowImage = UIImage()
+        controller.navigationBar.isTranslucent = true
+
         controller.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Constants.Colors.dark]
         controller.navigationBar.topItem?.backBarButtonItem = backButton
-        
+    
         return controller
     }()
     
@@ -45,4 +50,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
