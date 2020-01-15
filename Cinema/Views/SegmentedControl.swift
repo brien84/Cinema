@@ -41,3 +41,20 @@ final class SegmentedControl: UISegmentedControl {
         delegate?.segmentedControl(self, didChange: self.selectedSegmentIndex)
     }
 }
+
+extension SegmentedControl {
+    static var height: CGFloat {
+        return UIScreen.main.bounds.width * 0.075
+    }
+    
+    static var inset: CGFloat {
+        return UIScreen.main.bounds.width * 0.025
+    }
+    
+    /// 
+    static var size: CGSize {
+        let width = UIScreen.main.bounds.width
+        let height = self.height + 2 * inset
+        return CGSize(width: width, height: height)
+    }
+}
