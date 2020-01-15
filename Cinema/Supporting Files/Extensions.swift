@@ -6,7 +6,7 @@
 //  Copyright © 2019 Marius. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Array where Element: Hashable {
     /// Returns an array without duplicates.
@@ -52,6 +52,16 @@ extension Date {
 extension String {
     func toURL() -> URL? {
         return URL(string: self)
+    }
+}
+
+///
+extension UIColor {
+    func image(size: CGSize, alpha: CGFloat = 1.0) -> UIImage {
+        return UIGraphicsImageRenderer(size: size).image { rendererContext in
+            self.withAlphaComponent(alpha).setFill()
+            rendererContext.fill(CGRect(origin: .zero, size: size))
+        }
     }
 }
 
