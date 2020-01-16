@@ -14,12 +14,12 @@ final class Movie: Decodable {
     let year: String
     let ageRating: String?
     let duration: String?
-    let genre: String?
+    let genre: [String]?
     let plot: String?
     let poster: String?
     var showings: [Showing]
     
-    init(title: String, originalTitle: String, year: String, ageRating: String?, duration: String?, genre: String?, plot: String?, poster: String?, showings: [Showing]) {
+    init(title: String, originalTitle: String, year: String, ageRating: String?, duration: String?, genre: [String]?, plot: String?, poster: String?, showings: [Showing]) {
         self.title = title
         self.originalTitle = originalTitle
         self.year = year
@@ -51,7 +51,7 @@ final class Movie: Decodable {
         year = try values.decode(String.self, forKey: .year)
         ageRating = try? values.decode(String.self, forKey: .ageRating)
         duration = try? values.decode(String.self, forKey: .duration)
-        genre = try? values.decode(String.self, forKey: .genre)
+        genre = try? values.decode([String].self, forKey: .genre)
         plot = try? values.decode(String.self, forKey: .plot)
         poster = try? values.decode(String.self, forKey: .poster)
 
