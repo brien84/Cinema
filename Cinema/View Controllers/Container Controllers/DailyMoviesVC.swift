@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var datasource = [Movie]() {
         didSet {
@@ -24,11 +24,11 @@ class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateFlowLay
         
         collectionView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
         
-        collectionView.register(UINib(nibName: "DailyMoviesVCCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(DailyMoviesCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         collectionView.backgroundColor = Constants.Colors.light
         
-        flowLayout?.estimatedItemSize = CGSize(width: cellWidth, height: 1.0)
+        flowLayout?.estimatedItemSize = CGSize(width: cellWidth, height: 0.0)
     }
 
     // MARK: UICollectionViewDataSource
@@ -39,7 +39,7 @@ class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DailyMoviesVCCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DailyMoviesCell
         
         let movie = datasource[indexPath.row]
         
