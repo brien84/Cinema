@@ -1,5 +1,5 @@
 //
-//  MovieDetalViewVC.swift
+//  MovieDetailViewVC.swift
 //  Cinema
 //
 //  Created by Marius on 28/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MovieDetalViewVC: UIViewController {
+final class MovieDetailViewVC: UIViewController {
     
     private let movie: Movie
     
