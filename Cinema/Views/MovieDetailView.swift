@@ -11,10 +11,16 @@ import UIKit
 final class MovieDetailView: UIView {
     
     let poster = NetworkImageView(frame: .zero)
-    var year = UILabel()
-    var ageRating = UILabel()
-    var duration = UILabel()
-    var plot = UILabel()
+    lazy var year = dynamicLabel
+    lazy var ageRating = dynamicLabel
+    lazy var duration = dynamicLabel
+    
+    lazy var plot: UILabel = {
+        let label = dynamicLabel
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
     
     var genres: [String]? {
         didSet {
@@ -22,7 +28,20 @@ final class MovieDetailView: UIView {
         }
     }
     
-    private var genreStackView = UIStackView()
+    private let genreStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 16
+        return stackView
+    }()
+    
+    private var dynamicLabel: UILabel {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .lightGray
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 17)
+        return label
+    }
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -39,12 +58,12 @@ final class MovieDetailView: UIView {
     private func layoutViews() {
         /// scrollView layout:
         let scrollView = UIScrollView()
-        self.addSubview(scrollView)
         
+        self.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.topAnchor, constant: -self.unsafeAreaHeight),
+            scrollView.topAnchor.constraint(equalTo: self.topAnchor, constant: -unsafeAreaHeight),
             scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor).withPriority(999)
@@ -52,7 +71,6 @@ final class MovieDetailView: UIView {
 
         /// poster layout:
         scrollView.addSubview(poster)
-        
         poster.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
@@ -65,20 +83,22 @@ final class MovieDetailView: UIView {
         
         /// genresContainer layout:
         let genresContainer = makeGenresContainer()
-        genresContainer.addBottomBorder(with: .white, andWidth: 0.1)
+        
         scrollView.addSubview(genresContainer)
+        genresContainer.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             genresContainer.leadingAnchor.constraint(equalTo: poster.leadingAnchor),
             genresContainer.trailingAnchor.constraint(equalTo: poster.trailingAnchor),
             genresContainer.bottomAnchor.constraint(equalTo: poster.bottomAnchor),
-            genresContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            genresContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
-        
         
         /// detailStackView layout:
         let detailStackView = makeDetailStackView()
+        
         scrollView.addSubview(detailStackView)
+        detailStackView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             detailStackView.topAnchor.constraint(equalTo: poster.bottomAnchor, constant: 16).withPriority(999),
@@ -90,122 +110,73 @@ final class MovieDetailView: UIView {
     
     private func makeGenresContainer() -> UIView {
         let container = UIView()
-        container.translatesAutoresizingMaskIntoConstraints = false
         container.backgroundColor = Constants.Colors.light.withAlphaComponent(0.7)
         
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.spacing = 16
-        
-        self.genreStackView = stackView
-        
-        container.addSubview(self.genreStackView)
+        container.addSubview(genreStackView)
+        genreStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.genreStackView.topAnchor.constraint(equalTo: container.topAnchor, constant: 8),
-            self.genreStackView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8),
-            self.genreStackView.trailingAnchor.constraint(lessThanOrEqualTo: container.trailingAnchor, constant: -8).withPriority(999),
-            self.genreStackView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8).withPriority(999)
+            genreStackView.topAnchor.constraint(equalTo: container.topAnchor, constant: 8),
+            genreStackView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8),
+            genreStackView.trailingAnchor.constraint(lessThanOrEqualTo: container.trailingAnchor, constant: -8).withPriority(999),
+            genreStackView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8).withPriority(999)
         ])
     
+        container.addBottomBorder(with: .white, andWidth: 0.1)
+        
         return container
     }
     
     private func makeDetailStackView() -> UIStackView {
         /// Reusable views:
-        let verticalStackView = { (spacing: CGFloat) -> UIStackView in
-            let stackView = UIStackView()
-            stackView.translatesAutoresizingMaskIntoConstraints = false
+        let verticalStackView = { (views: [UIView], spacing: CGFloat) -> UIStackView in
+            let stackView = UIStackView(arrangedSubviews: views)
             stackView.axis = .vertical
-            stackView.alignment = .fill
             stackView.distribution = .equalSpacing
             stackView.spacing = spacing
-            
             return stackView
         }
 
-        let horizontalStackView = { () -> UIStackView in
-            let stackView = UIStackView()
-            stackView.translatesAutoresizingMaskIntoConstraints = false
+        let horizontalStackView = { (views: [UIView]) -> UIStackView in
+            let stackView = UIStackView(arrangedSubviews: views)
             stackView.axis = .horizontal
-            stackView.alignment = .fill
             stackView.distribution = .fillEqually
-            stackView.spacing = 0
-            
             return stackView
         }
 
         let staticLabel = { (text: String) -> UILabel in
             let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
+            label.textAlignment = .center
             label.textColor = .white
             label.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
-            label.textAlignment = .center
             label.text = text
-            
             return label
         }
 
-        let dynamicLabel = { () -> UILabel in
-            let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.textColor = .lightGray
-            label.font = UIFont(name: "HelveticaNeue-Light", size: 17)
-            label.textAlignment = .center
-            
-            return label
-        }
-        
         /// year labels into stackView:
-        let yearStack = verticalStackView(8)
         let yearStatic = staticLabel("Išleista")
-        self.year = dynamicLabel()
-        yearStack.addArrangedSubview(yearStatic)
-        yearStack.addArrangedSubview(self.year)
+        let yearStack = verticalStackView([yearStatic, year], 8)
         
         /// ageRating labels into stackView:
-        let ageStack = verticalStackView(8)
-        let ageStatic = staticLabel("Cenzas")
-        self.ageRating = dynamicLabel()
-        ageStack.addArrangedSubview(ageStatic)
-        ageStack.addArrangedSubview(self.ageRating)
+        let ageRatingStatic = staticLabel("Cenzas")
+        let ageStack = verticalStackView([ageRatingStatic, ageRating], 8)
         
         /// duration labels into stackView:
-        let durationStack = verticalStackView(8)
         let durationStatic = staticLabel("Trukmė")
-        self.duration = dynamicLabel()
-        durationStack.addArrangedSubview(durationStatic)
-        durationStack.addArrangedSubview(self.duration)
-        
-        /// plot labels into stackView:
-        let plotStack = verticalStackView(16)
-        plotStack.isLayoutMarginsRelativeArrangement = true
-        plotStack.layoutMargins = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-        let plotStatic = staticLabel("Aprašymas")
-        self.plot = dynamicLabel()
-        self.plot.numberOfLines = 0
-        self.plot.textAlignment = .left
-        plotStack.addArrangedSubview(plotStatic)
-        plotStack.addArrangedSubview(self.plot)
+        let durationStack = verticalStackView([durationStatic, duration], 8)
         
         /// year, age, duration stackViews into horizontal stackView:
-        let detailBar = horizontalStackView()
-        detailBar.isLayoutMarginsRelativeArrangement = true
-        detailBar.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
-        detailBar.addArrangedSubview(yearStack)
-        detailBar.addArrangedSubview(ageStack)
-        detailBar.addArrangedSubview(durationStack)
+        let detailBar = horizontalStackView([yearStack, ageStack, durationStack])
         
-        detailBar.addBottomBorder(with: .white, andWidth: 0.1)
+        /// plot labels into stackView:
+        let plotStatic = staticLabel("Aprašymas")
+        let plotStack = verticalStackView([plotStatic, plot], 16)
+        plotStack.isLayoutMarginsRelativeArrangement = true
+        plotStack.layoutMargins = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         
         
-        let detailStackView = verticalStackView(16)
-        detailStackView.addArrangedSubview(detailBar)
-        detailStackView.addArrangedSubview(plotStack)
-
+        let detailStackView = verticalStackView([detailBar, plotStack], 16)
+        
         return detailStackView
     }
     
