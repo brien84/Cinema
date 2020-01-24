@@ -1,5 +1,5 @@
 //
-//  MovieShowingVC.swift
+//  MovieShowingsVC.swift
 //  Cinema
 //
 //  Created by Marius on 29/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MovieShowingVC: UITableViewController {
+final class MovieShowingsVC: UITableViewController {
     
     var datasource = [Showing]() {
         didSet {
@@ -22,10 +22,8 @@ final class MovieShowingVC: UITableViewController {
         
         tableView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
         
-        tableView.register(MovieShowingCell.self, forCellReuseIdentifier: "movieShowingCell")
+        tableView.register(MovieShowingsCell.self, forCellReuseIdentifier: "movieShowingsCell")
         
-        tableView.tableFooterView = UIView()
-        tableView.rowHeight = 80
         tableView.backgroundColor = Constants.Colors.light
         tableView.separatorColor = Constants.Colors.blue
     }
@@ -37,13 +35,14 @@ final class MovieShowingVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieShowingCell", for: indexPath) as! MovieShowingCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieShowingsCell", for: indexPath) as! MovieShowingsCell
         
         let showing = datasource[indexPath.row]
         
         cell.time.text = showing.date.asString(format: .onlyTime)
         cell.date.text = showing.date.asString(format: .monthNameAndDay)
         cell.venue.text = showing.venue
+        cell.screenType.text = showing.is3D ? "3D" : "2D"
         
         return cell
     }
