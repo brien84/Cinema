@@ -1,5 +1,5 @@
 //
-//  MovieShowingCell.swift
+//  MovieShowingsCell.swift
 //  Cinema
 //
 //  Created by Marius on 18/10/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MovieShowingCell: UITableViewCell {
+final class MovieShowingsCell: UITableViewCell {
     
     let date: UILabel = {
         let label = UILabel()
