@@ -1,5 +1,5 @@
 //
-//  DateShowingVC.swift
+//  DailyShowingsVC.swift
 //  Cinema
 //
 //  Created by Marius on 25/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DateShowingVC: UITableViewController {
+final class DailyShowingsVC: UITableViewController {
     
     var datasource = [Showing]() {
         didSet {
@@ -22,10 +22,8 @@ final class DateShowingVC: UITableViewController {
         
         tableView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
         
-        tableView.register(DateContainerCell.self, forCellReuseIdentifier: "dateContainerCell")
+        tableView.register(DailyShowingsCell.self, forCellReuseIdentifier: "dailyShowingsCell")
         
-        tableView.tableFooterView = UIView()
-        tableView.rowHeight = 150
         tableView.backgroundColor = Constants.Colors.light
         tableView.separatorColor = Constants.Colors.blue
     }
@@ -38,15 +36,16 @@ final class DateShowingVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dateContainerCell", for: indexPath) as! DateContainerCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dailyShowingsCell", for: indexPath) as! DailyShowingsCell
         
         let showing = datasource[indexPath.row]
         
         cell.poster.url = showing.parentMovie?.poster?.toURL()
         cell.title.text = showing.parentMovie?.title
         cell.originalTitle.text = showing.parentMovie?.originalTitle
-        cell.leftLabel.text = showing.venue
-        cell.rightLabel.text = showing.date.asString(format: .onlyTime)
+        cell.venue.text = showing.venue
+        cell.time.text = showing.date.asString(format: .onlyTime)
+        cell.screenType.text = showing.is3D ? "3D" : "2D"
         
         return cell
     }
