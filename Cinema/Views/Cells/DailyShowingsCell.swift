@@ -1,5 +1,5 @@
 //
-//  DateContainerCell.swift
+//  DailyShowingsCell.swift
 //  Cinema
 //
 //  Created by Marius on 25/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DateContainerCell: UITableViewCell {
+final class DailyShowingsCell: UITableViewCell {
 
     let poster = NetworkImageView(frame: .zero)
     
