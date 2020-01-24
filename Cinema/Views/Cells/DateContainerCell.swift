@@ -10,46 +10,35 @@ import UIKit
 
 final class DateContainerCell: UITableViewCell {
 
-    let poster: NetworkImageView = {
-        let view = NetworkImageView(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    let poster = NetworkImageView(frame: .zero)
     
     let title: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.dark
         label.font = Constants.Fonts.DateContainerCell.title
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         return label
     }()
     
     let originalTitle: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = Constants.Colors.gray
+        label.textColor = Constants.Colors.dark
         label.font = Constants.Fonts.DateContainerCell.originalTitle
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         return label
     }()
     
-    let leftLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = Constants.Colors.dark
-        label.font = Constants.Fonts.DateContainerCell.label
-        label.numberOfLines = 0
-        return label
-    }()
+    lazy var venue = detailLabel
+    lazy var time = detailLabel
+    lazy var screenType = detailLabel
     
-    let rightLabel: UILabel = {
+    private var detailLabel: UILabel {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.dark
         label.font = Constants.Fonts.DateContainerCell.label
+        label.numberOfLines = 1
         return label
-    }()
+    }
     
     private let bgView: UIView = {
         let view = UIView()
@@ -63,47 +52,57 @@ final class DateContainerCell: UITableViewCell {
         self.selectedBackgroundView = bgView
         self.backgroundColor = Constants.Colors.light
         
+        layoutViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func layoutViews() {
+        ///
         self.contentView.addSubview(poster)
-        self.contentView.addSubview(title)
-        self.contentView.addSubview(originalTitle)
-        self.contentView.addSubview(leftLabel)
-        self.contentView.addSubview(rightLabel)
+        poster.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             poster.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 4),
             poster.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 4),
             poster.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4),
-            poster.widthAnchor.constraint(equalTo: poster.heightAnchor, multiplier: 2/3),
-        ])
-
-        NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 4),
-            title.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
-            title.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
-        ])
-
-        NSLayoutConstraint.activate([
-            originalTitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 4),
-            originalTitle.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
-            originalTitle.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
-        ])
-
-        leftLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 749), for: .horizontal)
-        rightLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 251), for: .horizontal)
-        
-        NSLayoutConstraint.activate([
-            leftLabel.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
-            leftLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4)
+            poster.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 3/10),
+            poster.heightAnchor.constraint(equalTo: poster.widthAnchor, multiplier: 3/2).withPriority(999),
         ])
         
+        ///
+        let titleStackView = UIStackView(arrangedSubviews: [title, originalTitle])
+        titleStackView.axis = .vertical
+        titleStackView.distribution = .equalSpacing
+        titleStackView.spacing = 8
+        
+        self.contentView.addSubview(titleStackView)
+        titleStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        venue.setContentHuggingPriority(UILayoutPriority(rawValue: 249), for: .horizontal)
+        time.setContentHuggingPriority(UILayoutPriority(rawValue: 251), for: .horizontal)
+        
         NSLayoutConstraint.activate([
-            rightLabel.leadingAnchor.constraint(equalTo: leftLabel.trailingAnchor, constant: 4),
-            rightLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -12),
-            rightLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4)
+            titleStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 4),
+            titleStackView.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
+            titleStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8)
         ])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        
+        ///
+        let detailStackView = UIStackView(arrangedSubviews: [screenType, venue, time])
+        detailStackView.axis = .horizontal
+        detailStackView.spacing = 8
+        
+        self.contentView.addSubview(detailStackView)
+        detailStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            detailStackView.topAnchor.constraint(greaterThanOrEqualTo: titleStackView.bottomAnchor, constant: 4),
+            detailStackView.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 8),
+            detailStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
+            detailStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4)
+        ])
     }
 }
