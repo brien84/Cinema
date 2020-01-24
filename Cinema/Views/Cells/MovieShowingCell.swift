@@ -9,28 +9,32 @@
 import UIKit
 
 final class MovieShowingCell: UITableViewCell {
-
-    let time: UILabel = {
+    
+    let date: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = Constants.Colors.dark
-        label.font = Constants.Fonts.MovieShowingCell.time
+        label.textColor = .lightGray
+        label.font = UIFont(name: "HelveticaNeue-Thin", size: 20.0)!
         return label
     }()
 
-    let date: UILabel = {
+    let time: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = Constants.Colors.dark
-        label.font = Constants.Fonts.MovieShowingCell.date
+        label.textColor = .white
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 30.0)!
         return label
     }()
 
     let venue: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .lightGray
+        label.font = UIFont(name: "HelveticaNeue-Thin", size: 21.0)!
+        return label
+    }()
+    
+    let screenType: UILabel = {
+        let label = UILabel()
         label.textColor = Constants.Colors.dark
-        label.font = Constants.Fonts.MovieShowingCell.venue
+        label.font = Constants.Fonts.DateContainerCell.label
         return label
     }()
     
@@ -45,25 +49,28 @@ final class MovieShowingCell: UITableViewCell {
 
         self.selectedBackgroundView = bgView
         self.backgroundColor = Constants.Colors.light
-
-        self.contentView.addSubview(time)
-        self.contentView.addSubview(date)
-        self.contentView.addSubview(venue)
-
+    
+        self.contentView.addSubview(screenType)
+        screenType.translatesAutoresizingMaskIntoConstraints = false
+          
         NSLayoutConstraint.activate([
-            time.topAnchor.constraint(lessThanOrEqualTo: self.contentView.topAnchor, constant: 4),
-            time.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8),
+            screenType.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
+            screenType.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4)
         ])
-
+        
+        let stackView = UIStackView(arrangedSubviews: [date, time, venue])
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 4
+        
+        self.contentView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            date.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 4),
-            date.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8)
-        ])
-
-        NSLayoutConstraint.activate([
-            venue.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8),
-            venue.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8),
-            venue.topAnchor.constraint(greaterThanOrEqualTo: time.bottomAnchor, constant: 8)
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            stackView.trailingAnchor.constraint(lessThanOrEqualTo: screenType.leadingAnchor, constant: -12),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
         ])
     }
 
