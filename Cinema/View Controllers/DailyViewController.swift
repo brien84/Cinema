@@ -31,7 +31,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     
     let containerView = UIView()
     let leftViewController = DailyMoviesVC(collectionViewLayout: UICollectionViewFlowLayout())
-    let rightViewController = DateShowingVC()
+    let rightViewController = DailyShowingsVC()
     
     private(set) lazy var segmentedControl: SegmentedControl = {
         let control = SegmentedControl(with: DailyVCSegments.self)
