@@ -30,14 +30,14 @@ final class MovieViewController: UIViewController, SegmentableContainer {
 
     let containerView = UIView()
    
-    private(set) lazy var leftViewController: MovieViewVC = {
-        let controller = MovieViewVC(movie: movie)
+    private(set) lazy var leftViewController: MovieDetailViewVC = {
+        let controller = MovieDetailViewVC(movie: movie)
 
         return controller
     }()
     
-    private(set) lazy var rightViewController: MovieShowingVC = {
-        let controller = MovieShowingVC()
+    private(set) lazy var rightViewController: MovieShowingsVC = {
+        let controller = MovieShowingsVC()
         let city = UserDefaults.standard.readCity()
         controller.datasource = movie.getShowings(in: city)
 
