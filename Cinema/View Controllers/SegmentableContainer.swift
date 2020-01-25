@@ -68,8 +68,8 @@ extension SegmentableContainer {
         let view = UIView()
     
         /// containerView layout
-        containerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(containerView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
     
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -78,41 +78,15 @@ extension SegmentableContainer {
             containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
-        /// backgroundImageView layout
-        let image = UIColor.white.image(size: SegmentedControl.size, alpha: 0.9)
-        let backgroundImageView = UIImageView(image: image)
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(backgroundImageView)
-        
-        NSLayoutConstraint.activate([
-            backgroundImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundImageView.heightAnchor.constraint(equalToConstant: SegmentedControl.size.height)
-        ])
-        
-        /// separatorView layout
-        let separatorView = UIView()
-        separatorView.backgroundColor = Constants.Colors.blue
-        separatorView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(separatorView)
-
-        NSLayoutConstraint.activate([
-            separatorView.topAnchor.constraint(equalTo: backgroundImageView.bottomAnchor),
-            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            separatorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            separatorView.heightAnchor.constraint(equalToConstant: 0.5)
-        ])
-        
         /// segmentedControl layout
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: SegmentedControl.inset),
-            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: SegmentedControl.inset),
-            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -SegmentedControl.inset),
-            segmentedControl.heightAnchor.constraint(equalToConstant: SegmentedControl.height)
+            segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            segmentedControl.heightAnchor.constraint(equalToConstant: SegmentedControl.height),
         ])
         
         return view
