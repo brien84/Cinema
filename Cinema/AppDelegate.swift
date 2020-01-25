@@ -16,12 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private lazy var navigationController: UINavigationController = {
         let controller = UINavigationController(rootViewController: DailyViewController())
         
-        let image = UIColor.white.image(size: controller.navigationBar.frame.size)
+        let image = UIColor.black.image(size: controller.navigationBar.frame.size, alpha: 0.5)
         controller.navigationBar.setBackgroundImage(image, for: .default)
         controller.navigationBar.shadowImage = UIImage()
         controller.navigationBar.isTranslucent = true
-
-        controller.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Constants.Colors.dark]
+        
+        controller.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         controller.navigationBar.topItem?.backBarButtonItem = backButton
     
         return controller
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private lazy var backButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
         button.tintColor = Constants.Colors.blue
-        button.title = ""
+        button.title = nil
         
         return button
     }()
