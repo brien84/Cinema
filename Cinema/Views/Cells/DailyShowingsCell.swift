@@ -60,6 +60,8 @@ final class DailyShowingsCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
+        
         poster.image = nil
         poster.url = nil
     }
