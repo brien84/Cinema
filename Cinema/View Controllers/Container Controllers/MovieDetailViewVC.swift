@@ -40,7 +40,7 @@ final class MovieDetailViewVC: UIViewController {
         view.ageRating.text = movie.ageRating
         view.duration.text = movie.duration
         view.plot.text = movie.plot
-        view.genres = movie.genre
+        view.genres = movie.genres
         
         return view
     }
