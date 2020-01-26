@@ -24,7 +24,7 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: inset, right: 0)
         
         collectionView.register(DailyMoviesCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
