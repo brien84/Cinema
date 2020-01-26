@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 typealias MovieManageable = MovieFetchable & MovieFilterable
 
