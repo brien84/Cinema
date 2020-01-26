@@ -16,6 +16,10 @@ final class DailyShowingsVC: UITableViewController {
         didSet {
             self.datasource.sort { $0.date < $1.date }
             tableView.reloadData()
+            
+            if !datasource.isEmpty {
+                tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+            }
         }
     }
 
