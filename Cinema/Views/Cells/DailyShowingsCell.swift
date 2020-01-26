@@ -10,7 +10,7 @@ import UIKit
 
 final class DailyShowingsCell: UITableViewCell {
 
-    let poster = NetworkImageView(frame: .zero)
+    let poster = NetworkImageView()
     
     let title: UILabel = {
         let label = UILabel()

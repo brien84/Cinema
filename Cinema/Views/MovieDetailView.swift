@@ -10,7 +10,7 @@ import UIKit
 
 final class MovieDetailView: UIView {
     
-    let poster = NetworkImageView(frame: .zero)
+    let poster = NetworkImageView()
     lazy var year = dynamicLabel
     lazy var ageRating = dynamicLabel
     lazy var duration = dynamicLabel
