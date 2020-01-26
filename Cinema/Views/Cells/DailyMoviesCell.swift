@@ -47,6 +47,11 @@ final class DailyMoviesCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        poster.image = nil
+        poster.url = nil
+    }
+    
     private func layoutViews() {
         
         contentView.widthAnchor.constraint(equalToConstant: bounds.size.width).isActive = true
