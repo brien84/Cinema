@@ -48,6 +48,8 @@ final class DailyMoviesCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
+        
         poster.image = nil
         poster.url = nil
     }
