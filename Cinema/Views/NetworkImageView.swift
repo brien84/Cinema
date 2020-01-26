@@ -17,22 +17,26 @@ final class NetworkImageView: UIImageView {
     
     private let cache = NSCache<NSString, NSData>()
     
+    override var image: UIImage? {
+        didSet {
+            if image == nil { image = UIImage(named: "placeholder") }
+        }
+    }
+    
     var url: URL? {
         didSet {
             self.loadImage()
         }
     }
     
-    override init(frame: CGRect) {
+    override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         
         image = UIImage(named: "placeholder")
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        image = UIImage(named: "placeholder")
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func loadImage() {
@@ -41,7 +45,7 @@ final class NetworkImageView: UIImageView {
             return
         }
         
-        // If image data is found in cache.
+        /// If image data is found in cache.
         if let cachedData = cache.object(forKey: url.absoluteString as NSString) {
             guard let image = UIImage(data: cachedData as Data) else { return }
             self.image = image
