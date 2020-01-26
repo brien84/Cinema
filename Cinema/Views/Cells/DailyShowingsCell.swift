@@ -59,6 +59,11 @@ final class DailyShowingsCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        poster.image = nil
+        poster.url = nil
+    }
+    
     private func layoutViews() {
         ///
         self.contentView.addSubview(poster)
