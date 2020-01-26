@@ -50,6 +50,14 @@ final class MovieShowingsCell: UITableViewCell {
         self.selectedBackgroundView = bgView
         self.backgroundColor = Constants.Colors.light
     
+        layoutViews()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func layoutViews() {
         self.contentView.addSubview(screenType)
         screenType.translatesAutoresizingMaskIntoConstraints = false
           
@@ -72,9 +80,5 @@ final class MovieShowingsCell: UITableViewCell {
             stackView.trailingAnchor.constraint(lessThanOrEqualTo: screenType.leadingAnchor, constant: -12),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
         ])
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
