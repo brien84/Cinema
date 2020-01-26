@@ -15,7 +15,9 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
     var datasource = [Movie]() {
         didSet {
             datasource.sort { $0.title < $1.title }
+            
             collectionView.reloadData()
+            flowLayout?.invalidateLayout()
         }
     }
 
