@@ -16,20 +16,8 @@ final class Movie: Decodable {
     let duration: String?
     let genre: [String]?
     let plot: String?
-    let poster: String?
+    let poster: URL?
     var showings: [Showing]
-    
-    init(title: String, originalTitle: String, year: String, ageRating: String?, duration: String?, genre: [String]?, plot: String?, poster: String?, showings: [Showing]) {
-        self.title = title
-        self.originalTitle = originalTitle
-        self.year = year
-        self.ageRating = ageRating
-        self.duration = duration
-        self.genre = genre
-        self.plot = plot
-        self.poster = poster
-        self.showings = showings
-    }
     
     private enum CodingKeys: String, CodingKey {
         case title
@@ -53,7 +41,7 @@ final class Movie: Decodable {
         duration = try? values.decode(String.self, forKey: .duration)
         genre = try? values.decode([String].self, forKey: .genre)
         plot = try? values.decode(String.self, forKey: .plot)
-        poster = try? values.decode(String.self, forKey: .poster)
+        poster = try? values.decode(URL.self, forKey: .poster)
 
         showings = try values.decode([Showing].self, forKey: .showings)
         

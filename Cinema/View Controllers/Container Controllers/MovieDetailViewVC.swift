@@ -35,7 +35,7 @@ final class MovieDetailViewVC: UIViewController {
     }
     
     private func setup(_ view: MovieDetailView) -> MovieDetailView {
-        view.poster.url = movie.poster?.toURL()
+        view.poster.url = movie.poster
         view.year.text = movie.year
         view.ageRating.text = movie.ageRating
         view.duration.text = movie.duration

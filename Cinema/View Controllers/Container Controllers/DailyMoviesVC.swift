@@ -46,7 +46,7 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
         cell.title.text = movie.title
         cell.duration.text = movie.duration
         cell.ageRating.text = movie.ageRating
-        cell.poster.url = movie.poster?.toURL()
+        cell.poster.url = movie.poster
         
         return cell
     }

@@ -49,12 +49,6 @@ extension Date {
     }
 }
 
-extension String {
-    func toURL() -> URL? {
-        return URL(string: self)
-    }
-}
-
 ///
 extension UIColor {
     func image(size: CGSize, alpha: CGFloat = 1.0) -> UIImage {
