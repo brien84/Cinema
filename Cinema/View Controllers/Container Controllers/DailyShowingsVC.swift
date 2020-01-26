@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "Cell"
+
 final class DailyShowingsVC: UITableViewController {
     
     var datasource = [Showing]() {
@@ -22,7 +24,7 @@ final class DailyShowingsVC: UITableViewController {
         
         tableView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
         
-        tableView.register(DailyShowingsCell.self, forCellReuseIdentifier: "dailyShowingsCell")
+        tableView.register(DailyShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         tableView.backgroundColor = Constants.Colors.light
         tableView.separatorColor = Constants.Colors.blue
@@ -36,7 +38,7 @@ final class DailyShowingsVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dailyShowingsCell", for: indexPath) as! DailyShowingsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! DailyShowingsCell
         
         let showing = datasource[indexPath.row]
         

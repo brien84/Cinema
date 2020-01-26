@@ -15,6 +15,8 @@ enum City: String, CaseIterable {
     case siauliai = "Šiauliai"
 }
 
+private let reuseIdentifier = "Cell"
+
 ///
 final class OptionsViewController: UITableViewController {
     
@@ -25,7 +27,7 @@ final class OptionsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(OptionsCell.self, forCellReuseIdentifier: "optionsCell")
+        tableView.register(OptionsCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 50
@@ -43,7 +45,7 @@ final class OptionsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "optionsCell", for: indexPath) as! OptionsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! OptionsCell
 
         cell.title.text = datasource[indexPath.row].rawValue
         

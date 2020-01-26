@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "Cell"
+
 final class MovieShowingsVC: UITableViewController {
     
     var datasource = [Showing]() {
@@ -22,7 +24,7 @@ final class MovieShowingsVC: UITableViewController {
         
         tableView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
         
-        tableView.register(MovieShowingsCell.self, forCellReuseIdentifier: "movieShowingsCell")
+        tableView.register(MovieShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         tableView.backgroundColor = Constants.Colors.light
         tableView.separatorColor = Constants.Colors.blue
@@ -35,7 +37,7 @@ final class MovieShowingsVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieShowingsCell", for: indexPath) as! MovieShowingsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MovieShowingsCell
         
         let showing = datasource[indexPath.row]
         
