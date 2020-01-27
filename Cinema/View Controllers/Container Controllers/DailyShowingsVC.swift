@@ -37,7 +37,7 @@ final class DailyShowingsVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableView.backgroundView = datasource.count == 0 ? ErrorLabel(frame: tableView.bounds, error: .noMovies) : nil
+        tableView.backgroundView = datasource.count == 0 ? ErrorLabel(frame: tableView.bounds, error: .noShowings) : nil
         return datasource.count
     }
 
