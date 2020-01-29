@@ -29,8 +29,8 @@ final class LoadingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func displayNetworkError(_ shouldDisplayNetworkError: Bool) {
-        errorLabel.isHidden = !shouldDisplayNetworkError
+    func hide(networkError isHidden: Bool) {
+        errorLabel.isHidden = isHidden
     }
     
     private func layoutViews() {

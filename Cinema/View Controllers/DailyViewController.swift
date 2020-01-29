@@ -140,7 +140,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     }
     
     private func movieManagerDidFetchWithError() {
-        loadingView.displayNetworkError(true)
+        loadingView.hide(networkError: false)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.fetchMovies()
