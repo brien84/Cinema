@@ -15,8 +15,19 @@ final class OptionsCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.Colors.dark
         label.font = Constants.Fonts.optionsCell
+        label.textAlignment = .center
         return label
     }()
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                title.textColor = .red
+            } else {
+                title.textColor = Constants.Colors.dark
+            }
+        }
+    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,10 +39,11 @@ final class OptionsCell: UITableViewCell {
         self.contentView.addSubview(title)
 
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8),
-            title.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
-            title.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16),
-            title.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8)
+            title.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            title.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            title.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            title.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            title.heightAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 1/5).withPriority(999)
         ])
     }
 

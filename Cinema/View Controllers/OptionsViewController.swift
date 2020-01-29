@@ -23,19 +23,36 @@ final class OptionsViewController: UITableViewController {
     private let datasource: [City] = {
         return City.allCases.map { $0 }
     }()
+    
+    private let headerView: UILabel = {
+        let label = UILabel()
+        label.autoresizingMask = [.flexibleHeight]
+        label.frame = label.frame.inset(by: UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0))
+        label.textAlignment = .center
+        label.textColor = .white
+        label.font = Constants.Fonts.DateContainerCell.title
+        label.text = "Pasirinkite miestą"
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(OptionsCell.self, forCellReuseIdentifier: reuseIdentifier)
         
-        tableView.tableFooterView = UIView()
-        tableView.rowHeight = 50
+        tableView.tableHeaderView = headerView
         tableView.backgroundColor = Constants.Colors.light
         tableView.separatorColor = Constants.Colors.blue
         tableView.isScrollEnabled = false
+        tableView.separatorStyle = .none
         
-        navigationItem.title = "Pasirinkite miestą"
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = false
     }
 
     // MARK: - Table view data source
@@ -50,7 +67,7 @@ final class OptionsViewController: UITableViewController {
         cell.title.text = datasource[indexPath.row].rawValue
         
         let selectedCity = UserDefaults.standard.readCity()
-        cell.accessoryType = selectedCity == datasource[indexPath.row] ? .checkmark : .none
+        cell.isSelected = selectedCity == datasource[indexPath.row] ? true : false
         
         return cell
     }
@@ -59,6 +76,7 @@ final class OptionsViewController: UITableViewController {
         UserDefaults.standard.save(city: datasource[indexPath.row])
         NotificationCenter.default.post(name: .OptionsCityDidChange, object: nil)
         tableView.reloadData()
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
