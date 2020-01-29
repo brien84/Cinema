@@ -62,6 +62,8 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         return button
     }()
     
+    private lazy var loadingView = LoadingView(frame: containerView.bounds)
+    
     private var city: City {
         return UserDefaults.standard.readCity()
     }
@@ -95,6 +97,10 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
         enableControlElements(false)
         
+        DispatchQueue.main.async {
+            self.containerView.addSubview(self.loadingView)
+        }
+        
         fetchMovies()
     }
     
@@ -127,16 +133,16 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     }
 
     private func movieManagerDidFetchSuccessfully() {
+        loadingView.removeFromSuperview()
         enableControlElements(true)
         
-        containerDisplayErrorLabel(nil)
         updateDatasource()
     }
     
     private func movieManagerDidFetchWithError() {
-        containerDisplayErrorLabel(.network)
+        loadingView.displayNetworkError(true)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.fetchMovies()
         }
     }
@@ -169,18 +175,6 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         segmentedControl.isEnabled = enabled
         leftDateNavigationButton.isEnabled = enabled
         rightDateNavigationButton.isEnabled = enabled
-    }
-
-    // TODO: REFACTOR
-    private func containerDisplayErrorLabel(_ error: DataError?) {
-        if let label = containerView.subviews.first(where: { type(of: $0) == ErrorLabel.self }) {
-            label.removeFromSuperview()
-        }
-        
-        if let error = error {
-            let label = ErrorLabel(frame: containerView.bounds, error: error)
-            containerView.addSubview(label)
-        }
     }
  
     // MARK: - Navigation Methods
