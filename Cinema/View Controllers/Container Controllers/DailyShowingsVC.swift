@@ -30,6 +30,7 @@ final class DailyShowingsVC: UITableViewController {
         
         tableView.register(DailyShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
         
+        tableView.tableFooterView = UIView()
         tableView.backgroundColor = Constants.Colors.light
         tableView.separatorColor = Constants.Colors.blue
     }
