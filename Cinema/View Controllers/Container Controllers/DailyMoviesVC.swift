@@ -36,7 +36,7 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        collectionView.backgroundView = datasource.count == 0 ? ErrorLabel(frame: collectionView.bounds, error: .noMovies) : nil
+        collectionView.backgroundView = datasource.count == 0 ? ErrorLabel(.noMovies) : nil
         return datasource.count
     }
 

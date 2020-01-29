@@ -11,7 +11,7 @@ import UIKit
 final class LoadingView: UIView {
     
     private let errorLabel: UILabel = {
-        let label = ErrorLabel(frame: .zero, error: .network)
+        let label = ErrorLabel(.noNetwork)
         label.isHidden = true
         
         return label

@@ -9,19 +9,18 @@
 import UIKit
 
 enum DataError: String, Error {
-    case network = "Nepavyksta pasiekti serverio..."
+    case noNetwork = "Nepavyksta pasiekti serverio..."
     case noMovies = "Pasirinktai datai filmų nėra"
     case noShowings = "Pasirinktai datai seansų nėra"
 }
 
 final class ErrorLabel: UILabel {
 
-    init(frame: CGRect, error: DataError) {
-        super.init(frame: .zero)
+    init(frame: CGRect = .zero, _ error: DataError) {
+        super.init(frame: frame)
         
         self.textAlignment = .center
         self.numberOfLines = 0
-        self.backgroundColor = Constants.Colors.light
         self.textColor = Constants.Colors.dark
         self.font = Constants.Fonts.errorLabel
         
