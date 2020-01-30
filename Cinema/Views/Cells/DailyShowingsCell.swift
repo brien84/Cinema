@@ -63,7 +63,6 @@ final class DailyShowingsCell: UITableViewCell {
         super.prepareForReuse()
         
         poster.image = nil
-        poster.url = nil
     }
     
     private func layoutViews() {

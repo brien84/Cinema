@@ -51,7 +51,6 @@ final class DailyMoviesCell: UICollectionViewCell {
         super.prepareForReuse()
         
         poster.image = nil
-        poster.url = nil
     }
     
     private func layoutViews() {
