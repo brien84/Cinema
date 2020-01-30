@@ -16,23 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private lazy var navigationController: UINavigationController = {
         let controller = UINavigationController(rootViewController: DailyViewController())
         
-        let image = UIColor.black.image(size: controller.navigationBar.frame.size, alpha: 0.5)
+        ///
+        let image = Colors.transparentBlack.image(size: controller.navigationBar.frame.size)
         controller.navigationBar.setBackgroundImage(image, for: .default)
         controller.navigationBar.shadowImage = UIImage()
-        controller.navigationBar.isTranslucent = true
         
-        controller.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-        controller.navigationBar.topItem?.backBarButtonItem = backButton
+        ///
+        controller.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
+        
+        controller.navigationBar.tintColor = Colors.light
+        controller.navigationBar.titleTextAttributes = [.foregroundColor : Colors.light]
     
         return controller
-    }()
-    
-    private lazy var backButton: UIBarButtonItem = {
-        let button = UIBarButtonItem()
-        button.tintColor = Constants.Colors.blue
-        button.title = nil
-        
-        return button
     }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
