@@ -17,22 +17,32 @@ final class NetworkImageView: UIImageView {
     
     private let cache = NSCache<NSString, NSData>()
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .white)
+        indicator.startAnimating()
+        indicator.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        self.addSubview(indicator)
+
+        return indicator
+    }()
+    
     override var image: UIImage? {
         didSet {
-            if image == nil { image = UIImage(named: "placeholder") }
+            image == nil ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
         }
     }
     
     var url: URL? {
         didSet {
-            self.loadImage()
+            loadImage()
         }
     }
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         
-        image = UIImage(named: "placeholder")
+        activityIndicator.center = self.center
     }
     
     required init?(coder: NSCoder) {
@@ -41,22 +51,30 @@ final class NetworkImageView: UIImageView {
     
     private func loadImage() {
         guard let url = url else {
-            self.image = nil
+            self.image = UIImage(named: "placeholder")
             return
         }
         
         /// If image data is found in cache.
         if let cachedData = cache.object(forKey: url.absoluteString as NSString) {
             guard let image = UIImage(data: cachedData as Data) else { return }
-            self.image = image
+            
+            if url == self.url {
+                self.image = image
+            }
+            
         } else {
             URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
                 guard let data = data else { return }
+                guard let image = UIImage(data: data) else { return }
+                self?.cache.setObject(data as NSData, forKey: url.absoluteString as NSString)
+                
                 DispatchQueue.main.async {
-                    guard let image = UIImage(data: data) else { return }
-                    self?.cache.setObject(data as NSData, forKey: url.absoluteString as NSString)
-                    self?.image = image
+                    if url == self?.url {
+                        self?.image = image
+                    }
                 }
+                
             }.resume()
         }
     }
