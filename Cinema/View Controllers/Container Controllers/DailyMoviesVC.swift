@@ -24,11 +24,9 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: inset, right: 0)
-        
         collectionView.register(DailyMoviesCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        collectionView.backgroundColor = Constants.Colors.light
+        collectionView.contentInset = UIEdgeInsets(top: .segmentedControlHeight, left: 0, bottom: inset, right: 0)
+        collectionView.backgroundColor = Colors.dark
         
         flowLayout?.estimatedItemSize = CGSize(width: cellWidth, height: 0.0)
     }
@@ -37,6 +35,7 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         collectionView.backgroundView = datasource.count == 0 ? ErrorLabel(.noMovies) : nil
+        
         return datasource.count
     }
 
@@ -45,10 +44,10 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
         
         let movie = datasource[indexPath.row]
         
+        cell.poster.url = movie.poster
         cell.title.text = movie.title
         cell.duration.text = movie.duration
         cell.ageRating.text = movie.ageRating
-        cell.poster.url = movie.poster
         
         return cell
     }
@@ -72,28 +71,25 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movie = datasource[indexPath.row]
         let vc = MovieViewController(with: movie)
+        
         self.parent?.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension DailyMoviesVC {
     private var flowLayout: UICollectionViewFlowLayout? {
-        return self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        return collectionView.collectionViewLayout as? UICollectionViewFlowLayout
     }
     
-    private var collectionViewWidth: CGFloat {
-        return self.collectionView.bounds.width
+    private var inset: CGFloat {
+        return .dailyMoviesInset
     }
-
+    
     private var itemsPerRow: CGFloat {
         return 2
     }
     
-    private var inset: CGFloat {
-        return self.collectionView.bounds.width * 0.03
-    }
-    
     private var cellWidth: CGFloat {
-        return ((collectionViewWidth - 3 * inset) / itemsPerRow).rounded(.towardZero)
+        return ((collectionView.bounds.width - 3 * inset) / itemsPerRow).rounded(.towardZero)
     }
 }

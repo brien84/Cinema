@@ -14,31 +14,30 @@ final class DailyMoviesCell: UICollectionViewCell {
     
     let title: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 2
-        label.textColor = .white
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
+        label.textColor = Colors.light
+        label.font = .dailyMoviesTitle
         return label
     }()
     
     let duration: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .gray
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
+        label.textColor = Colors.gray
+        label.font = .dailyMoviesLabel
         return label
     }()
     
     let ageRating: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .gray
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
+        label.textColor = Colors.gray
+        label.font = .dailyMoviesLabel
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        contentView.backgroundColor = Colors.dark
         
         layoutViews()
     }
@@ -61,6 +60,7 @@ final class DailyMoviesCell: UICollectionViewCell {
         let titleContainer = UIView()
 
         titleContainer.addSubview(title)
+        title.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: titleContainer.topAnchor),
@@ -71,14 +71,13 @@ final class DailyMoviesCell: UICollectionViewCell {
 
         ///
         let titlePlaceholder = UILabel()
-        titlePlaceholder.translatesAutoresizingMaskIntoConstraints = false
         titlePlaceholder.numberOfLines = title.numberOfLines
-        titlePlaceholder.textColor = title.textColor
         titlePlaceholder.font = title.font
         titlePlaceholder.text = String(repeating: "-", count: 420)
         titlePlaceholder.isHidden = true
 
         titleContainer.addSubview(titlePlaceholder)
+        titlePlaceholder.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             titlePlaceholder.topAnchor.constraint(equalTo: titleContainer.topAnchor),
@@ -89,18 +88,17 @@ final class DailyMoviesCell: UICollectionViewCell {
 
         ///
         let detailStackView = UIStackView(arrangedSubviews: [duration, ageRating])
-        detailStackView.translatesAutoresizingMaskIntoConstraints = false
         detailStackView.axis = .horizontal
         detailStackView.distribution = .equalSpacing
 
         ///
         let stackView = UIStackView(arrangedSubviews: [poster, titleContainer, detailStackView])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
-        stackView.spacing = 12
+        stackView.spacing = .dailyMoviesInset / 2
         
         contentView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
     
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
