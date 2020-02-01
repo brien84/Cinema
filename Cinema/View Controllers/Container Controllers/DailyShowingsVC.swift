@@ -26,13 +26,12 @@ final class DailyShowingsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
-        
         tableView.register(DailyShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
-        
+        tableView.contentInset = UIEdgeInsets(top: .segmentedControlHeight, left: 0, bottom: 0, right: 0)
+        tableView.backgroundColor = Colors.dark
+        tableView.separatorColor = Colors.gray
+        ///
         tableView.tableFooterView = UIView()
-        tableView.backgroundColor = Constants.Colors.light
-        tableView.separatorColor = Constants.Colors.blue
     }
     
     // MARK: - Table view data source
@@ -52,7 +51,7 @@ final class DailyShowingsVC: UITableViewController {
         cell.originalTitle.text = showing.parentMovie?.originalTitle
         cell.venue.text = showing.venue
         cell.time.text = showing.date.asString(format: .onlyTime)
-        cell.screenType.text = showing.is3D ? "3D" : "2D"
+        cell.screenType.text = showing.is3D ? "3D" : nil
         
         return cell
     }
