@@ -17,20 +17,17 @@ enum City: String, CaseIterable {
 
 private let reuseIdentifier = "Cell"
 
-///
 final class OptionsViewController: UITableViewController {
     
     private let datasource: [City] = {
         return City.allCases.map { $0 }
     }()
     
-    private let headerView: UILabel = {
-        let label = UILabel()
-        label.autoresizingMask = [.flexibleHeight]
-        label.frame = label.frame.inset(by: UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0))
+    private lazy var headerView: UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: .headerHeight))
         label.textAlignment = .center
-        label.textColor = .white
-        label.font = Constants.Fonts.DateContainerCell.title
+        label.textColor = Colors.light
+        label.font = .header
         label.text = "Pasirinkite miestą"
         return label
     }()
@@ -39,12 +36,11 @@ final class OptionsViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(OptionsCell.self, forCellReuseIdentifier: reuseIdentifier)
-        
-        tableView.tableHeaderView = headerView
-        tableView.backgroundColor = Constants.Colors.light
-        tableView.separatorColor = Constants.Colors.blue
-        tableView.isScrollEnabled = false
+        tableView.contentInset = UIEdgeInsets(top: .contentInset, left: 0, bottom: 0, right: 0)
+        tableView.backgroundColor = Colors.dark
         tableView.separatorStyle = .none
+        tableView.tableHeaderView = headerView
+        tableView.isScrollEnabled = false
         
         self.navigationController?.isNavigationBarHidden = true
     }
@@ -80,6 +76,15 @@ final class OptionsViewController: UITableViewController {
     }
 }
 
+extension CGFloat {
+    fileprivate static let headerHeight: CGFloat = .screenWidth * 0.25
+    fileprivate static let contentInset: CGFloat = .screenHeight * 0.15
+}
+
 extension Notification.Name {
     static let OptionsCityDidChange = Notification.Name("OptionsCityDidChangeNotification")
+}
+
+extension UIFont {
+    fileprivate static let header = UIFont(name: "Avenir-Medium", size: .dynamicFontSize(23))
 }

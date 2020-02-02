@@ -12,19 +12,18 @@ final class OptionsCell: UITableViewCell {
     
     let title: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = Constants.Colors.dark
-        label.font = Constants.Fonts.optionsCell
         label.textAlignment = .center
+        label.textColor = Colors.light
+        label.font = .title
         return label
     }()
     
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                title.textColor = .red
+                title.textColor = Colors.red
             } else {
-                title.textColor = Constants.Colors.dark
+                title.textColor = Colors.gray
             }
         }
     }
@@ -32,22 +31,30 @@ final class OptionsCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        self.selectionStyle = .none
-        self.backgroundColor = Constants.Colors.light
-        self.accessoryView?.tintColor = Constants.Colors.blue
+        selectionStyle = .none
+        contentView.backgroundColor = Colors.dark
 
-        self.contentView.addSubview(title)
+        contentView.addSubview(title)
+        title.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            title.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            title.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            title.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            title.heightAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 1/5).withPriority(999)
+            title.topAnchor.constraint(equalTo: contentView.topAnchor),
+            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            title.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: .titleHeightToWidthRatio).withPriority(999)
         ])
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension CGFloat {
+    fileprivate static let titleHeightToWidthRatio: CGFloat = 1/5
+}
+
+extension UIFont {
+    fileprivate static let title = UIFont(name: "Avenir-Light", size: .dynamicFontSize(18))
 }
