@@ -83,10 +83,10 @@ extension SegmentableContainer {
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            segmentedControl.heightAnchor.constraint(equalToConstant: SegmentedControl.height),
+            segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            segmentedControl.heightAnchor.constraint(equalToConstant: .segmentedControlHeight)
         ])
         
         return view
