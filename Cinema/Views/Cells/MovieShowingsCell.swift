@@ -12,43 +12,36 @@ final class MovieShowingsCell: UITableViewCell {
     
     let date: UILabel = {
         let label = UILabel()
-        label.textColor = .lightGray
-        label.font = UIFont(name: "HelveticaNeue-Thin", size: 20.0)!
+        label.textColor = Colors.gray
+        label.font = .date
         return label
     }()
 
     let time: UILabel = {
         let label = UILabel()
-        label.textColor = .white
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 30.0)!
+        label.textColor = Colors.light
+        label.font = .time
         return label
     }()
 
     let venue: UILabel = {
         let label = UILabel()
-        label.textColor = .lightGray
-        label.font = UIFont(name: "HelveticaNeue-Thin", size: 21.0)!
+        label.textColor = Colors.gray
+        label.font = .venue
         return label
     }()
     
     let screenType: UILabel = {
         let label = UILabel()
-        label.textColor = Constants.Colors.dark
-        label.font = Constants.Fonts.DateContainerCell.label
+        label.textColor = Colors.red
+        label.font = .screenType
         return label
-    }()
-    
-    private let bgView: UIView = {
-        let view = UIView()
-        view.backgroundColor = Constants.Colors.lightBlue
-        return view
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        self.selectedBackgroundView = bgView
-        self.backgroundColor = Constants.Colors.light
+        
+        contentView.backgroundColor = Colors.dark
     
         layoutViews()
     }
@@ -58,27 +51,37 @@ final class MovieShowingsCell: UITableViewCell {
     }
     
     private func layoutViews() {
-        self.contentView.addSubview(screenType)
+        contentView.addSubview(screenType)
         screenType.translatesAutoresizingMaskIntoConstraints = false
           
         NSLayoutConstraint.activate([
-            screenType.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
-            screenType.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -4)
+            screenType.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .inset),
+            screenType.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.inset)
         ])
         
         let stackView = UIStackView(arrangedSubviews: [date, time, venue])
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
-        stackView.spacing = 4
+        stackView.spacing = .inset
         
-        self.contentView.addSubview(stackView)
+        contentView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-            stackView.trailingAnchor.constraint(lessThanOrEqualTo: screenType.leadingAnchor, constant: -12),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .inset),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 2 * .inset),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -.inset)
         ])
     }
+}
+
+extension CGFloat {
+    fileprivate static let inset: CGFloat = screenWidth * 0.01
+}
+
+extension UIFont {
+    fileprivate static let date = UIFont(name: "Avenir-Light", size: .dynamicFontSize(17))
+    fileprivate static let time = UIFont(name: "Avenir-Medium", size: .dynamicFontSize(25))
+    fileprivate static let venue = UIFont(name: "Avenir-Light", size: .dynamicFontSize(17))
+    fileprivate static let screenType = UIFont(name: "Avenir-Light", size: .dynamicFontSize(14))
 }

@@ -14,7 +14,7 @@ final class MovieShowingsVC: UITableViewController {
     
     var datasource = [Showing]() {
         didSet {
-            self.datasource.sort { $0.date < $1.date }
+            datasource.sort { $0.date < $1.date }
             tableView.reloadData()
         }
     }
@@ -22,12 +22,11 @@ final class MovieShowingsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.contentInset = UIEdgeInsets(top: SegmentedControl.size.height, left: 0, bottom: 0, right: 0)
-        
         tableView.register(MovieShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
-        
-        tableView.backgroundColor = Constants.Colors.light
-        tableView.separatorColor = Constants.Colors.blue
+        tableView.contentInset = UIEdgeInsets(top: .segmentedControlHeight, left: 0, bottom: 0, right: 0)
+        tableView.backgroundColor = Colors.dark
+        tableView.separatorColor = Colors.gray
+        tableView.tableFooterView = UIView()
     }
     
     // MARK: - Table view data source
@@ -41,10 +40,10 @@ final class MovieShowingsVC: UITableViewController {
         
         let showing = datasource[indexPath.row]
         
-        cell.time.text = showing.date.asString(format: .onlyTime)
         cell.date.text = showing.date.asString(format: .monthNameAndDay)
+        cell.time.text = showing.date.asString(format: .onlyTime)
         cell.venue.text = showing.venue
-        cell.screenType.text = showing.is3D ? "3D" : "2D"
+        cell.screenType.text = showing.is3D ? "3D" : nil
         
         return cell
     }
