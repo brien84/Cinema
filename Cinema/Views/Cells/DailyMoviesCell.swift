@@ -15,29 +15,29 @@ final class DailyMoviesCell: UICollectionViewCell {
     let title: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
-        label.textColor = Colors.light
-        label.font = .dailyMoviesTitle
+        label.textColor = .lightC
+        label.font = .title
         return label
     }()
     
     let duration: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.gray
-        label.font = .dailyMoviesLabel
+        label.textColor = .grayC
+        label.font = .detail
         return label
     }()
     
     let ageRating: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.gray
-        label.font = .dailyMoviesLabel
+        label.textColor = .grayC
+        label.font = .detail
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.backgroundColor = Colors.dark
+        contentView.backgroundColor = .darkC
         
         layoutViews()
     }
@@ -95,7 +95,7 @@ final class DailyMoviesCell: UICollectionViewCell {
         let stackView = UIStackView(arrangedSubviews: [poster, titleContainer, detailStackView])
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
-        stackView.spacing = .dailyMoviesInset / 2
+        stackView.spacing = .inset / 2
         
         contentView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -109,4 +109,13 @@ final class DailyMoviesCell: UICollectionViewCell {
         
         poster.heightAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 3/2).isActive = true
     }
+}
+
+extension CGFloat {
+    fileprivate static let inset: CGFloat = .screenWidth * 0.03
+}
+
+extension UIFont {
+    fileprivate static let title = UIFont(name: "Avenir-Medium", size: .dynamicFontSize(17))
+    fileprivate static let detail = UIFont(name: "Avenir-Light", size: .dynamicFontSize(14))
 }

@@ -19,12 +19,11 @@ final class ErrorLabel: UILabel {
     init(frame: CGRect = .zero, _ error: DataError) {
         super.init(frame: frame)
         
-        self.textAlignment = .center
-        self.numberOfLines = 0
-        self.textColor = Constants.Colors.dark
-        self.font = Constants.Fonts.errorLabel
-        
-        self.text = error.rawValue
+        textAlignment = .center
+        numberOfLines = 0
+        textColor = .lightC
+        font = UIFont(name: "Avenir-Medium", size: .dynamicFontSize(17))
+        text = error.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {

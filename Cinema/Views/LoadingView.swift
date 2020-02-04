@@ -13,14 +13,13 @@ final class LoadingView: UIView {
     private let errorLabel: UILabel = {
         let label = ErrorLabel(.noNetwork)
         label.isHidden = true
-        
         return label
     }()
 
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         
-        self.backgroundColor = Constants.Colors.light
+        self.backgroundColor = .darkC
         
         layoutViews()
     }
@@ -37,22 +36,26 @@ final class LoadingView: UIView {
         let indicator = UIActivityIndicatorView(style: .whiteLarge)
         indicator.startAnimating()
         
-        self.addSubview(indicator)
+        addSubview(indicator)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            indicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            indicator.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            indicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
-        self.addSubview(errorLabel)
+        addSubview(errorLabel)
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            errorLabel.topAnchor.constraint(equalTo: indicator.bottomAnchor, constant: 12),
-            errorLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            errorLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            errorLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: 12)
+            errorLabel.topAnchor.constraint(equalTo: indicator.bottomAnchor, constant: .inset),
+            errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            errorLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: .inset)
         ])
     }
+}
+
+extension CGFloat {
+    fileprivate static let inset: CGFloat = screenWidth * 0.02
 }

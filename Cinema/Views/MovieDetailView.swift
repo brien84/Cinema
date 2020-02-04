@@ -17,31 +17,24 @@ final class MovieDetailView: UIView {
     
     lazy var plot: UILabel = {
         let label = dynamicLabel
-        label.textAlignment = .left
+        label.textAlignment = .justified
         label.numberOfLines = 0
+        label.font = .plotLabel
         return label
     }()
     
     var genres: [String]? {
         didSet {
-            createGenreLabels()
+            genres?.forEach { genreStackView.addArrangedSubview(genreLabel($0)) }
         }
     }
     
     private let genreStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 16
+        stackView.spacing = 2 * .inset
         return stackView
     }()
-    
-    private var dynamicLabel: UILabel {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.textColor = .lightGray
-        label.font = UIFont(name: "HelveticaNeue-Light", size: 17)
-        return label
-    }
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -63,10 +56,10 @@ final class MovieDetailView: UIView {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.topAnchor, constant: -unsafeAreaHeight),
-            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor).withPriority(999)
+            scrollView.topAnchor.constraint(equalTo: topAnchor, constant: -unsafeAreaHeight),
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor).withPriority(999)
         ])
 
         /// poster layout:
@@ -83,10 +76,10 @@ final class MovieDetailView: UIView {
         
         /// genresContainer layout:
         let genresContainer = makeGenresContainer()
-        
+
         scrollView.addSubview(genresContainer)
         genresContainer.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             genresContainer.leadingAnchor.constraint(equalTo: poster.leadingAnchor),
             genresContainer.trailingAnchor.constraint(equalTo: poster.trailingAnchor),
@@ -101,137 +94,145 @@ final class MovieDetailView: UIView {
         detailStackView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            detailStackView.topAnchor.constraint(equalTo: poster.bottomAnchor, constant: 16).withPriority(999),
-            detailStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0).withPriority(999),
-            detailStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0).withPriority(999),
-            detailStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16).withPriority(999)
+            detailStackView.topAnchor.constraint(equalTo: poster.bottomAnchor, constant: 2 * .inset).withPriority(999),
+            detailStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).withPriority(999),
+            detailStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).withPriority(999),
+            detailStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -2 * .inset).withPriority(999)
         ])
     }
     
     private func makeGenresContainer() -> UIView {
         let container = UIView()
-        container.backgroundColor = Constants.Colors.light.withAlphaComponent(0.7)
-        
+        container.backgroundColor = .transparentBlackC
+
         container.addSubview(genreStackView)
         genreStackView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
-            genreStackView.topAnchor.constraint(equalTo: container.topAnchor, constant: 8),
-            genreStackView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8),
-            genreStackView.trailingAnchor.constraint(lessThanOrEqualTo: container.trailingAnchor, constant: -8).withPriority(999),
-            genreStackView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8).withPriority(999)
+            genreStackView.topAnchor.constraint(equalTo: container.topAnchor, constant: .inset),
+            genreStackView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: .inset),
+            genreStackView.trailingAnchor.constraint(lessThanOrEqualTo: container.trailingAnchor, constant: -.inset).withPriority(999),
+            genreStackView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -.inset).withPriority(999)
         ])
-    
-        container.addBottomBorder(with: .white, andWidth: 0.1)
-        
+
+        container.addBottomBorder(with: .grayC, width: 1.0)
+
         return container
     }
     
     private func makeDetailStackView() -> UIStackView {
-        /// Reusable views:
-        let verticalStackView = { (views: [UIView], spacing: CGFloat) -> UIStackView in
-            let stackView = UIStackView(arrangedSubviews: views)
-            stackView.axis = .vertical
-            stackView.distribution = .equalSpacing
-            stackView.spacing = spacing
-            return stackView
-        }
-
-        let horizontalStackView = { (views: [UIView]) -> UIStackView in
-            let stackView = UIStackView(arrangedSubviews: views)
-            stackView.axis = .horizontal
-            stackView.distribution = .fillEqually
-            return stackView
-        }
-
-        let staticLabel = { (text: String) -> UILabel in
-            let label = UILabel()
-            label.textAlignment = .center
-            label.textColor = .white
-            label.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
-            label.text = text
-            return label
-        }
-
         /// year labels into stackView:
         let yearStatic = staticLabel("Išleista")
-        let yearStack = verticalStackView([yearStatic, year], 8)
+        let yearStack = verticalStackView([yearStatic, year], .inset)
         
         /// ageRating labels into stackView:
         let ageRatingStatic = staticLabel("Cenzas")
-        let ageStack = verticalStackView([ageRatingStatic, ageRating], 8)
+        let ageStack = verticalStackView([ageRatingStatic, ageRating], .inset)
         
         /// duration labels into stackView:
         let durationStatic = staticLabel("Trukmė")
-        let durationStack = verticalStackView([durationStatic, duration], 8)
+        let durationStack = verticalStackView([durationStatic, duration], .inset)
         
         /// year, age, duration stackViews into horizontal stackView:
         let detailBar = horizontalStackView([yearStack, ageStack, durationStack])
         
         /// plot labels into stackView:
         let plotStatic = staticLabel("Aprašymas")
-        let plotStack = verticalStackView([plotStatic, plot], 16)
+        let plotStack = verticalStackView([plotStatic, plot], 2 * .inset)
         plotStack.isLayoutMarginsRelativeArrangement = true
-        plotStack.layoutMargins = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+        plotStack.layoutMargins = UIEdgeInsets(top: 0, left: 2 * .inset, bottom: 0, right: 2 * .inset)
         
         
-        let detailStackView = verticalStackView([detailBar, plotStack], 16)
+        let detailStackView = verticalStackView([detailBar, plotStack], 2 * .inset)
         
         return detailStackView
     }
+}
+
+// MARK: - Reusable views:
+
+extension MovieDetailView {
+    private var staticLabel: (String) -> UILabel {
+        { (text: String) -> UILabel in
+            let label = UILabel()
+            label.textAlignment = .center
+            label.textColor = .lightC
+            label.font = .staticLabel
+            label.text = text
+            return label
+        }
+    }
     
-    private func createGenreLabels() {
-        /// Using `UIButton` instead of `UILabel`, because it is easier to inset content inside.
-        let genreLabel = { (name: String) -> UIButton in
+    private var dynamicLabel: UILabel {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .grayC
+        label.font = .dynamicLabel
+        return label
+    }
+    
+    /// Using `UIButton` instead of `UILabel`, because it is easier to inset content inside.
+    private var genreLabel: (String) -> UIButton {
+        { (name: String) -> UIButton in
             let label = UIButton()
             label.layer.borderWidth = 0.5
             label.layer.cornerRadius = 4.0
-            label.layer.borderColor = UIColor.white.cgColor
+            label.layer.borderColor = UIColor.lightC.cgColor
             label.setTitle(name, for: .normal)
-            label.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 10)
-            label.setTitleColor(UIColor.white, for: .normal)
+            label.titleLabel?.font = .genreLabel
+            label.setTitleColor(.lightC, for: .normal)
             
-            label.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+            label.contentEdgeInsets = UIEdgeInsets(top: .inset / 1.5, left: .inset , bottom: .inset / 1.5, right: .inset)
             label.isUserInteractionEnabled = false
             
             return label
         }
-        
-        genres?.forEach { genreStackView.addArrangedSubview(genreLabel($0)) }
     }
-}
-
-extension UIView {
-    func addBottomBorder(with color: UIColor?, andWidth borderWidth: CGFloat) {
-        let border = UIView()
-        border.backgroundColor = color
-        border.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
-        border.frame = CGRect(x: 0, y: frame.size.height - borderWidth, width: frame.size.width, height: borderWidth)
-        addSubview(border)
+    
+    private var verticalStackView: ([UIView], CGFloat) -> UIStackView {
+        { (views: [UIView], spacing: CGFloat) -> UIStackView in
+            let stackView = UIStackView(arrangedSubviews: views)
+            stackView.axis = .vertical
+            stackView.distribution = .equalSpacing
+            stackView.spacing = spacing
+            return stackView
+        }
     }
-}
-
-extension NSLayoutConstraint {
-    func withPriority(_ priority: Float) -> NSLayoutConstraint {
-        self.priority = UILayoutPriority(rawValue: priority)
-        
-        return self
+    
+    private var horizontalStackView: ([UIView]) -> UIStackView {
+        { (views: [UIView]) -> UIStackView in
+            let stackView = UIStackView(arrangedSubviews: views)
+            stackView.axis = .horizontal
+            stackView.distribution = .fillEqually
+            return stackView
+        }
     }
 }
 
 extension MovieDetailView {
-    var unsafeAreaHeight: CGFloat {
+    private var unsafeAreaHeight: CGFloat {
         return navControllerHeight + statusBarHeight
     }
     
-    var navControllerHeight: CGFloat {
+    private var navControllerHeight: CGFloat {
         let window = UIApplication.shared.keyWindow
         let navController = window?.rootViewController as? UINavigationController
         
         return navController?.navigationBar.frame.height ?? 0.0
     }
     
-    var statusBarHeight: CGFloat {
+    private var statusBarHeight: CGFloat {
         return UIApplication.shared.statusBarFrame.height
     }
+}
+
+extension CGFloat {
+    fileprivate static let inset: CGFloat = screenWidth * 0.017
+}
+
+extension UIFont {
+    fileprivate static let staticLabel = UIFont(name: "Avenir-Medium", size: .dynamicFontSize(16))
+    fileprivate static let dynamicLabel = UIFont(name: "Avenir-Book", size: .dynamicFontSize(15))
+    fileprivate static let genreLabel = UIFont(name: "Avenir-Light", size: .dynamicFontSize(10))
+    fileprivate static let plotLabel = UIFont(name: "Avenir-Book", size: .dynamicFontSize(15))
 }
