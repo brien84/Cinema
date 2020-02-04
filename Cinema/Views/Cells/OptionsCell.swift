@@ -13,7 +13,7 @@ final class OptionsCell: UITableViewCell {
     let title: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.textColor = Colors.light
+        label.textColor = .lightC
         label.font = .title
         return label
     }()
@@ -21,9 +21,9 @@ final class OptionsCell: UITableViewCell {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                title.textColor = Colors.red
+                title.textColor = .redC
             } else {
-                title.textColor = Colors.gray
+                title.textColor = .grayC
             }
         }
     }
@@ -32,7 +32,7 @@ final class OptionsCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         selectionStyle = .none
-        contentView.backgroundColor = Colors.dark
+        contentView.backgroundColor = .darkC
 
         contentView.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +52,7 @@ final class OptionsCell: UITableViewCell {
 }
 
 extension CGFloat {
-    fileprivate static let titleHeightToWidthRatio: CGFloat = 1/5
+    fileprivate static let titleHeightToWidthRatio: CGFloat = 0.2
 }
 
 extension UIFont {

@@ -12,8 +12,7 @@ enum MovieVCSegments: Int, Segments, CustomStringConvertible {
     case about
     case showings
 
-    // TODO: Localization?
-    public var description: String {
+    var description: String {
         switch self {
         case .about:
             return "Apie"
@@ -23,7 +22,6 @@ enum MovieVCSegments: Int, Segments, CustomStringConvertible {
     }
 }
 
-///
 final class MovieViewController: UIViewController, SegmentableContainer {
     
     private let movie: Movie
@@ -62,18 +60,18 @@ final class MovieViewController: UIViewController, SegmentableContainer {
     }
     
     override func loadView() {
-        self.view = createSegmentableContainerView()
+        view = createSegmentableContainerView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Constants.Colors.light
+        view.backgroundColor = .transparentBlackC
         
         ///
         segmentedControl.selectedSegmentIndex = MovieVCSegments.about.rawValue
         segmentedControl.sendActions(for: UIControl.Event.valueChanged)
         
-        self.navigationItem.title = movie.title
+        navigationItem.title = movie.title
     }
 }

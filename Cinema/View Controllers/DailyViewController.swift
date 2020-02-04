@@ -12,8 +12,7 @@ enum DailyVCSegments: Int, Segments, CustomStringConvertible {
     case movies
     case showings
 
-    // TODO: Localization?
-    public var description: String {
+    var description: String {
         switch self {
         case .movies:
             return "Filmai"
@@ -23,7 +22,6 @@ enum DailyVCSegments: Int, Segments, CustomStringConvertible {
     }
 }
 
-///
 final class DailyViewController: UIViewController, SegmentableContainer {
     
     private let movies: MovieManageable
@@ -42,10 +40,9 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     
     private lazy var leftDateNavigationButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
-        button.image = Constants.Images.options
+        button.image = .options
         button.target = self
         button.action = #selector(handleDateNavigationButtonTap)
-        button.tintColor = Constants.Colors.blue
         self.navigationItem.leftBarButtonItem = button
         
         return button
@@ -53,10 +50,9 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     
     private lazy var rightDateNavigationButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
-        button.image = Constants.Images.right
+        button.image = .right
         button.target = self
         button.action = #selector(handleDateNavigationButtonTap)
-        button.tintColor = Constants.Colors.blue
         self.navigationItem.rightBarButtonItem = button
         
         return button
@@ -86,7 +82,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Constants.Colors.light
+        view.backgroundColor = .transparentBlackC
         
         setupNotificationObservers()
 
@@ -161,14 +157,14 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     // MARK: - View Methods
     
     private func updateNavigationTitle(with title: String) {
-        self.navigationItem.title = title
+        navigationItem.title = title
     }
     
     /// TODO: FIX!
     private func updateLeftDateNavigationButtonAppearance(_ notification: Notification) {
         guard let info = notification.userInfo as? [String: Bool] else { return }
         guard let isFirstDate = info[DateSelector.isFirstDateSelectedKey] else { return }
-        leftDateNavigationButton.image = isFirstDate ? Constants.Images.options : Constants.Images.left
+        leftDateNavigationButton.image = isFirstDate ? .options : .left
     }
     
     private func enableControlElements(_ enabled: Bool) {
@@ -188,7 +184,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
         switch true {
         case sender == leftDateNavigationButton:
-            if leftDateNavigationButton.image == Constants.Images.options {
+            if leftDateNavigationButton.image == .options {
                 navigationController?.pushViewController(OptionsViewController(), animated: true)
                 return
             } else {

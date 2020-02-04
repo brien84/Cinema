@@ -14,7 +14,7 @@ final class DailyShowingsVC: UITableViewController {
     
     var datasource = [Showing]() {
         didSet {
-            self.datasource.sort { $0.date < $1.date }
+            datasource.sort { $0.date < $1.date }
             tableView.reloadData()
             
             if !datasource.isEmpty {
@@ -28,9 +28,9 @@ final class DailyShowingsVC: UITableViewController {
         
         tableView.register(DailyShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.contentInset = UIEdgeInsets(top: .segmentedControlHeight, left: 0, bottom: 0, right: 0)
-        tableView.backgroundColor = Colors.dark
-        tableView.separatorColor = Colors.gray
-        ///
+        tableView.backgroundColor = .darkC
+        tableView.separatorColor = .grayC
+        /// Hides separator lines of empty cells, if there aren't enought items to fill whole screen.
         tableView.tableFooterView = UIView()
     }
     
@@ -59,6 +59,6 @@ final class DailyShowingsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let movie = datasource[indexPath.row].parentMovie else { return }
         let vc = MovieViewController(with: movie)
-        self.parent?.navigationController?.pushViewController(vc, animated: true)
+        parent?.navigationController?.pushViewController(vc, animated: true)
     }
 }

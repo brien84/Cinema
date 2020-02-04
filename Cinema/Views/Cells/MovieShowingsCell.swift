@@ -12,28 +12,28 @@ final class MovieShowingsCell: UITableViewCell {
     
     let date: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.gray
+        label.textColor = .grayC
         label.font = .date
         return label
     }()
 
     let time: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.light
+        label.textColor = .lightC
         label.font = .time
         return label
     }()
 
     let venue: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.gray
+        label.textColor = .grayC
         label.font = .venue
         return label
     }()
     
     let screenType: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.red
+        label.textColor = .redC
         label.font = .screenType
         return label
     }()
@@ -41,7 +41,7 @@ final class MovieShowingsCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = Colors.dark
+        contentView.backgroundColor = .darkC
     
         layoutViews()
     }

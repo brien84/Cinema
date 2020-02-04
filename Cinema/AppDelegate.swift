@@ -17,15 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let controller = UINavigationController(rootViewController: DailyViewController())
         
         ///
-        let image = Colors.transparentBlack.image(size: controller.navigationBar.frame.size)
+        let image = UIColor.transparentBlackC.image(size: controller.navigationBar.frame.size)
         controller.navigationBar.setBackgroundImage(image, for: .default)
         controller.navigationBar.shadowImage = UIImage()
         
         ///
         controller.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
         
-        controller.navigationBar.tintColor = Colors.light
-        controller.navigationBar.titleTextAttributes = [.foregroundColor : Colors.light]
+        controller.navigationBar.tintColor = .lightC
+        controller.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.lightC]
     
         return controller
     }()

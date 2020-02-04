@@ -24,8 +24,9 @@ final class MovieShowingsVC: UITableViewController {
         
         tableView.register(MovieShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.contentInset = UIEdgeInsets(top: .segmentedControlHeight, left: 0, bottom: 0, right: 0)
-        tableView.backgroundColor = Colors.dark
-        tableView.separatorColor = Colors.gray
+        tableView.backgroundColor = .darkC
+        tableView.separatorColor = .grayC
+        /// Hides separator lines of empty cells, if there aren't enought items to fill whole screen.
         tableView.tableFooterView = UIView()
     }
     

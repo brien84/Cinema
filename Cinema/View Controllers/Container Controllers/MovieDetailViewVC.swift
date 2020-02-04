@@ -25,13 +25,13 @@ final class MovieDetailViewVC: UIViewController {
     override func loadView() {
         let movieView = MovieDetailView()
 
-        self.view = setup(movieView)
+        view = setup(movieView)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Constants.Colors.light
+        view.backgroundColor = .darkC
     }
     
     private func setup(_ view: MovieDetailView) -> MovieDetailView {

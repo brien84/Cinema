@@ -26,7 +26,7 @@ final class OptionsViewController: UITableViewController {
     private lazy var headerView: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: .headerHeight))
         label.textAlignment = .center
-        label.textColor = Colors.light
+        label.textColor = .lightC
         label.font = .header
         label.text = "Pasirinkite miestą"
         return label
@@ -37,18 +37,18 @@ final class OptionsViewController: UITableViewController {
         
         tableView.register(OptionsCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.contentInset = UIEdgeInsets(top: .contentInset, left: 0, bottom: 0, right: 0)
-        tableView.backgroundColor = Colors.dark
+        tableView.backgroundColor = .darkC
         tableView.separatorStyle = .none
         tableView.tableHeaderView = headerView
         tableView.isScrollEnabled = false
         
-        self.navigationController?.isNavigationBarHidden = true
+        navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.navigationController?.isNavigationBarHidden = false
+        navigationController?.isNavigationBarHidden = false
     }
 
     // MARK: - Table view data source
@@ -72,7 +72,7 @@ final class OptionsViewController: UITableViewController {
         UserDefaults.standard.save(city: datasource[indexPath.row])
         NotificationCenter.default.post(name: .OptionsCityDidChange, object: nil)
         tableView.reloadData()
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
 
