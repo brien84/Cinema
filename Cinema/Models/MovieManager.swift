@@ -31,7 +31,7 @@ final class MovieManager: MovieManageable {
 
 extension MovieFetchable {
     func fetch(using session: URLSession = .shared, completion: @escaping (Result<Void, Error>) -> ()) {
-        let task = session.dataTask(with: Constants.URLs.api) { data, response, error in
+        let task = session.dataTask(with: .api) { data, response, error in
             if let error = error {
                 completion(.failure(error))
             }
