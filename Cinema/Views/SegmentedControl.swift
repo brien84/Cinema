@@ -12,7 +12,6 @@ protocol SegmentedControlDelegate: AnyObject {
     func segmentedControl(_ segmentedControl: SegmentedControl, didChange index: Int)
 }
 
-// TODO: Documentation
 final class SegmentedControl: UISegmentedControl {
     
     weak var delegate: SegmentedControlDelegate?
@@ -20,7 +19,7 @@ final class SegmentedControl: UISegmentedControl {
     private lazy var selectionIndicator: UIView = {
         let view = UIView()
         
-        view.backgroundColor = .red
+        view.backgroundColor = .redC
         
         self.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -34,41 +33,37 @@ final class SegmentedControl: UISegmentedControl {
         return view
     }()
     
-    private lazy var leftIndicatorConstraint = selectionIndicator.leadingAnchor.constraint(equalTo: self.leadingAnchor)
-    private lazy var rightIndicatorConstraint = selectionIndicator.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+    private lazy var leftIndicatorConstraint = selectionIndicator.leadingAnchor.constraint(equalTo: leadingAnchor)
+    private lazy var rightIndicatorConstraint = selectionIndicator.trailingAnchor.constraint(equalTo: trailingAnchor)
     
     init<T: Segments>(with segments: T.Type) {
         super.init(frame: .zero)
         
-        if #available(iOS 13.0, *) {
-            self.selectedSegmentTintColor = Constants.Colors.lightBlue
-        } else {
-            self.tintColor = Constants.Colors.blue
-        }
+        self.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
+        self.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
+        
+        self.setTitleTextAttributes([.foregroundColor: UIColor.grayC], for: .normal)
+        self.setTitleTextAttributes([.foregroundColor: UIColor.lightC], for: .selected)
+        
+        self.backgroundColor = .transparentBlackC
+        /// Makes separator invisible.
+        self.tintColor = .clear
+        
+        self.addTarget(self, action: #selector(valueDidChange), for: .valueChanged)
         
         T.allCases.forEach { segment in
             self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
         }
-        
-        self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        
-        self.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
-        self.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
-
-        self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .normal)
-        self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-
-        self.addTarget(self, action: #selector(valueDidChange), for: .valueChanged)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    ///
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = 0
+        
+        layer.cornerRadius = 0
     }
     
     @objc private func valueDidChange() {
@@ -87,23 +82,6 @@ final class SegmentedControl: UISegmentedControl {
     }
 }
 
-extension SegmentedControl {
-    static var height: CGFloat {
-        return UIScreen.main.bounds.width * 0.1
-    }
-    
-    static var width: CGFloat {
-        return UIScreen.main.bounds.width * 1.05
-    }
-    
-    static var inset: CGFloat {
-        return UIScreen.main.bounds.width * 0.025
-    }
-    
-    /// 
-    static var size: CGSize {
-        let width = UIScreen.main.bounds.width
-        let height = self.height
-        return CGSize(width: width, height: height)
-    }
+extension CGFloat {
+    static let segmentedControlHeight: CGFloat = screenWidth * 0.1
 }
