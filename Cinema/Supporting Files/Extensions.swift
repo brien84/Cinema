@@ -16,6 +16,14 @@ extension Array where Element: Hashable {
     }
 }
 
+extension CGFloat {
+    static func dynamicFontSize(_ fontSize: CGFloat) -> CGFloat {
+        /// 
+        let calculatedFontSize = .screenWidth / 320 * fontSize
+        return calculatedFontSize
+    }
+}
+
 extension Date {
     enum StringFormat {
         case fullDate
