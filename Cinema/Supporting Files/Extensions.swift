@@ -49,6 +49,14 @@ extension Date {
     }
 }
 
+extension NSLayoutConstraint {
+    func withPriority(_ priority: Float) -> NSLayoutConstraint {
+        self.priority = UILayoutPriority(rawValue: priority)
+        
+        return self
+    }
+}
+
 ///
 extension UIColor {
     func image(size: CGSize) -> UIImage {
