@@ -51,11 +51,21 @@ extension Date {
 
 ///
 extension UIColor {
-    func image(size: CGSize, alpha: CGFloat = 1.0) -> UIImage {
+    func image(size: CGSize) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in
-            self.withAlphaComponent(alpha).setFill()
+            self.setFill()
             rendererContext.fill(CGRect(origin: .zero, size: size))
         }
+    }
+}
+
+extension UIView {
+    func addBottomBorder(with color: UIColor?, width borderWidth: CGFloat) {
+        let border = UIView()
+        border.backgroundColor = color
+        border.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
+        border.frame = CGRect(x: 0, y: frame.size.height - borderWidth, width: frame.size.width, height: borderWidth)
+        addSubview(border)
     }
 }
 
