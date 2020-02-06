@@ -157,6 +157,11 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     // MARK: - View Methods
     
     private func updateNavigationTitle(with title: String) {
+        let textTransition = CATransition()
+        textTransition.duration = 0.3
+        textTransition.type = .fade
+        navigationController?.navigationBar.layer.add(textTransition, forKey: "textFade")
+
         navigationItem.title = title
     }
     
@@ -182,6 +187,9 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     }
     
     @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
+        
+        let directionToRight: Bool
+        
         switch true {
         case sender == leftDateNavigationButton:
             if leftDateNavigationButton.image == .options {
@@ -189,14 +197,29 @@ final class DailyViewController: UIViewController, SegmentableContainer {
                 return
             } else {
                 dates.previousDate()
+                directionToRight = false
             }
         case sender == rightDateNavigationButton:
             dates.nextDate()
+            directionToRight = true
         default:
             return
         }
         
+        guard let snapShotView = containerView.snapshotView(afterScreenUpdates: false) else { return }
+        view.addSubview(snapShotView)
+        view.sendSubviewToBack(snapShotView)
+        
         updateDatasource()
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
+        containerView.frame.origin.x += directionToRight ? containerView.frame.width : -containerView.frame.width
+
+        UIView.transition(with: containerView, duration: 0.5, options: .curveEaseInOut, animations: {
+            self.containerView.frame.origin.x = 0
+            snapShotView.frame.origin.x += directionToRight ? -snapShotView.frame.width : snapShotView.frame.width
+            snapShotView.alpha = 0.2
+        }, completion: { _ in
+            snapShotView.removeFromSuperview()
+        })
     }
 }
