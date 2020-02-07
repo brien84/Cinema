@@ -42,6 +42,7 @@ final class MovieShowingsCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = .darkC
+        selectionStyle = .none
     
         layoutViews()
     }

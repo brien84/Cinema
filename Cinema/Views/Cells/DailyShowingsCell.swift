@@ -41,6 +41,7 @@ final class DailyShowingsCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = .darkC
+        selectionStyle = .none
         
         layoutViews()
     }
