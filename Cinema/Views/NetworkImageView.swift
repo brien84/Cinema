@@ -51,7 +51,7 @@ final class NetworkImageView: UIImageView {
     
     private func loadImage() {
         guard let url = url else {
-            self.image = UIImage(named: "placeholder")
+            set(UIImage(named: "placeholder"))
             return
         }
         
@@ -60,7 +60,7 @@ final class NetworkImageView: UIImageView {
             guard let image = UIImage(data: cachedData as Data) else { return }
             
             if url == self.url {
-                self.image = image
+                set(image)
             }
             
         } else {
@@ -71,11 +71,17 @@ final class NetworkImageView: UIImageView {
                 
                 DispatchQueue.main.async {
                     if url == self?.url {
-                        self?.image = image
+                        self?.set(image)
                     }
                 }
                 
             }.resume()
         }
+    }
+    
+    private func set(_ image: UIImage?) {
+        UIView.transition(with: self, duration: 0.1, options: .transitionCrossDissolve, animations: {
+            self.image = image
+        }, completion: nil)
     }
 }
