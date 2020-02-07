@@ -37,7 +37,7 @@ final class DailyMoviesCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.backgroundColor = .darkC
+        backgroundColor = .darkC
         
         layoutViews()
     }
