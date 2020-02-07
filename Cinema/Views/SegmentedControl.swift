@@ -16,28 +16,13 @@ final class SegmentedControl: UISegmentedControl {
     
     weak var delegate: SegmentedControlDelegate?
     
-    private lazy var selectionIndicator: UIView = {
-        let view = UIView()
+    private let selectionIndicator = UIView()
+    private var indicatorLeadingToCenter: NSLayoutConstraint?
         
-        view.backgroundColor = .redC
-        
-        self.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            view.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            view.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/2),
-            view.heightAnchor.constraint(equalToConstant: 2)
-        ])
-
-        return view
-    }()
-    
-    private lazy var leftIndicatorConstraint = selectionIndicator.leadingAnchor.constraint(equalTo: leadingAnchor)
-    private lazy var rightIndicatorConstraint = selectionIndicator.trailingAnchor.constraint(equalTo: trailingAnchor)
-    
     init<T: Segments>(with segments: T.Type) {
         super.init(frame: .zero)
+        
+        self.backgroundColor = .transparentBlackC
         
         self.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
         self.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
@@ -45,11 +30,12 @@ final class SegmentedControl: UISegmentedControl {
         self.setTitleTextAttributes([.foregroundColor: UIColor.grayC], for: .normal)
         self.setTitleTextAttributes([.foregroundColor: UIColor.lightC], for: .selected)
         
-        self.backgroundColor = .transparentBlackC
         /// Makes separator invisible.
         self.tintColor = .clear
         
         self.addTarget(self, action: #selector(valueDidChange), for: .valueChanged)
+        
+        setupSelectionIndicator()
         
         T.allCases.forEach { segment in
             self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
@@ -63,21 +49,42 @@ final class SegmentedControl: UISegmentedControl {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        ///
         layer.cornerRadius = 0
     }
     
+    private func setupSelectionIndicator() {
+        selectionIndicator.backgroundColor = .redC
+        
+        addSubview(selectionIndicator)
+        selectionIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            selectionIndicator.bottomAnchor.constraint(equalTo: bottomAnchor),
+            selectionIndicator.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/2),
+            selectionIndicator.heightAnchor.constraint(equalToConstant: 2),
+            selectionIndicator.leadingAnchor.constraint(equalTo: leadingAnchor).withPriority(999)
+        ])
+        
+        indicatorLeadingToCenter = selectionIndicator.leadingAnchor.constraint(equalTo: centerXAnchor)
+    }
+    
     @objc private func valueDidChange() {
-        switch self.selectedSegmentIndex {
-        case 0:
-            rightIndicatorConstraint.isActive = false
-            leftIndicatorConstraint.isActive = true
-        case 1:
-            leftIndicatorConstraint.isActive = false
-            rightIndicatorConstraint.isActive = true
-        default:
-            break
-        }
-
+        self.layoutIfNeeded()
+        
+        UIView.transition(with: selectionIndicator, duration: 0.5, options: .curveEaseInOut, animations: {
+            switch self.selectedSegmentIndex {
+            case 0:
+                self.indicatorLeadingToCenter?.isActive = false
+            case 1:
+                self.indicatorLeadingToCenter?.isActive = true
+            default:
+                break
+            }
+            
+            self.layoutIfNeeded()
+        }, completion: nil)
+    
         delegate?.segmentedControl(self, didChange: self.selectedSegmentIndex)
     }
 }
