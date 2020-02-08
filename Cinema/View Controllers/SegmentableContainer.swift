@@ -77,7 +77,7 @@ extension SegmentableContainer {
             containerView.topAnchor.constraint(equalTo: view.topAnchor),
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
         /// segmentedControl layout
