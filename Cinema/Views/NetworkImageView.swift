@@ -51,7 +51,7 @@ final class NetworkImageView: UIImageView {
     
     private func loadImage() {
         guard let url = url else {
-            set(UIImage(named: "placeholder"))
+            set(.defaultImage)
             return
         }
         
@@ -84,4 +84,8 @@ final class NetworkImageView: UIImageView {
             self.image = image
         }, completion: nil)
     }
+}
+
+extension UIImage {
+    static let defaultImage = UIImage(named: "networkImageViewDefault")!
 }

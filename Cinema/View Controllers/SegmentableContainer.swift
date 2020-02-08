@@ -45,7 +45,7 @@ extension SegmentableContainer {
     }
     
     func updateContainerView(with viewController: UIViewController) {
-        UIView.transition(with: containerView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+        UIView.transition(with: containerView, duration: 0.5, options: .transitionFlipFromLeft, animations: {
             self.removeCurrentViewControllerFromContainerView()
             self.show(viewController)
         }, completion: nil)
