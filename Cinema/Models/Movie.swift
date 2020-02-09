@@ -51,6 +51,16 @@ final class Movie: Decodable {
     }
 }
 
+extension Movie {
+    func getShowings(in city: City) -> [Showing] {
+        return self.showings.filter { $0.isShown(in: city) }
+    }
+
+    func getShowings(in city: City, at date: Date) -> [Showing] {
+        return self.showings.filter { $0.isShown(in: city) && $0.isShown(at: date) }
+    }
+}
+
 extension Movie: Hashable {
     static func == (lhs: Movie, rhs: Movie) -> Bool {
         return lhs.title == rhs.title
