@@ -23,3 +23,18 @@ final class Showing: Decodable {
         self.parentMovie = parentMovie
     }
 }
+
+extension Showing {
+    func isShown(in city: City) -> Bool {
+        if self.date.isInThePast() { return false }
+
+        return self.city == city.rawValue
+    }
+
+    func isShown(at date: Date) -> Bool {
+        if self.date.isInThePast() { return false }
+
+        let calendar = Calendar.current
+        return calendar.isDate(self.date, inSameDayAs: date)
+    }
+}

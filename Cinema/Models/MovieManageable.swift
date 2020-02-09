@@ -70,18 +70,3 @@ extension Movie {
         return self.showings.filter { $0.isShown(in: city) && $0.isShown(at: date) }
     }
 }
-
-extension Showing {
-    fileprivate func isShown(in city: City) -> Bool {
-        if self.date.isInThePast() { return false }
-
-        return self.city == city.rawValue
-    }
-    
-    fileprivate func isShown(at date: Date) -> Bool {
-        if self.date.isInThePast() { return false }
-        
-        let calendar = Calendar.current
-        return calendar.isDate(self.date, inSameDayAs: date)
-    }
-}
