@@ -24,7 +24,8 @@ enum DailyVCSegments: Int, Segments, CustomStringConvertible {
 
 final class DailyViewController: UIViewController, SegmentableContainer {
     
-    private let movies: MovieManageable
+    var movies = [Movie]()
+
     private var dates: DateSelectable
     
     let containerView = UIView()
@@ -34,7 +35,6 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     private(set) lazy var segmentedControl: SegmentedControl = {
         let control = SegmentedControl(with: DailyVCSegments.self)
         control.delegate = self
-        
         return control
     }()
     
@@ -64,9 +64,8 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         return UserDefaults.standard.readCity()
     }
     
-    init(dateManager: DateSelectable = DateSelector(), movieManager: MovieManageable = MovieManager()) {
+    init(dateManager: DateSelectable = DateSelector()) {
         self.dates = dateManager
-        self.movies = movieManager
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -112,43 +111,12 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         }
     }
     
-    // MARK: - Model Methods
-    
-    private func fetchMovies() {
-        movies.fetch(using: .shared) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success:
-                    self.movieManagerDidFetchSuccessfully()
-                case .failure(let error):
-                    print("DateContainerVC.fetchMovies: \(error)")
-                    self.movieManagerDidFetchWithError()
-                }
-            }
-        }
-    }
-
-    private func movieManagerDidFetchSuccessfully() {
-        loadingView.removeFromSuperview()
-        enableControlElements(true)
-        
-        updateDatasource()
-    }
-    
-    private func movieManagerDidFetchWithError() {
-        loadingView.hide(networkError: false)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.fetchMovies()
-        }
-    }
-    
     private func updateDatasource() {
         switch segmentedControl.selectedSegmentIndex {
         case DailyVCSegments.movies.rawValue:
-            leftViewController.datasource = movies.filterMovies(in: city, at: dates.selectedDate)
+            leftViewController.datasource = filterMovies(in: city, at: dates.selectedDate)
         case DailyVCSegments.showings.rawValue:
-            rightViewController.datasource = movies.filterShowings(in: city, at: dates.selectedDate)
+            rightViewController.datasource = filterShowings(in: city, at: dates.selectedDate)
         default:
             return
         }
@@ -221,5 +189,40 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         }, completion: { _ in
             snapShotView.removeFromSuperview()
         })
+    }
+}
+
+extension DailyViewController: MovieManageable {
+    
+    private func fetchMovies() {
+        fetch(using: .shared) { result in
+            switch result {
+                
+            case .success:
+                self.didFetchSuccessfully()
+                
+            case .failure(let error):
+                print("fetchMovies: \(error)")
+                self.didFetchWithError()
+            }
+        }
+    }
+    
+    private func didFetchSuccessfully() {
+        DispatchQueue.main.async {
+            self.loadingView.removeFromSuperview()
+            self.enableControlElements(true)
+            self.updateDatasource()
+        }
+    }
+    
+    private func didFetchWithError() {
+        DispatchQueue.main.async {
+            self.loadingView.hide(networkError: false)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.fetchMovies()
+        }
     }
 }

@@ -23,12 +23,6 @@ protocol MovieFilterable {
     func filterShowings(in city: City, at date: Date) -> [Showing]
 }
 
-final class MovieManager: MovieManageable {
-    
-    var movies = [Movie]()
-    
-}
-
 extension MovieFetchable {
     func fetch(using session: URLSession = .shared, completion: @escaping (Result<Void, Error>) -> ()) {
         let task = session.dataTask(with: .api) { data, response, error in
