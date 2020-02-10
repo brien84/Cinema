@@ -197,3 +197,9 @@ extension DailyViewController: MovieManageable {
         }
     }
 }
+
+extension UIImage {
+    static let options = UIImage(named: "options")!
+    static let left = UIImage(named: "arrowLeft")!
+    static let right = UIImage(named: "arrowRight")!
+}

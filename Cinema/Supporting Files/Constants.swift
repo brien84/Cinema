@@ -21,12 +21,6 @@ extension UIColor {
     static let transparentBlackC = UIColor(named: "transparentBlack")!
 }
 
-extension UIImage {
-    static let options = UIImage(named: "options")!
-    static let left = UIImage(named: "arrowLeft")!
-    static let right = UIImage(named: "arrowRight")!
-}
-
 extension URL {
     static let api = URL(string: "https://movies.ioys.lt/all")!
     //static let api = URL(string: "http://localhost:8080/all")!
