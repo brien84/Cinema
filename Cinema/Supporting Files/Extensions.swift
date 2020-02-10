@@ -18,7 +18,7 @@ extension Array where Element: Hashable {
 
 extension CGFloat {
     static func dynamicFontSize(_ fontSize: CGFloat) -> CGFloat {
-        /// 
+        ///
         let calculatedFontSize = .screenWidth / 320 * fontSize
         return calculatedFontSize
     }
@@ -76,6 +76,11 @@ extension UIColor {
 }
 
 extension UIView {
+    enum AnimationDirection {
+        case left
+        case right
+    }
+    
     func addBottomBorder(with color: UIColor?, width borderWidth: CGFloat) {
         let border = UIView()
         border.backgroundColor = color
