@@ -157,8 +157,6 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     
     @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
         
-        let directionToRight: Bool
-        
         switch sender {
         case leftDateNavigationButton:
             if dates.isFirstDateSelected {
@@ -166,28 +164,16 @@ final class DailyViewController: UIViewController, SegmentableContainer {
                 return
             } else {
                 dates.previousDate()
-                directionToRight = false
+                containerView.slideIn(from: .left)
             }
+            
         case rightDateNavigationButton:
             dates.nextDate()
-            directionToRight = true
+            containerView.slideIn(from: .right)
+            
         default:
             return
         }
-        
-        guard let snapShotView = containerView.snapshotView(afterScreenUpdates: false) else { return }
-        view.addSubview(snapShotView)
-        view.sendSubviewToBack(snapShotView)
-
-        containerView.frame.origin.x += directionToRight ? containerView.frame.width : -containerView.frame.width
-
-        UIView.transition(with: containerView, duration: 0.5, options: .curveEaseInOut, animations: {
-            self.containerView.frame.origin.x = 0
-            snapShotView.frame.origin.x += directionToRight ? -snapShotView.frame.width : snapShotView.frame.width
-            snapShotView.alpha = 0.2
-        }, completion: { _ in
-            snapShotView.removeFromSuperview()
-        })
     }
 }
 
