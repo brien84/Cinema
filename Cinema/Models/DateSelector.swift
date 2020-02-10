@@ -8,33 +8,26 @@
 
 import Foundation
 
-protocol DateSelectable {
-    var dates: [Date] { get }
-    var selectedDate: Date { get }
-    var currentIndex: Int { get }
+final class DateSelector: DateSelectable {
     
-    mutating func previousDate()
-    mutating func nextDate()
-}
-
-struct DateSelector: DateSelectable {
+    private let dates: [Date]
     
-    static let isFirstDateSelectedKey = "DateSelectorIsFirstDateSelected"
-    
-    let dates: [Date]
-    
-    var selectedDate: Date {
-        return dates[currentIndex]
-    }
-    
-    private(set) var currentIndex = 0 {
+    private var currentIndex = 0 {
         didSet {
             postNotification()
         }
     }
     
-    private var isFirstDateSelected: Bool {
-        return currentIndex == 0 ? true : false
+    var selectedDate: Date {
+        return dates[currentIndex]
+    }
+
+    var isFirstDateSelected: Bool {
+        return currentIndex == 0
+    }
+    
+    var isLastDateSelected: Bool {
+        return currentIndex == dates.indices.last
     }
     
     init() {
@@ -42,20 +35,17 @@ struct DateSelector: DateSelectable {
     }
     
     private func postNotification() {
-        let info = [DateSelector.isFirstDateSelectedKey : isFirstDateSelected]
-        NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil, userInfo: info)
+        NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil)
     }
     
-    mutating func previousDate() {
-        if currentIndex != 0 {
+    func previousDate() {
+        if !isFirstDateSelected {
             currentIndex -= 1
         }
     }
     
-    mutating func nextDate() {
-        guard let lastIndex = dates.indices.last else { fatalError("Date array is empty!") }
-        
-        if currentIndex != lastIndex {
+    func nextDate() {
+        if !isLastDateSelected {
             currentIndex += 1
         }
     }

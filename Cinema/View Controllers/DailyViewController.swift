@@ -102,8 +102,8 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     // MARK: - Setup Methods
         
     private func setupNotificationObservers() {
-        NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { notification in
-            self.updateLeftDateNavigationButtonAppearance(notification)
+        NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { _ in
+            self.handleDateChange()
         }
         
         NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { _ in
@@ -133,13 +133,6 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         navigationItem.title = title
     }
     
-    /// TODO: FIX!
-    private func updateLeftDateNavigationButtonAppearance(_ notification: Notification) {
-        guard let info = notification.userInfo as? [String: Bool] else { return }
-        guard let isFirstDate = info[DateSelector.isFirstDateSelectedKey] else { return }
-        leftDateNavigationButton.image = isFirstDate ? .options : .left
-    }
-    
     private func enableControlElements(_ enabled: Bool) {
         segmentedControl.isEnabled = enabled
         leftDateNavigationButton.isEnabled = enabled
@@ -154,20 +147,28 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         updateDatasource()
     }
     
+    private func handleDateChange() {
+        leftDateNavigationButton.image = dates.isFirstDateSelected ? .options : .left
+        rightDateNavigationButton.isEnabled = dates.isLastDateSelected ? false : true
+
+        updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
+        updateDatasource()
+    }
+    
     @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
         
         let directionToRight: Bool
         
-        switch true {
-        case sender == leftDateNavigationButton:
-            if leftDateNavigationButton.image == .options {
+        switch sender {
+        case leftDateNavigationButton:
+            if dates.isFirstDateSelected {
                 navigationController?.pushViewController(OptionsViewController(), animated: true)
                 return
             } else {
                 dates.previousDate()
                 directionToRight = false
             }
-        case sender == rightDateNavigationButton:
+        case rightDateNavigationButton:
             dates.nextDate()
             directionToRight = true
         default:
@@ -177,9 +178,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         guard let snapShotView = containerView.snapshotView(afterScreenUpdates: false) else { return }
         view.addSubview(snapShotView)
         view.sendSubviewToBack(snapShotView)
-        
-        updateDatasource()
-        updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
+
         containerView.frame.origin.x += directionToRight ? containerView.frame.width : -containerView.frame.width
 
         UIView.transition(with: containerView, duration: 0.5, options: .curveEaseInOut, animations: {
