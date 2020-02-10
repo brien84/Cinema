@@ -112,14 +112,8 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     }
     
     private func updateDatasource() {
-        switch segmentedControl.selectedSegmentIndex {
-        case DailyVCSegments.movies.rawValue:
-            leftViewController.datasource = filterMovies(in: city, at: dates.selectedDate)
-        case DailyVCSegments.showings.rawValue:
-            rightViewController.datasource = filterShowings(in: city, at: dates.selectedDate)
-        default:
-            return
-        }
+        leftViewController.datasource = filterMovies(in: city, at: dates.selectedDate)
+        rightViewController.datasource = filterShowings(in: city, at: dates.selectedDate)
     }
     
     // MARK: - View Methods
@@ -138,14 +132,6 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         leftDateNavigationButton.isEnabled = enabled
         rightDateNavigationButton.isEnabled = enabled
     }
- 
-    // MARK: - Navigation Methods
-    
-    ///
-    func segmentedControl(_ segmentedControl: SegmentedControl, didChange index: Int) {
-        updateContainerViewBySegmentedControl(index)
-        updateDatasource()
-    }
     
     private func handleDateChange() {
         leftDateNavigationButton.image = dates.isFirstDateSelected ? .options : .left
@@ -156,8 +142,8 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     }
     
     @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
-        
         switch sender {
+            
         case leftDateNavigationButton:
             if dates.isFirstDateSelected {
                 navigationController?.pushViewController(OptionsViewController(), animated: true)
