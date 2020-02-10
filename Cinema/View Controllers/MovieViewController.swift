@@ -26,7 +26,7 @@ final class MovieViewController: UIViewController, SegmentableContainer {
     
     private let movie: Movie
 
-    let containerView = UIView()
+    let containerView = ContainerView()
    
     private(set) lazy var leftViewController: MovieDetailViewVC = {
         let controller = MovieDetailViewVC(movie: movie)

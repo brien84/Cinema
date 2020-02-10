@@ -19,7 +19,7 @@ protocol SegmentableContainer: SegmentedControlDelegate where Self: UIViewContro
     var leftViewController: leftViewControllerType { get }
     var rightViewController: rightViewControllerType { get }
     var segmentedControl: SegmentedControl { get }
-    var containerView: UIView { get }
+    var containerView: ContainerView { get }
     
     func updateContainerView(with viewController: UIViewController)
 }

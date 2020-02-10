@@ -28,7 +28,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
 
     private var dates: DateSelectable
     
-    let containerView = UIView()
+    let containerView = ContainerView()
     let leftViewController = DailyMoviesVC(collectionViewLayout: UICollectionViewFlowLayout())
     let rightViewController = DailyShowingsVC()
     
