@@ -8,13 +8,6 @@
 
 import UIKit
 
-enum City: String, CaseIterable {
-    case vilnius = "Vilnius"
-    case kaunas = "Kaunas"
-    case klaipeda = "Klaipėda"
-    case siauliai = "Šiauliai"
-}
-
 private let reuseIdentifier = "Cell"
 
 final class OptionsViewController: UITableViewController {
