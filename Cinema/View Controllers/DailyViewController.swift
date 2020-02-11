@@ -35,6 +35,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     private(set) lazy var segmentedControl: SegmentedControl = {
         let control = SegmentedControl(with: DailyVCSegments.self)
         control.delegate = self
+        
         return control
     }()
     
@@ -57,8 +58,6 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         
         return button
     }()
-    
-    private lazy var loadingView = LoadingView(frame: containerView.bounds)
     
     private var city: City {
         return UserDefaults.standard.readCity()
@@ -91,10 +90,6 @@ final class DailyViewController: UIViewController, SegmentableContainer {
         
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
         enableControlElements(false)
-        
-        DispatchQueue.main.async {
-            self.containerView.addSubview(self.loadingView)
-        }
         
         fetchMovies()
     }
@@ -166,6 +161,8 @@ final class DailyViewController: UIViewController, SegmentableContainer {
 extension DailyViewController: MovieManageable {
     
     private func fetchMovies() {
+        containerView.startLoading()
+        
         fetch(using: .shared) { result in
             switch result {
                 
@@ -181,15 +178,15 @@ extension DailyViewController: MovieManageable {
     
     private func didFetchSuccessfully() {
         DispatchQueue.main.async {
-            self.loadingView.removeFromSuperview()
-            self.enableControlElements(true)
             self.updateDatasource()
+            self.containerView.stopLoading()
+            self.enableControlElements(true)
         }
     }
     
     private func didFetchWithError() {
         DispatchQueue.main.async {
-            self.loadingView.hide(networkError: false)
+            self.containerView.displayNetworkError()
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {

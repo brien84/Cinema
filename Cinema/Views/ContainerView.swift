@@ -10,14 +10,34 @@ import UIKit
 
 final class ContainerView: UIView {
     
+    private lazy var loadingView = LoadingView()
+    
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
-
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Loading methods
+    
+    func startLoading() {
+        loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(loadingView)
+    }
+    
+    func stopLoading() {
+        UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.loadingView.removeFromSuperview()
+        }, completion: nil)
+    }
+    
+    func displayNetworkError() {
+        loadingView.display(networkError: true)
+    }
+    
+    // MARK: - Animations
     
     func slideIn(from direction: AnimationDirection) {
         guard let superview = superview else { return }
