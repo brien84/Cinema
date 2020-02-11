@@ -10,6 +10,12 @@ import UIKit
 
 final class LoadingView: UIView {
     
+    private let indicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .whiteLarge)
+        indicator.startAnimating()
+        return indicator
+    }()
+    
     private let errorLabel: UILabel = {
         let label = ErrorLabel(.noNetwork)
         label.isHidden = true
@@ -28,17 +34,15 @@ final class LoadingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func hide(networkError isHidden: Bool) {
-        errorLabel.isHidden = isHidden
+    func display(networkError shouldDisplay: Bool) {
+        errorLabel.isHidden = !shouldDisplay
     }
     
     private func layoutViews() {
-        let indicator = UIActivityIndicatorView(style: .whiteLarge)
-        indicator.startAnimating()
-        
+
         addSubview(indicator)
         indicator.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             indicator.centerXAnchor.constraint(equalTo: centerXAnchor),
             indicator.centerYAnchor.constraint(equalTo: centerYAnchor)
@@ -57,5 +61,5 @@ final class LoadingView: UIView {
 }
 
 extension CGFloat {
-    fileprivate static let inset: CGFloat = screenWidth * 0.02
+    fileprivate static let inset: CGFloat = screenWidth * 0.025
 }
