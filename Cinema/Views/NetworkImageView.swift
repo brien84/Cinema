@@ -87,5 +87,5 @@ final class NetworkImageView: UIImageView {
 }
 
 extension UIImage {
-    static let defaultImage = UIImage(named: "networkImageViewDefault")!
+    fileprivate static let defaultImage = UIImage(named: "networkImageViewDefault")!
 }
