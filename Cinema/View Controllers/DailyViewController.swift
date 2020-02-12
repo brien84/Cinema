@@ -70,11 +70,9 @@ final class DailyViewController: UIViewController {
         
         setupNotificationObservers()
 
-        ///
-        segmentedControl.selectedSegmentIndex = DailyVCSegments.showings.rawValue
-        segmentedControl.sendActions(for: UIControl.Event.valueChanged)
-        
+        segmentedControl.setSelectedSegmentIndex(DailyVCSegments.showings.rawValue)
         updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
+        
         enableControlElements(false)
         
         fetchMovies()

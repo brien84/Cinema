@@ -17,7 +17,7 @@ final class SegmentedControl: UISegmentedControl {
     weak var delegate: SegmentedControlDelegate?
     
     private let selectionIndicator = UIView()
-    private var indicatorLeadingToCenter: NSLayoutConstraint?
+    private var indicatorLeadingAnchorToCenter: NSLayoutConstraint?
         
     init<T: Segments>(with segments: T.Type) {
         super.init(frame: .zero)
@@ -66,7 +66,7 @@ final class SegmentedControl: UISegmentedControl {
             selectionIndicator.leadingAnchor.constraint(equalTo: leadingAnchor).withPriority(999)
         ])
         
-        indicatorLeadingToCenter = selectionIndicator.leadingAnchor.constraint(equalTo: centerXAnchor)
+        indicatorLeadingAnchorToCenter = selectionIndicator.leadingAnchor.constraint(equalTo: centerXAnchor)
     }
     
     @objc private func valueDidChange() {
@@ -75,9 +75,9 @@ final class SegmentedControl: UISegmentedControl {
         UIView.transition(with: selectionIndicator, duration: 0.5, options: .curveEaseInOut, animations: {
             switch self.selectedSegmentIndex {
             case 0:
-                self.indicatorLeadingToCenter?.isActive = false
+                self.indicatorLeadingAnchorToCenter?.isActive = false
             case 1:
-                self.indicatorLeadingToCenter?.isActive = true
+                self.indicatorLeadingAnchorToCenter?.isActive = true
             default:
                 break
             }
@@ -85,7 +85,12 @@ final class SegmentedControl: UISegmentedControl {
             self.layoutIfNeeded()
         }, completion: nil)
     
-        delegate?.segmentedControl(self, didChange: self.selectedSegmentIndex)
+        delegate?.segmentedControl(self, didChange: selectedSegmentIndex)
+    }
+    
+    func setSelectedSegmentIndex(_ index: Int) {
+        selectedSegmentIndex = index
+        valueDidChange()
     }
 }
 
