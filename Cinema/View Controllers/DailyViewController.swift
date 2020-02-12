@@ -8,25 +8,11 @@
 
 import UIKit
 
-enum DailyVCSegments: Int, Segments, CustomStringConvertible {
-    case movies
-    case showings
-
-    var description: String {
-        switch self {
-        case .movies:
-            return "Filmai"
-        case .showings:
-            return "Seansai"
-        }
-    }
-}
-
-final class DailyViewController: UIViewController, SegmentableContainer {
+final class DailyViewController: UIViewController {
+    
+    private var dates: DateSelectable
     
     var movies = [Movie]()
-
-    private var dates: DateSelectable
     
     let containerView = ContainerView()
     let leftViewController = DailyMoviesVC(collectionViewLayout: UICollectionViewFlowLayout())
@@ -35,7 +21,7 @@ final class DailyViewController: UIViewController, SegmentableContainer {
     private(set) lazy var segmentedControl: SegmentedControl = {
         let control = SegmentedControl(with: DailyVCSegments.self)
         control.delegate = self
-        
+
         return control
     }()
     
@@ -156,6 +142,24 @@ final class DailyViewController: UIViewController, SegmentableContainer {
             return
         }
     }
+}
+
+extension DailyViewController: SegmentableContainer {
+    
+    private enum DailyVCSegments: Int, Segments, CustomStringConvertible {
+        case movies
+        case showings
+
+        var description: String {
+            switch self {
+            case .movies:
+                return "Filmai"
+            case .showings:
+                return "Seansai"
+            }
+        }
+    }
+    
 }
 
 extension DailyViewController: MovieManageable {

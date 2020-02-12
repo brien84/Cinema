@@ -8,31 +8,12 @@
 
 import UIKit
 
-enum MovieVCSegments: Int, Segments, CustomStringConvertible {
-    case about
-    case showings
-
-    var description: String {
-        switch self {
-        case .about:
-            return "Apie"
-        case .showings:
-            return "Seansai"
-        }
-    }
-}
-
-final class MovieViewController: UIViewController, SegmentableContainer {
+final class MovieViewController: UIViewController {
     
     private let movie: Movie
 
     let containerView = ContainerView()
-   
-    private(set) lazy var leftViewController: MovieDetailViewVC = {
-        let controller = MovieDetailViewVC(movie: movie)
-
-        return controller
-    }()
+    private(set) lazy var leftViewController = MovieDetailViewVC(movie: movie)
     
     private(set) lazy var rightViewController: MovieShowingsVC = {
         let controller = MovieShowingsVC()
@@ -74,4 +55,22 @@ final class MovieViewController: UIViewController, SegmentableContainer {
         
         navigationItem.title = movie.title
     }
+}
+
+extension MovieViewController: SegmentableContainer {
+    
+    private enum MovieVCSegments: Int, Segments, CustomStringConvertible {
+        case about
+        case showings
+
+        var description: String {
+            switch self {
+            case .about:
+                return "Apie"
+            case .showings:
+                return "Seansai"
+            }
+        }
+    }
+    
 }
