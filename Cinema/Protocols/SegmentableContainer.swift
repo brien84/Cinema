@@ -36,19 +36,22 @@ extension SegmentableContainer {
     func updateContainerViewBySegmentedControl(_ index: Int) {
         switch index {
         case 0:
-            updateContainerView(with: leftViewController)
+            UIView.transition(with: containerView, duration: 0.5, options: .transitionFlipFromRight, animations: {
+                self.updateContainerView(with: self.leftViewController)
+            }, completion: nil)
+            
         case 1:
-            updateContainerView(with: rightViewController)
+            UIView.transition(with: containerView, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                self.updateContainerView(with: self.rightViewController)
+            }, completion: nil)
         default:
             return
         }
     }
     
     private func updateContainerView(with viewController: UIViewController) {
-        UIView.transition(with: containerView, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-            self.removeCurrentViewControllerFromContainerView()
-            self.show(viewController)
-        }, completion: nil)
+        removeCurrentViewControllerFromContainerView()
+        show(viewController)
     }
     
     private func show(_ viewController: UIViewController) {
