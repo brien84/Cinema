@@ -41,7 +41,7 @@ final class MovieViewController: UIViewController {
     }
     
     override func loadView() {
-        view = createSegmentableContainerView()
+        view = constructSegmentableContainerView()
     }
     
     override func viewDidLoad() {

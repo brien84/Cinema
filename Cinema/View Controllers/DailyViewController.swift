@@ -60,7 +60,7 @@ final class DailyViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = createSegmentableContainerView()
+        view = constructSegmentableContainerView()
     }
     
     override func viewDidLoad() {

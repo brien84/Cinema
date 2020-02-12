@@ -21,7 +21,7 @@ protocol SegmentableContainer: SegmentedControlDelegate where Self: UIViewContro
     var segmentedControl: SegmentedControl { get }
     var containerView: ContainerView { get }
     
-    func updateContainerView(with viewController: UIViewController)
+    func updateContainerViewBySegmentedControl(_ index: Int)
 }
 
 extension SegmentableContainer {
@@ -44,7 +44,7 @@ extension SegmentableContainer {
         }
     }
     
-    func updateContainerView(with viewController: UIViewController) {
+    private func updateContainerView(with viewController: UIViewController) {
         UIView.transition(with: containerView, duration: 0.5, options: .transitionFlipFromLeft, animations: {
             self.removeCurrentViewControllerFromContainerView()
             self.show(viewController)
@@ -66,7 +66,7 @@ extension SegmentableContainer {
         }
     }
     
-    func createSegmentableContainerView() -> UIView {
+    func constructSegmentableContainerView() -> UIView {
         let view = UIView()
     
         /// containerView layout
