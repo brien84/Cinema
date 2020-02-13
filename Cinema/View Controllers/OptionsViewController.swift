@@ -11,11 +11,11 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 final class OptionsViewController: UITableViewController {
-    
+
     private let datasource: [City] = {
         return City.allCases.map { $0 }
     }()
-    
+
     private lazy var headerView: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: .headerHeight))
         label.textAlignment = .center
@@ -27,20 +27,20 @@ final class OptionsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.register(OptionsCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.contentInset = UIEdgeInsets(top: .contentInset, left: 0, bottom: 0, right: 0)
         tableView.backgroundColor = .darkC
         tableView.separatorStyle = .none
         tableView.tableHeaderView = headerView
         tableView.isScrollEnabled = false
-        
+
         navigationController?.isNavigationBarHidden = true
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+
         navigationController?.isNavigationBarHidden = false
     }
 
@@ -54,13 +54,13 @@ final class OptionsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! OptionsCell
 
         cell.title.text = datasource[indexPath.row].rawValue
-        
+
         let selectedCity = UserDefaults.standard.readCity()
         cell.isSelected = selectedCity == datasource[indexPath.row] ? true : false
-        
+
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UserDefaults.standard.save(city: datasource[indexPath.row])
         NotificationCenter.default.post(name: .OptionsCityDidChange, object: nil)

@@ -15,31 +15,31 @@ protocol Segments: RawRepresentable, CaseIterable {
 protocol SegmentableContainer: SegmentedControlDelegate where Self: UIViewController {
     associatedtype leftViewControllerType: UIViewController
     associatedtype rightViewControllerType: UIViewController
-    
+
     var leftViewController: leftViewControllerType { get }
     var rightViewController: rightViewControllerType { get }
     var segmentedControl: SegmentedControl { get }
     var containerView: ContainerView { get }
-    
+
     func updateContainerViewBySegmentedControl(_ index: Int)
 }
 
 extension SegmentableContainer {
     // MARK: SegmentedControlDelegate methods
-    
+
     func segmentedControl(_ segmentedControl: SegmentedControl, didChange index: Int) {
         updateContainerViewBySegmentedControl(index)
     }
-    
+
     // MARK: SegmentableContainer methods
-    
+
     func updateContainerViewBySegmentedControl(_ index: Int) {
         switch index {
         case 0:
             UIView.transition(with: containerView, duration: 0.5, options: .transitionFlipFromRight, animations: {
                 self.updateContainerView(with: self.leftViewController)
             }, completion: nil)
-            
+
         case 1:
             UIView.transition(with: containerView, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 self.updateContainerView(with: self.rightViewController)
@@ -48,19 +48,19 @@ extension SegmentableContainer {
             return
         }
     }
-    
+
     private func updateContainerView(with viewController: UIViewController) {
         removeCurrentViewControllerFromContainerView()
         show(viewController)
     }
-    
+
     private func show(_ viewController: UIViewController) {
         self.addChild(viewController)
         viewController.view.frame = containerView.bounds
         containerView.addSubview(viewController.view)
         viewController.didMove(toParent: self)
     }
-    
+
     private func removeCurrentViewControllerFromContainerView() {
         if let viewController = self.children.first {
             viewController.willMove(toParent: nil)
@@ -68,32 +68,32 @@ extension SegmentableContainer {
             viewController.removeFromParent()
         }
     }
-    
+
     func constructSegmentableContainerView() -> UIView {
         let view = UIView()
-    
+
         /// containerView layout
         view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
-    
+
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: view.topAnchor),
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
+
         /// segmentedControl layout
         view.addSubview(segmentedControl)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             segmentedControl.heightAnchor.constraint(equalToConstant: .segmentedControlHeight)
         ])
-        
+
         return view
     }
 }

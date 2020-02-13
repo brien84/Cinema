@@ -18,14 +18,14 @@ final class ErrorLabel: UILabel {
 
     init(frame: CGRect = .zero, _ error: DataError) {
         super.init(frame: frame)
-        
+
         textAlignment = .center
         numberOfLines = 0
         textColor = .lightC
         font = UIFont(name: "Avenir-Medium", size: .dynamicFontSize(17))
         text = error.rawValue
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

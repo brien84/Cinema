@@ -11,7 +11,7 @@ import UIKit
 final class DailyShowingsCell: UITableViewCell {
 
     let poster = NetworkImageView()
-    
+
     let title: UILabel = {
         let label = UILabel()
         label.textColor = .lightC
@@ -19,7 +19,7 @@ final class DailyShowingsCell: UITableViewCell {
         label.numberOfLines = 2
         return label
     }()
-    
+
     let originalTitle: UILabel = {
         let label = UILabel()
         label.textColor = .grayC
@@ -27,40 +27,40 @@ final class DailyShowingsCell: UITableViewCell {
         label.numberOfLines = 2
         return label
     }()
-    
+
     lazy var venue = detailLabel
     lazy var time = detailLabel
-    
+
     lazy var screenType: UILabel = {
         let label = detailLabel
         label.textColor = .redC
         return label
     }()
-        
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+
         backgroundColor = .darkC
         selectionStyle = .none
-        
+
         layoutViews()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+
         poster.image = nil
     }
-    
+
     private func layoutViews() {
         ///
         contentView.addSubview(poster)
         poster.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             poster.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .inset),
             poster.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .inset),
@@ -68,16 +68,16 @@ final class DailyShowingsCell: UITableViewCell {
             poster.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: .posterWidthToCellWidthRatio),
             poster.heightAnchor.constraint(equalTo: poster.widthAnchor, multiplier: .posterHeightToWidthRatio).withPriority(999)
         ])
-        
+
         ///
         contentView.addSubview(screenType)
         screenType.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             screenType.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .inset),
             screenType.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -2 * .inset)
         ])
-        
+
         ///
         contentView.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -87,7 +87,7 @@ final class DailyShowingsCell: UITableViewCell {
             title.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 2 * .inset),
             title.trailingAnchor.constraint(equalTo: screenType.leadingAnchor, constant: -2 * .inset)
         ])
-        
+
         ///
         contentView.addSubview(originalTitle)
         originalTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -97,7 +97,7 @@ final class DailyShowingsCell: UITableViewCell {
             originalTitle.leadingAnchor.constraint(equalTo: poster.trailingAnchor, constant: 2 * .inset),
             originalTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -2 * .inset)
         ])
-        
+
         ///
         let detailStackView = UIStackView(arrangedSubviews: [venue, time])
         detailStackView.axis = .horizontal

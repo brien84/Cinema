@@ -12,13 +12,13 @@ typealias MovieManageable = MovieFetchable & MovieFilterable
 
 protocol MovieFetchable: AnyObject {
     var movies: [Movie] { get set }
-    
+
     func fetch(using session: URLSession, completion: @escaping (Result<Void, Error>) -> ())
 }
 
 protocol MovieFilterable {
     var movies: [Movie] { get }
-    
+
     func filterMovies(in city: City, at date: Date) -> [Movie]
     func filterShowings(in city: City, at date: Date) -> [Showing]
 }
@@ -29,15 +29,15 @@ extension MovieFetchable {
             if let error = error {
                 completion(.failure(error))
             }
-            
+
             if let data = data {
                 completion(self.decode(data))
             }
         }
-        
+
         task.resume()
     }
-    
+
     private func decode(_ data: Data) -> Result<Void, Error> {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
@@ -55,7 +55,7 @@ extension MovieFilterable {
     func filterMovies(in city: City, at date: Date) -> [Movie] {
         return movies.flatMap { $0.getShowings(in: city, at: date).compactMap { $0.parentMovie } }.uniqued()
     }
-    
+
     func filterShowings(in city: City, at date: Date) -> [Showing] {
         return movies.flatMap { $0.getShowings(in: city, at: date) }
     }

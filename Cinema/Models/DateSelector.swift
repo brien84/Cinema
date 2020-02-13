@@ -9,15 +9,15 @@
 import Foundation
 
 final class DateSelector: DateSelectable {
-    
+
     private let dates: [Date]
-    
+
     private var currentIndex = 0 {
         didSet {
             postNotification()
         }
     }
-    
+
     var selectedDate: Date {
         return dates[currentIndex]
     }
@@ -25,25 +25,25 @@ final class DateSelector: DateSelectable {
     var isFirstDateSelected: Bool {
         return currentIndex == 0
     }
-    
+
     var isLastDateSelected: Bool {
         return currentIndex == dates.indices.last
     }
-    
+
     init() {
         self.dates = Date().datesInFuture(after: 14)
     }
-    
+
     private func postNotification() {
         NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil)
     }
-    
+
     func previousDate() {
         if !isFirstDateSelected {
             currentIndex -= 1
         }
     }
-    
+
     func nextDate() {
         if !isLastDateSelected {
             currentIndex += 1
@@ -57,13 +57,13 @@ extension Date {
         var date = self
         guard let endDate = Calendar.current.date(byAdding: .day, value: days, to: date) else { return [] }
         var dates = [Date]()
-        
+
         while date <= endDate {
             dates.append(date)
             guard let newDate = Calendar.current.date(byAdding: .day, value: 1, to: date) else { return [] }
             date = newDate
         }
-        
+
         return dates
     }
 }

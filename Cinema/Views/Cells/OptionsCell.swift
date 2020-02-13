@@ -9,7 +9,7 @@
 import UIKit
 
 final class OptionsCell: UITableViewCell {
-    
+
     let title: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -17,7 +17,7 @@ final class OptionsCell: UITableViewCell {
         label.font = .title
         return label
     }()
-    
+
     override var isSelected: Bool {
         didSet {
             if isSelected {

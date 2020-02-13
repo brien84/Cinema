@@ -14,7 +14,7 @@ final class Showing: Decodable {
     let venue: String
     let is3D: Bool
     var parentMovie: Movie?
-    
+
     init(city: String, date: Date, venue: String, is3D: Bool, parentMovie: Movie) {
         self.city = city
         self.date = date

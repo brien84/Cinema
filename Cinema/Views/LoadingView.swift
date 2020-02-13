@@ -9,13 +9,13 @@
 import UIKit
 
 final class LoadingView: UIView {
-    
+
     private let indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .whiteLarge)
         indicator.startAnimating()
         return indicator
     }()
-    
+
     private let errorLabel: UILabel = {
         let label = ErrorLabel(.noNetwork)
         label.isHidden = true
@@ -24,20 +24,20 @@ final class LoadingView: UIView {
 
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
-        
+
         self.backgroundColor = .darkC
-        
+
         layoutViews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func display(networkError shouldDisplay: Bool) {
         errorLabel.isHidden = !shouldDisplay
     }
-    
+
     private func layoutViews() {
 
         addSubview(indicator)
@@ -47,10 +47,10 @@ final class LoadingView: UIView {
             indicator.centerXAnchor.constraint(equalTo: centerXAnchor),
             indicator.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
-        
+
         addSubview(errorLabel)
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             errorLabel.topAnchor.constraint(equalTo: indicator.bottomAnchor, constant: .inset),
             errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor),

@@ -9,7 +9,7 @@
 import UIKit
 
 final class MovieShowingsCell: UITableViewCell {
-    
+
     let date: UILabel = {
         let label = UILabel()
         label.textColor = .grayC
@@ -30,7 +30,7 @@ final class MovieShowingsCell: UITableViewCell {
         label.font = .venue
         return label
     }()
-    
+
     let screenType: UILabel = {
         let label = UILabel()
         label.textColor = .redC
@@ -40,34 +40,34 @@ final class MovieShowingsCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+
         backgroundColor = .darkC
         selectionStyle = .none
-    
+
         layoutViews()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func layoutViews() {
         contentView.addSubview(screenType)
         screenType.translatesAutoresizingMaskIntoConstraints = false
-          
+
         NSLayoutConstraint.activate([
             screenType.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .inset),
             screenType.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.inset)
         ])
-        
+
         let stackView = UIStackView(arrangedSubviews: [date, time, venue])
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.spacing = .inset
-        
+
         contentView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .inset),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 2 * .inset),

@@ -9,9 +9,9 @@
 import UIKit
 
 final class DailyMoviesCell: UICollectionViewCell {
-    
+
     let poster = NetworkImageView()
-    
+
     let title: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
@@ -19,43 +19,43 @@ final class DailyMoviesCell: UICollectionViewCell {
         label.font = .title
         return label
     }()
-    
+
     let duration: UILabel = {
         let label = UILabel()
         label.textColor = .grayC
         label.font = .detail
         return label
     }()
-    
+
     let ageRating: UILabel = {
         let label = UILabel()
         label.textColor = .grayC
         label.font = .detail
         return label
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         backgroundColor = .darkC
-        
+
         layoutViews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+
         poster.image = nil
     }
-    
+
     private func layoutViews() {
-        
+
         contentView.widthAnchor.constraint(equalToConstant: bounds.size.width).isActive = true
-        
+
         ///
         let titleContainer = UIView()
 
@@ -96,17 +96,17 @@ final class DailyMoviesCell: UICollectionViewCell {
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.spacing = .inset / 2
-        
+
         contentView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-    
+
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).withPriority(999)
         ])
-        
+
         poster.heightAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 3/2).isActive = true
     }
 }
