@@ -166,10 +166,10 @@
 		2904C7952336A10700407B64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29B4D94A23F1EC0600BD9783 /* City.swift */,
 				2904C7A6233825D800407B64 /* DateSelector.swift */,
 				2904C79D2336A69100407B64 /* Movie.swift */,
 				2904C79F2336A69B00407B64 /* Showing.swift */,
-				29B4D94A23F1EC0600BD9783 /* City.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,41 +232,41 @@
 		29B9C95E237F42A30035EF0B /* CinemaTests */ = {
 			isa = PBXGroup;
 			children = (
-				29B9C968237F42B30035EF0B /* ModelsTests */,
-				29B9C967237F42B00035EF0B /* ViewControllersTests */,
+				29B9C968237F42B30035EF0B /* Models Tests */,
+				29B9C967237F42B00035EF0B /* View Controllers Tests */,
 				29B9C961237F42A30035EF0B /* Info.plist */,
 			);
 			path = CinemaTests;
 			sourceTree = "<group>";
 		};
-		29B9C967237F42B00035EF0B /* ViewControllersTests */ = {
+		29B9C967237F42B00035EF0B /* View Controllers Tests */ = {
 			isa = PBXGroup;
 			children = (
 				29B9C979237F4F650035EF0B /* DailyViewControllerTests.swift */,
 				29B9C97B237F4F740035EF0B /* MovieViewControllerTests.swift */,
 				29B9C97D237F4F850035EF0B /* OptionsVCTests.swift */,
-				29B9C976237F4F170035EF0B /* ContainerTests */,
+				29B9C976237F4F170035EF0B /* Container Controllers Tests */,
 			);
-			path = ViewControllersTests;
+			path = "View Controllers Tests";
 			sourceTree = "<group>";
 		};
-		29B9C968237F42B30035EF0B /* ModelsTests */ = {
+		29B9C968237F42B30035EF0B /* Models Tests */ = {
 			isa = PBXGroup;
 			children = (
 				29B9C96A237F44770035EF0B /* DateSelectorTests.swift */,
 				29B9C96C237F465D0035EF0B /* MovieManagerTests.swift */,
 			);
-			path = ModelsTests;
+			path = "Models Tests";
 			sourceTree = "<group>";
 		};
-		29B9C976237F4F170035EF0B /* ContainerTests */ = {
+		29B9C976237F4F170035EF0B /* Container Controllers Tests */ = {
 			isa = PBXGroup;
 			children = (
 				29B9C977237F4F3F0035EF0B /* DateMovieVCTests.swift */,
 				29B9C97F237F4F980035EF0B /* DateShowingVCTests.swift */,
 				29B9C981237F4FB70035EF0B /* MovieShowingVCTests.swift */,
 			);
-			path = ContainerTests;
+			path = "Container Controllers Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +279,7 @@
 				2904C75C2336982B00407B64 /* Sources */,
 				2904C75D2336982B00407B64 /* Frameworks */,
 				2904C75E2336982B00407B64 /* Resources */,
+				29B4D94D23F5BB6A00BD9783 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -364,6 +365,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29B4D94D23F5BB6A00BD9783 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2904C75C2336982B00407B64 /* Sources */ = {
