@@ -10,7 +10,7 @@ import UIKit
 
 final class DailyViewController: UIViewController {
 
-    private var dates: DateSelectable
+    private var dateSelector: DateSelectable
 
     var movies = [Movie]()
 
@@ -49,8 +49,8 @@ final class DailyViewController: UIViewController {
         return UserDefaults.standard.readCity()
     }
 
-    init(dateManager: DateSelectable = DateSelector()) {
-        self.dates = dateManager
+    init(dateSelector: DateSelectable = DateSelector()) {
+        self.dateSelector = dateSelector
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -71,7 +71,7 @@ final class DailyViewController: UIViewController {
         setupNotificationObservers()
 
         segmentedControl.setSelectedSegmentIndex(DailyVCSegments.showings.rawValue)
-        updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
+        updateNavigationTitle(with: dateSelector.selectedDate.asString(format: .monthNameAndDay))
 
         enableControlElements(false)
 
@@ -91,8 +91,8 @@ final class DailyViewController: UIViewController {
     }
 
     private func updateDatasource() {
-        leftViewController.datasource = filterMovies(in: city, at: dates.selectedDate)
-        rightViewController.datasource = filterShowings(in: city, at: dates.selectedDate)
+        leftViewController.datasource = filterMovies(in: city, at: dateSelector.selectedDate)
+        rightViewController.datasource = filterShowings(in: city, at: dateSelector.selectedDate)
     }
 
     // MARK: - View Methods
@@ -113,10 +113,10 @@ final class DailyViewController: UIViewController {
     }
 
     private func handleDateChange() {
-        leftDateNavigationButton.image = dates.isFirstDateSelected ? .options : .left
-        rightDateNavigationButton.isEnabled = dates.isLastDateSelected ? false : true
+        leftDateNavigationButton.image = dateSelector.isFirstDateSelected ? .options : .left
+        rightDateNavigationButton.isEnabled = dateSelector.isLastDateSelected ? false : true
 
-        updateNavigationTitle(with: dates.selectedDate.asString(format: .monthNameAndDay))
+        updateNavigationTitle(with: dateSelector.selectedDate.asString(format: .monthNameAndDay))
         updateDatasource()
     }
 
@@ -124,16 +124,16 @@ final class DailyViewController: UIViewController {
         switch sender {
 
         case leftDateNavigationButton:
-            if dates.isFirstDateSelected {
+            if dateSelector.isFirstDateSelected {
                 navigationController?.pushViewController(OptionsViewController(), animated: true)
                 return
             } else {
-                dates.previousDate()
+                dateSelector.previousDate()
                 containerView.slideIn(from: .left)
             }
 
         case rightDateNavigationButton:
-            dates.nextDate()
+            dateSelector.nextDate()
             containerView.slideIn(from: .right)
 
         default:
