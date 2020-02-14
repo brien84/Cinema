@@ -13,11 +13,11 @@ protocol Segments: RawRepresentable, CaseIterable {
 }
 
 protocol SegmentableContainer: SegmentedControlDelegate where Self: UIViewController {
-    associatedtype leftViewControllerType: UIViewController
-    associatedtype rightViewControllerType: UIViewController
+    associatedtype LeftViewControllerType: UIViewController
+    associatedtype RightViewControllerType: UIViewController
 
-    var leftViewController: leftViewControllerType { get }
-    var rightViewController: rightViewControllerType { get }
+    var leftViewController: LeftViewControllerType { get }
+    var rightViewController: RightViewControllerType { get }
     var segmentedControl: SegmentedControl { get }
     var containerView: ContainerView { get }
 
