@@ -13,7 +13,7 @@ typealias MovieManageable = MovieFetchable & MovieFilterable
 protocol MovieFetchable: AnyObject {
     var movies: [Movie] { get set }
 
-    func fetch(using session: URLSession, completion: @escaping (Result<Void, Error>) -> ())
+    func fetch(using session: URLSession, completion: @escaping (Result<Void, Error>) -> Void)
 }
 
 protocol MovieFilterable {
@@ -24,8 +24,8 @@ protocol MovieFilterable {
 }
 
 extension MovieFetchable {
-    func fetch(using session: URLSession = .shared, completion: @escaping (Result<Void, Error>) -> ()) {
-        let task = session.dataTask(with: .api) { data, response, error in
+    func fetch(using session: URLSession = .shared, completion: @escaping (Result<Void, Error>) -> Void) {
+        let task = session.dataTask(with: .api) { data, _, error in
             if let error = error {
                 completion(.failure(error))
             }
