@@ -9,7 +9,7 @@
 import XCTest
 @testable import Cinema
 
-struct TestMethods {
+struct TestHelper {
 
     static func loadTestData() -> Data {
         guard let asset = NSDataAsset(name: "testData") else {
@@ -27,9 +27,9 @@ struct TestMethods {
     }
 
     static func getMovie() -> Movie {
-        let data = TestMethods.loadTestData()
+        let data = TestHelper.loadTestData()
 
-        guard let movies = try? TestMethods.decodeMovies(from: data) else {
+        guard let movies = try? TestHelper.decodeMovies(from: data) else {
             fatalError("could not decode movies!")
         }
 
