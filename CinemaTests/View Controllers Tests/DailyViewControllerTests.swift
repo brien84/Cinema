@@ -348,17 +348,13 @@ class DailyViewControllerTests: XCTestCase {
             var data: Data
 
             if isFetchSuccessful {
-                guard let asset = NSDataAsset(name: "testData") else { return XCTFail("testData file is not found!") }
-                data = asset.data
+                data = TestHelper.loadTestData()
             } else {
                 data = Data()
             }
 
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-
             do {
-                movies = try decoder.decode([Movie].self, from: data)
+                movies = try TestHelper.decodeMovies(from: data)
                 completion(.success(()))
             } catch {
                 completion(.failure(error))
