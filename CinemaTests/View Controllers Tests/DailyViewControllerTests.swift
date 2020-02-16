@@ -120,7 +120,6 @@ class DailyViewControllerTests: XCTestCase {
         XCTAssertNotNil(loadingView)
     }
 
-
     // MARK: LeftBarButtonItem
 
     func testLeftBarButtonItemIsNotNil() {
@@ -142,9 +141,9 @@ class DailyViewControllerTests: XCTestCase {
         _ = sut.view
 
         // then
-        guard let button = sut.navigationItem.leftBarButtonItem else { return XCTFail("leftBarButtonItem is nil!") }
+        let button = sut.navigationItem.leftBarButtonItem
 
-        XCTAssertFalse(button.isEnabled)
+        XCTAssertFalse(button?.isEnabled ?? true)
     }
 
     func testLeftBarButtonItemIsEnabledAfterFetching() {
@@ -160,9 +159,9 @@ class DailyViewControllerTests: XCTestCase {
 
         // then
         waitForExpectations(timeout: 3)
-        guard let button = sut.navigationItem.leftBarButtonItem else { return XCTFail("leftBarButtonItem is nil!") }
+        let button = sut.navigationItem.leftBarButtonItem
 
-        XCTAssertTrue(button.isEnabled)
+        XCTAssertTrue(button?.isEnabled ?? false)
     }
 
     func testLeftBarButtonImageIsOptionsWhenFirstDateIsSelected() {
@@ -175,7 +174,9 @@ class DailyViewControllerTests: XCTestCase {
         dateSelector.nextDate()
 
         // then
-        guard let button = sut.navigationItem.leftBarButtonItem else { return XCTFail("leftBarButtonItem is nil!") }
+        guard let button = sut.navigationItem.leftBarButtonItem else {
+            return XCTFail("leftBarButtonItem is nil!")
+        }
 
         XCTAssertEqual(button.image, .options)
     }
@@ -190,7 +191,9 @@ class DailyViewControllerTests: XCTestCase {
         dateSelector.nextDate()
 
         // then
-        guard let button = sut.navigationItem.leftBarButtonItem else { return XCTFail("leftBarButtonItem is nil!") }
+        guard let button = sut.navigationItem.leftBarButtonItem else {
+            return XCTFail("leftBarButtonItem is nil!")
+        }
 
         XCTAssertEqual(button.image, .left)
     }
@@ -216,9 +219,9 @@ class DailyViewControllerTests: XCTestCase {
         _ = sut.view
 
         // then
-        guard let button = sut.navigationItem.rightBarButtonItem else { return XCTFail("rightBarButtonItem is nil!") }
+        let button = sut.navigationItem.rightBarButtonItem
 
-        XCTAssertFalse(button.isEnabled)
+        XCTAssertFalse(button?.isEnabled ?? true)
     }
 
     func testRightBarButtonItemIsEnabledAfterFetching() {
@@ -234,9 +237,9 @@ class DailyViewControllerTests: XCTestCase {
 
         // then
         waitForExpectations(timeout: 3)
-        guard let button = sut.navigationItem.rightBarButtonItem else { return XCTFail("rightBarButtonItem is nil!") }
+        let button = sut.navigationItem.rightBarButtonItem
 
-        XCTAssertTrue(button.isEnabled)
+        XCTAssertTrue(button?.isEnabled ?? false)
     }
 
     func testRightBarButtonIsEnabledWhenLastDateIsNotSelected() {
@@ -249,9 +252,9 @@ class DailyViewControllerTests: XCTestCase {
         dateSelector.nextDate()
 
         // then
-        guard let button = sut.navigationItem.rightBarButtonItem else { return XCTFail("rightBarButtonItem is nil!") }
+        let button = sut.navigationItem.rightBarButtonItem
 
-        XCTAssertTrue(button.isEnabled)
+        XCTAssertTrue(button?.isEnabled ?? false)
     }
 
     func testRightBarButtonIsDisabledWhenLastDateIsSelected() {
@@ -264,9 +267,9 @@ class DailyViewControllerTests: XCTestCase {
         dateSelector.nextDate()
 
         // then
-        guard let button = sut.navigationItem.rightBarButtonItem else { return XCTFail("rightBarButtonItem is nil!") }
+        let button = sut.navigationItem.rightBarButtonItem
 
-        XCTAssertFalse(button.isEnabled)
+        XCTAssertFalse(button?.isEnabled ?? true)
     }
 
     // MARK: NavigationItemTitle
