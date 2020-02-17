@@ -89,9 +89,6 @@ class MovieShowingsVCTests: XCTestCase {
         let movie = TestHelper.getMovie()
         sut.datasource = movie.showings
 
-        // when
-        _ = sut.view
-
         // then
         for (index, showing) in sut.datasource.enumerated() {
             let indexPath = IndexPath(item: index, section: 0)

@@ -66,26 +66,6 @@ class DailyMoviesVCTests: XCTestCase {
         XCTAssertEqual(itemsCount, moviesCount)
     }
 
-    func testCollectionViewCellsHaveCorrectValuesSet() {
-        // given
-        sut.datasource = TestHelper.getMovies()
-
-        // when
-        _ = sut.view
-
-        // then
-        for (index, movie) in sut.datasource.enumerated() {
-            let indexPath = IndexPath(item: index, section: 0)
-            // swiftlint:disable:next force_cast
-            let cell = sut.collectionView(sut.collectionView, cellForItemAt: indexPath) as! DailyMoviesCell
-
-            XCTAssertEqual(cell.poster.url, movie.poster)
-            XCTAssertEqual(cell.title.text, movie.title)
-            XCTAssertEqual(cell.duration.text, movie.duration)
-            XCTAssertEqual(cell.ageRating.text, movie.ageRating)
-        }
-    }
-
     func testCollectionViewBackgroundViewIsErrorLabelWhenDatasourceEmpty() {
         // given
         sut.datasource = []
@@ -108,7 +88,24 @@ class DailyMoviesVCTests: XCTestCase {
         XCTAssertNil(sut.collectionView.backgroundView)
     }
 
-    func testSelectingCollectionViewItemOpensMovieContainerVC() {
+    func testCollectionViewCellsHaveCorrectValuesSet() {
+        // given
+        sut.datasource = TestHelper.getMovies()
+
+        // then
+        for (index, movie) in sut.datasource.enumerated() {
+            let indexPath = IndexPath(item: index, section: 0)
+            // swiftlint:disable:next force_cast
+            let cell = sut.collectionView(sut.collectionView, cellForItemAt: indexPath) as! DailyMoviesCell
+
+            XCTAssertEqual(cell.poster.url, movie.poster)
+            XCTAssertEqual(cell.title.text, movie.title)
+            XCTAssertEqual(cell.duration.text, movie.duration)
+            XCTAssertEqual(cell.ageRating.text, movie.ageRating)
+        }
+    }
+
+    func testSelectingCollectionViewItemOpensMovieViewController() {
         // given
         let parentVC = UIViewController()
         parentVC.addChild(sut)
@@ -120,7 +117,6 @@ class DailyMoviesVCTests: XCTestCase {
         let expectation = self.expectation(description: "Wait for UI to update.")
 
         // when
-        _ = sut.view
         sut.collectionView(sut.collectionView, didSelectItemAt: indexPath)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
