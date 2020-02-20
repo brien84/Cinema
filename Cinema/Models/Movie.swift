@@ -8,7 +8,8 @@
 
 import Foundation
 
-final class Movie: Decodable {
+final class Movie: Codable {
+
     let title: String
     let originalTitle: String
     let year: String
@@ -29,6 +30,19 @@ final class Movie: Decodable {
         case plot
         case poster
         case showings
+    }
+
+    init(title: String, originalTitle: String, year: String, ageRating: String?,
+         duration: String?, genres: [String]?, plot: String?, poster: URL?, showings: [Showing]) {
+        self.title = title
+        self.originalTitle = originalTitle
+        self.year = year
+        self.ageRating = ageRating
+        self.duration = duration
+        self.genres = genres
+        self.plot = plot
+        self.poster = poster
+        self.showings = showings
     }
 
     required init(from decoder: Decoder) throws {
