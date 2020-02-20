@@ -171,7 +171,7 @@ class DailyViewControllerTests: XCTestCase {
 
         // when
         _ = sut.view
-        dateSelector.nextDate()
+        dateSelector.next()
 
         // then
         guard let button = sut.navigationItem.leftBarButtonItem else {
@@ -188,7 +188,7 @@ class DailyViewControllerTests: XCTestCase {
 
         // when
         _ = sut.view
-        dateSelector.nextDate()
+        dateSelector.next()
 
         // then
         guard let button = sut.navigationItem.leftBarButtonItem else {
@@ -249,7 +249,7 @@ class DailyViewControllerTests: XCTestCase {
 
         // when
         _ = sut.view
-        dateSelector.nextDate()
+        dateSelector.next()
 
         // then
         let button = sut.navigationItem.rightBarButtonItem
@@ -264,7 +264,7 @@ class DailyViewControllerTests: XCTestCase {
 
         // when
         _ = sut.view
-        dateSelector.nextDate()
+        dateSelector.next()
 
         // then
         let button = sut.navigationItem.rightBarButtonItem
@@ -294,7 +294,7 @@ class DailyViewControllerTests: XCTestCase {
         _ = sut.view
 
         // then
-        XCTAssertEqual(sut.navigationItem.title, dateSelector.selectedDate.asString(format: .monthNameAndDay))
+        XCTAssertEqual(sut.navigationItem.title, dateSelector.current.asString(format: .monthNameAndDay))
     }
 
     func testNavigationItemTitleIsUpdatedWhenDateChanges() {
@@ -304,9 +304,9 @@ class DailyViewControllerTests: XCTestCase {
 
         // when
         _ = sut.view
-        let oldDate = dateSelector.selectedDate
-        dateSelector.selectedDate = Date(timeIntervalSinceNow: 864000)
-        dateSelector.nextDate()
+        let oldDate = dateSelector.current
+        dateSelector.current = Date(timeIntervalSinceNow: 864000)
+        dateSelector.next()
 
         // then
         XCTAssertNotEqual(sut.navigationItem.title, oldDate.asString(format: .monthNameAndDay))
@@ -315,20 +315,20 @@ class DailyViewControllerTests: XCTestCase {
     // MARK: - Test Helpers
 
     private final class DateSelectorMock: DateSelectable {
-        var selectedDate = Date()
-        var isFirstDateSelected: Bool
-        var isLastDateSelected: Bool
+        var current = Date()
+        var isFirst: Bool
+        var isLast: Bool
 
         init(_ isFirstDateSelected: Bool, _ isLastDateSelected: Bool) {
-            self.isFirstDateSelected = isFirstDateSelected
-            self.isLastDateSelected = isLastDateSelected
+            self.isFirst = isFirstDateSelected
+            self.isLast = isLastDateSelected
         }
 
-        func previousDate() {
+        func next() {
             postNotification()
         }
 
-        func nextDate() {
+        func previous() {
             postNotification()
         }
 

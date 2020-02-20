@@ -9,10 +9,10 @@
 import Foundation
 
 protocol DateSelectable {
-    var selectedDate: Date { get }
-    var isFirstDateSelected: Bool { get }
-    var isLastDateSelected: Bool { get }
+    var current: Date { get }
+    var isFirst: Bool { get }
+    var isLast: Bool { get }
 
-    func previousDate()
-    func nextDate()
+    func previous()
+    func next()
 }

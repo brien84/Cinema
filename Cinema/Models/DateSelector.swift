@@ -18,15 +18,15 @@ final class DateSelector: DateSelectable {
         }
     }
 
-    var selectedDate: Date {
+    var current: Date {
         return dates[currentIndex]
     }
 
-    var isFirstDateSelected: Bool {
+    var isFirst: Bool {
         return currentIndex == 0
     }
 
-    var isLastDateSelected: Bool {
+    var isLast: Bool {
         return currentIndex == dates.indices.last
     }
 
@@ -38,14 +38,14 @@ final class DateSelector: DateSelectable {
         NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil)
     }
 
-    func previousDate() {
-        if !isFirstDateSelected {
+    func previous() {
+        if !isFirst {
             currentIndex -= 1
         }
     }
 
-    func nextDate() {
-        if !isLastDateSelected {
+    func next() {
+        if !isLast {
             currentIndex += 1
         }
     }

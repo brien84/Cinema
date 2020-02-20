@@ -10,11 +10,11 @@ import UIKit
 
 final class DailyViewController: UIViewController {
 
-    private var dateSelector: DateSelectable
-
-    var movies = [Movie]()
+    private let dateSelector: DateSelectable
+    private let movieManager: MovieManageable
 
     let containerView = ContainerView()
+
     let leftViewController = DailyMoviesVC(collectionViewLayout: UICollectionViewFlowLayout())
     let rightViewController = DailyShowingsVC()
 
@@ -49,8 +49,9 @@ final class DailyViewController: UIViewController {
         return UserDefaults.standard.readCity()
     }
 
-    init(dateSelector: DateSelectable = DateSelector()) {
+    init(dateSelector: DateSelectable = DateSelector(), movieManager: MovieManageable = MovieManager()) {
         self.dateSelector = dateSelector
+        self.movieManager = movieManager
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -70,15 +71,11 @@ final class DailyViewController: UIViewController {
 
         setupNotificationObservers()
 
+        updateNavigationTitle(with: dateSelector.current.asString(format: .monthNameAndDay))
         segmentedControl.setSelectedSegmentIndex(DailyVCSegments.showings.rawValue)
-        updateNavigationTitle(with: dateSelector.selectedDate.asString(format: .monthNameAndDay))
-
-        enableControlElements(false)
 
         fetchMovies()
     }
-
-    // MARK: - Setup Methods
 
     private func setupNotificationObservers() {
         NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { _ in
@@ -90,13 +87,6 @@ final class DailyViewController: UIViewController {
         }
     }
 
-    private func updateDatasource() {
-        leftViewController.datasource = filterMovies(in: city, at: dateSelector.selectedDate)
-        rightViewController.datasource = filterShowings(in: city, at: dateSelector.selectedDate)
-    }
-
-    // MARK: - View Methods
-
     private func updateNavigationTitle(with title: String) {
         let textTransition = CATransition()
         textTransition.duration = 0.3
@@ -106,17 +96,16 @@ final class DailyViewController: UIViewController {
         navigationItem.title = title
     }
 
-    private func enableControlElements(_ enabled: Bool) {
-        segmentedControl.isEnabled = enabled
-        leftDateNavigationButton.isEnabled = enabled
-        rightDateNavigationButton.isEnabled = enabled
+    private func updateDatasource() {
+        leftViewController.datasource = movieManager.filterMovies(in: city, at: dateSelector.current)
+        rightViewController.datasource = movieManager.filterShowings(in: city, at: dateSelector.current)
     }
 
     private func handleDateChange() {
-        leftDateNavigationButton.image = dateSelector.isFirstDateSelected ? .options : .left
-        rightDateNavigationButton.isEnabled = dateSelector.isLastDateSelected ? false : true
+        leftDateNavigationButton.image = dateSelector.isFirst ? .options : .left
+        rightDateNavigationButton.isEnabled = dateSelector.isLast ? false : true
 
-        updateNavigationTitle(with: dateSelector.selectedDate.asString(format: .monthNameAndDay))
+        updateNavigationTitle(with: dateSelector.current.asString(format: .monthNameAndDay))
         updateDatasource()
     }
 
@@ -124,20 +113,63 @@ final class DailyViewController: UIViewController {
         switch sender {
 
         case leftDateNavigationButton:
-            if dateSelector.isFirstDateSelected {
+            if dateSelector.isFirst {
                 navigationController?.pushViewController(OptionsViewController(), animated: true)
                 return
             } else {
-                dateSelector.previousDate()
+                dateSelector.previous()
                 containerView.slideIn(from: .left)
             }
 
         case rightDateNavigationButton:
-            dateSelector.nextDate()
+            dateSelector.next()
             containerView.slideIn(from: .right)
 
         default:
             return
+        }
+    }
+
+    private func toggleControlElements(_ enabled: Bool) {
+        segmentedControl.isEnabled = enabled
+        leftDateNavigationButton.isEnabled = enabled
+        rightDateNavigationButton.isEnabled = enabled
+    }
+
+    // MARK: - Movie Fetching:
+
+    private func fetchMovies() {
+        toggleControlElements(false)
+        containerView.startLoading()
+
+        movieManager.fetch(using: .shared) { result in
+            switch result {
+
+            case .success:
+                self.didFetchSuccessfully()
+
+            case .failure(let error):
+                print("fetchMovies: \(error)")
+                self.didFetchWithError()
+            }
+        }
+    }
+
+    private func didFetchSuccessfully() {
+        DispatchQueue.main.async {
+            self.updateDatasource()
+            self.containerView.stopLoading()
+            self.toggleControlElements(true)
+        }
+    }
+
+    private func didFetchWithError() {
+        DispatchQueue.main.async {
+            self.containerView.displayNetworkError()
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.fetchMovies()
         }
     }
 }
@@ -160,45 +192,8 @@ extension DailyViewController: SegmentableContainer {
 
 }
 
-extension DailyViewController: MovieManageable {
-
-    private func fetchMovies() {
-        containerView.startLoading()
-
-        fetch(using: .shared) { result in
-            switch result {
-
-            case .success:
-                self.didFetchSuccessfully()
-
-            case .failure(let error):
-                print("fetchMovies: \(error)")
-                self.didFetchWithError()
-            }
-        }
-    }
-
-    private func didFetchSuccessfully() {
-        DispatchQueue.main.async {
-            self.updateDatasource()
-            self.containerView.stopLoading()
-            self.enableControlElements(true)
-        }
-    }
-
-    private func didFetchWithError() {
-        DispatchQueue.main.async {
-            self.containerView.displayNetworkError()
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.fetchMovies()
-        }
-    }
-}
-
 extension UIImage {
-    fileprivate static let options = UIImage(named: "options")!
-    fileprivate static let left = UIImage(named: "arrowLeft")!
-    fileprivate static let right = UIImage(named: "arrowRight")!
+    static let options = UIImage(named: "options")!
+    static let left = UIImage(named: "arrowLeft")!
+    static let right = UIImage(named: "arrowRight")!
 }

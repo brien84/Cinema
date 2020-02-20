@@ -23,13 +23,13 @@ class DateSelectorTests: XCTestCase {
 
     func testNextDate() {
         // given
-        let currentDate = sut.selectedDate
+        let currentDate = sut.current
 
         // when
-        sut.nextDate()
+        sut.next()
 
         // then
-        XCTAssertLessThan(currentDate, sut.selectedDate)
+        XCTAssertLessThan(currentDate, sut.current)
     }
 
     func testNextDateDoesNotGoOutOfRange() {
@@ -38,8 +38,8 @@ class DateSelectorTests: XCTestCase {
 
         // then
         while index < 50 {
-            sut.nextDate()
-            _ = sut.selectedDate
+            sut.next()
+            _ = sut.current
             index += 1
         }
     }
@@ -49,7 +49,7 @@ class DateSelectorTests: XCTestCase {
         expectation(forNotification: .DateSelectorDateDidChange, object: nil, handler: nil)
 
         // when
-        sut.nextDate()
+        sut.next()
 
         // then
         waitForExpectations(timeout: 3)
@@ -57,14 +57,14 @@ class DateSelectorTests: XCTestCase {
 
     func testPreviousDate() {
         // given
-        sut.nextDate()
-        let currentDate = sut.selectedDate
+        sut.next()
+        let currentDate = sut.current
 
         // when
-        sut.previousDate()
+        sut.previous()
 
         // then
-        XCTAssertGreaterThan(currentDate, sut.selectedDate)
+        XCTAssertGreaterThan(currentDate, sut.current)
     }
 
     func testPreviousDateDoesNotGoOutOfRange() {
@@ -73,19 +73,19 @@ class DateSelectorTests: XCTestCase {
 
         // then
         while index < 50 {
-            sut.previousDate()
-            _ = sut.selectedDate
+            sut.previous()
+            _ = sut.current
             index += 1
         }
     }
 
     func testPreviousDatePostsNotification() {
         // given
-        sut.nextDate()
+        sut.next()
         expectation(forNotification: .DateSelectorDateDidChange, object: nil, handler: nil)
 
         // when
-        sut.previousDate()
+        sut.previous()
 
         // then
         waitForExpectations(timeout: 3)
