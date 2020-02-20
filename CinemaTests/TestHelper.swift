@@ -24,7 +24,7 @@ struct TestHelper {
     }
 
     static func generateShowing(in city: City, at date: Date, parentMovie: Movie? = nil) -> Showing {
-        return Showing(city: city.rawValue,
+        return Showing(city: city,
                        date: date,
                        venue: "someVenue",
                        is3D: false,

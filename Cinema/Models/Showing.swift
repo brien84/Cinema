@@ -9,13 +9,13 @@
 import Foundation
 
 final class Showing: Codable {
-    let city: String
+    let city: City
     let date: Date
     let venue: String
     let is3D: Bool
     var parentMovie: Movie?
 
-    init(city: String, date: Date, venue: String, is3D: Bool, parentMovie: Movie?) {
+    init(city: City, date: Date, venue: String, is3D: Bool, parentMovie: Movie?) {
         self.city = city
         self.date = date
         self.venue = venue
@@ -35,7 +35,7 @@ extension Showing {
     func isShown(in city: City) -> Bool {
         if self.date.isInThePast() { return false }
 
-        return self.city == city.rawValue
+        return self.city == city
     }
 
     func isShown(at date: Date) -> Bool {
