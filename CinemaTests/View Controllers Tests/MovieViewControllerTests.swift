@@ -45,9 +45,9 @@ class MovieViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.navigationItem.title, movie.title)
     }
 
-    // MARK: - Test Helpers
+    // MARK: TestHelper:
 
     private var movie: Movie {
-        return TestHelper.getMovie()
+        return TestHelper.generateMovie()
     }
 }

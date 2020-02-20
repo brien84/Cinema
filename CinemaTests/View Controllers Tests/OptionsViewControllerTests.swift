@@ -87,7 +87,6 @@ class OptionsViewControllerTests: XCTestCase {
         expectation(forNotification: .OptionsCityDidChange, object: nil, handler: nil)
 
         // when
-        sut.loadViewIfNeeded()
         sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
 
         // then

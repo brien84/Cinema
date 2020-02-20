@@ -29,9 +29,9 @@ class MovieDetailViewVCTests: XCTestCase {
         XCTAssertEqual(sut.view.backgroundColor, .darkC)
     }
 
-    // MARK: - Test Helpers
+    // MARK: TestHelper:
 
     private var movie: Movie {
-        return TestHelper.getMovie()
+        return TestHelper.generateMovie()
     }
 }

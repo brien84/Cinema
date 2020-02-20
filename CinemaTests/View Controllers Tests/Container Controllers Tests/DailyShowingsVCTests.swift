@@ -81,7 +81,6 @@ class DailyShowingsVCTests: XCTestCase {
 
     func testTableViewBackgroundViewIsNilWhenDatasourceIsNotEmpty() {
         // given
-        let movie = TestHelper.getMovie()
         sut.datasource = movie.showings
 
         // when
@@ -93,7 +92,6 @@ class DailyShowingsVCTests: XCTestCase {
 
     func testTableViewCellsHaveCorrectValuesSet() {
         // given
-        let movie = TestHelper.getMovie()
         sut.datasource = movie.showings
 
         // then
@@ -117,7 +115,6 @@ class DailyShowingsVCTests: XCTestCase {
         parentVC.addChild(sut)
         _ = UINavigationController(rootViewController: parentVC)
 
-        let movie = TestHelper.getMovie()
         sut.datasource = movie.showings
         let indexPath = IndexPath(row: 0, section: 0)
 
@@ -135,4 +132,9 @@ class DailyShowingsVCTests: XCTestCase {
         waitForExpectations(timeout: 3)
     }
 
+    // MARK: TestHelper:
+
+    private var movie: Movie {
+        return TestHelper.generateMovies().first!
+    }
 }

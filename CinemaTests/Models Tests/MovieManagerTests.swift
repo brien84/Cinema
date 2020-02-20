@@ -25,7 +25,7 @@ class MovieManagerTests: XCTestCase {
 
     func testFetchingCompletesSuccessfully() {
         // given
-        let session = TestHelper.makeMockURLSession(with: TestHelper.loadTestData())
+        let session = TestHelper.makeMockURLSession(with: TestHelper.generateMovieData())
         let expectation = self.expectation(description: "Wait for fetching to end.")
 
         // when
@@ -91,16 +91,12 @@ class MovieManagerTests: XCTestCase {
         let decoyCities = [City.kaunas, City.klaipeda, City.siauliai]
         let decoyDates = [TestHelper.generateDateDaysFromNow(2), TestHelper.generateDateDaysFromNow(3)]
 
-        let decoyMovies = decoyCities.flatMap { city in
-
-                decoyDates.flatMap { date -> [Movie] in
-                    var movies = [Movie]()
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 8, city: city, date: date))
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 3, city: requiredCity, date: date))
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 6, city: city, date: requiredDate))
-
-                    return movies
-                }
+        let decoyMovies = mapMovies(in: decoyCities, at: decoyDates) { city, date in
+            [
+             TestHelper.generateMovies(movieCount: 5, city: city, date: date),
+             TestHelper.generateMovies(movieCount: 6, city: requiredCity, date: date),
+             TestHelper.generateMovies(movieCount: 7, city: city, date: requiredDate)
+            ].flatMap { $0 }
         }
 
         // when
@@ -121,16 +117,12 @@ class MovieManagerTests: XCTestCase {
         let decoyCities = [City.kaunas, City.klaipeda, City.siauliai]
         let decoyDates = [TestHelper.generateDateDaysFromNow(2), TestHelper.generateDateDaysFromNow(3)]
 
-        let decoyMovies = decoyCities.flatMap { city in
-
-                decoyDates.flatMap { date -> [Movie] in
-                    var movies = [Movie]()
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 8, city: city, date: date))
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 3, city: requiredCity, date: date))
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 6, city: city, date: requiredDate))
-
-                    return movies
-                }
+        let decoyMovies = mapMovies(in: decoyCities, at: decoyDates) { city, date in
+            [
+             TestHelper.generateMovies(movieCount: 5, city: city, date: date),
+             TestHelper.generateMovies(movieCount: 6, city: requiredCity, date: date),
+             TestHelper.generateMovies(movieCount: 7, city: city, date: requiredDate)
+            ].flatMap { $0 }
         }
 
         // when
@@ -152,20 +144,15 @@ class MovieManagerTests: XCTestCase {
 
         let requiredMovies = TestHelper.generateMovies(movieCount: moviesCount, showingsPerMovie: showingsPerMovieCount, city: requiredCity, date: requiredDate)
 
-        //
         let decoyCities = [City.kaunas, City.klaipeda, City.siauliai]
         let decoyDates = [TestHelper.generateDateDaysFromNow(2), TestHelper.generateDateDaysFromNow(3)]
 
-        let decoyMovies = decoyCities.flatMap { city in
-
-                decoyDates.flatMap { date -> [Movie] in
-                    var movies = [Movie]()
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 8, city: city, date: date))
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 3, city: requiredCity, date: date))
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 6, city: city, date: requiredDate))
-
-                    return movies
-                }
+        let decoyMovies = mapMovies(in: decoyCities, at: decoyDates) { city, date in
+            [
+             TestHelper.generateMovies(showingsPerMovie: 1, city: city, date: date),
+             TestHelper.generateMovies(showingsPerMovie: 2, city: requiredCity, date: date),
+             TestHelper.generateMovies(showingsPerMovie: 3, city: city, date: requiredDate)
+            ].flatMap { $0 }
         }
 
         // when
@@ -183,20 +170,15 @@ class MovieManagerTests: XCTestCase {
         let requiredCity = City.vilnius
         let requiredDate = TestHelper.generateDateDaysFromNow(1)
 
-        //
         let decoyCities = [City.kaunas, City.klaipeda, City.siauliai]
         let decoyDates = [TestHelper.generateDateDaysFromNow(2), TestHelper.generateDateDaysFromNow(3)]
 
-        let decoyMovies = decoyCities.flatMap { city in
-
-                decoyDates.flatMap { date -> [Movie] in
-                    var movies = [Movie]()
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 8, city: city, date: date))
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 3, city: requiredCity, date: date))
-                    movies.append(contentsOf: TestHelper.generateMovies(movieCount: 6, city: city, date: requiredDate))
-
-                    return movies
-                }
+        let decoyMovies = mapMovies(in: decoyCities, at: decoyDates) { city, date in
+            [
+             TestHelper.generateMovies(showingsPerMovie: 1, city: city, date: date),
+             TestHelper.generateMovies(showingsPerMovie: 2, city: requiredCity, date: date),
+             TestHelper.generateMovies(showingsPerMovie: 3, city: city, date: requiredDate)
+            ].flatMap { $0 }
         }
 
         // when
@@ -206,6 +188,16 @@ class MovieManagerTests: XCTestCase {
         let showingsCount = sut.filterShowings(in: requiredCity, at: requiredDate).count
 
         XCTAssertEqual(showingsCount, 0)
+    }
+
+    // MARK: TestHelper:
+
+    private func mapMovies(in cities: [City], at dates: [Date], movies: (_: City, _: Date) -> [Movie]) -> [Movie] {
+        return cities.flatMap { city in
+            dates.flatMap { date in
+                movies(city, date)
+            }
+        }
     }
 
 }

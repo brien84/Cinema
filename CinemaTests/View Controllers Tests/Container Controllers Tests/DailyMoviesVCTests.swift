@@ -54,7 +54,6 @@ class DailyMoviesVCTests: XCTestCase {
 
     func testCollectionViewHasCorrectNumberOfItems() {
         // given
-        let movies = TestHelper.getMovies()
         let moviesCount = movies.count
         sut.datasource = movies
 
@@ -79,7 +78,7 @@ class DailyMoviesVCTests: XCTestCase {
 
     func testCollectionViewBackgroundViewIsNilWhenDatasourceIsNotEmpty() {
         // given
-        sut.datasource = TestHelper.getMovies()
+        sut.datasource = movies
 
         // when
         _ = sut.collectionView(sut.collectionView, numberOfItemsInSection: 0)
@@ -90,7 +89,7 @@ class DailyMoviesVCTests: XCTestCase {
 
     func testCollectionViewCellsHaveCorrectValuesSet() {
         // given
-        sut.datasource = TestHelper.getMovies()
+        sut.datasource = movies
 
         // then
         for (index, movie) in sut.datasource.enumerated() {
@@ -111,7 +110,7 @@ class DailyMoviesVCTests: XCTestCase {
         parentVC.addChild(sut)
         _ = UINavigationController(rootViewController: parentVC)
 
-        sut.datasource = TestHelper.getMovies()
+        sut.datasource = movies
         let indexPath = IndexPath(row: 0, section: 0)
 
         let expectation = self.expectation(description: "Wait for UI to update.")
@@ -126,6 +125,12 @@ class DailyMoviesVCTests: XCTestCase {
 
         // then
         waitForExpectations(timeout: 3)
+    }
+
+    // MARK: TestHelper:
+
+    private var movies: [Movie] {
+        return TestHelper.generateMovies(movieCount: 5)
     }
 
 }

@@ -72,7 +72,6 @@ class MovieShowingsVCTests: XCTestCase {
 
     func testTableViewHasCorrectNumberOfRows() {
         // given
-        let movie = TestHelper.getMovie()
         let showingsCount = movie.showings.count
         sut.datasource = movie.showings
 
@@ -86,7 +85,6 @@ class MovieShowingsVCTests: XCTestCase {
 
     func testTableViewCellsHaveCorrectValuesSet() {
         // given
-        let movie = TestHelper.getMovie()
         sut.datasource = movie.showings
 
         // then
@@ -100,5 +98,11 @@ class MovieShowingsVCTests: XCTestCase {
             XCTAssertEqual(cell.venue.text, showing.venue)
             XCTAssertEqual(cell.screenType.text, showing.is3D ? "3D" : nil)
         }
+    }
+
+    // MARK: TestHelper:
+
+    private var movie: Movie {
+        return TestHelper.generateMovies().first!
     }
 }

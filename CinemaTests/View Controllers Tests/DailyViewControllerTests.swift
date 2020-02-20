@@ -351,7 +351,7 @@ class DailyViewControllerTests: XCTestCase {
             var data: Data
 
             if isFetchSuccessful {
-                data = TestHelper.loadTestData()
+                data = TestHelper.generateMovieData()
             } else {
                 data = Data()
             }
