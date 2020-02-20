@@ -10,7 +10,13 @@ import UIKit
 
 final class ContainerView: UIView {
 
-    private lazy var loadingView = LoadingView()
+    private lazy var loadingView: LoadingView = {
+        let view = LoadingView()
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(view)
+
+        return view
+    }()
 
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -23,8 +29,7 @@ final class ContainerView: UIView {
     // MARK: - Loading methods
 
     func startLoading() {
-        loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(loadingView)
+        _ = loadingView
     }
 
     func stopLoading() {
