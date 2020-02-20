@@ -26,8 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         controller.navigationBar.tintColor = .lightC
 
-        guard let font = UIFont(name: "Avenir-Medium", size: .dynamicFontSize(15)) else { fatalError() }
-        controller.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.lightC, .font : font]
+        guard let font = UIFont(name: "Avenir-Medium", size: .dynamicFontSize(15)) else {
+            fatalError()
+        }
+
+        controller.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.lightC, .font: font]
 
         return controller
     }()

@@ -152,12 +152,13 @@ final class MovieDetailView: UIView {
 
 extension MovieDetailView {
     private var staticLabel: (String) -> UILabel {
-        { (text: String) -> UILabel in
+        return { (text: String) -> UILabel in
             let label = UILabel()
             label.textAlignment = .center
             label.textColor = .lightC
             label.font = .staticLabel
             label.text = text
+
             return label
         }
     }
@@ -167,12 +168,14 @@ extension MovieDetailView {
         label.textAlignment = .center
         label.textColor = .grayC
         label.font = .dynamicLabel
+
         return label
     }
 
     /// Using `UIButton` instead of `UILabel`, because it is easier to inset content inside.
     private var genreLabel: (String) -> UIButton {
-        { (name: String) -> UIButton in
+        return { (name: String) -> UIButton in
+
             let label = UIButton()
             label.layer.borderWidth = 0.5
             label.layer.cornerRadius = 4.0
@@ -180,8 +183,8 @@ extension MovieDetailView {
             label.setTitle(name, for: .normal)
             label.titleLabel?.font = .genreLabel
             label.setTitleColor(.lightC, for: .normal)
-            
-            label.contentEdgeInsets = UIEdgeInsets(top: .inset / 1.5, left: .inset , bottom: .inset / 1.5, right: .inset)
+
+            label.contentEdgeInsets = UIEdgeInsets(top: .inset / 1.5, left: .inset, bottom: .inset / 1.5, right: .inset)
             label.isUserInteractionEnabled = false
 
             return label
@@ -189,20 +192,24 @@ extension MovieDetailView {
     }
 
     private var verticalStackView: ([UIView], CGFloat) -> UIStackView {
-        { (views: [UIView], spacing: CGFloat) -> UIStackView in
+        return { (views: [UIView], spacing: CGFloat) -> UIStackView in
+
             let stackView = UIStackView(arrangedSubviews: views)
             stackView.axis = .vertical
             stackView.distribution = .equalSpacing
             stackView.spacing = spacing
+
             return stackView
         }
     }
 
     private var horizontalStackView: ([UIView]) -> UIStackView {
-        { (views: [UIView]) -> UIStackView in
+        return { (views: [UIView]) -> UIStackView in
+
             let stackView = UIStackView(arrangedSubviews: views)
             stackView.axis = .horizontal
             stackView.distribution = .fillEqually
+
             return stackView
         }
     }

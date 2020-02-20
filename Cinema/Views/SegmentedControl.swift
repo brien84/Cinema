@@ -30,7 +30,7 @@ final class SegmentedControl: UISegmentedControl {
         self.setTitleTextAttributes([.foregroundColor: UIColor.grayC], for: .normal)
         self.setTitleTextAttributes([.foregroundColor: UIColor.lightC], for: .selected)
 
-        /// Makes separator invisible.
+        // Makes separator invisible.
         self.tintColor = .clear
 
         self.addTarget(self, action: #selector(valueDidChange), for: .valueChanged)

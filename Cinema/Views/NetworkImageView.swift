@@ -64,7 +64,7 @@ final class NetworkImageView: UIImageView {
             }
 
         } else {
-            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
                 guard let data = data else { return }
                 guard let image = UIImage(data: data) else { return }
                 self?.cache.setObject(data as NSData, forKey: url.absoluteString as NSString)

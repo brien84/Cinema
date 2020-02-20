@@ -12,7 +12,7 @@ extension Array where Element: Hashable {
     /// Returns an array without duplicates.
     func uniqued() -> [Element] {
         var seen = Set<Element>()
-        return filter{ seen.insert($0).inserted }
+        return filter { seen.insert($0).inserted }
     }
 }
 
@@ -95,7 +95,7 @@ extension UserDefaults {
     /// If the value does not exist, function saves a default value before returning false.
     /// Only used to check if the app is started for the first time.
     func isCitySet() -> Bool {
-        if let _ = UserDefaults.standard.string(forKey: "city") {
+        if UserDefaults.standard.string(forKey: "city") != nil {
             return true
         } else {
             save(city: City.vilnius)

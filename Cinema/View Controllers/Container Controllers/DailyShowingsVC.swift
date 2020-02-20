@@ -30,7 +30,8 @@ final class DailyShowingsVC: UITableViewController {
         tableView.contentInset.top = .segmentedControlHeight
         tableView.backgroundColor = .darkC
         tableView.separatorColor = .grayC
-        /// Hides separator lines of empty cells, if there aren't enought items to fill whole screen.
+
+        // Hides separator lines of empty cells, if there aren't enought items to fill visible screen.
         tableView.tableFooterView = UIView()
     }
 

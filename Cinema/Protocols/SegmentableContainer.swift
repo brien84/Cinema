@@ -72,7 +72,7 @@ extension SegmentableContainer {
     func constructSegmentableContainerView() -> UIView {
         let view = UIView()
 
-        /// containerView layout
+        // containerView layout
         view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -83,7 +83,7 @@ extension SegmentableContainer {
             containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        /// segmentedControl layout
+        // segmentedControl layout
         view.addSubview(segmentedControl)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
 
