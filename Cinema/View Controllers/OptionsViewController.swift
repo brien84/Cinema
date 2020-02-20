@@ -29,7 +29,7 @@ final class OptionsViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.register(OptionsCell.self, forCellReuseIdentifier: reuseIdentifier)
-        tableView.contentInset = UIEdgeInsets(top: .contentInset, left: 0, bottom: 0, right: 0)
+        tableView.contentInset.top = .contentInset
         tableView.backgroundColor = .darkC
         tableView.separatorStyle = .none
         tableView.tableHeaderView = headerView

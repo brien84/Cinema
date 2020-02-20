@@ -27,7 +27,7 @@ final class DailyShowingsVC: UITableViewController {
         super.viewDidLoad()
 
         tableView.register(DailyShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
-        tableView.contentInset = UIEdgeInsets(top: .segmentedControlHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentInset.top = .segmentedControlHeight
         tableView.backgroundColor = .darkC
         tableView.separatorColor = .grayC
         /// Hides separator lines of empty cells, if there aren't enought items to fill whole screen.
