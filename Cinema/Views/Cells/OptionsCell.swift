@@ -34,6 +34,14 @@ final class OptionsCell: UITableViewCell {
         backgroundColor = .darkC
         selectionStyle = .none
 
+        layoutViews()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func layoutViews() {
         contentView.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
 
@@ -44,10 +52,6 @@ final class OptionsCell: UITableViewCell {
             title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             title.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: .titleHeightToWidthRatio).withPriority(999)
         ])
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

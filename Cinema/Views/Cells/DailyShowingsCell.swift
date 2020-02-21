@@ -57,7 +57,7 @@ final class DailyShowingsCell: UITableViewCell {
     }
 
     private func layoutViews() {
-        ///
+        // `poster` layout
         contentView.addSubview(poster)
         poster.translatesAutoresizingMaskIntoConstraints = false
 
@@ -69,7 +69,7 @@ final class DailyShowingsCell: UITableViewCell {
             poster.heightAnchor.constraint(equalTo: poster.widthAnchor, multiplier: .posterHeightToWidthRatio).withPriority(999)
         ])
 
-        ///
+        // `screenType` layout
         contentView.addSubview(screenType)
         screenType.translatesAutoresizingMaskIntoConstraints = false
 
@@ -78,7 +78,7 @@ final class DailyShowingsCell: UITableViewCell {
             screenType.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -2 * .inset)
         ])
 
-        ///
+        // `title` layout
         contentView.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
 
@@ -88,7 +88,7 @@ final class DailyShowingsCell: UITableViewCell {
             title.trailingAnchor.constraint(equalTo: screenType.leadingAnchor, constant: -2 * .inset)
         ])
 
-        ///
+        // `originalTitle` layout
         contentView.addSubview(originalTitle)
         originalTitle.translatesAutoresizingMaskIntoConstraints = false
 
@@ -98,7 +98,7 @@ final class DailyShowingsCell: UITableViewCell {
             originalTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -2 * .inset)
         ])
 
-        ///
+        // `venue`, `time` layout
         let detailStackView = UIStackView(arrangedSubviews: [venue, time])
         detailStackView.axis = .horizontal
         detailStackView.spacing = 2 * .inset

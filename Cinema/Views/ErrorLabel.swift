@@ -10,8 +10,8 @@ import UIKit
 
 enum DataError: String, Error {
     case noNetwork = "Nepavyksta pasiekti serverio..."
-    case noMovies = "Pasirinktai datai filmų nėra"
-    case noShowings = "Pasirinktai datai seansų nėra"
+    case noMovies = "Šią dieną filmų nėra"
+    case noShowings = "Šią dieną seansų nėra"
 }
 
 final class ErrorLabel: UILabel {

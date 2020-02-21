@@ -9,7 +9,7 @@
 import UIKit
 
 extension Array where Element: Hashable {
-    /// Returns an array without duplicates.
+    /// Returns an array without duplicate values.
     func uniqued() -> [Element] {
         var seen = Set<Element>()
         return filter { seen.insert($0).inserted }
@@ -17,8 +17,10 @@ extension Array where Element: Hashable {
 }
 
 extension CGFloat {
+    /// Scales `UIFont` size according to screen width.
+    /// On devices with 320 points screen width returned value will be same as
+    /// `fontSize` argument and will scale upwards in size on wider screens.
     static func dynamicFontSize(_ fontSize: CGFloat) -> CGFloat {
-        ///
         let calculatedFontSize = .screenWidth / 320 * fontSize
         return calculatedFontSize
     }
@@ -32,7 +34,7 @@ extension Date {
         case monthNameAndDay
     }
 
-    /// Converts Date to String.
+    /// Converts `Date` to `String`.
     func asString(format: StringFormat = .fullDate) -> String {
         let formatter = DateFormatter()
 
@@ -65,8 +67,8 @@ extension NSLayoutConstraint {
     }
 }
 
-///
 extension UIColor {
+    /// Creates `UIImage` filled with extended `UIColor`.
     func image(size: CGSize) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in
             self.setFill()

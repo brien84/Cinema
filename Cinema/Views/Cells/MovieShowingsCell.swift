@@ -52,6 +52,7 @@ final class MovieShowingsCell: UITableViewCell {
     }
 
     private func layoutViews() {
+        // `screenType` layout
         contentView.addSubview(screenType)
         screenType.translatesAutoresizingMaskIntoConstraints = false
 
@@ -60,6 +61,7 @@ final class MovieShowingsCell: UITableViewCell {
             screenType.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.inset)
         ])
 
+        // `date`, `time`, `venue` layout
         let stackView = UIStackView(arrangedSubviews: [date, time, venue])
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing

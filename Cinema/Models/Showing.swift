@@ -9,6 +9,7 @@
 import Foundation
 
 final class Showing: Codable {
+
     let city: City
     let date: Date
     let venue: String
