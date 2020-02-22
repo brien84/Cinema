@@ -56,7 +56,12 @@ final class DailyMoviesCell: UICollectionViewCell {
 
         contentView.widthAnchor.constraint(equalToConstant: bounds.size.width).isActive = true
 
-        ///
+        // `title` layout
+
+        // In order for cell's height to be the same whether title text takes up one or two lines,
+        // `title` is added to `titleContainer` view alongside hidden `titlePlaceholder` label.
+        // Then `titlePlaceholder` is set to take up two lines of space, so it expands
+        // `titleContainer` to its full size.
         let titleContainer = UIView()
 
         titleContainer.addSubview(title)
@@ -69,7 +74,6 @@ final class DailyMoviesCell: UICollectionViewCell {
             title.bottomAnchor.constraint(lessThanOrEqualTo: titleContainer.bottomAnchor)
         ])
 
-        ///
         let titlePlaceholder = UILabel()
         titlePlaceholder.numberOfLines = title.numberOfLines
         titlePlaceholder.font = title.font
@@ -86,12 +90,11 @@ final class DailyMoviesCell: UICollectionViewCell {
             titlePlaceholder.bottomAnchor.constraint(equalTo: titleContainer.bottomAnchor)
         ])
 
-        ///
+        // `duration`, `ageRating`, `poster` layout
         let detailStackView = UIStackView(arrangedSubviews: [duration, ageRating])
         detailStackView.axis = .horizontal
         detailStackView.distribution = .equalSpacing
 
-        ///
         let stackView = UIStackView(arrangedSubviews: [poster, titleContainer, detailStackView])
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing

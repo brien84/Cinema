@@ -49,7 +49,7 @@ final class MovieDetailView: UIView {
     }
 
     private func layoutViews() {
-        /// scrollView layout:
+        // `scrollView` layout
         let scrollView = UIScrollView()
 
         self.addSubview(scrollView)
@@ -62,7 +62,7 @@ final class MovieDetailView: UIView {
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor).withPriority(999)
         ])
 
-        /// poster layout:
+        // `poster` layout
         scrollView.addSubview(poster)
         poster.translatesAutoresizingMaskIntoConstraints = false
 
@@ -74,7 +74,7 @@ final class MovieDetailView: UIView {
             poster.heightAnchor.constraint(equalTo: poster.widthAnchor, multiplier: 3/2)
         ])
 
-        /// genresContainer layout:
+        // `genreStackView` layout
         let genresContainer = makeGenresContainer()
 
         scrollView.addSubview(genresContainer)
@@ -87,7 +87,7 @@ final class MovieDetailView: UIView {
             genresContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
 
-        /// detailStackView layout:
+        // `detailStackView` layout
         let detailStackView = makeDetailStackView()
 
         scrollView.addSubview(detailStackView)
@@ -121,22 +121,17 @@ final class MovieDetailView: UIView {
     }
 
     private func makeDetailStackView() -> UIStackView {
-        /// year labels into stackView:
         let yearStatic = staticLabel("Išleista")
         let yearStack = verticalStackView([yearStatic, year], .inset)
 
-        /// ageRating labels into stackView:
         let ageRatingStatic = staticLabel("Cenzas")
         let ageStack = verticalStackView([ageRatingStatic, ageRating], .inset)
 
-        /// duration labels into stackView:
         let durationStatic = staticLabel("Trukmė")
         let durationStack = verticalStackView([durationStatic, duration], .inset)
 
-        /// year, age, duration stackViews into horizontal stackView:
         let detailBar = horizontalStackView([yearStack, ageStack, durationStack])
 
-        /// plot labels into stackView:
         let plotStatic = staticLabel("Aprašymas")
         let plotStack = verticalStackView([plotStatic, plot], 2 * .inset)
         plotStack.isLayoutMarginsRelativeArrangement = true
@@ -172,7 +167,7 @@ extension MovieDetailView {
         return label
     }
 
-    /// Using `UIButton` instead of `UILabel`, because it is easier to inset content inside.
+    // Using `UIButton` instead of `UILabel`, because it is easier to inset content inside.
     private var genreLabel: (String) -> UIButton {
         return { (name: String) -> UIButton in
 

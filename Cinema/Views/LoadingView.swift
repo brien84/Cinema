@@ -8,6 +8,9 @@
 
 import UIKit
 
+/// View that displays `UIActivityIndicatorView` and `ErrorLabel`.
+///
+/// `LoadingView` is used while the app is fetching data.
 final class LoadingView: UIView {
 
     private let indicator: UIActivityIndicatorView = {
@@ -39,7 +42,7 @@ final class LoadingView: UIView {
     }
 
     private func layoutViews() {
-
+        // `indicator` layout
         addSubview(indicator)
         indicator.translatesAutoresizingMaskIntoConstraints = false
 
@@ -48,6 +51,7 @@ final class LoadingView: UIView {
             indicator.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
 
+        // `errorLabel` layout
         addSubview(errorLabel)
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
 

@@ -55,7 +55,7 @@ final class NetworkImageView: UIImageView {
             return
         }
 
-        /// If image data is found in cache.
+        // If image data is found in cache.
         if let cachedData = cache.object(forKey: url.absoluteString as NSString) {
             guard let image = UIImage(data: cachedData as Data) else { return }
 
@@ -64,6 +64,7 @@ final class NetworkImageView: UIImageView {
             }
 
         } else {
+
             URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
                 guard let data = data else { return }
                 guard let image = UIImage(data: data) else { return }

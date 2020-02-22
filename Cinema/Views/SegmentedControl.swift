@@ -22,20 +22,10 @@ final class SegmentedControl: UISegmentedControl {
     init<T: Segments>(with segments: T.Type) {
         super.init(frame: .zero)
 
-        self.backgroundColor = .transparentBlackC
-
-        self.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
-        self.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
-
-        self.setTitleTextAttributes([.foregroundColor: UIColor.grayC], for: .normal)
-        self.setTitleTextAttributes([.foregroundColor: UIColor.lightC], for: .selected)
-
-        // Makes separator invisible.
-        self.tintColor = .clear
+        setupAppearance()
+        setupSelectionIndicator()
 
         self.addTarget(self, action: #selector(valueDidChange), for: .valueChanged)
-
-        setupSelectionIndicator()
 
         T.allCases.forEach { segment in
             self.insertSegment(withTitle: "\(segment)", at: segment.rawValue, animated: false)
@@ -49,8 +39,32 @@ final class SegmentedControl: UISegmentedControl {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        ///
+        // Makes corners to be completely square.
         layer.cornerRadius = 0
+    }
+
+    private func setupAppearance() {
+        backgroundColor = .transparentBlackC
+
+        setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
+        setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
+
+        setTitleTextAttributes([.foregroundColor: UIColor.grayC], for: .normal)
+        setTitleTextAttributes([.foregroundColor: UIColor.lightC], for: .selected)
+
+        // Makes separator invisible.
+        tintColor = .clear
+    }
+
+    func selectedSegment(_ index: Int) {
+        selectedSegmentIndex = index
+        valueDidChange()
+    }
+
+    @objc private func valueDidChange() {
+        animateSelectionIndicator()
+
+        delegate?.segmentedControl(self, didChange: selectedSegmentIndex)
     }
 
     private func setupSelectionIndicator() {
@@ -69,7 +83,7 @@ final class SegmentedControl: UISegmentedControl {
         indicatorLeadingAnchorToCenter = selectionIndicator.leadingAnchor.constraint(equalTo: centerXAnchor)
     }
 
-    @objc private func valueDidChange() {
+    private func animateSelectionIndicator() {
         self.layoutIfNeeded()
 
         UIView.transition(with: selectionIndicator, duration: 0.5, options: .curveEaseInOut, animations: {
@@ -84,13 +98,6 @@ final class SegmentedControl: UISegmentedControl {
 
             self.layoutIfNeeded()
         }, completion: nil)
-
-        delegate?.segmentedControl(self, didChange: selectedSegmentIndex)
-    }
-
-    func setSelectedSegmentIndex(_ index: Int) {
-        selectedSegmentIndex = index
-        valueDidChange()
     }
 }
 

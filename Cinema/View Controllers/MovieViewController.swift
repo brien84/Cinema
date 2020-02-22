@@ -51,8 +51,7 @@ final class MovieViewController: UIViewController {
         view.backgroundColor = .transparentBlackC
 
         navigationItem.title = movie.title
-
-        segmentedControl.setSelectedSegmentIndex(MovieVCSegments.about.rawValue)
+        segmentedControl.selectedSegment(MovieVCSegments.about.rawValue)
     }
 }
 

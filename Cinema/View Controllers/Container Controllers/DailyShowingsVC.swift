@@ -27,7 +27,9 @@ final class DailyShowingsVC: UITableViewController {
         super.viewDidLoad()
 
         tableView.register(DailyShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
+
         tableView.contentInset.top = .segmentedControlHeight
+
         tableView.backgroundColor = .darkC
         tableView.separatorColor = .grayC
 

@@ -70,9 +70,8 @@ final class DailyViewController: UIViewController {
         view.backgroundColor = .transparentBlackC
 
         setupNotificationObservers()
-
         updateNavigationTitle(with: dateSelector.current.asString(format: .monthNameAndDay))
-        segmentedControl.setSelectedSegmentIndex(DailyVCSegments.showings.rawValue)
+        segmentedControl.selectedSegment(DailyVCSegments.showings.rawValue)
 
         fetchMovies()
     }

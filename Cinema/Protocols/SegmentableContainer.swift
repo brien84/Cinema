@@ -12,6 +12,7 @@ protocol Segments: RawRepresentable, CaseIterable {
     var rawValue: Int { get }
 }
 
+/// Displays `UIViewControllers` in `ContainerView` and switches between them using `SegmentedControl`.
 protocol SegmentableContainer: SegmentedControlDelegate where Self: UIViewController {
     associatedtype LeftViewControllerType: UIViewController
     associatedtype RightViewControllerType: UIViewController
@@ -72,7 +73,7 @@ extension SegmentableContainer {
     func constructSegmentableContainerView() -> UIView {
         let view = UIView()
 
-        // containerView layout
+        // `containerView` layout
         view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -83,7 +84,7 @@ extension SegmentableContainer {
             containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        // segmentedControl layout
+        // `segmentedControl` layout
         view.addSubview(segmentedControl)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
 

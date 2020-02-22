@@ -24,8 +24,10 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
         super.viewDidLoad()
 
         collectionView.register(DailyMoviesCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
         collectionView.contentInset.top = .segmentedControlHeight
         collectionView.contentInset.bottom = .inset
+
         collectionView.backgroundColor = .darkC
 
         flowLayout?.estimatedItemSize = CGSize(width: .cellWidth, height: 0.0)

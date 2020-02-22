@@ -31,7 +31,7 @@ final class DateSelector: DateSelectable {
     }
 
     init() {
-        self.dates = Date().datesInFuture(after: 14)
+        self.dates = Date().futureDatesIn(days: 14)
     }
 
     private func postNotification() {
@@ -52,8 +52,17 @@ final class DateSelector: DateSelectable {
 }
 
 extension Date {
+    /// Creates array of `Date` by adding one day to the date provided number of times.
     ///
-    fileprivate func datesInFuture(after days: Int) -> [Date] {
+    /// - Example:
+    ///     ~~~
+    ///     let dates = futureDatesIn(after: 2)
+    ///     print(dates)
+    ///     // Prints "[2020-02-22 16:37:31 +0000,
+    ///     //          2020-02-23 16:37:31 +0000,
+    ///     //          2020-02-24 16:37:31 +0000]"
+    ///     ~~~
+    fileprivate func futureDatesIn(days: Int) -> [Date] {
         var date = self
         guard let endDate = Calendar.current.date(byAdding: .day, value: days, to: date) else { return [] }
         var dates = [Date]()
