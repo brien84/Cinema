@@ -56,7 +56,6 @@ extension MovieFetchable {
 
         do {
             movies = try decoder.decode([Movie].self, from: data)
-            movies.forEach { $0.showings.forEach { print($0.date) }}
             return .success(())
         } catch {
             return .failure(error)
