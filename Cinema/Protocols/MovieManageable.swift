@@ -6,7 +6,7 @@
 //  Copyright © 2019 Marius. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 typealias MovieManageable = MovieFetchable & MovieFilterable
 
@@ -25,17 +25,29 @@ protocol MovieFilterable {
 
 extension MovieFetchable {
     func fetch(using session: URLSession = .shared, completion: @escaping (Result<Void, Error>) -> Void) {
-        let task = session.dataTask(with: .api) { data, _, error in
-            if let error = error {
-                completion(.failure(error))
+
+        if CommandLine.arguments.contains("ui-testing") {
+
+            guard let data = NSDataAsset(name: "UITestData")?.data else {
+                fatalError("Cannot load UITestData!")
             }
 
-            if let data = data {
-                completion(self.decode(data))
+            completion(decode(data))
+
+        } else {
+
+            let task = session.dataTask(with: .api) { data, _, error in
+                if let error = error {
+                    completion(.failure(error))
+                }
+
+                if let data = data {
+                    completion(self.decode(data))
+                }
             }
+
+            task.resume()
         }
-
-        task.resume()
     }
 
     private func decode(_ data: Data) -> Result<Void, Error> {
@@ -44,6 +56,7 @@ extension MovieFetchable {
 
         do {
             movies = try decoder.decode([Movie].self, from: data)
+            movies.forEach { $0.showings.forEach { print($0.date) }}
             return .success(())
         } catch {
             return .failure(error)

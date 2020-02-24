@@ -31,7 +31,12 @@ final class DateSelector: DateSelectable {
     }
 
     init() {
-        self.dates = Date().futureDatesIn(days: 14)
+        if CommandLine.arguments.contains("ui-testing") {
+            // Testing start date is 2030-02-14.
+            self.dates = Date(timeIntervalSince1970: 1897328436).futureDatesIn(days: 14)
+        } else {
+            self.dates = Date().futureDatesIn(days: 14)
+        }
     }
 
     private func postNotification() {

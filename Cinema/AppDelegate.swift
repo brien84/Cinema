@@ -37,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        // Opens `OptionsViewController` if the app is started for the first time.
-        if !UserDefaults.standard.isCitySet() {
+        // Opens `OptionsViewController` if the app is started for the first time or if UI tests commences.
+        if !UserDefaults.standard.isCitySet() || CommandLine.arguments.contains("ui-testing") {
             navigationController.pushViewController(OptionsViewController(), animated: false)
         }
 
