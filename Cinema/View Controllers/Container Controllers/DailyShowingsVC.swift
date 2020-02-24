@@ -26,6 +26,8 @@ final class DailyShowingsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.accessibilityIdentifier = "UI-DailyShowingsVCTable"
+
         tableView.register(DailyShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
 
         tableView.contentInset.top = .segmentedControlHeight

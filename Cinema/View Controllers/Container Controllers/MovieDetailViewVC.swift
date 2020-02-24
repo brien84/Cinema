@@ -35,6 +35,8 @@ final class MovieDetailViewVC: UIViewController {
     }
 
     private func setup(_ view: MovieDetailView) -> MovieDetailView {
+        view.accessibilityIdentifier = "UI-MovieDetailViewVCView"
+
         view.poster.url = movie.poster
         view.year.text = movie.year
         view.ageRating.text = movie.ageRating

@@ -20,6 +20,7 @@ final class DailyViewController: UIViewController {
 
     private(set) lazy var segmentedControl: SegmentedControl = {
         let control = SegmentedControl(with: DailyVCSegments.self)
+        control.accessibilityIdentifier = "UI-DailyVCSegmented"
         control.delegate = self
 
         return control
@@ -27,6 +28,7 @@ final class DailyViewController: UIViewController {
 
     private lazy var leftDateNavigationButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
+        button.accessibilityIdentifier = "UI-DailyVCOptionsButton"
         button.image = .options
         button.target = self
         button.action = #selector(handleDateNavigationButtonTap)
@@ -37,6 +39,7 @@ final class DailyViewController: UIViewController {
 
     private lazy var rightDateNavigationButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
+        button.accessibilityIdentifier = "UI-DailyVCRightButton"
         button.image = .right
         button.target = self
         button.action = #selector(handleDateNavigationButtonTap)
@@ -104,6 +107,7 @@ final class DailyViewController: UIViewController {
 
     private func handleDateChange() {
         leftDateNavigationButton.image = dateSelector.isFirst ? .options : .left
+        leftDateNavigationButton.accessibilityIdentifier = dateSelector.isFirst ? "UI-DailyVCOptionsButton" : "UI-DailyVCLeftButton"
         rightDateNavigationButton.isEnabled = dateSelector.isLast ? false : true
 
         updateNavigationTitle(with: dateSelector.current.asString(format: .monthNameAndDay))

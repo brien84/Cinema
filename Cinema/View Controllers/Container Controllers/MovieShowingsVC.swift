@@ -22,6 +22,8 @@ final class MovieShowingsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.accessibilityIdentifier = "UI-MovieShowingsVCTable"
+
         tableView.register(MovieShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
 
         tableView.contentInset.top = .segmentedControlHeight

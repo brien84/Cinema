@@ -23,6 +23,8 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.accessibilityIdentifier = "UI-DailyMoviesVCCollection"
+
         collectionView.register(DailyMoviesCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         collectionView.contentInset.top = .segmentedControlHeight

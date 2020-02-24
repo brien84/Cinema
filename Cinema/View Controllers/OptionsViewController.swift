@@ -28,6 +28,8 @@ final class OptionsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.accessibilityIdentifier = "UI-OptionsVCTable"
+
         tableView.register(OptionsCell.self, forCellReuseIdentifier: reuseIdentifier)
 
         tableView.contentInset.top = .contentInset

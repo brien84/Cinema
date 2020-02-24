@@ -26,6 +26,7 @@ final class MovieViewController: UIViewController {
 
     private(set) lazy var segmentedControl: SegmentedControl = {
         let control = SegmentedControl(with: MovieVCSegments.self)
+        control.accessibilityIdentifier = "UI-MovieVCSegmented"
         control.delegate = self
 
         return control
