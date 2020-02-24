@@ -1,0 +1,5787 @@
+[
+  {
+    "genres": [
+      "Komedija",
+      "Drama"
+    ],
+    "poster": "https://media.forumcinemas.lt/1012/Event_10308/portrait_small/Ypatingieji_320x480.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T09:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T14:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T16:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T09:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T13:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T16:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T09:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T13:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T16:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T16:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T09:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T13:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T17:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T18:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T18:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T18:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T18:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T16:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T16:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T16:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T16:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T16:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T16:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T16:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T16:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T18:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T16:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T16:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T18:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T16:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:45:00Z"
+      }
+    ],
+    "id": 6,
+    "title": "Ypatingieji",
+    "ageRating": "N-13",
+    "duration": "114 min",
+    "year": "2020",
+    "plot": "Po šio filmo, pilnutėlė Kanų filmų festivalio didžioji salė ištisas 5min. plojo atsistojusi, šluostėsi ašaras ir kvatojo vienu metu – šitaip buvo sutiktas ir įvertintas naujausias „Neliečiamųjų“ režisieriaus darbas „Ypatingieji“ – savo mintimis, gilumu ir nepakartojamu humoru pranokstantis pirmąjį! Tai – šedevras, įeisiantis į kino istoriją, kuriame susipina klastinga liga ir gyvenimas, į kurį lengviausia žiūrėti – nuoširdžiai juokiantis. Bruno ir Malikas (aktoriai Vincent Cassel ir Reda Kateb) jau dvidešimt metų dirba su autizmo sindromą turinčiais žmonėmis, daugiausia vaikais. Jie susiduria su daugybe iššūkių: šis sindromas (ypač lengvesnės jo formos) toli gražu ne visuomet patenka į oficialias valstybinės medicinos programas; o medicininį draudimą turintys „ypatingieji“ irgi ne visuomet gauna tiek ir tokios pagalbos, kokia jiems reikalinga. Besistengdami suteikti trūkstamą paramą, Bruno ir Malikas į savo programą įtraukia ir jaunuolius iš socialiai sudėtingų šeimų: išmokę reikalingų įgūdžių, jie tampa autizmo sindromą turinčių žmonių slaugais, globėjais ir bičiuliais. Filmo veikėjai susiduria su daugybe iššūkių ir pribloškiančių atradimų, ir tampa visas kliūtis nugalinčio žmogiškojo gerumo liudininkais. Prancūzų kino kūrėjai Olivier Nakache ir Éric Toledano kartu dirba jau ketvirtį amžiaus – nuo 1995-ųjų. Bičiuliai ne tik režisuoja, bet paprastai savo filmams rašo ir scenarijus. Be kelių trumpametražių juostų, jų filmografijoje – jau šeši pilno metražo filmai, iš kurių garsiausias, be abejo, yra „Neliečiamieji“, tapęs tikru hitu ne tik Prancūzijoje, bet ir visame pasaulyje. „Neliečiamuosiuose“ su neprilygstamu humoru ir lengvumu papasakoję paralyžuoto žmogaus ir jo pagalbininko istoriją, O. Nakache ir É. Toledano „Ypatinguosiuose“ nagrinėja ne ką lengvesnę temą: autizmą. Po pernykščio Kanų kino festivalio (ten įvyko filmo premjera) žiūrovai vienbalsiai sutiko, kad tiek savo gilumu, tiek lengvumu ir humoru naujasis bičiulių darbas nė kiek nenusileidžia, o gal ir pranoksta „Neliečiamuosius“. Kaip ir „Neliečiamieji“, šis filmas taip pat paremtas tikrais faktais: Bruno prototipas realiame gyvenime – Stephane Benhamou – prieš daugybę metų rūpinosi režisieriaus É. Toledano šeimos nariu, turinčiu autizmo sindromą. Prancūzų kalba su lietuviškais subtitrais. Režisavo: Olivier Nakache, Éric Toledano („Neliečiamieji“, „Samba“, „Toks gyvenimas!“, „Tos laimingos dienos“, „Draugaukime“). Vaidina: Vincent Cassel, Reda Kateb, Hélène Vincent, Alban Ivanov, Christian Benedetti, Catherine Mouchet, Frédéric Pierrot, Suliame Brahim.",
+    "originalTitle": "The Specials"
+  },
+  {
+    "genres": [
+      "Drama",
+      "Karinis"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-14T20:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T15:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T19:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T14:55:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T20:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T15:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T19:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T15:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T19:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T15:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T19:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T15:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T19:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T19:55:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T19:55:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T09:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T14:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T09:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T14:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T09:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T13:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T09:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T13:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T09:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T12:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:15:00Z"
+      }
+    ],
+    "id": 7,
+    "title": "1917",
+    "ageRating": "N-13",
+    "duration": "119 min",
+    "year": "2019",
+    "plot": "1917 m. pavasaris. Pačiame Pirmojo pasaulinio karo įkarštyje britų žvalgyba sužino, kad šiaurės Prancūzijoje vienas jų kariuomenės batalionų – 1600 karių – žygiuoja tiesiai į priešo paspęstus spąstus. Deja, įprastos komunikacijos linijos sunaikintos. Užduotis perduoti žinią apie pasalą patikima dviem jauniems eiliniams – Šofildui ir Bleikui (aktoriai George‘as MacKay‘us ir Dean‘as-Charles‘as Chapman‘as). Norėdami suspėti laiku, vaikinai privalo nepastebėti pereiti fronto liniją ir didžiulę priešo kontroliuojamą teritoriją. Jei jiems nepavyks, žus 1600 ginklo brolių, o tarp jų – ir Bleiko vyresnysis brolis. Filmas anglų kalba su lietuviškais subtitrais. Režisierius: Sam Mendes Vaidina: Colin Firth, Mark Strong, Benedict Cumberbatch",
+    "originalTitle": "1917"
+  },
+  {
+    "genres": [
+      "Komedija",
+      "Drama",
+      "Karinis"
+    ],
+    "poster": "https://media.forumcinemas.lt/1012/Event_10184/portrait_small/Jojo_320x480.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T21:55:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T15:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T15:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T15:40:00Z"
+      }
+    ],
+    "id": 8,
+    "title": "Zuikis Džodžo",
+    "ageRating": "N-13",
+    "duration": "108 min",
+    "year": "2020",
+    "plot": "Nacistinėje Vokietijoje vienišos motinos auginamas dešimtmetis Johanesas „Džodžo“ Betcleris (aktorius Roman Griffin Davis), kaip ir daugelis dešimtmečių, turi įsivaizduojamą draugą. Tiesa, šiek tiek neįprastą – tai protu nepasižymintis Adolfas Hitleris (kurį vaidina filmo režisierius Taika Waititi‘s). Džodžo motina (akt. Scarlett Johansson) Hitlerio, žinoma, nemato, tad norėdama, kad jos sūnus nebūtų vienišas, įrašo Džodžo į hitlerjugendą. Šioje organizacijoje, vadovaujamoje entuziastingo kapitono Klencendorfo (akt. Sam‘as Rockwell‘as), berniukui irgi nelabai patinka. Bet kur kas didesnis šokas Džodžo laukia jo paties namuose, aptikus palėpėje slepiamą žydų mergaitę. Niekaip nelaukęs tokio akibrokšto iš savo paties motinos, Džodžo turi persvarstyti visą savo vertybių sistemą. Žinoma, padedamas idioto įsivaizduojamo Hitlerio. Rašytojas ir režisierius Taika Waititi, labiausiai žinomas dėl išskirtinio humoro jausmo, pristato savo naujausią filmą, Antrojo pasaulinio karo anti-neapykantos satyrą, žaismingu pavadinimu „Zuikis Džodžo“. Beveik 7-erius metus kurta ir tobulinta komedija „Zuikis Džodžo“ drąsiai pateikia sunkiai susiejamą humoro ir rimtų idėjų mišinį, kuris Tarptautiniame Toronto kino festivalyje jau pelnė pagrindinį apdovanojimą ir taip tapo realiu pretendentu į „Oskarus“. Filmas anglų kalba su lietuviškais subtitrais. Režisierius: Taika Waititi („Ką mes veikiame šešėliuose“, „Laukinių žmonių medžioklė“, „Toras. Pasaulių pabaiga“) Vaidina: Roman Griffin Davis, Thomasin McKenzie, Scarlett Johansson, Taika Waititi, Sam Rockwell, Rebel Wilson, Alfie Allen, Stephen Merchant, Archie Yates, Luke Brandon Field, Sam Haygarth",
+    "originalTitle": "Jojo Rabbit"
+  },
+  {
+    "genres": [
+      "Komedija"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTExYjQyYzItNWNhOS00NzU2LWIyNDktZmZlNTIzYzUwOWE3XkEyXkFqcGdeQXVyOTMwNDg4NjQ@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T21:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T21:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T12:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T21:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T15:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T12:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T15:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T12:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T15:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T12:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T15:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T12:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T15:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T12:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T15:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-14T20:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-13T22:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T11:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T15:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T18:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T20:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-14T22:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T11:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T15:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T18:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T20:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T11:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T15:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T18:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T20:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T11:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T15:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T18:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T20:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T11:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T15:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T18:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T20:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T11:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T15:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T18:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T20:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-14T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-14T21:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T09:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T14:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T09:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T14:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T09:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T14:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T09:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T14:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T09:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T14:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T09:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T14:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T16:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T19:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-14T19:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T10:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T15:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T17:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T10:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T15:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T17:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T10:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T15:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T17:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T19:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T10:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T15:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T17:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T19:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T10:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T15:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T17:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T19:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T10:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T15:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T17:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T19:50:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T14:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T14:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T14:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T14:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T13:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T17:45:00Z"
+      }
+    ],
+    "id": 9,
+    "title": "Importinis jaunikis",
+    "ageRating": "N-13",
+    "duration": "94 min",
+    "year": "2020",
+    "plot": "Gražuolė Kotryna (Gabrielė Martirosian) grįžta į gimtuosius namus ruoštis vestuvėms ir supažindinti tėvų su savo išrinktuoju prancūzu Fransua (Filipe Gabrielis). Tačiau konservatyvių pažiūrų merginos tėvas, vietinio daržovių verslo savininkas Cibulskis (Mindaugas Capas), išsiuntęs dukrą į mokslus Prancūzijoje tikrai nesitikėjo, kad jos išrinktasis širdies chirurgas – visai ne Europos karališkosios giminės aristokratas, o egzotiškos išvaizdos ir karšto kraujo jaunuolis. Santūriam lietuviui nesuprantamos nei Fransua per kraštus trykštančios emocijos, nei jo būdas, nei šukuosena – žentą jis įsivaizdavo visai ne taip! Šoko ištiktas tėvas įvairiais būdais stengiasi atkalbėti dukrą nuo lemtingojo „taip“, o vestuvių dienai nenumaldomai artėjant, daugėja ir įvairiausių nesusipratimų bei keistų sutapimų. Juokingų situacijų kupina režisieriaus Simono Aškelavičiaus komedija apie ne visai tipinę mūsų kraštuose situaciją lietuviškus kino ekranus pasieks 2020 metų žiemą. Juostoje taip pat filmuojasi Vitalija Mockevičiūtė, Inga Norkutė, Vaidotas Martinaitis, Agnė Šataitė, Rafailas Karpis, Sonata Visockaitė, Ainis Storpirštis ir kiti žinomi aktoriai. Filmo prodiuseriai – Žilvinas Naujokas („Tadas Blinda. Pradžia“, „Tarp pilkų debesų“), Ričardas Marcinkus („Pakeliui“, „Traukinio apiplėšimas, kurį įvykdė Saulius ir Paulius“) ir vienas didžiausių filmų platintojų Baltijos šalyse – UAB „ACME Film“. Filmas lieutuvių kalba, be subtitrų.",
+    "originalTitle": "Importinis jaunikis"
+  },
+  {
+    "genres": [
+      "Komedija",
+      "Drama"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BM2QxMWFlOTktNWY0Mi00MDQ5LWExMTYtNThjZTFhNGZkZjk1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T21:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T21:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T14:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T21:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T15:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T14:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T15:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T14:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T15:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T14:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T15:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T14:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T15:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T14:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T15:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T17:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-14T20:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T18:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T20:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T15:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T18:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T20:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T18:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T20:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T18:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T20:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T18:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T20:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T18:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T20:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-14T21:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-14T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-14T21:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T21:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T17:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T19:20:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T15:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T17:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T15:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T17:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T15:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T17:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T15:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T17:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T15:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T17:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T15:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T17:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:45:00Z"
+      }
+    ],
+    "id": 10,
+    "title": "Lavina",
+    "ageRating": "N-13",
+    "duration": "90 min",
+    "year": "2020",
+    "plot": "Bilė ir Pitas (aktoriai Julia Louis-Dreyfus ir Will Ferrell) – graži, darni, laiminga pora, auginanti du vaikus ir patenkinta gyvenimu. Tiksliau, buvo patenkinta, kol netikėtai mirė Pito tėvas. Žinoma, „netikėta“ tai buvo tik iš dalies – nes tėvas jau buvo sulaukęs tikrai garbaus amžiaus. Kaip ten bebūtų, po šio nutikimo Pitą apninka egzistencinės mintys apie savo paties mirtingumą, ir jo šeima tarsi pasislenka į antrą planą. Norėdama pakeisti aplinką ir praskaidrinti niūrias vyro mintis, Bilė suorganizuoja šeimos atostogas Alpėse. Gaivus oras, kalnai ir slidės – kaip tik tai, ko jiems reikia, kad vėl sugrįžtų į ankstesnę laimingo gyvenimo būseną. Tačiau netikėta sniego lavina sumaišo visas kortas. Pavojaus sirenas Bilės ir Pito šeima išgirsta sėdėdami jaukiame kalnų restoranėlyje. Iš pradžių nesusigaudydami, dėl ko kilo toks bruzdesys, turistai pagaliau pamato link jų artėjančią sniego sieną ir puola į paniką. Labiausiai iš visų supanikuoja Pitas: užuot gelbėjęs kitoje stalo pusėje sėdinčią mylimą šeimą, vyras stveria į rankas mylimą mobilųjį telefoną ir pasipusto padus. Vėliau, lavinai praslinkus, sumišęs Pitas grįžta prie stalo, kur tebesėdi sniegu apdrėbta ir jo poelgio šokiruota jo šeima. Tiek žmona, tiek vaikai spokso į vyrą ir tėvą ir negali patikėti tuo, kas ką tik įvyko. Ar gali būti, kad jie iš tiesų visiškai nepažįsta Pito? Ir, kas dar baisiau – ar gali būti taip, kad jie jam reiškia kur kas mažiau, nei būtų galima tikėtis? Turėjusi būti lengvomis šeimos atostogomis, išvyka į Alpes tampa ir juokinga, ir graudžia – ir dėl to labai realistiška – santykių drama, į kruią, ankščiau ar vėliau, gali patekti kiekvienas. Filmas anglų kalba su lietuviškais subtitrais. Režisavo: Nat Faxon, Jim Rash („Seniai, seniai“, „Fatrikas“). Vaidina: Julia Louis-Dreyfus, Will Ferrell, Miranda Otto, Zoë Chao, Zach Woods, Kristofer Hivju, Alex Macqueen.",
+    "originalTitle": "Downhill"
+  },
+  {
+    "genres": [
+      "Siaubo"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjBkMThiMWYtMDA5Ni00Yjc3LWFhYzktN2Q1MmZhNzU5MDNlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T21:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T15:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T21:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T13:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T15:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T13:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T15:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T13:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T15:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T13:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T15:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T13:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T15:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T13:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T16:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-14T20:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T13:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T17:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-14T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-14T21:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T19:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-14T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-14T21:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T15:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T17:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T19:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T21:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T15:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T17:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T19:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T15:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T19:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T15:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T19:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T15:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T19:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T15:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T19:40:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T12:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T14:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T17:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T12:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T14:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T17:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T09:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T12:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T14:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T17:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T09:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T12:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T14:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T17:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T08:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T11:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T14:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T17:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T10:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T14:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T17:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T19:45:00Z"
+      }
+    ],
+    "id": 11,
+    "title": "Košmarų sala",
+    "ageRating": "N-13",
+    "duration": "110 min",
+    "year": "2020",
+    "plot": "Nuošalioje tropinėje saloje charizmatiškas verslininkas, ponas Rorkas (aktorius Michael‘as Peña) įkūręs tikrą atostogų rojų. Sala garsėja tuo, kad joje realybe virsta pačios beprotiškiausios svečių svajonės. Žinoma, bet kas į salą nepapuls: tai garantuoja didžiulė paslaugos kaina, griežtai ribojamas svečių skaičius ir netgi sėkmės faktorius – laimingieji neretai atrenkami loterijos būdu. Vieną dieną laimė nusišypso jaunai merginai Melanei (akt. Lucy Hale): ji pakviečiama į Fantazijų salą. Atvykusi į išsvajotąjį kurortą, mergina tiesiog negali patikėti savo akimis: viskas čia yra būtent taip, kaip ji įsivaizdavo ir dar geriau. Tačiau taip atrodo tik iš pirmo žvilgsnio. Kuomet svajonės pavirsta košmarais, Melanė kartu su kitais svečiais privalo įspėti salos paslaptį, kad išsaugotų savo gyvybę. Filmas anglų kalba su lietuviškais subtitrais. Režisierius: Jeff Wadlow Scenaristas: Jeff Wadlow, Jillian Jacobs, Christopher Roach Vaidina: Kim Coates, Michael Peña, Lucy Hale, Nick Slater",
+    "originalTitle": "Fantasy Island"
+  },
+  {
+    "genres": [
+      "Komedija",
+      "Romantinis"
+    ],
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T21:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T21:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T21:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-14T20:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T15:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T15:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-14T19:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-14T20:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T13:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T13:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T13:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-14T19:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-14T21:55:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T21:55:00Z"
+      }
+    ],
+    "id": 12,
+    "title": "Tobulas pasimatymas",
+    "ageRating": "N-13",
+    "duration": "105 min",
+    "year": "2020",
+    "plot": "Pradinių klasių mokytoja Lina svajoja sutikti savo gyvenimo meilę ir pasiryžta nueiti į aklą pasimatymą. Kai jos pora nepasirodo, prie staliuko prisėdęs populiarios TV laidos vedėjas Tomas įžūliomis pastabomis galutinai sugadina ir taip nevykusį vakarą. Negana to, vėliau jis išsityčioja iš naivuolės savo laidoje, o galiausiai įžeistai vienišei pateikia pasiūlymą, kurio atsisakyti neįmanoma. Ar pavyks tokiems skirtingiems žmonėms dirbti kartu? Ar įmanoma rasti meilę internetinių pasimatymų labirintuose? Kiek varlių reikės pabučiuoti Linai, kad surastų princą ant balto žirgo? Ar pirmasis pasimatymas gali būti tobulas? „Tobulas pasimatymas“ – romantinė komedija, pilna gyvenimiškų nesusipratimų, nuoširdžių jausmų, netikėtų šeimyninių dramų ir, žinoma, viską nugalinčios meilės. Filmas lietuvių kalba, be subtitrų. Režisierius: Robertas Razma Scenarijaus autorius: Urszula Antoniak, Sam Akina, Jules Jones, Łukasz Światowiec, Radosław Drabik, Laurynas Šeškus, Aistė Simėnaitė Vaidina: Jurgita Jurkutė, Leonardas Pobedonoscevas, Giedrius Arbačiauskas, Goda Petkutė, Eimutis Kvoščiauskas, Angelina Daukaitė, Tomas Erbrėderis, Gabija Jaraminaitė, Inga Jankauskaitė",
+    "originalTitle": "Tobulas pasimatymas"
+  },
+  {
+    "genres": [
+      "Drama",
+      "Romantinis"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BY2QzYTQyYzItMzAwYi00YjZlLThjNTUtNzMyMDdkYzJiNWM4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T21:59:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T11:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T16:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T11:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T17:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T11:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T16:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T11:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T16:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T11:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T16:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T11:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T16:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T13:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T15:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T15:25:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T11:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T11:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T16:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T18:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T16:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:15:00Z"
+      }
+    ],
+    "id": 14,
+    "title": "Mažosios moterys",
+    "ageRating": "N-7",
+    "duration": "134 min",
+    "year": "2019",
+    "plot": "Amerikietės Louisos May Alcott prieš pusantro šimto metų parašytas romanas „Mažosios moterys“ laikomas tikra savo žanro klasika ir lyginamas su seserų Brontė ar Džeinės Osten kūryba. Autobiografinių detalių nestokojančioje knygoje L.M. Alcott aprašo keturių seserų – Megės, Džo, Betės ir Eimės – gyvenimą. Bręstančios merginos pažįsta pasaulį, maištauja prieš visuomenės stereotipus moterų atžvilgiu ir pamažu formuojasi kaip stiprios, nepriklausomos asmenybės. Pagal šį romaną sukurta daugybė televizijos serialų, miuziklų, operų, pjesių ir, žinoma, filmų. Naujausia, Gretos Gerwig režisuota versija yra jau aštuntoji knygos ekranizacija. Joje pagrindines herojes seseris vaidina Saoirse Ronan, Emma Watson, Florence Pugh ir Eliza Scanlen. Šalia jų nusifilmavo ir tokios žvaigždės kaip Meryl Streep, Laura Dern ir Timothée‘is Chalamet. Filmas anglų kalba su lietuviškais subtitrais. Režisierė: Greta Gerwig Vaidina: Laura Dern, Meryl Streep, Saoirse Ronan, Emma Watson, Timothée Chalamet, Florence Pugh",
+    "originalTitle": "Little Women"
+  },
+  {
+    "genres": [
+      "Veiksmo",
+      "Animacija",
+      "Nuotykių"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzg1MzM3OWUtNjgzZC00NjMzLWE1NzAtOThiMDgyMjhhZDBhXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T12:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T12:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T12:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T12:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T12:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T12:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T13:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T13:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T13:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T13:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T13:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T13:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T10:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T10:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T10:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T10:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T10:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T10:35:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T08:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T12:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T15:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T08:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T12:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T15:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T08:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T12:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T15:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T08:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T12:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T15:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T08:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T12:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T15:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T08:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T09:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T11:45:00Z"
+      }
+    ],
+    "id": 15,
+    "title": "Užsimaskavę šnipai",
+    "ageRating": "N-7",
+    "duration": "101 min",
+    "year": "2019",
+    "plot": "Bebaimis Lencas Sterlingas yra kiečiausias šnipas pasaulyje. Nėra užduoties, kurios jis neįvykdytų; sugebėjimo, kurio nebūtų įvaldęs; pavojaus, kurio išsigąstų ir priešo, kurio nenugalėtų. Absoliučiai neįmanomas misijas jis galėtų atlikti užrištomis akimis, o eilinį kartą išgelbėtų pasaulį net vidury nakties, pažadintas iš miego. Visiška Lenco priešingybė yra moksliukas Valteris. Jis nemoka bendrauti su žmonėmis, bijo savo paties šešėlio, o užrištomis akimis sunkiai surastų kelią iki nuosavo tualeto. Tačiau Valteris yra nuostabus mokslininkas, kurio idėjos, išradimai ir prietaisai turėtų pagelbėti sunkiose misijose. Nuolat eksperimentuodamas, vieną dieną Valteris truputį prisižaidžia: jo moksliniai bandymai Lencą paverčia... balandžiu. Super elegantiškas ir žavus šnipas tampa burkuojančiu balandžiu išsprogusiomis akimis. Atvirtimo žmogumi procesas – nei rgeitas, nei paprastas, o pasaulio gelbėjimas – nelaukia! Keistoji porelė turi staigiai išmokti dirbti kartu, nes pavojus didėja sulig kiekviena minute... Ši filmo versija bus rodoma dubliuota lietuviškai ir be subtitrų. Režisavo: Nick Bruno („Ledynmetis 3“, „Rio“, „Hortonas“), Troy Quane („Ledynmetis: susidūrimas“, „Monstrų viešbutis“, „Devintasis“) LIETUVIŠKAI ĮGARSINO: Mantas Stonkus, Simas Poška, Benita Vasauskaitė, Darius Petkevičius, Jokūbas Bareikis, Kristina Andrijauskaitė, Tomas Rinkūnas, Marija Korenkaitė ir kiti.",
+    "originalTitle": "Spies in Disguise"
+  },
+  {
+    "genres": [
+      "Animacija"
+    ],
+    "poster": "https://media.forumcinemas.lt/1012/Event_10340/portrait_small/1200_1800_Clara_poster_rus_febr6.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T08:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T08:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T08:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T08:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T08:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T08:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T11:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T12:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T12:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T12:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T12:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T12:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T12:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T13:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T12:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T13:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T12:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T13:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T12:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T13:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T12:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T13:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T12:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T13:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T12:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T08:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T13:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T10:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T10:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T10:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T10:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T10:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T10:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T13:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T13:10:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T09:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T11:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T08:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T09:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T11:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T08:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T12:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T14:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T08:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T12:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T14:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T08:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T12:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T14:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T08:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T12:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T14:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T15:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T09:00:00Z"
+      }
+    ],
+    "id": 16,
+    "title": "Klara ir stebuklingasis drakonas (rusų k.)",
+    "ageRating": "V",
+    "duration": "85 min",
+    "year": "2020",
+    "plot": "Filmas rusų kalba su lietuviškais subtitrais. Дублированный на русском языке с литовскими субтитрами. Mergaitė vardu Klara gyvena nuostabiame pasakų pasaulyje, kupiname nykštukų, drakonų ir burtininkų. Kartą į tūkstantį metų čia gimsta stebuklingas drakonas. Tik jį pagrobia piktosios jėgos, norėdamos pasinaudoti stebuklingomis jo galiomis. Klaros ir jos draugų laukia neįtikėtini nuotykiai ir nutikimai, kai jie leisis vaduoti stebuklingojo drakono. Viso pasaulio ateitis priklauso būtent nuo jų… Ar jiems pavyks?",
+    "originalTitle": "Clara"
+  },
+  {
+    "genres": [
+      "Animacija",
+      "Nuotykių",
+      "Šeimos"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjA0YjYyZGMtN2U0Ni00YmY4LWJkZTItYTMyMjY3NGYyMTJkXkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T09:00:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T09:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T09:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T09:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T09:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T14:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T10:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T10:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T10:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T10:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T10:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T10:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T11:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T11:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T11:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T11:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T11:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T11:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T11:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T11:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T11:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T11:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T11:05:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T11:05:00Z"
+      }
+    ],
+    "id": 17,
+    "title": "Ledo šalis 2",
+    "ageRating": "V",
+    "duration": "103 min",
+    "year": "2019",
+    "plot": "Viena laukiamiausių animacinių istorijų sugrįžta su nauju pasakojimu apie draugystę ir meilę, ir apie nesibaigiančias sesių princesių išdaigas, kurios šįkart pareikalauja ypatingos – karališkos – ištvermės ir ryžto! Pirmojoje filmo dalyje princesė Elza negalėjo suvaldyti savo galių ir todėl pabėgo ir įsikūrė ledo rūmuose, aukštai kalnuose. Vyresnės sesutės pasiilgusi princesė Ana, padedama Kristofo, jo elnio Sveno ir sniego senio Olafo, suranda ir išgelbsti Elzą. Sugrįžus Elzai, laimingoje dviejų seserų valdomoje karalystėje įsivyrauja taika, laimė ir meilė. Tačiau, nors ir išmokusi kontroliuoti pragaištingas savo galias, jų visiškai atsikratyti Elza niekaip nesugeba. Dar daugiau – praėjus keleriems metams, mergina ima girdėti balsą ir jausti paslaptingą jėgą, kviečiančią ją keliauti į šiaurę. Šiam troškimui vis labiau stiprėjant, Elza nebeištveria ir viską papasakoja Anai. Veikli jaunoji princesė nutaria griebti elnią už ragų ir išsiaiškinti, kokios jėgos neduoda ramybės jos mylimai sesutei. Kartu su jau pažįstama šutve – Kristofu, Svenu ir nuolat į kokias nors nesąmones įsipainiojančiu Olafu – seserys iškeliauja į šiaurę. Šios, ne mažiau pavojingos ir nuotykių kupinos kelionės metu Elza pagaliau atskleis savo magiškų galių šaltinį bei kartu su Anos ir kitų bičiulių pagalba išgelbės savo mylimą karalystę nuo naujo jai gresiančio pavojaus. 2013-ųjų pabaigoje kinuose pasirodžiusi „Ledo šalis“ sulaukė milžiniškos sėkmės tiek Lietuvoje, tiek visame pasaulyje. Nuotaikinga animacinė istorija buvo apdovanota dviem „Oskarais“ (geriausias animacinis filmas ir geriausia daina „Let It Go“) ir, žinoma, milijonų vaikų bei jų tėvelių dėmesiu ir meile. Ši filmo versija bus rodoma dubliuota lietuviškai, be subtitrų. Režisavo: Chris Buck („Ledo šalis“, „Ant bangos“, „Tarzanas“), Jennifer Lee („Ledo šalis“).",
+    "originalTitle": "Frozen II"
+  },
+  {
+    "genres": [
+      "Komedija",
+      "Animacija"
+    ],
+    "poster": "https://media.forumcinemas.lt/1012/Event_10271/portrait_small/fiksiai-ru.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T08:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T11:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T12:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T09:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T11:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T09:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T11:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T09:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T11:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T09:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T11:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T09:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T11:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T09:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T11:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T10:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T10:30:00Z"
+      }
+    ],
+    "id": 18,
+    "title": "Fiksiai prieš Krabius (rusų k.)",
+    "ageRating": "V",
+    "duration": "85 min",
+    "year": "2019",
+    "plot": "Girdėjote ką nors apie mažyčius žmogeliukus Fiksius? Jeigu nieko nesate girdėję, vadinasi taip ir turi būti! Kas jie tokie ir ką jie veikia yra DIDŽIULĖ paslaptis! Apie jų darbus žino tik labai mažai žmonių, o kalbėjusių su jais yra dar mažau! Po dviejų metų pertraukos, sausio 24 d., pakerėję ne vieno jaunojo žiūrovo širdį, patys paslaptingiausi žmogeliukai pasaulyje Fiksiai – vėl didžiuosiuose kino ekranuose. Juos išvysime smagioje animacijoje visai šeimai - „Fiksiai prieš Krabius“. Fiksiai atsirado tada, kai tik žmonės pradėjo naudoti įvairius prietaisus. Turbūt esate patyrę, kaip sugedęs daiktas kartais susitaiso pats ir pradeda veikti taip, lyg jam nieko nebūtų nutikę. Taip, tai Fiksių darbas! Šie mažyčiai, draugiški ir žingeidūs žmogeliukai gyvena lygintuvuose, kompiuteriuose, televizoriuose, netgi šaldytuvuose ir daro tikrus stebuklus – nepastebimai taiso sugedusius įrenginius. Juos naujų taisymo būdų savo laboratorijoje moko išmintingasis profesorius. Kartą draugiškame Fiksių pasaulyje įsivyrauja tikras chaosas. Nematyti, negirdėti priešininkai – robotukai Krabiai pradeda juos persekioti kiekviename žingsnyje. Maža to, jų tikslas – visiems atskleisti metų metus saugomą Fiksių paslaptį. Pasirodo išmintingasis profesorius jau seniai nesutaria su savo drauge mokslininke Erika. Kažkada juoda katė perbėgo jiems skersai kelio ir jie rimtai susipyko. Gudri mokslininkė, norėdama atkeršyti profesoriui, už laimėtą išradėjų konkursą, sukūrė pikčiurnas Krabius. Nieko kito nebelieka, kaip stoti į kovą prieš neteisybę ir visomis jėgomis stengtis išsaugoti didžiąją paslaptį. Smagią ir paslaptingą istoriją „Fiksiai prieš Krabius“ apie tikrą draugystę, komandinę dvasią ir gerus nematomus darbus, pasakosime kino teatruose jau nuo sausio 24 dienos. Ši filmo versija bus rodoma rusų kalba ir su lietuviškais subtitrais. REŽISIERIAI: Vasiko Bedošvilis, Olegas Užinovas",
+    "originalTitle": "FIKSIKI PROTIV KRABOTOV"
+  },
+  {
+    "genres": [
+      "Animacija",
+      "Nuotykių"
+    ],
+    "poster": "https://media.forumcinemas.lt/1012/Event_10342/portrait_small/Arkties_komanda_RU_FC_320x480.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T09:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T10:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T09:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T10:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T09:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T10:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T09:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T10:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T09:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T10:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T10:20:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T10:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T10:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T10:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T10:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T10:25:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T10:25:00Z"
+      }
+    ],
+    "id": 22,
+    "title": "Arkties komanda (rusų k.)",
+    "ageRating": "V",
+    "duration": "93 min",
+    "year": "2020",
+    "plot": "LT | Arktyje gyvenantis lapiukas Žaibas dirba vietiniame siuntų pristatymo skyriuje, tačiau svajoja tapti rogių kinkinio šunų vedliu. Vieną dieną jam pasitaiko puiki proga įrodyti savo tinkamumą naujoms pareigoms: į itin nuošalią Arkties vietą reikia pristatyti paslaptingą siuntinį. Žaibas nedvejodamas iškeliauja vykdyti užduotį. Nuvykęs į vietą, atkaklusis lapiukas aptinka slaptą tvirtovę, kurioje šeimininkauja piktas Otas von Vėplys, rezgantis baisų planą: ištirpdyti visą Arkties ledą ir tapti vieninteliu patvinusio pasaulio valdovu. Pasibaisėjęs Žaibas nutaria suardyti Oto von Vėplio planus, tačiau puikiai supranta, kad vienas to nepadarys. Pasitelkęs į pagalbą ištikimiausius draugus – baltąjį lokį, išsiblaškiusį albatrosą Lemį, inžinerijoje nusimanančią lapytę Džeidę, vilkiukus Diuką ir Dakotą bei porelę įtarių ūdrų, Žaibas išsirengia gelbėti pasaulio. Arktyje dar niekada nebuvo taip karšta! RU | Добро пожаловать на ЗвероПолюс, где власть находится в лапах больших, сильных и зубастых. Ради собственного превосходства они готовы переделать под себя весь мир. Лишь маленькие, но очень храбрые встанут на защиту не только родного Северного полюса, но и целой планеты. Именно они — настоящие Стражи Арктики. Filmas dubliuotas rusų kalba su lietuviškais subtitrais. Režisierius: Aaron Woodley Scenarijus: Bob Barlen, Cal Brunker, Aaron Woodley Garso režisierius: Linas Kalėda („Aktida“)",
+    "originalTitle": "Strazhi Arktiki"
+  },
+  {
+    "genres": [
+      "Komedija",
+      "Veiksmo",
+      "Animacija"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BYWNkOGNhZmMtOWM3Ni00ODE3LWI3ODItYTRhMmY5MzMwYzlmXkEyXkFqcGdeQXVyODQwNTM1NjI@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T10:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T11:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T10:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T11:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T10:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T11:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T10:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T11:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T10:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T11:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T10:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T11:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T10:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T08:30:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-15T12:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-16T12:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T12:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T12:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T08:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T12:40:00Z"
+      }
+    ],
+    "id": 23,
+    "title": "Gauruoti šnipai",
+    "ageRating": "V",
+    "duration": "90 min",
+    "year": "2019",
+    "plot": "Slaptųjų agentų pasaulyje katinas Vladimiras jau seniai pagarsėjęs kaip ypatingas agentas: puikiai treniruotas, itin protingas, išmanus ir susitvarkantis su bet kokia užduotimi. Deja, Vladimiras turi vieną menką bėdą: sunkiai paklūsta įsakymams. Vieną dieną slaptojo agento vadovams trūksta kantrybė ir jie Vladimirą išgrūda kuo toliau nuo savęs – į nuošalią plaukiojančią laboratoriją. Žinoma, su užduotimi: saugoti mokslininkų sukurtą naują, itin slaptą ir galingą medžiagą radiuzitą. Visgi į laboratoriją įsibrauna nežinomų užpuolikų šutvė ir pagrobia slaptąją medžiagą. Vladimiras ir jo netikėtas pagalbininkas Hektoras privalo suvienyti jėgas ir leistis į misiją sugrąžinti pavogtąjį radiuzitą. Sekdami karštais įsibrovėlių pėdsakais, naujieji kolegos greitai atskleidžia kvapą gniaužiantį sąmokslą: pasirodo, su pavogtosios medžiagos pagalba piktadariai siekia suaktyvinti klimato krizę, kuri sukeltų pavojų daugybei gyvūnų. Dabar tik nuo Vladimiro ir Hektoro priklauso, ar pavyks laiku susekti nusikaltėlius ir suardyti jų planus. Filmas dubliuotas lietuviškai, be subtitrų. Režisierius: Zhiyi Zhang",
+    "originalTitle": "Spycies"
+  },
+  {
+    "genres": [
+      "Komedija",
+      "Veiksmo",
+      "Nuotykių"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BMWU0MGYwZWQtMzcwYS00NWVhLTlkZTAtYWVjOTYwZTBhZTBiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T13:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T16:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T13:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T16:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T13:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T16:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T15:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T15:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T15:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-16T19:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T19:40:00Z"
+      }
+    ],
+    "id": 24,
+    "title": "Pašėlę vyrukai amžiams",
+    "ageRating": "N-16",
+    "duration": "123 min",
+    "year": "2020",
+    "plot": "Legendiniai „Pašėlę vyrukai“ Will‘as Smith‘as ir Martin‘as Lawrence‘as vėl sugrįžta! Policinės komedijos apie du absoliučiai skirtingus veikėjus, priverstus dirbti kartu, žanro pradžia laikomas 1949 m. japonų režisieriaus Akira‘os Kurosawa‘os filmas „Stray Dog“. Tačiau į populiarumo viršūnę 1982-aisiais žanrą iškėlė Holivudo juosta „48 valandos“ su Eddie Murphy‘iu ir Nick‘u Nolte. Nuo tų laikų linksmos istorijos apie du tarpusavyje nuolat draugiškai besipešančius ir pasaulį gelbstinčius herojus tapo įprasta ir mėgstama kino žiūrovų pramoga. 1995 m. režisieriaus Michael‘o Bay‘aus sukurtas komedinis nuotykių filmas „Pašėlę vyrukai“ sulaukė milžiniškos sėkmės visame pasaulyje ir tapo tikra savo žanro klasika. Ne ką mažiau sėkmingas buvo ir po aštuonerių metų pasirodęs juostos tęsinys. O štai trečiosios filmo dalies teko laukti 16 metų. Geriausios „pašėlusių vyrukų“ dienos jau seniai praeityje. Maikas (akt. Will‘as Smith‘as) išgyvena vidurio amžiaus krizę. Niekaip nenorėdamas pripažinti, kad jaunystė jau praėjo, Maikas laksto sportiniais automobiliais, nuolat įsivelia į nepatogias situacijas ir purkštauja, priskirtas jaunų detektyvų grupei. Tuo tarpu susitupėjęs, šeimą sukūręs ir policijos inspektoriumi tapęs Markusas (aktorius Martin‘as Lawrence‘as) vis dažniau pagalvoja apie pensiją. Tačiau kuomet paslaptingi nusikaltėliai imasi kėsintis į Maiko gyvybę, Markusas negali palikti bičiulio nelaimėje ir išlenda iš už saugaus inspektoriaus stalo. Prisiminę savo nesulaužomą priesaiką – „pašėlę vyrukai amžiams“ – šaunusis duetas išsirengia į dar vieną, pavojingiausią savo misiją. Nuotaikingas, smagus ir veiksmo kupinas legendinių „Pašėlusių vyrukų“ tęsinys į Lietuvos kino teatrus įsiverš sausio 17 dieną. Amžiaus cenzas: N-16 Filmas anglų kalba su lietuviškais subtitrais. Režisierius: Adil El Arbi, Bilall Fallah Prodiuseris: Will Smith, Jerry Bruckheimer Scenaristas: Anthony Tambakis, Joe Carnahan, Chris Bremner, David Guggenheim Vaidina: Will Smith, Joe Pantoliano, Vanessa Hudgens, Martin Lawrence, Alexander Ludwig, Happy Anderson",
+    "originalTitle": "Bad Boys for Life"
+  },
+  {
+    "genres": [
+      "Fantastinis"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDc3OWJkMWEtMTlmOC00OGU4LTk3MDYtZDE3OTNiZGRhMmMxXkEyXkFqcGdeQXVyNjYzMTAzNTY@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T16:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T19:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T16:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T19:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T16:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T19:10:00Z"
+      }
+    ],
+    "id": 25,
+    "title": "Koma",
+    "ageRating": "N-13",
+    "duration": "111 min",
+    "year": "2019",
+    "plot": "Sausio 31 dieną kino teatruose žiūrovų laukia įspūdingas reginys. Fantastinis veiksmo filmas „Koma“ nukels mus tiesiai į žmogaus pasąmonės pasaulį, kuriame atrasime tai, kas yra šalia mūsų, bet dažnai lieka nepastebima. Iki lemtingos akimirkos Viktoras (akt. Rinalis Muchametovas) turėjo viską – sėkminga architekto karjera, draugai, ateities planai, svajonės, tačiau, itin keistomis aplinkybėmis įvykusi baisi automobilio avarija, iš jo tai atėmė viską. Patyręs rimtus sužalojimus, jaunas vaikinas panyra į komą. Jis atsibunda labai keistame pasaulyje, šiek tiek panašiame į mūsų, tačiau čia neegzistuoja jokie fizikos ir chemijos dėsniai. Šioje besvorėje erdvėje viskas susimaišę ir persipynę taip, jog sunku atskirti kur dangus, o kur tvirtas pagrindas po kojomis. Čia nėra jokios gravitacijos, didžiulių statinių griuvėsiai laisvai skraido erdvėje, medžiai lyg ant debesų, pro namų sienas veržiasi vandenynas. Visi, kurie panyra į komą, atsiduria toje pačioje vietoje – šiame paraleliniame pasaulyje, sukurtame iš prisiminimų visų tų žmonių, kurie kada nors buvo nugrimzdę į komą. Viktorui šis pasaulis kraupus ir svetimas, jame galima kristi iš neišmatuojamo aukščio ir nesusižeisti, bėgti, pargriūti ir nejausti skausmo. Naujame pasaulyje jam tenka kovoti už savo gyvybę, bėgti nuo pavojingų, besvorių būtybių… Jis pamilsta ir bando suprasti ano pasaulio dėsnius. Sutikti naujieji pažįstami prasitaria, kad visi jie čia, nes jiems nesisekė pritapti realiame gyvenime. Ar komos ištiktam vyrui pavyks surasti kelią atgal, į realų pasaulį? Ar jis supras kas yra KOMA? Įspūdinga, nepaliksianti abejingų kelionė į žmogaus vidinį pasaulį kinuose jau nuo sausio 31 dienos. Filmas rusų kalba su lietuviškais subtitrais. Režisierius: Nikita Argunovas Aktoriai: Rinalis Muchametovas („Ekipažas“), Liubovė Aksionova („Saliutas -7“), Konstantinas Lavronenko („Likvidacija“), Vilenas Babičevas („Fizrukas“) ir kt.",
+    "originalTitle": "Koma"
+  },
+  {
+    "genres": [
+      "Komedija",
+      "Drama"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZGU4MmEyNjktZGJiMC00ODM4LThiNWMtMTk4NzIwNDg1NzE2XkEyXkFqcGdeQXVyNjAzNzQ3MQ@@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T17:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T14:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T17:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T17:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T14:10:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T17:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T17:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T17:15:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T13:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T13:35:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-19T13:35:00Z"
+      }
+    ],
+    "id": 26,
+    "title": "Užgaidų maratonas",
+    "ageRating": "N-16",
+    "duration": "95 min",
+    "year": "2020",
+    "plot": "„Noriu apatinių iš to paties komplekto. Noriu į Paryžių. Noriu pamatyti pasaulį, ištekėti už mylimo žmogaus, naujų kvepalų, išsimokėti kreditą už langus... ir dar noriu surasti pasą prieš vestuves“... Ši naujausia „Aš lieknėju“ kūrėjų komedija pasakoja istoriją Marinos, kuri turi 7 norus. Svarbiausias jų - tapti laiminga. Tad sužinojusi, kad jos mylimasis jai neištikimas ir kad jos vestuvių planai žlugo, mergina nusprendžia vykti į specialų moterų seminarą „Užgaidų maratonas“. Prasideda beprotiškiausia jos gyvenimo kelionė, sujaukianti visus „gerai apgalvotus“ planus. Amžiaus cenzas: N-16 Filmas rusų kalba su lietuviškais subtitrais. Režisierius: Dasha Charusha Vaidina: Aglaja Tarasova („Ledas“, TV serialas „Internai“), Kirilas Nagijevas („Tarnas“, „Žinutė“, „Internai“), Pavelas Derevianko („Naktinė pamaina“), Marija Minogarova, Jana Trojanova.",
+    "originalTitle": "Marafon zhelaniy"
+  },
+  {
+    "genres": [
+      "Siaubo",
+      "Trileris"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTIyYWJjZDctODY4OC00NWExLWE2NTktZmY0MWY2YWZjMWIxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T18:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T13:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T18:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T13:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Akropolis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T18:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas Vingis",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T13:45:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T20:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-16T20:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T20:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T20:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-17T19:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-20T19:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-17T18:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-19T18:40:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T17:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T17:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T11:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T10:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T11:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T15:50:00Z"
+      }
+    ],
+    "id": 27,
+    "title": "Jonukas ir Grytutė. Siaubo pasaka",
+    "ageRating": "N-13",
+    "duration": "88 min",
+    "year": "2020",
+    "plot": "Seniai seniai tolimame pasakų miške blaškėsi šešiolikametė mergina su jaunesniuoju broliu. Į juodą miško tankmę juos atginė alkis ir noras susirasti kokį nors darbą. Deja, čia jų tykojo bauginantis blogis, bet kai neviltis tokia didelė... Filmas anglų kalba su lietuviškais subtitrais. Režisierius: Oz Perkins (as Osgood Perkins) Aktoriai: Sophia Lillis, Alice Krige, Jessica De Gouw",
+    "originalTitle": "Gretel & Hansel"
+  },
+  {
+    "genres": [
+      "Drama",
+      "Siaubo",
+      "Mistinis"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BY2ZiMzVkNzktZjlmMy00MWE1LWJkMjgtZTFiMWYyYTU3M2FjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-15T14:55:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-17T14:55:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-18T20:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-19T14:55:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Kaunas",
+        "date": "2030-02-20T20:50:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-15T19:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Klaipėda",
+        "date": "2030-02-18T19:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-18T18:40:00Z"
+      },
+      {
+        "venue": "Forum Cinemas",
+        "is3D": false,
+        "city": "Šiauliai",
+        "date": "2030-02-20T18:40:00Z"
+      }
+    ],
+    "id": 36,
+    "title": "Virsmas",
+    "ageRating": "N-13",
+    "duration": "94 min",
+    "year": "2020",
+    "plot": "Darbo ieškanti jauna moteris Keitė (aktorė Mackenzie Davis) gauna pasiūlymą prižiūrėti du našlaičius: Florą ir Mailsą (aktoriai Brooklynn Prince ir Finn‘as Wolfhard‘as). Abiejų tėvų netekę vaikai gyvena atokioje kaimo vietovėje stūksančiame didžiuliame giminės name, kartu su guvernante. Galbūt paveikti tėvų netekties, galbūt dėl kitų priežasčių, vaikai Keitei pasirodo šiek tiek keistoki. Iš pradžių auklė bando pateisinti jų elgesį, tačiau netrukus Flora ir Mailsas Keitei ima kelti nerimą. Lyg to būtų maža, guvernantė taip pat atrodo lyg kažką slėptų, o netrukus paaiškėja, kad ir senasis namas turi savų, ne mažiau bauginančių paslapčių. Pamažu Keitės nerimą pakeičia baimė, o netrukus mergina su siaubu suvokia, kad tiek vaikai, tiek didžiulis namas nėra tokie nekalti ir įprasti, kokie atrodė iš pradžių. Filmas anglų kalba su lietuviškais subtitrais. Režisierius: Floria Sigismondi Vaidina: Mackenzie Davis, Finn Wolfhard, Brooklynn Prince, Karen Egan",
+    "originalTitle": "The Turning"
+  },
+  {
+    "genres": [
+      "Šeimai",
+      "Nuotykių",
+      "Animacija"
+    ],
+    "poster": "https://media.multikino.lt/thumbnails/50/rc/OTVCMEZE/eyJ0aHVtYm5haWwiOnsic2l6ZSI6WyIxMDAwMCIsIjQ3MiJdLCJtb2RlIjoiaW5zZXQifX0=/uploads/images/films_and_events/lcd-screens-1080x1920-1_13a4b3bb4d.jpg",
+    "showings": [
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T08:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T09:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T08:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T10:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T08:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T10:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T08:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T10:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T08:00:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T10:00:00Z"
+      }
+    ],
+    "id": 38,
+    "title": "FIKSIAI PRIEŠ KRABIUS",
+    "ageRating": "V",
+    "duration": "85 min",
+    "year": "2020",
+    "plot": "Girdėjote ką nors apie mažyčius žmogeliukus Fiksius? Jeigu nieko nesate girdėję, vadinasi taip ir turi būti! Kas jie tokie ir ką jie veikia yra DIDŽIULĖ paslaptis! Apie jų darbus žino tik labai mažai žmonių, o kalbėjusių su jais yra dar mažau! Po dviejų metų pertraukos, sausio 24 d., pakerėję ne vieno jaunojo žiūrovo širdį, patys paslaptingiausi žmogeliukai pasaulyje Fiksiai – vėl didžiuosiuose kino ekranuose. Juos išvysime smagioje animacijoje visai šeimai – „Fiksiai prieš Krabius“.",
+    "originalTitle": "Fixies vs. Crabots"
+  },
+  {
+    "genres": [
+      "Romantinė drama"
+    ],
+    "poster": "https://m.media-amazon.com/images/M/MV5BZTRlMTNmZDktYjY1MC00YjQwLWJiMWQtMzNlOTVkMzVhZjhlXkEyXkFqcGdeQXVyODQ4NjA3Mw@@._V1_SX600.jpg",
+    "showings": [
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-14T19:15:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T13:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-15T16:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T13:45:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-16T16:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-17T16:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-18T16:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T16:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-20T16:30:00Z"
+      },
+      {
+        "venue": "Multikino",
+        "is3D": false,
+        "city": "Vilnius",
+        "date": "2030-02-19T10:00:00Z"
+      }
+    ],
+    "id": 39,
+    "title": "LEDAS 2",
+    "ageRating": "N-13",
+    "duration": "130 min",
+    "year": "2020",
+    "plot": "Po dviejų metų pertraukos, tūkstančių žiūrovų širdis užkariavusi romantinė drama „Ledas“ grįžta į kino ekranus! Vasario 14 dieną šmaikštusis ledo ritulininkas Saša (akt. Aleksandras Petrovas) ir talentingoji dailiojo čiuožimo čempionė Nadia (akt. Aglaja Tarasova) pasirodys neįtikėtinos sėkmės sulaukusios kino juostos tęsinyje – „Ledas 2“.",
+    "originalTitle": "ЛЁД 2"
+  }
+]
