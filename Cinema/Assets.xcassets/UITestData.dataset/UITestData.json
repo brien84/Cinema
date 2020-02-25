@@ -7,12 +7,6 @@
     "poster": "https://media.forumcinemas.lt/1012/Event_10308/portrait_small/Ypatingieji_320x480.jpg",
     "showings": [
       {
-        "venue": "Forum Cinemas Vingis",
-        "is3D": false,
-        "city": "Vilnius",
-        "date": "2030-02-14T19:15:00Z"
-      },
-      {
         "venue": "Forum Cinemas Akropolis",
         "is3D": false,
         "city": "Vilnius",
@@ -244,12 +238,6 @@
         "venue": "Multikino",
         "is3D": false,
         "city": "Vilnius",
-        "date": "2030-02-14T18:45:00Z"
-      },
-      {
-        "venue": "Multikino",
-        "is3D": false,
-        "city": "Vilnius",
         "date": "2030-02-15T16:45:00Z"
       },
       {
@@ -298,12 +286,6 @@
     ],
     "poster": "https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_SX600.jpg",
     "showings": [
-      {
-        "venue": "Forum Cinemas Akropolis",
-        "is3D": false,
-        "city": "Vilnius",
-        "date": "2030-02-14T19:20:00Z"
-      },
       {
         "venue": "Forum Cinemas Vingis",
         "is3D": false,
@@ -405,12 +387,6 @@
         "is3D": false,
         "city": "Vilnius",
         "date": "2030-02-20T19:20:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Kaunas",
-        "date": "2030-02-14T20:15:00Z"
       },
       {
         "venue": "Forum Cinemas",
@@ -649,18 +625,6 @@
         "venue": "Forum Cinemas Vingis",
         "is3D": false,
         "city": "Vilnius",
-        "date": "2030-02-14T19:20:00Z"
-      },
-      {
-        "venue": "Forum Cinemas Vingis",
-        "is3D": false,
-        "city": "Vilnius",
-        "date": "2030-02-14T21:55:00Z"
-      },
-      {
-        "venue": "Forum Cinemas Vingis",
-        "is3D": false,
-        "city": "Vilnius",
         "date": "2030-02-15T19:00:00Z"
       },
       {
@@ -726,30 +690,6 @@
     ],
     "poster": "https://m.media-amazon.com/images/M/MV5BMTExYjQyYzItNWNhOS00NzU2LWIyNDktZmZlNTIzYzUwOWE3XkEyXkFqcGdeQXVyOTMwNDg4NjQ@._V1_SX600.jpg",
     "showings": [
-      {
-        "venue": "Forum Cinemas Vingis",
-        "is3D": false,
-        "city": "Vilnius",
-        "date": "2030-02-14T19:30:00Z"
-      },
-      {
-        "venue": "Forum Cinemas Vingis",
-        "is3D": false,
-        "city": "Vilnius",
-        "date": "2030-02-14T21:45:00Z"
-      },
-      {
-        "venue": "Forum Cinemas Akropolis",
-        "is3D": false,
-        "city": "Vilnius",
-        "date": "2030-02-14T19:45:00Z"
-      },
-      {
-        "venue": "Forum Cinemas Akropolis",
-        "is3D": false,
-        "city": "Vilnius",
-        "date": "2030-02-14T21:50:00Z"
-      },
       {
         "venue": "Forum Cinemas Akropolis",
         "is3D": false,
@@ -1012,12 +952,6 @@
         "venue": "Forum Cinemas",
         "is3D": false,
         "city": "Kaunas",
-        "date": "2030-02-14T20:30:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Kaunas",
         "date": "2030-02-13T22:00:00Z"
       },
       {
@@ -1055,12 +989,6 @@
         "is3D": false,
         "city": "Kaunas",
         "date": "2030-02-15T20:30:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Kaunas",
-        "date": "2030-02-14T22:00:00Z"
       },
       {
         "venue": "Forum Cinemas",
@@ -2114,18 +2042,6 @@
         "venue": "Forum Cinemas",
         "is3D": false,
         "city": "Šiauliai",
-        "date": "2030-02-14T19:20:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Šiauliai",
-        "date": "2030-02-14T21:25:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Šiauliai",
         "date": "2030-02-15T17:10:00Z"
       },
       {
@@ -2567,12 +2483,6 @@
         "venue": "Forum Cinemas",
         "is3D": false,
         "city": "Kaunas",
-        "date": "2030-02-14T20:15:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Kaunas",
         "date": "2030-02-15T12:30:00Z"
       },
       {
@@ -2681,18 +2591,6 @@
         "venue": "Forum Cinemas",
         "is3D": false,
         "city": "Klaipėda",
-        "date": "2030-02-14T19:20:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Klaipėda",
-        "date": "2030-02-14T21:50:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Klaipėda",
         "date": "2030-02-15T19:20:00Z"
       },
       {
@@ -2724,18 +2622,6 @@
         "is3D": false,
         "city": "Klaipėda",
         "date": "2030-02-20T19:20:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Šiauliai",
-        "date": "2030-02-14T19:30:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Šiauliai",
-        "date": "2030-02-14T21:35:00Z"
       },
       {
         "venue": "Forum Cinemas",
@@ -3068,18 +2954,6 @@
         "venue": "Forum Cinemas",
         "is3D": false,
         "city": "Klaipėda",
-        "date": "2030-02-14T19:40:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Klaipėda",
-        "date": "2030-02-14T20:30:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Klaipėda",
         "date": "2030-02-16T13:35:00Z"
       },
       {
@@ -3093,18 +2967,6 @@
         "is3D": false,
         "city": "Klaipėda",
         "date": "2030-02-20T13:35:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Šiauliai",
-        "date": "2030-02-14T19:45:00Z"
-      },
-      {
-        "venue": "Forum Cinemas",
-        "is3D": false,
-        "city": "Šiauliai",
-        "date": "2030-02-14T21:55:00Z"
       },
       {
         "venue": "Forum Cinemas",
@@ -3128,12 +2990,6 @@
     ],
     "poster": "https://m.media-amazon.com/images/M/MV5BY2QzYTQyYzItMzAwYi00YjZlLThjNTUtNzMyMDdkYzJiNWM4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX600.jpg",
     "showings": [
-      {
-        "venue": "Forum Cinemas Vingis",
-        "is3D": false,
-        "city": "Vilnius",
-        "date": "2030-02-14T21:59:00Z"
-      },
       {
         "venue": "Forum Cinemas Vingis",
         "is3D": false,
