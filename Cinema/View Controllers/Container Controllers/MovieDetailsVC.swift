@@ -1,5 +1,5 @@
 //
-//  MovieDetailViewVC.swift
+//  MovieDetailsVC.swift
 //  Cinema
 //
 //  Created by Marius on 28/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MovieDetailViewVC: UIViewController {
+final class MovieDetailsVC: UIViewController {
 
     private let movie: Movie
 
@@ -35,7 +35,7 @@ final class MovieDetailViewVC: UIViewController {
     }
 
     private func setup(_ view: MovieDetailView) -> MovieDetailView {
-        view.accessibilityIdentifier = "UI-MovieDetailViewVCView"
+        view.accessibilityIdentifier = "UI-MovieDetailsView"
 
         view.poster.url = movie.poster
         view.year.text = movie.year

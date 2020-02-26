@@ -1,5 +1,5 @@
 //
-//  MovieDetailViewVCTests.swift
+//  MovieDetailsVCTests.swift
 //  CinemaTests
 //
 //  Created by Marius on 2020-02-17.
@@ -9,12 +9,12 @@
 import XCTest
 @testable import Cinema
 
-class MovieDetailViewVCTests: XCTestCase {
+class MovieDetailsVCTests: XCTestCase {
 
-    var sut: MovieDetailViewVC!
+    var sut: MovieDetailsVC!
 
     override func setUp() {
-        sut = MovieDetailViewVC(movie: movie)
+        sut = MovieDetailsVC(movie: movie)
     }
 
     override func tearDown() {
