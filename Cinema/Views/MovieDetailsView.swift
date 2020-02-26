@@ -1,5 +1,5 @@
 //
-//  MovieDetailView.swift
+//  MovieDetailsView.swift
 //  Cinema
 //
 //  Created by Marius on 2020-01-17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MovieDetailView: UIView {
+final class MovieDetailsView: UIView {
 
     let poster = NetworkImageView()
     lazy var year = dynamicLabel
@@ -145,7 +145,7 @@ final class MovieDetailView: UIView {
 
 // MARK: - Reusable views:
 
-extension MovieDetailView {
+extension MovieDetailsView {
     private var staticLabel: (String) -> UILabel {
         return { (text: String) -> UILabel in
             let label = UILabel()
@@ -210,7 +210,7 @@ extension MovieDetailView {
     }
 }
 
-extension MovieDetailView {
+extension MovieDetailsView {
     private var unsafeAreaHeight: CGFloat {
         return navControllerHeight + statusBarHeight
     }

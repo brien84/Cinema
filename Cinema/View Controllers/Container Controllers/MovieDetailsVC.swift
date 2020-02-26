@@ -23,7 +23,7 @@ final class MovieDetailsVC: UIViewController {
     }
 
     override func loadView() {
-        let movieView = MovieDetailView()
+        let movieView = MovieDetailsView()
 
         view = setup(movieView)
     }
@@ -34,7 +34,7 @@ final class MovieDetailsVC: UIViewController {
         view.backgroundColor = .darkC
     }
 
-    private func setup(_ view: MovieDetailView) -> MovieDetailView {
+    private func setup(_ view: MovieDetailsView) -> MovieDetailsView {
         view.accessibilityIdentifier = "UI-MovieDetailsView"
 
         view.poster.url = movie.poster
