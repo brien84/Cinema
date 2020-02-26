@@ -14,7 +14,7 @@ final class MovieViewController: UIViewController {
 
     let containerView = ContainerView()
 
-    private(set) lazy var leftViewController = MovieDetailViewVC(movie: movie)
+    private(set) lazy var leftViewController = MovieDetailsVC(movie: movie)
 
     private(set) lazy var rightViewController: MovieShowingsVC = {
         let controller = MovieShowingsVC()
