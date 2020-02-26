@@ -22,7 +22,7 @@ final class MovieShowingsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.accessibilityIdentifier = "UI-MovieShowingsVCTable"
+        tableView.accessibilityIdentifier = "UI-MovieShowingsTable"
 
         tableView.register(MovieShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
 

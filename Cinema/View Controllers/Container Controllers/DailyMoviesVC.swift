@@ -23,7 +23,7 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.accessibilityIdentifier = "UI-DailyMoviesVCCollection"
+        collectionView.accessibilityIdentifier = "UI-DailyMoviesCollection"
 
         collectionView.register(DailyMoviesCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 

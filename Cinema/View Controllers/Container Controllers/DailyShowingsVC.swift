@@ -26,7 +26,7 @@ final class DailyShowingsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.accessibilityIdentifier = "UI-DailyShowingsVCTable"
+        tableView.accessibilityIdentifier = "UI-DailyShowingsTable"
 
         tableView.register(DailyShowingsCell.self, forCellReuseIdentifier: reuseIdentifier)
 
