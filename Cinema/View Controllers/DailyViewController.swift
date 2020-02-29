@@ -26,10 +26,21 @@ final class DailyViewController: UIViewController {
         return control
     }()
 
-    private lazy var leftDateNavigationButton: UIBarButtonItem = {
+    private lazy var optionsNavigationButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
         button.accessibilityIdentifier = "UI-DailyVCOptionsButton"
         button.image = .options
+        button.target = self
+        button.action = #selector(handleDateNavigationButtonTap)
+        self.navigationItem.leftBarButtonItem = button
+
+        return button
+    }()
+
+    private lazy var leftDateNavigationButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.accessibilityIdentifier = "UI-DailyVCLeftButton"
+        button.image = .left
         button.target = self
         button.action = #selector(handleDateNavigationButtonTap)
         self.navigationItem.leftBarButtonItem = button
@@ -106,9 +117,8 @@ final class DailyViewController: UIViewController {
     }
 
     private func handleDateChange() {
-        leftDateNavigationButton.image = dateSelector.isFirst ? .options : .left
-        leftDateNavigationButton.accessibilityIdentifier = dateSelector.isFirst ? "UI-DailyVCOptionsButton" : "UI-DailyVCLeftButton"
-        rightDateNavigationButton.isEnabled = dateSelector.isLast ? false : true
+        navigationItem.leftBarButtonItem = dateSelector.isFirst ? optionsNavigationButton : leftDateNavigationButton
+        navigationItem.rightBarButtonItem?.isEnabled = dateSelector.isLast ? false : true
 
         updateNavigationTitle(with: dateSelector.current.asString(format: .monthNameAndDay))
         updateDatasource()
@@ -117,7 +127,7 @@ final class DailyViewController: UIViewController {
     @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
         switch sender {
 
-        case leftDateNavigationButton:
+        case navigationItem.leftBarButtonItem:
             if dateSelector.isFirst {
                 navigationController?.pushViewController(OptionsViewController(), animated: true)
                 return
@@ -126,7 +136,7 @@ final class DailyViewController: UIViewController {
                 containerView.slideIn(from: .left)
             }
 
-        case rightDateNavigationButton:
+        case navigationItem.rightBarButtonItem:
             dateSelector.next()
             containerView.slideIn(from: .right)
 
@@ -138,6 +148,7 @@ final class DailyViewController: UIViewController {
     private func toggleControlElements(_ enabled: Bool) {
         segmentedControl.isEnabled = enabled
         leftDateNavigationButton.isEnabled = enabled
+        optionsNavigationButton.isEnabled = enabled
         rightDateNavigationButton.isEnabled = enabled
     }
 
