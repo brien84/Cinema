@@ -105,11 +105,10 @@ final class DailyViewController: UIViewController {
     private func setupGestures() {
         let leftRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestures))
         leftRecognizer.direction = .left
+        containerView.addGestureRecognizer(leftRecognizer)
 
         let rightRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestures))
         rightRecognizer.direction = .right
-
-        containerView.addGestureRecognizer(leftRecognizer)
         containerView.addGestureRecognizer(rightRecognizer)
     }
 
@@ -128,27 +127,23 @@ final class DailyViewController: UIViewController {
     }
 
     private func handleDateChange() {
-        navigationItem.leftBarButtonItem = dateSelector.isFirst ? optionsNavigationButton : leftDateNavigationButton
-        navigationItem.rightBarButtonItem?.isEnabled = dateSelector.isLast ? false : true
-
         updateNavigationTitle(with: dateSelector.current.asString(format: .monthNameAndDay))
         updateDatasource()
     }
 
     @objc private func handleSwipeGestures(_ sender: UISwipeGestureRecognizer) {
-
         switch sender.direction {
 
         case .left:
             if !dateSelector.isLast {
-                   dateSelector.next()
-                   containerView.slideIn(from: .right)
-               }
+                dateSelector.next()
+                animateContainerView(from: .right)
+            }
 
         case .right:
             if !dateSelector.isFirst {
                 dateSelector.previous()
-                containerView.slideIn(from: .left)
+                animateContainerView(from: .left)
             }
 
         default:
@@ -157,7 +152,6 @@ final class DailyViewController: UIViewController {
     }
 
     @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
-
         switch sender {
 
         case navigationItem.leftBarButtonItem:
@@ -166,23 +160,47 @@ final class DailyViewController: UIViewController {
                 return
             } else {
                 dateSelector.previous()
-                containerView.slideIn(from: .left)
+                animateContainerView(from: .left)
             }
 
         case navigationItem.rightBarButtonItem:
             dateSelector.next()
-            containerView.slideIn(from: .right)
+            animateContainerView(from: .right)
 
         default:
             return
         }
     }
 
-    private func toggleControlElements(_ enabled: Bool) {
-        segmentedControl.isEnabled = enabled
+    private func animateContainerView(from direction: UIView.AnimationDirection) {
+        switch direction {
+
+        case .left:
+            leftDateNavigationButton.isEnabled = false
+            containerView.slideIn(from: .left) {
+                self.leftDateNavigationButton.isEnabled = true
+                self.rightDateNavigationButton.isEnabled = self.dateSelector.isLast ? false : true
+            }
+
+        case .right:
+            rightDateNavigationButton.isEnabled = false
+            containerView.slideIn(from: .right) {
+                self.rightDateNavigationButton.isEnabled = self.dateSelector.isLast ? false : true
+            }
+        }
+
+        navigationItem.leftBarButtonItem = dateSelector.isFirst ? optionsNavigationButton : leftDateNavigationButton
+    }
+
+    private func toggleNavigationButtons(_ enabled: Bool) {
         leftDateNavigationButton.isEnabled = enabled
         optionsNavigationButton.isEnabled = enabled
         rightDateNavigationButton.isEnabled = enabled
+    }
+
+    private func toggleControlElements(_ enabled: Bool) {
+        segmentedControl.isEnabled = enabled
+        toggleNavigationButtons(enabled)
     }
 
     // MARK: - Movie Fetching:
@@ -240,6 +258,37 @@ extension DailyViewController: SegmentableContainer {
         }
     }
 
+}
+
+extension ContainerView {
+    /// Animates `ContainerView` to slide into view from specified direction.
+    fileprivate func slideIn(from direction: AnimationDirection, completion: @escaping () -> Void  = { }) {
+        guard let superview = superview else { return }
+        guard let snapshot = snapshotView(afterScreenUpdates: false) else { return }
+
+        superview.addSubview(snapshot)
+        superview.sendSubviewToBack(snapshot)
+
+        let snapshotDestinationOriginX: CGFloat
+
+        switch direction {
+        case .left:
+            frame.origin.x -= frame.width
+            snapshotDestinationOriginX = snapshot.frame.origin.x + snapshot.frame.width
+        case .right:
+            frame.origin.x += frame.width
+            snapshotDestinationOriginX = snapshot.frame.origin.x - snapshot.frame.width
+        }
+
+        UIView.transition(with: self, duration: 0.5, options: .curveEaseInOut, animations: {
+            self.frame.origin.x = 0
+            snapshot.frame.origin.x = snapshotDestinationOriginX
+            snapshot.alpha = 0.2
+        }, completion: { _ in
+            snapshot.removeFromSuperview()
+            completion()
+        })
+    }
 }
 
 extension UIImage {
