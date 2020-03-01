@@ -14,7 +14,7 @@ import UIKit
 final class LoadingView: UIView {
 
     private let indicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(style: .whiteLarge)
+        let indicator = UIActivityIndicatorView(style: .white)
         indicator.startAnimating()
         return indicator
     }()
@@ -65,5 +65,5 @@ final class LoadingView: UIView {
 }
 
 extension CGFloat {
-    fileprivate static let inset: CGFloat = screenWidth * 0.025
+    fileprivate static let inset: CGFloat = screenWidth * 0.04
 }
