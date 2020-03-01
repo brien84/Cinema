@@ -60,6 +60,7 @@ class CinemaUITests: XCTestCase {
 
         app.dailyVCRightNavButton.tap(withNumberOfTaps: 10, numberOfTouches: 1)
         app.dailyVCRightNavButton.tap(withNumberOfTaps: 10, numberOfTouches: 1)
+        app.dailyVCRightNavButton.tap(withNumberOfTaps: 10, numberOfTouches: 1)
 
         XCTAssertFalse(app.dailyVCRightNavButton.isEnabled)
     }

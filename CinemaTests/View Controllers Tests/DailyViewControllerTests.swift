@@ -198,23 +198,6 @@ class DailyViewControllerTests: XCTestCase {
         XCTAssertEqual(button.image, .options)
     }
 
-    func testLeftBarButtonImageIsLeftWhenFirstDateIsNotSelected() {
-        // given
-        let dateSelector = DateSelectorMock(false, false)
-        sut = DailyViewController(dateSelector: dateSelector)
-
-        // when
-        _ = sut.view
-        dateSelector.next()
-
-        // then
-        guard let button = sut.navigationItem.leftBarButtonItem else {
-            return XCTFail("leftBarButtonItem is nil!")
-        }
-
-        XCTAssertEqual(button.image, .left)
-    }
-
     // MARK: RightBarButtonItem
 
     func testRightBarButtonItemIsNotNil() {
@@ -254,21 +237,6 @@ class DailyViewControllerTests: XCTestCase {
 
         // then
         waitForExpectations(timeout: 3)
-        let button = sut.navigationItem.rightBarButtonItem
-
-        XCTAssertTrue(button?.isEnabled ?? false)
-    }
-
-    func testRightBarButtonIsEnabledWhenLastDateIsNotSelected() {
-        // given
-        let dateSelector = DateSelectorMock(false, false)
-        sut = DailyViewController(dateSelector: dateSelector)
-
-        // when
-        _ = sut.view
-        dateSelector.next()
-
-        // then
         let button = sut.navigationItem.rightBarButtonItem
 
         XCTAssertTrue(button?.isEnabled ?? false)
