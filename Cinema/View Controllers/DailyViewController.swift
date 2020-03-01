@@ -102,6 +102,17 @@ final class DailyViewController: UIViewController {
         }
     }
 
+    private func setupGestures() {
+        let leftRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestures))
+        leftRecognizer.direction = .left
+
+        let rightRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestures))
+        rightRecognizer.direction = .right
+
+        containerView.addGestureRecognizer(leftRecognizer)
+        containerView.addGestureRecognizer(rightRecognizer)
+    }
+
     private func updateNavigationTitle(with title: String) {
         let textTransition = CATransition()
         textTransition.duration = 0.3
@@ -124,7 +135,29 @@ final class DailyViewController: UIViewController {
         updateDatasource()
     }
 
+    @objc private func handleSwipeGestures(_ sender: UISwipeGestureRecognizer) {
+
+        switch sender.direction {
+
+        case .left:
+            if !dateSelector.isLast {
+                   dateSelector.next()
+                   containerView.slideIn(from: .right)
+               }
+
+        case .right:
+            if !dateSelector.isFirst {
+                dateSelector.previous()
+                containerView.slideIn(from: .left)
+            }
+
+        default:
+            return
+        }
+    }
+
     @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
+
         switch sender {
 
         case navigationItem.leftBarButtonItem:
@@ -175,6 +208,7 @@ final class DailyViewController: UIViewController {
         DispatchQueue.main.async {
             self.updateDatasource()
             self.containerView.stopLoading()
+            self.setupGestures()
             self.toggleControlElements(true)
         }
     }
