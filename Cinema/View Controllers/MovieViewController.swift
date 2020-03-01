@@ -71,5 +71,4 @@ extension MovieViewController: SegmentableContainer {
             }
         }
     }
-
 }

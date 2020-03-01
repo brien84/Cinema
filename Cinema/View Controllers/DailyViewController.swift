@@ -102,14 +102,14 @@ final class DailyViewController: UIViewController {
         }
     }
 
-    private func setupGestures() {
-        let leftRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestures))
-        leftRecognizer.direction = .left
-        containerView.addGestureRecognizer(leftRecognizer)
+    private func updateDatasource() {
+        leftViewController.datasource = movieManager.filterMovies(in: city, at: dateSelector.current)
+        rightViewController.datasource = movieManager.filterShowings(in: city, at: dateSelector.current)
+    }
 
-        let rightRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestures))
-        rightRecognizer.direction = .right
-        containerView.addGestureRecognizer(rightRecognizer)
+    private func handleDateChange() {
+        updateNavigationTitle(with: dateSelector.current.asString(format: .monthNameAndDay))
+        updateDatasource()
     }
 
     private func updateNavigationTitle(with title: String) {
@@ -121,34 +121,35 @@ final class DailyViewController: UIViewController {
         navigationItem.title = title
     }
 
-    private func updateDatasource() {
-        leftViewController.datasource = movieManager.filterMovies(in: city, at: dateSelector.current)
-        rightViewController.datasource = movieManager.filterShowings(in: city, at: dateSelector.current)
+    private func toggleNavigationButtons(_ enabled: Bool) {
+        leftDateNavigationButton.isEnabled = enabled
+        optionsNavigationButton.isEnabled = enabled
+        rightDateNavigationButton.isEnabled = enabled
     }
 
-    private func handleDateChange() {
-        updateNavigationTitle(with: dateSelector.current.asString(format: .monthNameAndDay))
-        updateDatasource()
+    private func toggleControlElements(_ enabled: Bool) {
+        segmentedControl.isEnabled = enabled
+        toggleNavigationButtons(enabled)
     }
 
-    @objc private func handleSwipeGestures(_ sender: UISwipeGestureRecognizer) {
-        switch sender.direction {
+    private func animateContainerView(from direction: UIView.AnimationDirection) {
+        switch direction {
 
         case .left:
-            if !dateSelector.isLast {
-                dateSelector.next()
-                animateContainerView(from: .right)
+            leftDateNavigationButton.isEnabled = false
+            containerView.slideIn(from: .left) {
+                self.leftDateNavigationButton.isEnabled = true
+                self.rightDateNavigationButton.isEnabled = self.dateSelector.isLast ? false : true
             }
 
         case .right:
-            if !dateSelector.isFirst {
-                dateSelector.previous()
-                animateContainerView(from: .left)
+            rightDateNavigationButton.isEnabled = false
+            containerView.slideIn(from: .right) {
+                self.rightDateNavigationButton.isEnabled = self.dateSelector.isLast ? false : true
             }
-
-        default:
-            return
         }
+
+        navigationItem.leftBarButtonItem = dateSelector.isFirst ? optionsNavigationButton : leftDateNavigationButton
     }
 
     @objc private func handleDateNavigationButtonTap(_ sender: UIBarButtonItem) {
@@ -172,35 +173,36 @@ final class DailyViewController: UIViewController {
         }
     }
 
-    private func animateContainerView(from direction: UIView.AnimationDirection) {
-        switch direction {
+    // MARK: - Gestures:
+
+    private func setupGestures() {
+        let leftRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestures))
+        leftRecognizer.direction = .left
+        containerView.addGestureRecognizer(leftRecognizer)
+
+        let rightRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestures))
+        rightRecognizer.direction = .right
+        containerView.addGestureRecognizer(rightRecognizer)
+    }
+
+    @objc private func handleSwipeGestures(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction {
 
         case .left:
-            leftDateNavigationButton.isEnabled = false
-            containerView.slideIn(from: .left) {
-                self.leftDateNavigationButton.isEnabled = true
-                self.rightDateNavigationButton.isEnabled = self.dateSelector.isLast ? false : true
+            if !dateSelector.isLast {
+                dateSelector.next()
+                animateContainerView(from: .right)
             }
 
         case .right:
-            rightDateNavigationButton.isEnabled = false
-            containerView.slideIn(from: .right) {
-                self.rightDateNavigationButton.isEnabled = self.dateSelector.isLast ? false : true
+            if !dateSelector.isFirst {
+                dateSelector.previous()
+                animateContainerView(from: .left)
             }
+
+        default:
+            return
         }
-
-        navigationItem.leftBarButtonItem = dateSelector.isFirst ? optionsNavigationButton : leftDateNavigationButton
-    }
-
-    private func toggleNavigationButtons(_ enabled: Bool) {
-        leftDateNavigationButton.isEnabled = enabled
-        optionsNavigationButton.isEnabled = enabled
-        rightDateNavigationButton.isEnabled = enabled
-    }
-
-    private func toggleControlElements(_ enabled: Bool) {
-        segmentedControl.isEnabled = enabled
-        toggleNavigationButtons(enabled)
     }
 
     // MARK: - Movie Fetching:
@@ -257,7 +259,6 @@ extension DailyViewController: SegmentableContainer {
             }
         }
     }
-
 }
 
 extension ContainerView {
