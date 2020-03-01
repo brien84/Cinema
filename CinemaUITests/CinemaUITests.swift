@@ -150,6 +150,24 @@ class CinemaUITests: XCTestCase {
 
         XCTAssertTrue(app.dailyShowings.exists)
     }
+
+    func testSwipingLeftUpdatesDailyShowings() {
+
+        let initialCount = app.dailyShowings.cellCount
+        app.swipeLeft()
+
+        XCTAssertNotEqual(initialCount, app.dailyShowings.cellCount)
+    }
+
+    func testSwipingRightUpdatesDailyShowings() {
+
+        app.swipeLeft()
+
+        let initialCount = app.dailyShowings.cellCount
+        app.swipeRight()
+
+        XCTAssertNotEqual(initialCount, app.dailyShowings.cellCount)
+    }
 }
 
 extension XCUIApplication {

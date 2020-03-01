@@ -102,6 +102,23 @@ class DailyViewControllerTests: XCTestCase {
         XCTAssertNil(loadingView)
     }
 
+    func testGestureRecognizersAreAddedToContainerViewAfterSuccessfulFetch() {
+        // given
+        sut = DailyViewController(movieManager: MovieManagerMock(true))
+        let expectation = self.expectation(description: "Wait for fetching to end.")
+
+        // when
+        _ = sut.view
+        DispatchQueue.main.async {
+            expectation.fulfill()
+        }
+
+        // then
+        waitForExpectations(timeout: 3)
+
+        XCTAssertGreaterThan(sut.containerView.gestureRecognizers?.count ?? 0, 0)
+    }
+
     func testContainerViewContainsLoadingViewAfterFailedFetch() {
         // given
         sut = DailyViewController(movieManager: MovieManagerMock(false))
