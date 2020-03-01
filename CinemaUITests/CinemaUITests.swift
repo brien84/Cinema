@@ -33,7 +33,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testDailyVCSegmentedControlSwitching() {
-
         app.dailyVCSegmentedControl.selectButton(0)
         XCTAssertTrue(app.dailyMovies.exists)
 
@@ -42,14 +41,12 @@ class CinemaUITests: XCTestCase {
     }
 
     func testDailyVCOptionsNavButtonOpensOptionsVC() {
-
         app.dailyVCOptionsNavButton.tap()
 
         XCTAssertTrue(app.optionsVCTableView.exists)
     }
 
     func testTappingDailyVCRightNavButtonUpdatesDailyShowings() {
-
         let initialCount = app.dailyShowings.cellCount
         app.dailyVCRightNavButton.tap()
 
@@ -57,7 +54,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testDailyVCRightNavButtonGetsDisabled() {
-
         app.dailyVCRightNavButton.tap(withNumberOfTaps: 10, numberOfTouches: 1)
         app.dailyVCRightNavButton.tap(withNumberOfTaps: 10, numberOfTouches: 1)
         app.dailyVCRightNavButton.tap(withNumberOfTaps: 10, numberOfTouches: 1)
@@ -66,7 +62,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testTappingDailyVCLeftNavButtonUpdatesDailyShowings() {
-
         app.dailyVCRightNavButton.tap()
 
         let initialCount = app.dailyShowings.cellCount
@@ -76,7 +71,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testTappingDailyVCRightNavButtonUpdatesDailyMovies() {
-
         app.dailyVCSegmentedControl.selectButton(0)
 
         let initialCount = app.dailyMovies.cellCount
@@ -86,7 +80,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testTappingDailyVCLeftNavButtonUpdatesDailyMovies() {
-
         app.dailyVCSegmentedControl.selectButton(0)
         app.dailyVCRightNavButton.tap()
 
@@ -97,7 +90,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testChangingCityFromDailyShowings() {
-
         let initialCount = app.dailyShowings.cellCount
         app.dailyVCOptionsNavButton.tap()
         app.optionsSelectCity(1)
@@ -106,7 +98,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testChangingCityFromDailyMovies() {
-
         app.dailyVCSegmentedControl.selectButton(0)
 
         let initialCount = app.dailyMovies.cellCount
@@ -117,14 +108,12 @@ class CinemaUITests: XCTestCase {
     }
 
     func testSelectingDailyShowingsCellOpensMovieView() {
-
         app.dailyShowings.selectCell(0)
 
         XCTAssertTrue(app.movieDetails.exists)
     }
 
     func testSelectingDailyMoviessCellOpensMovieView() {
-
         app.dailyVCSegmentedControl.selectButton(0)
 
         app.dailyMovies.selectCell(0)
@@ -133,7 +122,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testMovieVCSegmentedControlSwitching() {
-
         app.dailyShowings.selectCell(0)
 
         app.movieVCSegmentedControl.buttons.element(boundBy: 1).tap()
@@ -144,7 +132,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testMovieVCNavigationBarBackButtonReturnsToDailyShowings() {
-
         app.dailyShowings.selectCell(0)
 
         app.navigationBars.buttons.element.tap()
@@ -153,7 +140,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testSwipingLeftUpdatesDailyShowings() {
-
         let initialCount = app.dailyShowings.cellCount
         app.swipeLeft()
 
@@ -161,7 +147,6 @@ class CinemaUITests: XCTestCase {
     }
 
     func testSwipingRightUpdatesDailyShowings() {
-
         app.swipeLeft()
 
         let initialCount = app.dailyShowings.cellCount
