@@ -68,7 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2904C7602336982B00407B64 /* Cinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2904C7602336982B00407B64 /* iKinas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iKinas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2904C7632336982B00407B64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2904C76D2336982D00407B64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2904C7702336982D00407B64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 		2904C7612336982B00407B64 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2904C7602336982B00407B64 /* Cinema.app */,
+				2904C7602336982B00407B64 /* iKinas.app */,
 				29B9C95D237F42A30035EF0B /* CinemaTests.xctest */,
 				29E99C2B2402F5E7003A4141 /* CinemaUITests.xctest */,
 			);
@@ -325,7 +325,7 @@
 			);
 			name = Cinema;
 			productName = Cinema;
-			productReference = 2904C7602336982B00407B64 /* Cinema.app */;
+			productReference = 2904C7602336982B00407B64 /* iKinas.app */;
 			productType = "com.apple.product-type.application";
 		};
 		29B9C95C237F42A30035EF0B /* CinemaTests */ = {
@@ -673,7 +673,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MariusK.Cinema;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iKinas;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -692,7 +692,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MariusK.Cinema;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iKinas;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
