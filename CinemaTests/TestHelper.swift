@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Cinema
+@testable import iKinas
 
 struct TestHelper {
 
