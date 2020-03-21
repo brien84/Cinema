@@ -84,7 +84,7 @@ final class DailyViewController: UIViewController {
         view.backgroundColor = .transparentBlackC
 
         setupNotificationObservers()
-        updateNavigationTitle(with: dateSelector.current.asString(format: .monthNameAndDay))
+        updateNavigationTitle(with: dateSelector.current.asString(format: .monthAndDay))
         segmentedControl.selectedSegment(DailyVCSegments.showings.rawValue)
 
         fetchMovies()
@@ -108,7 +108,7 @@ final class DailyViewController: UIViewController {
     }
 
     private func handleDateChange() {
-        updateNavigationTitle(with: dateSelector.current.asString(format: .monthNameAndDay))
+        updateNavigationTitle(with: dateSelector.current.asString(format: .monthAndDay))
         updateDatasource()
     }
 

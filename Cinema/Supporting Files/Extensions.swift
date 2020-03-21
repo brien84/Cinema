@@ -31,7 +31,7 @@ extension Date {
         case fullDate
         case excludeTime
         case onlyTime
-        case monthNameAndDay
+        case monthAndDay
     }
 
     /// Converts `Date` to `String`.
@@ -47,7 +47,9 @@ extension Date {
             formatter.dateFormat = "yyyy-MM-dd"
         case .onlyTime:
             formatter.dateFormat = "HH:mm"
-        case .monthNameAndDay:
+        case .monthAndDay:
+            if Calendar.current.isDateInToday(self) { return "Šiandien" }
+            if Calendar.current.isDateInTomorrow(self) { return "Rytoj" }
             formatter.dateFormat = "MMMM d"
         }
 

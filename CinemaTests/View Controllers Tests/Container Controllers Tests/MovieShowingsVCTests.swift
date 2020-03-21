@@ -93,7 +93,7 @@ class MovieShowingsVCTests: XCTestCase {
             // swiftlint:disable:next force_cast
             let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath) as! MovieShowingsCell
 
-            XCTAssertEqual(cell.date.text, showing.date.asString(format: .monthNameAndDay))
+            XCTAssertEqual(cell.date.text, showing.date.asString(format: .monthAndDay))
             XCTAssertEqual(cell.time.text, showing.date.asString(format: .onlyTime))
             XCTAssertEqual(cell.venue.text, showing.venue)
             XCTAssertEqual(cell.screenType.text, showing.is3D ? "3D" : nil)

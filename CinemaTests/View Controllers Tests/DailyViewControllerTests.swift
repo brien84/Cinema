@@ -279,7 +279,7 @@ class DailyViewControllerTests: XCTestCase {
         _ = sut.view
 
         // then
-        XCTAssertEqual(sut.navigationItem.title, dateSelector.current.asString(format: .monthNameAndDay))
+        XCTAssertEqual(sut.navigationItem.title, dateSelector.current.asString(format: .monthAndDay))
     }
 
     func testNavigationItemTitleIsUpdatedWhenDateChanges() {
@@ -294,7 +294,7 @@ class DailyViewControllerTests: XCTestCase {
         dateSelector.next()
 
         // then
-        XCTAssertNotEqual(sut.navigationItem.title, oldDate.asString(format: .monthNameAndDay))
+        XCTAssertNotEqual(sut.navigationItem.title, oldDate.asString(format: .monthAndDay))
     }
 
     // MARK: - Test Helpers

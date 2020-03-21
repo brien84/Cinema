@@ -47,7 +47,7 @@ final class MovieShowingsVC: UITableViewController {
 
         let showing = datasource[indexPath.row]
 
-        cell.date.text = showing.date.asString(format: .monthNameAndDay)
+        cell.date.text = showing.date.asString(format: .monthAndDay)
         cell.time.text = showing.date.asString(format: .onlyTime)
         cell.venue.text = showing.venue
         cell.screenType.text = showing.is3D ? "3D" : nil
