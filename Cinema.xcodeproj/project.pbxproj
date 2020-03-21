@@ -718,7 +718,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinema.app/Cinema";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iKinas.app/iKinas";
 			};
 			name = Debug;
 		};
@@ -741,7 +741,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinema.app/Cinema";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iKinas.app/iKinas";
 			};
 			name = Release;
 		};
