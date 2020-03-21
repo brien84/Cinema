@@ -68,7 +68,13 @@ final class DailyMoviesVC: UICollectionViewController, UICollectionViewDelegateF
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: .inset, left: .inset, bottom: 0, right: .inset)
+        if datasource.count == 1 {
+            // By default single item appears in the center of collectionView,
+            // so we inset the item by cell's width from the right, so the item is aligned to the left.
+            return UIEdgeInsets(top: .inset, left: .inset, bottom: 0, right: .cellWidth + 2 * .inset)
+        } else {
+            return UIEdgeInsets(top: .inset, left: .inset, bottom: 0, right: .inset)
+        }
     }
 
     // MARK: UICollectionViewDelegate
