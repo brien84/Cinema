@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2904C75F2336982B00407B64"
-               BuildableName = "Cinema.app"
+               BuildableName = "iKinas.app"
                BlueprintName = "Cinema"
                ReferencedContainer = "container:Cinema.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2904C75F2336982B00407B64"
-            BuildableName = "Cinema.app"
+            BuildableName = "iKinas.app"
             BlueprintName = "Cinema"
             ReferencedContainer = "container:Cinema.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2904C75F2336982B00407B64"
-            BuildableName = "Cinema.app"
+            BuildableName = "iKinas.app"
             BlueprintName = "Cinema"
             ReferencedContainer = "container:Cinema.xcodeproj">
          </BuildableReference>
