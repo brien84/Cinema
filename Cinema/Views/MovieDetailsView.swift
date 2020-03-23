@@ -8,9 +8,17 @@
 
 import UIKit
 
-final class MovieDetailsView: UIView {
+final class MovieDetailsView: UIView, UIScrollViewDelegate {
 
-    let poster = NetworkImageView()
+    let poster: NetworkImageView = {
+        let view = NetworkImageView()
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
+
+    private var posterTopConstraint: NSLayoutConstraint?
+    private var posterHeightConstraint: NSLayoutConstraint?
+
     lazy var year = dynamicLabel
     lazy var ageRating = dynamicLabel
     lazy var duration = dynamicLabel
@@ -44,6 +52,21 @@ final class MovieDetailsView: UIView {
         layoutViews()
     }
 
+    /// Makes `poster` stretch out when is scrolling down.
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y + unsafeAreaHeight
+        var currentTop: CGFloat = 0
+
+        if offset < 0 {
+            currentTop = offset
+            posterHeightConstraint?.constant = -offset
+        } else {
+            posterHeightConstraint?.constant = 0
+        }
+
+        posterTopConstraint?.constant = currentTop
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -51,6 +74,7 @@ final class MovieDetailsView: UIView {
     private func layoutViews() {
         // `scrollView` layout
         let scrollView = UIScrollView()
+        scrollView.delegate = self
 
         self.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -67,12 +91,16 @@ final class MovieDetailsView: UIView {
         poster.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            poster.topAnchor.constraint(equalTo: scrollView.topAnchor),
             poster.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             poster.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            poster.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            poster.heightAnchor.constraint(equalTo: poster.widthAnchor, multiplier: 3/2)
+            poster.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
+
+        posterTopConstraint = poster.topAnchor.constraint(equalTo: scrollView.topAnchor)
+        posterTopConstraint?.isActive = true
+
+        posterHeightConstraint = poster.heightAnchor.constraint(equalTo: poster.widthAnchor, multiplier: 3/2)
+        posterHeightConstraint?.isActive = true
 
         // `genreStackView` layout
         let genresContainer = makeGenresContainer()
