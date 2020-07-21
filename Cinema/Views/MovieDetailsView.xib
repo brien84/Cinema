@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,9 +18,25 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="iRb-wc-eIC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" name="dark"/>
+            <constraints>
+                <constraint firstItem="iRb-wc-eIC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lFH-ZT-XKl"/>
+                <constraint firstItem="iRb-wc-eIC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pLz-uu-XgA"/>
+                <constraint firstAttribute="trailing" secondItem="iRb-wc-eIC" secondAttribute="trailing" id="sSR-NC-Lmb"/>
+                <constraint firstAttribute="bottom" secondItem="iRb-wc-eIC" secondAttribute="bottom" priority="999" id="v64-5a-Mb6"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="151"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="dark">
+            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
