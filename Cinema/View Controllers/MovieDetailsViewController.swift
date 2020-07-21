@@ -9,6 +9,7 @@
 import UIKit
 
 final class MovieDetailsViewController: UIViewController {
+    @IBOutlet private weak var scrollView: UIScrollView!
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: "MovieDetailsView", bundle: nil)
@@ -21,6 +22,14 @@ final class MovieDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        scrollView.delegate = self
     }
+}
 
+extension MovieDetailsViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+
+        print(offset)
+    }
 }
