@@ -11,6 +11,9 @@ import UIKit
 final class MovieDetailsViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
 
+    @IBOutlet private weak var posterView: UIImageView!
+    @IBOutlet private weak var plotLabel: UILabel!
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: "MovieDetailsView", bundle: nil)
     }
