@@ -54,6 +54,8 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
             posterTopToSuperview.constant = 0
             posterBottomToDetailsTop.constant = 0
             detailsBottomToSuperview.constant = 0
+
+            titleContainer.alpha = 1.0
             return
         }
 
@@ -69,6 +71,8 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
             posterTopToSuperview.constant = offset
             posterBottomToDetailsTop.constant = offset * multi
             detailsBottomToSuperview.constant = -offset
+
+            titleContainer.alpha = 1.0 - offset / overlap
         }
 
         if offset > overlap {
@@ -76,6 +80,8 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
             posterTopToSuperview.constant = offset
             posterBottomToDetailsTop.constant = overlap * multi
             detailsBottomToSuperview.constant = -overlap
+
+            titleContainer.alpha = 0.0
         }
     }
 }
