@@ -22,6 +22,8 @@ final class MovieDetailsViewController: UIViewController {
     @IBOutlet private weak var posterBottomToDetailsTop: NSLayoutConstraint!
     @IBOutlet private weak var detailsBottomToSuperview: NSLayoutConstraint!
 
+    private lazy var navigationBar = navigationController?.navigationBar
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: "MovieDetailsView", bundle: nil)
     }
@@ -34,6 +36,9 @@ final class MovieDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         scrollView.delegate = self
+
+        navigationItem.title = "Title"
+        navigationBar?.setTitleAlpha(0.0)
     }
 }
 
@@ -42,6 +47,34 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
         let offset = scrollView.contentOffset.y
 
         handleScrollDown(offset)
+        adjustNavigationBarTitle(with: offset)
+    }
+
+    private func adjustNavigationBarTitle(with offset: CGFloat) {
+        guard let navigationBar = navigationBar else { return }
+
+        // Distance between bottom borders of `titleContainer` and `navigationBar`.
+        // If distance is 0, it means `titleContainer` is fully covered by `navigationBar`.
+        let totalDistance = titleContainer.frame.maxY - navigationBar.frame.maxY
+        let currentDistance = totalDistance - offset
+
+        // Height is halved, because title is adjusted up until `navigationBar` vertical center.
+        let navBarHeight = navigationBar.frame.height / 2
+
+        if currentDistance < 0 {
+            navigationBar.setTitleAlpha(1.0)
+            navigationBar.setTitleVerticalPositionAdjustment(0, for: .default)
+            return
+        }
+
+        if currentDistance > navBarHeight {
+            navigationBar.setTitleAlpha(0.0)
+        }
+
+        if currentDistance < navBarHeight {
+            navigationBar.setTitleAlpha(1.0 - currentDistance / navBarHeight)
+            navigationBar.setTitleVerticalPositionAdjustment(currentDistance, for: .default)
+        }
     }
 
     private func handleScrollDown(_ offset: CGFloat) {
@@ -83,5 +116,11 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
 
             titleContainer.alpha = 0.0
         }
+    }
+}
+
+extension UINavigationBar {
+    func setTitleAlpha(_ alpha: CGFloat) {
+        self.titleTextAttributes = [.foregroundColor: UIColor.white.withAlphaComponent(alpha)]
     }
 }
