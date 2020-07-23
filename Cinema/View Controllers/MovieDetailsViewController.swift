@@ -12,6 +12,8 @@ final class MovieDetailsViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
 
     @IBOutlet private weak var posterView: UIImageView!
+    @IBOutlet private weak var titleContainer: UIView!
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var detailsContainer: UIView!
     @IBOutlet private weak var plotLabel: UILabel!
 
