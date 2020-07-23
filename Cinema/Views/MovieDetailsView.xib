@@ -19,6 +19,8 @@
                 <outlet property="posterTopToSuperview" destination="jKd-Qx-D0n" id="jhh-vv-zMb"/>
                 <outlet property="posterView" destination="bdW-Dr-jlf" id="jcl-RH-lIJ"/>
                 <outlet property="scrollView" destination="iRb-wc-eIC" id="qOW-TU-yOQ"/>
+                <outlet property="titleContainer" destination="M4B-4x-SMb" id="U7h-SU-Jz6"/>
+                <outlet property="titleLabel" destination="ybU-9x-g6B" id="ra5-xl-BFX"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xxp-RQ-aZ2"/>
             </connections>
         </placeholder>
@@ -55,12 +57,34 @@
                                 <constraint firstItem="u6W-Fy-RXX" firstAttribute="top" secondItem="0t7-wt-vxn" secondAttribute="top" constant="20" symbolic="YES" id="obf-v8-OPZ"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4B-4x-SMb" userLabel="Title Container">
+                            <rect key="frame" x="0.0" y="465.66666666666669" width="414" height="93.333333333333314"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybU-9x-g6B">
+                                    <rect key="frame" x="20" y="52.666666666666686" width="374" height="40.666666666666657"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    <color key="textColor" name="light"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="transparentBlack"/>
+                            <constraints>
+                                <constraint firstItem="ybU-9x-g6B" firstAttribute="leading" secondItem="M4B-4x-SMb" secondAttribute="leading" constant="20" symbolic="YES" id="1MX-LZ-ytv"/>
+                                <constraint firstAttribute="trailing" secondItem="ybU-9x-g6B" secondAttribute="trailing" constant="20" symbolic="YES" id="42f-Lu-aOB"/>
+                                <constraint firstItem="ybU-9x-g6B" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M4B-4x-SMb" secondAttribute="top" constant="20" symbolic="YES" id="Fr2-hq-GYi"/>
+                                <constraint firstAttribute="bottom" secondItem="ybU-9x-g6B" secondAttribute="bottom" id="TK8-ch-Uhf"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="bdW-Dr-jlf" firstAttribute="leading" secondItem="iRb-wc-eIC" secondAttribute="leading" id="5qc-Ap-g7p"/>
+                        <constraint firstAttribute="trailing" secondItem="M4B-4x-SMb" secondAttribute="trailing" id="GTi-jK-r21"/>
                         <constraint firstItem="bdW-Dr-jlf" firstAttribute="width" secondItem="iRb-wc-eIC" secondAttribute="width" id="Hgn-4T-2mE"/>
+                        <constraint firstItem="M4B-4x-SMb" firstAttribute="leading" secondItem="iRb-wc-eIC" secondAttribute="leading" id="IRa-uE-yy1"/>
                         <constraint firstItem="0t7-wt-vxn" firstAttribute="top" secondItem="bdW-Dr-jlf" secondAttribute="bottom" multiplier="0.9" id="SdU-Hm-o4B"/>
+                        <constraint firstItem="0t7-wt-vxn" firstAttribute="top" secondItem="M4B-4x-SMb" secondAttribute="bottom" id="WrU-L4-PHg"/>
                         <constraint firstAttribute="trailing" secondItem="0t7-wt-vxn" secondAttribute="trailing" id="YGc-6d-0g3"/>
+                        <constraint firstItem="M4B-4x-SMb" firstAttribute="height" secondItem="bdW-Dr-jlf" secondAttribute="height" multiplier="0.15" id="ged-Lv-AmV"/>
                         <constraint firstAttribute="top" secondItem="bdW-Dr-jlf" secondAttribute="top" id="jKd-Qx-D0n"/>
                         <constraint firstItem="0t7-wt-vxn" firstAttribute="leading" secondItem="iRb-wc-eIC" secondAttribute="leading" id="qOT-0g-ggQ"/>
                         <constraint firstAttribute="bottom" secondItem="0t7-wt-vxn" secondAttribute="bottom" id="qmb-5R-oYk"/>
@@ -86,6 +110,12 @@
         </namedColor>
         <namedColor name="gray">
             <color red="0.65490196078431373" green="0.66666666666666663" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="transparentBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.61000001430511475" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
