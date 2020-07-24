@@ -48,6 +48,19 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
 
         handleScrollDown(offset)
         adjustNavigationBarTitle(with: offset)
+        adjustPosterViewAlpha(with: offset)
+    }
+
+    private func adjustPosterViewAlpha(with offset: CGFloat) {
+        guard let navigationBar = navigationBar else { return }
+
+        if offset > 0 {
+            let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
+            let currentDistance = totalDistance - offset
+            posterView.alpha = currentDistance / totalDistance
+        } else {
+            posterView.alpha = 1.0
+        }
     }
 
     private func adjustNavigationBarTitle(with offset: CGFloat) {
