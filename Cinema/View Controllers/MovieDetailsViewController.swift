@@ -38,6 +38,7 @@ final class MovieDetailsViewController: UIViewController {
         scrollView.delegate = self
 
         navigationItem.title = "Title"
+        navigationBar?.setBackgroundColor(nil)
         navigationBar?.setTitleAlpha(0.0)
     }
 }
@@ -49,6 +50,23 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
         handleScrollDown(offset)
         adjustNavigationBarTitle(with: offset)
         adjustPosterViewAlpha(with: offset)
+        adjustNavigationBarAlpha(with: offset)
+    }
+
+    private func adjustNavigationBarAlpha(with offset: CGFloat) {
+        guard let navigationBar = navigationBar else { return }
+
+        let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
+        let currentDistance = totalDistance - offset
+
+        let height = titleContainer.frame.height
+
+        if currentDistance < 0 {
+            let alpha = (1 - (height + currentDistance) / height)
+            navigationBar.setBackgroundColor(.darkC, alpha: alpha)
+        } else {
+            navigationBar.setBackgroundColor(nil)
+        }
     }
 
     private func adjustPosterViewAlpha(with offset: CGFloat) {
@@ -135,5 +153,14 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
 extension UINavigationBar {
     func setTitleAlpha(_ alpha: CGFloat) {
         self.titleTextAttributes = [.foregroundColor: UIColor.white.withAlphaComponent(alpha)]
+    }
+
+    func setBackgroundColor(_ color: UIColor?, alpha: CGFloat = 1.0) {
+        if let color = color?.withAlphaComponent(alpha) {
+            let image = color.image(size: self.frame.size)
+            self.setBackgroundImage(image, for: .default)
+        } else {
+            self.setBackgroundImage(UIImage(), for: .default)
+        }
     }
 }
