@@ -71,10 +71,16 @@ extension NSLayoutConstraint {
 
 extension UIColor {
     /// Creates `UIImage` filled with extended `UIColor`.
-    func image(size: CGSize) -> UIImage {
+    func image(size: CGSize, isEclipse: Bool = false) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in
+            let rect = CGRect(origin: .zero, size: size)
             self.setFill()
-            rendererContext.fill(CGRect(origin: .zero, size: size))
+
+            if isEclipse {
+                rendererContext.cgContext.fillEllipse(in: rect)
+            } else {
+                rendererContext.fill(rect)
+            }
         }
     }
 }
