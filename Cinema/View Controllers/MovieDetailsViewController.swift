@@ -38,8 +38,20 @@ final class MovieDetailsViewController: UIViewController {
         scrollView.delegate = self
 
         navigationItem.title = "Title"
-        navigationBar?.setBackgroundColor(nil)
-        navigationBar?.setTitleAlpha(0.0)
+
+        if let navigationBar = navigationBar {
+            navigationBar.setBackgroundColor(nil)
+            navigationBar.setTitleAlpha(0.0)
+
+            let leftButton = UIBarButtonItem(image: .left, style: .plain, target: nil, action: nil)
+
+            leftButton.setBackground(color: .grayC, with: 1.0, in: navigationBar)
+
+            let navBarInset = navigationBar.frame.width * 0.02
+            leftButton.imageInsets = UIEdgeInsets(top: 0, left: navBarInset, bottom: 0, right: 0)
+
+            navigationItem.leftBarButtonItem = leftButton
+        }
     }
 }
 
@@ -51,6 +63,34 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
         adjustNavigationBarTitle(with: offset)
         adjustPosterViewAlpha(with: offset)
         adjustNavigationBarAlpha(with: offset)
+        adjustNavigationBarButtons(with: offset)
+    }
+
+    private func adjustNavigationBarButtons(with offset: CGFloat) {
+        guard let navigationBar = navigationBar else { return }
+        guard let leftButton = navigationItem.leftBarButtonItem else { return }
+
+        let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
+        let currentDistance = totalDistance - offset
+
+        let navBarInset = navigationBar.frame.width * 0.02
+
+        if currentDistance > navigationBar.frame.height {
+            leftButton.setBackground(color: .grayC, in: navigationBar)
+            leftButton.imageInsets = UIEdgeInsets(top: 0, left: navBarInset, bottom: 0, right: 0)
+        }
+
+        if currentDistance <= navigationBar.frame.height {
+            let percentage = currentDistance / navigationBar.frame.height
+
+            leftButton.setBackground(color: .grayC, with: percentage, in: navigationBar)
+            leftButton.imageInsets = UIEdgeInsets(top: 0, left: navBarInset * percentage, bottom: 0, right: 0)
+        }
+
+        if currentDistance < 0 {
+            leftButton.setBackground(color: .grayC, with: 0.0, in: navigationBar)
+            leftButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
     }
 
     private func adjustNavigationBarAlpha(with offset: CGFloat) {
@@ -162,5 +202,14 @@ extension UINavigationBar {
         } else {
             self.setBackgroundImage(UIImage(), for: .default)
         }
+    }
+}
+
+extension UIBarButtonItem {
+    fileprivate func setBackground(color: UIColor, with alpha: CGFloat = 1.0, in navBar: UINavigationBar) {
+        let height = navBar.frame.height * 0.8
+        let size = CGSize(width: height, height: height)
+        let image = color.withAlphaComponent(alpha).image(size: size, isEclipse: true)
+        self.setBackgroundImage(image, for: .normal, barMetrics: .default)
     }
 }
