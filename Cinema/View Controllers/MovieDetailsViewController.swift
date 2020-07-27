@@ -14,6 +14,7 @@ final class MovieDetailsViewController: UIViewController {
     @IBOutlet private weak var posterView: UIImageView!
     @IBOutlet private weak var titleContainer: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var genresStackView: UIStackView!
     @IBOutlet private weak var detailsContainer: UIView!
     @IBOutlet private weak var plotLabel: UILabel!
 
@@ -52,6 +53,27 @@ final class MovieDetailsViewController: UIViewController {
 
             navigationItem.leftBarButtonItem = leftButton
         }
+
+        let genres = ["Komedija", "Siaubo", "Drama"]
+
+        genresStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        genres.forEach { genresStackView.addArrangedSubview(createGenreButton(with: $0)) }
+    }
+
+    private func createGenreButton(with name: String) -> UIButton {
+        let button = UIButton()
+        button.isUserInteractionEnabled = false
+
+        button.setTitle(name, for: .normal)
+        button.titleLabel?.font = .preferredFont(forTextStyle: .caption2)
+        button.setTitleColor(.lightC, for: .normal)
+
+        button.layer.borderWidth = 0.5
+        button.layer.cornerRadius = 5.0
+        button.layer.borderColor = UIColor.lightC.cgColor
+        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+
+        return button
     }
 }
 
