@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,6 +14,7 @@
             <connections>
                 <outlet property="detailsBottomToSuperview" destination="qmb-5R-oYk" id="Dee-bz-uNJ"/>
                 <outlet property="detailsContainer" destination="0t7-wt-vxn" id="ef2-B1-FLQ"/>
+                <outlet property="genresStackView" destination="eJv-Gw-eQo" id="Ech-0H-B4k"/>
                 <outlet property="plotLabel" destination="u6W-Fy-RXX" id="ra5-Jr-Zfc"/>
                 <outlet property="posterBottomToDetailsTop" destination="SdU-Hm-o4B" id="4Ob-eE-LmX"/>
                 <outlet property="posterHeight" destination="J6o-fR-1Ka" id="X0z-Dc-ldj"/>
@@ -39,10 +41,10 @@
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4B-4x-SMb" userLabel="Title Container" customClass="GradientBackgroundView" customModule="iKinas" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="465.66666666666669" width="414" height="93.333333333333314"/>
+                            <rect key="frame" x="0.0" y="419.66666666666669" width="414" height="93.333333333333314"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extremely Long Title Movie: Episode 69420 - The Return of The Long Movie Title Lord of Long Movie Title Kingdom " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybU-9x-g6B">
-                                    <rect key="frame" x="20" y="20" width="374" height="73.333333333333329"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extremely Long Title Movie: Episode 69420 - The Return of The Long Movie Title Lord of Long Movie Title Kingdom " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybU-9x-g6B" userLabel="Title">
+                                    <rect key="frame" x="20" y="20.000000000000004" width="374" height="63.333333333333343"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                     <color key="textColor" name="light"/>
                                     <nil key="highlightedColor"/>
@@ -52,7 +54,7 @@
                                 <constraint firstItem="ybU-9x-g6B" firstAttribute="leading" secondItem="M4B-4x-SMb" secondAttribute="leading" constant="20" symbolic="YES" id="1MX-LZ-ytv"/>
                                 <constraint firstAttribute="trailing" secondItem="ybU-9x-g6B" secondAttribute="trailing" constant="20" symbolic="YES" id="42f-Lu-aOB"/>
                                 <constraint firstItem="ybU-9x-g6B" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M4B-4x-SMb" secondAttribute="top" constant="20" symbolic="YES" id="Fr2-hq-GYi"/>
-                                <constraint firstAttribute="bottom" secondItem="ybU-9x-g6B" secondAttribute="bottom" id="TK8-ch-Uhf"/>
+                                <constraint firstAttribute="bottom" secondItem="ybU-9x-g6B" secondAttribute="bottom" constant="10" id="TK8-ch-Uhf"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="startColor">
@@ -69,23 +71,108 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSm-LD-KYW" userLabel="Genres Container">
+                            <rect key="frame" x="0.0" y="513" width="414" height="46"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eJv-Gw-eQo" userLabel="Genres StackView">
+                                    <rect key="frame" x="20" y="10" width="134" height="26"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XL8-Ge-Qh0">
+                                            <rect key="frame" x="0.0" y="0.0" width="63" height="26"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                            <state key="normal" title="Placeholder">
+                                                <color key="titleColor" name="light"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfW-fW-R6A">
+                                            <rect key="frame" x="71" y="0.0" width="63" height="26"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                            <state key="normal" title="Placeholder">
+                                                <color key="titleColor" name="light"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" name="dark"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eJv-Gw-eQo" secondAttribute="trailing" constant="20" symbolic="YES" id="8r6-Xa-18o"/>
+                                <constraint firstItem="eJv-Gw-eQo" firstAttribute="leading" secondItem="GSm-LD-KYW" secondAttribute="leading" constant="20" symbolic="YES" id="MOO-GX-cLy"/>
+                                <constraint firstItem="eJv-Gw-eQo" firstAttribute="top" secondItem="GSm-LD-KYW" secondAttribute="top" constant="10" id="MXb-M6-QAa"/>
+                                <constraint firstAttribute="bottom" secondItem="eJv-Gw-eQo" secondAttribute="bottom" constant="10" id="fXy-N6-e4R"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0t7-wt-vxn" userLabel="Details Container">
-                            <rect key="frame" x="0.0" y="559" width="414" height="1006.3333333333335"/>
+                            <rect key="frame" x="0.0" y="558.99999999999989" width="414" height="1090.333333333333"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6W-Fy-RXX" userLabel="Plot">
-                                    <rect key="frame" x="20" y="20" width="374" height="966.33333333333337"/>
+                                    <rect key="frame" x="20" y="104.00000000000006" width="374" height="966.33333333333348"/>
                                     <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="textColor" name="gray"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tQH-pc-kuc">
+                                    <rect key="frame" x="20" y="20" width="374" height="66.666666666666671"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="klx-Dt-pbK">
+                                            <rect key="frame" x="0.0" y="0.0" width="119.33333333333333" height="66.666666666666671"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="994-LC-sTm">
+                                                    <rect key="frame" x="38.333333333333343" y="0.0" width="42.666666666666657" height="42.666666666666664"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgl-dT-g24">
+                                                    <rect key="frame" x="35.666666666666657" y="42.666666666666629" width="48.333333333333343" height="24"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <color key="textColor" name="light"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pui-B4-63N">
+                                            <rect key="frame" x="127.33333333333334" y="0.0" width="119.33333333333334" height="66.666666666666671"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="0CN-Dd-6y7">
+                                                    <rect key="frame" x="38.333333333333314" y="0.0" width="42.666666666666657" height="42.666666666666664"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N-18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EE-pO-Lpn">
+                                                    <rect key="frame" x="37.666666666666657" y="42.666666666666629" width="44.333333333333343" height="24"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <color key="textColor" name="light"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LCG-UB-mSw">
+                                            <rect key="frame" x="254.66666666666671" y="0.0" width="119.33333333333334" height="66.666666666666671"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="o1T-Jw-uIo">
+                                                    <rect key="frame" x="38.333333333333314" y="0.0" width="42.666666666666657" height="42.666666666666664"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="420 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OH-dd-Too">
+                                                    <rect key="frame" x="23.333333333333314" y="42.666666666666629" width="73" height="24"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <color key="textColor" name="light"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0CN-Dd-6y7" firstAttribute="height" secondItem="994-LC-sTm" secondAttribute="height" id="9N1-jq-ypa"/>
+                                        <constraint firstItem="0CN-Dd-6y7" firstAttribute="width" secondItem="994-LC-sTm" secondAttribute="width" id="fEA-Y8-mzf"/>
+                                    </constraints>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" name="dark"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="u6W-Fy-RXX" secondAttribute="trailing" constant="20" symbolic="YES" id="4m4-La-zHJ"/>
+                                <constraint firstItem="u6W-Fy-RXX" firstAttribute="top" secondItem="tQH-pc-kuc" secondAttribute="bottom" multiplier="1.2" id="Fyf-0z-Iph"/>
+                                <constraint firstAttribute="trailing" secondItem="tQH-pc-kuc" secondAttribute="trailing" constant="20" symbolic="YES" id="H1e-oz-J2u"/>
                                 <constraint firstItem="u6W-Fy-RXX" firstAttribute="leading" secondItem="0t7-wt-vxn" secondAttribute="leading" constant="20" symbolic="YES" id="KtY-ZK-JcE"/>
                                 <constraint firstAttribute="bottom" secondItem="u6W-Fy-RXX" secondAttribute="bottom" constant="20" symbolic="YES" id="RDq-RK-FS4"/>
-                                <constraint firstItem="u6W-Fy-RXX" firstAttribute="top" secondItem="0t7-wt-vxn" secondAttribute="top" constant="20" symbolic="YES" id="obf-v8-OPZ"/>
+                                <constraint firstItem="tQH-pc-kuc" firstAttribute="top" secondItem="0t7-wt-vxn" secondAttribute="top" constant="20" symbolic="YES" id="aoI-Tq-Db6"/>
+                                <constraint firstItem="tQH-pc-kuc" firstAttribute="leading" secondItem="0t7-wt-vxn" secondAttribute="leading" constant="20" symbolic="YES" id="jdH-zR-5qb"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -94,14 +181,17 @@
                         <constraint firstAttribute="trailing" secondItem="M4B-4x-SMb" secondAttribute="trailing" id="GTi-jK-r21"/>
                         <constraint firstItem="bdW-Dr-jlf" firstAttribute="width" secondItem="iRb-wc-eIC" secondAttribute="width" id="Hgn-4T-2mE"/>
                         <constraint firstItem="M4B-4x-SMb" firstAttribute="leading" secondItem="iRb-wc-eIC" secondAttribute="leading" id="IRa-uE-yy1"/>
+                        <constraint firstItem="GSm-LD-KYW" firstAttribute="top" secondItem="M4B-4x-SMb" secondAttribute="bottom" id="Im3-oI-n5H"/>
                         <constraint firstItem="0t7-wt-vxn" firstAttribute="top" secondItem="bdW-Dr-jlf" secondAttribute="bottom" multiplier="0.9" id="SdU-Hm-o4B"/>
-                        <constraint firstItem="0t7-wt-vxn" firstAttribute="top" secondItem="M4B-4x-SMb" secondAttribute="bottom" id="WrU-L4-PHg"/>
+                        <constraint firstItem="0t7-wt-vxn" firstAttribute="top" secondItem="GSm-LD-KYW" secondAttribute="bottom" id="Y3f-wd-Z3T"/>
                         <constraint firstAttribute="trailing" secondItem="0t7-wt-vxn" secondAttribute="trailing" id="YGc-6d-0g3"/>
                         <constraint firstItem="M4B-4x-SMb" firstAttribute="height" secondItem="bdW-Dr-jlf" secondAttribute="height" multiplier="0.15" id="ged-Lv-AmV"/>
                         <constraint firstAttribute="top" secondItem="bdW-Dr-jlf" secondAttribute="top" id="jKd-Qx-D0n"/>
                         <constraint firstItem="0t7-wt-vxn" firstAttribute="leading" secondItem="iRb-wc-eIC" secondAttribute="leading" id="qOT-0g-ggQ"/>
                         <constraint firstAttribute="bottom" secondItem="0t7-wt-vxn" secondAttribute="bottom" id="qmb-5R-oYk"/>
+                        <constraint firstItem="GSm-LD-KYW" firstAttribute="leading" secondItem="iRb-wc-eIC" secondAttribute="leading" id="rGO-cX-2jN"/>
                         <constraint firstAttribute="trailing" secondItem="bdW-Dr-jlf" secondAttribute="trailing" id="yPD-KV-i8M"/>
+                        <constraint firstAttribute="trailing" secondItem="GSm-LD-KYW" secondAttribute="trailing" id="yRq-UG-uid"/>
                     </constraints>
                 </scrollView>
             </subviews>
@@ -113,11 +203,13 @@
                 <constraint firstAttribute="bottom" secondItem="iRb-wc-eIC" secondAttribute="bottom" priority="999" id="v64-5a-Mb6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="139" y="151"/>
+            <point key="canvasLocation" x="137.68115942028987" y="150.66964285714286"/>
         </view>
     </objects>
     <resources>
-        <image name="Secret Life of Pets 2" width="89" height="133.33332824707031"/>
+        <image name="Secret Life of Pets 2" width="267" height="400"/>
+        <image name="calendar" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="people" width="42.666667938232422" height="42.666667938232422"/>
         <namedColor name="dark">
             <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
