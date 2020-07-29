@@ -30,6 +30,8 @@
 		29230DEB235CFBD2007C9EB4 /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29230DEA235CFBD2007C9EB4 /* ErrorLabel.swift */; };
 		293BAA7323D11BAD00C07837 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BAA7223D11BAD00C07837 /* MovieDetailsView.swift */; };
 		293BAA7523DA0D8C00C07837 /* DailyMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BAA7423DA0D8C00C07837 /* DailyMoviesCell.swift */; };
+		2948398424D1F85500133940 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948398324D1F85500133940 /* DateViewController.swift */; };
+		2948398624D1FB7100133940 /* DateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2948398524D1FB7100133940 /* DateView.xib */; };
 		294CD91023E04BA60064644D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CD90F23E04BA60064644D /* LoadingView.swift */; };
 		294E933223A959BD0062E808 /* SegmentableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E933123A959BD0062E808 /* SegmentableContainer.swift */; };
 		299D134624C219B00012755A /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D134524C219B00012755A /* MovieDetailViewController.swift */; };
@@ -98,6 +100,8 @@
 		29230DEA235CFBD2007C9EB4 /* ErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
 		293BAA7223D11BAD00C07837 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
 		293BAA7423DA0D8C00C07837 /* DailyMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMoviesCell.swift; sourceTree = "<group>"; };
+		2948398324D1F85500133940 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		2948398524D1FB7100133940 /* DateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateView.xib; sourceTree = "<group>"; };
 		294CD90F23E04BA60064644D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		294E933123A959BD0062E808 /* SegmentableContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentableContainer.swift; sourceTree = "<group>"; };
 		299D134524C219B00012755A /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 		2904C7942336A0EB00407B64 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2948398324D1F85500133940 /* DateViewController.swift */,
 				299D135724C766F00012755A /* MovieDetailsViewController.swift */,
 				299D134524C219B00012755A /* MovieDetailViewController.swift */,
 				2904D07A2355111900407B64 /* DailyViewController.swift */,
@@ -216,6 +221,7 @@
 		2904C7962336A10E00407B64 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2948398524D1FB7100133940 /* DateView.xib */,
 				299D135124C7667E0012755A /* MovieDetailsView.xib */,
 				299D134D24C21D940012755A /* MovieDetailViewController.xib */,
 				2904C7BD233BE80300407B64 /* Cells */,
@@ -432,6 +438,7 @@
 				2904C7712336982D00407B64 /* LaunchScreen.storyboard in Resources */,
 				299D135224C7667E0012755A /* MovieDetailsView.xib in Resources */,
 				2904C76E2336982D00407B64 /* Assets.xcassets in Resources */,
+				2948398624D1FB7100133940 /* DateView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +499,7 @@
 				2904C7642336982B00407B64 /* AppDelegate.swift in Sources */,
 				2904D09F2358CFB000407B64 /* NetworkImageView.swift in Sources */,
 				293BAA7523DA0D8C00C07837 /* DailyMoviesCell.swift in Sources */,
+				2948398424D1F85500133940 /* DateViewController.swift in Sources */,
 				2904D0A2235A4CB300407B64 /* MovieShowingsCell.swift in Sources */,
 				29B4D94F23F71A5F00BD9783 /* MovieManager.swift in Sources */,
 				2904C79E2336A69100407B64 /* Movie.swift in Sources */,
