@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DateViewController" customModule="iKinas" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="MvH-8C-20C" id="sIJ-Ie-U5t"/>
                 <outlet property="view" destination="iN0-l3-epB" id="UKa-al-srh"/>
             </connections>
         </placeholder>
@@ -18,7 +19,23 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MvH-8C-20C">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="4nS-YF-kCN"/>
+                        <outlet property="delegate" destination="-1" id="QWh-eC-7vb"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" name="dark"/>
+            <constraints>
+                <constraint firstItem="MvH-8C-20C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="39w-h9-qlE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MvH-8C-20C" secondAttribute="trailing" id="wvD-Up-DZd"/>
+                <constraint firstItem="MvH-8C-20C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xOH-j3-K96"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="MvH-8C-20C" secondAttribute="bottom" id="xp2-FT-sgL"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="154"/>
         </view>
