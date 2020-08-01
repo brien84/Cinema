@@ -17,16 +17,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="FSO-Xv-fUo">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="266"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <connections>
-                                <segue destination="TST-fC-Rcy" kind="embed" id="bOA-Iu-0ht"/>
-                            </connections>
-                        </containerView>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ZmI-WC-wiO">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="397"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfZ-8T-mog">
+                                    <rect key="frame" x="20" y="10" width="374" height="34"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN3-PG-E6e" userLabel="MoviesContainer">
+                                    <rect key="frame" x="0.0" y="54" width="414" height="289"/>
+                                    <connections>
+                                        <segue destination="TST-fC-Rcy" kind="embed" id="0C8-3t-xzO"/>
+                                    </connections>
+                                </containerView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seansai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjQ-nO-aGB">
+                                    <rect key="frame" x="20" y="353" width="374" height="34"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="QjQ-nO-aGB" secondAttribute="trailing" constant="20" symbolic="YES" id="Ec4-rj-vua"/>
+                                <constraint firstItem="QjQ-nO-aGB" firstAttribute="top" secondItem="UN3-PG-E6e" secondAttribute="bottom" constant="10" id="HBn-LG-KLq"/>
+                                <constraint firstAttribute="trailing" secondItem="UfZ-8T-mog" secondAttribute="trailing" constant="20" symbolic="YES" id="ImP-d0-Z8w"/>
+                                <constraint firstItem="UfZ-8T-mog" firstAttribute="leading" secondItem="ZmI-WC-wiO" secondAttribute="leading" constant="20" symbolic="YES" id="Pj3-qQ-ghv"/>
+                                <constraint firstItem="UN3-PG-E6e" firstAttribute="leading" secondItem="ZmI-WC-wiO" secondAttribute="leading" id="Psg-jt-19A"/>
+                                <constraint firstAttribute="trailing" secondItem="UN3-PG-E6e" secondAttribute="trailing" id="Q8A-8Y-G9k"/>
+                                <constraint firstItem="UfZ-8T-mog" firstAttribute="top" secondItem="ZmI-WC-wiO" secondAttribute="top" constant="10" id="XL8-EU-o5U"/>
+                                <constraint firstItem="UN3-PG-E6e" firstAttribute="top" secondItem="UfZ-8T-mog" secondAttribute="bottom" constant="10" id="oiJ-96-wO6"/>
+                                <constraint firstItem="QjQ-nO-aGB" firstAttribute="leading" secondItem="ZmI-WC-wiO" secondAttribute="leading" constant="20" symbolic="YES" id="vJx-s7-XDg"/>
+                                <constraint firstAttribute="bottom" secondItem="QjQ-nO-aGB" secondAttribute="bottom" constant="10" id="wod-m9-DNh"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="3s7-SG-MPp">
-                                <rect key="frame" x="0.0" y="294" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="425" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3s7-SG-MPp" id="mua-dK-hgQ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -49,7 +79,7 @@
             <objects>
                 <collectionViewController id="TST-fC-Rcy" customClass="MoviesViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="pef-WN-oqs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="266"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="289"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k5m-hN-Ubd">
