@@ -14,6 +14,7 @@ final class DateViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.tableHeaderView?.frame.size = moviesContainerSize
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,5 +27,12 @@ final class DateViewController: UITableViewController {
         cell.textLabel?.text = String(datasource[indexPath.row])
 
         return cell
+    }
+}
+
+extension DateViewController {
+    private var moviesContainerSize: CGSize {
+        let tableWidth = tableView.frame.width
+        return CGSize(width: tableWidth, height: tableWidth / 1.5)
     }
 }
