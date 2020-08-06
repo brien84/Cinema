@@ -22,9 +22,8 @@ final class DateViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        cell.textLabel?.text = String(datasource[indexPath.row])
+        // swiftlint:disable:next force_cast
+        let cell = tableView.dequeueReusableCell(withIdentifier: "showingCell", for: indexPath) as! DateShowingCell
 
         return cell
     }
@@ -33,6 +32,6 @@ final class DateViewController: UITableViewController {
 extension DateViewController {
     private var moviesContainerSize: CGSize {
         let tableWidth = tableView.frame.width
-        return CGSize(width: tableWidth, height: tableWidth / 1.5)
+        return CGSize(width: tableWidth, height: tableWidth * 0.9)
     }
 }
