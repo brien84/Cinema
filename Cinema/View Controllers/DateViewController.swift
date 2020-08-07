@@ -9,12 +9,28 @@
 import UIKit
 
 final class DateViewController: UITableViewController {
-    private let datasource = Array(0...100)
+    private let dateSelector: DateSelectable
+
+    private let datasource = Array(0...10)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableHeaderView?.frame.size = moviesContainerSize
+
+        updateNavigationItemAppearance()
+    }
+
+    init(dateSelector: DateSelectable = DateSelector()) {
+        self.dateSelector = dateSelector
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        self.dateSelector = DateSelector()
+
+        super.init(coder: coder)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,11 +45,24 @@ final class DateViewController: UITableViewController {
     }
 
     @IBAction private func leftNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
-
+        if dateSelector.isFirst {
+            print("Open Options.")
+        } else {
+            dateSelector.previous()
+            updateNavigationItemAppearance()
+        }
     }
 
     @IBAction private func rightNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
+        dateSelector.next()
+        updateNavigationItemAppearance()
+    }
 
+    private func updateNavigationItemAppearance() {
+        navigationItem.title = dateSelector.current.asString(format: .monthAndDay)
+
+        guard let leftButton = navigationItem.leftBarButtonItem else { return }
+        leftButton.image = dateSelector.isFirst ? .options : .left
     }
 }
 
