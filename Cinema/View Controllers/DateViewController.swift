@@ -27,6 +27,14 @@ final class DateViewController: UITableViewController {
 
         return cell
     }
+
+    @IBAction private func leftNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
+
+    }
+
+    @IBAction private func rightNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
+
+    }
 }
 
 extension DateViewController {
