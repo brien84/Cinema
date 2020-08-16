@@ -11,41 +11,54 @@ import UIKit
 private let reuseIdentifier = "moviesCell"
 
 final class MoviesViewController: UICollectionViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
+    let datasource = Array(0...100)
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // Invalidates layout to trigger `systemLayoutSizeFitting` method in `MoviesViewCell`.
+        flowLayout.invalidateLayout()
     }
 
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        100
+        datasource.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        // swiftlint:disable:next force_cast
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MoviesViewCell
+
+        cell.poster.image = UIImage(named: "networkImageViewDefault")!
+        cell.title.text = String(repeating: "A", count: datasource[indexPath.row])
 
         return cell
     }
 }
 
 extension MoviesViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        inset
-    }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: cellWidth, height: cellHeight)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0.0, left: inset, bottom: 0.0, right: inset)
+        // `width` is approximate value, the cell with size itself
+        return CGSize(width: cellHeight / 2, height: cellHeight)
     }
 }
 
 extension MoviesViewController {
-    private var inset: CGFloat { collectionView.frame.height * 0.05 }
+    private var flowLayout: UICollectionViewFlowLayout {
+        guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else {
+            fatalError("`collectionViewLayout is not `UICollectionViewFlowLayout`")
+        }
 
-    private var cellHeight: CGFloat { collectionView.frame.height }
-    private var cellWidth: CGFloat { collectionView.frame.width / 2 - 1.5 * inset }
+        return layout
+    }
+
+    private var cellHeight: CGFloat {
+        collectionView.frame.height - flowLayout.sectionInset.top - flowLayout.sectionInset.bottom
+    }
 }
