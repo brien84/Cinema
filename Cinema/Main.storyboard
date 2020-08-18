@@ -188,7 +188,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZH-DU-L7m" userLabel="Title Container" customClass="GradientBackgroundView" customModule="iKinas" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="388.66666666666669" width="414" height="124.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="434.66666666666669" width="414" height="124.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extremely Long Title Movie: Episode 69420 - The Return of The Long Movie Title Lord of Long Movie Title Kingdom " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQD-Sy-tME" userLabel="Title">
                                                 <rect key="frame" x="20" y="20" width="374" height="75"/>
@@ -197,7 +197,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Extremely Long Title Movie: Episode 69420 - The Return of The Long Movie Title Lord of Long Movie Title Kingdom " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4X-r5-IHS" userLabel="Original Title">
-                                                <rect key="frame" x="20" y="105" width="374" height="14.333333333333329"/>
+                                                <rect key="frame" x="20" y="104.99999999999994" width="374" height="14.333333333333329"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <color key="textColor" name="light"/>
                                                 <nil key="highlightedColor"/>
@@ -227,11 +227,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0z9-MA-b3I" userLabel="Genres Container">
-                                        <rect key="frame" x="0.0" y="513" width="414" height="46"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2n-ng-l2d" userLabel="Details Container">
+                                        <rect key="frame" x="0.0" y="559" width="414" height="1093"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XwV-xN-apI" userLabel="Genres StackView">
-                                                <rect key="frame" x="20" y="10" width="134" height="26"/>
+                                                <rect key="frame" x="10" y="10" width="134" height="26"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYM-sA-HO9">
                                                         <rect key="frame" x="0.0" y="0.0" width="63" height="26"/>
@@ -249,27 +249,8 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" name="dark"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XwV-xN-apI" secondAttribute="trailing" constant="20" symbolic="YES" id="0q3-pT-8b0"/>
-                                            <constraint firstItem="XwV-xN-apI" firstAttribute="leading" secondItem="0z9-MA-b3I" secondAttribute="leading" constant="20" symbolic="YES" id="5K9-qZ-Dpc"/>
-                                            <constraint firstItem="XwV-xN-apI" firstAttribute="top" secondItem="0z9-MA-b3I" secondAttribute="top" constant="10" id="ZD2-av-cXE"/>
-                                            <constraint firstAttribute="bottom" secondItem="XwV-xN-apI" secondAttribute="bottom" constant="10" id="ipL-BN-rJB"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2n-ng-l2d" userLabel="Details Container">
-                                        <rect key="frame" x="0.0" y="559" width="414" height="1050"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-fQ-YpQ" userLabel="Plot">
-                                                <rect key="frame" x="20" y="63.666666666666572" width="374" height="966.33333333333348"/>
-                                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <color key="textColor" name="gray"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2e6-9B-hkD">
-                                                <rect key="frame" x="20" y="10" width="374" height="43"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2e6-9B-hkD" userLabel="Details StackView">
+                                                <rect key="frame" x="20" y="46" width="374" height="43"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jxn-9K-A9K">
                                                         <rect key="frame" x="0.0" y="0.0" width="119.33333333333333" height="43"/>
@@ -322,16 +303,26 @@
                                                     <constraint firstItem="svJ-DP-tFy" firstAttribute="width" secondItem="AXD-kh-rNZ" secondAttribute="width" id="H7R-k0-gTg"/>
                                                 </constraints>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-fQ-YpQ" userLabel="Plot">
+                                                <rect key="frame" x="20" y="106.66666666666657" width="374" height="966.33333333333348"/>
+                                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" name="gray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" name="dark"/>
                                         <constraints>
                                             <constraint firstItem="2e6-9B-hkD" firstAttribute="leading" secondItem="Q2n-ng-l2d" secondAttribute="leading" constant="20" symbolic="YES" id="A9x-nR-jJ3"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XwV-xN-apI" secondAttribute="trailing" constant="10" id="DRR-uD-FM8"/>
                                             <constraint firstAttribute="trailing" secondItem="u1q-fQ-YpQ" secondAttribute="trailing" constant="20" symbolic="YES" id="MdJ-er-g0J"/>
+                                            <constraint firstItem="XwV-xN-apI" firstAttribute="leading" secondItem="Q2n-ng-l2d" secondAttribute="leading" constant="10" id="X88-v2-lhI"/>
                                             <constraint firstItem="u1q-fQ-YpQ" firstAttribute="leading" secondItem="Q2n-ng-l2d" secondAttribute="leading" constant="20" symbolic="YES" id="caj-8l-fLi"/>
                                             <constraint firstAttribute="bottom" secondItem="u1q-fQ-YpQ" secondAttribute="bottom" constant="20" symbolic="YES" id="dzb-Hq-YVh"/>
-                                            <constraint firstItem="2e6-9B-hkD" firstAttribute="top" secondItem="Q2n-ng-l2d" secondAttribute="top" constant="10" id="iV2-c1-y30"/>
+                                            <constraint firstItem="2e6-9B-hkD" firstAttribute="top" secondItem="XwV-xN-apI" secondAttribute="bottom" constant="10" id="gYh-E6-Z5n"/>
                                             <constraint firstItem="u1q-fQ-YpQ" firstAttribute="top" secondItem="2e6-9B-hkD" secondAttribute="bottom" multiplier="1.2" id="jg2-Wr-BVC"/>
                                             <constraint firstAttribute="trailing" secondItem="2e6-9B-hkD" secondAttribute="trailing" constant="20" symbolic="YES" id="kx3-SM-Yoe"/>
+                                            <constraint firstItem="XwV-xN-apI" firstAttribute="top" secondItem="Q2n-ng-l2d" secondAttribute="top" constant="10" id="o8J-Nc-0zF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -340,17 +331,14 @@
                                     <constraint firstAttribute="trailing" secondItem="efd-5U-SkD" secondAttribute="trailing" id="3h8-Ow-Pkt"/>
                                     <constraint firstItem="efd-5U-SkD" firstAttribute="leading" secondItem="2CA-jM-tJ9" secondAttribute="leading" id="GE8-Gj-gA7"/>
                                     <constraint firstAttribute="trailing" secondItem="hZH-DU-L7m" secondAttribute="trailing" id="IdD-4n-wr3"/>
-                                    <constraint firstAttribute="trailing" secondItem="0z9-MA-b3I" secondAttribute="trailing" id="KLN-JG-Jml"/>
                                     <constraint firstItem="efd-5U-SkD" firstAttribute="width" secondItem="2CA-jM-tJ9" secondAttribute="width" id="P1G-EN-agc"/>
+                                    <constraint firstItem="Q2n-ng-l2d" firstAttribute="top" secondItem="hZH-DU-L7m" secondAttribute="bottom" id="QPt-sG-A0G"/>
                                     <constraint firstAttribute="bottom" secondItem="Q2n-ng-l2d" secondAttribute="bottom" id="QaX-8C-Ta7"/>
                                     <constraint firstItem="Q2n-ng-l2d" firstAttribute="leading" secondItem="2CA-jM-tJ9" secondAttribute="leading" id="YKn-KO-VFS"/>
                                     <constraint firstItem="Q2n-ng-l2d" firstAttribute="top" secondItem="efd-5U-SkD" secondAttribute="bottom" multiplier="0.9" id="Zug-ke-mbU"/>
                                     <constraint firstAttribute="trailing" secondItem="Q2n-ng-l2d" secondAttribute="trailing" id="bbU-dT-RtJ"/>
-                                    <constraint firstItem="Q2n-ng-l2d" firstAttribute="top" secondItem="0z9-MA-b3I" secondAttribute="bottom" id="dSc-p7-Xxx"/>
                                     <constraint firstAttribute="top" secondItem="efd-5U-SkD" secondAttribute="top" id="hRH-VC-RVh"/>
-                                    <constraint firstItem="0z9-MA-b3I" firstAttribute="top" secondItem="hZH-DU-L7m" secondAttribute="bottom" id="jdO-9m-Gh9"/>
                                     <constraint firstItem="hZH-DU-L7m" firstAttribute="height" secondItem="efd-5U-SkD" secondAttribute="height" multiplier="0.2" id="rFm-Yx-wnZ"/>
-                                    <constraint firstItem="0z9-MA-b3I" firstAttribute="leading" secondItem="2CA-jM-tJ9" secondAttribute="leading" id="s9r-GL-GgL"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
