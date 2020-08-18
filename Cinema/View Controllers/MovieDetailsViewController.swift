@@ -23,20 +23,16 @@ final class MovieDetailsViewController: UIViewController {
     @IBOutlet private weak var posterBottomToDetailsTop: NSLayoutConstraint!
     @IBOutlet private weak var detailsBottomToSuperview: NSLayoutConstraint!
 
+    @IBOutlet private weak var showingContainerIsCollapsed: NSLayoutConstraint!
+
     private lazy var navigationBar = navigationController?.navigationBar
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: "MovieDetailsView", bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         scrollView.delegate = self
+
+        showingContainerIsCollapsed.isActive = true
 
         navigationItem.title = "Title"
 
@@ -58,6 +54,15 @@ final class MovieDetailsViewController: UIViewController {
 
         genresStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         genres.forEach { genresStackView.addArrangedSubview(createGenreButton(with: $0)) }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        UIView.transition(with: view, duration: 0.7, options: .curveEaseInOut, animations: {
+            self.showingContainerIsCollapsed.isActive = false
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
 
     private func createGenreButton(with name: String) -> UIButton {
