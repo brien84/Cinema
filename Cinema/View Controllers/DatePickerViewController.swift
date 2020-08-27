@@ -14,10 +14,15 @@ final class DatePickerViewController: UICollectionViewController, UICollectionVi
 
     private let datasource = ["Siandien", "Rytoj", "Poryt", "Spalio 11", "Spalio 12"]
 
+    private var currentIndex = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
+        collectionView.isScrollEnabled = false
+        setupSwipeGestures()
     }
 
     // MARK: UICollectionViewDataSource
@@ -56,6 +61,33 @@ final class DatePickerViewController: UICollectionViewController, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width - 40, height: collectionView.frame.height)
+    }
+
+    // MARK: UIGestureRecognizer
+
+    private func setupSwipeGestures() {
+        let right = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        right.direction = .right
+        collectionView.addGestureRecognizer(right)
+
+        let left = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        left.direction = .left
+        collectionView.addGestureRecognizer(left)
+    }
+
+    @objc private func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
+        switch gesture.direction.rawValue {
+        case 1: // right
+            guard currentIndex != datasource.indices.last else { return }
+            currentIndex += 1
+        case 2: // left
+            guard currentIndex > 0 else { return }
+            currentIndex -= 1
+        default:
+            return
+        }
+
+        collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
 
 }
