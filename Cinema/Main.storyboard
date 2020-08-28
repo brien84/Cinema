@@ -415,12 +415,24 @@
                                     <segue destination="oMK-56-0oC" kind="embed" id="XZK-NU-PRx"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKj-SL-PER">
+                                <rect key="frame" x="0.0" y="208" width="414" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="tFx-iz-uhM"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Bus-xo-4Re" kind="embed" id="ego-J4-jLg"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" name="dark"/>
                         <constraints>
                             <constraint firstItem="pFJ-Yt-25i" firstAttribute="trailing" secondItem="lbg-aT-i1Z" secondAttribute="trailing" id="9hy-xc-Ua7"/>
                             <constraint firstItem="lbg-aT-i1Z" firstAttribute="leading" secondItem="pFJ-Yt-25i" secondAttribute="leading" id="AP2-kf-Q9m"/>
                             <constraint firstItem="lbg-aT-i1Z" firstAttribute="top" secondItem="pFJ-Yt-25i" secondAttribute="top" id="HV3-Fx-MQM"/>
+                            <constraint firstItem="fKj-SL-PER" firstAttribute="leading" secondItem="pFJ-Yt-25i" secondAttribute="leading" id="Wai-0j-Zjn"/>
+                            <constraint firstItem="pFJ-Yt-25i" firstAttribute="trailing" secondItem="fKj-SL-PER" secondAttribute="trailing" id="fUE-KE-cNO"/>
+                            <constraint firstItem="fKj-SL-PER" firstAttribute="top" secondItem="lbg-aT-i1Z" secondAttribute="bottom" constant="20" id="gQJ-Xe-Kwq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pFJ-Yt-25i"/>
                     </view>
@@ -429,6 +441,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I78-8Q-XCT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4831.884057971015" y="527.67857142857144"/>
+        </scene>
+        <!--Showings Container View Controller-->
+        <scene sceneID="g2r-56-psT">
+            <objects>
+                <collectionViewController id="Bus-xo-4Re" customClass="ShowingsContainerViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cKO-2N-56e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ebf-wM-gox">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="P5H-0P-kNB">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xhp-8D-AlU">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Bus-xo-4Re" id="QIT-pO-AqB"/>
+                            <outlet property="delegate" destination="Bus-xo-4Re" id="Xza-E9-2bg"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ITO-jU-bmT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5670" y="708"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="dpP-gH-bcH">
