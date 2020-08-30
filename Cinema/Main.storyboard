@@ -452,13 +452,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ebf-wM-gox">
                             <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="60"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="P5H-0P-kNB">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <rect key="frame" x="0.0" y="60" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xhp-8D-AlU">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -466,6 +466,29 @@
                                 </collectionViewCellContentView>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerView" id="OAV-nL-L7A" customClass="ShowingsContainerHeaderView" customModule="iKinas" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fk-Zg-rqs">
+                                    <rect key="frame" x="20" y="20" width="374" height="20"/>
+                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="4Fk-Zg-rqs" firstAttribute="leading" secondItem="OAV-nL-L7A" secondAttribute="leading" constant="20" symbolic="YES" id="JnP-f6-BMI"/>
+                                <constraint firstItem="4Fk-Zg-rqs" firstAttribute="top" secondItem="OAV-nL-L7A" secondAttribute="top" constant="20" symbolic="YES" id="Zjo-ZZ-SNQ"/>
+                                <constraint firstAttribute="bottom" secondItem="4Fk-Zg-rqs" secondAttribute="bottom" constant="20" symbolic="YES" id="bHt-o1-rCh"/>
+                                <constraint firstAttribute="trailing" secondItem="4Fk-Zg-rqs" secondAttribute="trailing" constant="20" symbolic="YES" id="ffg-Vp-RqG"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="venue" destination="4Fk-Zg-rqs" id="7vH-cD-tsX"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="Bus-xo-4Re" id="QIT-pO-AqB"/>
                             <outlet property="delegate" destination="Bus-xo-4Re" id="Xza-E9-2bg"/>
