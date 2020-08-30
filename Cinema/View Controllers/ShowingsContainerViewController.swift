@@ -38,6 +38,16 @@ final class ShowingsContainerViewController: UICollectionViewController, UIColle
 
     // MARK: UICollectionViewDataSource
 
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath)
+        // swiftlint:disable:next force_cast
+        let headerView = view as! ShowingsContainerHeaderView
+
+        headerView.venue.text = "Forum Cinemas Akropolis"
+
+        return view
+    }
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         datasource.count
     }
