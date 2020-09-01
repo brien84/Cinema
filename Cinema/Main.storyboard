@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C3M-R9-m7g">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5sa-ql-0RP">
+    <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -76,53 +76,62 @@
                                             <rect key="frame" x="123.66666666666666" y="10" width="280.33333333333337" height="155.66666666666666"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsy-Pk-dGB" userLabel="title">
-                                                    <rect key="frame" x="0.0" y="0.0" width="249" height="42.333333333333336"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="250.33333333333334" height="42.333333333333336"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" name="primaryText"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luJ-VN-Zdd" userLabel="originalTitle">
-                                                    <rect key="frame" x="0.0" y="47.333333333333343" width="246.33333333333334" height="38"/>
+                                                    <rect key="frame" x="0.0" y="47.333333333333343" width="280.33333333333331" height="38"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" name="secondaryText"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1io-7v-UgC" userLabel="details">
-                                                    <rect key="frame" x="0.0" y="136.33333333333334" width="280.33333333333331" height="19.333333333333343"/>
+                                                    <rect key="frame" x="0.0" y="137.66666666666666" width="280.33333333333331" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forum Cinemas Akropolis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJH-AV-A5C">
-                                                            <rect key="frame" x="0.0" y="0.0" width="185.33333333333334" height="19.333333333333332"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="18"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" name="primaryText"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hy3-eo-z34">
-                                                            <rect key="frame" x="236.6666666666666" y="0.0" width="43.666666666666657" height="19.333333333333332"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                            <rect key="frame" x="239.00000000000003" y="0.0" width="41.333333333333343" height="18"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" name="primaryText"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="3D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBE-kP-NIN" userLabel="is3D">
-                                                    <rect key="frame" x="260.33333333333331" y="0.0" width="20" height="18"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <color key="textColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3D" translatesAutoresizingMaskIntoConstraints="NO" id="gWl-wO-Nbx">
+                                                    <rect key="frame" x="260.33333333333331" y="0.0" width="20" height="20"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" id="3NQ-ag-49o"/>
+                                                        <constraint firstAttribute="height" constant="20" id="GqR-4c-50u"/>
+                                                        <constraint firstAttribute="width" priority="999" constant="20" id="wI3-6S-C9j"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="3NQ-ag-49o"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="aBE-kP-NIN" firstAttribute="top" secondItem="aCT-Sg-6sI" secondAttribute="top" id="JiD-Bg-Mpo"/>
+                                                <constraint firstItem="gWl-wO-Nbx" firstAttribute="leading" secondItem="tsy-Pk-dGB" secondAttribute="trailing" constant="10" id="3FW-HU-STs"/>
                                                 <constraint firstAttribute="bottom" secondItem="1io-7v-UgC" secondAttribute="bottom" id="NUb-wq-90s"/>
                                                 <constraint firstItem="luJ-VN-Zdd" firstAttribute="leading" secondItem="aCT-Sg-6sI" secondAttribute="leading" id="Pnp-7m-KiN"/>
+                                                <constraint firstAttribute="trailing" secondItem="gWl-wO-Nbx" secondAttribute="trailing" id="QRM-R4-lle"/>
+                                                <constraint firstItem="gWl-wO-Nbx" firstAttribute="top" secondItem="aCT-Sg-6sI" secondAttribute="top" id="RyN-sG-lRP"/>
                                                 <constraint firstItem="1io-7v-UgC" firstAttribute="leading" secondItem="aCT-Sg-6sI" secondAttribute="leading" id="V4D-Fg-1QD"/>
                                                 <constraint firstItem="tsy-Pk-dGB" firstAttribute="leading" secondItem="aCT-Sg-6sI" secondAttribute="leading" id="VWS-9z-PMR"/>
                                                 <constraint firstItem="tsy-Pk-dGB" firstAttribute="top" secondItem="aCT-Sg-6sI" secondAttribute="top" id="eJt-M2-G3h"/>
+                                                <constraint firstAttribute="trailing" secondItem="luJ-VN-Zdd" secondAttribute="trailing" id="ePk-8Q-njJ"/>
+                                                <constraint firstItem="1io-7v-UgC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gWl-wO-Nbx" secondAttribute="bottom" id="jgh-0k-QN5"/>
                                                 <constraint firstAttribute="trailing" secondItem="1io-7v-UgC" secondAttribute="trailing" id="l2r-4a-BFf"/>
-                                                <constraint firstAttribute="trailing" secondItem="aBE-kP-NIN" secondAttribute="trailing" id="qS1-dM-0p3"/>
-                                                <constraint firstItem="aBE-kP-NIN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tsy-Pk-dGB" secondAttribute="trailing" constant="5" id="r93-xP-4v2"/>
-                                                <constraint firstItem="aBE-kP-NIN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="luJ-VN-Zdd" secondAttribute="trailing" constant="5" id="u8Z-8F-gfr"/>
                                                 <constraint firstItem="luJ-VN-Zdd" firstAttribute="top" secondItem="tsy-Pk-dGB" secondAttribute="bottom" constant="5" id="ukr-Al-bFR"/>
                                             </constraints>
                                         </view>
@@ -139,7 +148,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="is3D" destination="aBE-kP-NIN" id="gl9-1Q-rvY"/>
+                                    <outlet property="hide3DIcon" destination="3NQ-ag-49o" id="kDx-e7-zdq"/>
                                     <outlet property="originalTitle" destination="luJ-VN-Zdd" id="5H1-Hy-MNC"/>
                                     <outlet property="poster" destination="ar4-L8-sBT" id="Osp-5a-Xd9"/>
                                     <outlet property="time" destination="hy3-eo-z34" id="2Qo-bf-G7m"/>
@@ -690,6 +699,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="3D" width="25" height="25"/>
         <image name="Secret Life of Pets 2" width="267" height="400"/>
         <image name="arrowLeft" width="25" height="25"/>
         <image name="arrowRight" width="25" height="25"/>
