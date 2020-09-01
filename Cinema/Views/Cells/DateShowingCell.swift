@@ -14,5 +14,12 @@ final class DateShowingCell: UITableViewCell {
     @IBOutlet weak var originalTitle: UILabel!
     @IBOutlet weak var venue: UILabel!
     @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var is3D: UILabel!
+
+    @IBOutlet private weak var hide3DIcon: NSLayoutConstraint!
+
+    var is3D = false {
+        didSet {
+            hide3DIcon.isActive = !is3D
+        }
+    }
 }
