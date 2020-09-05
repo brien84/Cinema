@@ -41,6 +41,7 @@
 		299C263224F99D900074E795 /* ShowingsContainerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C263124F99D900074E795 /* ShowingsContainerHeaderView.swift */; };
 		299C263424FC1E100074E795 /* ShowingsContainerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C263324FC1E100074E795 /* ShowingsContainerViewCell.swift */; };
 		299C267A2502DCFD0074E795 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C26792502DCFC0074E795 /* Fonts.swift */; };
+		299C267C2502DDB30074E795 /* CustomFontLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C267B2502DDB30074E795 /* CustomFontLabel.swift */; };
 		299D135224C7667E0012755A /* MovieDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299D135124C7667E0012755A /* MovieDetailsView.xib */; };
 		299D135824C766F00012755A /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D135724C766F00012755A /* MovieDetailsViewController.swift */; };
 		299D135A24CA26DC0012755A /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D135924CA26DC0012755A /* GradientBackgroundView.swift */; };
@@ -118,6 +119,7 @@
 		299C263124F99D900074E795 /* ShowingsContainerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingsContainerHeaderView.swift; sourceTree = "<group>"; };
 		299C263324FC1E100074E795 /* ShowingsContainerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingsContainerViewCell.swift; sourceTree = "<group>"; };
 		299C26792502DCFC0074E795 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		299C267B2502DDB30074E795 /* CustomFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontLabel.swift; sourceTree = "<group>"; };
 		299D134D24C21D940012755A /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
 		299D135124C7667E0012755A /* MovieDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsView.xib; sourceTree = "<group>"; };
 		299D135724C766F00012755A /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				2904D09E2358CFB000407B64 /* NetworkImageView.swift */,
 				2904C7AE23393A4E00407B64 /* SegmentedControl.swift */,
 				299D135924CA26DC0012755A /* GradientBackgroundView.swift */,
+				299C267B2502DDB30074E795 /* CustomFontLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				299D135A24CA26DC0012755A /* GradientBackgroundView.swift in Sources */,
 				2904C9F12341208400407B64 /* MovieShowingsVC.swift in Sources */,
 				2932FB8124D602E8009AEDD1 /* MoviesViewController.swift in Sources */,
+				299C267C2502DDB30074E795 /* CustomFontLabel.swift in Sources */,
 				294CD91023E04BA60064644D /* LoadingView.swift in Sources */,
 				29CE105A24E1E8560030D841 /* MoviesViewCell.swift in Sources */,
 				2904C7A7233825D800407B64 /* DateSelector.swift in Sources */,
