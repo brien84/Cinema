@@ -10,13 +10,14 @@ import UIKit
 
 enum Fonts: String {
     case dateViewHeader, dateViewTitle, dateViewOriginalTitle, dateViewDetails
+    case movieCollectionViewTitle
     case notFound
 
     private var font: UIFont {
         switch self {
         case .dateViewHeader:
             return UIFont.init(name: "HelveticaNeue-Bold", size: 20)!
-        case .dateViewTitle:
+        case .dateViewTitle, .movieCollectionViewTitle:
             return UIFont.init(name: "HelveticaNeue-Medium", size: 18)!
         case .dateViewOriginalTitle:
             return UIFont.init(name: "HelveticaNeue-LightItalic", size: 15)!
