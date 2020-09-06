@@ -25,7 +25,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtS-LT-Qg0" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="8" width="382" height="24"/>
+                                    <rect key="frame" x="16" y="7.9999999999999982" width="382" height="26.333333333333329"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <color key="textColor" name="primaryText"/>
                                     <nil key="highlightedColor"/>
@@ -34,13 +34,13 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PsW-bU-O7w">
-                                    <rect key="frame" x="0.0" y="40" width="414" height="490"/>
+                                    <rect key="frame" x="0.0" y="42.333333333333343" width="414" height="485.33333333333326"/>
                                     <connections>
                                         <segue destination="fg4-kJ-Eo7" kind="embed" id="wOF-CZ-nGK"/>
                                     </connections>
                                 </containerView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seansai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWM-6b-OYy" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="538" width="382" height="24"/>
+                                    <rect key="frame" x="16" y="535.66666666666663" width="382" height="26.333333333333371"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                     <color key="textColor" name="primaryText"/>
                                     <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="171.66667175292969"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="networkImageViewDefault" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-L8-sBT" userLabel="poster">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-L8-sBT" userLabel="poster">
                                             <rect key="frame" x="8" y="8" width="103.66666666666667" height="155.66666666666666"/>
                                             <color key="backgroundColor" name="red"/>
                                             <constraints>
@@ -91,7 +91,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luJ-VN-Zdd" userLabel="originalTitle" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="47" width="286.33333333333331" height="35"/>
+                                                    <rect key="frame" x="0.0" y="47" width="286.33333333333331" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" name="secondaryText"/>
                                                     <nil key="highlightedColor"/>
@@ -103,7 +103,7 @@
                                                     <rect key="frame" x="0.0" y="137.66666666666666" width="286.33333333333331" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forum Cinemas Akropolis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJH-AV-A5C" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="159.66666666666666" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="primaryText"/>
                                                             <nil key="highlightedColor"/>
@@ -112,7 +112,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hy3-eo-z34" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                            <rect key="frame" x="248.6666666666666" y="0.0" width="37.666666666666657" height="18"/>
+                                                            <rect key="frame" x="245.00000000000003" y="0.0" width="41.333333333333343" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="primaryText"/>
                                                             <nil key="highlightedColor"/>
@@ -586,49 +586,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="490"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jZ3-av-jYN">
-                            <size key="itemSize" width="200" height="400"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="8" id="jZ3-av-jYN">
+                            <size key="itemSize" width="240" height="400"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                            <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviesCell" id="ZAe-yq-nof" customClass="MoviesViewCell" customModule="iKinas" customModuleProvider="target">
-                                <rect key="frame" x="10" y="45" width="199.33333333333334" height="400"/>
+                                <rect key="frame" x="8" y="45" width="238.66666666666666" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YFp-07-LZi">
-                                    <rect key="frame" x="0.0" y="0.0" width="199.33333333333334" height="400"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="238.66666666666666" height="400"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CQG-4K-qB3">
-                                            <rect key="frame" x="0.0" y="0.0" width="199.33333333333334" height="341.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="238.66666666666666" height="343.33333333333331"/>
                                             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNC-5D-Oxv" userLabel="Title Container">
-                                            <rect key="frame" x="0.0" y="341.66666666666669" width="199.33333333333334" height="58.333333333333314"/>
+                                            <rect key="frame" x="0.0" y="343.33333333333331" width="238.66666666666666" height="56.666666666666686"/>
                                             <subviews>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="PlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholder" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsk-LQ-gL4" userLabel="placeholder">
-                                                    <rect key="frame" x="8" y="8" width="183.33333333333334" height="42.333333333333336"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="PlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholder" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsk-LQ-gL4" userLabel="placeholder" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="222.66666666666666" height="40.666666666666664"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="primaryText"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="movieCollectionViewTitle"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ej-yH-d0D" userLabel="title">
-                                                    <rect key="frame" x="8" y="7.9999999999999982" width="183.33333333333334" height="20.333333333333329"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ej-yH-d0D" userLabel="title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="7.9999999999999982" width="222.66666666666666" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="primaryText"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="movieCollectionViewTitle"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Tsk-LQ-gL4" secondAttribute="trailing" id="BI1-kN-b4w"/>
-                                                <constraint firstItem="Tsk-LQ-gL4" firstAttribute="top" secondItem="zNC-5D-Oxv" secondAttribute="topMargin" id="LCp-6n-wHl"/>
-                                                <constraint firstItem="6ej-yH-d0D" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="zNC-5D-Oxv" secondAttribute="bottom" id="XjP-hH-6cl"/>
-                                                <constraint firstItem="6ej-yH-d0D" firstAttribute="top" secondItem="zNC-5D-Oxv" secondAttribute="topMargin" id="hXt-bF-7cc"/>
-                                                <constraint firstItem="Tsk-LQ-gL4" firstAttribute="leading" secondItem="zNC-5D-Oxv" secondAttribute="leadingMargin" id="knU-aD-btA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Tsk-LQ-gL4" secondAttribute="bottom" id="t9C-AD-nLG"/>
-                                                <constraint firstItem="6ej-yH-d0D" firstAttribute="leading" secondItem="zNC-5D-Oxv" secondAttribute="leadingMargin" id="w04-22-UeS"/>
-                                                <constraint firstItem="6ej-yH-d0D" firstAttribute="trailing" secondItem="zNC-5D-Oxv" secondAttribute="trailingMargin" id="wVD-Zs-nNg"/>
+                                                <constraint firstAttribute="trailing" secondItem="Tsk-LQ-gL4" secondAttribute="trailing" constant="8" id="BI1-kN-b4w"/>
+                                                <constraint firstItem="Tsk-LQ-gL4" firstAttribute="top" secondItem="zNC-5D-Oxv" secondAttribute="top" constant="8" id="LCp-6n-wHl"/>
+                                                <constraint firstItem="6ej-yH-d0D" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="zNC-5D-Oxv" secondAttribute="bottom" constant="8" id="XjP-hH-6cl"/>
+                                                <constraint firstItem="6ej-yH-d0D" firstAttribute="top" secondItem="zNC-5D-Oxv" secondAttribute="top" constant="8.0000000000000018" id="hXt-bF-7cc"/>
+                                                <constraint firstItem="Tsk-LQ-gL4" firstAttribute="leading" secondItem="zNC-5D-Oxv" secondAttribute="leading" constant="8" id="knU-aD-btA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Tsk-LQ-gL4" secondAttribute="bottomMargin" constant="8" id="t9C-AD-nLG"/>
+                                                <constraint firstItem="6ej-yH-d0D" firstAttribute="leading" secondItem="zNC-5D-Oxv" secondAttribute="leading" constant="8" id="w04-22-UeS"/>
+                                                <constraint firstItem="6ej-yH-d0D" firstAttribute="trailing" secondItem="zNC-5D-Oxv" secondAttribute="trailing" constant="-8" id="wVD-Zs-nNg"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -643,9 +649,14 @@
                                         <constraint firstAttribute="trailing" secondItem="CQG-4K-qB3" secondAttribute="trailing" id="jlC-hK-naH"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="poster" destination="CQG-4K-qB3" id="ZCI-Mb-wN3"/>
-                                    <outlet property="title" destination="6ej-yH-d0D" id="fKu-Zr-jKv"/>
+                                    <outlet property="poster" destination="CQG-4K-qB3" id="2Gs-y8-gH5"/>
+                                    <outlet property="title" destination="6ej-yH-d0D" id="ic7-fc-SIs"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -723,7 +734,6 @@
         <image name="Secret Life of Pets 2" width="267" height="400"/>
         <image name="arrowLeft" width="25" height="25"/>
         <image name="arrowRight" width="25" height="25"/>
-        <image name="networkImageViewDefault" width="200" height="300"/>
         <namedColor name="dark">
             <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
