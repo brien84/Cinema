@@ -8,10 +8,26 @@
 
 import UIKit
 
+@IBDesignable
 final class MoviesViewCell: UICollectionViewCell {
     @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var title: CustomFontLabel!
 
+    @IBInspectable
+    private var cornerRadius: CGFloat = 0 {
+       didSet {
+           layer.cornerRadius = cornerRadius
+           layer.masksToBounds = cornerRadius > 0
+       }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 }
 
 extension MoviesViewCell {
@@ -40,7 +56,7 @@ extension MoviesViewCell {
 
         // In order to prevent @IBDesignable storyboard crash, checks if `poster` outlet is nil.
         // Otherwise, `poster` will never be nil.
-        let width = poster != nil ? poster.frame.height / 1.5 : targetSize.width / 1.5
+        let width = poster != nil ? poster.frame.height / 1.5 : targetSize.width / 1.1
 
         return CGSize(width: width, height: height)
     }
