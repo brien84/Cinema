@@ -10,35 +10,38 @@ import UIKit
 
 final class MoviesViewCell: UICollectionViewCell {
     @IBOutlet weak var poster: UIImageView!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var title: CustomFontLabel!
 
+}
+
+extension MoviesViewCell {
     // iOS 13+
-    override func systemLayoutSizeFitting(
-        _ targetSize: CGSize,
-        withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
-        verticalFittingPriority: UILayoutPriority) -> CGSize {
+    override func systemLayoutSizeFitting(_ targetSize: CGSize,
+                                          withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
+                                          verticalFittingPriority: UILayoutPriority) -> CGSize {
+        super.systemLayoutSizeFitting(targetSize,
+                                      withHorizontalFittingPriority: horizontalFittingPriority,
+                                      verticalFittingPriority: verticalFittingPriority)
 
-        calculateCellSize(with: targetSize)
+        return calculateCellSize(with: targetSize)
     }
 
     // iOS 12
     override func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize {
-        calculateCellSize(with: targetSize)
-    }
-}
+        super.systemLayoutSizeFitting(targetSize)
 
-extension MoviesViewCell {
-    private var cellWidth: CGFloat {
-        poster.frame.height / 1.5
+        return calculateCellSize(with: targetSize)
     }
 
     private func calculateCellSize(with targetSize: CGSize) -> CGSize {
-        let size = super.systemLayoutSizeFitting(
-            targetSize,
-            withHorizontalFittingPriority: .fittingSizeLevel,
-            verticalFittingPriority: .required
-        )
+        // Rounding down to workaround `the item height must be less than the height of the UICollectionView` warning message.
+        // The message is probably a bug, since `targetSize` is `collectionView` frame and warning only occurs on iPhone 11 Pro Max.
+        let height = targetSize.height.rounded(.down)
 
-        return CGSize(width: cellWidth, height: size.height)
+        // In order to prevent @IBDesignable storyboard crash, checks if `poster` outlet is nil.
+        // Otherwise, `poster` will never be nil.
+        let width = poster != nil ? poster.frame.height / 1.5 : targetSize.width / 1.5
+
+        return CGSize(width: width, height: height)
     }
 }
