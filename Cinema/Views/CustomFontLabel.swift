@@ -8,9 +8,11 @@
 
 import UIKit
 
-@IBDesignable final class CustomFontLabel: UILabel {
+@IBDesignable
+final class CustomFontLabel: UILabel {
 
-    @IBInspectable private var fontIdentifier: String? {
+    @IBInspectable
+    private var fontIdentifier: String? {
         didSet {
             guard let identifier = fontIdentifier else { return }
             let font = Fonts.getFont(identifier)
@@ -19,4 +21,11 @@ import UIKit
         }
     }
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 }
