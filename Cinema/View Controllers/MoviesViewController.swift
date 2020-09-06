@@ -39,13 +39,9 @@ final class MoviesViewController: UICollectionViewController {
 }
 
 extension MoviesViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        // `width` is approximate value, the cell with size itself
-        return CGSize(width: cellHeight / 2, height: cellHeight)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Provides `collectionView` frame as target size for cell to size itself in `systemLayoutSizeFitting`.
+        collectionView.frame.size
     }
 }
 
@@ -56,9 +52,5 @@ extension MoviesViewController {
         }
 
         return layout
-    }
-
-    private var cellHeight: CGFloat {
-        collectionView.frame.height - flowLayout.sectionInset.top - flowLayout.sectionInset.bottom
     }
 }
