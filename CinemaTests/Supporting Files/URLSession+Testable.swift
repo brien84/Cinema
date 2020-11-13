@@ -32,3 +32,16 @@ private final class URLProtocolMock: URLProtocol {
 
     override func stopLoading() { }
 }
+
+extension URLSession {
+    /// - Parameter data: Data returned by `URLSession`.
+    /// If `nil` value is provided, then `URLSession` will return `URLError.notConnectedToInternet`.
+    static func makeMockSession(with data: Data?) -> URLSession {
+        URLProtocolMock.testData = data
+
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [URLProtocolMock.self]
+
+        return URLSession(configuration: config)
+    }
+}
