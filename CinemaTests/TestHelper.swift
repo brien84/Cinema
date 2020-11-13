@@ -74,41 +74,4 @@ struct TestHelper {
     static func generateDateDaysFromNow(_ days: Double) -> Date {
         return Date(timeIntervalSinceNow: 86400 * days)
     }
-
-    static func makeMockURLSession(with data: Data?) -> URLSession {
-        URLProtocolMock.testData = data
-
-        let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [URLProtocolMock.self]
-        let session = URLSession(configuration: config)
-
-        return session
-    }
-
-    private class URLProtocolMock: URLProtocol {
-        // This is the data we are sending back.
-        static var testData: Data?
-
-        override class func canInit(with request: URLRequest) -> Bool {
-            return true
-        }
-
-        override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-            return request
-        }
-
-        // As soon as loading starts, send back our test data or an error, then end loading.
-        override func startLoading() {
-
-            if let data = URLProtocolMock.testData {
-                self.client?.urlProtocol(self, didLoad: data)
-            } else {
-                self.client?.urlProtocol(self, didFailWithError: URLError.init(.notConnectedToInternet))
-            }
-
-            self.client?.urlProtocolDidFinishLoading(self)
-        }
-
-        override func stopLoading() { }
-    }
 }
