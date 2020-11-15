@@ -8,20 +8,20 @@
 
 import Foundation
 
-final class Showing: Codable {
-
+struct Showing: Codable {
     let city: City
     let date: Date
     let venue: String
     let is3D: Bool
     var parentMovie: Movie?
 
-    init(city: City, date: Date, venue: String, is3D: Bool, parentMovie: Movie?) {
-        self.city = city
-        self.date = date
-        self.venue = venue
-        self.is3D = is3D
-        self.parentMovie = parentMovie
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
+        city = try values.decode(City.self, forKey: .city)
+        date = try values.decode(Date.self, forKey: .date)
+        venue = try values.decode(String.self, forKey: .venue)
+        is3D = try values.decode(Bool.self, forKey: .is3D)
     }
 
     private enum CodingKeys: String, CodingKey {

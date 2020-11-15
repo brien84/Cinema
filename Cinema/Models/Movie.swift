@@ -8,17 +8,36 @@
 
 import Foundation
 
-final class Movie: Codable {
-
+struct Movie: Codable {
     let title: String
     let originalTitle: String
     let year: String
-    let ageRating: String?
-    let duration: String?
-    let genres: [String]?
-    let plot: String?
-    let poster: URL?
+    let ageRating: String
+    let duration: String
+    let genres: [String]
+    let plot: String
+    let poster: URL
     var showings: [Showing]
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
+        title = try values.decode(String.self, forKey: .title)
+        originalTitle = try values.decode(String.self, forKey: .originalTitle)
+        year = try values.decode(String.self, forKey: .year)
+        ageRating = try values.decode(String.self, forKey: .ageRating)
+        duration = try values.decode(String.self, forKey: .duration)
+        genres = try values.decode([String].self, forKey: .genres)
+        plot = try values.decode(String.self, forKey: .plot)
+        poster = try values.decode(URL.self, forKey: .poster)
+        showings = try values.decode([Showing].self, forKey: .showings)
+
+        showings = showings.map { showing -> Showing in
+            var showing = showing
+            showing.parentMovie = self
+            return showing
+        }
+    }
 
     private enum CodingKeys: String, CodingKey {
         case title
@@ -30,38 +49,6 @@ final class Movie: Codable {
         case plot
         case poster
         case showings
-    }
-
-    init(title: String, originalTitle: String, year: String, ageRating: String?,
-         duration: String?, genres: [String]?, plot: String?, poster: URL?, showings: [Showing]) {
-        self.title = title
-        self.originalTitle = originalTitle
-        self.year = year
-        self.ageRating = ageRating
-        self.duration = duration
-        self.genres = genres
-        self.plot = plot
-        self.poster = poster
-        self.showings = showings
-    }
-
-    required init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-
-        title = try values.decode(String.self, forKey: .title)
-        originalTitle = try values.decode(String.self, forKey: .originalTitle)
-        year = try values.decode(String.self, forKey: .year)
-        ageRating = try? values.decode(String.self, forKey: .ageRating)
-        duration = try? values.decode(String.self, forKey: .duration)
-        genres = try? values.decode([String].self, forKey: .genres)
-        plot = try? values.decode(String.self, forKey: .plot)
-        poster = try? values.decode(URL.self, forKey: .poster)
-
-        showings = try values.decode([Showing].self, forKey: .showings)
-
-        showings.forEach { showing in
-            showing.parentMovie = self
-        }
     }
 }
 
