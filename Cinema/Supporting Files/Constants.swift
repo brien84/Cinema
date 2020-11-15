@@ -25,3 +25,18 @@ extension URL {
     static let api = URL(string: "https://movies.ioys.lt/all")!
     //static let api = URL(string: "http://localhost:8080/all")!
 }
+
+extension City {
+    var api: URL {
+        switch self {
+        case .vilnius:
+            return URL.api.appendingPathComponent("vilnius")
+        case .kaunas:
+            return URL.api.appendingPathComponent("kaunas")
+        case .klaipeda:
+            return URL.api.appendingPathComponent("klaipeda")
+        case .siauliai:
+            return URL.api.appendingPathComponent("siauliai")
+        }
+    }
+}
