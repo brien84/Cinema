@@ -16,11 +16,11 @@ private struct MovieDouble: Codable {
     let title: String
     let originalTitle: String
     let year: String
-    let ageRating: String?
-    let duration: String?
-    let genres: [String]?
-    let plot: String?
-    let poster: URL?
+    let ageRating: String
+    let duration: String
+    let genres: [String]
+    let plot: String
+    let poster: URL
     var showings: [Showing]
 }
 
