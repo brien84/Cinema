@@ -40,6 +40,19 @@ extension Movie {
     }
 }
 
+extension Array where Element == Movie {
+    func encoded() -> Data {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+
+        guard let data = try? encoder.encode(self) else {
+            fatalError("Could not encode movies!")
+        }
+
+        return data
+    }
+}
+
 // MARK: - Showing
 
 private struct ShowingDouble: Codable {
