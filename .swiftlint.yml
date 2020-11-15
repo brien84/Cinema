@@ -1,3 +1,5 @@
 line_length: 175
 identifier_name:
     min_length: 2
+disabled_rules:
+    function_parameter_count
