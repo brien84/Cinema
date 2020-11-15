@@ -22,8 +22,8 @@ extension UIColor {
 }
 
 extension URL {
-    static let api = URL(string: "https://movies.ioys.lt/all")!
-    //static let api = URL(string: "http://localhost:8080/all")!
+    static let api = URL(string: "https://movies.ioys.lt/")!
+    //static let api = URL(string: "http://localhost:8080/")!
 }
 
 extension City {
