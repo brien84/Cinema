@@ -13,37 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    private lazy var navigationController: UINavigationController = {
-        let controller = UINavigationController(rootViewController: DailyViewController())
-
-        // Makes `navigationBar` transparent.
-        let image = UIColor.transparentBlackC.image(size: controller.navigationBar.frame.size)
-        controller.navigationBar.setBackgroundImage(image, for: .default)
-        controller.navigationBar.shadowImage = UIImage()
-
-        // Setting `backBarButtonItem` to a new `UIBarButtonItem` keeps empty back button title
-        // across all View Controllers in the app.
-        controller.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
-
-        guard let font = UIFont(name: "Avenir-Medium", size: .dynamicFontSize(15)) else { fatalError() }
-        controller.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.lightC, .font: font]
-
-        controller.navigationBar.tintColor = .lightC
-
-        return controller
-    }()
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        window = UIWindow(frame: UIScreen.main.bounds)
-
-        // Opens `OptionsViewController` if the app is started for the first time or if UI tests commences.
+        // Opens `OptionsViewController` if the app is started for the first time or if UI tests commence.
         if !UserDefaults.standard.isCitySet() || CommandLine.arguments.contains("ui-testing") {
-            navigationController.pushViewController(OptionsViewController(), animated: false)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let optionsVC = storyboard.instantiateViewController(withIdentifier: "OptionsVC")
+            let navController = window?.rootViewController as? UINavigationController
+            navController?.pushViewController(optionsVC, animated: false)
         }
-
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
 
         return true
     }
