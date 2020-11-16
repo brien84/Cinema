@@ -46,7 +46,7 @@ final class DateViewController: UITableViewController {
 
     @IBAction private func leftNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
         if dateSelector.isFirst {
-            print("Open Options.")
+            performSegue(withIdentifier: "openSettings", sender: nil)
         } else {
             dateSelector.previous()
             updateNavigationItemAppearance()
@@ -69,6 +69,6 @@ final class DateViewController: UITableViewController {
 extension DateViewController {
     private var moviesContainerSize: CGSize {
         let tableWidth = tableView.frame.width
-        return CGSize(width: tableWidth, height: tableWidth * 0.9)
+        return CGSize(width: tableWidth, height: tableWidth * 1.2)
     }
 }
