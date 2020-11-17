@@ -65,9 +65,7 @@ final class DateViewController: UITableViewController {
     }
 
     private func fetchMovies() {
-        let city = UserDefaults.standard.readCity()
-
-        movieFetcher.fetchMovies(in: city) { result in
+        movieFetcher.fetch { result in
             switch result {
             case .success(let movies):
                 DispatchQueue.main.async {

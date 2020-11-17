@@ -42,7 +42,7 @@ final class MovieFetcherTests: XCTestCase {
 
         let expectation = self.expectation(description: "Wait for fetching to end.")
 
-        sut.fetchMovies(in: city, using: session) { result in
+        sut.fetch(using: session) { result in
             let movies = try! result.get()
 
             XCTAssertEqual(movies.count, 1)
@@ -73,7 +73,7 @@ final class MovieFetcherTests: XCTestCase {
 
         let expectation = self.expectation(description: "Wait for fetching to end.")
 
-        sut.fetchMovies(in: .vilnius, using: session) { result in
+        sut.fetch(using: session) { result in
             switch result {
             case .success:
                 XCTFail("Fetching should fail!")
@@ -93,7 +93,7 @@ final class MovieFetcherTests: XCTestCase {
 
         let expectation = self.expectation(description: "Wait for fetching to end.")
 
-        sut.fetchMovies(in: .vilnius, using: session) { result in
+        sut.fetch(using: session) { result in
             switch result {
             case .success:
                 XCTFail("Fetching should fail!")
