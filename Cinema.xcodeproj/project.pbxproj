@@ -39,6 +39,8 @@
 		2948398424D1F85500133940 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948398324D1F85500133940 /* DateViewController.swift */; };
 		294CD91023E04BA60064644D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CD90F23E04BA60064644D /* LoadingView.swift */; };
 		294E933223A959BD0062E808 /* SegmentableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E933123A959BD0062E808 /* SegmentableContainer.swift */; };
+		29833739256466FA0072347E /* NewLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29833738256466FA0072347E /* NewLoadingView.swift */; };
+		298337412564676A0072347E /* NewLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 298337402564676A0072347E /* NewLoadingView.xib */; };
 		299C262C24F6CFD20074E795 /* ShowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C262B24F6CFD20074E795 /* ShowingsViewController.swift */; };
 		299C262E24F6F0740074E795 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C262D24F6F0740074E795 /* DatePickerViewController.swift */; };
 		299C263024F81A6F0074E795 /* ShowingsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C262F24F81A6F0074E795 /* ShowingsContainerViewController.swift */; };
@@ -121,6 +123,8 @@
 		2948398324D1F85500133940 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		294CD90F23E04BA60064644D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		294E933123A959BD0062E808 /* SegmentableContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentableContainer.swift; sourceTree = "<group>"; };
+		29833738256466FA0072347E /* NewLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoadingView.swift; sourceTree = "<group>"; };
+		298337402564676A0072347E /* NewLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewLoadingView.xib; sourceTree = "<group>"; };
 		299C262B24F6CFD20074E795 /* ShowingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingsViewController.swift; sourceTree = "<group>"; };
 		299C262D24F6F0740074E795 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		299C262F24F81A6F0074E795 /* ShowingsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingsContainerViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 			children = (
 				299D135124C7667E0012755A /* MovieDetailsView.xib */,
 				299D134D24C21D940012755A /* MovieDetailViewController.xib */,
+				29833738256466FA0072347E /* NewLoadingView.swift */,
+				298337402564676A0072347E /* NewLoadingView.xib */,
 				2904C7BD233BE80300407B64 /* Cells */,
 				29B4D94823F1C9C800BD9783 /* ContainerView.swift */,
 				29230DEA235CFBD2007C9EB4 /* ErrorLabel.swift */,
@@ -483,6 +489,7 @@
 				2904C7712336982D00407B64 /* LaunchScreen.storyboard in Resources */,
 				2932FB7F24D35D62009AEDD1 /* Main.storyboard in Resources */,
 				299D135224C7667E0012755A /* MovieDetailsView.xib in Resources */,
+				298337412564676A0072347E /* NewLoadingView.xib in Resources */,
 				2904C76E2336982D00407B64 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +543,7 @@
 				299D135A24CA26DC0012755A /* GradientBackgroundView.swift in Sources */,
 				2904C9F12341208400407B64 /* MovieShowingsVC.swift in Sources */,
 				2932FB8124D602E8009AEDD1 /* MoviesViewController.swift in Sources */,
+				29833739256466FA0072347E /* NewLoadingView.swift in Sources */,
 				299C267C2502DDB30074E795 /* CustomFontLabel.swift in Sources */,
 				294CD91023E04BA60064644D /* LoadingView.swift in Sources */,
 				29CE105A24E1E8560030D841 /* MoviesViewCell.swift in Sources */,
