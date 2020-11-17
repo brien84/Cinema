@@ -10,25 +10,38 @@ import UIKit
 
 final class DateViewController: UITableViewController {
     private let dateSelector: DateSelectable
+    private var movieFetcher: MovieFetcher
 
-    private let datasource = Array(0...10)
+    private var datasource = [Movie]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateNavigationItemAppearance()
         tableView.tableHeaderView?.frame.size = moviesContainerSize
 
-        updateNavigationItemAppearance()
+        // swiftlint:disable:next discarded_notification_center_observer
+        NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { _ in
+            self.fetchMovies()
+        }
+
+        fetchMovies()
     }
 
-    init(dateSelector: DateSelectable = DateSelector()) {
+    init(dateSelector: DateSelectable, movieFetcher: MovieFetcher) {
         self.dateSelector = dateSelector
+        self.movieFetcher = movieFetcher
 
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder: NSCoder) {
         self.dateSelector = DateSelector()
+        self.movieFetcher = MovieFetcher()
 
         super.init(coder: coder)
     }
@@ -42,6 +55,21 @@ final class DateViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showingCell", for: indexPath) as! DateShowingCell
 
         return cell
+    }
+
+    private func fetchMovies() {
+        let city = UserDefaults.standard.readCity()
+
+        movieFetcher.fetchMovies(in: city) { result in
+            switch result {
+            case .success(let movies):
+                DispatchQueue.main.async {
+                    self.datasource = movies
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     @IBAction private func leftNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
