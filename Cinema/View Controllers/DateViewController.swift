@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol DateViewControllerDelegate: AnyObject {
+    func dateVC(_ dateVC: DateViewController, didUpdate datasource: [Movie])
+}
+
 final class DateViewController: UITableViewController {
     private let dateSelector: DateSelectable
+
     private var movieFetcher: MovieFetcher
+    weak var delegate: DateViewControllerDelegate?
 
     private var datasource = [Movie]() {
         didSet {
+            delegate?.dateVC(self, didUpdate: datasource)
             tableView.reloadData()
         }
     }
@@ -91,6 +98,15 @@ final class DateViewController: UITableViewController {
 
         guard let leftButton = navigationItem.leftBarButtonItem else { return }
         leftButton.image = dateSelector.isFirst ? .options : .left
+    }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embedMovieCollectionVC" {
+            guard let vc = segue.destination as? MoviesViewController else { return }
+            delegate = vc
+        }
     }
 }
 
