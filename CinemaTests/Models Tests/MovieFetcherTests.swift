@@ -112,4 +112,87 @@ final class MovieFetcherTests: XCTestCase {
 
         waitForExpectations(timeout: 3)
     }
+
+    func testGettingShowings() {
+        let today = Date.today
+        let tommorow = Date.tommorow
+
+        let showings = [
+            Showing.create(.vilnius, today, "", true),
+            Showing.create(.vilnius, today, "", true),
+            Showing.create(.vilnius, today, "", true),
+            Showing.create(.vilnius, tommorow, "", true),
+            Showing.create(.vilnius, tommorow, "", true)
+        ]
+
+        let movie = Movie.create("", "", "", "", "", [], "", URL(string: "some.url")!, showings)
+
+        let session = URLSession.makeMockSession(with: [movie].encoded())
+
+        let expectation = self.expectation(description: "Wait for fetching to end.")
+
+        sut.fetch(using: session) { result in
+            switch result {
+            case .success:
+                XCTAssertTrue(true)
+            case .failure:
+                XCTFail("Fetching should succeed!")
+            }
+
+            let todayShowings = self.sut.getShowings(at: today)
+            let tommorowShowings = self.sut.getShowings(at: tommorow)
+
+            XCTAssertEqual(todayShowings.count, 3)
+            XCTAssertEqual(tommorowShowings.count, 2)
+
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 3)
+    }
+
+    func testGettingMovies() {
+        let today = Date.today
+        let tommorow = Date.tommorow
+        let title = "testTitle"
+
+        let showings0 = [
+            Showing.create(.vilnius, today, "", true),
+            Showing.create(.vilnius, today, "", true),
+            Showing.create(.vilnius, today, "", true),
+            Showing.create(.vilnius, tommorow, "", true),
+            Showing.create(.vilnius, tommorow, "", true)
+        ]
+        let showings1 = [
+            Showing.create(.vilnius, tommorow, "", true),
+            Showing.create(.vilnius, tommorow, "", true)
+        ]
+
+        let movies = [
+            Movie.create(title, "", "", "", "", [], "", URL(string: "some.url")!, showings0),
+            Movie.create("", "", "", "", "", [], "", URL(string: "some.url")!, showings1)
+        ]
+
+        let session = URLSession.makeMockSession(with: movies.encoded())
+
+        let expectation = self.expectation(description: "Wait for fetching to end.")
+
+        sut.fetch(using: session) { result in
+            switch result {
+            case .success:
+                XCTAssertTrue(true)
+            case .failure:
+                XCTFail("Fetching should succeed!")
+            }
+
+            let todayMovies = self.sut.getMovies(at: today)
+
+            XCTAssertEqual(todayMovies.count, 1)
+            XCTAssertEqual(todayMovies[0].title, title)
+
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 3)
+    }
 }
