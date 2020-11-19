@@ -6,7 +6,6 @@
 //  Copyright © 2020 Marius. All rights reserved.
 //
 
-// swiftlint:disable force_try
 import XCTest
 @testable import iKinas
 
@@ -21,9 +20,9 @@ final class MovieFetcherTests: XCTestCase {
         sut = nil
     }
 
-    func testFetchingSuccessReturnsMovies() {
+    func testSuccessfulFetching() {
         let city = City.vilnius
-        let date = Date(timeIntervalSince1970: 0)
+        let date = Date.today
         let venue = "testVenue"
         let is3D = true
         let showing = Showing.create(city, date, venue, is3D)
@@ -43,7 +42,14 @@ final class MovieFetcherTests: XCTestCase {
         let expectation = self.expectation(description: "Wait for fetching to end.")
 
         sut.fetch(using: session) { result in
-            let movies = try! result.get()
+            switch result {
+            case .success:
+                XCTAssertTrue(true)
+            case .failure:
+                XCTFail("Fetching should succeed!")
+            }
+
+            let movies = self.sut.getMovies(at: date)
 
             XCTAssertEqual(movies.count, 1)
             XCTAssertEqual(movies[0].title, title)
