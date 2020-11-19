@@ -11,6 +11,20 @@ import UIKit
 final class MovieFetcher {
     private var movies = [Movie]()
 
+    func getMovies(at date: Date) -> [Movie] {
+        let movies = getShowings(at: date).compactMap { showing in
+            showing.parentMovie
+        }
+
+        return Array(Set(movies))
+    }
+
+    func getShowings(at date: Date) -> [Showing] {
+        movies.flatMap { movie in
+            movie.showings.filter { $0.isShown(at: date) }
+        }
+    }
+
     func fetch(using session: URLSession = .shared, completion: @escaping (Result<Void, Error>) -> Void) {
         if CommandLine.arguments.contains("ui-testing") {
             guard let data = NSDataAsset(name: "UITestData")?.data else {
