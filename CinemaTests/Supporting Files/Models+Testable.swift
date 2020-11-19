@@ -75,3 +75,21 @@ extension Showing {
         return try! decoder.decode(Showing.self, from: data)
     }
 }
+
+// MARK: - Date
+
+extension Date {
+    /// Returns current date one hour in the future.
+    static var today: Date {
+        let current = Date().timeIntervalSinceReferenceDate.rounded(.down)
+
+        return Date(timeIntervalSinceReferenceDate: current + 3600)
+    }
+
+    /// Returns current date 25 hours in the future.
+    static var tommorow: Date {
+        let current = Date().timeIntervalSinceReferenceDate.rounded(.down)
+
+        return Date(timeIntervalSinceReferenceDate: current + 90000)
+    }
+}
