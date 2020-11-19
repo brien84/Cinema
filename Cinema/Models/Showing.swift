@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Showing: Codable {
+final class Showing: Codable {
     let city: City
     let date: Date
     let venue: String
@@ -29,20 +29,5 @@ struct Showing: Codable {
         case date
         case venue
         case is3D
-    }
-}
-
-extension Showing {
-    func isShown(in city: City) -> Bool {
-        if self.date.isInThePast() { return false }
-
-        return self.city == city
-    }
-
-    func isShown(at date: Date) -> Bool {
-        if self.date.isInThePast() { return false }
-
-        let calendar = Calendar.current
-        return calendar.isDate(self.date, inSameDayAs: date)
     }
 }
