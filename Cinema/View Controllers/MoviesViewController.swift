@@ -53,7 +53,7 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MoviesViewController: DateViewControllerDelegate {
-    func dateVC(_ dateVC: DateViewController, didUpdate datasource: [Movie]) {
-        self.datasource = datasource
+    func dateVC(_ dateVC: DateViewController, didUpdateDatasource movies: [Movie]) {
+        self.datasource = movies
     }
 }
