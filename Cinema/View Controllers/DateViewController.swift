@@ -9,18 +9,18 @@
 import UIKit
 
 protocol DateViewControllerDelegate: AnyObject {
-    func dateVC(_ dateVC: DateViewController, didUpdate datasource: [Movie])
+    func dateVC(_ dateVC: DateViewController, didUpdateDatasource movies: [Movie])
 }
 
 final class DateViewController: UITableViewController {
     private let dateSelector: DateSelectable
+    private let movieFetcher: MovieFetcher
 
-    private var movieFetcher: MovieFetcher
     weak var delegate: DateViewControllerDelegate?
 
-    private var datasource = [Movie]() {
+    private var datasource = [Showing]() {
         didSet {
-            delegate?.dateVC(self, didUpdate: datasource)
+            delegate?.dateVC(self, didUpdateDatasource: movieFetcher.getMovies(at: dateSelector.current))
             tableView.reloadData()
         }
     }
@@ -67,9 +67,10 @@ final class DateViewController: UITableViewController {
     private func fetchMovies() {
         movieFetcher.fetch { result in
             switch result {
-            case .success(let movies):
+            case .success:
                 DispatchQueue.main.async {
-                    self.datasource = movies
+                    let date = self.dateSelector.current
+                    self.datasource = self.movieFetcher.getShowings(at: date)
                 }
             case .failure(let error):
                 print(error)
