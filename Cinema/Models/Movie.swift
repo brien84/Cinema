@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Movie: Codable {
+final class Movie: Codable {
     let title: String
     let originalTitle: String
     let year: String
@@ -33,7 +33,7 @@ struct Movie: Codable {
         showings = try values.decode([Showing].self, forKey: .showings)
 
         showings = showings.map { showing -> Showing in
-            var showing = showing
+            let showing = showing
             showing.parentMovie = self
             return showing
         }
@@ -49,16 +49,6 @@ struct Movie: Codable {
         case plot
         case poster
         case showings
-    }
-}
-
-extension Movie {
-    func getShowings(in city: City) -> [Showing] {
-        return self.showings.filter { $0.isShown(in: city) }
-    }
-
-    func getShowings(in city: City, at date: Date) -> [Showing] {
-        return self.showings.filter { $0.isShown(in: city) && $0.isShown(at: date) }
     }
 }
 
