@@ -8,14 +8,6 @@
 
 import UIKit
 
-extension Array where Element: Hashable {
-    /// Returns an array without duplicate values.
-    func uniqued() -> [Element] {
-        var seen = Set<Element>()
-        return filter { seen.insert($0).inserted }
-    }
-}
-
 extension CGFloat {
     /// Scales `UIFont` size according to screen width.
     /// On devices with 320 points screen width returned value will be same as
@@ -54,10 +46,6 @@ extension Date {
         }
 
         return formatter.string(from: self)
-    }
-
-    func isInThePast() -> Bool {
-        return self < Date()
     }
 }
 
