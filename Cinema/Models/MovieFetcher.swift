@@ -8,10 +8,10 @@
 
 import UIKit
 
-struct MovieFetcher {
-    var movies = [Movie]()
+final class MovieFetcher {
+    private var movies = [Movie]()
 
-    func fetch(using session: URLSession = .shared, completion: @escaping (Result<[Movie], Error>) -> Void) {
+    func fetch(using session: URLSession = .shared, completion: @escaping (Result<Void, Error>) -> Void) {
         if CommandLine.arguments.contains("ui-testing") {
             guard let data = NSDataAsset(name: "UITestData")?.data else {
                 fatalError("Cannot load UITestData!")
@@ -35,13 +35,13 @@ struct MovieFetcher {
         }
     }
 
-    private func decode(_ data: Data) -> Result<[Movie], Error> {
+    private func decode(_ data: Data) -> Result<Void, Error> {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
 
         do {
-            let movies = try decoder.decode([Movie].self, from: data)
-            return .success(movies)
+            self.movies = try decoder.decode([Movie].self, from: data)
+            return .success(())
         } catch {
             return .failure(error)
         }
