@@ -4,24 +4,74 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewLoadingView" customModule="iKinas" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewLoadingView" customModule="iKinas" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="6fn-5f-60N" id="eR3-96-Ff3"/>
+                <outlet property="errorMessage" destination="lcS-2j-qzS" id="jl6-R0-yYW"/>
+                <outlet property="retryButton" destination="ogk-vG-pRJ" id="FBz-wx-WBh"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Message " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcS-2j-qzS">
+                    <rect key="frame" x="8" y="52" width="398" height="378"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6fn-5f-60N">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                    <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogk-vG-pRJ">
+                    <rect key="frame" x="0.0" y="466" width="414" height="25"/>
+                    <color key="backgroundColor" name="gray"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                    <state key="normal" title="Bandyti dar karta">
+                        <imageReference key="image" image="arrowRight" symbolScale="default"/>
+                    </state>
+                    <connections>
+                        <action selector="retryButtonDidTap:" destination="-1" eventType="touchUpInside" id="H99-Gq-aoi"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemYellowColor"/>
-            <point key="canvasLocation" x="-88.405797101449281" y="103.79464285714285"/>
+            <color key="backgroundColor" systemColor="systemTealColor"/>
+            <constraints>
+                <constraint firstItem="6fn-5f-60N" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7gO-M7-q8C"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ogk-vG-pRJ" secondAttribute="trailing" id="7sg-jH-idN"/>
+                <constraint firstItem="lcS-2j-qzS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="9eO-Px-d3Q"/>
+                <constraint firstItem="6fn-5f-60N" firstAttribute="top" secondItem="lcS-2j-qzS" secondAttribute="bottom" constant="8" id="9yb-Yk-urL"/>
+                <constraint firstItem="ogk-vG-pRJ" firstAttribute="top" secondItem="6fn-5f-60N" secondAttribute="bottom" constant="8" id="F0n-uU-v0x"/>
+                <constraint firstItem="ogk-vG-pRJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JFc-c2-9TJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ogk-vG-pRJ" secondAttribute="bottom" constant="8" id="av5-tm-yAv"/>
+                <constraint firstItem="ogk-vG-pRJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cl7-gB-D8e"/>
+                <constraint firstItem="6fn-5f-60N" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dml-sg-dFb"/>
+                <constraint firstItem="lcS-2j-qzS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="sHR-Lh-lsU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lcS-2j-qzS" secondAttribute="trailing" constant="8" id="xXH-OP-Tk0"/>
+            </constraints>
+            <point key="canvasLocation" x="-91.304347826086968" y="103.125"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="arrowRight" width="25" height="25"/>
+        <namedColor name="gray">
+            <color red="0.65490196078431373" green="0.66666666666666663" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
