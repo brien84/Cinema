@@ -28,13 +28,10 @@ final class DateViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNotificationObservers()
         updateNavigationItemAppearance()
-        tableView.tableHeaderView?.frame.size = moviesContainerSize
 
-        // swiftlint:disable:next discarded_notification_center_observer
-        NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { _ in
-            self.fetchMovies()
-        }
+        tableView.tableHeaderView?.frame.size = moviesContainerSize
 
         fetchMovies()
     }
@@ -62,6 +59,23 @@ final class DateViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showingCell", for: indexPath) as! DateShowingCell
 
         return cell
+    }
+
+    private func setupNotificationObservers() {
+        // swiftlint:disable:next discarded_notification_center_observer
+        NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { _ in
+            self.updateDatasource()
+        }
+
+        // swiftlint:disable:next discarded_notification_center_observer
+        NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { _ in
+            self.fetchMovies()
+        }
+    }
+
+    private func updateDatasource() {
+        let date = self.dateSelector.current
+        self.datasource = self.movieFetcher.getShowings(at: date)
     }
 
     private func fetchMovies() {
