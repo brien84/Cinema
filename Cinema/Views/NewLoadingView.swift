@@ -8,7 +8,19 @@
 
 import UIKit
 
+enum LoadingError: String, Error {
+    case none = ""
+    case noNetwork = "Nepavyksta pasiekti serverio..."
+    case noMovies = "Šią dieną filmų nėra"
+}
+
+protocol LoadingViewDelegate: AnyObject {
+    func loadingView(_ view: NewLoadingView, retryButtonDidTap: UIButton)
+}
+
 final class NewLoadingView: UIView {
+    weak var delegate: LoadingViewDelegate?
+
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var errorMessage: UILabel!
     @IBOutlet private weak var retryButton: UIButton!
@@ -26,7 +38,21 @@ final class NewLoadingView: UIView {
     }
 
     @IBAction private func retryButtonDidTap(_ sender: UIButton) {
+        startLoading()
+        delegate?.loadingView(self, retryButtonDidTap: sender)
+    }
 
+    func startLoading() {
+        retryButton.isHidden = true
+        display(error: .none)
+        activityIndicator.startAnimating()
+    }
+
+    func display(error: LoadingError) {
+        activityIndicator.stopAnimating()
+        retryButton.isHidden = error == .noNetwork ? false : true
+        errorMessage.text = error.rawValue
+        self.isHidden = false
     }
 
     private func setup() {
