@@ -21,9 +21,25 @@ final class DateViewController: UITableViewController {
     private var datasource = [Showing]() {
         didSet {
             delegate?.dateVC(self, didUpdateDatasource: movieFetcher.getMovies(at: dateSelector.current))
+
+            if datasource.count > 0 {
+                tableView.tableHeaderView?.isHidden = false
+                loadingView.isHidden = true
+            } else {
+                tableView.tableHeaderView?.isHidden = true
+                loadingView.display(error: .noMovies)
+            }
+
             tableView.reloadData()
         }
     }
+
+    private lazy var loadingView: NewLoadingView = {
+        let view = NewLoadingView()
+        tableView.backgroundView = view
+        view.delegate = self
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,15 +95,17 @@ final class DateViewController: UITableViewController {
     }
 
     private func fetchMovies() {
+        datasource.removeAll()
+        loadingView.startLoading()
+
         movieFetcher.fetch { result in
-            switch result {
-            case .success:
-                DispatchQueue.main.async {
-                    let date = self.dateSelector.current
-                    self.datasource = self.movieFetcher.getShowings(at: date)
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.updateDatasource()
+                case .failure:
+                    self.loadingView.display(error: .noNetwork)
                 }
-            case .failure(let error):
-                print(error)
             }
         }
     }
@@ -120,6 +138,12 @@ final class DateViewController: UITableViewController {
             guard let vc = segue.destination as? MoviesViewController else { return }
             delegate = vc
         }
+    }
+}
+
+extension DateViewController: LoadingViewDelegate {
+    func loadingView(_ view: NewLoadingView, retryButtonDidTap: UIButton) {
+        fetchMovies()
     }
 }
 
