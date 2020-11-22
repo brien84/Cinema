@@ -619,29 +619,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="490"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="8" id="jZ3-av-jYN">
-                            <size key="itemSize" width="240" height="400"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="jZ3-av-jYN">
+                            <size key="itemSize" width="238" height="416"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviesCell" id="ZAe-yq-nof" customClass="MoviesViewCell" customModule="iKinas" customModuleProvider="target">
-                                <rect key="frame" x="8" y="45" width="218.33333333333334" height="400"/>
+                                <rect key="frame" x="8" y="37" width="238" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YFp-07-LZi">
-                                    <rect key="frame" x="0.0" y="0.0" width="218.33333333333334" height="400"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="238" height="416"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CQG-4K-qB3">
-                                            <rect key="frame" x="0.0" y="0.0" width="218.33333333333334" height="341"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="238" height="357"/>
                                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNC-5D-Oxv" userLabel="Title Container">
-                                            <rect key="frame" x="0.0" y="341" width="218.33333333333334" height="59"/>
+                                            <rect key="frame" x="0.0" y="357" width="238" height="59"/>
                                             <subviews>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="PlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholder" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsk-LQ-gL4" userLabel="placeholder" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="202.33333333333334" height="43"/>
+                                                    <rect key="frame" x="8" y="8" width="222" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="primaryText"/>
                                                     <nil key="highlightedColor"/>
@@ -650,7 +650,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ej-yH-d0D" userLabel="title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8.0000000000000018" width="202.33333333333334" height="21.666666666666671"/>
+                                                    <rect key="frame" x="8" y="8.0000000000000018" width="222" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="primaryText"/>
                                                     <nil key="highlightedColor"/>
@@ -690,6 +690,7 @@
                                 <connections>
                                     <outlet property="poster" destination="CQG-4K-qB3" id="2Gs-y8-gH5"/>
                                     <outlet property="title" destination="6ej-yH-d0D" id="ic7-fc-SIs"/>
+                                    <outlet property="titleContainer" destination="zNC-5D-Oxv" id="VdJ-Uo-cJR"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -701,7 +702,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mx-d1-8dX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2145" y="-160"/>
+            <point key="canvasLocation" x="2144.927536231884" y="-160.04464285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uCH-Wk-0el">

@@ -12,6 +12,7 @@ import UIKit
 final class MoviesViewCell: UICollectionViewCell {
     @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var title: CustomFontLabel!
+    @IBOutlet private weak var titleContainer: UIView!
 
     @IBInspectable
     private var cornerRadius: CGFloat = 0 {
