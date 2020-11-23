@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 final class MoviesViewCell: UICollectionViewCell {
-    @IBOutlet weak var poster: UIImageView!
+    @IBOutlet weak var poster: NetworkImageView!
     @IBOutlet weak var title: CustomFontLabel!
     @IBOutlet private weak var titleContainer: UIView!
 

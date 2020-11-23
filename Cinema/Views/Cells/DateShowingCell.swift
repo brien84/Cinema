@@ -9,7 +9,7 @@
 import UIKit
 
 final class DateShowingCell: UITableViewCell {
-    @IBOutlet weak var poster: UIImageView!
+    @IBOutlet weak var poster: NetworkImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var originalTitle: UILabel!
     @IBOutlet weak var venue: UILabel!
