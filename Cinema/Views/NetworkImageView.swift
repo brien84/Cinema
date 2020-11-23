@@ -9,20 +9,26 @@
 import UIKit
 
 /// View for downloading and displaying images.
-/// When url property is set, it first checks if image is cached, then either
-/// displays image from cache or downloads image.
-///
-/// - Note: Images are cached as Data to significantly lower memory usage.
+/// When `url` property is set, `NetworkImageView` checks if image is in cache,
+/// then either displays image from cache or downloads the image.
 final class NetworkImageView: UIImageView {
-
-    private let cache = NSCache<NSString, NSData>()
+    private static let cache = NSCache<NSURL, UIImage>()
 
     private lazy var activityIndicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(style: .white)
+        let indicator = UIActivityIndicatorView(style: .gray)
         indicator.startAnimating()
-        indicator.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        indicator.hidesWhenStopped = true
 
         self.addSubview(indicator)
+
+        indicator.autoresizingMask = [
+            .flexibleLeftMargin,
+            .flexibleRightMargin,
+            .flexibleTopMargin,
+            .flexibleBottomMargin
+        ]
+
+        indicator.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
 
         return indicator
     }()
@@ -39,51 +45,44 @@ final class NetworkImageView: UIImageView {
         }
     }
 
-    override init(frame: CGRect = .zero) {
-        super.init(frame: frame)
-
-        activityIndicator.center = self.center
-    }
-
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
 
     private func loadImage() {
+        self.image = nil
+
         guard let url = url else {
             set(.defaultImage)
             return
         }
 
         // If image data is found in cache.
-        if let cachedData = cache.object(forKey: url.absoluteString as NSString) {
-            guard let image = UIImage(data: cachedData as Data) else { return }
-
+        if let image = NetworkImageView.cache.object(forKey: url as NSURL) {
             if url == self.url {
                 set(image)
             }
-
         } else {
-
-            URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
-                guard let data = data else { return }
-                guard let image = UIImage(data: data) else { return }
-                self?.cache.setObject(data as NSData, forKey: url.absoluteString as NSString)
-
-                DispatchQueue.main.async {
-                    if url == self?.url {
-                        self?.set(image)
-                    }
+            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+                guard let responseData = data, let image = UIImage(data: responseData), error == nil
+                else {
+                    self?.set(.defaultImage)
+                    return
                 }
 
+                NetworkImageView.cache.setObject(image, forKey: url as NSURL)
+
+                if url == self?.url {
+                    self?.set(image)
+                }
             }.resume()
         }
     }
 
     private func set(_ image: UIImage?) {
-        UIView.transition(with: self, duration: 0.1, options: .transitionCrossDissolve, animations: {
+        DispatchQueue.main.async {
             self.image = image
-        }, completion: nil)
+        }
     }
 }
 
