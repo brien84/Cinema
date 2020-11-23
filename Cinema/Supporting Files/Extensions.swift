@@ -20,29 +20,25 @@ extension CGFloat {
 
 extension Date {
     enum StringFormat {
-        case fullDate
-        case excludeTime
-        case onlyTime
+        case dateAndTime
         case monthAndDay
+        case timeOfDay
     }
 
     /// Converts `Date` to `String`.
-    func asString(format: StringFormat = .fullDate) -> String {
+    func asString(_ format: StringFormat = .dateAndTime) -> String {
         let formatter = DateFormatter()
-
         formatter.locale = Locale(identifier: "lt")
 
         switch format {
-        case .fullDate:
+        case .dateAndTime:
             formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        case .excludeTime:
-            formatter.dateFormat = "yyyy-MM-dd"
-        case .onlyTime:
-            formatter.dateFormat = "HH:mm"
         case .monthAndDay:
             if Calendar.current.isDateInToday(self) { return "Šiandien" }
             if Calendar.current.isDateInTomorrow(self) { return "Rytoj" }
             formatter.dateFormat = "MMMM d"
+        case .timeOfDay:
+            formatter.dateFormat = "HH:mm"
         }
 
         return formatter.string(from: self)
