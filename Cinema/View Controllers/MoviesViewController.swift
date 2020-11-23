@@ -34,8 +34,10 @@ final class MoviesViewController: UICollectionViewController {
         // swiftlint:disable:next force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MoviesViewCell
 
-        cell.poster.image = UIImage(named: "networkImageViewDefault")!
-        cell.title.text = String(repeating: "A", count: indexPath.row)
+        let movie = datasource[indexPath.row]
+
+        cell.poster.url = movie.poster
+        cell.title.text = movie.title
 
         return cell
     }
@@ -47,7 +49,7 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // Provides `collectionView` frame as target size for cell to size itself in `systemLayoutSizeFitting`.
+        // Provides `collectionView` frame as target size for cell to size itself in `systemLayoutSizeFitting(_ targetSize:)`.
         collectionView.frame.size
     }
 }
