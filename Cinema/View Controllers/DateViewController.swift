@@ -74,6 +74,15 @@ final class DateViewController: UITableViewController {
         // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "showingCell", for: indexPath) as! DateShowingCell
 
+        let showing = datasource[indexPath.row]
+
+        cell.poster.url = showing.parentMovie?.poster
+        cell.title.text = showing.parentMovie?.title
+        cell.originalTitle.text = showing.parentMovie?.originalTitle
+        cell.venue.text = showing.venue
+        cell.time.text = showing.date.asString(.timeOfDay)
+        cell.is3D = showing.is3D
+
         return cell
     }
 
@@ -103,7 +112,8 @@ final class DateViewController: UITableViewController {
                 switch result {
                 case .success:
                     self.updateDatasource()
-                case .failure:
+                case .failure(let error):
+                    print(error)
                     self.loadingView.display(error: .noNetwork)
                 }
             }
@@ -125,7 +135,7 @@ final class DateViewController: UITableViewController {
     }
 
     private func updateNavigationItemAppearance() {
-        navigationItem.title = dateSelector.current.asString(format: .monthAndDay)
+        navigationItem.title = dateSelector.current.asString(.monthAndDay)
 
         guard let leftButton = navigationItem.leftBarButtonItem else { return }
         leftButton.image = dateSelector.isFirst ? .options : .left
