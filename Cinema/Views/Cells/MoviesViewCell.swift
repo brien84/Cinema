@@ -51,13 +51,13 @@ extension MoviesViewCell {
     }
 
     private func calculateCellSize(with targetSize: CGSize) -> CGSize {
+        self.layoutIfNeeded()
+
         // Rounding down to workaround `the item height must be less than the height of the UICollectionView` warning message,
         // which occurs only on `iPhone 11 Pro Max` and `iPhone 12 Pro Max` devices, even though the height of cell is exact
         // height as `collectionView`.
         let height = targetSize.height.rounded(.down)
-
-        let targetPosterHeight = height - titleContainer.frame.height
-        let width = targetPosterHeight / 1.5
+        let width = poster.frame.height / 1.5
 
         return CGSize(width: width, height: height)
     }
