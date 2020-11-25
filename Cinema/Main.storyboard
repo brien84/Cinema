@@ -26,7 +26,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtS-LT-Qg0" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="8" width="382" height="24"/>
+                                    <rect key="frame" x="16" y="8" width="382" height="36"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <color key="textColor" name="primaryText"/>
                                     <nil key="highlightedColor"/>
@@ -35,13 +35,13 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PsW-bU-O7w">
-                                    <rect key="frame" x="0.0" y="40" width="414" height="490"/>
+                                    <rect key="frame" x="0.0" y="52" width="414" height="466"/>
                                     <connections>
                                         <segue destination="fg4-kJ-Eo7" kind="embed" identifier="embedMovieCollectionVC" id="wOF-CZ-nGK"/>
                                     </connections>
                                 </containerView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seansai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWM-6b-OYy" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="538" width="382" height="24"/>
+                                    <rect key="frame" x="16" y="526" width="382" height="36"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                     <color key="textColor" name="primaryText"/>
                                     <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="gAU-us-9tG" userLabel="Empty Footer">
-                            <rect key="frame" x="0.0" y="797.66667175292969" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="797.66667175292969" width="414" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
@@ -621,7 +621,7 @@
             <objects>
                 <collectionViewController id="fg4-kJ-Eo7" customClass="MoviesViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="UoG-fi-SO5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="490"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="jZ3-av-jYN">
@@ -632,7 +632,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviesCell" id="ZAe-yq-nof" customClass="MoviesViewCell" customModule="iKinas" customModuleProvider="target">
-                                <rect key="frame" x="8" y="37" width="238" height="416"/>
+                                <rect key="frame" x="8" y="25" width="238" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YFp-07-LZi">
                                     <rect key="frame" x="0.0" y="0.0" width="238" height="416"/>
@@ -773,7 +773,7 @@
             <size key="intrinsicContentSize" width="35.666666666666664" height="21.666666666666668"/>
         </designable>
         <designable name="DtS-LT-Qg0">
-            <size key="intrinsicContentSize" width="57" height="24"/>
+            <size key="intrinsicContentSize" width="85.666666666666671" height="36"/>
         </designable>
         <designable name="Tsk-LQ-gL4">
             <size key="intrinsicContentSize" width="792.66666666666663" height="21.666666666666668"/>
@@ -788,7 +788,7 @@
             <size key="intrinsicContentSize" width="390.66666666666669" height="17.666666666666668"/>
         </designable>
         <designable name="qWM-6b-OYy">
-            <size key="intrinsicContentSize" width="75.333333333333329" height="24"/>
+            <size key="intrinsicContentSize" width="113" height="36"/>
         </designable>
         <designable name="tsy-Pk-dGB">
             <size key="intrinsicContentSize" width="502.33333333333331" height="21.666666666666668"/>
