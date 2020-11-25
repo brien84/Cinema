@@ -17,11 +17,11 @@ final class MoviesViewController: UICollectionViewController {
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        // Invalidates layout to trigger `systemLayoutSizeFitting` method in `MoviesViewCell`.
-        flowLayout?.invalidateLayout()
+        // Set automatic cell sizing in code to improve Interface Builder stability.
+        flowLayout?.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
 
     // MARK: UICollectionViewDataSource
