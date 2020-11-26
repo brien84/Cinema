@@ -24,6 +24,7 @@ final class DateViewController: UITableViewController {
 
             if datasource.count > 0 {
                 datasource = sorted(datasource)
+                scrollToTop()
 
                 tableView.tableHeaderView?.isHidden = false
                 loadingView.isHidden = true
@@ -168,6 +169,18 @@ extension DateViewController {
                 } else {
                     return $0.venue < $1.venue
                 }
+            }
+        }
+    }
+
+    /// Scrolls to the top of `tableView`.
+    private func scrollToTop() {
+        if tableView.contentOffset.y > 0 {
+            if let navBar = navigationController?.navigationBar {
+                // Height of status bar + navigation bar.
+                let unsafeAreaHeight = navBar.frame.maxY
+                tableView.setContentOffset(CGPoint(x: 0, y: -unsafeAreaHeight), animated: false)
+                tableView.layoutIfNeeded()
             }
         }
     }
