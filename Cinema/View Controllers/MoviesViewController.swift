@@ -15,6 +15,9 @@ final class MoviesViewController: UICollectionViewController {
         didSet {
             datasource.sort { $0.title < $1.title }
 
+            // Scrolls to the top of `collectionView`.
+            collectionView.setContentOffset(.zero, animated: false)
+
             collectionView.reloadData()
         }
     }
