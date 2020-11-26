@@ -13,6 +13,8 @@ private let reuseIdentifier = "moviesCell"
 final class MoviesViewController: UICollectionViewController {
     private var datasource = [Movie]() {
         didSet {
+            datasource.sort { $0.title < $1.title }
+
             collectionView.reloadData()
         }
     }
