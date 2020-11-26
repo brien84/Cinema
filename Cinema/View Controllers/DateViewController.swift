@@ -23,6 +23,8 @@ final class DateViewController: UITableViewController {
             delegate?.dateVC(self, didUpdateDatasource: movieFetcher.getMovies(at: dateSelector.current))
 
             if datasource.count > 0 {
+                datasource = sorted(datasource)
+
                 tableView.tableHeaderView?.isHidden = false
                 loadingView.isHidden = true
             } else {
@@ -147,6 +149,26 @@ final class DateViewController: UITableViewController {
         if segue.identifier == "embedMovieCollectionVC" {
             guard let vc = segue.destination as? MoviesViewController else { return }
             delegate = vc
+        }
+    }
+}
+
+extension DateViewController {
+    /// Returns `[Showings]` sorted in ascending order by `date` with`parentMovie.title` and `venue` tie-breaks.
+    private func sorted(_ datasource: [Showing]) -> [Showing] {
+        datasource.sorted {
+            if $0.date != $1.date {
+                return $0.date < $1.date
+            } else {
+                guard let title0 = $0.parentMovie?.title else { return false }
+                guard let title1 = $1.parentMovie?.title else { return true }
+
+                if title0 != title1 {
+                    return title0 < title1
+                } else {
+                    return $0.venue < $1.venue
+                }
+            }
         }
     }
 }
