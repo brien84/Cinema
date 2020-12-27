@@ -50,8 +50,6 @@ final class DateViewController: UITableViewController {
         setupNotificationObservers()
         updateNavigationItemAppearance()
 
-        tableView.tableHeaderView?.frame.size = moviesContainerSize
-
         fetchMovies()
     }
 
@@ -194,12 +192,5 @@ extension DateViewController {
 extension DateViewController: LoadingViewDelegate {
     func loadingView(_ view: NewLoadingView, retryButtonDidTap: UIButton) {
         fetchMovies()
-    }
-}
-
-extension DateViewController {
-    private var moviesContainerSize: CGSize {
-        let tableWidth = tableView.frame.width
-        return CGSize(width: tableWidth, height: tableWidth * 1.2)
     }
 }
