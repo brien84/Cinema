@@ -45,10 +45,6 @@ final class NetworkImageView: UIImageView {
         }
     }
 
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-
     private func loadImage() {
         self.image = nil
 
