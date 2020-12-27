@@ -13,7 +13,7 @@ final class Showing: Codable {
     let date: Date
     let venue: String
     let is3D: Bool
-    var parentMovie: Movie?
+    weak var parentMovie: Movie?
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
