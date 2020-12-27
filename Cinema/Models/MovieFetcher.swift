@@ -45,7 +45,9 @@ final class MovieFetcher {
                 }
             }
 
-            task.resume()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                task.resume()
+            }
         }
     }
 
