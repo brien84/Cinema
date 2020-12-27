@@ -90,12 +90,10 @@ final class DateViewController: UITableViewController {
     }
 
     private func setupNotificationObservers() {
-        // swiftlint:disable:next discarded_notification_center_observer
         NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { _ in
             self.updateDatasource()
         }
 
-        // swiftlint:disable:next discarded_notification_center_observer
         NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { _ in
             self.fetchMovies()
         }
