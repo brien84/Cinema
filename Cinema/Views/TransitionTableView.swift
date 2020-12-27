@@ -9,5 +9,7 @@
 import UIKit
 
 final class TransitionTableView: UITableView {
-
+    @IBOutlet private weak var headerMoviesLabel: CustomFontLabel!
+    @IBOutlet private weak var headerContainerView: UIView!
+    @IBOutlet private weak var headerShowingsLabel: CustomFontLabel!
 }
