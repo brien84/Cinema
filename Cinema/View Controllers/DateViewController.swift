@@ -38,8 +38,8 @@ final class DateViewController: UITableViewController {
     }
 
     private lazy var loadingView: NewLoadingView = {
-        let view = NewLoadingView()
-        tableView.backgroundView = view
+        let view = NewLoadingView(frame: tableView.frame)
+        tableView.addSubview(view)
         view.delegate = self
         return view
     }()
@@ -67,6 +67,13 @@ final class DateViewController: UITableViewController {
         self.movieFetcher = MovieFetcher()
 
         super.init(coder: coder)
+    }
+
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+
+        // Adjust `loadingView` height, since `loadingView` is initialized before `safeArea` is.
+        loadingView.frame.size.height = tableView.frame.height - tableView.safeAreaInsets.top
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
