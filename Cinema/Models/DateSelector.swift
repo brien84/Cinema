@@ -9,7 +9,6 @@
 import Foundation
 
 final class DateSelector: DateSelectable {
-
     private let dates: [Date]
 
     private var currentIndex = 0 {
@@ -35,7 +34,7 @@ final class DateSelector: DateSelectable {
             // Testing start date is 2030-02-14.
             self.dates = Date(timeIntervalSince1970: 1897328436).futureDatesIn(days: 14)
         } else {
-            self.dates = Date().futureDatesIn(days: 14)
+            self.dates = Date().futureDatesIn(days: 10)
         }
     }
 
