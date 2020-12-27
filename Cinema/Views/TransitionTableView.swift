@@ -25,6 +25,12 @@ final class TransitionTableView: UITableView {
         return distance >= contentOffset.y
     }
 
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+
+        tableHeaderView?.frame.size = CGSize(width: frame.width, height: frame.width * 1.25)
+    }
+
     // MARK: - Snapshots
 
     private func snapshotTableView() -> UIView {
