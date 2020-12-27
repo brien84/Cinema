@@ -39,21 +39,46 @@ final class NewLoadingView: UIView {
     }
 
     @IBAction private func retryButtonDidTap(_ sender: UIButton) {
-        startLoading()
         delegate?.loadingView(self, retryButtonDidTap: sender)
     }
 
-    func startLoading() {
-        retryButton.isHidden = true
-        display(error: .none)
-        activityIndicator.startAnimating()
-    }
-
-    func display(error: LoadingError) {
+    private func set(error: LoadingError) {
         activityIndicator.stopAnimating()
         retryButton.isHidden = error == .noNetwork ? false : true
         errorMessage.text = error.rawValue
-        self.isHidden = false
+        isHidden = false
+    }
+
+    func startLoading() {
+        set(error: .none)
+        activityIndicator.startAnimating()
+    }
+
+    func show(_ error: LoadingError, animated: Bool, completion: (() -> Void)? = nil) {
+        if animated {
+            frame.origin.y += frame.height
+            set(error: error)
+
+            UIView.animate(withDuration: .stdAnimation) { [self] in
+                frame.origin.y -= frame.height
+            } completion: { _ in
+                completion?()
+            }
+        } else {
+            set(error: error)
+            completion?()
+        }
+    }
+
+    func hide(completion: (() -> Void)? = nil) {
+        UIView.animate(withDuration: .stdAnimation) { [self] in
+            frame.origin.y += frame.height
+        } completion: { [self] _ in
+            isHidden = true
+            frame.origin.y -= frame.height
+
+            completion?()
+        }
     }
 
     private func loadView() {
