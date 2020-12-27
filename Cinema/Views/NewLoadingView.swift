@@ -28,13 +28,14 @@ final class NewLoadingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setup()
+        loadView()
+
+        // Always on top, when added to superview.
+        self.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
     }
 
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
-        setup()
+        fatalError("init(coder:) has not been implemented")
     }
 
     @IBAction private func retryButtonDidTap(_ sender: UIButton) {
@@ -55,13 +56,12 @@ final class NewLoadingView: UIView {
         self.isHidden = false
     }
 
-    private func setup() {
+    private func loadView() {
         guard let nib = Bundle.main.loadNibNamed("NewLoadingView", owner: self),
               let view = nib.first as? UIView else { fatalError("Could not load nib!") }
 
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
         addSubview(view)
     }
 }
