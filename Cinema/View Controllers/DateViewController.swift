@@ -18,30 +18,21 @@ final class DateViewController: UITableViewController {
 
     weak var delegate: DateViewControllerDelegate?
 
-    private var datasource = [Showing]() {
-        didSet {
-            delegate?.dateVC(self, didUpdateDatasource: datasource)
-
-            if datasource.count > 0 {
-                datasource.sort()
-
-                tableView.tableHeaderView?.isHidden = false
-                loadingView.isHidden = true
-            } else {
-                tableView.tableHeaderView?.isHidden = true
-                //loadingView.display(error: .noMovies)
-            }
-
-            tableView.reloadData()
-        }
-    }
-
     private lazy var loadingView: NewLoadingView = {
         let view = NewLoadingView(frame: tableView.frame)
         tableView.addSubview(view)
         view.delegate = self
         return view
     }()
+
+    private var datasource = [Showing]() {
+        didSet {
+            datasource.sort()
+
+            delegate?.dateVC(self, didUpdateDatasource: datasource)
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,11 +94,6 @@ final class DateViewController: UITableViewController {
         }
     }
 
-    private func updateDatasource() {
-        let date = self.dateSelector.current
-        self.datasource = self.movieFetcher.getShowings(at: date)
-    }
-
     private func fetchMovies() {
         prepareForFetching()
         loadingView.startLoading()
@@ -122,6 +108,14 @@ final class DateViewController: UITableViewController {
                     loadingView.show(.noNetwork, animated: false)
                 }
             }
+        }
+    }
+
+    private func updateDatasource() {
+        if loadingView.isHidden {
+            hiddenLoadingViewTransition()
+        } else {
+            visibleLoadingViewTransition()
         }
     }
 
