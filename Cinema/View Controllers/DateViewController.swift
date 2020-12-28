@@ -194,3 +194,39 @@ extension DateViewController: LoadingViewDelegate {
         fetchMovies()
     }
 }
+
+// MARK: - NavBar Transitions
+
+extension DateViewController {
+    private var navBarTitleView: UILabel {
+        let label = UILabel()
+        label.frame.size.height = navigationController?.navigationBar.frame.height ?? 0.0
+        label.frame.size.width = (navigationController?.navigationBar.frame.width ?? 0.0) / 3
+        label.textAlignment = .center
+        label.textColor = .red
+
+        return label
+    }
+
+    private func setNavBar(title: String?, animation direction: CATransitionSubtype?) {
+        let titleView: UILabel
+
+        if let label = navigationItem.titleView as? UILabel {
+            titleView = label
+        } else {
+            titleView = navBarTitleView
+            navigationItem.titleView = titleView
+        }
+
+        let transition = CATransition()
+        transition.duration = .stdAnimation
+        transition.type = .push
+        transition.subtype = direction
+        transition.timingFunction = .init(name: .easeInEaseOut)
+        titleView.layer.add(transition, forKey: "transition")
+
+        DispatchQueue.main.async {
+            titleView.text = title
+        }
+    }
+}
