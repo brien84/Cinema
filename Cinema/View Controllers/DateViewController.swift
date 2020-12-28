@@ -109,17 +109,17 @@ final class DateViewController: UITableViewController {
     }
 
     private func fetchMovies() {
-        datasource.removeAll()
+        prepareForFetching()
         loadingView.startLoading()
 
         movieFetcher.fetch { result in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 switch result {
                 case .success:
-                    self.updateDatasource()
+                    updateDatasource()
                 case .failure(let error):
                     print(error)
-                    //self.loadingView.display(error: .noNetwork)
+                    loadingView.show(.noNetwork, animated: false)
                 }
             }
         }
@@ -201,5 +201,12 @@ extension DateViewController {
 extension DateViewController {
     private var transitionTableView: TransitionTableView? {
         tableView as? TransitionTableView
+    }
+
+    private func prepareForFetching() {
+        toggleEnabled(scroll: false, buttons: false)
+        transitionTableView?.scrollToTop()
+        transitionTableView?.transitionDelegate?.prepareForTransition(animated: false, completion: nil)
+        setNavBar(title: nil, animation: nil)
     }
 }
