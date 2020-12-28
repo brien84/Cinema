@@ -209,4 +209,54 @@ extension DateViewController {
         transitionTableView?.transitionDelegate?.prepareForTransition(animated: false, completion: nil)
         setNavBar(title: nil, animation: nil)
     }
+
+    private func hiddenLoadingViewTransition() {
+        toggleEnabled(scroll: false, buttons: false)
+
+        transitionTableView?.prepareTransition { [self] in
+            datasource = movieFetcher.getShowings(at: dateSelector.current)
+            setNavBar(title: nil, animation: .fromLeft)
+
+            transitionTableView?.beginTransition {
+                setNavBar(title: dateSelector.current.asString(.monthAndDay), animation: .fromRight)
+
+                if datasource.count > 0 {
+                    transitionTableView?.endTransition {
+                        toggleEnabled(scroll: true, buttons: true)
+                    }
+                } else {
+                    loadingView.show(.noMovies, animated: true) {
+                        toggleEnabled(scroll: false, buttons: true)
+                    }
+                }
+            }
+        }
+    }
+
+    private func visibleLoadingViewTransition() {
+        toggleEnabled(scroll: false, buttons: false)
+
+        let overlay = UIView(frame: tableView.bounds)
+        overlay.backgroundColor = tableView.backgroundColor
+        tableView.addSubview(overlay)
+
+        datasource = movieFetcher.getShowings(at: dateSelector.current)
+        setNavBar(title: nil, animation: .fromLeft)
+
+        loadingView.hide { [self] in
+            setNavBar(title: dateSelector.current.asString(.monthAndDay), animation: .fromRight)
+
+            if datasource.count > 0 {
+                overlay.removeFromSuperview()
+                transitionTableView?.endTransition {
+                    toggleEnabled(scroll: true, buttons: true)
+                }
+            } else {
+                loadingView.show(.noMovies, animated: true) {
+                    overlay.removeFromSuperview()
+                    toggleEnabled(scroll: false, buttons: true)
+                }
+            }
+        }
+    }
 }
