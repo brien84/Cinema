@@ -95,12 +95,13 @@ final class DateViewController: UITableViewController {
     }
 
     private func setupNotificationObservers() {
-        NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { _ in
-            self.updateDatasource()
+        NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { [self] _ in
+            updateDatasource()
+            navigationItem.leftBarButtonItem?.image = dateSelector.isFirst ? .options : .left
         }
 
-        NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { _ in
-            self.fetchMovies()
+        NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { [self] _ in
+            fetchMovies()
         }
     }
 
