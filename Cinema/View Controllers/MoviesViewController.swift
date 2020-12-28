@@ -14,10 +14,6 @@ final class MoviesViewController: UICollectionViewController {
     private var datasource = [Movie]() {
         didSet {
             datasource.sort { $0.title < $1.title }
-
-            // Scrolls to the top of `collectionView`.
-            collectionView.setContentOffset(.zero, animated: false)
-
             collectionView.reloadData()
         }
     }
@@ -63,5 +59,22 @@ extension MoviesViewController: DateViewControllerDelegate {
     func dateVC(_ dateVC: DateViewController, didUpdateDatasource showings: [Showing]) {
         let movies = showings.compactMap { $0.parentMovie }
         datasource = Array(Set(movies))
+    }
+}
+
+extension MoviesViewController: TransitionTableViewDelegate {
+    func prepareForTransition(animated isAnimated: Bool, completion: (() -> Void)?) {
+        // Scrolls to the beginning of the `collectionView`.
+        if collectionView.contentOffset.x > 0 {
+            collectionView.setContentOffset(.zero, animated: isAnimated)
+            // Gives time for `setContentOffset` animation to finish.
+            let delay = isAnimated ? .stdAnimation : 0.0
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                completion?()
+            }
+        } else {
+            completion?()
+        }
     }
 }
