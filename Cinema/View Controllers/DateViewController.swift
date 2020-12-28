@@ -135,6 +135,12 @@ final class DateViewController: UITableViewController {
 
     // MARK: - Navigation
 
+    private func toggleEnabled(scroll: Bool, buttons: Bool) {
+        tableView.isScrollEnabled = scroll
+        navigationItem.leftBarButtonItem?.isEnabled = buttons
+        navigationItem.rightBarButtonItem?.isEnabled = dateSelector.isLast ? false : buttons
+    }
+
     @IBAction private func leftNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
         if dateSelector.isFirst {
             performSegue(withIdentifier: "openSettings", sender: nil)
