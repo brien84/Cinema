@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol TransitionTableViewDelegate: AnyObject {
+    func prepareForTransition(animated isAnimated: Bool, completion: (() -> Void)?)
+}
+
 final class TransitionTableView: UITableView {
     @IBOutlet private weak var headerMoviesLabel: CustomFontLabel!
     @IBOutlet private weak var headerContainerView: UIView!
     @IBOutlet private weak var headerShowingsLabel: CustomFontLabel!
+
+    weak var transitionDelegate: TransitionTableViewDelegate?
 
     private var tableSnapshot = UIView()
     private var containerSnapshot = UIView()
@@ -25,7 +31,7 @@ final class TransitionTableView: UITableView {
         return view
     }()
 
-    /// Returns true if`tableHeaderView` is fully under navigation bar.
+    /// Returns true if`tableHeaderView` is fully under safe area.
     private var isTableHeaderViewVisible: Bool {
         guard let header = tableHeaderView else { return false }
         let distance = safeAreaInsets.top.distance(to: header.frame.maxY)
