@@ -31,3 +31,25 @@ final class Showing: Codable {
         case is3D
     }
 }
+
+extension Showing: Comparable {
+    /// Returns `[Showings]` sorted in ascending order by `date` with`parentMovie.title` and `venue` tie-breaks.
+    static func < (lhs: Showing, rhs: Showing) -> Bool {
+        if lhs.date != rhs.date {
+            return lhs.date < rhs.date
+        } else {
+            guard let lhsTitle = lhs.parentMovie?.title else { return false }
+            guard let rhsTitle = rhs.parentMovie?.title else { return true }
+
+            if lhsTitle != rhsTitle {
+                return lhsTitle < rhsTitle
+            } else {
+                return lhs.venue < rhs.venue
+            }
+        }
+    }
+
+    static func == (lhs: Showing, rhs: Showing) -> Bool {
+        lhs.date == rhs.date && lhs.parentMovie?.title == rhs.parentMovie?.title && lhs.venue == rhs.venue
+    }
+}
