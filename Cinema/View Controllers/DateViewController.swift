@@ -30,7 +30,7 @@ final class DateViewController: UITableViewController {
                 loadingView.isHidden = true
             } else {
                 tableView.tableHeaderView?.isHidden = true
-                loadingView.display(error: .noMovies)
+                //loadingView.display(error: .noMovies)
             }
 
             tableView.reloadData()
@@ -48,7 +48,6 @@ final class DateViewController: UITableViewController {
         super.viewDidLoad()
 
         setupNotificationObservers()
-        updateNavigationItemAppearance()
 
         fetchMovies()
     }
@@ -121,17 +120,10 @@ final class DateViewController: UITableViewController {
                     self.updateDatasource()
                 case .failure(let error):
                     print(error)
-                    self.loadingView.display(error: .noNetwork)
+                    //self.loadingView.display(error: .noNetwork)
                 }
             }
         }
-    }
-
-    private func updateNavigationItemAppearance() {
-        navigationItem.title = dateSelector.current.asString(.monthAndDay)
-
-        guard let leftButton = navigationItem.leftBarButtonItem else { return }
-        leftButton.image = dateSelector.isFirst ? .options : .left
     }
 
     // MARK: - Navigation
@@ -147,13 +139,11 @@ final class DateViewController: UITableViewController {
             performSegue(withIdentifier: "openSettings", sender: nil)
         } else {
             dateSelector.previous()
-            updateNavigationItemAppearance()
         }
     }
 
     @IBAction private func rightNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
         dateSelector.next()
-        updateNavigationItemAppearance()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
