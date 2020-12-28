@@ -92,6 +92,35 @@ final class TransitionTableView: UITableView {
         }
     }
 
+    private func prepareEndTransition() {
+        let overlay = UIView(frame: frame)
+        overlay.backgroundColor = transitionView.backgroundColor
+        superview?.addSubview(overlay)
+
+        setupTransitionView()
+
+        overlay.removeFromSuperview()
+
+        tableSnapshot.frame.origin.y += tableSnapshot.frame.height
+        containerSnapshot.frame.origin.x += containerSnapshot.frame.width
+        moviesLabelSnapshot.alpha = 0.0
+        showingsLabelSnapshot.alpha = 0.0
+    }
+
+    func endTransition(completion: @escaping () -> Void) {
+        prepareEndTransition()
+
+        UIView.animate(withDuration: .stdAnimation) { [self] in
+            tableSnapshot.frame.origin.y -= tableSnapshot.frame.height
+            containerSnapshot.frame.origin.x -= containerSnapshot.frame.width
+            moviesLabelSnapshot.alpha = 1.0
+            showingsLabelSnapshot.alpha = 1.0
+        } completion: { [self] _ in
+            transitionView.removeFromSuperview()
+            completion()
+        }
+    }
+
     func scrollToTop() {
         if contentOffset.y > -safeAreaInsets.top {
             setContentOffset(CGPoint(x: 0, y: -safeAreaInsets.top), animated: false)
