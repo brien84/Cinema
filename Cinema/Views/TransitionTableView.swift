@@ -38,6 +38,33 @@ final class TransitionTableView: UITableView {
         }
     }
 
+    /// Aligns first visible cell to safe area, so it doesn't get cut off during transition.
+    private func alignToSafeArea(completion: @escaping () -> Void) {
+        if isTableHeaderViewVisible == false, visibleCells.count > 1 {
+            let cellToScrollTo: UITableViewCell
+
+            let firstCell = visibleCells[0]
+            let secondCell = visibleCells[1]
+            let distance = safeAreaInsets.top.distance(to: firstCell.frame.maxY)
+
+            // If first cell is not fully under safe area...
+            if distance >= contentOffset.y {
+                cellToScrollTo = firstCell
+            } else {
+                cellToScrollTo = secondCell
+            }
+
+            UIView.animate(withDuration: .stdAnimation) { [self] in
+                scrollRectToVisible(cellToScrollTo.frame, animated: false)
+                layoutIfNeeded()
+            } completion: { _ in
+                completion()
+            }
+        } else {
+            completion()
+        }
+    }
+
     // MARK: - Snapshots
 
     private func snapshotTableView() -> UIView {
