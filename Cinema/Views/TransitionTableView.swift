@@ -67,6 +67,31 @@ final class TransitionTableView: UITableView {
         addSubview(transitionView)
     }
 
+    func prepareTransition(completion: @escaping () -> Void) {
+        alignToSafeArea { [self] in
+            transitionDelegate?.prepareForTransition(animated: isTableHeaderViewVisible) {
+                setupTransitionView()
+
+                let offset = contentOffset.y
+                scrollToTop()
+                transitionView.frame.origin.y = -offset + bounds.origin.y
+
+                completion()
+            }
+        }
+    }
+
+    func beginTransition(completion: @escaping () -> Void) {
+        UIView.animate(withDuration: .stdAnimation) { [self] in
+            tableSnapshot.frame.origin.y += tableSnapshot.frame.height
+            containerSnapshot.frame.origin.x += containerSnapshot.frame.width
+            moviesLabelSnapshot.alpha = 0
+            showingsLabelSnapshot.alpha = 0
+        } completion: { _ in
+            completion()
+        }
+    }
+
     func scrollToTop() {
         if contentOffset.y > -safeAreaInsets.top {
             setContentOffset(CGPoint(x: 0, y: -safeAreaInsets.top), animated: false)
