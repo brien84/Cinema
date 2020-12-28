@@ -13,6 +13,10 @@ extension CGFloat {
     static let screenHeight = UIScreen.main.bounds.height
 }
 
+extension TimeInterval {
+    static let stdAnimation = 0.4
+}
+
 extension UIColor {
     static let darkC = UIColor(named: "dark")!
     static let grayC = UIColor(named: "gray")!
