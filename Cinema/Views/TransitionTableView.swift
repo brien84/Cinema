@@ -18,7 +18,7 @@ final class TransitionTableView: UITableView {
     private var moviesLabelSnapshot = UIView()
     private var showingsLabelSnapshot = UIView()
 
-    /// Returns true if`tableHeaderView` is completely under navigation bar.
+    /// Returns true if`tableHeaderView` is fully under navigation bar.
     private var isTableHeaderViewVisible: Bool {
         guard let header = tableHeaderView else { return false }
         let distance = safeAreaInsets.top.distance(to: header.frame.maxY)
@@ -29,6 +29,13 @@ final class TransitionTableView: UITableView {
         super.didMoveToSuperview()
 
         tableHeaderView?.frame.size = CGSize(width: frame.width, height: frame.width * 1.25)
+    }
+
+    func scrollToTop() {
+        if contentOffset.y > -safeAreaInsets.top {
+            setContentOffset(CGPoint(x: 0, y: -safeAreaInsets.top), animated: false)
+            layoutIfNeeded()
+        }
     }
 
     // MARK: - Snapshots
