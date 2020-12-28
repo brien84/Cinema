@@ -18,6 +18,13 @@ final class TransitionTableView: UITableView {
     private var moviesLabelSnapshot = UIView()
     private var showingsLabelSnapshot = UIView()
 
+    /// A view which covers `tableView` and performs the transition.
+    private lazy var transitionView: UIView = {
+        let view = UIView()
+        view.backgroundColor = backgroundColor
+        return view
+    }()
+
     /// Returns true if`tableHeaderView` is fully under navigation bar.
     private var isTableHeaderViewVisible: Bool {
         guard let header = tableHeaderView else { return false }
@@ -29,6 +36,29 @@ final class TransitionTableView: UITableView {
         super.didMoveToSuperview()
 
         tableHeaderView?.frame.size = CGSize(width: frame.width, height: frame.width * 1.25)
+    }
+
+    private func setupTransitionView() {
+        transitionView.subviews.forEach { $0.removeFromSuperview() }
+        transitionView.removeFromSuperview()
+
+        tableSnapshot = snapshotTableView()
+        containerSnapshot = snapshotHeaderContainerView()
+        moviesLabelSnapshot = snapshotHeaderMoviesLabel()
+        showingsLabelSnapshot = snapshotHeaderShowingsLabel()
+
+        transitionView.addSubview(tableSnapshot)
+        transitionView.addSubview(containerSnapshot)
+        transitionView.addSubview(moviesLabelSnapshot)
+        transitionView.addSubview(showingsLabelSnapshot)
+
+        if frame.height > contentSize.height {
+            transitionView.frame = CGRect(origin: frame.origin, size: frame.size)
+        } else {
+            transitionView.frame = CGRect(origin: frame.origin, size: contentSize)
+        }
+
+        addSubview(transitionView)
     }
 
     func scrollToTop() {
