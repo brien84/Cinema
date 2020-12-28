@@ -126,6 +126,15 @@ final class DateViewController: UITableViewController {
         }
     }
 
+    private func updateNavigationItemAppearance() {
+        navigationItem.title = dateSelector.current.asString(.monthAndDay)
+
+        guard let leftButton = navigationItem.leftBarButtonItem else { return }
+        leftButton.image = dateSelector.isFirst ? .options : .left
+    }
+
+    // MARK: - Navigation
+
     @IBAction private func leftNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
         if dateSelector.isFirst {
             performSegue(withIdentifier: "openSettings", sender: nil)
@@ -140,19 +149,11 @@ final class DateViewController: UITableViewController {
         updateNavigationItemAppearance()
     }
 
-    private func updateNavigationItemAppearance() {
-        navigationItem.title = dateSelector.current.asString(.monthAndDay)
-
-        guard let leftButton = navigationItem.leftBarButtonItem else { return }
-        leftButton.image = dateSelector.isFirst ? .options : .left
-    }
-
-    // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "embedMovieCollectionVC" {
             guard let vc = segue.destination as? MoviesViewController else { return }
             delegate = vc
+            transitionTableView?.transitionDelegate = vc
         }
     }
 }
@@ -228,5 +229,13 @@ extension DateViewController {
         DispatchQueue.main.async {
             titleView.text = title
         }
+    }
+}
+
+// MARK: - Table Transitions
+
+extension DateViewController {
+    private var transitionTableView: TransitionTableView? {
+        tableView as? TransitionTableView
     }
 }
