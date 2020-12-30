@@ -9,20 +9,26 @@
 import UIKit
 
 enum Fonts: String {
-    case dateViewHeader, dateViewTitle, dateViewOriginalTitle, dateViewDetails
-    case movieCollectionViewTitle
+    case dateViewHeaderLabel, dateViewTitle, dateViewOriginalTitle, dateViewDetails
+    case dateContainerViewTitle
+    case loadingViewError
+    case navigationBar
     case notFound
 
     private var font: UIFont {
         switch self {
-        case .dateViewHeader:
-            return UIFont.init(name: "HelveticaNeue-Bold", size: 20)!
-        case .dateViewTitle, .movieCollectionViewTitle:
-            return UIFont.init(name: "HelveticaNeue-Medium", size: 18)!
+        case .dateViewHeaderLabel:
+            return UIFont.init(name: "HelveticaNeue-Bold", size: 30)!
+        case .dateViewTitle, .dateContainerViewTitle:
+            return UIFont.init(name: "HelveticaNeue-Medium", size: 17)!
         case .dateViewOriginalTitle:
-            return UIFont.init(name: "HelveticaNeue-LightItalic", size: 15)!
+            return UIFont.init(name: "HelveticaNeue-Italic", size: 15)!
         case .dateViewDetails:
-            return UIFont.init(name: "HelveticaNeue-Thin", size: 15)!
+            return UIFont.init(name: "HelveticaNeue", size: 14)!
+        case .loadingViewError:
+            return UIFont.init(name: "HelveticaNeue-Medium", size: 25)!
+        case .navigationBar:
+            return UIFont.init(name: "HelveticaNeue-Medium", size: 17)!
         default:
             return UIFont.init(name: "BodoniOrnamentsITCTT", size: 50)!
         }
