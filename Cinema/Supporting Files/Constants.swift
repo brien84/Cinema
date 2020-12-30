@@ -23,6 +23,12 @@ extension UIColor {
     static let lightC = UIColor(named: "light")!
     static let redC = UIColor(named: "red")!
     static let transparentBlackC = UIColor(named: "transparentBlack")!
+
+    static let primaryElement = UIColor(named: "primaryElement")!
+    static let secondaryElement = UIColor(named: "secondaryElement")!
+    static let tertiaryElement = UIColor(named: "tertiaryElement")!
+    static let primaryBackground = UIColor(named: "primaryBackground")!
+    static let secondaryBackground = UIColor(named: "secondaryBackground")!
 }
 
 extension URL {
