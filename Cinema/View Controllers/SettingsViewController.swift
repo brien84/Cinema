@@ -1,5 +1,5 @@
 //
-//  OptionsViewController.swift
+//  SettingsViewController.swift
 //  Cinema
 //
 //  Created by Marius on 13/10/2019.
@@ -10,10 +10,10 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-final class OptionsViewController: UITableViewController {
+final class SettingsViewController: UITableViewController {
 
     private let datasource: [City] = {
-        return City.allCases.map { $0 }
+        City.allCases.map { $0 }
     }()
 
     private lazy var headerView: UILabel = {
