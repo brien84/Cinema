@@ -104,7 +104,8 @@ final class MovieFetcherTests: XCTestCase {
             case .success:
                 XCTFail("Fetching should fail!")
             case .failure(let error):
-                XCTAssertEqual(error as? URLError, URLError(.notConnectedToInternet))
+                let error = error as? URLError
+                XCTAssertEqual(error?.errorCode, URLError.notConnectedToInternet.rawValue)
             }
 
             expectation.fulfill()
