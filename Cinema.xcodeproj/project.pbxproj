@@ -39,6 +39,7 @@
 		2948398424D1F85500133940 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948398324D1F85500133940 /* DateViewController.swift */; };
 		294CD91023E04BA60064644D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CD90F23E04BA60064644D /* LoadingView.swift */; };
 		294E933223A959BD0062E808 /* SegmentableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E933123A959BD0062E808 /* SegmentableContainer.swift */; };
+		297CA050259CEE4F00EE95F0 /* DateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297CA04F259CEE4F00EE95F0 /* DateViewControllerTests.swift */; };
 		29833739256466FA0072347E /* NewLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29833738256466FA0072347E /* NewLoadingView.swift */; };
 		298337412564676A0072347E /* NewLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 298337402564676A0072347E /* NewLoadingView.xib */; };
 		29882D24258E8F2D00CC1873 /* TransitionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882D23258E8F2D00CC1873 /* TransitionTableView.swift */; };
@@ -124,6 +125,7 @@
 		2948398324D1F85500133940 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		294CD90F23E04BA60064644D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		294E933123A959BD0062E808 /* SegmentableContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentableContainer.swift; sourceTree = "<group>"; };
+		297CA04F259CEE4F00EE95F0 /* DateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewControllerTests.swift; sourceTree = "<group>"; };
 		29833738256466FA0072347E /* NewLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoadingView.swift; sourceTree = "<group>"; };
 		298337402564676A0072347E /* NewLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewLoadingView.xib; sourceTree = "<group>"; };
 		29882D23258E8F2D00CC1873 /* TransitionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionTableView.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		29B9C967237F42B00035EF0B /* View Controllers Tests */ = {
 			isa = PBXGroup;
 			children = (
+				297CA04F259CEE4F00EE95F0 /* DateViewControllerTests.swift */,
 				29B9C979237F4F650035EF0B /* DailyViewControllerTests.swift */,
 				29B9C97B237F4F740035EF0B /* MovieViewControllerTests.swift */,
 				29B9C97D237F4F850035EF0B /* OptionsViewControllerTests.swift */,
@@ -593,6 +596,7 @@
 				292E7EC1255F0F080077F2FF /* URLSession+Testable.swift in Sources */,
 				29B9C97C237F4F740035EF0B /* MovieViewControllerTests.swift in Sources */,
 				29B9C96B237F44770035EF0B /* DateSelectorTests.swift in Sources */,
+				297CA050259CEE4F00EE95F0 /* DateViewControllerTests.swift in Sources */,
 				29B4D95323FB1C0500BD9783 /* MovieDetailsVCTests.swift in Sources */,
 				292E7ED3256176DA0077F2FF /* MovieFetcherTests.swift in Sources */,
 				29B9C97E237F4F850035EF0B /* OptionsViewControllerTests.swift in Sources */,
