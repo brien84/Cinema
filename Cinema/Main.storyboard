@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -20,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
-                        <color key="separatorColor" name="secondaryText"/>
+                        <color key="separatorColor" name="secondaryElement"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="fbc-1x-kGV" userLabel="Header View">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="570"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -28,10 +29,10 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtS-LT-Qg0" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                     <rect key="frame" x="16" y="8" width="382" height="36"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                    <color key="textColor" name="primaryText"/>
+                                    <color key="textColor" name="primaryElement"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="dateViewHeader"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="dateViewHeaderLabel"/>
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PsW-bU-O7w">
@@ -43,10 +44,10 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seansai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWM-6b-OYy" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                     <rect key="frame" x="16" y="526" width="382" height="36"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                    <color key="textColor" name="primaryText"/>
+                                    <color key="textColor" name="primaryElement"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="dateViewHeader"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="dateViewHeaderLabel"/>
                                     </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>
@@ -79,7 +80,7 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-L8-sBT" userLabel="poster" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
                                             <rect key="frame" x="8" y="8" width="103.5" height="156"/>
-                                            <color key="backgroundColor" name="red"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" secondItem="ar4-L8-sBT" secondAttribute="width" multiplier="3:2" priority="999" id="4r0-bY-1p8"/>
                                             </constraints>
@@ -88,39 +89,40 @@
                                             <rect key="frame" x="119.5" y="8" width="286.5" height="156"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsy-Pk-dGB" userLabel="title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="262.5" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="258.5" height="41"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" name="primaryText"/>
+                                                    <color key="textColor" name="primaryElement"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="dateViewTitle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luJ-VN-Zdd" userLabel="originalTitle" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="47" width="286.5" height="35"/>
+                                                    <rect key="frame" x="0.0" y="45" width="286.5" height="35.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" name="secondaryText"/>
+                                                    <color key="textColor" name="secondaryElement"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="dateViewOriginalTitle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1io-7v-UgC" userLabel="details">
-                                                    <rect key="frame" x="0.0" y="138" width="286.5" height="18"/>
+                                                    <rect key="frame" x="0.0" y="139.5" width="286.5" height="16.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forum Cinemas Akropolis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJH-AV-A5C" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="162" height="16.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" name="primaryText"/>
+                                                            <color key="textColor" name="secondaryElement"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="dateViewDetails"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hy3-eo-z34" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                            <rect key="frame" x="248.5" y="0.0" width="38" height="18"/>
+                                                            <rect key="frame" x="251" y="0.0" width="35.5" height="16.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" name="primaryText"/>
+                                                            <color key="textColor" name="secondaryElement"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="dateViewDetails"/>
@@ -128,14 +130,16 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3D" translatesAutoresizingMaskIntoConstraints="NO" id="gWl-wO-Nbx">
-                                                    <rect key="frame" x="270.5" y="0.0" width="16" height="16"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gWl-wO-Nbx">
+                                                    <rect key="frame" x="266.5" y="0.0" width="20" height="20"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" name="tertiaryElement"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" id="3NQ-ag-49o"/>
-                                                        <constraint firstAttribute="height" constant="16" id="GqR-4c-50u"/>
-                                                        <constraint firstAttribute="width" priority="999" constant="16" id="wI3-6S-C9j"/>
+                                                        <constraint firstAttribute="height" constant="20" id="GqR-4c-50u"/>
+                                                        <constraint firstAttribute="width" priority="999" constant="20" id="wI3-6S-C9j"/>
                                                     </constraints>
+                                                    <imageReference key="image" image="3d" symbolScale="default"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="3NQ-ag-49o"/>
@@ -192,11 +196,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Zyf-4w-ETq">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="options" id="EeZ-9z-enu">
+                            <color key="tintColor" name="primaryElement"/>
                             <connections>
                                 <action selector="leftNavigationBarButtonDidTap:" destination="Dxm-QZ-lup" id="qJG-6E-dKD"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="arrowRight" id="XXe-QF-8Ls">
+                            <color key="tintColor" name="primaryElement"/>
                             <connections>
                                 <action selector="rightNavigationBarButtonDidTap:" destination="Dxm-QZ-lup" id="830-hv-Xpq"/>
                             </connections>
@@ -588,7 +594,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgv-q0-zqA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5613" y="260"/>
+            <point key="canvasLocation" x="5611.594202898551" y="259.82142857142856"/>
         </scene>
         <!--Options View Controller-->
         <scene sceneID="zm3-tL-vcq">
@@ -624,7 +630,7 @@
             <objects>
                 <collectionViewController id="fg4-kJ-Eo7" customClass="MoviesViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="UoG-fi-SO5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="485"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="437"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="jZ3-av-jYN">
@@ -635,35 +641,35 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviesCell" id="ZAe-yq-nof" customClass="MoviesViewCell" customModule="iKinas" customModuleProvider="target">
-                                <rect key="frame" x="8" y="34.5" width="238" height="416"/>
+                                <rect key="frame" x="8" y="10.5" width="238" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YFp-07-LZi">
                                     <rect key="frame" x="0.0" y="0.0" width="238" height="416"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CQG-4K-qB3" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="238" height="357"/>
-                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="238" height="359"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNC-5D-Oxv" userLabel="Title Container">
-                                            <rect key="frame" x="0.0" y="357" width="238" height="59"/>
+                                            <rect key="frame" x="0.0" y="359" width="238" height="57"/>
                                             <subviews>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="PlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholder" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsk-LQ-gL4" userLabel="placeholder" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="222" height="43"/>
+                                                    <rect key="frame" x="8" y="8" width="222" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="primaryText"/>
+                                                    <color key="textColor" name="primaryElement"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="movieCollectionViewTitle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="dateContainerViewTitle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ej-yH-d0D" userLabel="title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="222" height="21.5"/>
+                                                    <rect key="frame" x="8" y="8" width="222" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="primaryText"/>
+                                                    <color key="textColor" name="primaryElement"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="movieCollectionViewTitle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="dateContainerViewTitle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
@@ -722,7 +728,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="primaryBackground"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="primaryText"/>
+                            <color key="textColor" name="primaryElement"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -773,32 +779,32 @@
     </scenes>
     <designables>
         <designable name="6ej-yH-d0D">
-            <size key="intrinsicContentSize" width="35.5" height="21.5"/>
+            <size key="intrinsicContentSize" width="33.5" height="20.5"/>
         </designable>
         <designable name="DtS-LT-Qg0">
             <size key="intrinsicContentSize" width="85.5" height="36"/>
         </designable>
         <designable name="Tsk-LQ-gL4">
-            <size key="intrinsicContentSize" width="792.5" height="21.5"/>
+            <size key="intrinsicContentSize" width="748.5" height="20.5"/>
         </designable>
         <designable name="hy3-eo-z34">
-            <size key="intrinsicContentSize" width="38" height="18"/>
+            <size key="intrinsicContentSize" width="35.5" height="16.5"/>
         </designable>
         <designable name="lJH-AV-A5C">
-            <size key="intrinsicContentSize" width="159.5" height="18"/>
+            <size key="intrinsicContentSize" width="162" height="16.5"/>
         </designable>
         <designable name="luJ-VN-Zdd">
-            <size key="intrinsicContentSize" width="391" height="17.5"/>
+            <size key="intrinsicContentSize" width="404.5" height="18"/>
         </designable>
         <designable name="qWM-6b-OYy">
             <size key="intrinsicContentSize" width="113" height="36"/>
         </designable>
         <designable name="tsy-Pk-dGB">
-            <size key="intrinsicContentSize" width="502.5" height="21.5"/>
+            <size key="intrinsicContentSize" width="474.5" height="20.5"/>
         </designable>
     </designables>
     <resources>
-        <image name="3D" width="25" height="25"/>
+        <image name="3d" width="32" height="32"/>
         <image name="Secret Life of Pets 2" width="267" height="400"/>
         <image name="arrowLeft" width="25" height="25"/>
         <image name="arrowRight" width="25" height="25"/>
@@ -813,19 +819,19 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primaryBackground">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94509803921568625" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="primaryText">
+        <namedColor name="primaryElement">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="red">
-            <color red="1" green="0.36862745098039218" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="secondaryBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="secondaryText">
-            <color red="0.54117647058823526" green="0.54117647058823526" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="secondaryElement">
+            <color red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tertiaryElement">
+            <color red="1" green="0.27843137254901962" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="titleContainerAlpha3">
             <color red="1" green="1" blue="1" alpha="0.029999999329447746" colorSpace="custom" customColorSpace="sRGB"/>
@@ -835,9 +841,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
