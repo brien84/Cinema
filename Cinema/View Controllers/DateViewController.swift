@@ -34,14 +34,6 @@ final class DateViewController: UITableViewController {
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setupNotificationObservers()
-
-        fetchMovies()
-    }
-
     init(dateSelector: DateSelectable, movieFetcher: MovieFetcher) {
         self.dateSelector = dateSelector
         self.movieFetcher = movieFetcher
@@ -61,6 +53,14 @@ final class DateViewController: UITableViewController {
 
         // Adjust `loadingView` height, since `loadingView` is initialized before `safeArea` is.
         loadingView.frame.size.height = tableView.frame.height - tableView.safeAreaInsets.top
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupNotificationObservers()
+
+        fetchMovies()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -161,8 +161,9 @@ extension DateViewController {
         let label = UILabel()
         label.frame.size.height = navigationController?.navigationBar.frame.height ?? 0.0
         label.frame.size.width = (navigationController?.navigationBar.frame.width ?? 0.0) / 3
+        label.font = Fonts.getFont(Fonts.navigationBar.rawValue)
+        label.textColor = .primaryElement
         label.textAlignment = .center
-        label.textColor = .red
 
         return label
     }
