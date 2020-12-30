@@ -19,7 +19,8 @@ final class NetworkImageView: UIImageView {
         indicator.startAnimating()
         indicator.hidesWhenStopped = true
 
-        self.addSubview(indicator)
+        indicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
+        indicator.color = .primaryElement
 
         indicator.autoresizingMask = [
             .flexibleLeftMargin,
@@ -28,7 +29,7 @@ final class NetworkImageView: UIImageView {
             .flexibleBottomMargin
         ]
 
-        indicator.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+        addSubview(indicator)
 
         return indicator
     }()
