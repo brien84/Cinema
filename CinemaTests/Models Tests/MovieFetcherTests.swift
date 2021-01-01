@@ -39,8 +39,6 @@ final class MovieFetcherTests: XCTestCase {
 
         let session = URLSession.makeMockSession(with: [movie].encoded())
 
-        let expectation = self.expectation(description: "Wait for fetching to end.")
-
         sut.fetch(using: session) { result in
             switch result {
             case .success:
@@ -67,17 +65,11 @@ final class MovieFetcherTests: XCTestCase {
             XCTAssertEqual(movies[0].showings[0].venue, venue)
             XCTAssertEqual(movies[0].showings[0].is3D, is3D)
             XCTAssertEqual(movies[0].showings[0].parentMovie, movies[0])
-
-            expectation.fulfill()
         }
-
-        waitForExpectations(timeout: 3)
     }
 
     func testFetchingFailureWhenDataCouldNotBeDecoded() {
         let session = URLSession.makeMockSession(with: Data())
-
-        let expectation = self.expectation(description: "Wait for fetching to end.")
 
         sut.fetch(using: session) { result in
             switch result {
@@ -87,17 +79,11 @@ final class MovieFetcherTests: XCTestCase {
                 print(error.localizedDescription)
                 XCTAssertNotNil(error as? DecodingError)
             }
-
-            expectation.fulfill()
         }
-
-        waitForExpectations(timeout: 3)
     }
 
     func testFetchingFailureWhenNotConnectedToInternet() {
         let session = URLSession.makeMockSession(with: nil)
-
-        let expectation = self.expectation(description: "Wait for fetching to end.")
 
         sut.fetch(using: session) { result in
             switch result {
@@ -107,11 +93,7 @@ final class MovieFetcherTests: XCTestCase {
                 let error = error as? URLError
                 XCTAssertEqual(error?.errorCode, URLError.notConnectedToInternet.rawValue)
             }
-
-            expectation.fulfill()
         }
-
-        waitForExpectations(timeout: 3)
     }
 
     func testGettingShowings() {
@@ -130,8 +112,6 @@ final class MovieFetcherTests: XCTestCase {
 
         let session = URLSession.makeMockSession(with: [movie].encoded())
 
-        let expectation = self.expectation(description: "Wait for fetching to end.")
-
         sut.fetch(using: session) { result in
             switch result {
             case .success:
@@ -145,11 +125,7 @@ final class MovieFetcherTests: XCTestCase {
 
             XCTAssertEqual(todayShowings.count, 3)
             XCTAssertEqual(tommorowShowings.count, 2)
-
-            expectation.fulfill()
         }
-
-        waitForExpectations(timeout: 3)
     }
 
     func testGettingMovies() {
@@ -176,8 +152,6 @@ final class MovieFetcherTests: XCTestCase {
 
         let session = URLSession.makeMockSession(with: movies.encoded())
 
-        let expectation = self.expectation(description: "Wait for fetching to end.")
-
         sut.fetch(using: session) { result in
             switch result {
             case .success:
@@ -190,10 +164,6 @@ final class MovieFetcherTests: XCTestCase {
 
             XCTAssertEqual(todayMovies.count, 1)
             XCTAssertEqual(todayMovies[0].title, title)
-
-            expectation.fulfill()
         }
-
-        waitForExpectations(timeout: 3)
     }
 }
