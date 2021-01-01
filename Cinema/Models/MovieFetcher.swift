@@ -8,7 +8,13 @@
 
 import UIKit
 
-final class MovieFetcher {
+protocol MovieFetching {
+    func getMovies(at date: Date) -> [Movie]
+    func getShowings(at date: Date) -> [Showing]
+    func fetch(using session: URLSession, completion: @escaping (Result<Void, Error>) -> Void)
+}
+
+final class MovieFetcher: MovieFetching {
     private var movies = [Movie]()
 
     func getMovies(at date: Date) -> [Movie] {
