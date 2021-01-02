@@ -95,6 +95,18 @@ final class DateViewControllerTests: XCTestCase {
         XCTAssertEqual(titleView?.text, testDateTommorow.asString(.monthAndDay))
     }
 
+    func testNavigationTitleViewIsSet() {
+        let testDateToday = Date.today
+        dates.current = testDateToday
+
+        sutLoadViewIfNeeded()
+
+        waitForUIUpdate()
+
+        let titleView = sut.navigationItem.titleView as? UILabel
+        XCTAssertEqual(titleView?.text, testDateToday.asString(.monthAndDay))
+    }
+
     // MARK: Test Helpers
 
     func setupSUT() {
