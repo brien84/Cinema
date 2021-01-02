@@ -157,7 +157,7 @@ extension DateViewController: LoadingViewDelegate {
 // MARK: - NavBar Transitions
 
 extension DateViewController {
-    private var navBarTitleView: UILabel {
+    private var navigationTitleView: UILabel {
         let label = UILabel()
         label.frame.size.height = navigationController?.navigationBar.frame.height ?? 0.0
         label.frame.size.width = (navigationController?.navigationBar.frame.width ?? 0.0) / 3
@@ -168,13 +168,13 @@ extension DateViewController {
         return label
     }
 
-    private func setNavBar(title: String?, animation direction: CATransitionSubtype?) {
+    private func setNavigation(title: String?, animation direction: CATransitionSubtype?) {
         let titleView: UILabel
 
         if let label = navigationItem.titleView as? UILabel {
             titleView = label
         } else {
-            titleView = navBarTitleView
+            titleView = navigationTitleView
             navigationItem.titleView = titleView
         }
 
@@ -202,7 +202,7 @@ extension DateViewController {
         toggleEnabled(scroll: false, buttons: false)
         transitionTableView?.scrollToTop()
         transitionTableView?.transitionDelegate?.prepareForTransition(animated: false, completion: nil)
-        setNavBar(title: nil, animation: nil)
+        setNavigation(title: nil, animation: nil)
     }
 
     private func hiddenLoadingViewTransition() {
@@ -210,10 +210,10 @@ extension DateViewController {
 
         transitionTableView?.prepareTransition { [self] in
             datasource = fetcher.getShowings(at: dates.current)
-            setNavBar(title: nil, animation: .fromLeft)
+            setNavigation(title: nil, animation: .fromLeft)
 
             transitionTableView?.beginTransition {
-                setNavBar(title: dates.current.asString(.monthAndDay), animation: .fromRight)
+                setNavigation(title: dates.current.asString(.monthAndDay), animation: .fromRight)
 
                 if datasource.count > 0 {
                     transitionTableView?.endTransition {
@@ -236,10 +236,10 @@ extension DateViewController {
         tableView.addSubview(overlay)
 
         datasource = fetcher.getShowings(at: dates.current)
-        setNavBar(title: nil, animation: .fromLeft)
+        setNavigation(title: nil, animation: .fromLeft)
 
         loadingView.hide { [self] in
-            setNavBar(title: dates.current.asString(.monthAndDay), animation: .fromRight)
+            setNavigation(title: dates.current.asString(.monthAndDay), animation: .fromRight)
 
             if datasource.count > 0 {
                 overlay.removeFromSuperview()
