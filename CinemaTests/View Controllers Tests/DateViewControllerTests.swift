@@ -107,6 +107,53 @@ final class DateViewControllerTests: XCTestCase {
         XCTAssertEqual(titleView?.text, testDateToday.asString(.monthAndDay))
     }
 
+    func testNavigationIsReenabledAfterSuccessfulFetch() {
+        sutLoadViewIfNeeded()
+
+        XCTAssertFalse(sut.tableView.isScrollEnabled)
+        XCTAssertFalse(sut.navigationItem.leftBarButtonItem!.isEnabled)
+        XCTAssertFalse(sut.navigationItem.rightBarButtonItem!.isEnabled)
+
+        waitForUIUpdate()
+
+        XCTAssertTrue(sut.tableView.isScrollEnabled)
+        XCTAssertTrue(sut.navigationItem.leftBarButtonItem!.isEnabled)
+        XCTAssertTrue(sut.navigationItem.rightBarButtonItem!.isEnabled)
+    }
+
+    func testScrollIsDisabledWhenDatasourceIsEmpty() {
+        fetcher.showings = []
+        sutLoadViewIfNeeded()
+
+        waitForUIUpdate()
+
+        XCTAssertFalse(sut.tableView.isScrollEnabled)
+        XCTAssertTrue(sut.navigationItem.leftBarButtonItem!.isEnabled)
+        XCTAssertTrue(sut.navigationItem.rightBarButtonItem!.isEnabled)
+    }
+
+    func testNavigationIsDisabledIfFetchingFails() {
+        fetcher.isFetchSuccessful = false
+        sutLoadViewIfNeeded()
+
+        waitForUIUpdate()
+
+        XCTAssertFalse(sut.tableView.isScrollEnabled)
+        XCTAssertFalse(sut.navigationItem.leftBarButtonItem!.isEnabled)
+        XCTAssertFalse(sut.navigationItem.rightBarButtonItem!.isEnabled)
+    }
+
+    func testRightNavigationButtonDisableWhenLastDateIsSelected() {
+        dates.isLast = true
+        sutLoadViewIfNeeded()
+
+        waitForUIUpdate()
+
+        XCTAssertTrue(sut.tableView.isScrollEnabled)
+        XCTAssertTrue(sut.navigationItem.leftBarButtonItem!.isEnabled)
+        XCTAssertFalse(sut.navigationItem.rightBarButtonItem!.isEnabled)
+    }
+
     // MARK: Test Helpers
 
     func setupSUT() {
