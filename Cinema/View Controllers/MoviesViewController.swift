@@ -56,9 +56,8 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MoviesViewController: DateViewControllerDelegate {
-    func dateVC(_ dateVC: DateViewController, didUpdateDatasource showings: [Showing]) {
-        let movies = showings.compactMap { $0.parentMovie }
-        datasource = Array(Set(movies))
+    func dateVC(_ dateVC: DateViewController, didUpdate datasource: [Movie]) {
+        self.datasource = datasource
     }
 }
 

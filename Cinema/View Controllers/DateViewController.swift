@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DateViewControllerDelegate: AnyObject {
-    func dateVC(_ dateVC: DateViewController, didUpdateDatasource showings: [Showing])
+    func dateVC(_ dateVC: DateViewController, didUpdate datasource: [Movie])
 }
 
 final class DateViewController: UITableViewController {
@@ -29,7 +29,7 @@ final class DateViewController: UITableViewController {
         didSet {
             datasource.sort()
 
-            delegate?.dateVC(self, didUpdateDatasource: datasource)
+            delegate?.dateVC(self, didUpdate: fetcher.getMovies(at: dates.current))
             tableView.reloadData()
         }
     }
