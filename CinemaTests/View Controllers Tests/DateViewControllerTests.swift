@@ -26,6 +26,40 @@ final class DateViewControllerTests: XCTestCase {
         sut = nil
     }
 
+    func testTableViewDatasourceCount() {
+        sutLoadViewIfNeeded()
+
+        waitForUIUpdate()
+
+        XCTAssertGreaterThan(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 0)
+    }
+
+    func testTableViewCellsHaveCorrectValuesSet() {
+        let testTitle = "testTitle"
+        let testOriginalTitle = "testOriginalTitle"
+        let testURL = URL(string: "https://google.com")!
+        let testVenue = "testVenue"
+        let testTime = Date.today
+        let test3D = true
+        let movie = Movie.create(testTitle, testOriginalTitle, "", "", "", [], "", testURL, [])
+        let showing = Showing.create(.vilnius, testTime, testVenue, test3D)
+        showing.parentMovie = movie
+        fetcher.showings = [showing]
+
+        sutLoadViewIfNeeded()
+
+        waitForUIUpdate()
+
+        let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? DateShowingCell
+
+        XCTAssertEqual(cell?.title.text, testTitle)
+        XCTAssertEqual(cell?.originalTitle.text, testOriginalTitle)
+        XCTAssertEqual(cell?.poster?.url, testURL)
+        XCTAssertEqual(cell?.venue.text, testVenue)
+        XCTAssertEqual(cell?.time.text, testTime.asString(.timeOfDay))
+        XCTAssertEqual(cell?.is3D, test3D)
+    }
+
     // MARK: Test Helpers
 
     func setupSUT() {
