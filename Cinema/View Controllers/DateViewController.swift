@@ -34,16 +34,16 @@ final class DateViewController: UITableViewController {
         }
     }
 
-    init(dates: DateSelectable, fetcher: MovieFetching) {
-        self.dates = dates
-        self.fetcher = fetcher
-
-        super.init(nibName: nil, bundle: nil)
-    }
-
     required init?(coder: NSCoder) {
         self.dates = DateSelector()
         self.fetcher = MovieFetcher()
+
+        super.init(coder: coder)
+    }
+
+    init?(coder: NSCoder, dates: DateSelectable, fetcher: MovieFetching) {
+        self.dates = dates
+        self.fetcher = fetcher
 
         super.init(coder: coder)
     }
