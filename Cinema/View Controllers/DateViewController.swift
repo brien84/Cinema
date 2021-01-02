@@ -13,8 +13,8 @@ protocol DateViewControllerDelegate: AnyObject {
 }
 
 final class DateViewController: UITableViewController {
-    private let dateSelector: DateSelectable
-    private let movieFetcher: MovieFetcher
+    private let dates: DateSelectable
+    private let fetcher: MovieFetching
 
     weak var delegate: DateViewControllerDelegate?
 
@@ -34,16 +34,16 @@ final class DateViewController: UITableViewController {
         }
     }
 
-    init(dateSelector: DateSelectable, movieFetcher: MovieFetcher) {
-        self.dateSelector = dateSelector
-        self.movieFetcher = movieFetcher
+    init(dates: DateSelectable, fetcher: MovieFetching) {
+        self.dates = dates
+        self.fetcher = fetcher
 
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder: NSCoder) {
-        self.dateSelector = DateSelector()
-        self.movieFetcher = MovieFetcher()
+        self.dates = DateSelector()
+        self.fetcher = MovieFetcher()
 
         super.init(coder: coder)
     }
@@ -86,7 +86,7 @@ final class DateViewController: UITableViewController {
     private func setupNotificationObservers() {
         NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { [self] _ in
             updateDatasource()
-            navigationItem.leftBarButtonItem?.image = dateSelector.isFirst ? .options : .left
+            navigationItem.leftBarButtonItem?.image = dates.isFirst ? .options : .left
         }
 
         NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { [self] _ in
@@ -98,7 +98,7 @@ final class DateViewController: UITableViewController {
         prepareForFetching()
         loadingView.startLoading()
 
-        movieFetcher.fetch { result in
+        fetcher.fetch(using: .shared) { result in
             DispatchQueue.main.async { [self] in
                 switch result {
                 case .success:
@@ -124,19 +124,19 @@ final class DateViewController: UITableViewController {
     private func toggleEnabled(scroll: Bool, buttons: Bool) {
         tableView.isScrollEnabled = scroll
         navigationItem.leftBarButtonItem?.isEnabled = buttons
-        navigationItem.rightBarButtonItem?.isEnabled = dateSelector.isLast ? false : buttons
+        navigationItem.rightBarButtonItem?.isEnabled = dates.isLast ? false : buttons
     }
 
     @IBAction private func leftNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
-        if dateSelector.isFirst {
+        if dates.isFirst {
             performSegue(withIdentifier: "openSettings", sender: nil)
         } else {
-            dateSelector.previous()
+            dates.previous()
         }
     }
 
     @IBAction private func rightNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
-        dateSelector.next()
+        dates.next()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -209,11 +209,11 @@ extension DateViewController {
         toggleEnabled(scroll: false, buttons: false)
 
         transitionTableView?.prepareTransition { [self] in
-            datasource = movieFetcher.getShowings(at: dateSelector.current)
+            datasource = fetcher.getShowings(at: dates.current)
             setNavBar(title: nil, animation: .fromLeft)
 
             transitionTableView?.beginTransition {
-                setNavBar(title: dateSelector.current.asString(.monthAndDay), animation: .fromRight)
+                setNavBar(title: dates.current.asString(.monthAndDay), animation: .fromRight)
 
                 if datasource.count > 0 {
                     transitionTableView?.endTransition {
@@ -235,11 +235,11 @@ extension DateViewController {
         overlay.backgroundColor = tableView.backgroundColor
         tableView.addSubview(overlay)
 
-        datasource = movieFetcher.getShowings(at: dateSelector.current)
+        datasource = fetcher.getShowings(at: dates.current)
         setNavBar(title: nil, animation: .fromLeft)
 
         loadingView.hide { [self] in
-            setNavBar(title: dateSelector.current.asString(.monthAndDay), animation: .fromRight)
+            setNavBar(title: dates.current.asString(.monthAndDay), animation: .fromRight)
 
             if datasource.count > 0 {
                 overlay.removeFromSuperview()
