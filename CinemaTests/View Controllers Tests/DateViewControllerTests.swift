@@ -60,6 +60,41 @@ final class DateViewControllerTests: XCTestCase {
         XCTAssertEqual(cell?.is3D, test3D)
     }
 
+    func testSettingsNotificationObserver() {
+        sutLoadViewIfNeeded()
+
+        waitForUIUpdate()
+
+        XCTAssertGreaterThan(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 0)
+
+        fetcher.showings = []
+        NotificationCenter.default.post(name: .OptionsCityDidChange, object: nil)
+
+        waitForUIUpdate()
+
+        XCTAssertEqual(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 0)
+    }
+
+    func testDateTrackerNotificationObserver() {
+        let testDateToday = Date.today
+        let testDateTommorow = Date.tommorow
+        dates.current = testDateToday
+
+        sutLoadViewIfNeeded()
+
+        waitForUIUpdate()
+
+        let titleView = sut.navigationItem.titleView as? UILabel
+        XCTAssertEqual(titleView?.text, testDateToday.asString(.monthAndDay))
+
+        dates.current = testDateTommorow
+        NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil)
+
+        waitForUIUpdate()
+
+        XCTAssertEqual(titleView?.text, testDateTommorow.asString(.monthAndDay))
+    }
+
     // MARK: Test Helpers
 
     func setupSUT() {
