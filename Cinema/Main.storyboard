@@ -183,6 +183,7 @@
                                     <outlet property="time" destination="hy3-eo-z34" id="2Qo-bf-G7m"/>
                                     <outlet property="title" destination="tsy-Pk-dGB" id="9Uh-Hi-0Tv"/>
                                     <outlet property="venue" destination="lJH-AV-A5C" id="DRI-gq-L62"/>
+                                    <segue destination="Ygy-k3-LEc" kind="show" identifier="showMovieVC" id="diA-bi-HlB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -442,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pq8-ME-JHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2872.4637681159425" y="450"/>
+            <point key="canvasLocation" x="2145" y="539"/>
         </scene>
         <!--Showings View Controller-->
         <scene sceneID="zuK-88-MgC">
@@ -705,6 +706,7 @@
                                     <outlet property="poster" destination="CQG-4K-qB3" id="5RM-0Y-Scu"/>
                                     <outlet property="title" destination="6ej-yH-d0D" id="ic7-fc-SIs"/>
                                     <outlet property="titleContainer" destination="zNC-5D-Oxv" id="VdJ-Uo-cJR"/>
+                                    <segue destination="Ygy-k3-LEc" kind="show" identifier="showMovieVC" id="q3A-mY-b7Z"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -739,24 +741,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xus-tC-Y51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="114.50892857142857"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Igp-sB-1aE">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qyx-5r-RDX" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JdZ-ey-AQp">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Ygy-k3-LEc" kind="relationship" relationship="rootViewController" id="UKc-zJ-q8j"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZnY-Zt-wBd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1962.3188405797102" y="450"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3bt-AV-4Yw">
@@ -803,9 +787,12 @@
             <size key="intrinsicContentSize" width="484" height="21.5"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="diA-bi-HlB"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="3d" width="32" height="32"/>
-        <image name="Secret Life of Pets 2" width="267" height="400"/>
+        <image name="Secret Life of Pets 2" width="133.5" height="200"/>
         <image name="arrowLeft" width="25" height="25"/>
         <image name="arrowRight" width="25" height="25"/>
         <image name="options" width="25" height="25"/>
