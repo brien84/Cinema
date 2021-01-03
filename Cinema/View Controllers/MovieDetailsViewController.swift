@@ -9,6 +9,9 @@
 import UIKit
 
 final class MovieDetailsViewController: UIViewController {
+    var movie: Movie?
+    var showing: Showing?
+
     @IBOutlet private weak var scrollView: UIScrollView!
 
     @IBOutlet private weak var posterView: UIImageView!
