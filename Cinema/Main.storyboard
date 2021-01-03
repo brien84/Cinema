@@ -228,7 +228,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-jM-tJ9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Secret Life of Pets 2" translatesAutoresizingMaskIntoConstraints="NO" id="efd-5U-SkD" userLabel="Poster">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="networkImageViewDefault" translatesAutoresizingMaskIntoConstraints="NO" id="efd-5U-SkD" userLabel="Poster" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="621"/>
                                         <constraints>
                                             <constraint firstAttribute="height" secondItem="efd-5U-SkD" secondAttribute="width" multiplier="1.5" id="bF8-ad-hB3"/>
@@ -417,7 +417,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CRw-Op-q3C"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="primaryBackground"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="2CA-jM-tJ9" secondAttribute="bottom" priority="999" id="0y1-WI-Cea"/>
                             <constraint firstItem="2CA-jM-tJ9" firstAttribute="leading" secondItem="9n5-Vo-rcr" secondAttribute="leading" id="oIe-ql-JZw"/>
@@ -434,7 +434,7 @@
                         <outlet property="posterBottomToDetailsTop" destination="Zug-ke-mbU" id="o9w-s0-VA2"/>
                         <outlet property="posterHeight" destination="bF8-ad-hB3" id="wAf-GN-hgc"/>
                         <outlet property="posterTopToSuperview" destination="hRH-VC-RVh" id="GBB-jj-g42"/>
-                        <outlet property="posterView" destination="efd-5U-SkD" id="cF3-sZ-v78"/>
+                        <outlet property="posterView" destination="efd-5U-SkD" id="iXm-Je-cVs"/>
                         <outlet property="scrollView" destination="2CA-jM-tJ9" id="4QG-cZ-7g8"/>
                         <outlet property="showingContainerIsCollapsed" destination="MJB-Mu-Eyj" id="ypn-be-ZWb"/>
                         <outlet property="titleContainer" destination="hZH-DU-L7m" id="knj-QG-I2N"/>
@@ -792,9 +792,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="3d" width="32" height="32"/>
-        <image name="Secret Life of Pets 2" width="133.5" height="200"/>
         <image name="arrowLeft" width="25" height="25"/>
         <image name="arrowRight" width="25" height="25"/>
+        <image name="networkImageViewDefault" width="200" height="300"/>
         <image name="options" width="25" height="25"/>
         <namedColor name="dark">
             <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
