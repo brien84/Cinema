@@ -145,6 +145,15 @@ final class DateViewController: UITableViewController {
             delegate = vc
             transitionTableView?.transitionDelegate = vc
         }
+
+        if segue.identifier == "showMovieVC" {
+            guard let vc = segue.destination as? MovieDetailsViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+
+            let showing = datasource[indexPath.row]
+            vc.movie = showing.parentMovie
+            vc.showing = showing
+        }
     }
 }
 

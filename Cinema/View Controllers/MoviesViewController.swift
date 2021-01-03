@@ -42,6 +42,18 @@ final class MoviesViewController: UICollectionViewController {
 
         return cell
     }
+
+    // MARK: Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMovieVC" {
+            guard let vc = segue.destination as? MovieDetailsViewController else { return }
+            guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+
+            let movie = datasource[indexPath.row]
+            vc.movie = movie
+        }
+    }
 }
 
 extension MoviesViewController: UICollectionViewDelegateFlowLayout {
