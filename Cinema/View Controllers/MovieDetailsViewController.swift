@@ -20,12 +20,12 @@ final class MovieDetailsViewController: UIViewController {
     @IBOutlet private weak var detailsContainer: UIView!
 
     @IBOutlet private weak var poster: NetworkImageView!
-    @IBOutlet private weak var movieTitle: UILabel!
-    @IBOutlet private weak var originalTitle: UILabel!
-    @IBOutlet private weak var year: UILabel!
-    @IBOutlet private weak var ageRating: UILabel!
-    @IBOutlet private weak var duration: UILabel!
-    @IBOutlet private weak var plot: UILabel!
+    @IBOutlet private weak var movieTitle: CustomFontLabel!
+    @IBOutlet private weak var originalTitle: CustomFontLabel!
+    @IBOutlet private weak var year: CustomFontLabel!
+    @IBOutlet private weak var ageRating: CustomFontLabel!
+    @IBOutlet private weak var duration: CustomFontLabel!
+    @IBOutlet private weak var plot: CustomFontLabel!
 
     @IBOutlet private weak var posterHeight: NSLayoutConstraint!
     @IBOutlet private weak var posterTopToSuperview: NSLayoutConstraint!

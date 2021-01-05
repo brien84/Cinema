@@ -27,7 +27,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtS-LT-Qg0" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="8" width="382" height="26.5"/>
+                                    <rect key="frame" x="16" y="8" width="382" height="36"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <color key="textColor" name="primaryElement"/>
                                     <nil key="highlightedColor"/>
@@ -36,13 +36,13 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PsW-bU-O7w">
-                                    <rect key="frame" x="0.0" y="42.5" width="414" height="485"/>
+                                    <rect key="frame" x="0.0" y="52" width="414" height="466"/>
                                     <connections>
                                         <segue destination="fg4-kJ-Eo7" kind="embed" identifier="embedMovieCollectionVC" id="wOF-CZ-nGK"/>
                                     </connections>
                                 </containerView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seansai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWM-6b-OYy" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="535.5" width="382" height="26.5"/>
+                                    <rect key="frame" x="16" y="526" width="382" height="36"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                     <color key="textColor" name="primaryElement"/>
                                     <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                                             <rect key="frame" x="119.5" y="8" width="286.5" height="156"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsy-Pk-dGB" userLabel="title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="258.5" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="258.5" height="41"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" name="primaryElement"/>
@@ -99,7 +99,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luJ-VN-Zdd" userLabel="originalTitle" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="47" width="286.5" height="36"/>
+                                                    <rect key="frame" x="0.0" y="45" width="286.5" height="35.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" name="secondaryElement"/>
                                                     <nil key="highlightedColor"/>
@@ -108,10 +108,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1io-7v-UgC" userLabel="details">
-                                                    <rect key="frame" x="0.0" y="138" width="286.5" height="18"/>
+                                                    <rect key="frame" x="0.0" y="139.5" width="286.5" height="16.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forum Cinemas Akropolis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJH-AV-A5C" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="162" height="16.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="secondaryElement"/>
                                                             <nil key="highlightedColor"/>
@@ -120,7 +120,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hy3-eo-z34" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                            <rect key="frame" x="245" y="0.0" width="41.5" height="18"/>
+                                                            <rect key="frame" x="251" y="0.0" width="35.5" height="16.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="secondaryElement"/>
                                                             <nil key="highlightedColor"/>
@@ -237,16 +237,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZH-DU-L7m" userLabel="Title Container" customClass="GradientBackgroundView" customModule="iKinas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="434.5" width="414" height="124.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extremely Long Title Movie: Episode 69420 - The Return of The Long Movie Title Lord of Long Movie Title Kingdom " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQD-Sy-tME" userLabel="Title">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extremely Long Title Movie: Episode 69420 - The Return of The Long Movie Title Lord of Long Movie Title Kingdom " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQD-Sy-tME" userLabel="Title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="20" width="374" height="75"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                <color key="textColor" name="light"/>
+                                                <color key="textColor" name="primaryElement"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Extremely Long Title Movie: Episode 69420 - The Return of The Long Movie Title Lord of Long Movie Title Kingdom " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4X-r5-IHS" userLabel="Original Title">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Extremely Long Title Movie: Episode 69420 - The Return of The Long Movie Title Lord of Long Movie Title Kingdom " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4X-r5-IHS" userLabel="Original Title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="105" width="374" height="14.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                <color key="textColor" name="light"/>
+                                                <color key="textColor" name="primaryElement"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -284,14 +284,14 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="62" height="26"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                         <state key="normal" title="Placeholder">
-                                                            <color key="titleColor" name="light"/>
+                                                            <color key="titleColor" name="primaryElement"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fs-C2-Sm0">
                                                         <rect key="frame" x="70" y="0.0" width="62" height="26"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                         <state key="normal" title="Placeholder">
-                                                            <color key="titleColor" name="light"/>
+                                                            <color key="titleColor" name="primaryElement"/>
                                                         </state>
                                                     </button>
                                                 </subviews>
@@ -299,7 +299,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9t-BW-q0Q" userLabel="Showing Container">
                                                 <rect key="frame" x="0.0" y="46" width="414" height="60.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SomeShowing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXg-Tf-TUL">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SomeShowing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXg-Tf-TUL" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="20" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -328,12 +328,11 @@
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowLeft" translatesAutoresizingMaskIntoConstraints="NO" id="AXD-kh-rNZ">
                                                                 <rect key="frame" x="47" y="0.0" width="25" height="25"/>
-                                                                <color key="backgroundColor" name="light"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqF-Em-pVi">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqF-Em-pVi" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                                                 <rect key="frame" x="41.5" y="25" width="36.5" height="18"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                <color key="textColor" name="light"/>
+                                                                <color key="textColor" name="primaryElement"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -343,12 +342,11 @@
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="svJ-DP-tFy">
                                                                 <rect key="frame" x="47" y="0.0" width="25" height="25"/>
-                                                                <color key="backgroundColor" name="light"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N-18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUe-Hp-Jku">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N-18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUe-Hp-Jku" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                                                 <rect key="frame" x="42.5" y="25" width="34" height="18"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                <color key="textColor" name="light"/>
+                                                                <color key="textColor" name="primaryElement"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -358,12 +356,11 @@
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="lSh-dL-hCv">
                                                                 <rect key="frame" x="47.5" y="0.0" width="25" height="25"/>
-                                                                <color key="backgroundColor" name="light"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="420 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qp-0W-eg9">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="420 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qp-0W-eg9" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                                                 <rect key="frame" x="31.5" y="25" width="56.5" height="18"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                <color key="textColor" name="light"/>
+                                                                <color key="textColor" name="primaryElement"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -374,15 +371,15 @@
                                                     <constraint firstItem="svJ-DP-tFy" firstAttribute="width" secondItem="AXD-kh-rNZ" secondAttribute="width" id="H7R-k0-gTg"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-fQ-YpQ" userLabel="Plot">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-fQ-YpQ" userLabel="Plot" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="191.5" width="374" height="966.5"/>
                                                 <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <color key="textColor" name="gray"/>
+                                                <color key="textColor" name="secondaryElement"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="dark"/>
+                                        <color key="backgroundColor" name="secondaryBackground"/>
                                         <constraints>
                                             <constraint firstItem="2e6-9B-hkD" firstAttribute="leading" secondItem="Q2n-ng-l2d" secondAttribute="leading" constant="20" symbolic="YES" id="A9x-nR-jJ3"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XwV-xN-apI" secondAttribute="trailing" constant="10" id="DRR-uD-FM8"/>
@@ -417,7 +414,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CRw-Op-q3C"/>
-                        <color key="backgroundColor" name="primaryBackground"/>
+                        <color key="backgroundColor" name="secondaryBackground"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="2CA-jM-tJ9" secondAttribute="bottom" priority="999" id="0y1-WI-Cea"/>
                             <constraint firstItem="2CA-jM-tJ9" firstAttribute="leading" secondItem="9n5-Vo-rcr" secondAttribute="leading" id="oIe-ql-JZw"/>
@@ -635,7 +632,7 @@
             <objects>
                 <collectionViewController id="fg4-kJ-Eo7" customClass="MoviesViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="UoG-fi-SO5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="485"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="jZ3-av-jYN">
@@ -646,7 +643,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviesCell" id="ZAe-yq-nof" customClass="MoviesViewCell" customModule="iKinas" customModuleProvider="target">
-                                <rect key="frame" x="8" y="34.5" width="238" height="416"/>
+                                <rect key="frame" x="8" y="25" width="238" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YFp-07-LZi">
                                     <rect key="frame" x="0.0" y="0.0" width="238" height="416"/>
@@ -766,29 +763,50 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="0qp-0W-eg9">
+            <size key="intrinsicContentSize" width="56.5" height="18"/>
+        </designable>
         <designable name="6ej-yH-d0D">
-            <size key="intrinsicContentSize" width="33" height="20.5"/>
+            <size key="intrinsicContentSize" width="33.5" height="20.5"/>
+        </designable>
+        <designable name="C4X-r5-IHS">
+            <size key="intrinsicContentSize" width="653.5" height="14.5"/>
         </designable>
         <designable name="DtS-LT-Qg0">
-            <size key="intrinsicContentSize" width="55.5" height="26.5"/>
+            <size key="intrinsicContentSize" width="85.5" height="36"/>
+        </designable>
+        <designable name="NQD-Sy-tME">
+            <size key="intrinsicContentSize" width="1672.5" height="41"/>
         </designable>
         <designable name="Tsk-LQ-gL4">
-            <size key="intrinsicContentSize" width="719.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="748.5" height="20.5"/>
+        </designable>
+        <designable name="UqF-Em-pVi">
+            <size key="intrinsicContentSize" width="36.5" height="18"/>
+        </designable>
+        <designable name="aXg-Tf-TUL">
+            <size key="intrinsicContentSize" width="109" height="20.5"/>
         </designable>
         <designable name="hy3-eo-z34">
-            <size key="intrinsicContentSize" width="41.5" height="18"/>
+            <size key="intrinsicContentSize" width="35.5" height="16.5"/>
         </designable>
         <designable name="lJH-AV-A5C">
-            <size key="intrinsicContentSize" width="175" height="18"/>
+            <size key="intrinsicContentSize" width="162" height="16.5"/>
         </designable>
         <designable name="luJ-VN-Zdd">
-            <size key="intrinsicContentSize" width="414" height="18"/>
+            <size key="intrinsicContentSize" width="404.5" height="18"/>
+        </designable>
+        <designable name="pUe-Hp-Jku">
+            <size key="intrinsicContentSize" width="34" height="18"/>
         </designable>
         <designable name="qWM-6b-OYy">
-            <size key="intrinsicContentSize" width="75" height="26.5"/>
+            <size key="intrinsicContentSize" width="113" height="36"/>
         </designable>
         <designable name="tsy-Pk-dGB">
-            <size key="intrinsicContentSize" width="484" height="21.5"/>
+            <size key="intrinsicContentSize" width="474.5" height="20.5"/>
+        </designable>
+        <designable name="u1q-fQ-YpQ">
+            <size key="intrinsicContentSize" width="14818" height="20.5"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
@@ -802,12 +820,6 @@
         <image name="options" width="25" height="25"/>
         <namedColor name="dark">
             <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="gray">
-            <color red="0.65490196078431373" green="0.66666666666666663" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="light">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primaryBackground">
             <color red="0.94509803921568625" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
