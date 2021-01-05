@@ -14,12 +14,18 @@ final class MovieDetailsViewController: UIViewController {
 
     @IBOutlet private weak var scrollView: UIScrollView!
 
-    @IBOutlet private weak var posterView: NetworkImageView!
     @IBOutlet private weak var titleContainer: UIView!
-    @IBOutlet private weak var titleLabel: UILabel!
+
     @IBOutlet private weak var genresStackView: UIStackView!
     @IBOutlet private weak var detailsContainer: UIView!
-    @IBOutlet private weak var plotLabel: UILabel!
+
+    @IBOutlet private weak var poster: NetworkImageView!
+    @IBOutlet private weak var movieTitle: UILabel!
+    @IBOutlet private weak var originalTitle: UILabel!
+    @IBOutlet private weak var year: UILabel!
+    @IBOutlet private weak var ageRating: UILabel!
+    @IBOutlet private weak var duration: UILabel!
+    @IBOutlet private weak var plot: UILabel!
 
     @IBOutlet private weak var posterHeight: NSLayoutConstraint!
     @IBOutlet private weak var posterTopToSuperview: NSLayoutConstraint!
@@ -145,9 +151,9 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
         if offset > 0 {
             let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
             let currentDistance = totalDistance - offset
-            posterView.alpha = currentDistance / totalDistance
+            poster.alpha = currentDistance / totalDistance
         } else {
-            posterView.alpha = 1.0
+            poster.alpha = 1.0
         }
     }
 
@@ -197,7 +203,7 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
 
         // `overlap` is distance by which `detailsContainer` overlaps `posterView`.
         // In other words - how much can we scroll before `detailsContainer` is not overlapping `posterView`.
-        let currentOverlap = (posterView.frame.maxY - detailsContainer.frame.minY) / multi
+        let currentOverlap = (poster.frame.maxY - detailsContainer.frame.minY) / multi
         let overlap = currentOverlap + posterBottomToDetailsTop.constant / multi
 
         if offset > 0, offset <= overlap {

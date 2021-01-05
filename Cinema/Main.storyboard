@@ -427,18 +427,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="krW-hL-Gjp"/>
                     <connections>
+                        <outlet property="ageRating" destination="pUe-Hp-Jku" id="sbn-Ad-tvG"/>
                         <outlet property="detailsBottomToSuperview" destination="QaX-8C-Ta7" id="Mfl-QA-4x5"/>
                         <outlet property="detailsContainer" destination="Q2n-ng-l2d" id="Er6-nh-gOb"/>
+                        <outlet property="duration" destination="0qp-0W-eg9" id="7ar-9A-zNb"/>
                         <outlet property="genresStackView" destination="XwV-xN-apI" id="xbV-EV-9pq"/>
-                        <outlet property="plotLabel" destination="u1q-fQ-YpQ" id="LMn-ft-1pl"/>
+                        <outlet property="movieTitle" destination="NQD-Sy-tME" id="18a-Gg-HY9"/>
+                        <outlet property="originalTitle" destination="C4X-r5-IHS" id="FNI-fS-4wG"/>
+                        <outlet property="plot" destination="u1q-fQ-YpQ" id="NaF-eh-3p7"/>
+                        <outlet property="poster" destination="efd-5U-SkD" id="NUn-4D-Bzt"/>
                         <outlet property="posterBottomToDetailsTop" destination="Zug-ke-mbU" id="o9w-s0-VA2"/>
                         <outlet property="posterHeight" destination="bF8-ad-hB3" id="wAf-GN-hgc"/>
                         <outlet property="posterTopToSuperview" destination="hRH-VC-RVh" id="GBB-jj-g42"/>
-                        <outlet property="posterView" destination="efd-5U-SkD" id="iXm-Je-cVs"/>
                         <outlet property="scrollView" destination="2CA-jM-tJ9" id="4QG-cZ-7g8"/>
                         <outlet property="showingContainerIsCollapsed" destination="MJB-Mu-Eyj" id="ypn-be-ZWb"/>
                         <outlet property="titleContainer" destination="hZH-DU-L7m" id="knj-QG-I2N"/>
-                        <outlet property="titleLabel" destination="NQD-Sy-tME" id="3Yn-N5-Ja2"/>
+                        <outlet property="year" destination="UqF-Em-pVi" id="vyS-Lh-Cbg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pq8-ME-JHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
