@@ -26,6 +26,8 @@ final class MovieDetailsViewController: UIViewController {
     @IBOutlet private weak var ageRating: CustomFontLabel!
     @IBOutlet private weak var duration: CustomFontLabel!
     @IBOutlet private weak var plot: CustomFontLabel!
+    @IBOutlet private weak var venue: CustomFontLabel!
+    @IBOutlet private weak var time: CustomFontLabel!
 
     @IBOutlet private weak var posterHeight: NSLayoutConstraint!
     @IBOutlet private weak var posterTopToSuperview: NSLayoutConstraint!
