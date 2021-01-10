@@ -176,16 +176,16 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
     private func adjustNavigationBarAlpha(with offset: CGFloat) {
         guard let navigationBar = navigationBar else { return }
 
-        let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
+        let totalDistance = navigationBar.frame.maxY.distance(to: titleContainer.frame.minY)
         let currentDistance = totalDistance - offset
 
         let height = titleContainer.frame.height
 
-        if currentDistance < 0 {
+        if 0 > currentDistance {
             let alpha = (1 - (height + currentDistance) / height)
-            navigationBar.setBackgroundColor(.darkC, alpha: alpha)
+            navigationBar.setBackgroundImage(color: .secondaryBackground, alpha: alpha)
         } else {
-            navigationBar.setBackgroundColor(nil)
+            navigationBar.setBackgroundImage(color: .secondaryBackground, alpha: 0.0)
         }
     }
 
@@ -260,15 +260,6 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
 extension UINavigationBar {
     func setTitleAlpha(_ alpha: CGFloat) {
         self.titleTextAttributes = [.foregroundColor: UIColor.white.withAlphaComponent(alpha)]
-    }
-
-    func setBackgroundColor(_ color: UIColor?, alpha: CGFloat = 1.0) {
-        if let color = color?.withAlphaComponent(alpha) {
-            let image = color.image(size: self.frame.size)
-            self.setBackgroundImage(image, for: .default)
-        } else {
-            self.setBackgroundImage(UIImage(), for: .default)
-        }
     }
 }
 
