@@ -170,7 +170,7 @@ extension DateViewController {
         let label = UILabel()
         label.frame.size.height = navigationController?.navigationBar.frame.height ?? 0.0
         label.frame.size.width = (navigationController?.navigationBar.frame.width ?? 0.0) / 3
-        label.font = Fonts.getFont(Fonts.navigationBar.rawValue)
+        label.font = Fonts.getFont(.navigationBar)
         label.textColor = .primaryElement
         label.textAlignment = .center
 
