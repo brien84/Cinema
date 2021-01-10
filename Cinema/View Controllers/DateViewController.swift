@@ -86,7 +86,7 @@ final class DateViewController: UITableViewController {
     private func setupNotificationObservers() {
         NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { [self] _ in
             updateDatasource()
-            navigationItem.leftBarButtonItem?.image = dates.isFirst ? .options : .left
+            navigationItem.leftBarButtonItem?.image = dates.isFirst ? .options : .arrowLeft
         }
 
         NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { [self] _ in
