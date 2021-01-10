@@ -95,18 +95,17 @@ final class MovieDetailsViewController: UIViewController {
         navigationItem.leftBarButtonItem = button
     }
 
-    private func createGenreButton(with name: String) -> UIButton {
+    private func createGenreButton(with title: String) -> UIButton {
         let button = UIButton()
         button.isUserInteractionEnabled = false
 
-        button.setTitle(name, for: .normal)
+        button.setTitle(title, for: .normal)
         button.titleLabel?.font = .preferredFont(forTextStyle: .caption2)
-        button.setTitleColor(.lightC, for: .normal)
-
+        button.setTitleColor(.primaryElement, for: .normal)
+        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         button.layer.borderWidth = 0.5
         button.layer.cornerRadius = 5.0
-        button.layer.borderColor = UIColor.lightC.cgColor
-        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        button.layer.borderColor = UIColor.primaryElement.cgColor
 
         return button
     }
