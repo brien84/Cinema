@@ -45,6 +45,7 @@ final class MovieDetailsViewController: UIViewController {
 
         scrollView.delegate = self
 
+        setupBackButton()
         setLabels()
 
         // Appearance setup.
@@ -86,6 +87,12 @@ final class MovieDetailsViewController: UIViewController {
 
         venue.text = showing?.venue
         time.text = showing?.date.asString(.timeOfDay)
+    }
+
+    private func setupBackButton() {
+        let button = UIBarButtonItem(image: .arrowLeft, style: .plain, target: self, action: #selector(popViewController))
+        button.tintColor = .primaryElement
+        navigationItem.leftBarButtonItem = button
     }
 
     private func createGenreButton(with name: String) -> UIButton {
