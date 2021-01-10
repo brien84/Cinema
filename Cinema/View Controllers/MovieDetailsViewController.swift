@@ -132,88 +132,6 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
         }
     }
 
-    private func adjustNavigationBarButtons(with offset: CGFloat) {
-        guard let navigationBar = navigationBar else { return }
-        guard let leftButton = navigationItem.leftBarButtonItem else { return }
-
-        let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
-        let currentDistance = totalDistance - offset
-
-        let navBarInset = navigationBar.frame.width * 0.02
-
-        if currentDistance > navigationBar.frame.height {
-            leftButton.setBackground(color: .grayC, in: navigationBar)
-            leftButton.imageInsets = UIEdgeInsets(top: 0, left: navBarInset, bottom: 0, right: 0)
-        }
-
-        if currentDistance <= navigationBar.frame.height {
-            let percentage = currentDistance / navigationBar.frame.height
-
-            leftButton.setBackground(color: .grayC, with: percentage, in: navigationBar)
-            leftButton.imageInsets = UIEdgeInsets(top: 0, left: navBarInset * percentage, bottom: 0, right: 0)
-        }
-
-        if currentDistance < 0 {
-            leftButton.setBackground(color: .grayC, with: 0.0, in: navigationBar)
-            leftButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        }
-    }
-
-    private func adjustNavigationBarAlpha(with offset: CGFloat) {
-        guard let navigationBar = navigationBar else { return }
-
-        let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
-        let currentDistance = totalDistance - offset
-
-        let height = titleContainer.frame.height
-
-        if currentDistance < 0 {
-            let alpha = (1 - (height + currentDistance) / height)
-            navigationBar.setBackgroundColor(.darkC, alpha: alpha)
-        } else {
-            navigationBar.setBackgroundColor(nil)
-        }
-    }
-
-    private func adjustPosterViewAlpha(with offset: CGFloat) {
-        guard let navigationBar = navigationBar else { return }
-
-        if offset > 0 {
-            let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
-            let currentDistance = totalDistance - offset
-            poster.alpha = currentDistance / totalDistance
-        } else {
-            poster.alpha = 1.0
-        }
-    }
-
-    private func adjustNavigationBarTitle(with offset: CGFloat) {
-        guard let navigationBar = navigationBar else { return }
-
-        // Distance between bottom borders of `titleContainer` and `navigationBar`.
-        // If distance is 0, it means `titleContainer` is fully covered by `navigationBar`.
-        let totalDistance = titleContainer.frame.maxY - navigationBar.frame.maxY
-        let currentDistance = totalDistance - offset
-
-        // Height is halved, because title is adjusted up until `navigationBar` vertical center.
-        let navBarHeight = navigationBar.frame.height / 2
-
-        if currentDistance < 0 {
-            navigationBar.setTitleAlpha(1.0)
-            navigationBar.setTitleVerticalPositionAdjustment(0, for: .default)
-            return
-        }
-
-        if currentDistance > navBarHeight {
-            navigationBar.setTitleAlpha(0.0)
-        }
-
-        if currentDistance < navBarHeight {
-            navigationBar.setTitleAlpha(1.0 - currentDistance / navBarHeight)
-            navigationBar.setTitleVerticalPositionAdjustment(currentDistance, for: .default)
-        }
-    }
-
     private func handleScrollDown(_ offset: CGFloat) {
         // Convert offset to positive number for clearer calculations.
         let offset = -offset
@@ -254,6 +172,89 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
             titleContainer.alpha = 0.0
         }
     }
+
+    private func adjustNavigationBarAlpha(with offset: CGFloat) {
+        guard let navigationBar = navigationBar else { return }
+
+        let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
+        let currentDistance = totalDistance - offset
+
+        let height = titleContainer.frame.height
+
+        if currentDistance < 0 {
+            let alpha = (1 - (height + currentDistance) / height)
+            navigationBar.setBackgroundColor(.darkC, alpha: alpha)
+        } else {
+            navigationBar.setBackgroundColor(nil)
+        }
+    }
+
+    private func adjustNavigationBarTitle(with offset: CGFloat) {
+        guard let navigationBar = navigationBar else { return }
+
+        // Distance between bottom borders of `titleContainer` and `navigationBar`.
+        // If distance is 0, it means `titleContainer` is fully covered by `navigationBar`.
+        let totalDistance = titleContainer.frame.maxY - navigationBar.frame.maxY
+        let currentDistance = totalDistance - offset
+
+        // Height is halved, because title is adjusted up until `navigationBar` vertical center.
+        let navBarHeight = navigationBar.frame.height / 2
+
+        if currentDistance < 0 {
+            navigationBar.setTitleAlpha(1.0)
+            navigationBar.setTitleVerticalPositionAdjustment(0, for: .default)
+            return
+        }
+
+        if currentDistance > navBarHeight {
+            navigationBar.setTitleAlpha(0.0)
+        }
+
+        if currentDistance < navBarHeight {
+            navigationBar.setTitleAlpha(1.0 - currentDistance / navBarHeight)
+            navigationBar.setTitleVerticalPositionAdjustment(currentDistance, for: .default)
+        }
+    }
+
+    private func adjustNavigationBarButtons(with offset: CGFloat) {
+        guard let navigationBar = navigationBar else { return }
+        guard let leftButton = navigationItem.leftBarButtonItem else { return }
+
+        let totalDistance = navigationBar.frame.maxY.distance(to: titleContainer.frame.minY)
+        let currentDistance = totalDistance - offset
+
+        let inset = navigationBar.frame.width * 0.02
+        let height = navigationBar.frame.height * 0.8
+        let size = CGSize(width: height, height: height)
+
+        if currentDistance > navigationBar.frame.height {
+            leftButton.setBackgroundImage(size: size, color: .secondaryBackground, alpha: 1.0)
+            leftButton.imageInsets = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: 0)
+        }
+
+        if navigationBar.frame.height >= currentDistance {
+            let percentage = currentDistance / navigationBar.frame.height
+            leftButton.setBackgroundImage(size: size, color: .secondaryBackground, alpha: percentage)
+            leftButton.imageInsets = UIEdgeInsets(top: 0, left: inset * percentage, bottom: 0, right: 0)
+        }
+
+        if 0 > currentDistance {
+            leftButton.setBackgroundImage(size: size, color: .secondaryBackground, alpha: 0.0)
+            leftButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+    }
+
+    private func adjustPosterViewAlpha(with offset: CGFloat) {
+        guard let navigationBar = navigationBar else { return }
+
+        if offset > 0 {
+            let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
+            let currentDistance = totalDistance - offset
+            poster.alpha = currentDistance / totalDistance
+        } else {
+            poster.alpha = 1.0
+        }
+    }
 }
 
 extension UINavigationBar {
@@ -271,10 +272,8 @@ extension UINavigationBar {
     }
 }
 
-extension UIBarButtonItem {
-    fileprivate func setBackground(color: UIColor, with alpha: CGFloat = 1.0, in navBar: UINavigationBar) {
-        let height = navBar.frame.height * 0.8
-        let size = CGSize(width: height, height: height)
+private extension UIBarButtonItem {
+    func setBackgroundImage(size: CGSize, color: UIColor, alpha: CGFloat) {
         let image = color.withAlphaComponent(alpha).image(size: size, isEclipse: true)
         self.setBackgroundImage(image, for: .normal, barMetrics: .default)
     }
