@@ -18,20 +18,24 @@ enum Fonts: String {
     private var font: UIFont {
         switch self {
         case .dateViewHeaderLabel:
-            return UIFont.init(name: "HelveticaNeue-Bold", size: 30)!
+            return UIFont(name: "HelveticaNeue-Bold", size: 30)!
         case .dateViewTitle, .dateContainerViewTitle:
-            return UIFont.init(name: "HelveticaNeue-Medium", size: 17)!
+            return UIFont(name: "HelveticaNeue-Medium", size: 17)!
         case .dateViewOriginalTitle:
-            return UIFont.init(name: "HelveticaNeue-Italic", size: 15)!
+            return UIFont(name: "HelveticaNeue-Italic", size: 15)!
         case .dateViewDetails:
-            return UIFont.init(name: "HelveticaNeue", size: 14)!
+            return UIFont(name: "HelveticaNeue", size: 14)!
         case .loadingViewError:
-            return UIFont.init(name: "HelveticaNeue-Medium", size: 25)!
+            return UIFont(name: "HelveticaNeue-Medium", size: 25)!
         case .navigationBar:
-            return UIFont.init(name: "HelveticaNeue-Medium", size: 17)!
+            return UIFont(name: "HelveticaNeue-Medium", size: 17)!
         default:
-            return UIFont.init(name: "BodoniOrnamentsITCTT", size: 50)!
+            return UIFont(name: "BodoniOrnamentsITCTT", size: 50)!
         }
+    }
+
+    static func getFont(_ font: Fonts) -> UIFont {
+        font.font
     }
 
     static func getFont(_ identifier: String) -> UIFont {
