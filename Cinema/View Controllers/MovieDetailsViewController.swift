@@ -60,6 +60,14 @@ final class MovieDetailsViewController: UIViewController {
         }, completion: nil)
     }
 
+    @objc private func popViewController() {
+        navigationController?.popViewController(animated: true)
+
+        // Resets `navigationBar` appearance.
+        navigationBar?.setTitleVerticalPositionAdjustment(0, for: .default)
+        navigationBar?.setBackgroundImage(color: .secondaryBackground)
+    }
+
     private func setLabels() {
         navigationItem.title = movie?.title
 
