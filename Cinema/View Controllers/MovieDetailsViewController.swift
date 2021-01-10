@@ -257,9 +257,10 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
     }
 }
 
-extension UINavigationBar {
+private extension UINavigationBar {
     func setTitleAlpha(_ alpha: CGFloat) {
-        self.titleTextAttributes = [.foregroundColor: UIColor.white.withAlphaComponent(alpha)]
+        self.titleTextAttributes = [.foregroundColor: UIColor.primaryElement.withAlphaComponent(alpha),
+                                    .font: Fonts.getFont(.navigationBar)]
     }
 }
 
