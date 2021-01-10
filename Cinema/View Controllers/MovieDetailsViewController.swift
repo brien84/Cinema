@@ -14,11 +14,6 @@ final class MovieDetailsViewController: UIViewController {
 
     @IBOutlet private weak var scrollView: UIScrollView!
 
-    @IBOutlet private weak var titleContainer: UIView!
-
-    @IBOutlet private weak var genresStackView: UIStackView!
-    @IBOutlet private weak var detailsContainer: UIView!
-
     @IBOutlet private weak var poster: NetworkImageView!
     @IBOutlet private weak var movieTitle: CustomFontLabel!
     @IBOutlet private weak var originalTitle: CustomFontLabel!
@@ -28,13 +23,20 @@ final class MovieDetailsViewController: UIViewController {
     @IBOutlet private weak var plot: CustomFontLabel!
     @IBOutlet private weak var venue: CustomFontLabel!
     @IBOutlet private weak var time: CustomFontLabel!
+    @IBOutlet private weak var genresStackView: UIStackView!
+
+    @IBOutlet private weak var titleContainer: UIView!
+    @IBOutlet private weak var detailsContainer: UIView!
 
     @IBOutlet private weak var posterHeight: NSLayoutConstraint!
     @IBOutlet private weak var posterTopToSuperview: NSLayoutConstraint!
     @IBOutlet private weak var posterBottomToDetailsTop: NSLayoutConstraint!
     @IBOutlet private weak var detailsBottomToSuperview: NSLayoutConstraint!
-
-    @IBOutlet private weak var showingContainerIsCollapsed: NSLayoutConstraint!
+    @IBOutlet private weak var showingContainerIsCollapsed: NSLayoutConstraint! {
+        didSet {
+            showingContainerIsCollapsed.isActive = true
+        }
+    }
 
     private lazy var navigationBar = navigationController?.navigationBar
 
@@ -51,7 +53,7 @@ final class MovieDetailsViewController: UIViewController {
             navigationBar.setBackgroundColor(nil)
             navigationBar.setTitleAlpha(0.0)
 
-            let leftButton = UIBarButtonItem(image: .left, style: .plain, target: nil, action: nil)
+            let leftButton = UIBarButtonItem(image: .arrowLeft, style: .plain, target: nil, action: nil)
 
             leftButton.setBackground(color: .grayC, with: 1.0, in: navigationBar)
 
