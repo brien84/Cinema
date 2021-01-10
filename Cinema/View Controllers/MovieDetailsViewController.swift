@@ -53,10 +53,14 @@ final class MovieDetailsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        UIView.transition(with: view, duration: 0.7, options: .curveEaseInOut, animations: {
-            self.showingContainerIsCollapsed.isActive = false
-            self.view.layoutIfNeeded()
-        }, completion: nil)
+        UIView.animate(withDuration: .stdAnimation / 2) { [self] in
+            navigationController?.setNavigationBarHidden(false, animated: true)
+
+            if showing != nil {
+                showingContainerIsCollapsed.isActive = false
+                view.layoutIfNeeded()
+            }
+        }
     }
 
     @objc private func popViewController() {
