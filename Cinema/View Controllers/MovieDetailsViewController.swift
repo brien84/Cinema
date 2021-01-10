@@ -38,8 +38,6 @@ final class MovieDetailsViewController: UIViewController {
         }
     }
 
-    private lazy var navigationBar = navigationController?.navigationBar
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -112,14 +110,22 @@ final class MovieDetailsViewController: UIViewController {
 }
 
 extension MovieDetailsViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y
+    private var navigationBar: UINavigationBar? {
+        navigationController?.navigationBar
+    }
 
-        handleScrollDown(offset)
-        adjustNavigationBarTitle(with: offset)
-        adjustPosterViewAlpha(with: offset)
-        adjustNavigationBarAlpha(with: offset)
-        adjustNavigationBarButtons(with: offset)
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // If `navigationController` is nil, `MovieViewController` is in transition.
+        if navigationController != nil {
+            // scroll down positive, up negative
+            let offset = scrollView.contentOffset.y
+
+            handleScrollDown(offset)
+            adjustNavigationBarAlpha(with: offset)
+            adjustNavigationBarTitle(with: offset)
+            adjustNavigationBarButtons(with: offset)
+            adjustPosterViewAlpha(with: offset)
+        }
     }
 
     private func adjustNavigationBarButtons(with offset: CGFloat) {
