@@ -17,6 +17,12 @@ extension TimeInterval {
     static let stdAnimation = 0.4
 }
 
+extension UIImage {
+    static let options = UIImage(named: "options")!
+    static let arrowLeft = UIImage(named: "arrowLeft")!
+    static let arrowRight = UIImage(named: "arrowRight")!
+}
+
 extension UIColor {
     static let darkC = UIColor(named: "dark")!
     static let grayC = UIColor(named: "gray")!
