@@ -53,10 +53,22 @@ extension NSLayoutConstraint {
     }
 }
 
+extension UINavigationBar {
+    func setBackgroundImage(color: UIColor, alpha: CGFloat = 1.0) {
+        // If `alpha` is equal or higher than 1.0 `UINavigationBar`
+        // will apply a system-defined alpha.
+        let alpha = alpha >= 1.0 ? 0.99 : alpha
+        let color = color.withAlphaComponent(alpha)
+        // `UINavigationBar` will size the image to fill.
+        let image = color.image(size: CGSize(width: 1, height: 1))
+        self.setBackgroundImage(image, for: .default)
+    }
+}
+
 extension UIColor {
-    /// Creates `UIImage` filled with extended `UIColor`.
+    /// Creates `UIImage` filled with `UIColor`.
     func image(size: CGSize, isEclipse: Bool = false) -> UIImage {
-        return UIGraphicsImageRenderer(size: size).image { rendererContext in
+        UIGraphicsImageRenderer(size: size).image { rendererContext in
             let rect = CGRect(origin: .zero, size: size)
             self.setFill()
 
