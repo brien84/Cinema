@@ -17,6 +17,14 @@ import UIKit
         didSet { gradientLayer.colors = cgColorGradient }
     }
 
+    @IBInspectable var startColorAlpha: Double = 1.0 {
+        didSet { gradientLayer.colors = cgColorGradient }
+    }
+
+    @IBInspectable var endColorAlpha: Double = 1.0 {
+        didSet { gradientLayer.colors = cgColorGradient }
+    }
+
     @IBInspectable var startPoint: CGPoint = CGPoint(x: 0.0, y: 0.0) {
         didSet { gradientLayer.startPoint = startPoint }
     }
@@ -37,9 +45,9 @@ import UIKit
 
 extension GradientBackgroundView {
     private var cgColorGradient: [CGColor]? {
-        guard let startColor = startColor, let endColor = endColor else {
-            return nil
-        }
+        guard let startColor = startColor?.withAlphaComponent(CGFloat(startColorAlpha)),
+              let endColor = endColor?.withAlphaComponent(CGFloat(endColorAlpha))
+        else { return nil }
 
         return [startColor.cgColor, endColor.cgColor]
     }
