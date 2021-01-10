@@ -45,28 +45,10 @@ final class MovieDetailsViewController: UIViewController {
 
         scrollView.delegate = self
 
-        showingContainerIsCollapsed.isActive = true
+        setLabels()
 
-        navigationItem.title = "Title"
-
-        if let navigationBar = navigationBar {
-            navigationBar.setBackgroundColor(nil)
-            navigationBar.setTitleAlpha(0.0)
-
-            let leftButton = UIBarButtonItem(image: .arrowLeft, style: .plain, target: nil, action: nil)
-
-            leftButton.setBackground(color: .grayC, with: 1.0, in: navigationBar)
-
-            let navBarInset = navigationBar.frame.width * 0.02
-            leftButton.imageInsets = UIEdgeInsets(top: 0, left: navBarInset, bottom: 0, right: 0)
-
-            navigationItem.leftBarButtonItem = leftButton
-        }
-
-        let genres = ["Komedija", "Siaubo", "Drama"]
-
-        genresStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        genres.forEach { genresStackView.addArrangedSubview(createGenreButton(with: $0)) }
+        // Appearance setup.
+        scrollView.delegate?.scrollViewDidScroll?(scrollView)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -76,6 +58,26 @@ final class MovieDetailsViewController: UIViewController {
             self.showingContainerIsCollapsed.isActive = false
             self.view.layoutIfNeeded()
         }, completion: nil)
+    }
+
+    private func setLabels() {
+        navigationItem.title = movie?.title
+
+        poster.url = movie?.poster
+        movieTitle.text = movie?.title
+        originalTitle.text = movie?.originalTitle
+        year.text = movie?.year
+        ageRating.text = movie?.ageRating
+        duration.text = movie?.duration
+        plot.text = movie?.plot
+
+        genresStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        movie?.genres.forEach { genre in
+            genresStackView.addArrangedSubview(createGenreButton(with: genre))
+        }
+
+        venue.text = showing?.venue
+        time.text = showing?.date.asString(.timeOfDay)
     }
 
     private func createGenreButton(with name: String) -> UIButton {
