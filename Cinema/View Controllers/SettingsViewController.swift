@@ -11,7 +11,6 @@ import UIKit
 private let reuseIdentifier = "settingsCell"
 
 final class SettingsViewController: UITableViewController {
-
     private let datasource: [City] = {
         City.allCases.map { $0 }
     }()
@@ -31,11 +30,7 @@ final class SettingsViewController: UITableViewController {
         tableView.accessibilityIdentifier = "UI-OptionsVCTable"
 
         tableView.contentInset.top = .contentInset
-
-        tableView.backgroundColor = .secondaryBackground
-        tableView.separatorStyle = .none
         tableView.tableHeaderView = headerView
-        tableView.isScrollEnabled = false
 
         navigationController?.isNavigationBarHidden = true
     }
@@ -45,8 +40,6 @@ final class SettingsViewController: UITableViewController {
 
         navigationController?.isNavigationBarHidden = false
     }
-
-    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource.count
