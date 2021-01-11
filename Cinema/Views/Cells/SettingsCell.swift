@@ -13,7 +13,7 @@ final class SettingsCell: UITableViewCell {
     let title: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.textColor = .lightC
+        label.textColor = .primaryElement
         label.font = .title
         return label
     }()
@@ -21,9 +21,9 @@ final class SettingsCell: UITableViewCell {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                title.textColor = .redC
+                title.textColor = .tertiaryElement
             } else {
-                title.textColor = .grayC
+                title.textColor = .secondaryElement
             }
         }
     }
@@ -31,14 +31,19 @@ final class SettingsCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        backgroundColor = .darkC
+        backgroundColor = .secondaryBackground
         selectionStyle = .none
 
         layoutViews()
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+
+        backgroundColor = .secondaryBackground
+        selectionStyle = .none
+
+        layoutViews()
     }
 
     private func layoutViews() {
