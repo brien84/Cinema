@@ -1,5 +1,5 @@
 //
-//  OptionsCell.swift
+//  SettingsCell.swift
 //  Cinema
 //
 //  Created by Marius on 13/10/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class OptionsCell: UITableViewCell {
+final class SettingsCell: UITableViewCell {
 
     let title: UILabel = {
         let label = UILabel()

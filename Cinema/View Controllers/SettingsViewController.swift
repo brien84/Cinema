@@ -30,7 +30,7 @@ final class SettingsViewController: UITableViewController {
 
         tableView.accessibilityIdentifier = "UI-OptionsVCTable"
 
-        tableView.register(OptionsCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(SettingsCell.self, forCellReuseIdentifier: reuseIdentifier)
 
         tableView.contentInset.top = .contentInset
 
@@ -56,7 +56,7 @@ final class SettingsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! OptionsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
 
         cell.title.text = datasource[indexPath.row].rawValue
 
