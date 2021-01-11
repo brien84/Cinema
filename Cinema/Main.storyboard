@@ -26,7 +26,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtS-LT-Qg0" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="8" width="382" height="26.5"/>
+                                    <rect key="frame" x="16" y="8" width="382" height="36"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <color key="textColor" name="primaryElement"/>
                                     <nil key="highlightedColor"/>
@@ -35,13 +35,13 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PsW-bU-O7w">
-                                    <rect key="frame" x="0.0" y="42.5" width="414" height="485"/>
+                                    <rect key="frame" x="0.0" y="52" width="414" height="466"/>
                                     <connections>
                                         <segue destination="fg4-kJ-Eo7" kind="embed" identifier="embedMovieCollectionVC" id="wOF-CZ-nGK"/>
                                     </connections>
                                 </containerView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seansai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWM-6b-OYy" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="535.5" width="382" height="26.5"/>
+                                    <rect key="frame" x="16" y="526" width="382" height="36"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                     <color key="textColor" name="primaryElement"/>
                                     <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                                             <rect key="frame" x="119.5" y="8" width="286.5" height="156"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsy-Pk-dGB" userLabel="title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="258.5" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="258.5" height="41"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" name="primaryElement"/>
@@ -98,7 +98,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luJ-VN-Zdd" userLabel="originalTitle" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="47" width="286.5" height="36"/>
+                                                    <rect key="frame" x="0.0" y="45" width="286.5" height="35.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" name="secondaryElement"/>
                                                     <nil key="highlightedColor"/>
@@ -107,10 +107,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1io-7v-UgC" userLabel="details">
-                                                    <rect key="frame" x="0.0" y="138" width="286.5" height="18"/>
+                                                    <rect key="frame" x="0.0" y="139.5" width="286.5" height="16.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forum Cinemas Akropolis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJH-AV-A5C" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="162" height="16.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="secondaryElement"/>
                                                             <nil key="highlightedColor"/>
@@ -119,7 +119,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hy3-eo-z34" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                            <rect key="frame" x="245" y="0.0" width="41.5" height="18"/>
+                                                            <rect key="frame" x="251" y="0.0" width="35.5" height="16.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="secondaryElement"/>
                                                             <nil key="highlightedColor"/>
@@ -221,11 +221,11 @@
             <objects>
                 <viewController id="Ygy-k3-LEc" customClass="MovieDetailsViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9n5-Vo-rcr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-jM-tJ9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="networkImageViewDefault" translatesAutoresizingMaskIntoConstraints="NO" id="efd-5U-SkD" userLabel="Poster" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="621"/>
@@ -236,7 +236,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZH-DU-L7m" userLabel="Title Container" customClass="GradientBackgroundView" customModule="iKinas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="471.5" width="414" height="87.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQD-Sy-tME" userLabel="Title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NQD-Sy-tME" userLabel="Title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="20" width="374" height="33.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
@@ -494,14 +494,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="secondaryBackground"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pasirinkite miestą" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RSf-vX-dEI" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                            <color key="textColor" name="primaryElement"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" id="kSx-aa-Q47" customClass="SettingsCell" customModule="iKinas" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingsCell" id="kSx-aa-Q47" customClass="SettingsCell" customModule="iKinas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kSx-aa-Q47" id="nRW-nl-SFk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAm-nO-pXy" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="20" width="374" height="28"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                            <color key="textColor" name="secondaryElement"/>
+                                            <color key="highlightedColor" name="tertiaryElement"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xAm-nO-pXy" firstAttribute="top" secondItem="nRW-nl-SFk" secondAttribute="top" constant="20" symbolic="YES" id="5Qq-H5-Fjo"/>
+                                        <constraint firstItem="xAm-nO-pXy" firstAttribute="leading" secondItem="nRW-nl-SFk" secondAttribute="leading" constant="20" symbolic="YES" id="ORG-wU-FIn"/>
+                                        <constraint firstAttribute="trailing" secondItem="xAm-nO-pXy" secondAttribute="trailing" constant="20" symbolic="YES" id="hqA-Tw-B1S"/>
+                                        <constraint firstAttribute="bottom" secondItem="xAm-nO-pXy" secondAttribute="bottom" constant="20" symbolic="YES" id="leE-sK-oKo"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="city" destination="xAm-nO-pXy" id="gjR-ho-A5k"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -520,7 +546,7 @@
             <objects>
                 <collectionViewController id="fg4-kJ-Eo7" customClass="MoviesViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="UoG-fi-SO5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="485"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="jZ3-av-jYN">
@@ -531,7 +557,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviesCell" id="ZAe-yq-nof" customClass="MoviesViewCell" customModule="iKinas" customModuleProvider="target">
-                                <rect key="frame" x="8" y="34.5" width="238" height="416"/>
+                                <rect key="frame" x="8" y="25" width="238" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YFp-07-LZi">
                                     <rect key="frame" x="0.0" y="0.0" width="238" height="416"/>
@@ -647,6 +673,9 @@
         <designable name="NQD-Sy-tME">
             <size key="intrinsicContentSize" width="141.5" height="33.5"/>
         </designable>
+        <designable name="RSf-vX-dEI">
+            <size key="intrinsicContentSize" width="252.5" height="41"/>
+        </designable>
         <designable name="TpN-B9-ng3">
             <size key="intrinsicContentSize" width="61" height="17.5"/>
         </designable>
@@ -680,9 +709,12 @@
         <designable name="u1q-fQ-YpQ">
             <size key="intrinsicContentSize" width="14818" height="20.5"/>
         </designable>
+        <designable name="xAm-nO-pXy">
+            <size key="intrinsicContentSize" width="59" height="28"/>
+        </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="diA-bi-HlB"/>
+        <segue reference="q3A-mY-b7Z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="3d" width="32" height="32"/>

@@ -9,61 +9,15 @@
 import UIKit
 
 final class SettingsCell: UITableViewCell {
-
-    let title: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.textColor = .primaryElement
-        label.font = .title
-        return label
-    }()
+    @IBOutlet weak var city: CustomFontLabel!
 
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                title.textColor = .tertiaryElement
+                city.isHighlighted = true
             } else {
-                title.textColor = .secondaryElement
+                city.isHighlighted = false
             }
         }
     }
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        backgroundColor = .secondaryBackground
-        selectionStyle = .none
-
-        layoutViews()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
-        backgroundColor = .secondaryBackground
-        selectionStyle = .none
-
-        layoutViews()
-    }
-
-    private func layoutViews() {
-        contentView.addSubview(title)
-        title.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: contentView.topAnchor),
-            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            title.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: .titleHeightToWidthRatio).withPriority(999)
-        ])
-    }
-}
-
-extension CGFloat {
-    fileprivate static let titleHeightToWidthRatio: CGFloat = 0.2
-}
-
-extension UIFont {
-    fileprivate static let title = UIFont(name: "Avenir-Light", size: .dynamicFontSize(18))
 }
