@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "settingsCell"
 
 final class SettingsViewController: UITableViewController {
 
@@ -19,7 +19,7 @@ final class SettingsViewController: UITableViewController {
     private lazy var headerView: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: .headerHeight))
         label.textAlignment = .center
-        label.textColor = .lightC
+        label.textColor = .primaryElement
         label.font = .header
         label.text = "Pasirinkite miestą"
         return label
@@ -30,11 +30,9 @@ final class SettingsViewController: UITableViewController {
 
         tableView.accessibilityIdentifier = "UI-OptionsVCTable"
 
-        tableView.register(SettingsCell.self, forCellReuseIdentifier: reuseIdentifier)
-
         tableView.contentInset.top = .contentInset
 
-        tableView.backgroundColor = .darkC
+        tableView.backgroundColor = .secondaryBackground
         tableView.separatorStyle = .none
         tableView.tableHeaderView = headerView
         tableView.isScrollEnabled = false
