@@ -30,7 +30,7 @@
 		292E7ECE2561754D0077F2FF /* MovieFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292E7ECD2561754D0077F2FF /* MovieFetcher.swift */; };
 		292E7ED3256176DA0077F2FF /* MovieFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292E7ED2256176DA0077F2FF /* MovieFetcherTests.swift */; };
 		2932FB7F24D35D62009AEDD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2932FB7E24D35D62009AEDD1 /* Main.storyboard */; };
-		2932FB8124D602E8009AEDD1 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932FB8024D602E8009AEDD1 /* MoviesViewController.swift */; };
+		2932FB8124D602E8009AEDD1 /* DateContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */; };
 		293BAA7323D11BAD00C07837 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BAA7223D11BAD00C07837 /* MovieDetailsView.swift */; };
 		293BAA7523DA0D8C00C07837 /* DailyMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BAA7423DA0D8C00C07837 /* DailyMoviesCell.swift */; };
 		2948398424D1F85500133940 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948398324D1F85500133940 /* DateViewController.swift */; };
@@ -106,7 +106,7 @@
 		292E7ECD2561754D0077F2FF /* MovieFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFetcher.swift; sourceTree = "<group>"; };
 		292E7ED2256176DA0077F2FF /* MovieFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFetcherTests.swift; sourceTree = "<group>"; };
 		2932FB7E24D35D62009AEDD1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		2932FB8024D602E8009AEDD1 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainerViewController.swift; sourceTree = "<group>"; };
 		293BAA7223D11BAD00C07837 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
 		293BAA7423DA0D8C00C07837 /* DailyMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMoviesCell.swift; sourceTree = "<group>"; };
 		2948398324D1F85500133940 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				2948398324D1F85500133940 /* DateViewController.swift */,
-				2932FB8024D602E8009AEDD1 /* MoviesViewController.swift */,
+				2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */,
 				299D135724C766F00012755A /* MovieDetailsViewController.swift */,
 				2904D0702353C79B00407B64 /* SettingsViewController.swift */,
 				2904C9E7233EB5FB00407B64 /* Container Controllers */,
@@ -514,7 +514,7 @@
 				2904C7B8233BDE3000407B64 /* DailyShowingsVC.swift in Sources */,
 				299D135A24CA26DC0012755A /* GradientBackgroundView.swift in Sources */,
 				2904C9F12341208400407B64 /* MovieShowingsVC.swift in Sources */,
-				2932FB8124D602E8009AEDD1 /* MoviesViewController.swift in Sources */,
+				2932FB8124D602E8009AEDD1 /* DateContainerViewController.swift in Sources */,
 				29833739256466FA0072347E /* NewLoadingView.swift in Sources */,
 				29882D24258E8F2D00CC1873 /* TransitionTableView.swift in Sources */,
 				299C267C2502DDB30074E795 /* CustomFontLabel.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  MoviesViewController.swift
+//  DateContainerViewController.swift
 //  Cinema
 //
 //  Created by Marius on 2020-08-01.
@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "moviesCell"
 
-final class MoviesViewController: UICollectionViewController {
+final class DateContainerViewController: UICollectionViewController {
     private var datasource = [Movie]() {
         didSet {
             datasource.sort { $0.title < $1.title }
@@ -56,7 +56,7 @@ final class MoviesViewController: UICollectionViewController {
     }
 }
 
-extension MoviesViewController: UICollectionViewDelegateFlowLayout {
+extension DateContainerViewController: UICollectionViewDelegateFlowLayout {
     private var flowLayout: UICollectionViewFlowLayout? {
         collectionViewLayout as? UICollectionViewFlowLayout
     }
@@ -67,13 +67,13 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension MoviesViewController: DateViewControllerDelegate {
+extension DateContainerViewController: DateViewControllerDelegate {
     func dateVC(_ dateVC: DateViewController, didUpdate datasource: [Movie]) {
         self.datasource = datasource
     }
 }
 
-extension MoviesViewController: TransitionTableViewDelegate {
+extension DateContainerViewController: TransitionTableViewDelegate {
     func prepareForTransition(animated isAnimated: Bool, completion: (() -> Void)?) {
         // Scrolls to the beginning of the `collectionView`.
         if collectionView.contentOffset.x > 0 {
