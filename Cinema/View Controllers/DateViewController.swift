@@ -97,7 +97,7 @@ final class DateViewController: UITableViewController {
             navigationItem.leftBarButtonItem?.image = dates.isFirst ? .options : .arrowLeft
         }
 
-        NotificationCenter.default.addObserver(forName: .OptionsCityDidChange, object: nil, queue: .main) { [self] _ in
+        NotificationCenter.default.addObserver(forName: .SettingsCityDidChange, object: nil, queue: .main) { [self] _ in
             fetchMovies()
         }
     }
