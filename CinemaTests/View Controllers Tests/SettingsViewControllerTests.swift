@@ -1,5 +1,5 @@
 //
-//  OptionsViewControllerTests.swift
+//  SettingsViewControllerTests.swift
 //  CinemaTests
 //
 //  Created by Marius on 15/11/2019.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import iKinas
 
-class OptionsViewControllerTests: XCTestCase {
+class SettingsViewControllerTests: XCTestCase {
 
     var sut: OptionsViewController!
 
