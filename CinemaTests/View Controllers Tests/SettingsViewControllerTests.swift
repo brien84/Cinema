@@ -1,5 +1,5 @@
 //
-//  SettingsViewControllerTests.swift
+//  OptionsViewControllerTests.swift
 //  CinemaTests
 //
 //  Created by Marius on 15/11/2019.
@@ -9,154 +9,71 @@
 import XCTest
 @testable import iKinas
 
-class SettingsViewControllerTests: XCTestCase {
-
-    var sut: OptionsViewController!
+final class OptionsViewControllerTests: XCTestCase {
+    var sut: SettingsViewController!
 
     override func setUp() {
-        sut = OptionsViewController()
+        setupSUT()
     }
 
     override func tearDown() {
         sut = nil
     }
 
-    // MARK: TableView
+    func testTableViewHasCorrectNumberOfRows() {
+        sut.loadViewIfNeeded()
 
-    func testTableViewRegistersCell() {
-        // given
-        let reuseIdentifier = "Cell"
+        let rowCount = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
 
-        // when
-        _ = sut.view
-
-        // then
-        guard let nibs = sut.tableView.value(forKey: "_cellClassDict") as? [String: Any] else {
-            return XCTFail("nibs dictionary is nil!")
-        }
-
-        XCTAssertTrue(nibs.contains { $0.key == reuseIdentifier })
+        XCTAssertEqual(rowCount, City.allCases.count)
     }
 
-    func testTableViewTopContentInsetIsGreaterThanZero() {
-        // when
-        _ = sut.view
+    func testTableViewCellsHaveCorrectValuesSet() {
+        sut.loadViewIfNeeded()
 
-        // then
-        XCTAssertGreaterThan(sut.tableView.contentInset.top, 0)
+        let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? SettingsCell
+
+        XCTAssertEqual(cell?.city.text, City.allCases[0].rawValue)
     }
 
-    func testTableViewBackgroundColorIsDark() {
-        // when
-        _ = sut.view
+    func testTableViewContentInsetAdjustmentBehaviorIsNever() {
+        sut.loadViewIfNeeded()
 
-        // then
-        XCTAssertEqual(sut.tableView.backgroundColor, .darkC)
-    }
-
-    func testTableViewSeparatorStyleIsNone() {
-        // when
-        _ = sut.view
-
-        // then
-        XCTAssertEqual(sut.tableView.separatorStyle, .none)
+        XCTAssertEqual(sut.tableView.contentInsetAdjustmentBehavior, .never)
     }
 
     func testTableViewScrollIsDisabled() {
-        // when
-        _ = sut.view
+        sut.loadViewIfNeeded()
 
-        // then
         XCTAssertFalse(sut.tableView.isScrollEnabled)
     }
 
-    func testTableViewHasCorrectNumberOfRows() {
-        // given
-        let cityCount = City.allCases.count
-
-        // when
-        _ = sut.view
-
-        // then
-        let rowCount = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
-        XCTAssertEqual(rowCount, cityCount)
-    }
-
-    func testTableViewSelectingRowSendsNotification() {
-        // given
-        expectation(forNotification: .OptionsCityDidChange, object: nil, handler: nil)
-
-        // when
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
-
-        // then
-        waitForExpectations(timeout: 3)
-    }
-
-    // MARK: NavigationBar
-
-    func testNavigationBarIsHidden() {
-        // given
-        _ = UINavigationController(rootViewController: sut)
-
-        // when
-        _ = sut.view
-
-        // then
-        XCTAssertTrue(sut.navigationController?.isNavigationBarHidden ?? false)
-    }
-
-    func testNavigationBarIsUnhiddenWhenViewDisappears() {
-        // given
-        _ = UINavigationController(rootViewController: sut)
-
-        // when
-        _ = sut.view
-        sut.viewWillDisappear(false)
-
-        // then
-        XCTAssertFalse(sut.navigationController?.isNavigationBarHidden ?? true)
-    }
-
-    // MARK: TableHeaderView
-
     func testTableViewHeaderIsNotNil() {
-        // when
-        _ = sut.view
+        sut.loadViewIfNeeded()
 
-        // then
         XCTAssertNotNil(sut.tableView.tableHeaderView)
     }
 
-    func testTableViewHeaderViewIsUILabel() {
-        // when
-        _ = sut.view
-        let headerView = sut.tableView.tableHeaderView as? UILabel
+    func testSelectingRowSendsNotification() {
+        expectation(forNotification: .SettingsCityDidChange, object: nil, handler: nil)
 
-        // then
-        XCTAssertNotNil(headerView)
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+
+        waitForExpectations(timeout: 3)
     }
 
-    func testTableViewHeaderViewTextAlignmentIsCenter() {
-        // when
-        _ = sut.view
-        guard let headerView = sut.tableView.tableHeaderView as? UILabel else {
-            return XCTFail("headerView is not UILabel")
-        }
+    func testNavigationBarIsHidden() {
+        _ = UINavigationController(rootViewController: sut)
 
-        // then
-        XCTAssertEqual(headerView.textAlignment, .center)
+        sut.loadViewIfNeeded()
+
+        XCTAssertTrue(sut.navigationController?.isNavigationBarHidden ?? false)
     }
 
-    func testTableViewHeaderViewTextColorIsLight() {
-         // when
-         _ = sut.view
-         guard let headerView = sut.tableView.tableHeaderView as? UILabel else {
-             return XCTFail("headerView is not UILabel")
-         }
+    // MARK: Test Helpers
 
-         // then
-         XCTAssertEqual(headerView.textColor, .lightC)
-     }
-
+    func setupSUT() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        sut = storyboard.instantiateViewController(withIdentifier: "settingsVC") as? SettingsViewController
+    }
 }
