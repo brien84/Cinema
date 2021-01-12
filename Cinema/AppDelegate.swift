@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Opens `SettingsViewController` if the app is started for the first time or if UI tests commence.
         if !UserDefaults.standard.isCitySet() || CommandLine.arguments.contains("ui-testing") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let optionsVC = storyboard.instantiateViewController(withIdentifier: "OptionsVC")
-            navController?.pushViewController(optionsVC, animated: false)
+            let settingsVC = storyboard.instantiateViewController(withIdentifier: "settingsVC")
+            navController?.pushViewController(settingsVC, animated: false)
         }
 
         return true
