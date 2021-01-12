@@ -63,6 +63,14 @@ final class DateViewController: UITableViewController {
         fetchMovies()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        UIView.animate(withDuration: .stdAnimation / 2) {
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        }
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         datasource.count
     }
