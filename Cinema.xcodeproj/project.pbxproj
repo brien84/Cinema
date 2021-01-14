@@ -14,7 +14,6 @@
 		2904C7A02336A69B00407B64 /* Showing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C79F2336A69B00407B64 /* Showing.swift */; };
 		2904C7A32336B09100407B64 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7A22336B09100407B64 /* Extensions.swift */; };
 		2904C7A7233825D800407B64 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7A6233825D800407B64 /* DateSelector.swift */; };
-		2904C7AF23393A4E00407B64 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7AE23393A4E00407B64 /* SegmentedControl.swift */; };
 		2904C7B6233BC6F700407B64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7B5233BC6F700407B64 /* Constants.swift */; };
 		2904D0712353C79B00407B64 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0702353C79B00407B64 /* SettingsViewController.swift */; };
 		2904D0742353C7CC00407B64 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0722353C7CC00407B64 /* SettingsCell.swift */; };
@@ -29,7 +28,6 @@
 		2932FB8124D602E8009AEDD1 /* DateContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */; };
 		2948398424D1F85500133940 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948398324D1F85500133940 /* DateViewController.swift */; };
 		294CD91023E04BA60064644D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CD90F23E04BA60064644D /* LoadingView.swift */; };
-		294E933223A959BD0062E808 /* SegmentableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E933123A959BD0062E808 /* SegmentableContainer.swift */; };
 		297CA050259CEE4F00EE95F0 /* DateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297CA04F259CEE4F00EE95F0 /* DateViewControllerTests.swift */; };
 		29833739256466FA0072347E /* NewLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29833738256466FA0072347E /* NewLoadingView.swift */; };
 		298337412564676A0072347E /* NewLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 298337402564676A0072347E /* NewLoadingView.xib */; };
@@ -38,7 +36,6 @@
 		299C267C2502DDB30074E795 /* CustomFontLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C267B2502DDB30074E795 /* CustomFontLabel.swift */; };
 		299D135824C766F00012755A /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D135724C766F00012755A /* MovieDetailsViewController.swift */; };
 		299D135A24CA26DC0012755A /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D135924CA26DC0012755A /* GradientBackgroundView.swift */; };
-		29B4D94923F1C9C800BD9783 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D94823F1C9C800BD9783 /* ContainerView.swift */; };
 		29B4D94B23F1EC0600BD9783 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D94A23F1EC0600BD9783 /* City.swift */; };
 		29B9C96B237F44770035EF0B /* DateSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C96A237F44770035EF0B /* DateSelectorTests.swift */; };
 		29B9C97E237F4F850035EF0B /* SettingsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97D237F4F850035EF0B /* SettingsViewControllerTests.swift */; };
@@ -74,7 +71,6 @@
 		2904C79F2336A69B00407B64 /* Showing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Showing.swift; sourceTree = "<group>"; };
 		2904C7A22336B09100407B64 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2904C7A6233825D800407B64 /* DateSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
-		2904C7AE23393A4E00407B64 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		2904C7B5233BC6F700407B64 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2904D0702353C79B00407B64 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2904D0722353C7CC00407B64 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -89,7 +85,6 @@
 		2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainerViewController.swift; sourceTree = "<group>"; };
 		2948398324D1F85500133940 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		294CD90F23E04BA60064644D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		294E933123A959BD0062E808 /* SegmentableContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentableContainer.swift; sourceTree = "<group>"; };
 		297CA04F259CEE4F00EE95F0 /* DateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewControllerTests.swift; sourceTree = "<group>"; };
 		29833738256466FA0072347E /* NewLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoadingView.swift; sourceTree = "<group>"; };
 		298337402564676A0072347E /* NewLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewLoadingView.xib; sourceTree = "<group>"; };
@@ -98,7 +93,6 @@
 		299C267B2502DDB30074E795 /* CustomFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontLabel.swift; sourceTree = "<group>"; };
 		299D135724C766F00012755A /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		299D135924CA26DC0012755A /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
-		29B4D94823F1C9C800BD9783 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		29B4D94A23F1EC0600BD9783 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		29B9C95D237F42A30035EF0B /* CinemaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B9C961237F42A30035EF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,7 +155,6 @@
 			children = (
 				2904C7632336982B00407B64 /* AppDelegate.swift */,
 				2904C7952336A10700407B64 /* Models */,
-				29B4D94523F095F100BD9783 /* Protocols */,
 				2904C7942336A0EB00407B64 /* View Controllers */,
 				2904C7962336A10E00407B64 /* Views */,
 				2904C7A12336B07700407B64 /* Supporting Files */,
@@ -176,8 +169,8 @@
 		2904C7942336A0EB00407B64 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2948398324D1F85500133940 /* DateViewController.swift */,
 				2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */,
+				2948398324D1F85500133940 /* DateViewController.swift */,
 				299D135724C766F00012755A /* MovieDetailsViewController.swift */,
 				2904D0702353C79B00407B64 /* SettingsViewController.swift */,
 			);
@@ -190,8 +183,8 @@
 				29B4D94A23F1EC0600BD9783 /* City.swift */,
 				2904C7A6233825D800407B64 /* DateSelector.swift */,
 				2904C79D2336A69100407B64 /* Movie.swift */,
-				2904C79F2336A69B00407B64 /* Showing.swift */,
 				292E7ECD2561754D0077F2FF /* MovieFetcher.swift */,
+				2904C79F2336A69B00407B64 /* Showing.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,11 +196,9 @@
 				29833738256466FA0072347E /* NewLoadingView.swift */,
 				298337402564676A0072347E /* NewLoadingView.xib */,
 				2904C7BD233BE80300407B64 /* Cells */,
-				29B4D94823F1C9C800BD9783 /* ContainerView.swift */,
 				29230DEA235CFBD2007C9EB4 /* ErrorLabel.swift */,
 				294CD90F23E04BA60064644D /* LoadingView.swift */,
 				2904D09E2358CFB000407B64 /* NetworkImageView.swift */,
-				2904C7AE23393A4E00407B64 /* SegmentedControl.swift */,
 				299D135924CA26DC0012755A /* GradientBackgroundView.swift */,
 				299C267B2502DDB30074E795 /* CustomFontLabel.swift */,
 			);
@@ -237,26 +228,18 @@
 		292E7EAF255DD2560077F2FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				292E7EC0255F0F080077F2FF /* URLSession+Testable.swift */,
 				292E7EC8255F15430077F2FF /* Models+Testable.swift */,
+				292E7EC0255F0F080077F2FF /* URLSession+Testable.swift */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		29B4D94523F095F100BD9783 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				294E933123A959BD0062E808 /* SegmentableContainer.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		29B9C95E237F42A30035EF0B /* CinemaTests */ = {
 			isa = PBXGroup;
 			children = (
-				292E7EAF255DD2560077F2FF /* Supporting Files */,
 				29B9C968237F42B30035EF0B /* Models Tests */,
 				29B9C967237F42B00035EF0B /* View Controllers Tests */,
+				292E7EAF255DD2560077F2FF /* Supporting Files */,
 				29B9C961237F42A30035EF0B /* Info.plist */,
 			);
 			path = CinemaTests;
@@ -265,8 +248,8 @@
 		29B9C967237F42B00035EF0B /* View Controllers Tests */ = {
 			isa = PBXGroup;
 			children = (
-				297CA04F259CEE4F00EE95F0 /* DateViewControllerTests.swift */,
 				2906154B25AE5CA90043D12C /* DateContainerViewControllerTests.swift */,
+				297CA04F259CEE4F00EE95F0 /* DateViewControllerTests.swift */,
 				29B9C97D237F4F850035EF0B /* SettingsViewControllerTests.swift */,
 			);
 			path = "View Controllers Tests";
@@ -455,9 +438,7 @@
 				2904C7A7233825D800407B64 /* DateSelector.swift in Sources */,
 				29230DEB235CFBD2007C9EB4 /* ErrorLabel.swift in Sources */,
 				29DA935024DC8FEF004C145B /* DateShowingCell.swift in Sources */,
-				294E933223A959BD0062E808 /* SegmentableContainer.swift in Sources */,
 				299C267A2502DCFD0074E795 /* Fonts.swift in Sources */,
-				29B4D94923F1C9C800BD9783 /* ContainerView.swift in Sources */,
 				2904C7642336982B00407B64 /* AppDelegate.swift in Sources */,
 				2904D09F2358CFB000407B64 /* NetworkImageView.swift in Sources */,
 				2948398424D1F85500133940 /* DateViewController.swift in Sources */,
@@ -469,7 +450,6 @@
 				2904C7A02336A69B00407B64 /* Showing.swift in Sources */,
 				2904D0712353C79B00407B64 /* SettingsViewController.swift in Sources */,
 				2904C7B6233BC6F700407B64 /* Constants.swift in Sources */,
-				2904C7AF23393A4E00407B64 /* SegmentedControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
