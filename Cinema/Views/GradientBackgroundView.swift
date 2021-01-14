@@ -8,28 +8,35 @@
 
 import UIKit
 
-@IBDesignable final class GradientBackgroundView: UIView {
-    @IBInspectable var startColor: UIColor? {
+@IBDesignable
+final class GradientBackgroundView: UIView {
+    @IBInspectable
+    var startColor: UIColor? {
         didSet { gradientLayer.colors = cgColorGradient }
     }
 
-    @IBInspectable var endColor: UIColor? {
+    @IBInspectable
+    var endColor: UIColor? {
         didSet { gradientLayer.colors = cgColorGradient }
     }
 
-    @IBInspectable var startColorAlpha: Double = 1.0 {
+    @IBInspectable
+    var startColorAlpha: Double = 1.0 {
         didSet { gradientLayer.colors = cgColorGradient }
     }
 
-    @IBInspectable var endColorAlpha: Double = 1.0 {
+    @IBInspectable
+    var endColorAlpha: Double = 1.0 {
         didSet { gradientLayer.colors = cgColorGradient }
     }
 
-    @IBInspectable var startPoint: CGPoint = CGPoint(x: 0.0, y: 0.0) {
+    @IBInspectable
+    var startPoint: CGPoint = CGPoint(x: 0.0, y: 0.0) {
         didSet { gradientLayer.startPoint = startPoint }
     }
 
-    @IBInspectable var endPoint: CGPoint = CGPoint(x: 1.0, y: 1.0) {
+    @IBInspectable
+    var endPoint: CGPoint = CGPoint(x: 1.0, y: 1.0) {
         didSet { gradientLayer.endPoint = endPoint }
     }
 
@@ -43,8 +50,8 @@ import UIKit
     }
 }
 
-extension GradientBackgroundView {
-    private var cgColorGradient: [CGColor]? {
+private extension GradientBackgroundView {
+    var cgColorGradient: [CGColor]? {
         guard let startColor = startColor?.withAlphaComponent(CGFloat(startColorAlpha)),
               let endColor = endColor?.withAlphaComponent(CGFloat(endColorAlpha))
         else { return nil }
