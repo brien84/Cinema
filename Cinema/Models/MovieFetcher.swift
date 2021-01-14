@@ -70,7 +70,7 @@ final class MovieFetcher: MovieFetching {
     }
 }
 
-extension Showing {
+private extension Showing {
     func isShown(at date: Date) -> Bool {
         // Is `self.date` in the past.
         if self.date < Date() { return false }
