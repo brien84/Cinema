@@ -24,12 +24,6 @@ extension UIImage {
 }
 
 extension UIColor {
-    static let darkC = UIColor(named: "dark")!
-    static let grayC = UIColor(named: "gray")!
-    static let lightC = UIColor(named: "light")!
-    static let redC = UIColor(named: "red")!
-    static let transparentBlackC = UIColor(named: "transparentBlack")!
-
     static let primaryElement = UIColor(named: "primaryElement")!
     static let secondaryElement = UIColor(named: "secondaryElement")!
     static let tertiaryElement = UIColor(named: "tertiaryElement")!
