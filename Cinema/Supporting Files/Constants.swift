@@ -8,34 +8,6 @@
 
 import UIKit
 
-extension CGFloat {
-    static let screenWidth = UIScreen.main.bounds.width
-    static let screenHeight = UIScreen.main.bounds.height
-}
-
-extension TimeInterval {
-    static let stdAnimation = 0.4
-}
-
-extension UIImage {
-    static let options = UIImage(named: "options")!
-    static let arrowLeft = UIImage(named: "arrowLeft")!
-    static let arrowRight = UIImage(named: "arrowRight")!
-}
-
-extension UIColor {
-    static let primaryElement = UIColor(named: "primaryElement")!
-    static let secondaryElement = UIColor(named: "secondaryElement")!
-    static let tertiaryElement = UIColor(named: "tertiaryElement")!
-    static let primaryBackground = UIColor(named: "primaryBackground")!
-    static let secondaryBackground = UIColor(named: "secondaryBackground")!
-}
-
-extension URL {
-    static let api = URL(string: "https://movies.ioys.lt/")!
-    //static let api = URL(string: "http://localhost:8080/")!
-}
-
 extension City {
     var api: URL {
         switch self {
@@ -49,4 +21,27 @@ extension City {
             return URL.api.appendingPathComponent("siauliai")
         }
     }
+}
+
+extension TimeInterval {
+    static let stdAnimation = 0.4
+}
+
+extension UIColor {
+    static let primaryElement = UIColor(named: "primaryElement")!
+    static let secondaryElement = UIColor(named: "secondaryElement")!
+    static let tertiaryElement = UIColor(named: "tertiaryElement")!
+    static let primaryBackground = UIColor(named: "primaryBackground")!
+    static let secondaryBackground = UIColor(named: "secondaryBackground")!
+}
+
+extension UIImage {
+    static let options = UIImage(named: "options")!
+    static let arrowLeft = UIImage(named: "arrowLeft")!
+    static let arrowRight = UIImage(named: "arrowRight")!
+}
+
+extension URL {
+    static let api = URL(string: "https://movies.ioys.lt/")!
+    //static let api = URL(string: "http://localhost:8080/")!
 }
