@@ -8,7 +8,17 @@
 
 import Foundation
 
+protocol DateSelectable {
+    var current: Date { get }
+    var isFirst: Bool { get }
+    var isLast: Bool { get }
+
+    func previous()
+    func next()
+}
+
 final class DateSelector: DateSelectable {
+
     private let dates: [Date]
 
     private var currentIndex = 0 {
@@ -32,7 +42,7 @@ final class DateSelector: DateSelectable {
     init() {
         if CommandLine.arguments.contains("ui-testing") {
             // Testing start date is 2030-02-14.
-            self.dates = Date(timeIntervalSince1970: 1897328436).futureDatesIn(days: 14)
+            self.dates = Date(timeIntervalSince1970: 1897328436).futureDatesIn(days: 10)
         } else {
             self.dates = Date().futureDatesIn(days: 10)
         }
