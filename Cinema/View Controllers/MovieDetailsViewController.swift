@@ -44,6 +44,7 @@ final class MovieDetailsViewController: UIViewController {
         scrollView.delegate = self
 
         setupBackButton()
+        setupShowingsButton()
         setLabels()
 
         // Appearance setup.
@@ -97,6 +98,12 @@ final class MovieDetailsViewController: UIViewController {
         navigationItem.leftBarButtonItem = button
     }
 
+    private func setupShowingsButton() {
+        let button = UIBarButtonItem(image: .navTicket, style: .plain, target: self, action: #selector(popViewController))
+        button.tintColor = .primaryElement
+        navigationItem.rightBarButtonItem = button
+    }
+
     private func createGenreButton(with title: String) -> UIButton {
         let button = UIButton()
         button.isUserInteractionEnabled = false
@@ -132,12 +139,13 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
         }
     }
 
+    /// Streches `poster` and reduces alpha of `titleContainer` when scrolling downwards.
     private func handleScrollDown(_ offset: CGFloat) {
         // Convert offset to positive number for clearer calculations.
         let offset = -offset
 
         // If scrolling upwards.
-        if offset <= 0 {
+        if 0 >= offset {
             posterHeight.constant = 0
             posterTopToSuperview.constant = 0
             posterBottomToDetailsTop.constant = 0
@@ -148,26 +156,25 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
         }
 
         let multi = 1 + posterBottomToDetailsTop.multiplier
+        let totalOverlap = detailsContainer.frame.minY.distance(to: poster.frame.maxY) / multi
+        let currentOverlap = totalOverlap + posterBottomToDetailsTop.constant / multi
 
-        // `overlap` is distance by which `detailsContainer` overlaps `posterView`.
-        // In other words - how much can we scroll before `detailsContainer` is not overlapping `posterView`.
-        let currentOverlap = (poster.frame.maxY - detailsContainer.frame.minY) / multi
-        let overlap = currentOverlap + posterBottomToDetailsTop.constant / multi
-
-        if offset > 0, offset <= overlap {
+        // Lowers `detailsContainer` until it no longer overlaps `poster`.
+        if offset > 0, currentOverlap >= offset {
             posterHeight.constant = 0
             posterTopToSuperview.constant = offset
             posterBottomToDetailsTop.constant = offset * multi
             detailsBottomToSuperview.constant = -offset
 
-            titleContainer.alpha = 1.0 - offset / overlap
+            titleContainer.alpha = 1.0 - offset / currentOverlap
         }
 
-        if offset > overlap {
-            posterHeight.constant = offset - overlap
+        // Streches `poster`.
+        if offset > currentOverlap {
+            posterHeight.constant = offset - currentOverlap
             posterTopToSuperview.constant = offset
-            posterBottomToDetailsTop.constant = overlap * multi
-            detailsBottomToSuperview.constant = -overlap
+            posterBottomToDetailsTop.constant = currentOverlap * multi
+            detailsBottomToSuperview.constant = -currentOverlap
 
             titleContainer.alpha = 0.0
         }
@@ -189,18 +196,17 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
         }
     }
 
+    /// Makes `navigationBar` title appear as `titleContainer` goes under `navigationBar`.
     private func adjustNavigationBarTitle(with offset: CGFloat) {
         guard let navigationBar = navigationBar else { return }
 
-        // Distance between bottom borders of `titleContainer` and `navigationBar`.
-        // If distance is 0, it means `titleContainer` is fully covered by `navigationBar`.
-        let totalDistance = titleContainer.frame.maxY - navigationBar.frame.maxY
+        let totalDistance = navigationBar.frame.maxY.distance(to: titleContainer.frame.maxY)
         let currentDistance = totalDistance - offset
 
         // Height is halved, because title is adjusted up until `navigationBar` vertical center.
         let navBarHeight = navigationBar.frame.height / 2
 
-        if currentDistance < 0 {
+        if 0 > currentDistance {
             navigationBar.setTitleAlpha(1.0)
             navigationBar.setTitleVerticalPositionAdjustment(0, for: .default)
             return
@@ -210,7 +216,7 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
             navigationBar.setTitleAlpha(0.0)
         }
 
-        if currentDistance < navBarHeight {
+        if navBarHeight > currentDistance {
             navigationBar.setTitleAlpha(1.0 - currentDistance / navBarHeight)
             navigationBar.setTitleVerticalPositionAdjustment(currentDistance, for: .default)
         }
@@ -219,6 +225,7 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
     private func adjustNavigationBarButtons(with offset: CGFloat) {
         guard let navigationBar = navigationBar else { return }
         guard let leftButton = navigationItem.leftBarButtonItem else { return }
+        guard let rightButton = navigationItem.rightBarButtonItem else { return }
 
         let totalDistance = navigationBar.frame.maxY.distance(to: titleContainer.frame.minY)
         let currentDistance = totalDistance - offset
@@ -230,17 +237,27 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
         if currentDistance > navigationBar.frame.height {
             leftButton.setBackgroundImage(size: size, color: .secondaryBackground, alpha: 1.0)
             leftButton.imageInsets = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: 0)
+
+            rightButton.setBackgroundImage(size: size, color: .secondaryBackground, alpha: 1.0)
+            rightButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: inset)
         }
 
         if navigationBar.frame.height >= currentDistance {
             let percentage = currentDistance / navigationBar.frame.height
+
             leftButton.setBackgroundImage(size: size, color: .secondaryBackground, alpha: percentage)
             leftButton.imageInsets = UIEdgeInsets(top: 0, left: inset * percentage, bottom: 0, right: 0)
+
+            rightButton.setBackgroundImage(size: size, color: .secondaryBackground, alpha: percentage)
+            rightButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: inset * percentage)
         }
 
         if 0 > currentDistance {
             leftButton.setBackgroundImage(size: size, color: .secondaryBackground, alpha: 0.0)
             leftButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+            rightButton.setBackgroundImage(size: size, color: .secondaryBackground, alpha: 0.0)
+            rightButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
     }
 
@@ -248,7 +265,7 @@ extension MovieDetailsViewController: UIScrollViewDelegate {
         guard let navigationBar = navigationBar else { return }
 
         if offset > 0 {
-            let totalDistance = titleContainer.frame.minY - navigationBar.frame.maxY
+            let totalDistance = navigationBar.frame.maxY.distance(to: titleContainer.frame.minY)
             let currentDistance = totalDistance - offset
             poster.alpha = currentDistance / totalDistance
         } else {
