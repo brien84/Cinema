@@ -39,6 +39,7 @@ extension UIImage {
     static let arrowLeft = UIImage(named: "arrowLeft")!
     static let arrowRight = UIImage(named: "arrowRight")!
     static let settings = UIImage(named: "settings")!
+    static let navTicket = UIImage(named: "navTicket")
 }
 
 extension URL {
