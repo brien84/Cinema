@@ -36,9 +36,9 @@ extension UIColor {
 }
 
 extension UIImage {
-    static let options = UIImage(named: "options")!
     static let arrowLeft = UIImage(named: "arrowLeft")!
     static let arrowRight = UIImage(named: "arrowRight")!
+    static let settings = UIImage(named: "settings")!
 }
 
 extension URL {
