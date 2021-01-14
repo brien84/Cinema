@@ -45,14 +45,6 @@ extension Date {
     }
 }
 
-extension NSLayoutConstraint {
-    func withPriority(_ priority: Float) -> NSLayoutConstraint {
-        self.priority = UILayoutPriority(rawValue: priority)
-
-        return self
-    }
-}
-
 extension UINavigationBar {
     func setBackgroundImage(color: UIColor, alpha: CGFloat = 1.0) {
         // If `alpha` is equal or higher than 1.0 `UINavigationBar`
