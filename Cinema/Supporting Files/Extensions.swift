@@ -73,21 +73,6 @@ extension UIColor {
     }
 }
 
-extension UIView {
-    enum AnimationDirection {
-        case left
-        case right
-    }
-
-    func addBottomBorder(with color: UIColor?, width borderWidth: CGFloat) {
-        let border = UIView()
-        border.backgroundColor = color
-        border.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
-        border.frame = CGRect(x: 0, y: frame.size.height - borderWidth, width: frame.size.width, height: borderWidth)
-        addSubview(border)
-    }
-}
-
 extension UserDefaults {
     /// Returns a Boolean value indicating whether value for key "city" exists.
     /// If the value does not exist, function saves a default value before returning false.
