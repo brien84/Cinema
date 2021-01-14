@@ -16,7 +16,6 @@
 		2904C7A7233825D800407B64 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7A6233825D800407B64 /* DateSelector.swift */; };
 		2904C7AF23393A4E00407B64 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7AE23393A4E00407B64 /* SegmentedControl.swift */; };
 		2904C7B6233BC6F700407B64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C7B5233BC6F700407B64 /* Constants.swift */; };
-		2904C9EF233FF53100407B64 /* MovieDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904C9EE233FF53100407B64 /* MovieDetailsVC.swift */; };
 		2904D0712353C79B00407B64 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0702353C79B00407B64 /* SettingsViewController.swift */; };
 		2904D0742353C7CC00407B64 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D0722353C7CC00407B64 /* SettingsCell.swift */; };
 		2904D09F2358CFB000407B64 /* NetworkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904D09E2358CFB000407B64 /* NetworkImageView.swift */; };
@@ -28,7 +27,6 @@
 		292E7ED3256176DA0077F2FF /* MovieFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292E7ED2256176DA0077F2FF /* MovieFetcherTests.swift */; };
 		2932FB7F24D35D62009AEDD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2932FB7E24D35D62009AEDD1 /* Main.storyboard */; };
 		2932FB8124D602E8009AEDD1 /* DateContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */; };
-		293BAA7323D11BAD00C07837 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BAA7223D11BAD00C07837 /* MovieDetailsView.swift */; };
 		2948398424D1F85500133940 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948398324D1F85500133940 /* DateViewController.swift */; };
 		294CD91023E04BA60064644D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294CD90F23E04BA60064644D /* LoadingView.swift */; };
 		294E933223A959BD0062E808 /* SegmentableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E933123A959BD0062E808 /* SegmentableContainer.swift */; };
@@ -38,14 +36,12 @@
 		29882D24258E8F2D00CC1873 /* TransitionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29882D23258E8F2D00CC1873 /* TransitionTableView.swift */; };
 		299C267A2502DCFD0074E795 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C26792502DCFC0074E795 /* Fonts.swift */; };
 		299C267C2502DDB30074E795 /* CustomFontLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C267B2502DDB30074E795 /* CustomFontLabel.swift */; };
-		299D135224C7667E0012755A /* MovieDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299D135124C7667E0012755A /* MovieDetailsView.xib */; };
 		299D135824C766F00012755A /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D135724C766F00012755A /* MovieDetailsViewController.swift */; };
 		299D135A24CA26DC0012755A /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D135924CA26DC0012755A /* GradientBackgroundView.swift */; };
 		29B4D94723F1C13A00BD9783 /* DateSelectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D94623F1C13A00BD9783 /* DateSelectable.swift */; };
 		29B4D94923F1C9C800BD9783 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D94823F1C9C800BD9783 /* ContainerView.swift */; };
 		29B4D94B23F1EC0600BD9783 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D94A23F1EC0600BD9783 /* City.swift */; };
 		29B4D95123F9C09400BD9783 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D95023F9C09400BD9783 /* TestHelper.swift */; };
-		29B4D95323FB1C0500BD9783 /* MovieDetailsVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D95223FB1C0500BD9783 /* MovieDetailsVCTests.swift */; };
 		29B9C96B237F44770035EF0B /* DateSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C96A237F44770035EF0B /* DateSelectorTests.swift */; };
 		29B9C97E237F4F850035EF0B /* SettingsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97D237F4F850035EF0B /* SettingsViewControllerTests.swift */; };
 		29CE105A24E1E8560030D841 /* MoviesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE105924E1E8560030D841 /* MoviesViewCell.swift */; };
@@ -82,7 +78,6 @@
 		2904C7A6233825D800407B64 /* DateSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
 		2904C7AE23393A4E00407B64 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		2904C7B5233BC6F700407B64 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		2904C9EE233FF53100407B64 /* MovieDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVC.swift; sourceTree = "<group>"; };
 		2904D0702353C79B00407B64 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2904D0722353C7CC00407B64 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		2904D09E2358CFB000407B64 /* NetworkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageView.swift; sourceTree = "<group>"; };
@@ -94,7 +89,6 @@
 		292E7ED2256176DA0077F2FF /* MovieFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFetcherTests.swift; sourceTree = "<group>"; };
 		2932FB7E24D35D62009AEDD1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainerViewController.swift; sourceTree = "<group>"; };
-		293BAA7223D11BAD00C07837 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
 		2948398324D1F85500133940 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		294CD90F23E04BA60064644D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		294E933123A959BD0062E808 /* SegmentableContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentableContainer.swift; sourceTree = "<group>"; };
@@ -104,14 +98,12 @@
 		29882D23258E8F2D00CC1873 /* TransitionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionTableView.swift; sourceTree = "<group>"; };
 		299C26792502DCFC0074E795 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		299C267B2502DDB30074E795 /* CustomFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontLabel.swift; sourceTree = "<group>"; };
-		299D135124C7667E0012755A /* MovieDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsView.xib; sourceTree = "<group>"; };
 		299D135724C766F00012755A /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		299D135924CA26DC0012755A /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		29B4D94623F1C13A00BD9783 /* DateSelectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectable.swift; sourceTree = "<group>"; };
 		29B4D94823F1C9C800BD9783 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		29B4D94A23F1EC0600BD9783 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		29B4D95023F9C09400BD9783 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
-		29B4D95223FB1C0500BD9783 /* MovieDetailsVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVCTests.swift; sourceTree = "<group>"; };
 		29B9C95D237F42A30035EF0B /* CinemaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B9C961237F42A30035EF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29B9C96A237F44770035EF0B /* DateSelectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectorTests.swift; sourceTree = "<group>"; };
@@ -192,7 +184,6 @@
 				2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */,
 				299D135724C766F00012755A /* MovieDetailsViewController.swift */,
 				2904D0702353C79B00407B64 /* SettingsViewController.swift */,
-				2904C9E7233EB5FB00407B64 /* Container Controllers */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -213,14 +204,12 @@
 			isa = PBXGroup;
 			children = (
 				29882D23258E8F2D00CC1873 /* TransitionTableView.swift */,
-				299D135124C7667E0012755A /* MovieDetailsView.xib */,
 				29833738256466FA0072347E /* NewLoadingView.swift */,
 				298337402564676A0072347E /* NewLoadingView.xib */,
 				2904C7BD233BE80300407B64 /* Cells */,
 				29B4D94823F1C9C800BD9783 /* ContainerView.swift */,
 				29230DEA235CFBD2007C9EB4 /* ErrorLabel.swift */,
 				294CD90F23E04BA60064644D /* LoadingView.swift */,
-				293BAA7223D11BAD00C07837 /* MovieDetailsView.swift */,
 				2904D09E2358CFB000407B64 /* NetworkImageView.swift */,
 				2904C7AE23393A4E00407B64 /* SegmentedControl.swift */,
 				299D135924CA26DC0012755A /* GradientBackgroundView.swift */,
@@ -247,14 +236,6 @@
 				2904D0722353C7CC00407B64 /* SettingsCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		2904C9E7233EB5FB00407B64 /* Container Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				2904C9EE233FF53100407B64 /* MovieDetailsVC.swift */,
-			);
-			path = "Container Controllers";
 			sourceTree = "<group>";
 		};
 		292E7EAF255DD2560077F2FF /* Supporting Files */ = {
@@ -293,7 +274,6 @@
 				297CA04F259CEE4F00EE95F0 /* DateViewControllerTests.swift */,
 				2906154B25AE5CA90043D12C /* DateContainerViewControllerTests.swift */,
 				29B9C97D237F4F850035EF0B /* SettingsViewControllerTests.swift */,
-				29B9C976237F4F170035EF0B /* Container Controllers Tests */,
 			);
 			path = "View Controllers Tests";
 			sourceTree = "<group>";
@@ -305,14 +285,6 @@
 				292E7ED2256176DA0077F2FF /* MovieFetcherTests.swift */,
 			);
 			path = "Models Tests";
-			sourceTree = "<group>";
-		};
-		29B9C976237F4F170035EF0B /* Container Controllers Tests */ = {
-			isa = PBXGroup;
-			children = (
-				29B4D95223FB1C0500BD9783 /* MovieDetailsVCTests.swift */,
-			);
-			path = "Container Controllers Tests";
 			sourceTree = "<group>";
 		};
 		29E99C2C2402F5E7003A4141 /* CinemaUITests */ = {
@@ -432,7 +404,6 @@
 			files = (
 				2904C7712336982D00407B64 /* LaunchScreen.storyboard in Resources */,
 				2932FB7F24D35D62009AEDD1 /* Main.storyboard in Resources */,
-				299D135224C7667E0012755A /* MovieDetailsView.xib in Resources */,
 				298337412564676A0072347E /* NewLoadingView.xib in Resources */,
 				2904C76E2336982D00407B64 /* Assets.xcassets in Resources */,
 			);
@@ -479,7 +450,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2904C9EF233FF53100407B64 /* MovieDetailsVC.swift in Sources */,
 				29B4D94B23F1EC0600BD9783 /* City.swift in Sources */,
 				299D135A24CA26DC0012755A /* GradientBackgroundView.swift in Sources */,
 				2932FB8124D602E8009AEDD1 /* DateContainerViewController.swift in Sources */,
@@ -493,7 +463,6 @@
 				29DA935024DC8FEF004C145B /* DateShowingCell.swift in Sources */,
 				294E933223A959BD0062E808 /* SegmentableContainer.swift in Sources */,
 				299C267A2502DCFD0074E795 /* Fonts.swift in Sources */,
-				293BAA7323D11BAD00C07837 /* MovieDetailsView.swift in Sources */,
 				29B4D94923F1C9C800BD9783 /* ContainerView.swift in Sources */,
 				2904C7642336982B00407B64 /* AppDelegate.swift in Sources */,
 				2904D09F2358CFB000407B64 /* NetworkImageView.swift in Sources */,
@@ -518,7 +487,6 @@
 				292E7EC1255F0F080077F2FF /* URLSession+Testable.swift in Sources */,
 				29B9C96B237F44770035EF0B /* DateSelectorTests.swift in Sources */,
 				297CA050259CEE4F00EE95F0 /* DateViewControllerTests.swift in Sources */,
-				29B4D95323FB1C0500BD9783 /* MovieDetailsVCTests.swift in Sources */,
 				2906154C25AE5CA90043D12C /* DateContainerViewControllerTests.swift in Sources */,
 				292E7ED3256176DA0077F2FF /* MovieFetcherTests.swift in Sources */,
 				29B9C97E237F4F850035EF0B /* SettingsViewControllerTests.swift in Sources */,
