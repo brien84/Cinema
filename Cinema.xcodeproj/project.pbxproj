@@ -41,7 +41,6 @@
 		29B4D94723F1C13A00BD9783 /* DateSelectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D94623F1C13A00BD9783 /* DateSelectable.swift */; };
 		29B4D94923F1C9C800BD9783 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D94823F1C9C800BD9783 /* ContainerView.swift */; };
 		29B4D94B23F1EC0600BD9783 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D94A23F1EC0600BD9783 /* City.swift */; };
-		29B4D95123F9C09400BD9783 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D95023F9C09400BD9783 /* TestHelper.swift */; };
 		29B9C96B237F44770035EF0B /* DateSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C96A237F44770035EF0B /* DateSelectorTests.swift */; };
 		29B9C97E237F4F850035EF0B /* SettingsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97D237F4F850035EF0B /* SettingsViewControllerTests.swift */; };
 		29CE105A24E1E8560030D841 /* MoviesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE105924E1E8560030D841 /* MoviesViewCell.swift */; };
@@ -103,7 +102,6 @@
 		29B4D94623F1C13A00BD9783 /* DateSelectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectable.swift; sourceTree = "<group>"; };
 		29B4D94823F1C9C800BD9783 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		29B4D94A23F1EC0600BD9783 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		29B4D95023F9C09400BD9783 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		29B9C95D237F42A30035EF0B /* CinemaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B9C961237F42A30035EF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29B9C96A237F44770035EF0B /* DateSelectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectorTests.swift; sourceTree = "<group>"; };
@@ -260,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				292E7EAF255DD2560077F2FF /* Supporting Files */,
-				29B4D95023F9C09400BD9783 /* TestHelper.swift */,
 				29B9C968237F42B30035EF0B /* Models Tests */,
 				29B9C967237F42B00035EF0B /* View Controllers Tests */,
 				29B9C961237F42A30035EF0B /* Info.plist */,
@@ -490,7 +487,6 @@
 				2906154C25AE5CA90043D12C /* DateContainerViewControllerTests.swift in Sources */,
 				292E7ED3256176DA0077F2FF /* MovieFetcherTests.swift in Sources */,
 				29B9C97E237F4F850035EF0B /* SettingsViewControllerTests.swift in Sources */,
-				29B4D95123F9C09400BD9783 /* TestHelper.swift in Sources */,
 				292E7EC9255F15430077F2FF /* Models+Testable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
