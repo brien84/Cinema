@@ -68,7 +68,7 @@ final class DateViewControllerTests: XCTestCase {
         XCTAssertGreaterThan(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 0)
 
         fetcher.showings = []
-        NotificationCenter.default.post(name: .OptionsCityDidChange, object: nil)
+        NotificationCenter.default.post(name: .SettingsCityDidChange, object: nil)
 
         waitForUIUpdate()
 
@@ -152,6 +152,19 @@ final class DateViewControllerTests: XCTestCase {
         XCTAssertTrue(sut.tableView.isScrollEnabled)
         XCTAssertTrue(sut.navigationItem.leftBarButtonItem!.isEnabled)
         XCTAssertFalse(sut.navigationItem.rightBarButtonItem!.isEnabled)
+    }
+
+    func testLeftBarButtonImageIsSettingsWhenFirstDateIsSelected() {
+        dates.isFirst = true
+        sutLoadViewIfNeeded()
+
+        waitForUIUpdate()
+
+        guard let button = sut.navigationItem.leftBarButtonItem else {
+            return XCTFail("leftBarButtonItem is nil!")
+        }
+
+        XCTAssertEqual(button.image?.imageAsset, UIImage.settings.imageAsset)
     }
 
     // MARK: Test Helpers
