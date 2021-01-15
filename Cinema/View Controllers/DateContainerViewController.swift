@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "moviesCell"
+private let reuseIdentifier = "dateContainerViewCell"
 
 final class DateContainerViewController: UICollectionViewController {
     private var datasource = [Movie]() {
@@ -33,7 +33,7 @@ final class DateContainerViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // swiftlint:disable:next force_cast
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MoviesViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DateContainerViewCell
 
         let movie = datasource[indexPath.row]
 

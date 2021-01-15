@@ -209,7 +209,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="VHk-LT-r3b" kind="show" identifier="openSettings" id="tc5-gO-x2P"/>
+                        <segue destination="VHk-LT-r3b" kind="show" identifier="showSettings" id="tc5-gO-x2P"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3IX-t3-o3O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -221,11 +221,11 @@
             <objects>
                 <viewController id="Ygy-k3-LEc" customClass="MovieDetailsViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9n5-Vo-rcr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-jM-tJ9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="networkImageViewDefault" translatesAutoresizingMaskIntoConstraints="NO" id="efd-5U-SkD" userLabel="Poster" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="621"/>
@@ -556,7 +556,7 @@
                             <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviesCell" id="ZAe-yq-nof" customClass="MoviesViewCell" customModule="iKinas" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dateContainerViewCell" id="ZAe-yq-nof" customClass="DateContainerViewCell" customModule="iKinas" customModuleProvider="target">
                                 <rect key="frame" x="8" y="25" width="238" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YFp-07-LZi">
@@ -714,7 +714,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="diA-bi-HlB"/>
+        <segue reference="q3A-mY-b7Z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="3d" width="32" height="32"/>

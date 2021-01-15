@@ -1,5 +1,5 @@
 //
-//  MoviesViewCell.swift
+//  DateContainerViewCell.swift
 //  Cinema
 //
 //  Created by Marius on 2020-08-10.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-final class MoviesViewCell: UICollectionViewCell {
+final class DateContainerViewCell: UICollectionViewCell {
     @IBOutlet weak var poster: NetworkImageView!
     @IBOutlet weak var title: CustomFontLabel!
     @IBOutlet private weak var titleContainer: UIView!
@@ -31,7 +31,7 @@ final class MoviesViewCell: UICollectionViewCell {
     }
 }
 
-extension MoviesViewCell {
+extension DateContainerViewCell {
     // iOS 13+
     override func systemLayoutSizeFitting(_ targetSize: CGSize,
                                           withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,

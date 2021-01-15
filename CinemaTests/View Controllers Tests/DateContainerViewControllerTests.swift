@@ -41,7 +41,7 @@ final class DateContainerViewControllerTests: XCTestCase {
 
         sut.loadViewIfNeeded()
 
-        let cell = sut.collectionView(sut.collectionView, cellForItemAt: IndexPath(row: 0, section: 0)) as? MoviesViewCell
+        let cell = sut.collectionView(sut.collectionView, cellForItemAt: IndexPath(row: 0, section: 0)) as? DateContainerViewCell
 
         XCTAssertEqual(cell?.title.text, title)
         XCTAssertEqual(cell?.poster.url, url)

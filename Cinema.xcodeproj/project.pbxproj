@@ -37,7 +37,7 @@
 		29B4D94B23F1EC0600BD9783 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4D94A23F1EC0600BD9783 /* City.swift */; };
 		29B9C96B237F44770035EF0B /* DateSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C96A237F44770035EF0B /* DateSelectorTests.swift */; };
 		29B9C97E237F4F850035EF0B /* SettingsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9C97D237F4F850035EF0B /* SettingsViewControllerTests.swift */; };
-		29CE105A24E1E8560030D841 /* MoviesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE105924E1E8560030D841 /* MoviesViewCell.swift */; };
+		29CE105A24E1E8560030D841 /* DateContainerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE105924E1E8560030D841 /* DateContainerViewCell.swift */; };
 		29DA935024DC8FEF004C145B /* DateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DA934F24DC8FEF004C145B /* DateViewCell.swift */; };
 		29E99C2E2402F5E7003A4141 /* CinemaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E99C2D2402F5E7003A4141 /* CinemaUITests.swift */; };
 /* End PBXBuildFile section */
@@ -94,7 +94,7 @@
 		29B9C961237F42A30035EF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29B9C96A237F44770035EF0B /* DateSelectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectorTests.swift; sourceTree = "<group>"; };
 		29B9C97D237F4F850035EF0B /* SettingsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerTests.swift; sourceTree = "<group>"; };
-		29CE105924E1E8560030D841 /* MoviesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewCell.swift; sourceTree = "<group>"; };
+		29CE105924E1E8560030D841 /* DateContainerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainerViewCell.swift; sourceTree = "<group>"; };
 		29DA934F24DC8FEF004C145B /* DateViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewCell.swift; sourceTree = "<group>"; };
 		29E99C2B2402F5E7003A4141 /* CinemaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E99C2D2402F5E7003A4141 /* CinemaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaUITests.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				29DA934F24DC8FEF004C145B /* DateViewCell.swift */,
-				29CE105924E1E8560030D841 /* MoviesViewCell.swift */,
+				29CE105924E1E8560030D841 /* DateContainerViewCell.swift */,
 				2904D0722353C7CC00407B64 /* SettingsCell.swift */,
 			);
 			path = Cells;
@@ -427,7 +427,7 @@
 				29833739256466FA0072347E /* NewLoadingView.swift in Sources */,
 				29882D24258E8F2D00CC1873 /* TransitionTableView.swift in Sources */,
 				299C267C2502DDB30074E795 /* CustomFontLabel.swift in Sources */,
-				29CE105A24E1E8560030D841 /* MoviesViewCell.swift in Sources */,
+				29CE105A24E1E8560030D841 /* DateContainerViewCell.swift in Sources */,
 				2904C7A7233825D800407B64 /* DateSelector.swift in Sources */,
 				29DA935024DC8FEF004C145B /* DateViewCell.swift in Sources */,
 				299C267A2502DCFD0074E795 /* Fonts.swift in Sources */,
