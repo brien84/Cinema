@@ -70,7 +70,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="showingCell" id="3s7-SG-MPp" customClass="DateShowingCell" customModule="iKinas" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dateViewCell" id="3s7-SG-MPp" customClass="DateViewCell" customModule="iKinas" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="598" width="414" height="172"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3s7-SG-MPp" id="mua-dK-hgQ">
@@ -195,7 +195,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Zyf-4w-ETq">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="options" id="EeZ-9z-enu">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="settings" id="EeZ-9z-enu">
                             <color key="tintColor" name="primaryElement"/>
                             <connections>
                                 <action selector="leftNavigationBarButtonDidTap:" destination="Dxm-QZ-lup" id="qJG-6E-dKD"/>
@@ -308,7 +308,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticket" translatesAutoresizingMaskIntoConstraints="NO" id="Rxj-SR-TPI">
                                                         <rect key="frame" x="20" y="5" width="32" height="40"/>
-                                                        <color key="tintColor" name="secondaryElement"/>
+                                                        <color key="tintColor" name="primaryElement"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multikino" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpN-B9-ng3" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
                                                         <rect key="frame" x="62" y="5" width="61" height="17.5"/>
@@ -546,7 +546,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="dateContainerVC" id="fg4-kJ-Eo7" customClass="DateContainerViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="UoG-fi-SO5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="485"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="jZ3-av-jYN">
@@ -557,7 +557,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviesCell" id="ZAe-yq-nof" customClass="MoviesViewCell" customModule="iKinas" customModuleProvider="target">
-                                <rect key="frame" x="8" y="34.5" width="238" height="416"/>
+                                <rect key="frame" x="8" y="25" width="238" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YFp-07-LZi">
                                     <rect key="frame" x="0.0" y="0.0" width="238" height="416"/>
@@ -722,7 +722,7 @@
         <image name="arrowRight" width="25" height="25"/>
         <image name="duration" width="32" height="32"/>
         <image name="networkImageViewDefault" width="200" height="300"/>
-        <image name="options" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
         <image name="ticket" width="32" height="32"/>
         <image name="year" width="32" height="32"/>
         <namedColor name="primaryBackground">

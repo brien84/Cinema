@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "dateViewCell"
+
 protocol DateViewControllerDelegate: AnyObject {
     func dateVC(_ dateVC: DateViewController, didUpdate datasource: [Movie])
 }
@@ -66,8 +68,8 @@ final class DateViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        UIView.animate(withDuration: .stdAnimation / 2) {
-            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        UIView.animate(withDuration: .stdAnimation / 2) { [self] in
+            navigationController?.setNavigationBarHidden(true, animated: false)
         }
     }
 
@@ -77,7 +79,7 @@ final class DateViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
-        let cell = tableView.dequeueReusableCell(withIdentifier: "showingCell", for: indexPath) as! DateShowingCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! DateViewCell
 
         let showing = datasource[indexPath.row]
 
@@ -94,7 +96,7 @@ final class DateViewController: UITableViewController {
     private func setupNotificationObservers() {
         NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { [self] _ in
             updateDatasource()
-            navigationItem.leftBarButtonItem?.image = dates.isFirst ? .options : .arrowLeft
+            navigationItem.leftBarButtonItem?.image = dates.isFirst ? .settings : .arrowLeft
         }
 
         NotificationCenter.default.addObserver(forName: .SettingsCityDidChange, object: nil, queue: .main) { [self] _ in

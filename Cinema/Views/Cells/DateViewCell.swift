@@ -1,5 +1,5 @@
 //
-//  DateShowingCell.swift
+//  DateViewCell.swift
 //  Cinema
 //
 //  Created by Marius on 2020-08-06.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DateShowingCell: UITableViewCell {
+final class DateViewCell: UITableViewCell {
     @IBOutlet weak var poster: NetworkImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var originalTitle: UILabel!

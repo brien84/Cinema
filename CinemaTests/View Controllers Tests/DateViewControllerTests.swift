@@ -50,7 +50,7 @@ final class DateViewControllerTests: XCTestCase {
 
         waitForUIUpdate()
 
-        let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? DateShowingCell
+        let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? DateViewCell
 
         XCTAssertEqual(cell?.title.text, testTitle)
         XCTAssertEqual(cell?.originalTitle.text, testOriginalTitle)
