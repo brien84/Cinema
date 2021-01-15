@@ -216,16 +216,16 @@
             </objects>
             <point key="canvasLocation" x="963.76811594202911" y="114.50892857142857"/>
         </scene>
-        <!--Movie Details View Controller-->
+        <!--Movie View Controller-->
         <scene sceneID="baV-ab-TdI">
             <objects>
-                <viewController id="Ygy-k3-LEc" customClass="MovieDetailsViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="movieVC" id="Ygy-k3-LEc" customClass="MovieViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9n5-Vo-rcr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-jM-tJ9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="networkImageViewDefault" translatesAutoresizingMaskIntoConstraints="NO" id="efd-5U-SkD" userLabel="Poster" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="621"/>
@@ -714,7 +714,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="q3A-mY-b7Z"/>
+        <segue reference="diA-bi-HlB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="3d" width="32" height="32"/>

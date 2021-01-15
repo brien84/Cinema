@@ -1,5 +1,5 @@
 //
-//  MovieDetailsViewController.swift
+//  MovieViewController.swift
 //  Cinema
 //
 //  Created by Marius on 2020-07-21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MovieDetailsViewController: UIViewController {
+final class MovieViewController: UIViewController {
     var movie: Movie?
     var showing: Showing?
 
@@ -120,7 +120,7 @@ final class MovieDetailsViewController: UIViewController {
     }
 }
 
-extension MovieDetailsViewController: UIScrollViewDelegate {
+extension MovieViewController: UIScrollViewDelegate {
     private var navigationBar: UINavigationBar? {
         navigationController?.navigationBar
     }

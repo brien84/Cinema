@@ -139,7 +139,7 @@ final class DateViewController: UITableViewController {
 
     @IBAction private func leftNavigationBarButtonDidTap(_ sender: UIBarButtonItem) {
         if dates.isFirst {
-            performSegue(withIdentifier: "openSettings", sender: nil)
+            performSegue(withIdentifier: "showSettings", sender: nil)
         } else {
             dates.previous()
         }
@@ -157,7 +157,7 @@ final class DateViewController: UITableViewController {
         }
 
         if segue.identifier == "showMovieVC" {
-            guard let vc = segue.destination as? MovieDetailsViewController else { return }
+            guard let vc = segue.destination as? MovieViewController else { return }
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
 
             let showing = datasource[indexPath.row]

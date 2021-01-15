@@ -47,7 +47,7 @@ final class DateContainerViewController: UICollectionViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMovieVC" {
-            guard let vc = segue.destination as? MovieDetailsViewController else { return }
+            guard let vc = segue.destination as? MovieViewController else { return }
             guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
 
             let movie = datasource[indexPath.row]
