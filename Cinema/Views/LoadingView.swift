@@ -1,5 +1,5 @@
 //
-//  NewLoadingView.swift
+//  LoadingView.swift
 //  Cinema
 //
 //  Created by Marius on 2020-11-17.
@@ -15,10 +15,10 @@ enum LoadingError: String, Error {
 }
 
 protocol LoadingViewDelegate: AnyObject {
-    func loadingView(_ view: NewLoadingView, retryButtonDidTap: UIButton)
+    func loadingView(_ view: LoadingView, retryButtonDidTap: UIButton)
 }
 
-final class NewLoadingView: UIView {
+final class LoadingView: UIView {
     weak var delegate: LoadingViewDelegate?
 
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
@@ -82,7 +82,7 @@ final class NewLoadingView: UIView {
     }
 
     private func loadView() {
-        guard let nib = Bundle.main.loadNibNamed("NewLoadingView", owner: self),
+        guard let nib = Bundle.main.loadNibNamed("LoadingView", owner: self),
               let view = nib.first as? UIView else { fatalError("Could not load nib!") }
 
         view.frame = bounds

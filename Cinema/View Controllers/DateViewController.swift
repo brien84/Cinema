@@ -20,8 +20,8 @@ final class DateViewController: UITableViewController {
 
     weak var delegate: DateViewControllerDelegate?
 
-    private lazy var loadingView: NewLoadingView = {
-        let view = NewLoadingView(frame: tableView.frame)
+    private lazy var loadingView: LoadingView = {
+        let view = LoadingView(frame: tableView.frame)
         tableView.addSubview(view)
         view.delegate = self
         return view
@@ -168,7 +168,7 @@ final class DateViewController: UITableViewController {
 }
 
 extension DateViewController: LoadingViewDelegate {
-    func loadingView(_ view: NewLoadingView, retryButtonDidTap: UIButton) {
+    func loadingView(_ view: LoadingView, retryButtonDidTap: UIButton) {
         fetchMovies()
     }
 }
