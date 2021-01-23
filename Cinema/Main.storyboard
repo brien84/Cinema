@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5sa-ql-0RP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mvi-Xp-2gV">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,6 +8,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +27,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtS-LT-Qg0" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="8" width="382" height="36"/>
+                                    <rect key="frame" x="16" y="8" width="382" height="26.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <color key="textColor" name="primaryElement"/>
                                     <nil key="highlightedColor"/>
@@ -35,13 +36,13 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PsW-bU-O7w">
-                                    <rect key="frame" x="0.0" y="52" width="414" height="466"/>
+                                    <rect key="frame" x="0.0" y="42.5" width="414" height="485"/>
                                     <connections>
                                         <segue destination="fg4-kJ-Eo7" kind="embed" identifier="embedDateContainerVC" id="wOF-CZ-nGK"/>
                                     </connections>
                                 </containerView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seansai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWM-6b-OYy" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="526" width="382" height="36"/>
+                                    <rect key="frame" x="16" y="535.5" width="382" height="26.5"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                     <color key="textColor" name="primaryElement"/>
                                     <nil key="highlightedColor"/>
@@ -88,7 +89,7 @@
                                             <rect key="frame" x="119.5" y="8" width="286.5" height="156"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsy-Pk-dGB" userLabel="title" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="258.5" height="41"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="258.5" height="43"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" name="primaryElement"/>
@@ -98,7 +99,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Long Titled Movie: Part 2 - The Longest Movie Title Ever" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luJ-VN-Zdd" userLabel="originalTitle" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="45" width="286.5" height="35.5"/>
+                                                    <rect key="frame" x="0.0" y="47" width="286.5" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" name="secondaryElement"/>
                                                     <nil key="highlightedColor"/>
@@ -107,10 +108,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1io-7v-UgC" userLabel="details">
-                                                    <rect key="frame" x="0.0" y="139.5" width="286.5" height="16.5"/>
+                                                    <rect key="frame" x="0.0" y="138" width="286.5" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forum Cinemas Akropolis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJH-AV-A5C" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="162" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="secondaryElement"/>
                                                             <nil key="highlightedColor"/>
@@ -119,7 +120,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hy3-eo-z34" customClass="CustomFontLabel" customModule="iKinas" customModuleProvider="target">
-                                                            <rect key="frame" x="251" y="0.0" width="35.5" height="16.5"/>
+                                                            <rect key="frame" x="245" y="0.0" width="41.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="secondaryElement"/>
                                                             <nil key="highlightedColor"/>
@@ -486,6 +487,22 @@
             </objects>
             <point key="canvasLocation" x="2143.4782608695655" y="538.39285714285711"/>
         </scene>
+        <!--Showings View Controller-->
+        <scene sceneID="x0Q-V4-nwu">
+            <objects>
+                <viewController id="Z9X-Du-4qz" customClass="ShowingsViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wlb-Hb-ZgR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5Qc-PE-7vX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WpU-OJ-YVG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8v5-aI-7ds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4178.2608695652179" y="205.58035714285714"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="zm3-tL-vcq">
             <objects>
@@ -546,7 +563,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="dateContainerVC" id="fg4-kJ-Eo7" customClass="DateContainerViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="UoG-fi-SO5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="485"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="jZ3-av-jYN">
@@ -557,7 +574,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dateContainerViewCell" id="ZAe-yq-nof" customClass="DateContainerViewCell" customModule="iKinas" customModuleProvider="target">
-                                <rect key="frame" x="8" y="25" width="238" height="416"/>
+                                <rect key="frame" x="8" y="34.5" width="238" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YFp-07-LZi">
                                     <rect key="frame" x="0.0" y="0.0" width="238" height="416"/>
@@ -656,19 +673,37 @@
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="114.50892857142857"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9el-i1-gfw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mvi-Xp-2gV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yBQ-Ym-ycn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z9X-Du-4qz" kind="relationship" relationship="rootViewController" id="99U-xH-7en"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeI-wx-7rF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3268.115942028986" y="205.58035714285714"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="0qp-0W-eg9">
             <size key="intrinsicContentSize" width="56.5" height="18"/>
         </designable>
         <designable name="6ej-yH-d0D">
-            <size key="intrinsicContentSize" width="33.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="33" height="20.5"/>
         </designable>
         <designable name="C4X-r5-IHS">
             <size key="intrinsicContentSize" width="796" height="19"/>
         </designable>
         <designable name="DtS-LT-Qg0">
-            <size key="intrinsicContentSize" width="85.5" height="36"/>
+            <size key="intrinsicContentSize" width="55.5" height="26.5"/>
         </designable>
         <designable name="NQD-Sy-tME">
             <size key="intrinsicContentSize" width="141.5" height="33.5"/>
@@ -680,7 +715,7 @@
             <size key="intrinsicContentSize" width="61" height="17.5"/>
         </designable>
         <designable name="Tsk-LQ-gL4">
-            <size key="intrinsicContentSize" width="748.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="719.5" height="20.5"/>
         </designable>
         <designable name="UqF-Em-pVi">
             <size key="intrinsicContentSize" width="36.5" height="18"/>
@@ -689,22 +724,22 @@
             <size key="intrinsicContentSize" width="38" height="17.5"/>
         </designable>
         <designable name="hy3-eo-z34">
-            <size key="intrinsicContentSize" width="35.5" height="16.5"/>
+            <size key="intrinsicContentSize" width="41.5" height="18"/>
         </designable>
         <designable name="lJH-AV-A5C">
-            <size key="intrinsicContentSize" width="162" height="16.5"/>
+            <size key="intrinsicContentSize" width="175" height="18"/>
         </designable>
         <designable name="luJ-VN-Zdd">
-            <size key="intrinsicContentSize" width="404.5" height="18"/>
+            <size key="intrinsicContentSize" width="414" height="18"/>
         </designable>
         <designable name="pUe-Hp-Jku">
             <size key="intrinsicContentSize" width="34" height="18"/>
         </designable>
         <designable name="qWM-6b-OYy">
-            <size key="intrinsicContentSize" width="113" height="36"/>
+            <size key="intrinsicContentSize" width="75" height="26.5"/>
         </designable>
         <designable name="tsy-Pk-dGB">
-            <size key="intrinsicContentSize" width="474.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="484" height="21.5"/>
         </designable>
         <designable name="u1q-fQ-YpQ">
             <size key="intrinsicContentSize" width="14818" height="20.5"/>
@@ -740,5 +775,8 @@
         <namedColor name="tertiaryElement">
             <color red="0.9179999828338623" green="0.125" blue="0.15299999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
