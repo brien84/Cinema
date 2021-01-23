@@ -8,8 +8,12 @@
 
 import UIKit
 
+private let datesViewReuseID = "showingsViewDateCell"
+
 final class ShowingsViewController: UIViewController {
     private let dates: DateSelectable
+
+    @IBOutlet private weak var datesView: UICollectionView!
 
     required init?(coder: NSCoder) {
         self.dates = DateSelector()
