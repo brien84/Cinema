@@ -26,6 +26,7 @@
 		2932FB7F24D35D62009AEDD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2932FB7E24D35D62009AEDD1 /* Main.storyboard */; };
 		2932FB8124D602E8009AEDD1 /* DateContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */; };
 		2948398424D1F85500133940 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948398324D1F85500133940 /* DateViewController.swift */; };
+		2965635325BC4DC400A14651 /* ShowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2965635225BC4DC400A14651 /* ShowingsViewController.swift */; };
 		297CA050259CEE4F00EE95F0 /* DateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297CA04F259CEE4F00EE95F0 /* DateViewControllerTests.swift */; };
 		29833739256466FA0072347E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29833738256466FA0072347E /* LoadingView.swift */; };
 		298337412564676A0072347E /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 298337402564676A0072347E /* LoadingView.xib */; };
@@ -81,6 +82,7 @@
 		2932FB7E24D35D62009AEDD1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainerViewController.swift; sourceTree = "<group>"; };
 		2948398324D1F85500133940 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		2965635225BC4DC400A14651 /* ShowingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingsViewController.swift; sourceTree = "<group>"; };
 		297CA04F259CEE4F00EE95F0 /* DateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewControllerTests.swift; sourceTree = "<group>"; };
 		29833738256466FA0072347E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		298337402564676A0072347E /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				2948398324D1F85500133940 /* DateViewController.swift */,
 				299D135724C766F00012755A /* MovieViewController.swift */,
 				2904D0702353C79B00407B64 /* SettingsViewController.swift */,
+				2965635225BC4DC400A14651 /* ShowingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				292E7ECE2561754D0077F2FF /* MovieFetcher.swift in Sources */,
 				2904C7A32336B09100407B64 /* Extensions.swift in Sources */,
 				299D135824C766F00012755A /* MovieViewController.swift in Sources */,
+				2965635325BC4DC400A14651 /* ShowingsViewController.swift in Sources */,
 				2904C7A02336A69B00407B64 /* Showing.swift in Sources */,
 				2904D0712353C79B00407B64 /* SettingsViewController.swift in Sources */,
 				2904C7B6233BC6F700407B64 /* Constants.swift in Sources */,
