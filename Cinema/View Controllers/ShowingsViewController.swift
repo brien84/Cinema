@@ -9,10 +9,22 @@
 import UIKit
 
 final class ShowingsViewController: UIViewController {
+    private let dates: DateSelectable
+
+    required init?(coder: NSCoder) {
+        self.dates = DateSelector()
+
+        super.init(coder: coder)
+    }
+
+    init?(coder: NSCoder, dates: DateSelectable) {
+        self.dates = dates
+
+        super.init(coder: coder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
     }
 
