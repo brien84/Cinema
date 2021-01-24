@@ -8,11 +8,13 @@
 
 import UIKit
 
+private let containerViewReuseID = "showingsViewContainerCell"
 private let datesViewReuseID = "showingsViewDateCell"
 
 final class ShowingsViewController: UIViewController {
     private let dates: DateSelectable
 
+    @IBOutlet private weak var containersView: UICollectionView!
     @IBOutlet private weak var datesView: UICollectionView!
 
     required init?(coder: NSCoder) {
@@ -36,7 +38,7 @@ final class ShowingsViewController: UIViewController {
 
 extension ShowingsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == datesView {
+        if collectionView == containersView || collectionView == datesView {
             return DateSelector.dates.count
         }
 
@@ -44,8 +46,12 @@ extension ShowingsViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: datesViewReuseID, for: indexPath) as? ShowingsViewDateCell {
-            return cell
+        if collectionView == containersView {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: containerViewReuseID, for: indexPath)
+        }
+
+        if collectionView == datesView {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: datesViewReuseID, for: indexPath)
         }
 
         return UICollectionViewCell()

@@ -495,8 +495,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IFh-i1-jhe">
-                                <rect key="frame" x="0.0" y="448" width="414" height="100"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IFh-i1-jhe">
+                                <rect key="frame" x="0.0" y="348" width="414" height="100"/>
                                 <color key="backgroundColor" name="tertiaryElement"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="L1D-mr-rvO"/>
@@ -537,17 +537,44 @@
                                     <outlet property="delegate" destination="Z9X-Du-4qz" id="ar3-jg-fpi"/>
                                 </connections>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U6W-Bf-fSx">
+                                <rect key="frame" x="0.0" y="448" width="414" height="414"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KLa-s5-dYT">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="showingsViewContainerCell" id="zsw-4a-ZMh" customClass="ShowingsViewContainerCell" customModule="iKinas" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5zW-oG-dbe">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <size key="customSize" width="128" height="128"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Qc-PE-7vX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5Qc-PE-7vX" firstAttribute="trailing" secondItem="IFh-i1-jhe" secondAttribute="trailing" id="1lr-qW-dcv"/>
-                            <constraint firstItem="IFh-i1-jhe" firstAttribute="top" secondItem="wlb-Hb-ZgR" secondAttribute="centerY" id="gOc-hm-THe"/>
-                            <constraint firstItem="IFh-i1-jhe" firstAttribute="leading" secondItem="5Qc-PE-7vX" secondAttribute="leading" id="pbI-wi-00s"/>
+                            <constraint firstItem="U6W-Bf-fSx" firstAttribute="leading" secondItem="5Qc-PE-7vX" secondAttribute="leading" id="4nd-rx-iFt"/>
+                            <constraint firstItem="U6W-Bf-fSx" firstAttribute="top" secondItem="IFh-i1-jhe" secondAttribute="bottom" id="6Ig-Ne-HFC"/>
+                            <constraint firstItem="U6W-Bf-fSx" firstAttribute="top" secondItem="wlb-Hb-ZgR" secondAttribute="centerY" id="7mm-Ne-eB3"/>
+                            <constraint firstItem="5Qc-PE-7vX" firstAttribute="bottom" secondItem="U6W-Bf-fSx" secondAttribute="bottom" id="WNc-oO-R6z"/>
+                            <constraint firstItem="5Qc-PE-7vX" firstAttribute="trailing" secondItem="U6W-Bf-fSx" secondAttribute="trailing" id="Yah-hi-ItQ"/>
+                            <constraint firstItem="IFh-i1-jhe" firstAttribute="leading" secondItem="5Qc-PE-7vX" secondAttribute="leading" id="sUs-5M-fRM"/>
+                            <constraint firstItem="IFh-i1-jhe" firstAttribute="trailing" secondItem="5Qc-PE-7vX" secondAttribute="trailing" id="wzy-Tv-8bf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WpU-OJ-YVG"/>
                     <connections>
+                        <outlet property="containersView" destination="U6W-Bf-fSx" id="eM1-hY-8Y1"/>
                         <outlet property="datesView" destination="IFh-i1-jhe" id="Xge-LZ-ge4"/>
                     </connections>
                 </viewController>
@@ -827,8 +854,14 @@
         <namedColor name="tertiaryElement">
             <color red="0.9179999828338623" green="0.125" blue="0.15299999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
