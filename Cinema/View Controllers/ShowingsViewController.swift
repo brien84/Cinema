@@ -29,32 +29,43 @@ final class ShowingsViewController: UIViewController {
 
         super.init(coder: coder)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
 }
 
-extension ShowingsViewController: UICollectionViewDataSource {
+extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == containersView || collectionView == datesView {
             return DateSelector.dates.count
-        } else {
-            return 10
         }
+
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == containersView {
-            return collectionView.dequeueReusableCell(withReuseIdentifier: containerViewReuseID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: containerViewReuseID, for: indexPath)
+            // swiftlint:disable:next force_cast
+            let containerCell = cell as! ShowingsViewContainerCell
+            containerCell.tag = indexPath.row
+            containerCell.timesView.dataSource = self
+            containerCell.timesView.delegate = self
+
+            return containerCell
         }
 
         if collectionView == datesView {
-            return collectionView.dequeueReusableCell(withReuseIdentifier: datesViewReuseID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: datesViewReuseID, for: indexPath)
+            // swiftlint:disable:next force_cast
+            let dateCell = cell as! ShowingsViewDateCell
+            dateCell.date.text = DateSelector.dates[indexPath.row].asString(.monthAndDay)
+
+            return dateCell
         }
 
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: timesViewReuseID, for: indexPath)
+        // swiftlint:disable:next force_cast
+        let timeCell = cell as! ShowingsViewTimeCell
+        timeCell.time.text = "16:20"
+
+        return timeCell
     }
 }
