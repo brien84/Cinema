@@ -33,3 +33,21 @@ final class ShowingsViewController: UIViewController {
     }
 
 }
+
+extension ShowingsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == datesView {
+            return DateSelector.dates.count
+        }
+
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: datesViewReuseID, for: indexPath) as? ShowingsViewDateCell {
+            return cell
+        }
+
+        return UICollectionViewCell()
+    }
+}
