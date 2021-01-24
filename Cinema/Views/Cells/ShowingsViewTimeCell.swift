@@ -9,5 +9,5 @@
 import UIKit
 
 final class ShowingsViewTimeCell: UICollectionViewCell {
-    
+    @IBOutlet weak var time: UILabel!
 }

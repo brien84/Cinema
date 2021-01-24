@@ -571,7 +571,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="80"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoX-7W-iEN">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoX-7W-iEN">
                                                                         <rect key="frame" x="8" y="8" width="114" height="64"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
@@ -587,6 +587,9 @@
                                                             </collectionViewCellContentView>
                                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                             <size key="customSize" width="130" height="80"/>
+                                                            <connections>
+                                                                <outlet property="time" destination="OoX-7W-iEN" id="iMu-d3-ofC"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
