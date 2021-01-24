@@ -530,6 +530,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <outlet property="date" destination="Arj-Le-w9r" id="9IP-d8-D76"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

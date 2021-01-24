@@ -9,5 +9,5 @@
 import UIKit
 
 final class ShowingsViewDateCell: UICollectionViewCell {
-    
+    @IBOutlet weak var date: UILabel!
 }
