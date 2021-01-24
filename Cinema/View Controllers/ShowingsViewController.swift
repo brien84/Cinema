@@ -10,6 +10,7 @@ import UIKit
 
 private let containerViewReuseID = "showingsViewContainerCell"
 private let datesViewReuseID = "showingsViewDateCell"
+private let timesViewReuseID = "showingsViewTimeCell"
 
 final class ShowingsViewController: UIViewController {
     private let dates: DateSelectable
@@ -40,9 +41,9 @@ extension ShowingsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == containersView || collectionView == datesView {
             return DateSelector.dates.count
+        } else {
+            return 10
         }
-
-        return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
