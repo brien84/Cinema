@@ -37,7 +37,7 @@ extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDe
             return DateSelector.dates.count
         }
 
-        return 10
+        return 30
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,5 +67,51 @@ extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDe
         timeCell.time.text = "16:20"
 
         return timeCell
+    }
+}
+
+extension ShowingsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        switch collectionView {
+        case containersView:
+            return .zero
+        case datesView:
+            return UIEdgeInsets(top: 0, left: collectionView.frame.size.width / 3, bottom: 0, right: collectionView.frame.size.width / 3)
+        default:
+            return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        switch collectionView {
+        case containersView:
+            return .zero
+        case datesView:
+            return 8
+        default:
+            return 8
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        switch collectionView {
+        case containersView:
+            return .zero
+        case datesView:
+            return 8
+        default:
+            return 8
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch collectionView {
+        case containersView:
+            return collectionView.frame.size
+        case datesView:
+            return CGSize(width: collectionView.frame.width / 3, height: collectionView.frame.height)
+        default:
+            return CGSize(width: collectionView.frame.width / 2 - 12, height: collectionView.frame.width / 4)
+        }
     }
 }
