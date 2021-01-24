@@ -9,5 +9,13 @@
 import UIKit
 
 final class ShowingsViewContainerCell: UICollectionViewCell {
-    
+    @IBOutlet weak var timesView: UICollectionView!
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        tag = 0
+        timesView.dataSource = nil
+        timesView.delegate = nil
+    }
 }

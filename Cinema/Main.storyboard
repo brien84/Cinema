@@ -603,6 +603,9 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <size key="customSize" width="383" height="383"/>
+                                        <connections>
+                                            <outlet property="timesView" destination="MOC-Jq-d7l" id="KtX-8t-8xa"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
