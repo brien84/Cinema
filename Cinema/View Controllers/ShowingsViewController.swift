@@ -76,7 +76,7 @@ extension ShowingsViewController: UICollectionViewDelegateFlowLayout {
         case containersView:
             return .zero
         case datesView:
-            return UIEdgeInsets(top: 0, left: collectionView.frame.size.width / 3, bottom: 0, right: collectionView.frame.size.width / 3)
+            return UIEdgeInsets(top: 0, left: collectionView.frame.size.width / 4, bottom: 0, right: collectionView.frame.size.width / 4)
         default:
             return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         }
@@ -109,9 +109,37 @@ extension ShowingsViewController: UICollectionViewDelegateFlowLayout {
         case containersView:
             return collectionView.frame.size
         case datesView:
-            return CGSize(width: collectionView.frame.width / 3, height: collectionView.frame.height)
+            return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height)
         default:
             return CGSize(width: collectionView.frame.width / 2 - 12, height: collectionView.frame.width / 4)
         }
+    }
+}
+
+extension ShowingsViewController: UIScrollViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let collectionView: UICollectionView
+
+        switch scrollView {
+        case containersView:
+            collectionView = containersView
+        case datesView:
+            collectionView = datesView
+        default:
+            return
+        }
+
+        targetContentOffset.pointee = scrollView.contentOffset
+        var indexes = collectionView.indexPathsForVisibleItems
+        indexes.sort()
+        guard var index = indexes.first else { return }
+        guard let cell = collectionView.cellForItem(at: index) else { return }
+        let position = collectionView.contentOffset.x - cell.frame.origin.x
+        // TODO: ADJUST VALUE!!!
+        if position > cell.frame.size.width / 1.75 {
+            index.row += 1
+        }
+
+        collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
     }
 }
