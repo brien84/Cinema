@@ -117,6 +117,32 @@ extension ShowingsViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ShowingsViewController: UIScrollViewDelegate {
+    private func containersViewCenterIndexPath() -> IndexPath? {
+        let point = CGPoint(x: containersView.bounds.midX, y: containersView.bounds.midY)
+        return containersView.indexPathForItem(at: point)
+    }
+
+    private func datesViewCenterIndexPath() -> IndexPath? {
+        let point = CGPoint(x: datesView.bounds.midX, y: datesView.bounds.midY)
+        return datesView.indexPathForItem(at: point)
+    }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        guard scrollView == containersView || scrollView == datesView else { return }
+        guard let datesRow = datesViewCenterIndexPath()?.row else { return }
+        guard let containerRow = containersViewCenterIndexPath()?.row else { return }
+
+        if datesRow != containerRow {
+            if scrollView == containersView {
+                datesView.scrollToItem(at: IndexPath(item: containerRow, section: 0), at: .centeredHorizontally, animated: true)
+            }
+
+            if scrollView == datesView {
+                containersView.scrollToItem(at: IndexPath(item: datesRow, section: 0), at: .centeredHorizontally, animated: true)
+            }
+        }
+    }
+
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let collectionView: UICollectionView
 
