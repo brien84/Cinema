@@ -85,7 +85,14 @@ final class MovieViewController: UIViewController {
     }
 
     @objc private func showShowings() {
-        self.performSegue(withIdentifier: "showShowingsVC", sender: nil)
+        performSegue(withIdentifier: "showShowingsVC", sender: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showShowingsVC" {
+            guard let vc = segue.destination as? ShowingsViewController else { return }
+            vc.movie = movie
+        }
     }
 
     private func setLabels() {
