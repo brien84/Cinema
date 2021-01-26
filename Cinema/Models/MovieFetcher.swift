@@ -69,13 +69,3 @@ final class MovieFetcher: MovieFetching {
         }
     }
 }
-
-private extension Showing {
-    func isShown(at date: Date) -> Bool {
-        // Is `self.date` in the past.
-        if self.date < Date() { return false }
-
-        let calendar = Calendar.current
-        return calendar.isDate(self.date, inSameDayAs: date)
-    }
-}

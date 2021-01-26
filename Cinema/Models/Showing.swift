@@ -32,8 +32,18 @@ final class Showing: Codable {
     }
 }
 
+extension Showing {
+    func isShown(on date: Date) -> Bool {
+        // Is `self.date` in the past.
+        if self.date < Date() { return false }
+
+        let calendar = Calendar.current
+        return calendar.isDate(self.date, inSameDayAs: date)
+    }
+}
+
 extension Showing: Comparable {
-    /// Returns `[Showings]` sorted in ascending order by `date` with`parentMovie.title` and `venue` tie-breaks.
+    /// Compares by `date` with`parentMovie.title` and `venue` tie-breaks.
     static func < (lhs: Showing, rhs: Showing) -> Bool {
         if lhs.date != rhs.date {
             return lhs.date < rhs.date
