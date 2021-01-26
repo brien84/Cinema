@@ -27,7 +27,7 @@ final class MovieFetcher: MovieFetching {
 
     func getShowings(at date: Date) -> [Showing] {
         movies.flatMap { movie in
-            movie.showings.filter { $0.isShown(at: date) }
+            movie.showings.filter { $0.isShown(on: date) }
         }
     }
 

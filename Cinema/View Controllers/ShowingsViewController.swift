@@ -21,7 +21,7 @@ final class ShowingsViewController: UIViewController {
 
     private func getShowings(on date: Date) -> [Showing] {
         guard let movie = movie else { return [] }
-        let showings = movie.showings.filter { $0.isShown(at: date) }
+        let showings = movie.showings.filter { $0.isShown(on: date) }
         return showings.sorted()
     }
 }
