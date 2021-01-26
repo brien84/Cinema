@@ -13,31 +13,28 @@ private let datesViewReuseID = "showingsViewDateCell"
 private let timesViewReuseID = "showingsViewTimeCell"
 
 final class ShowingsViewController: UIViewController {
-    private let dates: DateSelectable
+    var movie: Movie?
+    private let dates = DateSelector.dates
 
     @IBOutlet private weak var containersView: UICollectionView!
     @IBOutlet private weak var datesView: UICollectionView!
 
-    required init?(coder: NSCoder) {
-        self.dates = DateSelector()
-
-        super.init(coder: coder)
-    }
-
-    init?(coder: NSCoder, dates: DateSelectable) {
-        self.dates = dates
-
-        super.init(coder: coder)
+    private func getShowings(on date: Date) -> [Showing] {
+        guard let movie = movie else { return [] }
+        let showings = movie.showings.filter { $0.isShown(at: date) }
+        return showings.sorted()
     }
 }
 
 extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == containersView || collectionView == datesView {
-            return DateSelector.dates.count
+            return dates.count
         }
 
-        return 30
+        // `ShowingsViewContainerCell` `timesView` collection view setup.
+        guard let containerView = collectionView.superview?.superview else { return 0 }
+        return getShowings(on: dates[containerView.tag]).count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,15 +53,19 @@ extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDe
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: datesViewReuseID, for: indexPath)
             // swiftlint:disable:next force_cast
             let dateCell = cell as! ShowingsViewDateCell
-            dateCell.date.text = DateSelector.dates[indexPath.row].asString(.monthAndDay)
+            dateCell.date.text = dates[indexPath.row].asString(.monthAndDay)
 
             return dateCell
         }
 
+        // `ShowingsViewContainerCell` `timesView` collection view setup.
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: timesViewReuseID, for: indexPath)
         // swiftlint:disable:next force_cast
         let timeCell = cell as! ShowingsViewTimeCell
-        timeCell.time.text = "16:20"
+
+        guard let containerView = collectionView.superview?.superview else { return timeCell }
+        let showings = getShowings(on: dates[containerView.tag])
+        timeCell.time.text = showings[indexPath.row].date.asString(.timeOfDay)
 
         return timeCell
     }
