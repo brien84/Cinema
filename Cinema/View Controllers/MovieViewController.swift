@@ -64,12 +64,28 @@ final class MovieViewController: UIViewController {
         }
     }
 
+    private func setupBackButton() {
+        let button = UIBarButtonItem(image: .arrowLeft, style: .plain, target: self, action: #selector(popViewController))
+        button.tintColor = .primaryElement
+        navigationItem.leftBarButtonItem = button
+    }
+
+    private func setupShowingsButton() {
+        let button = UIBarButtonItem(image: .navTicket, style: .plain, target: self, action: #selector(showShowings))
+        button.tintColor = .primaryElement
+        navigationItem.rightBarButtonItem = button
+    }
+
     @objc private func popViewController() {
         navigationController?.popViewController(animated: true)
 
         // Resets `navigationBar` appearance.
         navigationBar?.setTitleVerticalPositionAdjustment(0, for: .default)
         navigationBar?.setBackgroundImage(color: .secondaryBackground)
+    }
+
+    @objc private func showShowings() {
+        self.performSegue(withIdentifier: "showShowingsVC", sender: nil)
     }
 
     private func setLabels() {
@@ -90,18 +106,6 @@ final class MovieViewController: UIViewController {
 
         venue.text = showing?.venue
         time.text = showing?.date.asString(.timeOfDay)
-    }
-
-    private func setupBackButton() {
-        let button = UIBarButtonItem(image: .arrowLeft, style: .plain, target: self, action: #selector(popViewController))
-        button.tintColor = .primaryElement
-        navigationItem.leftBarButtonItem = button
-    }
-
-    private func setupShowingsButton() {
-        let button = UIBarButtonItem(image: .navTicket, style: .plain, target: self, action: #selector(popViewController))
-        button.tintColor = .primaryElement
-        navigationItem.rightBarButtonItem = button
     }
 
     private func createGenreButton(with title: String) -> UIButton {
