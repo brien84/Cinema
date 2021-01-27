@@ -16,8 +16,15 @@ final class ShowingsViewController: UIViewController {
     var movie: Movie?
     private let dates = DateSelector.dates
 
+    @IBOutlet private weak var poster: NetworkImageView!
     @IBOutlet private weak var containersView: UICollectionView!
     @IBOutlet private weak var datesView: UICollectionView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        poster.url = movie?.poster
+    }
 
     private func getShowings(on date: Date) -> [Showing] {
         guard let movie = movie else { return [] }

@@ -443,13 +443,7 @@
                                     <constraint firstItem="Q2n-ng-l2d" firstAttribute="top" secondItem="efd-5U-SkD" secondAttribute="bottom" multiplier="0.9" id="Zug-ke-mbU"/>
                                     <constraint firstAttribute="trailing" secondItem="Q2n-ng-l2d" secondAttribute="trailing" id="bbU-dT-RtJ"/>
                                     <constraint firstAttribute="top" secondItem="efd-5U-SkD" secondAttribute="top" id="hRH-VC-RVh"/>
-                                    <constraint firstItem="hZH-DU-L7m" firstAttribute="height" secondItem="efd-5U-SkD" secondAttribute="height" multiplier="0.2" id="rFm-Yx-wnZ"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="rFm-Yx-wnZ"/>
-                                    </mask>
-                                </variation>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CRw-Op-q3C"/>
@@ -508,6 +502,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="networkImageViewDefault" translatesAutoresizingMaskIntoConstraints="NO" id="ral-LM-BC5" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="621"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="ral-LM-BC5" secondAttribute="width" multiplier="1.5" id="HiE-ZK-Eiw"/>
+                                </constraints>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IFh-i1-jhe">
                                 <rect key="frame" x="0.0" y="348" width="414" height="100"/>
                                 <color key="backgroundColor" name="tertiaryElement"/>
@@ -555,7 +555,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U6W-Bf-fSx">
-                                <rect key="frame" x="0.0" y="448" width="414" height="414"/>
+                                <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KLa-s5-dYT">
                                     <size key="itemSize" width="383" height="383"/>
@@ -565,7 +565,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="showingsViewContainerCell" id="zsw-4a-ZMh" customClass="ShowingsViewContainerCell" customModule="iKinas" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="15.5" width="383" height="383"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="383" height="383"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5zW-oG-dbe">
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="383"/>
@@ -632,14 +632,17 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Qc-PE-7vX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="secondaryBackground"/>
                         <constraints>
                             <constraint firstItem="U6W-Bf-fSx" firstAttribute="leading" secondItem="5Qc-PE-7vX" secondAttribute="leading" id="4nd-rx-iFt"/>
                             <constraint firstItem="U6W-Bf-fSx" firstAttribute="top" secondItem="IFh-i1-jhe" secondAttribute="bottom" id="6Ig-Ne-HFC"/>
                             <constraint firstItem="U6W-Bf-fSx" firstAttribute="top" secondItem="wlb-Hb-ZgR" secondAttribute="centerY" id="7mm-Ne-eB3"/>
-                            <constraint firstItem="5Qc-PE-7vX" firstAttribute="bottom" secondItem="U6W-Bf-fSx" secondAttribute="bottom" id="WNc-oO-R6z"/>
+                            <constraint firstItem="5Qc-PE-7vX" firstAttribute="trailing" secondItem="ral-LM-BC5" secondAttribute="trailing" id="ARf-p8-5SF"/>
+                            <constraint firstItem="ral-LM-BC5" firstAttribute="top" secondItem="wlb-Hb-ZgR" secondAttribute="top" id="CD2-kL-tWR"/>
+                            <constraint firstAttribute="bottom" secondItem="U6W-Bf-fSx" secondAttribute="bottom" id="WNc-oO-R6z"/>
                             <constraint firstItem="5Qc-PE-7vX" firstAttribute="trailing" secondItem="U6W-Bf-fSx" secondAttribute="trailing" id="Yah-hi-ItQ"/>
                             <constraint firstItem="IFh-i1-jhe" firstAttribute="leading" secondItem="5Qc-PE-7vX" secondAttribute="leading" id="sUs-5M-fRM"/>
+                            <constraint firstItem="ral-LM-BC5" firstAttribute="leading" secondItem="5Qc-PE-7vX" secondAttribute="leading" id="sjU-4r-uXE"/>
                             <constraint firstItem="IFh-i1-jhe" firstAttribute="trailing" secondItem="5Qc-PE-7vX" secondAttribute="trailing" id="wzy-Tv-8bf"/>
                         </constraints>
                     </view>
@@ -647,11 +650,12 @@
                     <connections>
                         <outlet property="containersView" destination="U6W-Bf-fSx" id="eM1-hY-8Y1"/>
                         <outlet property="datesView" destination="IFh-i1-jhe" id="Xge-LZ-ge4"/>
+                        <outlet property="poster" destination="ral-LM-BC5" id="w2H-VH-sti"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8v5-aI-7ds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3203" y="518"/>
+            <point key="canvasLocation" x="2906" y="538"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="zm3-tL-vcq">
@@ -911,9 +915,6 @@
         </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
