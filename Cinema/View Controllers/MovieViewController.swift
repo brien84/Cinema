@@ -43,8 +43,6 @@ final class MovieViewController: UIViewController {
 
         scrollView.delegate = self
 
-        setupBackButton()
-        setupShowingsButton()
         setLabels()
 
         // Appearance setup.
@@ -64,30 +62,14 @@ final class MovieViewController: UIViewController {
         }
     }
 
-    private func setupBackButton() {
-        let button = UIBarButtonItem(image: .arrowLeft, style: .plain, target: self, action: #selector(popViewController))
-        button.tintColor = .primaryElement
-        navigationItem.leftBarButtonItem = button
-    }
-
-    private func setupShowingsButton() {
-        let button = UIBarButtonItem(image: .navTicket, style: .plain, target: self, action: #selector(showShowings))
-        button.tintColor = .primaryElement
-        navigationItem.rightBarButtonItem = button
-    }
-
-    @objc private func popViewController() {
+    @IBAction private func backButtonDidTap(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
 
         // Resets `navigationBar` appearance.
         navigationBar?.setTitleVerticalPositionAdjustment(0, for: .default)
         navigationBar?.setBackgroundImage(color: .secondaryBackground)
     }
-
-    @objc private func showShowings() {
-        performSegue(withIdentifier: "showShowingsVC", sender: nil)
-    }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showShowingsVC" {
             guard let vc = segue.destination as? ShowingsViewController else { return }
