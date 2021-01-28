@@ -19,4 +19,12 @@ final class ShowingsViewTimeCell: UICollectionViewCell {
             hide3DIcon.isActive = !is3D
         }
     }
+
+    @IBInspectable
+    private var cornerRadius: CGFloat = 0 {
+       didSet {
+           layer.cornerRadius = cornerRadius
+           layer.masksToBounds = cornerRadius > 0
+       }
+    }
 }
