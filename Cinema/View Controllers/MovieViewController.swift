@@ -69,7 +69,7 @@ final class MovieViewController: UIViewController {
         navigationBar?.setTitleVerticalPositionAdjustment(0, for: .default)
         navigationBar?.setBackgroundImage(color: .secondaryBackground)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showShowingsVC" {
             guard let vc = segue.destination as? ShowingsViewController else { return }
