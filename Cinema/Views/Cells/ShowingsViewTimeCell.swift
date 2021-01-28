@@ -10,4 +10,13 @@ import UIKit
 
 final class ShowingsViewTimeCell: UICollectionViewCell {
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var venue: UILabel!
+
+    @IBOutlet private weak var hide3DIcon: NSLayoutConstraint!
+
+    var is3D = false {
+        didSet {
+            hide3DIcon.isActive = !is3D
+        }
+    }
 }
