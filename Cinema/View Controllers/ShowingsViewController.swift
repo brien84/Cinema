@@ -73,31 +73,35 @@ extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDe
         guard let containerView = collectionView.superview?.superview else { return timeCell }
         let showings = getShowings(on: dates[containerView.tag])
         timeCell.time.text = showings[indexPath.row].date.asString(.timeOfDay)
+        timeCell.venue.text = showings[indexPath.row].venue
+        timeCell.is3D = showings[indexPath.row].is3D
 
         return timeCell
     }
 }
 
 extension ShowingsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch collectionView {
+        case containersView:
+            return collectionView.frame.size
+        case datesView:
+            return CGSize(width: collectionView.frame.width / 2.5, height: collectionView.frame.height)
+        default:
+            return CGSize(width: collectionView.frame.width - 8 - 8, height: 500)
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         switch collectionView {
         case containersView:
             return .zero
         case datesView:
-            return UIEdgeInsets(top: 0, left: collectionView.frame.size.width / 4, bottom: 0, right: collectionView.frame.size.width / 4)
+            /// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            let lol = collectionView.frame.width / 2 - (collectionView.frame.width / 2.5) / 2
+            return UIEdgeInsets(top: 0, left: lol, bottom: 0, right: lol)
         default:
             return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        switch collectionView {
-        case containersView:
-            return .zero
-        case datesView:
-            return 8
-        default:
-            return 8
         }
     }
 
@@ -106,20 +110,20 @@ extension ShowingsViewController: UICollectionViewDelegateFlowLayout {
         case containersView:
             return .zero
         case datesView:
-            return 8
+            return .zero
         default:
             return 8
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         switch collectionView {
         case containersView:
-            return collectionView.frame.size
+            return .zero
         case datesView:
-            return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height)
+            return .zero
         default:
-            return CGSize(width: collectionView.frame.width / 2 - 12, height: collectionView.frame.width / 4)
+            return 8
         }
     }
 }
@@ -152,28 +156,16 @@ extension ShowingsViewController: UIScrollViewDelegate {
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let collectionView: UICollectionView
-
-        switch scrollView {
-        case containersView:
-            collectionView = containersView
-        case datesView:
-            collectionView = datesView
-        default:
-            return
+        if scrollView == containersView {
+            targetContentOffset.pointee = scrollView.contentOffset
+            guard let indexPath = containersViewCenterIndexPath() else { return }
+            containersView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
 
-        targetContentOffset.pointee = scrollView.contentOffset
-        var indexes = collectionView.indexPathsForVisibleItems
-        indexes.sort()
-        guard var index = indexes.first else { return }
-        guard let cell = collectionView.cellForItem(at: index) else { return }
-        let position = collectionView.contentOffset.x - cell.frame.origin.x
-        // TODO: ADJUST VALUE!!!
-        if position > cell.frame.size.width / 1.75 {
-            index.row += 1
+        if scrollView == datesView {
+            targetContentOffset.pointee = scrollView.contentOffset
+            guard let indexPath = datesViewCenterIndexPath() else { return }
+            datesView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
-
-        collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
     }
 }
