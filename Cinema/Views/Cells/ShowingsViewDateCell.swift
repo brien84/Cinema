@@ -10,4 +10,10 @@ import UIKit
 
 final class ShowingsViewDateCell: UICollectionViewCell {
     @IBOutlet weak var date: UILabel!
+
+    override var isHighlighted: Bool {
+        didSet {
+            date.textColor = isHighlighted ? .tertiaryElement : .primaryElement
+        }
+    }
 }
