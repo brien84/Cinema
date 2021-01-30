@@ -39,8 +39,15 @@ extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDe
             return dates.count
         }
 
-        // `ShowingsViewContainerCell` `timesView` collection view setup.
+        // `ShowingsViewContainerCell` `timesView` setup.
         guard let containerView = collectionView.superview?.superview else { return 0 }
+
+        if getShowings(on: dates[containerView.tag]).count == 0 {
+            let loadingView = LoadingView()
+            loadingView.show(.noMovies, animated: false)
+            collectionView.backgroundView = view
+        }
+
         return getShowings(on: dates[containerView.tag]).count
     }
 
@@ -71,7 +78,7 @@ extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDe
             return dateCell
         }
 
-        // `ShowingsViewContainerCell` `timesView` collection view setup.
+        // `ShowingsViewContainerCell` `timesView` setup.
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: timesViewReuseID, for: indexPath)
         // swiftlint:disable:next force_cast
         let timeCell = cell as! ShowingsViewTimeCell
@@ -147,7 +154,7 @@ extension ShowingsViewController: UIScrollViewDelegate {
 
     private func datesViewScrollToItem(at indexPath: IndexPath) {
         guard let cell = datesView.cellForItem(at: indexPath) as? ShowingsViewDateCell else { return }
-        
+
         datesView.visibleCells.forEach { $0.isHighlighted = false }
         cell.isHighlighted = true
 
