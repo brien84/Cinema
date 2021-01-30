@@ -99,9 +99,12 @@ extension ShowingsViewController: UICollectionViewDelegateFlowLayout {
         case containersView:
             return collectionView.frame.size
         case datesView:
-            return CGSize(width: collectionView.frame.width / 2.5, height: collectionView.frame.height)
+            return CGSize(width: collectionView.frame.width / 3, height: collectionView.frame.height)
         default:
-            return CGSize(width: collectionView.frame.width - 8 - 8, height: 500)
+            let layout = collectionViewLayout as? UICollectionViewFlowLayout
+            let leftInset = layout?.sectionInset.left ?? 0
+            let rightInset = layout?.sectionInset.right ?? 0
+            return CGSize(width: collectionView.frame.width - leftInset - rightInset, height: collectionView.frame.height)
         }
     }
 
@@ -110,33 +113,11 @@ extension ShowingsViewController: UICollectionViewDelegateFlowLayout {
         case containersView:
             return .zero
         case datesView:
-            /// TODO: FIX WIDTH!!!
-            let width = collectionView.frame.width / 2 - (collectionView.frame.width / 2.5) / 2
+            let width = (collectionView.frame.width / 2) - (collectionView.frame.width / 3 / 2)
             return UIEdgeInsets(top: 0, left: width, bottom: 0, right: width)
         default:
-            return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        switch collectionView {
-        case containersView:
-            return .zero
-        case datesView:
-            return .zero
-        default:
-            return 8
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        switch collectionView {
-        case containersView:
-            return .zero
-        case datesView:
-            return .zero
-        default:
-            return 8
+            let layout = collectionViewLayout as? UICollectionViewFlowLayout
+            return layout?.sectionInset ?? .zero
         }
     }
 }
