@@ -17,5 +17,7 @@ final class ShowingsViewContainerCell: UICollectionViewCell {
         tag = 0
         timesView.dataSource = nil
         timesView.delegate = nil
+        timesView.backgroundView = nil
+        timesView.contentOffset = .zero
     }
 }
