@@ -44,8 +44,11 @@ final class MovieViewController: UIViewController {
         scrollView.delegate = self
 
         setLabels()
+    }
 
-        // Appearance setup.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         scrollView.delegate?.scrollViewDidScroll?(scrollView)
     }
 
@@ -73,6 +76,14 @@ final class MovieViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showShowingsVC" {
             guard let vc = segue.destination as? ShowingsViewController else { return }
+
+            // Copy current back button appearance.
+            guard let leftButton = navigationItem.leftBarButtonItem else { return }
+            guard let leftButtonImage = leftButton.backgroundImage(for: .normal, barMetrics: .default) else { return }
+            guard let vcLeftButton = vc.navigationItem.leftBarButtonItem else { return }
+            vcLeftButton.setBackgroundImage(size: leftButtonImage.size, color: .secondaryBackground, alpha: 1.0)
+            vcLeftButton.imageInsets = leftButton.imageInsets
+
             vc.movie = movie
         }
     }
