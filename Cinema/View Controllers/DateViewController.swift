@@ -15,7 +15,7 @@ protocol DateViewControllerDelegate: AnyObject {
 }
 
 final class DateViewController: UITableViewController {
-    private let dates: DateSelectable
+    private let dates: DateTracking
     private let fetcher: MovieFetching
 
     weak var delegate: DateViewControllerDelegate?
@@ -31,19 +31,19 @@ final class DateViewController: UITableViewController {
         didSet {
             datasource.sort()
 
-            delegate?.dateVC(self, didUpdate: fetcher.getMovies(at: dates.current))
+            delegate?.dateVC(self, didUpdate: fetcher.getMovies(at: dates.selected))
             tableView.reloadData()
         }
     }
 
     required init?(coder: NSCoder) {
-        self.dates = DateSelector()
+        self.dates = DateTracker()
         self.fetcher = MovieFetcher()
 
         super.init(coder: coder)
     }
 
-    init?(coder: NSCoder, dates: DateSelectable, fetcher: MovieFetching) {
+    init?(coder: NSCoder, dates: DateTracking, fetcher: MovieFetching) {
         self.dates = dates
         self.fetcher = fetcher
 
@@ -94,7 +94,7 @@ final class DateViewController: UITableViewController {
     }
 
     private func setupNotificationObservers() {
-        NotificationCenter.default.addObserver(forName: .DateSelectorDateDidChange, object: nil, queue: .main) { [self] _ in
+        NotificationCenter.default.addObserver(forName: .DateTrackerDateDidChange, object: nil, queue: .main) { [self] _ in
             updateDatasource()
             navigationItem.leftBarButtonItem?.image = dates.isFirst ? .settings : .arrowLeft
         }
@@ -228,11 +228,11 @@ extension DateViewController {
         toggleEnabled(scroll: false, buttons: false)
 
         transitionTableView?.prepareTransition { [self] in
-            datasource = fetcher.getShowings(at: dates.current)
+            datasource = fetcher.getShowings(at: dates.selected)
             setNavigation(title: nil, animation: .fromLeft)
 
             transitionTableView?.beginTransition {
-                setNavigation(title: dates.current.asString(.monthAndDay), animation: .fromRight)
+                setNavigation(title: dates.selected.asString(.monthAndDay), animation: .fromRight)
 
                 if datasource.count > 0 {
                     transitionTableView?.endTransition {
@@ -254,11 +254,11 @@ extension DateViewController {
         overlay.backgroundColor = tableView.backgroundColor
         tableView.addSubview(overlay)
 
-        datasource = fetcher.getShowings(at: dates.current)
+        datasource = fetcher.getShowings(at: dates.selected)
         setNavigation(title: nil, animation: .fromLeft)
 
         loadingView.hide { [self] in
-            setNavigation(title: dates.current.asString(.monthAndDay), animation: .fromRight)
+            setNavigation(title: dates.selected.asString(.monthAndDay), animation: .fromRight)
 
             if datasource.count > 0 {
                 overlay.removeFromSuperview()

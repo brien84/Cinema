@@ -1,5 +1,5 @@
 //
-//  DateSelector.swift
+//  DateTracker.swift
 //  Cinema
 //
 //  Created by Marius on 23/09/2019.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol DateSelectable {
-    var current: Date { get }
+protocol DateTracking {
+    var selected: Date { get }
     var isFirst: Bool { get }
     var isLast: Bool { get }
 
@@ -17,50 +17,53 @@ protocol DateSelectable {
     func next()
 }
 
-final class DateSelector: DateSelectable {
+final class DateTracker: DateTracking {
+    static var dates = [Date]()
 
-    private let dates: [Date]
+    private var _dates: [Date] {
+        return DateTracker.dates
+    }
 
-    private var currentIndex = 0 {
+    private var selectedIndex = 0 {
         didSet {
             postNotification()
         }
     }
 
-    var current: Date {
-        return dates[currentIndex]
+    var selected: Date {
+        return _dates[selectedIndex]
     }
 
     var isFirst: Bool {
-        return currentIndex == 0
+        return selectedIndex == 0
     }
 
     var isLast: Bool {
-        return currentIndex == dates.indices.last
+        return selectedIndex == _dates.indices.last
     }
 
     init() {
         if CommandLine.arguments.contains("ui-testing") {
             // Testing start date is 2030-02-14.
-            self.dates = Date(timeIntervalSince1970: 1897328436).futureDatesIn(days: 10)
+            DateTracker.dates = Date(timeIntervalSince1970: 1897328436).futureDatesIn(days: 10)
         } else {
-            self.dates = Date().futureDatesIn(days: 10)
+            DateTracker.dates = Date().futureDatesIn(days: 10)
         }
     }
 
     private func postNotification() {
-        NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil)
+        NotificationCenter.default.post(name: .DateTrackerDateDidChange, object: nil)
     }
 
     func previous() {
         if !isFirst {
-            currentIndex -= 1
+            selectedIndex -= 1
         }
     }
 
     func next() {
         if !isLast {
-            currentIndex += 1
+            selectedIndex += 1
         }
     }
 }
@@ -92,5 +95,5 @@ extension Date {
 }
 
 extension Notification.Name {
-    static let DateSelectorDateDidChange = Notification.Name("DateSelectorDateDidChangNotification")
+    static let DateTrackerDateDidChange = Notification.Name("DateTrackerDateDidChangeNotification")
 }

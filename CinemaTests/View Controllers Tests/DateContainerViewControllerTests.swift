@@ -71,8 +71,8 @@ final class DateContainerViewControllerTests: XCTestCase {
         func fetch(using session: URLSession, completion: @escaping (Result<Void, Error>) -> Void) { }
     }
 
-    class FakeSelector: DateSelectable {
-        var current: Date = Date()
+    class FakeSelector: DateTracking {
+        var selected: Date = Date()
         var isFirst: Bool = false
         var isLast: Bool = false
 

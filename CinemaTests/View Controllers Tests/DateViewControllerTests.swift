@@ -78,7 +78,7 @@ final class DateViewControllerTests: XCTestCase {
     func testDateTrackerNotificationObserver() {
         let testDateToday = Date.today
         let testDateTommorow = Date.tommorow
-        dates.current = testDateToday
+        dates.selected = testDateToday
 
         sutLoadViewIfNeeded()
 
@@ -87,8 +87,8 @@ final class DateViewControllerTests: XCTestCase {
         let titleView = sut.navigationItem.titleView as? UILabel
         XCTAssertEqual(titleView?.text, testDateToday.asString(.monthAndDay))
 
-        dates.current = testDateTommorow
-        NotificationCenter.default.post(name: .DateSelectorDateDidChange, object: nil)
+        dates.selected = testDateTommorow
+        NotificationCenter.default.post(name: .DateTrackerDateDidChange, object: nil)
 
         waitForUIUpdate()
 
@@ -97,7 +97,7 @@ final class DateViewControllerTests: XCTestCase {
 
     func testNavigationTitleViewIsSet() {
         let testDateToday = Date.today
-        dates.current = testDateToday
+        dates.selected = testDateToday
 
         sutLoadViewIfNeeded()
 
@@ -197,8 +197,8 @@ final class DateViewControllerTests: XCTestCase {
         waitForExpectations(timeout: 3.0)
     }
 
-    class DateTrackerStub: DateSelectable {
-        var current: Date = Date()
+    class DateTrackerStub: DateTracking {
+        var selected: Date = Date()
         var isFirst: Bool = false
         var isLast: Bool = false
 

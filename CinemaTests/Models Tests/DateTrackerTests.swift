@@ -1,5 +1,5 @@
 //
-//  DateSelectorTests.swift
+//  DateTrackerTests.swift
 //  CinemaTests
 //
 //  Created by Marius on 15/11/2019.
@@ -9,27 +9,30 @@
 import XCTest
 @testable import iKinas
 
-class DateSelectorTests: XCTestCase {
-
-    var sut: DateSelector!
+final class DateTrackerTests: XCTestCase {
+    var sut: DateTracker!
 
     override func setUp() {
-        sut = DateSelector()
+        sut = DateTracker()
     }
 
     override func tearDown() {
         sut = nil
     }
 
+    func testInitGeneratesFutureDates() {
+        XCTAssertGreaterThan(DateTracker.dates.count, 0)
+    }
+
     func testNextDate() {
         // given
-        let currentDate = sut.current
+        let currentDate = sut.selected
 
         // when
         sut.next()
 
         // then
-        XCTAssertLessThan(currentDate, sut.current)
+        XCTAssertLessThan(currentDate, sut.selected)
     }
 
     func testNextDateDoesNotGoOutOfRange() {
@@ -39,14 +42,14 @@ class DateSelectorTests: XCTestCase {
         // then
         while index < 50 {
             sut.next()
-            _ = sut.current
+            _ = sut.selected
             index += 1
         }
     }
 
     func testNextDatePostsNotification() {
         // given
-        expectation(forNotification: .DateSelectorDateDidChange, object: nil, handler: nil)
+        expectation(forNotification: .DateTrackerDateDidChange, object: nil, handler: nil)
 
         // when
         sut.next()
@@ -58,13 +61,13 @@ class DateSelectorTests: XCTestCase {
     func testPreviousDate() {
         // given
         sut.next()
-        let currentDate = sut.current
+        let currentDate = sut.selected
 
         // when
         sut.previous()
 
         // then
-        XCTAssertGreaterThan(currentDate, sut.current)
+        XCTAssertGreaterThan(currentDate, sut.selected)
     }
 
     func testPreviousDateDoesNotGoOutOfRange() {
@@ -74,7 +77,7 @@ class DateSelectorTests: XCTestCase {
         // then
         while index < 50 {
             sut.previous()
-            _ = sut.current
+            _ = sut.selected
             index += 1
         }
     }
@@ -82,7 +85,7 @@ class DateSelectorTests: XCTestCase {
     func testPreviousDatePostsNotification() {
         // given
         sut.next()
-        expectation(forNotification: .DateSelectorDateDidChange, object: nil, handler: nil)
+        expectation(forNotification: .DateTrackerDateDidChange, object: nil, handler: nil)
 
         // when
         sut.previous()
@@ -90,5 +93,4 @@ class DateSelectorTests: XCTestCase {
         // then
         waitForExpectations(timeout: 3)
     }
-
 }

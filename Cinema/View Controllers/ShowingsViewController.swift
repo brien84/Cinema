@@ -14,7 +14,7 @@ private let timesViewReuseID = "showingsViewTimeCell"
 
 final class ShowingsViewController: UIViewController {
     var movie: Movie?
-    private let dates = DateSelector.dates
+    private let dates = DateTracker.dates
 
     @IBOutlet private weak var poster: NetworkImageView!
     @IBOutlet private weak var containersView: UICollectionView!
