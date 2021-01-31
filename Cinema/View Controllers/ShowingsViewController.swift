@@ -23,6 +23,9 @@ final class ShowingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        navigationBar.setBackgroundImage(color: .secondaryBackground, alpha: 0.0)
+
         poster.url = movie?.poster
     }
 
@@ -30,6 +33,10 @@ final class ShowingsViewController: UIViewController {
         guard let movie = movie else { return [] }
         let showings = movie.showings.filter { $0.isShown(on: date) }
         return showings.sorted()
+    }
+
+    @IBAction private func backButtonDidTap(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -45,7 +52,7 @@ extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDe
         if getShowings(on: dates[containerView.tag]).count == 0 {
             let loadingView = LoadingView()
             loadingView.show(.noMovies, animated: false)
-            collectionView.backgroundView = view
+            collectionView.backgroundView = loadingView
         }
 
         return getShowings(on: dates[containerView.tag]).count

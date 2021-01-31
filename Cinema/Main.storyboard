@@ -689,7 +689,14 @@
                             <constraint firstItem="IFh-i1-jhe" firstAttribute="trailing" secondItem="5Qc-PE-7vX" secondAttribute="trailing" id="wzy-Tv-8bf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WpU-OJ-YVG"/>
+                    <navigationItem key="navigationItem" id="WpU-OJ-YVG">
+                        <barButtonItem key="leftBarButtonItem" image="arrowLeft" id="WU9-tw-iZq">
+                            <color key="tintColor" name="primaryElement"/>
+                            <connections>
+                                <action selector="backButtonDidTap:" destination="Z9X-Du-4qz" id="DHx-EG-3zX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="containersView" destination="U6W-Bf-fSx" id="eM1-hY-8Y1"/>
                         <outlet property="datesView" destination="IFh-i1-jhe" id="Xge-LZ-ge4"/>
