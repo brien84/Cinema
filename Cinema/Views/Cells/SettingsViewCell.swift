@@ -1,5 +1,5 @@
 //
-//  SettingsCell.swift
+//  SettingsViewCell.swift
 //  Cinema
 //
 //  Created by Marius on 13/10/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SettingsCell: UITableViewCell {
+final class SettingsViewCell: UITableViewCell {
     @IBOutlet weak var city: CustomFontLabel!
 
     override var isSelected: Bool {

@@ -31,7 +31,7 @@ final class SettingsViewControllerTests: XCTestCase {
     func testTableViewCellsHaveCorrectValuesSet() {
         sut.loadViewIfNeeded()
 
-        let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? SettingsCell
+        let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? SettingsViewCell
 
         XCTAssertEqual(cell?.city.text, City.allCases[0].rawValue)
     }
