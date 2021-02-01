@@ -41,7 +41,7 @@
                     <color key="tintColor" name="primaryElement"/>
                     <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
                     <state key="normal">
-                        <color key="titleColor" name="primaryText"/>
+                        <color key="titleColor" name="primaryElement"/>
                         <imageReference key="image" image="retry" renderingMode="template"/>
                     </state>
                     <connections>
@@ -78,9 +78,6 @@
         </namedColor>
         <namedColor name="primaryElement">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="primaryText">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
