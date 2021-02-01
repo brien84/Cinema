@@ -12,6 +12,7 @@ enum LoadingError: String, Error {
     case none = ""
     case noNetwork = "Nepavyksta pasiekti serverio..."
     case noMovies = "Šią dieną filmų nėra"
+    case noShowings = "Šią dieną seansų nėra"
 }
 
 protocol LoadingViewDelegate: AnyObject {
