@@ -32,11 +32,7 @@ final class MovieViewController: UIViewController {
     @IBOutlet private weak var posterTopToSuperview: NSLayoutConstraint!
     @IBOutlet private weak var posterBottomToDetailsTop: NSLayoutConstraint!
     @IBOutlet private weak var detailsBottomToSuperview: NSLayoutConstraint!
-    @IBOutlet private weak var showingContainerIsCollapsed: NSLayoutConstraint! {
-        didSet {
-            showingContainerIsCollapsed.isActive = true
-        }
-    }
+    @IBOutlet private weak var showingContainerIsCollapsed: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +40,12 @@ final class MovieViewController: UIViewController {
         scrollView.delegate = self
 
         setLabels()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        showingContainerIsCollapsed.isActive = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
