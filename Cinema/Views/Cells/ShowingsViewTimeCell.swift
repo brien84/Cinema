@@ -20,6 +20,12 @@ final class ShowingsViewTimeCell: UICollectionViewCell {
         }
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        hide3DIcon.isActive = !is3D
+    }
+
     @IBInspectable
     private var cornerRadius: CGFloat = 0 {
        didSet {
