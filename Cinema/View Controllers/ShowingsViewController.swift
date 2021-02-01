@@ -51,7 +51,7 @@ extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDe
 
         if getShowings(on: dates[containerView.tag]).count == 0 {
             let loadingView = LoadingView()
-            loadingView.show(.noMovies, animated: false)
+            loadingView.show(.noShowings, animated: false)
             collectionView.backgroundView = loadingView
         }
 
