@@ -80,6 +80,10 @@ final class MovieViewController: UIViewController {
         navigationBar?.setBackgroundImage(color: .secondaryBackground)
     }
 
+    @IBAction private func showingsButtonDidTap(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "showShowingsVC", sender: nil)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showShowingsVC" {
             guard let vc = segue.destination as? ShowingsViewController else { return }

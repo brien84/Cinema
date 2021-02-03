@@ -466,7 +466,7 @@
                         <barButtonItem key="rightBarButtonItem" image="navTicket" id="pXb-cI-gwD">
                             <color key="tintColor" name="primaryElement"/>
                             <connections>
-                                <segue destination="Z9X-Du-4qz" kind="show" identifier="showShowingsVC" id="8VJ-55-2D7"/>
+                                <action selector="showingsButtonDidTap:" destination="Ygy-k3-LEc" id="bVA-9C-Zdv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -489,6 +489,7 @@
                         <outlet property="titleContainer" destination="hZH-DU-L7m" id="knj-QG-I2N"/>
                         <outlet property="venue" destination="TpN-B9-ng3" id="GPF-cf-Qq7"/>
                         <outlet property="year" destination="UqF-Em-pVi" id="vyS-Lh-Cbg"/>
+                        <segue destination="Z9X-Du-4qz" kind="show" identifier="showShowingsVC" id="gkJ-Se-85n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pq8-ME-JHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -694,7 +695,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Qc-PE-7vX"/>
-                        <color key="backgroundColor" name="secondaryBackground"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="U6W-Bf-fSx" firstAttribute="leading" secondItem="5Qc-PE-7vX" secondAttribute="leading" id="4nd-rx-iFt"/>
                             <constraint firstItem="U6W-Bf-fSx" firstAttribute="top" secondItem="wlb-Hb-ZgR" secondAttribute="centerY" id="7mm-Ne-eB3"/>
