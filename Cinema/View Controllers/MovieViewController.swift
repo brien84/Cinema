@@ -81,7 +81,11 @@ final class MovieViewController: UIViewController {
     }
 
     @IBAction private func showingsButtonDidTap(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "showShowingsVC", sender: nil)
+        UIView.animate(withDuration: .stdAnimation) { [self] in
+            scrollView.setContentOffset(.zero, animated: false)
+        } completion: { [self] _ in
+            performSegue(withIdentifier: "showShowingsVC", sender: nil)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
