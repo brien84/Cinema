@@ -38,6 +38,11 @@ final class MovieViewController: UIViewController {
         super.viewDidLoad()
 
         scrollView.delegate = self
+        navigationController?.delegate = self
+
+        // Set `backgroundColor` in code, because of iOS12 bug, where
+        // custom color is selected in storyboard it cannot be changed.
+        view.backgroundColor = .secondaryBackground
 
         setLabels()
     }
@@ -277,6 +282,24 @@ extension MovieViewController: UIScrollViewDelegate {
         } else {
             poster.alpha = 1.0
         }
+    }
+}
+
+extension MovieViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation,
+                              from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+        if type(of: toVC) == MovieViewController.self || type(of: toVC) == ShowingsViewController.self {
+            if operation == .push {
+                return ShowingsViewTransitionAnimator(isPushing: true)
+            }
+
+            if operation == .pop {
+                return ShowingsViewTransitionAnimator(isPushing: false)
+            }
+        }
+
+        return nil
     }
 }
 
