@@ -13,6 +13,7 @@ final class Showing: Codable {
     let date: Date
     let venue: String
     let is3D: Bool
+    let url: URL
     weak var parentMovie: Movie?
 
     init(from decoder: Decoder) throws {
@@ -22,6 +23,7 @@ final class Showing: Codable {
         date = try values.decode(Date.self, forKey: .date)
         venue = try values.decode(String.self, forKey: .venue)
         is3D = try values.decode(Bool.self, forKey: .is3D)
+        url = try values.decode(URL.self, forKey: .url)
     }
 
     private enum CodingKeys: String, CodingKey {
@@ -29,6 +31,7 @@ final class Showing: Codable {
         case date
         case venue
         case is3D
+        case url
     }
 }
 

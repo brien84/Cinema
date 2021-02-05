@@ -42,7 +42,7 @@ final class DateViewControllerTests: XCTestCase {
         let testTime = Date.today
         let test3D = true
         let movie = Movie.create(testTitle, testOriginalTitle, "", "", "", [], "", testURL, [])
-        let showing = Showing.create(.vilnius, testTime, testVenue, test3D)
+        let showing = Showing.create(.vilnius, testTime, testVenue, test3D, testURL)
         showing.parentMovie = movie
         fetcher.showings = [showing]
 
@@ -209,7 +209,7 @@ final class DateViewControllerTests: XCTestCase {
     class MovieFetcherStub: MovieFetching {
         var isFetchSuccessful = true
         var movies = [Movie.create("", "", "", "", "", [], "", URL(string: "https://google.com")!, [])]
-        var showings = [Showing.create(.vilnius, Date(), "", true)]
+        var showings = [Showing.create(.vilnius, Date(), "", true, URL(string: "https://google.com")!)]
 
         func getMovies(at date: Date) -> [Movie] {
             movies
