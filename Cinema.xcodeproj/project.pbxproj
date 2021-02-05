@@ -27,6 +27,8 @@
 		2932FB7F24D35D62009AEDD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2932FB7E24D35D62009AEDD1 /* Main.storyboard */; };
 		2932FB8124D602E8009AEDD1 /* DateContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */; };
 		2948398424D1F85500133940 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948398324D1F85500133940 /* DateViewController.swift */; };
+		2961EA2D25CC9EFB00ED23C8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2961EA2C25CC9EFB00ED23C8 /* WebViewController.swift */; };
+		2961EA3325CD9EEC00ED23C8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2961EA3225CD9EEC00ED23C8 /* WebKit.framework */; };
 		2965635325BC4DC400A14651 /* ShowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2965635225BC4DC400A14651 /* ShowingsViewController.swift */; };
 		2965636125BCCE6A00A14651 /* ShowingsViewDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2965636025BCCE6A00A14651 /* ShowingsViewDateCell.swift */; };
 		2965636925BD65BB00A14651 /* ShowingsViewContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2965636825BD65BB00A14651 /* ShowingsViewContainerCell.swift */; };
@@ -87,6 +89,8 @@
 		2932FB7E24D35D62009AEDD1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2932FB8024D602E8009AEDD1 /* DateContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainerViewController.swift; sourceTree = "<group>"; };
 		2948398324D1F85500133940 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		2961EA2C25CC9EFB00ED23C8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		2961EA3225CD9EEC00ED23C8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2965635225BC4DC400A14651 /* ShowingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingsViewController.swift; sourceTree = "<group>"; };
 		2965636025BCCE6A00A14651 /* ShowingsViewDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingsViewDateCell.swift; sourceTree = "<group>"; };
 		2965636825BD65BB00A14651 /* ShowingsViewContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingsViewContainerCell.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2961EA3325CD9EEC00ED23C8 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +148,7 @@
 				29B9C95E237F42A30035EF0B /* CinemaTests */,
 				29E99C2C2402F5E7003A4141 /* CinemaUITests */,
 				2904C7612336982B00407B64 /* Products */,
+				2961EA3125CD9EEC00ED23C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +187,7 @@
 				2904D0702353C79B00407B64 /* SettingsViewController.swift */,
 				2965635225BC4DC400A14651 /* ShowingsViewController.swift */,
 				291A0A2525CB247000FE145A /* ShowingsViewTransitionAnimator.swift */,
+				2961EA2C25CC9EFB00ED23C8 /* WebViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -241,6 +248,14 @@
 				292E7EC0255F0F080077F2FF /* URLSession+Testable.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2961EA3125CD9EEC00ED23C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2961EA3225CD9EEC00ED23C8 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		29B9C95E237F42A30035EF0B /* CinemaTests */ = {
@@ -437,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29B4D94B23F1EC0600BD9783 /* City.swift in Sources */,
+				2961EA2D25CC9EFB00ED23C8 /* WebViewController.swift in Sources */,
 				2965637125BDEEB800A14651 /* ShowingsViewTimeCell.swift in Sources */,
 				299D135A24CA26DC0012755A /* GradientBackgroundView.swift in Sources */,
 				2932FB8124D602E8009AEDD1 /* DateContainerViewController.swift in Sources */,

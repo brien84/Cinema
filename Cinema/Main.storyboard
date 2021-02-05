@@ -8,6 +8,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -585,7 +586,7 @@
                                                     <rect key="frame" x="8" y="8" width="173" height="84"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" name="secondaryElement"/>
+                                                    <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="fontIdentifier" value="showingsViewDate"/>
@@ -757,11 +758,47 @@
                         <outlet property="containersView" destination="U6W-Bf-fSx" id="eM1-hY-8Y1"/>
                         <outlet property="datesView" destination="IFh-i1-jhe" id="Xge-LZ-ge4"/>
                         <outlet property="poster" destination="ral-LM-BC5" id="w2H-VH-sti"/>
+                        <segue destination="g5h-Z4-x8A" kind="show" identifier="showWebVC" id="AxB-la-lfB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8v5-aI-7ds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2905.7971014492755" y="537.05357142857144"/>
+            <point key="canvasLocation" x="2858" y="538"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="5BK-LY-9LK">
+            <objects>
+                <viewController id="g5h-Z4-x8A" customClass="WebViewController" customModule="iKinas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GU7-aK-hQw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NU4-Jj-AGM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" name="secondaryBackground"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ngg-Qf-x8b"/>
+                        <color key="backgroundColor" name="secondaryBackground"/>
+                        <constraints>
+                            <constraint firstItem="NU4-Jj-AGM" firstAttribute="top" secondItem="Ngg-Qf-x8b" secondAttribute="top" id="Msh-D3-um0"/>
+                            <constraint firstItem="Ngg-Qf-x8b" firstAttribute="trailing" secondItem="NU4-Jj-AGM" secondAttribute="trailing" id="NO8-aC-KhS"/>
+                            <constraint firstAttribute="bottom" secondItem="NU4-Jj-AGM" secondAttribute="bottom" id="TK6-C9-dev"/>
+                            <constraint firstItem="NU4-Jj-AGM" firstAttribute="leading" secondItem="Ngg-Qf-x8b" secondAttribute="leading" id="lyo-4N-AlU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sud-3z-mCU"/>
+                    <connections>
+                        <outlet property="webView" destination="NU4-Jj-AGM" id="u4G-e1-Yjh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lW2-Sk-9ta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3741" y="538"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="zm3-tL-vcq">
@@ -926,6 +963,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0S9-pl-YbP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="primaryElement"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="primaryElement"/>
                         </textAttributes>
@@ -1034,5 +1072,8 @@
         <namedColor name="tertiaryElement">
             <color red="0.9179999828338623" green="0.125" blue="0.15299999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
