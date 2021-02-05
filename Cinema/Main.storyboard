@@ -338,9 +338,12 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUQ-tr-d6U">
-                                                        <rect key="frame" x="369" y="5" width="25" height="43"/>
+                                                        <rect key="frame" x="362" y="5" width="32" height="43"/>
                                                         <color key="tintColor" name="tertiaryElement"/>
-                                                        <state key="normal" image="arrowRight"/>
+                                                        <state key="normal" image="cart"/>
+                                                        <connections>
+                                                            <segue destination="g5h-Z4-x8A" kind="show" identifier="showWebVC" id="fCK-ZR-cDu"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" name="secondaryBackground"/>
@@ -763,7 +766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8v5-aI-7ds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2858" y="538"/>
+            <point key="canvasLocation" x="3243" y="311"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="5BK-LY-9LK">
@@ -798,7 +801,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lW2-Sk-9ta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3741" y="538"/>
+            <point key="canvasLocation" x="3417" y="1217"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="zm3-tL-vcq">
@@ -1044,6 +1047,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="fCK-ZR-cDu"/>
         <segue reference="diA-bi-HlB"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1051,6 +1055,7 @@
         <image name="ageRating" width="32" height="32"/>
         <image name="arrowLeft" width="25" height="25"/>
         <image name="arrowRight" width="25" height="25"/>
+        <image name="cart" width="32" height="32"/>
         <image name="duration" width="32" height="32"/>
         <image name="navTicket" width="25" height="25"/>
         <image name="networkImageViewDefault" width="200" height="300"/>

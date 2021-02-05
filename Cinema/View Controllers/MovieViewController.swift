@@ -40,8 +40,8 @@ final class MovieViewController: UIViewController {
         scrollView.delegate = self
         navigationController?.delegate = self
 
-        // Set `backgroundColor` in code, because of iOS12 bug, where
-        // custom color is selected in storyboard it cannot be changed.
+        // Set `backgroundColor` in code, because of iOS12 bug, where when
+        // a custom color is selected in storyboard it cannot be changed.
         view.backgroundColor = .secondaryBackground
 
         setLabels()
@@ -100,6 +100,12 @@ final class MovieViewController: UIViewController {
             vcLeftButton.imageInsets = leftButton.imageInsets
 
             vc.movie = movie
+        }
+
+        if segue.identifier == "showWebVC" {
+            guard let vc = segue.destination as? WebViewController else { return }
+            guard let showing = showing else { return }
+            vc.url = showing.url
         }
     }
 
