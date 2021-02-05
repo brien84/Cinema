@@ -35,6 +35,13 @@ final class ShowingsViewController: UIViewController {
         return showings.sorted()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showWebVC" else { return }
+        guard let vc = segue.destination as? WebViewController else { return }
+        guard let url = sender as? URL else { return }
+        vc.url = url
+    }
+
     @IBAction private func backButtonDidTap(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
@@ -97,6 +104,15 @@ extension ShowingsViewController: UICollectionViewDataSource, UICollectionViewDe
         timeCell.is3D = showings[indexPath.row].is3D
 
         return timeCell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard collectionView != containersView || collectionView != datesView else { return }
+        guard let containerView = collectionView.superview?.superview else { return }
+        let showings = getShowings(on: dates[containerView.tag])
+        let url = showings[indexPath.row].url
+
+        performSegue(withIdentifier: "showWebVC", sender: url)
     }
 }
 
