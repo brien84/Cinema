@@ -830,7 +830,13 @@
                             <constraint firstItem="NU4-Jj-AGM" firstAttribute="leading" secondItem="Ngg-Qf-x8b" secondAttribute="leading" id="lyo-4N-AlU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Sud-3z-mCU"/>
+                    <navigationItem key="navigationItem" id="Sud-3z-mCU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="AKs-Jv-1My">
+                            <connections>
+                                <action selector="doneButtonDidTap:" destination="g5h-Z4-x8A" id="6Ql-wt-qE7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="NU4-Jj-AGM" id="u4G-e1-Yjh"/>
                     </connections>

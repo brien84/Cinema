@@ -24,4 +24,8 @@ final class WebViewController: UIViewController, WKUIDelegate {
             webView.load(request)
         }
     }
+
+    @IBAction private func doneButtonDidTap(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
 }
