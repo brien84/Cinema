@@ -18,8 +18,6 @@ final class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.accessibilityIdentifier = "UI-OptionsVCTable"
-
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.tableHeaderView?.frame.size.height *= 2
 
