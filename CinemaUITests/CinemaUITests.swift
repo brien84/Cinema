@@ -8,8 +8,7 @@
 
 import XCTest
 
-class CinemaUITests: XCTestCase {
-
+final class CinemaUITests: XCTestCase {
     var app: XCUIApplication!
 
     override func setUp() {
@@ -20,208 +19,216 @@ class CinemaUITests: XCTestCase {
         app.launch()
 
         // Selects city on app startup.
-        app.optionsSelectCity(0)
+        app.settingsSelectCity(0)
+        waitForUIUpdate()
     }
 
     override func tearDown() {
         app = nil
     }
 
-    func testDailyShowingsExistsAfterSelectingCity() {
+    func waitForUIUpdate() {
+        let expectation = self.expectation(description: "Wait for UI to update.")
 
-        XCTAssertTrue(app.dailyShowings.exists)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1.5)
     }
 
-    func testDailyVCSegmentedControlSwitching() {
-        app.dailyVCSegmentedControl.selectButton(0)
-        XCTAssertTrue(app.dailyMovies.exists)
-
-        app.dailyVCSegmentedControl.selectButton(1)
-        XCTAssertTrue(app.dailyShowings.exists)
+    func testAppStartingWithDateViewController() {
+        XCTAssertTrue(app.dateContainerVCCollectionView.exists)
+        XCTAssertTrue(app.dateVCTableView.exists)
     }
 
-    func testDailyVCOptionsNavButtonOpensOptionsVC() {
-        app.dailyVCOptionsNavButton.tap()
+    func testChangingDate() {
+        let collectionInitialCount = app.dateContainerVCCollectionView.cellCount
+        let tableInitialCount = app.dateVCTableView.cellCount
 
-        XCTAssertTrue(app.optionsVCTableView.exists)
+        app.dateVCRightNavButton.tap()
+        waitForUIUpdate()
+
+        var collectionNewCount = app.dateContainerVCCollectionView.cellCount
+        var tableNewCount = app.dateVCTableView.cellCount
+
+        XCTAssertNotEqual(collectionInitialCount, collectionNewCount)
+        XCTAssertNotEqual(tableInitialCount, tableNewCount)
+
+        app.dateVCLeftNavButton.tap()
+        waitForUIUpdate()
+
+        collectionNewCount = app.dateContainerVCCollectionView.cellCount
+        tableNewCount = app.dateVCTableView.cellCount
+
+        XCTAssertEqual(collectionInitialCount, collectionNewCount)
+        XCTAssertEqual(tableInitialCount, tableNewCount)
     }
 
-    func testTappingDailyVCRightNavButtonUpdatesDailyShowings() {
-        let initialCount = app.dailyShowings.cellCount
-        app.dailyVCRightNavButton.tap()
+    func testNavigationToSettings() {
+        app.dateVCLeftNavButton.tap()
+        waitForUIUpdate()
 
-        XCTAssertNotEqual(initialCount, app.dailyShowings.cellCount)
+        XCTAssertTrue(app.settingsVCTableView.exists)
+        XCTAssertFalse(app.dateContainerVCCollectionView.exists)
+        XCTAssertFalse(app.dateVCTableView.exists)
     }
 
-    func testDailyVCRightNavButtonGetsDisabled() {
-        app.dailyVCRightNavButton.tap(withNumberOfTaps: 10, numberOfTouches: 1)
-        app.dailyVCRightNavButton.tap(withNumberOfTaps: 10, numberOfTouches: 1)
-        app.dailyVCRightNavButton.tap(withNumberOfTaps: 10, numberOfTouches: 1)
+    func testNavigationToMovieVCFromDateCollectionView() {
+        app.dateContainerVCCollectionView.selectCell(0)
+        waitForUIUpdate()
 
-        XCTAssertFalse(app.dailyVCRightNavButton.isEnabled)
+        XCTAssertTrue(app.movieVCView.exists)
+        XCTAssertFalse(app.movieVCShowingView.exists)
     }
 
-    func testTappingDailyVCLeftNavButtonUpdatesDailyShowings() {
-        app.dailyVCRightNavButton.tap()
+    func testNavigationToMovieVCFromDateTableView() {
+        app.dateVCTableView.selectCell(0)
+        waitForUIUpdate()
 
-        let initialCount = app.dailyShowings.cellCount
-        app.dailyVCLeftNavButton.tap()
-
-        XCTAssertNotEqual(initialCount, app.dailyShowings.cellCount)
+        XCTAssertTrue(app.movieVCView.exists)
+        XCTAssertTrue(app.movieVCShowingView.exists)
     }
 
-    func testTappingDailyVCRightNavButtonUpdatesDailyMovies() {
-        app.dailyVCSegmentedControl.selectButton(0)
+    func testNavigationToWebVCFromMovieView() {
+        app.dateVCTableView.selectCell(0)
+        waitForUIUpdate()
 
-        let initialCount = app.dailyMovies.cellCount
-        app.dailyVCRightNavButton.tap()
+        XCTAssertTrue(app.movieVCView.exists)
+        XCTAssertTrue(app.movieVCShowingView.exists)
 
-        XCTAssertNotEqual(initialCount, app.dailyMovies.cellCount)
+        app.movieVCShowingButton.tap()
+        waitForUIUpdate()
+
+        XCTAssertTrue(app.webVCView.exists)
     }
 
-    func testTappingDailyVCLeftNavButtonUpdatesDailyMovies() {
-        app.dailyVCSegmentedControl.selectButton(0)
-        app.dailyVCRightNavButton.tap()
+    func testNavigationToShowingsVCFromMovieView() {
+        app.dateContainerVCCollectionView.selectCell(0)
+        waitForUIUpdate()
 
-        let initialCount = app.dailyMovies.cellCount
-        app.dailyVCLeftNavButton.tap()
+        XCTAssertTrue(app.movieVCView.exists)
 
-        XCTAssertNotEqual(initialCount, app.dailyMovies.cellCount)
+        app.movieVCShowingsButton.tap()
+        waitForUIUpdate()
+
+        XCTAssertTrue(app.showingsVCView.exists)
     }
 
-    func testChangingCityFromDailyShowings() {
-        let initialCount = app.dailyShowings.cellCount
-        app.dailyVCOptionsNavButton.tap()
-        app.optionsSelectCity(1)
+    func testNavigationToWebVCFromShowingsTimesView() {
+        app.dateContainerVCCollectionView.selectCell(0)
+        waitForUIUpdate()
 
-        XCTAssertNotEqual(initialCount, app.dailyShowings.cellCount)
+        XCTAssertTrue(app.movieVCView.exists)
+
+        app.movieVCShowingsButton.tap()
+        waitForUIUpdate()
+
+        XCTAssertTrue(app.showingsVCView.exists)
+
+        app.showingsVCTimesView.selectCell(0)
+        waitForUIUpdate()
+
+        XCTAssertTrue(app.webVCView.exists)
     }
 
-    func testChangingCityFromDailyMovies() {
-        app.dailyVCSegmentedControl.selectButton(0)
+    func testNavigatingDatesViewUpdatesTimesView() {
+        app.dateContainerVCCollectionView.selectCell(0)
+        waitForUIUpdate()
 
-        let initialCount = app.dailyMovies.cellCount
-        app.dailyVCOptionsNavButton.tap()
-        app.optionsSelectCity(1)
+        XCTAssertTrue(app.movieVCView.exists)
 
-        XCTAssertNotEqual(initialCount, app.dailyMovies.cellCount)
-    }
+        app.movieVCShowingsButton.tap()
+        waitForUIUpdate()
 
-    func testSelectingDailyShowingsCellOpensMovieView() {
-        app.dailyShowings.selectCell(0)
+        XCTAssertTrue(app.showingsVCView.exists)
 
-        XCTAssertTrue(app.movieDetails.exists)
-    }
+        let initialCount = app.showingsVCDatesView.cellCount
 
-    func testSelectingDailyMoviessCellOpensMovieView() {
-        app.dailyVCSegmentedControl.selectButton(0)
+        app.showingsVCDatesView.swipeLeft()
+        waitForUIUpdate()
 
-        app.dailyMovies.selectCell(0)
+        let newCount = app.showingsVCDatesView.cellCount
 
-        XCTAssertTrue(app.movieDetails.exists)
-    }
-
-    func testMovieVCSegmentedControlSwitching() {
-        app.dailyShowings.selectCell(0)
-
-        app.movieVCSegmentedControl.buttons.element(boundBy: 1).tap()
-        XCTAssertTrue(app.movieShowings.exists)
-
-        app.movieVCSegmentedControl.buttons.element(boundBy: 0).tap()
-        XCTAssertTrue(app.movieDetails.exists)
-    }
-
-    func testMovieVCNavigationBarBackButtonReturnsToDailyShowings() {
-        app.dailyShowings.selectCell(0)
-
-        app.navigationBars.buttons.element.tap()
-
-        XCTAssertTrue(app.dailyShowings.exists)
-    }
-
-    func testSwipingLeftUpdatesDailyShowings() {
-        let initialCount = app.dailyShowings.cellCount
-        app.swipeLeft()
-
-        XCTAssertNotEqual(initialCount, app.dailyShowings.cellCount)
-    }
-
-    func testSwipingRightUpdatesDailyShowings() {
-        app.swipeLeft()
-
-        let initialCount = app.dailyShowings.cellCount
-        app.swipeRight()
-
-        XCTAssertNotEqual(initialCount, app.dailyShowings.cellCount)
+        XCTAssertNotEqual(initialCount, newCount)
     }
 }
 
 extension XCUIApplication {
+    // MARK: DateContainerViewController
 
-    // MARK: DailyViewController:
-
-    var dailyVCSegmentedControl: XCUIElement {
-        return segmentedControls["UI-DailyVCSegmented"]
+    var dateContainerVCCollectionView: XCUIElement {
+        collectionViews["dateContainerVCCollectionView"]
     }
 
-    var dailyVCOptionsNavButton: XCUIElement {
-        return buttons["UI-DailyVCOptionsButton"]
+    // MARK: DateViewController
+
+    var dateVCTableView: XCUIElement {
+        tables["dateVCTableView"]
     }
 
-    var dailyVCLeftNavButton: XCUIElement {
-        return buttons["UI-DailyVCLeftButton"]
+    var dateVCLeftNavButton: XCUIElement {
+        buttons["dateVCLeftNavButton"]
     }
 
-    var dailyVCRightNavButton: XCUIElement {
-        return buttons["UI-DailyVCRightButton"]
+    var dateVCRightNavButton: XCUIElement {
+        buttons["dateVCRightNavButton"]
     }
 
-    // MARK: MovieViewController:
+    // MARK: MovieViewController
 
-    var movieVCSegmentedControl: XCUIElement {
-        return segmentedControls["UI-MovieVCSegmented"]
+    var movieVCView: XCUIElement {
+        otherElements["movieVCView"]
     }
 
-    // MARK: OptionsViewController:
-
-    var optionsVCTableView: XCUIElement {
-        return tables["UI-OptionsVCTable"]
+    var movieVCShowingView: XCUIElement {
+        otherElements["movieVCShowingView"]
     }
 
-    func optionsSelectCity(_ index: Int) {
-        optionsVCTableView.selectCell(index)
+    var movieVCShowingButton: XCUIElement {
+        buttons["movieVCShowingButton"]
     }
 
-    // MARK: DailyMoviesVC:
-
-    var dailyMovies: XCUIElement {
-        return collectionViews["UI-DailyMoviesCollection"]
+    var movieVCShowingsButton: XCUIElement {
+        buttons["movieVCShowingsButton"]
     }
 
-    // MARK: DailyShowingsVC:
+    // MARK: SettingsViewController
 
-    var dailyShowings: XCUIElement {
-        return tables["UI-DailyShowingsTable"]
+    var settingsVCTableView: XCUIElement {
+        tables["settingsVCTableView"]
     }
 
-    // MARK: MovieDetailsVC:
-
-    var movieDetails: XCUIElement {
-        return otherElements["UI-MovieDetailsView"]
+    func settingsSelectCity(_ index: Int) {
+        settingsVCTableView.selectCell(index)
     }
 
-    // MARK: MovieShowingsVC:
+    // MARK: ShowingsViewController
 
-    var movieShowings: XCUIElement {
-        return tables["UI-MovieShowingsTable"]
+    var showingsVCView: XCUIElement {
+        otherElements["showingsVCView"]
+    }
+
+    var showingsVCDatesView: XCUIElement {
+        collectionViews["showingsVCDatesView"]
+    }
+
+    var showingsVCContainersView: XCUIElement {
+        collectionViews["showingsVCContainersView"]
+    }
+
+    var showingsVCTimesView: XCUIElement {
+        collectionViews["showingsVCTimesView"]
+    }
+
+    // MARK: WebViewController
+
+    var webVCView: XCUIElement {
+        webViews["webVCView"]
     }
 }
 
 extension XCUIElement {
-    func selectButton(_ index: Int) {
-        self.buttons.element(boundBy: index).tap()
-    }
-
     func selectCell(_ index: Int) {
         self.cells.element(boundBy: index).tap()
     }
