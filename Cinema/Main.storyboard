@@ -189,6 +189,9 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="dateVCTableView"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="Dxm-QZ-lup" id="hBp-Lf-FpJ"/>
                             <outlet property="delegate" destination="Dxm-QZ-lup" id="hCW-ak-zLv"/>
@@ -200,12 +203,18 @@
                     <navigationItem key="navigationItem" id="Zyf-4w-ETq">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="settings" id="EeZ-9z-enu">
                             <color key="tintColor" name="primaryElement"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="dateVCLeftNavButton"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="leftNavigationBarButtonDidTap:" destination="Dxm-QZ-lup" id="qJG-6E-dKD"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="arrowRight" id="XXe-QF-8Ls">
                             <color key="tintColor" name="primaryElement"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="dateVCRightNavButton"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="rightNavigationBarButtonDidTap:" destination="Dxm-QZ-lup" id="830-hv-Xpq"/>
                             </connections>
@@ -341,6 +350,9 @@
                                                         <rect key="frame" x="362" y="5" width="32" height="43"/>
                                                         <color key="tintColor" name="tertiaryElement"/>
                                                         <state key="normal" image="cart"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="movieVCShowingButton"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <segue destination="g5h-Z4-x8A" kind="show" identifier="showWebVC" id="fCK-ZR-cDu"/>
                                                         </connections>
@@ -361,6 +373,9 @@
                                                     <constraint firstItem="Rxj-SR-TPI" firstAttribute="top" secondItem="Q9t-BW-q0Q" secondAttribute="top" priority="999" constant="5" id="umg-5e-yhn"/>
                                                     <constraint firstItem="Rxj-SR-TPI" firstAttribute="leading" secondItem="Q9t-BW-q0Q" secondAttribute="leading" constant="20" id="xWw-S4-OvV"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="movieVCShowingView"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="MJB-Mu-Eyj"/>
@@ -480,6 +495,9 @@
                             <constraint firstItem="2CA-jM-tJ9" firstAttribute="top" secondItem="9n5-Vo-rcr" secondAttribute="top" id="ogk-k1-pWP"/>
                             <constraint firstAttribute="trailing" secondItem="2CA-jM-tJ9" secondAttribute="trailing" id="zL9-Vs-rlp"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="movieVCView"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="krW-hL-Gjp">
                         <barButtonItem key="leftBarButtonItem" image="arrowLeft" id="Tzx-tW-QWr">
@@ -490,6 +508,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="navTicket" id="pXb-cI-gwD">
                             <color key="tintColor" name="primaryElement"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="movieVCShowingsButton"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="showingsButtonDidTap:" destination="Ygy-k3-LEc" id="bVA-9C-Zdv"/>
                             </connections>
@@ -611,6 +632,9 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="showingsVCDatesView"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="Z9X-Du-4qz" id="ZIk-0B-t1h"/>
                                     <outlet property="delegate" destination="Z9X-Du-4qz" id="ar3-jg-fpi"/>
@@ -709,6 +733,9 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="showingsVCTimesView"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
@@ -725,6 +752,9 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="showingsVCContainersView"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="Z9X-Du-4qz" id="arG-BT-10F"/>
                                     <outlet property="delegate" destination="Z9X-Du-4qz" id="bpi-re-TMj"/>
@@ -748,6 +778,9 @@
                             <constraint firstItem="ral-LM-BC5" firstAttribute="leading" secondItem="5Qc-PE-7vX" secondAttribute="leading" id="sjU-4r-uXE"/>
                             <constraint firstItem="IFh-i1-jhe" firstAttribute="trailing" secondItem="5Qc-PE-7vX" secondAttribute="trailing" id="wzy-Tv-8bf"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="showingsVCView"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="WpU-OJ-YVG">
                         <barButtonItem key="leftBarButtonItem" image="arrowLeft" id="WU9-tw-iZq">
@@ -783,6 +816,9 @@
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="webVCView"/>
+                                </userDefinedRuntimeAttributes>
                             </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ngg-Qf-x8b"/>
@@ -853,6 +889,9 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="settingsVCTableView"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="VHk-LT-r3b" id="FCB-eL-UP6"/>
                             <outlet property="delegate" destination="VHk-LT-r3b" id="8ec-yK-9UC"/>
@@ -948,6 +987,9 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="dateContainerVCCollectionView"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="fg4-kJ-Eo7" id="h3p-nz-nfC"/>
                             <outlet property="delegate" destination="fg4-kJ-Eo7" id="K92-rm-7tj"/>
@@ -1047,7 +1089,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="fCK-ZR-cDu"/>
+        <segue reference="AxB-la-lfB"/>
         <segue reference="diA-bi-HlB"/>
     </inferredMetricsTieBreakers>
     <resources>
