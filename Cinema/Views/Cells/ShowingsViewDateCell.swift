@@ -13,13 +13,13 @@ final class ShowingsViewDateCell: UICollectionViewCell {
         didSet {
             // Set `textColor` in code, because of iOS12 bug, where when
             // a custom color is selected in storyboard it cannot be changed.
-            date.textColor = .secondaryElement
+            date.textColor = .primaryElement
         }
     }
 
     override var isHighlighted: Bool {
         didSet {
-            date.textColor = isHighlighted ? .tertiaryElement : .secondaryElement
+            date.textColor = isHighlighted ? .tertiaryElement : .primaryElement
         }
     }
 }
