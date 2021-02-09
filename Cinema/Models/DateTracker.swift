@@ -44,8 +44,8 @@ final class DateTracker: DateTracking {
 
     init() {
         if CommandLine.arguments.contains("ui-testing") {
-            // Testing start date is 2030-02-14.
-            DateTracker.dates = Date(timeIntervalSince1970: 1897328436).futureDatesIn(days: 10)
+            // Testing start date is 2030-01-01.
+            DateTracker.dates = Date(timeIntervalSince1970: 1893456000).futureDatesIn(days: 10)
         } else {
             DateTracker.dates = Date().futureDatesIn(days: 10)
         }
