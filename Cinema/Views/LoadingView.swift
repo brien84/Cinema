@@ -22,9 +22,9 @@ protocol LoadingViewDelegate: AnyObject {
 final class LoadingView: UIView {
     weak var delegate: LoadingViewDelegate?
 
-    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var errorMessage: UILabel!
     @IBOutlet private weak var retryButton: UIButton!
+    @IBOutlet private weak var imageView: UIImageView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,7 +44,8 @@ final class LoadingView: UIView {
     }
 
     private func set(error: LoadingError) {
-        activityIndicator.stopAnimating()
+        imageView.stopAnimating()
+        imageView.image = error == .none ? nil : .empty
         retryButton.isHidden = error == .noNetwork ? false : true
         errorMessage.text = error.rawValue
         isHidden = false
@@ -52,7 +53,7 @@ final class LoadingView: UIView {
 
     func startLoading() {
         set(error: .none)
-        activityIndicator.startAnimating()
+        startAnimation()
     }
 
     func show(_ error: LoadingError, animated: Bool, completion: (() -> Void)? = nil) {
@@ -82,6 +83,26 @@ final class LoadingView: UIView {
         }
     }
 
+    private func getAnimationImages() -> [UIImage] {
+        var images = [UIImage]()
+        var index = 0
+
+        while let image = UIImage(named: "\("LoadingAnimation")/\(index)") {
+            images.append(image)
+            index += 1
+        }
+
+        return images
+    }
+
+    private func startAnimation() {
+        imageView.animationImages = getAnimationImages()
+        imageView.image = imageView.animationImages?.first
+        imageView.animationDuration = 0.75
+        imageView.animationRepeatCount = 0
+        imageView.startAnimating()
+    }
+
     private func loadView() {
         guard let nib = Bundle.main.loadNibNamed("LoadingView", owner: self),
               let view = nib.first as? UIView else { fatalError("Could not load nib!") }
@@ -90,4 +111,8 @@ final class LoadingView: UIView {
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
     }
+}
+
+private extension UIImage {
+    static let empty = UIImage(named: "empty")!
 }
