@@ -78,7 +78,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-L8-sBT" userLabel="poster" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-L8-sBT" userLabel="poster" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
                                             <rect key="frame" x="8" y="8" width="103.5" height="156"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -239,7 +239,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-jM-tJ9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="networkImageViewDefault" translatesAutoresizingMaskIntoConstraints="NO" id="efd-5U-SkD" userLabel="Poster" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="efd-5U-SkD" userLabel="Poster" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="621"/>
                                         <constraints>
                                             <constraint firstAttribute="height" secondItem="efd-5U-SkD" secondAttribute="width" multiplier="1.5" id="bF8-ad-hB3"/>
@@ -550,7 +550,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="networkImageViewDefault" translatesAutoresizingMaskIntoConstraints="NO" id="ral-LM-BC5" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ral-LM-BC5" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="621"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="ral-LM-BC5" secondAttribute="width" multiplier="1.5" id="HiE-ZK-Eiw"/>
@@ -931,7 +931,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="238" height="416"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CQG-4K-qB3" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CQG-4K-qB3" customClass="NetworkImageView" customModule="iKinas" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="238" height="359"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
@@ -1095,7 +1095,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="AxB-la-lfB"/>
+        <segue reference="fCK-ZR-cDu"/>
         <segue reference="diA-bi-HlB"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1106,7 +1106,6 @@
         <image name="cart" width="32" height="32"/>
         <image name="duration" width="32" height="32"/>
         <image name="navTicket" width="25" height="25"/>
-        <image name="networkImageViewDefault" width="200" height="300"/>
         <image name="settings" width="25" height="25"/>
         <image name="ticket" width="32" height="32"/>
         <image name="year" width="32" height="32"/>
@@ -1123,7 +1122,7 @@
             <color red="0.69803921568627447" green="0.74509803921568629" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="tertiaryElement">
-            <color red="0.9179999828338623" green="0.125" blue="0.15299999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.91764705882352937" green="0.12156862745098039" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
